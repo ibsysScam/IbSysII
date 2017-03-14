@@ -63,6 +63,12 @@
     <Compile Include="Pages\Welcome\Welcome.xaml.cs">
       <DependentUpon>Welcome.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Static\Input\Orderlist.cs" />
+    <Compile Include="Static\Input\Productionlist.cs" />
+    <Compile Include="Static\Input\Qualitycontrol.cs" />
+    <Compile Include="Static\Input\Selldirect.cs" />
+    <Compile Include="Static\Input\Sellwish.cs" />
+    <Compile Include="Static\Input\Workingtimelist.cs" />
     <Compile Include="Static\Static.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
