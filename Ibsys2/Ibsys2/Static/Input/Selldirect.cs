@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Ibsys2.Static.Input {
     static class Selldirect {
+        //<selldirect><item article="[1-3]" quantity="0" price="0.0" penalty="0.0"/></selldirect>
         private static int _quantity1;
         private static int _quantity2;
         private static int _quantity3;

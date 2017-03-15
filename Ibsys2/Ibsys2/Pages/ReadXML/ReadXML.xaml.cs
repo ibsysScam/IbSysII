@@ -76,6 +76,17 @@ namespace Ibsys2.Pages.ReadXML {
                 Selldirect.setAnzahlArtikel(Convert.ToInt32(article.Attributes["article"].InnerText), Convert.ToInt32(article.Attributes["quantity"].InnerText), Convert.ToDouble(article.Attributes["quantity"].InnerText), Convert.ToDouble(article.Attributes["penalty"].InnerText));
             }
 
+            foreach (XmlNode article in orderlist) {
+                Orderlist.AddItem(new OrderlistItem(Convert.ToInt32(article.Attributes["article"].InnerText), Convert.ToInt32(article.Attributes["quantity"].InnerText), Convert.ToInt32(article.Attributes["modus"].InnerText)));
+            }
+
+            foreach (XmlNode article in productionlist) {
+                Productionlist.AddItem(new ProductionlistItem(Convert.ToInt32(article.Attributes["article"].InnerText), Convert.ToInt32(article.Attributes["quantity"].InnerText)));
+            }
+
+            foreach (XmlNode station in workingtimelist) {
+                Workingtimelist.AddItem(new WorkingtimelistItem(Convert.ToInt32(station.Attributes["station"].InnerText), Convert.ToInt32(station.Attributes["shift"].InnerText), Convert.ToInt32(station.Attributes["overtime"].InnerText)));
+            }
         }
     }
 }
