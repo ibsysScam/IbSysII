@@ -72,6 +72,10 @@ namespace Ibsys2.Pages.ReadXML {
                 Sellwish.setAnzahlArtikel(Convert.ToInt32(article.Attributes["article"].InnerText), Convert.ToInt32(article.Attributes["quantity"].InnerText));
             }
 
+            foreach (XmlNode article in selldirect) {
+                Selldirect.setAnzahlArtikel(Convert.ToInt32(article.Attributes["article"].InnerText), Convert.ToInt32(article.Attributes["quantity"].InnerText), Convert.ToDouble(article.Attributes["quantity"].InnerText), Convert.ToDouble(article.Attributes["penalty"].InnerText));
+            }
+
         }
     }
 }
