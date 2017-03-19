@@ -26,12 +26,12 @@ namespace Ibsys2.Pages.ReadXML {
         }
 
 
-        private void KlickAufDateiUpload() {
+        public void KlickAufDateiUpload() {
             //if File Exists
             this.ParseXML(Static.Static.XMLInputPeriode1);
         }
 
-        private void KlickAufTextUpload() {
+        public void KlickAufTextUpload() {
             //If not Null
 
             this.ParseXML(Static.Static.XMLInputPeriode2);
@@ -58,17 +58,22 @@ namespace Ibsys2.Pages.ReadXML {
              * </input> */
 
             XmlNode qualitycontrol = doc.DocumentElement.SelectSingleNode("/input/qualitycontrol");
-            XmlNodeList sellwish = doc.DocumentElement.SelectNodes("/input/sellwish");
-            XmlNodeList selldirect = doc.DocumentElement.SelectNodes("/input/selldirect");
-            XmlNodeList orderlist = doc.DocumentElement.SelectNodes("/input/orderlist");
-            XmlNodeList productionlist = doc.DocumentElement.SelectNodes("/input/productionlist");
-            XmlNodeList workingtimelist = doc.DocumentElement.SelectNodes("/input/workingtimelist");
+            var sellwish = doc.DocumentElement.SelectNodes("/input/sellwish");
+            var selldirect = doc.DocumentElement.SelectNodes("/input/selldirect");
+            var orderlist = doc.DocumentElement.SelectNodes("/input/orderlist");
+            var productionlist = doc.DocumentElement.SelectNodes("/input/productionlist");
+            var workingtimelist = doc.DocumentElement.SelectNodes("/input/workingtimelist");
 
             Qualitycontrol.typ = qualitycontrol.Attributes["type"].InnerText;
             Qualitycontrol.losequantity = Convert.ToInt32(qualitycontrol.Attributes["losequantity"].InnerText);
             Qualitycontrol.delay = Convert.ToInt32(qualitycontrol.Attributes["delay"].InnerText);
 
-            foreach (XmlNode article in sellwish) {
+            for (int i = 0; i < sellwish.Count; i++) {
+                var article = sellwish.Item(i);
+                Sellwish.setAnzahlArtikel(Convert.ToInt32(article.Attributes["article"].InnerText), Convert.ToInt32(article.Attributes["quantity"].InnerText));
+            }
+
+            /*foreach (XmlNode article in sellwish.Count) {
                 Sellwish.setAnzahlArtikel(Convert.ToInt32(article.Attributes["article"].InnerText), Convert.ToInt32(article.Attributes["quantity"].InnerText));
             }
 
@@ -86,7 +91,7 @@ namespace Ibsys2.Pages.ReadXML {
 
             foreach (XmlNode station in workingtimelist) {
                 Workingtimelist.AddItem(new WorkingtimelistItem(Convert.ToInt32(station.Attributes["station"].InnerText), Convert.ToInt32(station.Attributes["shift"].InnerText), Convert.ToInt32(station.Attributes["overtime"].InnerText)));
-            }
+            }*/
         }
     }
 }
