@@ -8,7 +8,7 @@ using Ibsys2.Pages.ReadXML;
 namespace IbSysUnitTests
 {
     [TestClass]
-    public class UnitTest1
+    public class IbSysTests
     {
         [TestMethod]
         public void TestXMLCompile()
