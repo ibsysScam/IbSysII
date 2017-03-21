@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Ibsys2.Static.Input {
-    static class Qualitycontrol {
+    public static class Qualitycontrol {
         //<qualitycontrol type = "no" losequantity="0" delay="0"/>
 
         private static string _typ = "";

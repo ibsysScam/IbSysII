@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Ibsys2.Static.Input {
-    static class Productionlist {
+    public static class Productionlist {
         //<productionlist><production article="[1-99]" quantity="[0-999999]"/></productionlist>
         private static List<ProductionlistItem> _list = new List<ProductionlistItem>();
 
@@ -23,7 +23,7 @@ namespace Ibsys2.Static.Input {
         }
     }
 
-    class ProductionlistItem {
+    public class ProductionlistItem {
         private int _article;
         private int _quantity;
 

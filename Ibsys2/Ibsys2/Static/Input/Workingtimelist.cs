@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Ibsys2.Static.Input {
-    static class Workingtimelist {
+    public static class Workingtimelist {
         //<workingtimelist><workingtime station="[1-99]" shift="[1-9]" overtime="[0-999999]"/></workingtimelist>
         private static List<WorkingtimelistItem> _list = new List<WorkingtimelistItem>();
 
@@ -23,7 +23,7 @@ namespace Ibsys2.Static.Input {
         }
     }
 
-    class WorkingtimelistItem {
+    public class WorkingtimelistItem {
         private int _station;
         private int _shift;
         private int _overtime;

@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Ibsys2.Static.Input {
-    static class Orderlist {
+    public static class Orderlist {
         //<orderlist><order article = "[1-99]" quantity="[0-999999]" modus="[0-999999]"/></orderlist>
         private static List<OrderlistItem> _list = new List<OrderlistItem>();
 
@@ -24,7 +24,7 @@ namespace Ibsys2.Static.Input {
     }
 
 
-    class OrderlistItem {
+    public class OrderlistItem {
         private int _article;
         private int _quantity;
         private int _modus;
