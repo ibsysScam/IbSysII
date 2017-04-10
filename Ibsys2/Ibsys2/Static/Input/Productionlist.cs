@@ -12,14 +12,11 @@ namespace Ibsys2.Static.Input {
         public static void AddItem(ProductionlistItem item) {
             if (item == null)
                 throw new Exception();
-            var result = _list.Find(x => x.article == item.article);
-            if (result != null)
-                throw new Exception();
             _list.Add(item);
         }
 
-        public static ProductionlistItem getQuantityForArticle(int article) {
-            return _list.Find(x => x.article == article);
+        public static List<ProductionlistItem> getQuantityForArticle(int article) {
+            return _list.FindAll(x => x.article == article);
         }
     }
 

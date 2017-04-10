@@ -57,41 +57,25 @@ namespace Ibsys2.Pages.ReadXML {
              * <workingtimelist><workingtime station="[1-99]" shift="[1-9]" overtime="[0-999999]"/></workingtimelist>
              * </input> */
 
-            XmlNode qualitycontrol = doc.DocumentElement.SelectSingleNode("/input/qualitycontrol");
-            var sellwish = doc.DocumentElement.SelectNodes("/input/sellwish");
-            var selldirect = doc.DocumentElement.SelectNodes("/input/selldirect");
-            var orderlist = doc.DocumentElement.SelectNodes("/input/orderlist");
-            var productionlist = doc.DocumentElement.SelectNodes("/input/productionlist");
-            var workingtimelist = doc.DocumentElement.SelectNodes("/input/workingtimelist");
-
-            Qualitycontrol.typ = qualitycontrol.Attributes["type"].InnerText;
-            Qualitycontrol.losequantity = Convert.ToInt32(qualitycontrol.Attributes["losequantity"].InnerText);
-            Qualitycontrol.delay = Convert.ToInt32(qualitycontrol.Attributes["delay"].InnerText);
-
-            for (int i = 0; i < sellwish.Count; i++) {
-                var article = sellwish.Item(i);
-                Sellwish.setAnzahlArtikel(Convert.ToInt32(article.Attributes["article"].InnerText), Convert.ToInt32(article.Attributes["quantity"].InnerText));
+            foreach (XmlNode GreatNode in doc.DocumentElement.ChildNodes) {
+                foreach (XmlNode node in GreatNode) {
+                    if (GreatNode.Name == "sellwish") {
+                        Sellwish.setAnzahlArtikel(Convert.ToInt32(node.Attributes["article"].InnerText), Convert.ToInt32(node.Attributes["quantity"].InnerText));
+                    }
+                    else if(GreatNode.Name == "selldirect") {
+                        Selldirect.setAnzahlArtikel(Convert.ToInt32(node.Attributes["article"].InnerText), Convert.ToInt32(node.Attributes["quantity"].InnerText), Convert.ToDouble(node.Attributes["quantity"].InnerText), Convert.ToDouble(node.Attributes["penalty"].InnerText));
+                    } 
+                    else if (GreatNode.Name == "orderlist") {
+                        Orderlist.AddItem(new OrderlistItem(Convert.ToInt32(node.Attributes["article"].InnerText), Convert.ToInt32(node.Attributes["quantity"].InnerText), Convert.ToInt32(node.Attributes["modus"].InnerText)));
+                    }
+                    else if(GreatNode.Name == "productionlist") {
+                        Productionlist.AddItem(new ProductionlistItem(Convert.ToInt32(node.Attributes["article"].InnerText), Convert.ToInt32(node.Attributes["quantity"].InnerText)));
+                    } 
+                    else if (GreatNode.Name == "workingtimelist") {
+                        Workingtimelist.AddItem(new WorkingtimelistItem(Convert.ToInt32(node.Attributes["station"].InnerText), Convert.ToInt32(node.Attributes["shift"].InnerText), Convert.ToInt32(node.Attributes["overtime"].InnerText)));
+                    }
+                }
             }
-
-            /*foreach (XmlNode article in sellwish.Count) {
-                Sellwish.setAnzahlArtikel(Convert.ToInt32(article.Attributes["article"].InnerText), Convert.ToInt32(article.Attributes["quantity"].InnerText));
-            }
-
-            foreach (XmlNode article in selldirect) {
-                Selldirect.setAnzahlArtikel(Convert.ToInt32(article.Attributes["article"].InnerText), Convert.ToInt32(article.Attributes["quantity"].InnerText), Convert.ToDouble(article.Attributes["quantity"].InnerText), Convert.ToDouble(article.Attributes["penalty"].InnerText));
-            }
-
-            foreach (XmlNode article in orderlist) {
-                Orderlist.AddItem(new OrderlistItem(Convert.ToInt32(article.Attributes["article"].InnerText), Convert.ToInt32(article.Attributes["quantity"].InnerText), Convert.ToInt32(article.Attributes["modus"].InnerText)));
-            }
-
-            foreach (XmlNode article in productionlist) {
-                Productionlist.AddItem(new ProductionlistItem(Convert.ToInt32(article.Attributes["article"].InnerText), Convert.ToInt32(article.Attributes["quantity"].InnerText)));
-            }
-
-            foreach (XmlNode station in workingtimelist) {
-                Workingtimelist.AddItem(new WorkingtimelistItem(Convert.ToInt32(station.Attributes["station"].InnerText), Convert.ToInt32(station.Attributes["shift"].InnerText), Convert.ToInt32(station.Attributes["overtime"].InnerText)));
-            }*/
         }
     }
 }
