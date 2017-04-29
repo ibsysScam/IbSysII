@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Ibsys2.Static.Input {
+namespace Ibsys2.Static.Output {
     public static class Sellwish {
         //<sellwish><item article="[1-3]"  quantity="[0-999999]"/></sellwish>
         private static int _quantity1;

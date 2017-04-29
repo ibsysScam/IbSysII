@@ -4,32 +4,30 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Ibsys2.Static.Input {
-    public static class Orderlist {
-        //<orderlist><order article = "[1-99]" quantity="[0-999999]" modus="[0-999999]"/></orderlist>
-        private static List<OrderlistItem> _list = new List<OrderlistItem>();
+namespace Ibsys2.Static.Output {
+    public static class Productionlist {
+        //<productionlist><production article="[1-99]" quantity="[0-999999]"/></productionlist>
+        private static List<ProductionlistItem> _list = new List<ProductionlistItem>();
 
-        public static void AddItem(OrderlistItem item) {
+        public static void AddItem(ProductionlistItem item) {
             if (item == null)
                 throw new Exception();
             _list.Add(item);
         }
 
-        public static List<OrderlistItem> getOrderForArticle(int article) {
+        public static List<ProductionlistItem> getQuantityForArticle(int article) {
             return _list.FindAll(x => x.article == article);
         }
     }
 
-
-    public class OrderlistItem {
+    public class ProductionlistItem {
         private int _article;
         private int _quantity;
-        private int _modus;
 
         public int article {
             get { return _article; }
             set {
-                if (value < 0 || value > 100 )
+                if (value < 0 || value > 100)
                     throw new Exception();
                 _article = value;
             }
@@ -44,19 +42,9 @@ namespace Ibsys2.Static.Input {
             }
         }
 
-        public int modus {
-            get { return _modus; }
-            set {
-                if (value < 0 || value > 1000000)
-                    throw new Exception();
-                _modus = value;
-            }
-        }
-
-        public OrderlistItem(int article, int quantity, int modus) {
+        public ProductionlistItem(int article, int quantity) {
             this.article = article;
             this.quantity = quantity;
-            this.modus = modus;
         }
     }
 }

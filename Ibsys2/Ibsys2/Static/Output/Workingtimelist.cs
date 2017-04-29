@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Ibsys2.Static.Input {
+namespace Ibsys2.Static.Output {
     public static class Workingtimelist {
         //<workingtimelist><workingtime station="[1-99]" shift="[1-9]" overtime="[0-999999]"/></workingtimelist>
         private static List<WorkingtimelistItem> _list = new List<WorkingtimelistItem>();

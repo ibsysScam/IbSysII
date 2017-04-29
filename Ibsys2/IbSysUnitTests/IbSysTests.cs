@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Ibsys2.Static;
-using Ibsys2.Static.Input;
+using Ibsys2.Static.Output;
 using Ibsys2.Pages;
 using Ibsys2.Pages.ReadXML;
 using Ibsys2.Pages.CreateXML;
@@ -46,9 +46,9 @@ namespace IbSysUnitTests
         [TestMethod]      
         public void getQuantityForItem()
         {
-            Ibsys2.Static.Input.Productionlist.getQuantityForArticle(1);
-            Ibsys2.Static.Input.Productionlist.getQuantityForArticle(2);
-            Ibsys2.Static.Input.Productionlist.getQuantityForArticle(3);
+            Ibsys2.Static.Output.Productionlist.getQuantityForArticle(1);
+            Ibsys2.Static.Output.Productionlist.getQuantityForArticle(2);
+            Ibsys2.Static.Output.Productionlist.getQuantityForArticle(3);
         }
 
         [TestMethod]

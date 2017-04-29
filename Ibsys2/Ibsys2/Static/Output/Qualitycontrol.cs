@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Ibsys2.Static.Input {
+namespace Ibsys2.Static.Output {
     public static class Qualitycontrol {
         //<qualitycontrol type = "no" losequantity="0" delay="0"/>
 

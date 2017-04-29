@@ -14,7 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Xml;
 using Ibsys2.Static;
-using Ibsys2.Static.Input;
+using Ibsys2.Static.Output;
 
 namespace Ibsys2.Pages.ReadXML {
     /// <summary>
