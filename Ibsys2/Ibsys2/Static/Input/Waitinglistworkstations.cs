@@ -7,9 +7,19 @@ using System.Threading.Tasks;
 
 namespace Ibsys2.Static.Input {
     public class Waitinglistworkstations:IEnumerable<Waitinglistworkstations.Workplace> {
+        private static Waitinglistworkstations _class;
         private List<Workplace> _list;
 
+        public static Waitinglistworkstations Class {
+            get {
+                return _class;
+            }
+        }
+
         public Waitinglistworkstations () {
+            if (_class != null)
+                throw new Exception("Class already exists!");
+            _class = this;
             _list = new List<Workplace>();
         }
 

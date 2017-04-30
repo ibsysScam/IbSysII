@@ -7,7 +7,14 @@ using System.Threading.Tasks;
 
 namespace Ibsys2.Static.Input {
     public class Idletimecosts:IEnumerable<Idletimecosts.Workplace> {
+        private static Idletimecosts _class;
         private List<Workplace> _list;
+
+        public static Idletimecosts Class {
+            get {
+                return _class;
+            }
+        }
 
         public int SumSetupevents {
             get {
@@ -55,6 +62,9 @@ namespace Ibsys2.Static.Input {
         }
 
         public Idletimecosts() {
+            if (_class != null)
+                throw new Exception("Class already exists!");
+            _class = this;
             _list = new List<Workplace>();
         }
 

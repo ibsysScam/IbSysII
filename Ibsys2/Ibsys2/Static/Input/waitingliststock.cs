@@ -7,9 +7,19 @@ using System.Threading.Tasks;
 
 namespace Ibsys2.Static.Input {
     public class Waitingliststock : IEnumerable<Waitingliststock.Missingpart> {
+        private static Waitingliststock _class;
         private List<Missingpart> _list;
 
+        public static Waitingliststock Class {
+            get {
+                return _class;
+            }
+        }
+
         public Waitingliststock() {
+            if (_class != null)
+                throw new Exception("Class already exists!");
+            _class = this;
             this._list = new List<Missingpart>();
         }
 

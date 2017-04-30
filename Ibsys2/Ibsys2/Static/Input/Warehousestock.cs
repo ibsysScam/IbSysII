@@ -7,7 +7,14 @@ using System.Threading.Tasks;
 
 namespace Ibsys2.Static.Input {
     public class Warehousestock:IEnumerable<Warehousestock.Article> {
+        private static Warehousestock _class;
         private List<Article> _list;
+
+        public static Warehousestock Class {
+            get {
+                return _class;
+            }
+        }
 
         public double Totalstockvalue {
             get {
@@ -25,6 +32,9 @@ namespace Ibsys2.Static.Input {
         }
 
         public Warehousestock() {
+            if (_class != null)
+                throw new Exception("Class already exists!");
+            _class = this;
             _list = new List<Article>();
         }
 

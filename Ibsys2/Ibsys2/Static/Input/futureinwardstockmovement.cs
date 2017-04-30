@@ -6,9 +6,19 @@ using System.Threading.Tasks;
 
 namespace Ibsys2.Static.Input {
     class Futureinwardstockmovement {
+        private static Futureinwardstockmovement _class;
         private List<Order> _list;
 
+        public static Futureinwardstockmovement Class {
+            get {
+                return _class;
+            }
+        }
+
         public Futureinwardstockmovement() {
+            if (_class != null)
+                throw new Exception("Class already exists!");
+            _class = this;
             _list = new List<Order>();
         }
 

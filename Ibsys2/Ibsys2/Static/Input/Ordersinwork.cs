@@ -7,9 +7,19 @@ using System.Threading.Tasks;
 
 namespace Ibsys2.Static.Input {
     public class Ordersinwork:IEnumerable<Ordersinwork.Workplace> {
+        private static Ordersinwork _class;
         private List<Workplace> _list;
 
+        public static Ordersinwork Class {
+            get {
+                return _class;
+            }
+        }
+
         public Ordersinwork() {
+            if (_class != null)
+                throw new Exception("Class already exists!");
+            _class = this;
             this._list = new List<Workplace>();
         }
         
