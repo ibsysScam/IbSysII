@@ -63,6 +63,13 @@
     <Compile Include="Pages\Welcome\Welcome.xaml.cs">
       <DependentUpon>Welcome.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Static\Input\Futureinwardstockmovement.cs" />
+    <Compile Include="Static\Input\Idletimecosts.cs" />
+    <Compile Include="Static\Input\Inwardstockmovement.cs" />
+    <Compile Include="Static\Input\Ordersinwork.cs" />
+    <Compile Include="Static\Input\Waitingliststock.cs" />
+    <Compile Include="Static\Input\Waitinglistworkstations.cs" />
+    <Compile Include="Static\Input\Warehousestock.cs" />
     <Compile Include="Static\Output\Orderlist.cs" />
     <Compile Include="Static\Output\Productionlist.cs" />
     <Compile Include="Static\Output\Qualitycontrol.cs" />
