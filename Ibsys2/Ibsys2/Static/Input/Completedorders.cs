@@ -33,7 +33,7 @@ namespace Ibsys2.Static.Input {
         }
 
         public Order GetOrderByID(int id) {
-            return _list[id];
+            return _list.Find(x => x.ID == id);
         }
 
         public List<Order> GetOrdersByItem(int item) {
@@ -122,7 +122,7 @@ namespace Ibsys2.Static.Input {
             }
 
             public Batch GetBatchById(int id) {
-                return _list[id];
+                return _list.Find(x => x.ID == id);
             }
 
             public IEnumerator<Batch> GetEnumerator() {

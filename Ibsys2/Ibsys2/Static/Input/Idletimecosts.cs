@@ -73,12 +73,12 @@ namespace Ibsys2.Static.Input {
         public void AddWorkplace(Workplace w) {
             if (w == null)
                 throw new ArgumentNullException();
-            _list.Remove(_list.Find(x => x.ID == w.ID));
+            _list.RemoveAll(x => x.ID == w.ID);
             _list.Add(w);
         }
 
         public Workplace GetWorkplaceByID(int id) {
-            return _list[id];
+            return _list.Find(x => x.ID == id);
         }
 
         public IEnumerator<Workplace> GetEnumerator() {

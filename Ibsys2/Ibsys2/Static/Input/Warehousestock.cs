@@ -42,7 +42,7 @@ namespace Ibsys2.Static.Input {
         }
 
         public Article GetArticleByID(int id) {
-            return _list[id];
+            return _list.Find(x => x.ID == id);
         }
 
         public bool CheckTotalstockvalue(double Totalstockvalue) {

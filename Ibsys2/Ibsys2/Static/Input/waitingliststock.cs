@@ -33,7 +33,7 @@ namespace Ibsys2.Static.Input {
         }
 
         public Missingpart GetMissingpartByID(int id) {
-            return _list[id];
+            return _list.Find(x => x.ID == id);
         }
 
         public IEnumerator<Missingpart> GetEnumerator() {

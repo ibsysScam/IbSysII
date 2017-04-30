@@ -31,7 +31,7 @@ namespace Ibsys2.Static.Input {
         }
 
         public Order GetOrderByID(int id) {
-            return _list[id];
+            return _list.Find(x => x.ID == id);
         }
 
         public List<Order> GetOrdersByPeriod(int period) {
