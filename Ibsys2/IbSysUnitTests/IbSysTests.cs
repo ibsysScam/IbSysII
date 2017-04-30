@@ -12,27 +12,6 @@ namespace IbSysUnitTests
     public class IbSysTests
     {
         [TestMethod]
-        public void KlickaufDateiUploadXMLCompile()
-        {
-            ReadXML readXML = new ReadXML();
-            readXML.KlickAufDateiUpload();
-        }
-
-        public void KlickaufTextUploadXMLCompile()
-        {
-            ReadXML readXML = new ReadXML();
-            readXML.KlickAufTextUpload();
-        }
-
-      
-        public void TestCreateXML()
-        {
-            CreateXML createXML = new CreateXML();
-            
-        }
-
-
-        [TestMethod]
         public void sellWishSetAnzahl()
         {
 

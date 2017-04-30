@@ -18,6 +18,13 @@ namespace Ibsys2.Static.Output {
         public static List<ProductionlistItem> getQuantityForArticle(int article) {
             return _list.FindAll(x => x.article == article);
         }
+
+        public static string XMLOutput() {
+            string Output = "<productionlist>";
+            foreach (var pil in _list)
+                Output += pil.XMLOutput();
+            return Output + "</productionlist>";
+        }
     }
 
     public class ProductionlistItem {
@@ -45,6 +52,10 @@ namespace Ibsys2.Static.Output {
         public ProductionlistItem(int article, int quantity) {
             this.article = article;
             this.quantity = quantity;
+        }
+
+        public string XMLOutput() {
+            return @"<production article=""" + _article + @""" quantity=""" + _quantity + @"""/>";
         }
     }
 }

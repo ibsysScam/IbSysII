@@ -54,5 +54,8 @@ namespace Ibsys2.Static.Output {
                     throw new Exception();
             }
         }
+        public static string XMLOutput() {
+            return @"<sellwish><item article=""1"" quantity="""+ _quantity1 + @"""/><item article=""2"" quantity=""" + _quantity2 + @"""/><item article=""3"" quantity=""" + _quantity3 + @"""/></sellwish>";
+        }
     }
 }

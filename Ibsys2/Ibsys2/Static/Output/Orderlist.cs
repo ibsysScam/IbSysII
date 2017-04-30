@@ -18,6 +18,13 @@ namespace Ibsys2.Static.Output {
         public static List<OrderlistItem> getOrderForArticle(int article) {
             return _list.FindAll(x => x.article == article);
         }
+
+        public static string XMLOutput() {
+            string Output = "<orderlist>";
+            foreach (var ola in _list)
+                Output += ola.XMLOutput();
+            return Output + "</orderlist>";
+        }
     }
 
 
@@ -29,7 +36,7 @@ namespace Ibsys2.Static.Output {
         public int article {
             get { return _article; }
             set {
-                if (value < 0 || value > 100 )
+                if (value < 0 || value > 100)
                     throw new Exception();
                 _article = value;
             }
@@ -57,6 +64,10 @@ namespace Ibsys2.Static.Output {
             this.article = article;
             this.quantity = quantity;
             this.modus = modus;
+        }
+
+        public string XMLOutput() {
+            return @"<order article=""" + _article + @""" quantity=""" + _quantity + @""" modus=""" + _modus + @"""/>";
         }
     }
 }

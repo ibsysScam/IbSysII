@@ -28,13 +28,13 @@ namespace Ibsys2.Pages.ReadXML {
 
         public void KlickAufDateiUpload() {
             //if File Exists
-            this.ParseXML(Static.Static.XMLInputPeriode1);
+            
         }
 
         public void KlickAufTextUpload() {
             //If not Null
 
-            this.ParseXML(Static.Static.XMLInputPeriode2);
+            
         }
 
         private void ParseXML(string XMLinput) {
@@ -45,19 +45,8 @@ namespace Ibsys2.Pages.ReadXML {
 
             XmlDocument doc = new XmlDocument();
             doc.LoadXml(XMLinput);
-
-
-            /* Aufbau:
-             * <input>
-             * <qualitycontrol type="no" losequantity="0" delay="0"/>
-             * <sellwish><item article="[1-3]"  quantity="[0-999999]"/></sellwish>
-             * <selldirect><item article="[1-3]" quantity="0" price="0.0" penalty="0.0"/></selldirect>
-             * <orderlist><order article="[1-99]" quantity="[0-999999]" modus="[0-999999]"/></orderlist>
-             * <productionlist><production article="[1-99]" quantity="[0-999999]"/></productionlist>
-             * <workingtimelist><workingtime station="[1-99]" shift="[1-9]" overtime="[0-999999]"/></workingtimelist>
-             * </input> */
-
-            foreach (XmlNode GreatNode in doc.DocumentElement.ChildNodes) {
+            //Alt
+            /*foreach (XmlNode GreatNode in doc.DocumentElement.ChildNodes) {
                 foreach (XmlNode node in GreatNode) {
                     if (GreatNode.Name == "sellwish") {
                         Sellwish.setAnzahlArtikel(Convert.ToInt32(node.Attributes["article"].InnerText), Convert.ToInt32(node.Attributes["quantity"].InnerText));
@@ -75,7 +64,7 @@ namespace Ibsys2.Pages.ReadXML {
                         Workingtimelist.AddItem(new WorkingtimelistItem(Convert.ToInt32(node.Attributes["station"].InnerText), Convert.ToInt32(node.Attributes["shift"].InnerText), Convert.ToInt32(node.Attributes["overtime"].InnerText)));
                     }
                 }
-            }
+            }*/
         }
     }
 }

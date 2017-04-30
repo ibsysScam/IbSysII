@@ -8,7 +8,7 @@ namespace Ibsys2.Static.Output {
     public static class Qualitycontrol {
         //<qualitycontrol type = "no" losequantity="0" delay="0"/>
 
-        private static string _typ = "";
+        private static string _typ = "no";
 
         public static string typ {
             get { return _typ; }
@@ -40,6 +40,10 @@ namespace Ibsys2.Static.Output {
                     throw new Exception();
                 _delay = value;
             }
+        }
+
+        public static string XMLOutput() {
+            return "<qualitycontrol type=\"" + _typ + "\" losequantity=\"" + _losequantity.ToString() + "\" delay=\"" + delay.ToString() + "\"/>";
         }
 
     }

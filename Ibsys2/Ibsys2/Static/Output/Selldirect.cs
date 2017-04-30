@@ -118,5 +118,9 @@ namespace Ibsys2.Static.Output {
                     throw new Exception();
             }
         }
+
+        public static string XMLOutput() {
+            return (@"<selldirect><item article=""1"" quantity="""+_quantity1+ @""" price=""" + string.Format("{0:0.0}", _prize1) + @""" penalty=""" + string.Format("{0:0.0}", _penalty1) + @"""/><item article=""2"" quantity=""" + _quantity2 + @""" price=""" + string.Format("{0:0.0}", _prize2) + @""" penalty=""" + string.Format("{0:0.0}", _penalty2) + @"""/><item article=""3"" quantity=""" + _quantity3 + @""" price=""" + string.Format("{0:0.0}", _prize3) + @""" penalty=""" + string.Format("{0:0.0}", _penalty3) + @"""/></selldirect>").Replace(",", ".");
+        }
     }
 }

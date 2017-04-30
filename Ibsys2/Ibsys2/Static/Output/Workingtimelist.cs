@@ -12,11 +12,19 @@ namespace Ibsys2.Static.Output {
         public static void AddItem(WorkingtimelistItem item) {
             if (item == null)
                 throw new Exception();
+            _list.RemoveAll(x => x.station == item.station);
             _list.Add(item);
         }
 
         public static List<WorkingtimelistItem> getOrderForArticle(int station) {
             return _list.FindAll(x => x.station == station);
+        }
+
+        public static string XMLOutput() {
+            string Output = "<workingtimelist>";
+            foreach (var wtl in _list)
+                Output += wtl.XMLOutput();
+            return Output + "</workingtimelist>";
         }
     }
 
@@ -56,6 +64,10 @@ namespace Ibsys2.Static.Output {
             this.station = station;
             this.shift = shift;
             this.overtime = overtime;
+        }
+
+        public string XMLOutput() {
+            return @"<workingtime station=""" + _station + @""" shift=""" + _shift + @""" overtime=""" + _overtime + @"""/>";
         }
     }
 }
