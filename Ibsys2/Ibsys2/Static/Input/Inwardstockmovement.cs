@@ -12,6 +12,8 @@ namespace Ibsys2.Static.Input {
 
         public static Inwardstockmovement Class {
             get {
+                if (_class == null)
+                    new Inwardstockmovement();
                 return _class;
             }
         }
@@ -45,6 +47,7 @@ namespace Ibsys2.Static.Input {
         public class Order {
             private int _orderperiod;
             private int _id;
+            private int _mode;
             private int _article;
             private int _amount;
             private int _time;
@@ -53,9 +56,10 @@ namespace Ibsys2.Static.Input {
             private double _entirecosts;
             private double _piececosts;
 
-            public Order(int _orderperiod, int _id, int _article, int _amount, int _time, double _materialcosts, double _ordercosts, double _entirecosts, double _piececosts) {
+            public Order(int _orderperiod, int _id, int _mode, int _article, int _amount, int _time, double _materialcosts, double _ordercosts, double _entirecosts, double _piececosts) {
                 this.Orderperiod = _orderperiod;
                 this.ID = _id;
+                this.Mode = _mode;
                 this.Article = _article;
                 this.Amount = _amount;
                 this.Time = _time;
@@ -86,6 +90,18 @@ namespace Ibsys2.Static.Input {
                     if (value < 1)
                         throw new ArgumentOutOfRangeException();
                     _id = value;
+                }
+            }
+
+            public int Mode {
+                get {
+                    return _mode;
+                }
+
+                set {
+                    if (value < 1)
+                        throw new ArgumentOutOfRangeException();
+                    _mode = value;
                 }
             }
 

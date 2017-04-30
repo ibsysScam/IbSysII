@@ -12,6 +12,8 @@ namespace Ibsys2.Static.Input {
 
         public static Warehousestock Class {
             get {
+                if (_class == null)
+                    new Warehousestock();
                 return _class;
             }
         }
@@ -28,7 +30,8 @@ namespace Ibsys2.Static.Input {
         public void AddArticle(Article a) {
             if (a == null)
                 throw new ArgumentNullException();
-            _list[a.ID] = a;
+            _list.RemoveAll(x => x.ID == a.ID);
+            _list.Add(a);
         }
 
         public Warehousestock() {

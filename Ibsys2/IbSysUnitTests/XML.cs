@@ -15,13 +15,7 @@ namespace IbSysUnitTests {
         [TestMethod]
         public void KlickaufDateiUploadXMLCompile() {
             ReadXML readXML = new ReadXML();
-            readXML.KlickAufDateiUpload();
-        }
-
-        [TestMethod]
-        public void KlickaufTextUploadXMLCompile() {
-            ReadXML readXML = new ReadXML();
-            readXML.KlickAufTextUpload();
+            readXML.ParseXML(_XMLTestInput);
         }
 
         [TestMethod]

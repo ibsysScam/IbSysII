@@ -12,6 +12,8 @@ namespace Ibsys2.Static.Input {
 
         public static Waitingliststock Class {
             get {
+                if (_class == null)
+                    new Waitingliststock();
                 return _class;
             }
         }
@@ -26,7 +28,8 @@ namespace Ibsys2.Static.Input {
         public void Add(Missingpart m) {
             if (m == null)
                 throw new ArgumentNullException();
-            _list[m.ID] = m;
+            _list.RemoveAll(x => x.ID == m.ID);
+            _list.Add(m);
         }
 
         public Missingpart GetMissingpartByID(int id) {

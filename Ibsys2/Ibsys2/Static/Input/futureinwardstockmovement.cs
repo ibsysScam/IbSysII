@@ -11,6 +11,8 @@ namespace Ibsys2.Static.Input {
 
         public static Futureinwardstockmovement Class {
             get {
+                if (_class == null)
+                    new Futureinwardstockmovement();
                 return _class;
             }
         }

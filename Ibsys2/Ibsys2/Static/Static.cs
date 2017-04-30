@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace Ibsys2.Static {
     static class Static {
-
+        public static int game = 0;
+        public static int group = 0;
+        public static int period = 0;
 
 
     }

@@ -12,6 +12,8 @@ namespace Ibsys2.Static.Input {
 
         public static Ordersinwork Class {
             get {
+                if (_class == null)
+                    new Ordersinwork();
                 return _class;
             }
         }
@@ -26,7 +28,8 @@ namespace Ibsys2.Static.Input {
         public void Add(Workplace w) {
             if (w == null)
                 throw new ArgumentNullException();
-            _list[w.ID] = w;
+            _list.RemoveAll(x => x.ID == w.ID);
+            _list.Add(w);
         }
 
         public Workplace GetWorkplaceByID(int id) {

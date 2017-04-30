@@ -26,7 +26,8 @@ namespace Ibsys2.Static.Input {
         public void AddOrder(Order o) {
             if (o == null)
                 throw new ArgumentOutOfRangeException();
-            _list[o.ID] = o;
+            _list.RemoveAll(x => x.ID == o.ID);
+            _list.Add(o);
         }
 
         public Order GetOrderByID(int id) {

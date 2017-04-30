@@ -12,6 +12,8 @@ namespace Ibsys2.Static.Input {
 
         public static Idletimecosts Class {
             get {
+                if (_class == null)
+                    new Idletimecosts();
                 return _class;
             }
         }
@@ -71,7 +73,8 @@ namespace Ibsys2.Static.Input {
         public void AddWorkplace(Workplace w) {
             if (w == null)
                 throw new ArgumentNullException();
-            _list[w.ID] = w;
+            _list.Remove(_list.Find(x => x.ID == w.ID));
+            _list.Add(w);
         }
 
         public Workplace GetWorkplaceByID(int id) {

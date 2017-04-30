@@ -12,6 +12,8 @@ namespace Ibsys2.Static.Input {
 
         public static Completedorders Class {
             get {
+                if (_class == null)
+                    new Completedorders();
                 return _class;
             }
         }
@@ -26,7 +28,8 @@ namespace Ibsys2.Static.Input {
         public void AddOrder(Order o) {
             if (o == null)
                 throw new ArgumentNullException();
-            _list[o.ID] = o;
+            _list.RemoveAll(x => x.ID == o.ID);
+            _list.Add(o);
         }
 
         public Order GetOrderByID(int id) {
@@ -105,6 +108,7 @@ namespace Ibsys2.Static.Input {
             public double Averageunitcosts { get { return (this.Cost / this.Quantity); } }
 
             public Order(int _period, int _id, int _item) {
+                this._list = new List<Batch>();
                 this.Period = _period;
                 this._id = _id;
                 this.Item = _item;
@@ -113,7 +117,8 @@ namespace Ibsys2.Static.Input {
             public void AddBatch(Batch b) {
                 if (b == null)
                     throw new ArgumentNullException();
-                _list[b.ID] = b;
+                _list.RemoveAll(x => x.ID == b.ID);
+                _list.Add(b);
             }
 
             public Batch GetBatchById(int id) {
