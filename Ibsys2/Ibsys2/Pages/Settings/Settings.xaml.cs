@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Ibsys2.Static;
+using Ibsys2.Service;
 
 namespace Ibsys2.Pages
 {
@@ -24,7 +25,17 @@ namespace Ibsys2.Pages
         public Settings()
         {
             InitializeComponent();
+            LoadLanguages();
 
+        }
+
+        public void LoadLanguages()
+        {
+            var languages = TranslateService.Class.GetLanguages();
+            foreach (var language in languages)
+            {
+                Languageselector.Items.Add(language);
+            }
         }
 
         private void Languageselector_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -36,7 +47,10 @@ namespace Ibsys2.Pages
         {
             Thread.Sleep(100);
             MessageBox.Show("Settings saved", "Settings", MessageBoxButton.OK, MessageBoxImage.Asterisk);
+            
             return;
         }
+
+
     }
 }

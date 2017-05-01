@@ -83,5 +83,17 @@ namespace IbSysUnitTests
            
         }
 
+        public void OrderDataStruct()
+        {
+            Order order = new Order(1, 1, 1, 2.2, 2.1, 2.0);
+
+        }
+
+        [TestMethod]
+        public void LoadLanguages()
+        {
+            Settings setting = new Settings();
+            setting.LoadLanguages();
+        }
     }
 }
