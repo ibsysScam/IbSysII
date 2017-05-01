@@ -66,6 +66,7 @@
     <Compile Include="Pages\Settings\Settings.xaml.cs">
       <DependentUpon>Settings.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Service\Settings\SettingsService..cs" />
     <Compile Include="Service\TranslateService.cs" />
     <Compile Include="Service\Translations\English.cs" />
     <Compile Include="Service\Translations\German.cs" />

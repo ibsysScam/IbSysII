@@ -46,7 +46,7 @@ namespace Ibsys2.Pages
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
             Thread.Sleep(100);
-            MessageBox.Show("Settings saved", "Settings", MessageBoxButton.OK, MessageBoxImage.Asterisk);
+            MessageBox.Show(TranslateService.Class.GetTranslation("HELLO"), "Settings", MessageBoxButton.OK, MessageBoxImage.Asterisk);
             
             return;
         }
