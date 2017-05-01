@@ -10,15 +10,17 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Ibsys2.Pages.Welcome {
+namespace Ibsys2.Pages
+{
     /// <summary>
-    /// Interaktionslogik für Welcome.xaml
+    /// Interaktionslogik für Settings.xaml
     /// </summary>
-    public partial class Welcome : Page {
-        public Welcome() {
+    public partial class Settings : Window
+    {
+        public Settings()
+        {
             InitializeComponent();
         }
     }

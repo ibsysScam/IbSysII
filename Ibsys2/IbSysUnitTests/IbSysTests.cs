@@ -13,7 +13,7 @@ namespace IbSysUnitTests
     public class IbSysTests
     {
         [TestMethod]
-        public void sellWishSetAnzahl()
+        public void SellWishSetAnzahl()
         {
 
             Sellwish.Class.setAnzahlArtikel(1 ,2);
@@ -23,16 +23,16 @@ namespace IbSysUnitTests
         }
 
 
-        [TestMethod]      
-        public void getQuantityForItem()
+        [TestMethod]
+        public void GetQuantityForItem()
         {
-            Ibsys2.Static.Output.Productionlist.Class.getQuantitysForArticle(1);
-            Ibsys2.Static.Output.Productionlist.Class.getQuantitysForArticle(2);
-            Ibsys2.Static.Output.Productionlist.Class.getQuantitysForArticle(3);
+            Productionlist.Class.getQuantitysForArticle(1);
+            Productionlist.Class.getQuantitysForArticle(2);
+            Productionlist.Class.getQuantitysForArticle(3);
         }
 
         [TestMethod]
-        public void orderlistAddItem()
+        public void OrderlistAddItem()
         {
             OrderlistItem item1 = new OrderlistItem(1, 2, 1);
             OrderlistItem item2 = new OrderlistItem(2, 2, 1);
@@ -47,7 +47,7 @@ namespace IbSysUnitTests
 
 
         [TestMethod]
-        public void getOrderForItemOrderList()
+        public void GetOrderForItemOrderList()
         {
             Orderlist.Class.getOrdersByArticle(1);
             Orderlist.Class.getOrdersByArticle(2);
@@ -57,7 +57,7 @@ namespace IbSysUnitTests
 
        
          [TestMethod]
-        public void workTimeListAddItem()
+        public void WorkTimeListAddItem()
         {
             WorkingtimelistItem item1 = new WorkingtimelistItem(1, 2, 3);
             WorkingtimelistItem item2 = new WorkingtimelistItem(2, 2, 3);
@@ -69,7 +69,7 @@ namespace IbSysUnitTests
 
 
         [TestMethod]
-        public void sellDirectsetAnzahlArtikel()
+        public void SellDirectsetAnzahlArtikel()
         {
             Selldirect.Class.setAnzahlArtikel(1, 2, 3, 4);
             Selldirect.Class.setAnzahlArtikel(2, 2, 3, 4);

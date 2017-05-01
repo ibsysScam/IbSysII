@@ -61,7 +61,7 @@ namespace Ibsys2.Berechnungen.Datenstrukturen
             }
         }
 
-        public double pctStart
+        public double PctStart
         {
             get
             {
