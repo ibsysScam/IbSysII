@@ -73,8 +73,9 @@ namespace Ibsys2
 
         private void Window_DragEnter(object sender, DragEventArgs e)
         {
+            string filename;
             Console.WriteLine("OnDragEnter");
-            bool validData = GetFilename(out string filename, e);
+            bool validData = GetFilename(out filename, e);
             Console.WriteLine(validData.ToString());
             if (!validData)
             {
