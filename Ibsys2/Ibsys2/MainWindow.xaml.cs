@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Ibsys2.Pages.ReadXML;
+using System.IO;
 
 namespace Ibsys2
 {
@@ -23,6 +25,24 @@ namespace Ibsys2
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void choosefile_Click(object sender, RoutedEventArgs e)
+        {
+            Microsoft.Win32.OpenFileDialog dialogDateipfad = new Microsoft.Win32.OpenFileDialog();
+            Nullable<bool> dialogDateipfadResult = dialogDateipfad.ShowDialog();
+            if (dialogDateipfadResult == true)
+            {
+                pathtextbox.Text = dialogDateipfad.FileName;
+            }
+        }
+
+        private void xmlgenerate_Click(object sender, RoutedEventArgs e)
+        {
+           
+            string xmlinput = File.ReadAllText(pathtextbox.Text);          
+            ReadXML readxml = new ReadXML();
+            readxml.ParseXML(xmlinput);
         }
     }
 }
