@@ -4,8 +4,11 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="Settings" Height="300" Width="300">
+        Title="Settings"  ResizeMode="NoResize" Height="300" Width="500">
     <Grid>
-        
+        <ComboBox x:Name="Languageselector" HorizontalAlignment="Left" Margin="27,52,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="Languageselector_SelectionChanged"/>
+        <Label x:Name="LanguageLabel" Content="Sprache:" HorizontalAlignment="Left" Margin="27,21,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="SaveButton" Content="Speichern" HorizontalAlignment="Left" Margin="386,222,0,0" VerticalAlignment="Top" Width="75" Click="SaveButton_Click"/>
+
     </Grid>
 </Window>

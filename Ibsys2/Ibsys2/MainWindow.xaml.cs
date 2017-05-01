@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Ibsys2.Pages.ReadXML;
 using System.IO;
+using Ibsys2.Pages;
 
 namespace Ibsys2
 {
@@ -91,9 +92,9 @@ namespace Ibsys2
 
         private void settingsbutton_Click(object sender, RoutedEventArgs e)
         {
-            Uri uri = new Uri("Settings.xaml", UriKind.Relative);
-            this.NavigationService.Navigate(uri);
-           
+            Settings Settingspage = new Settings();
+            Settingspage.Show();
+
         }
     }
 }
