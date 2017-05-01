@@ -26,6 +26,7 @@ namespace Ibsys2
     {
         public MainWindow()
         {
+            SettingsService.Class.InitializeXML();
             TranslateService.Class.PrimaryLanguage = "de";
             TranslateService.Class.FallbackLanguage = "en";
             InitializeComponent();

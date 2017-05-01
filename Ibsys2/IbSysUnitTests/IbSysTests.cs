@@ -6,6 +6,7 @@ using Ibsys2.Pages;
 using Ibsys2.Pages.ReadXML;
 using Ibsys2.Pages.CreateXML;
 using Ibsys2.Berechnungen.Datenstrukturen;
+using Ibsys2.Service;
 
 namespace IbSysUnitTests
 {
@@ -94,6 +95,12 @@ namespace IbSysUnitTests
         {
             Settings setting = new Settings();
             setting.LoadLanguages();
+        }
+
+        [TestMethod]
+        public void TestXMLInitialize()
+        {
+            SettingsService.Class.InitializeXML();
         }
     }
 }
