@@ -1,13 +1,13 @@
 language: csharp
 solution: Ibsys2.sln
+dotnet: 4.5.2
+dist: trusty
 
 install:
   - nuget restore Ibsys2.sln
   - nuget install NUnit.Runners -Version 2.6.4 -OutputDirectory testrunner
 
 script:    # the following commands are just examples, use whatever your build process requires
-  - xbuild /p:Configuration=Release Ibsys2.sln
-  - mono ./testrunner/NUnit.Runners.2.6.4/tools/nunit-console.exe ./Ibsys2.Tests/bin/Release/Ibsys2.Tests.dll
   - ./build.sh
   - ./test.sh
   - grep "Test Results" build.log
