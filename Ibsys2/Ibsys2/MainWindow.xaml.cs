@@ -45,7 +45,7 @@ namespace Ibsys2
 
             if ((e.AllowedEffects & DragDropEffects.Copy) == DragDropEffects.Copy)
             {
-                if (((IDataObject)e.Data).GetData("FileName") is Array data)
+                if (e.Data.GetData("FileName") is Array data)
                 {
                     if ((data.Length == 1) && (data.GetValue(0) is String))
                     {
