@@ -38,11 +38,9 @@ namespace Ibsys2
         }
 
         private void xmlgenerate_Click(object sender, RoutedEventArgs e)
-        {
-           
-           
+        {    
             ReadXML readxml = new ReadXML();
-            readxml.ParseXML(pathtextbox.Text);
+            readxml.ReadFile(pathtextbox.Text);
         }
     }
 }
