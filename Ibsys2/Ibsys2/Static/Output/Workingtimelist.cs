@@ -5,26 +5,47 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Ibsys2.Static.Output {
-    public static class Workingtimelist {
+    public class Workingtimelist {
         //<workingtimelist><workingtime station="[1-99]" shift="[1-9]" overtime="[0-999999]"/></workingtimelist>
-        private static List<WorkingtimelistItem> _list = new List<WorkingtimelistItem>();
+        private static Workingtimelist _class;
+        private List<WorkingtimelistItem> _list;
 
-        public static void AddItem(WorkingtimelistItem item) {
+        public Workingtimelist() {
+            if (_class != null)
+                throw new Exception("Class already exists!");
+            _class = this;
+            this._list = new List<WorkingtimelistItem>();
+        }
+
+        public static Workingtimelist Class {
+            get {
+                if (_class == null)
+                    new Workingtimelist();
+                return _class;
+            }
+        }
+
+        public void AddItem(WorkingtimelistItem item) {
             if (item == null)
                 throw new Exception();
             _list.RemoveAll(x => x.station == item.station);
             _list.Add(item);
         }
 
-        public static List<WorkingtimelistItem> getOrderForArticle(int station) {
-            return _list.FindAll(x => x.station == station);
+        public WorkingtimelistItem getOrderForStation(int station) {
+            return _list.Find(x => x.station == station);
         }
 
-        public static string XMLOutput() {
+        public string XMLOutput() {
             string Output = "<workingtimelist>";
             foreach (var wtl in _list)
                 Output += wtl.XMLOutput();
             return Output + "</workingtimelist>";
+        }
+
+        public void ClearClass() {
+            _class = null;
+            _list = null;
         }
     }
 

@@ -5,25 +5,46 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Ibsys2.Static.Output {
-    public static class Orderlist {
+    public class Orderlist {
         //<orderlist><order article = "[1-99]" quantity="[0-999999]" modus="[0-999999]"/></orderlist>
-        private static List<OrderlistItem> _list = new List<OrderlistItem>();
+        private List<OrderlistItem> _list = new List<OrderlistItem>();
+        private static Orderlist _class;
 
-        public static void AddItem(OrderlistItem item) {
+        public static Orderlist Class {
+            get {
+                if (_class == null)
+                    new Orderlist();
+                return _class;
+            }
+        }
+
+        public Orderlist() {
+            if (_class != null)
+                throw new Exception("Class already exists!");
+            _class = this;
+            this._list = new List<OrderlistItem>();
+        }
+
+        public void AddItem(OrderlistItem item) {
             if (item == null)
                 throw new Exception();
             _list.Add(item);
         }
 
-        public static List<OrderlistItem> getOrderForArticle(int article) {
+        public List<OrderlistItem> getOrdersByArticle(int article) {
             return _list.FindAll(x => x.article == article);
         }
 
-        public static string XMLOutput() {
+        public string XMLOutput() {
             string Output = "<orderlist>";
             foreach (var ola in _list)
                 Output += ola.XMLOutput();
             return Output + "</orderlist>";
+        }
+
+        public void ClearClass() {
+            _class = null;
+            _list = null;
         }
     }
 

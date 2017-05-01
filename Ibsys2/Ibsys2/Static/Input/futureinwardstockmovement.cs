@@ -42,6 +42,11 @@ namespace Ibsys2.Static.Input {
             return _list.FindAll(x => x.Article == i);
         }
 
+        public void ClearClass() {
+            _class = null;
+            _list = null;
+        }
+
 
         public class Order {
             private int _orderperiod;

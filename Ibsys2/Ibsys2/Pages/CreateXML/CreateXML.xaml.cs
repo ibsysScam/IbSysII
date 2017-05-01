@@ -26,12 +26,12 @@ namespace Ibsys2.Pages.CreateXML {
 
         public string GenerateXMLData() {
             string XMLOutput = "<input>";
-            XMLOutput += Qualitycontrol.XMLOutput();
-            XMLOutput += Sellwish.XMLOutput();
-            XMLOutput += Selldirect.XMLOutput();
-            XMLOutput += Orderlist.XMLOutput();
-            XMLOutput += Productionlist.XMLOutput();
-            XMLOutput += Workingtimelist.XMLOutput();
+            XMLOutput += Qualitycontrol.Class.XMLOutput();
+            XMLOutput += Sellwish.Class.XMLOutput();
+            XMLOutput += Selldirect.Class.XMLOutput();
+            XMLOutput += Orderlist.Class.XMLOutput();
+            XMLOutput += Productionlist.Class.XMLOutput();
+            XMLOutput += Workingtimelist.Class.XMLOutput();
             return XMLOutput + "</input>";
         }
     }

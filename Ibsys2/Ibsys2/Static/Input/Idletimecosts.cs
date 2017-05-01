@@ -81,6 +81,11 @@ namespace Ibsys2.Static.Input {
             return _list.Find(x => x.ID == id);
         }
 
+        public void ClearClass() {
+            _class = null;
+            _list = null;
+        }
+
         public IEnumerator<Workplace> GetEnumerator() {
             return ((IEnumerable<Workplace>)_list).GetEnumerator();
         }

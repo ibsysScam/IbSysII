@@ -45,19 +45,19 @@ namespace IbSysUnitTests {
             foreach (XmlNode GreatNode in doc.DocumentElement.ChildNodes) {
                 foreach (XmlNode node in GreatNode) {
                     if (GreatNode.Name == "sellwish") {
-                        Sellwish.setAnzahlArtikel(Convert.ToInt32(node.Attributes["article"].InnerText), Convert.ToInt32(node.Attributes["quantity"].InnerText));
+                        Sellwish.Class.setAnzahlArtikel(Convert.ToInt32(node.Attributes["article"].InnerText), Convert.ToInt32(node.Attributes["quantity"].InnerText));
                     } else if (GreatNode.Name == "selldirect") {
-                        Selldirect.setAnzahlArtikel(Convert.ToInt32(node.Attributes["article"].InnerText), Convert.ToInt32(node.Attributes["quantity"].InnerText), Convert.ToDouble(node.Attributes["quantity"].InnerText), Convert.ToDouble(node.Attributes["penalty"].InnerText));
+                        Selldirect.Class.setAnzahlArtikel(Convert.ToInt32(node.Attributes["article"].InnerText), Convert.ToInt32(node.Attributes["quantity"].InnerText), Convert.ToDouble(node.Attributes["quantity"].InnerText), Convert.ToDouble(node.Attributes["penalty"].InnerText));
                     } else if (GreatNode.Name == "orderlist") {
-                        Orderlist.AddItem(new OrderlistItem(Convert.ToInt32(node.Attributes["article"].InnerText), Convert.ToInt32(node.Attributes["quantity"].InnerText), Convert.ToInt32(node.Attributes["modus"].InnerText)));
+                        Orderlist.Class.AddItem(new OrderlistItem(Convert.ToInt32(node.Attributes["article"].InnerText), Convert.ToInt32(node.Attributes["quantity"].InnerText), Convert.ToInt32(node.Attributes["modus"].InnerText)));
                     } else if (GreatNode.Name == "productionlist") {
-                        Productionlist.AddItem(new ProductionlistItem(Convert.ToInt32(node.Attributes["article"].InnerText), Convert.ToInt32(node.Attributes["quantity"].InnerText)));
+                        Productionlist.Class.AddItem(new ProductionlistItem(Convert.ToInt32(node.Attributes["article"].InnerText), Convert.ToInt32(node.Attributes["quantity"].InnerText)));
                     } else if (GreatNode.Name == "workingtimelist") {
-                        Workingtimelist.AddItem(new WorkingtimelistItem(Convert.ToInt32(node.Attributes["station"].InnerText), Convert.ToInt32(node.Attributes["shift"].InnerText), Convert.ToInt32(node.Attributes["overtime"].InnerText)));
+                        Workingtimelist.Class.AddItem(new WorkingtimelistItem(Convert.ToInt32(node.Attributes["station"].InnerText), Convert.ToInt32(node.Attributes["shift"].InnerText), Convert.ToInt32(node.Attributes["overtime"].InnerText)));
                     } else if (GreatNode.Name == "qualitycontrol") {
-                        Qualitycontrol.typ = GreatNode.Attributes["type"].InnerText;
-                        Qualitycontrol.losequantity = Convert.ToInt32(GreatNode.Attributes["losequantity"].InnerText);
-                        Qualitycontrol.delay = Convert.ToInt32(GreatNode.Attributes["delay"].InnerText);
+                        Qualitycontrol.Class.typ = GreatNode.Attributes["type"].InnerText;
+                        Qualitycontrol.Class.losequantity = Convert.ToInt32(GreatNode.Attributes["losequantity"].InnerText);
+                        Qualitycontrol.Class.delay = Convert.ToInt32(GreatNode.Attributes["delay"].InnerText);
                     }
                 }
             }
@@ -75,19 +75,19 @@ namespace IbSysUnitTests {
             foreach (XmlNode GreatNode in doc.DocumentElement.ChildNodes) {
                 foreach (XmlNode node in GreatNode) {
                     if (GreatNode.Name == "sellwish") {
-                        Sellwish.setAnzahlArtikel(Convert.ToInt32(node.Attributes["article"].InnerText), Convert.ToInt32(node.Attributes["quantity"].InnerText));
+                        Sellwish.Class.setAnzahlArtikel(Convert.ToInt32(node.Attributes["article"].InnerText), Convert.ToInt32(node.Attributes["quantity"].InnerText));
                     } else if (GreatNode.Name == "selldirect") {
-                        Selldirect.setAnzahlArtikel(Convert.ToInt32(node.Attributes["article"].InnerText), Convert.ToInt32(node.Attributes["quantity"].InnerText), Convert.ToDouble(node.Attributes["quantity"].InnerText), Convert.ToDouble(node.Attributes["penalty"].InnerText));
+                        Selldirect.Class.setAnzahlArtikel(Convert.ToInt32(node.Attributes["article"].InnerText), Convert.ToInt32(node.Attributes["quantity"].InnerText), Convert.ToDouble(node.Attributes["quantity"].InnerText), Convert.ToDouble(node.Attributes["penalty"].InnerText));
                     } else if (GreatNode.Name == "orderlist") {
-                        Orderlist.AddItem(new OrderlistItem(Convert.ToInt32(node.Attributes["article"].InnerText), Convert.ToInt32(node.Attributes["quantity"].InnerText), Convert.ToInt32(node.Attributes["modus"].InnerText)));
+                        Orderlist.Class.AddItem(new OrderlistItem(Convert.ToInt32(node.Attributes["article"].InnerText), Convert.ToInt32(node.Attributes["quantity"].InnerText), Convert.ToInt32(node.Attributes["modus"].InnerText)));
                     } else if (GreatNode.Name == "productionlist") {
-                        Productionlist.AddItem(new ProductionlistItem(Convert.ToInt32(node.Attributes["article"].InnerText), Convert.ToInt32(node.Attributes["quantity"].InnerText)));
+                        Productionlist.Class.AddItem(new ProductionlistItem(Convert.ToInt32(node.Attributes["article"].InnerText), Convert.ToInt32(node.Attributes["quantity"].InnerText)));
                     } else if (GreatNode.Name == "workingtimelist") {
-                        Workingtimelist.AddItem(new WorkingtimelistItem(Convert.ToInt32(node.Attributes["station"].InnerText), Convert.ToInt32(node.Attributes["shift"].InnerText), Convert.ToInt32(node.Attributes["overtime"].InnerText)));
+                        Workingtimelist.Class.AddItem(new WorkingtimelistItem(Convert.ToInt32(node.Attributes["station"].InnerText), Convert.ToInt32(node.Attributes["shift"].InnerText), Convert.ToInt32(node.Attributes["overtime"].InnerText)));
                     } else if (GreatNode.Name == "qualitycontrol") {
-                        Qualitycontrol.typ = GreatNode.Attributes["type"].InnerText;
-                        Qualitycontrol.losequantity = Convert.ToInt32(GreatNode.Attributes["losequantity"].InnerText);
-                        Qualitycontrol.delay = Convert.ToInt32(GreatNode.Attributes["delay"].InnerText);
+                        Qualitycontrol.Class.typ = GreatNode.Attributes["type"].InnerText;
+                        Qualitycontrol.Class.losequantity = Convert.ToInt32(GreatNode.Attributes["losequantity"].InnerText);
+                        Qualitycontrol.Class.delay = Convert.ToInt32(GreatNode.Attributes["delay"].InnerText);
                     }
                 }
             }

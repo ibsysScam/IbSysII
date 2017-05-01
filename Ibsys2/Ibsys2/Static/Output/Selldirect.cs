@@ -5,22 +5,38 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Ibsys2.Static.Output {
-    public static class Selldirect {
+    public class Selldirect {
         //<selldirect><item article="[1-3]" quantity="0" price="0.0" penalty="0.0"/></selldirect>
-        private static int _quantity1;
-        private static int _quantity2;
-        private static int _quantity3;
+        private int _quantity1;
+        private int _quantity2;
+        private int _quantity3;
 
-        private static double _prize1;
-        private static double _prize2;
-        private static double _prize3;
+        private double _prize1;
+        private double _prize2;
+        private double _prize3;
         
-        private static double _penalty1;
-        private static double _penalty2;
-        private static double _penalty3;
+        private double _penalty1;
+        private double _penalty2;
+        private double _penalty3;
+
+        private static Selldirect _class;
+
+        public static Selldirect Class {
+            get {
+                if (_class == null)
+                    new Selldirect();
+                return _class;
+            }
+        }
+
+        public Selldirect() {
+            if (_class != null)
+                throw new Exception("Class already exists!");
+            _class = this;
+        }
 
 
-        public static int AnzahlArtikel1 {
+        public int AnzahlArtikel1 {
             get { return _quantity1; }
             set {
                 if (value < 0)
@@ -29,7 +45,7 @@ namespace Ibsys2.Static.Output {
             }
         }
 
-        public static int AnzahlArtikel2 {
+        public int AnzahlArtikel2 {
             get { return _quantity2; }
             set {
                 if (value < 0)
@@ -38,7 +54,7 @@ namespace Ibsys2.Static.Output {
             }
         }
 
-        public static int AnzahlArtikel3 {
+        public int AnzahlArtikel3 {
             get { return _quantity3; }
             set {
                 if (value < 0)
@@ -47,7 +63,7 @@ namespace Ibsys2.Static.Output {
             }
         }
 
-        public static double PreisArtikel1 {
+        public double PreisArtikel1 {
             get { return _prize1; }
             set {
                 if (value < 0)
@@ -56,7 +72,7 @@ namespace Ibsys2.Static.Output {
             }
         }
 
-        public static double PreisArtikel2 {
+        public double PreisArtikel2 {
             get { return _prize2; }
             set {
                 if (value < 0)
@@ -65,7 +81,7 @@ namespace Ibsys2.Static.Output {
             }
         }
 
-        public static double PreisArtikel3 {
+        public double PreisArtikel3 {
             get { return _prize3; }
             set {
                 if (value < 0)
@@ -76,7 +92,7 @@ namespace Ibsys2.Static.Output {
 
 
 
-        public static double StrafeArtikel1 {
+        public double StrafeArtikel1 {
             get { return _penalty1; }
             set {
                 if (value < 0)
@@ -85,7 +101,7 @@ namespace Ibsys2.Static.Output {
             }
         }
 
-        public static double StrafeArtikel2 {
+        public double StrafeArtikel2 {
             get { return _penalty2; }
             set {
                 if (value < 0)
@@ -94,7 +110,7 @@ namespace Ibsys2.Static.Output {
             }
         }
 
-        public static double StrafeArtikel3 {
+        public double StrafeArtikel3 {
             get { return _penalty3; }
             set {
                 if (value < 0)
@@ -103,7 +119,7 @@ namespace Ibsys2.Static.Output {
             }
         }
 
-        public static void setAnzahlArtikel(int artikel, int anzahl, double prize, double penalty) {
+        public void setAnzahlArtikel(int artikel, int anzahl, double prize, double penalty) {
             switch (artikel) {
                 case 1:
                     AnzahlArtikel1 = anzahl;
@@ -119,8 +135,12 @@ namespace Ibsys2.Static.Output {
             }
         }
 
-        public static string XMLOutput() {
+        public string XMLOutput() {
             return (@"<selldirect><item article=""1"" quantity="""+_quantity1+ @""" price=""" + string.Format("{0:0.0}", _prize1) + @""" penalty=""" + string.Format("{0:0.0}", _penalty1) + @"""/><item article=""2"" quantity=""" + _quantity2 + @""" price=""" + string.Format("{0:0.0}", _prize2) + @""" penalty=""" + string.Format("{0:0.0}", _penalty2) + @"""/><item article=""3"" quantity=""" + _quantity3 + @""" price=""" + string.Format("{0:0.0}", _prize3) + @""" penalty=""" + string.Format("{0:0.0}", _penalty3) + @"""/></selldirect>").Replace(",", ".");
+        }
+
+        public void ClearClass() {
+            _class = null;
         }
     }
 }

@@ -52,6 +52,11 @@ namespace Ibsys2.Static.Input {
             return Totalstockvalue == test;
         }
 
+        public void ClearClass() {
+            _class = null;
+            _list = null;
+        }
+
         public IEnumerator<Article> GetEnumerator() {
             return _list.GetEnumerator();
         }

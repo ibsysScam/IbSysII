@@ -5,25 +5,47 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Ibsys2.Static.Output {
-    public static class Productionlist {
+    public class Productionlist {
         //<productionlist><production article="[1-99]" quantity="[0-999999]"/></productionlist>
-        private static List<ProductionlistItem> _list = new List<ProductionlistItem>();
+        private List<ProductionlistItem> _list = new List<ProductionlistItem>();
 
-        public static void AddItem(ProductionlistItem item) {
+        private static Productionlist _class;
+
+        public static Productionlist Class {
+            get {
+                if (_class == null)
+                    new Productionlist();
+                return _class;
+            }
+        }
+
+        public Productionlist() {
+            if (_class != null)
+                throw new Exception("Class already exists!");
+            _class = this;
+            this._list = new List<ProductionlistItem>();
+        }
+
+        public void AddItem(ProductionlistItem item) {
             if (item == null)
                 throw new Exception();
+            _list.RemoveAll(x => x.article == item.article);
             _list.Add(item);
         }
 
-        public static List<ProductionlistItem> getQuantityForArticle(int article) {
-            return _list.FindAll(x => x.article == article);
+        public ProductionlistItem getQuantityForArticle(int article) {
+            return _list.Find(x => x.article == article);
         }
 
-        public static string XMLOutput() {
+        public string XMLOutput() {
             string Output = "<productionlist>";
             foreach (var pil in _list)
                 Output += pil.XMLOutput();
             return Output + "</productionlist>";
+        }
+        public void ClearClass() {
+            _class = null;
+            _list = null;
         }
     }
 

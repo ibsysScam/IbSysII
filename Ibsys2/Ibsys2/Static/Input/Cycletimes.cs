@@ -68,6 +68,11 @@ namespace Ibsys2.Static.Input {
             }
         }
 
+        public void ClearClass() {
+            _class = null;
+            _list = null;
+        }
+
         public IEnumerator<Order> GetEnumerator() {
             return ((IEnumerable<Order>)_list).GetEnumerator();
         }

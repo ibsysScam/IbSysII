@@ -15,9 +15,9 @@ namespace IbSysUnitTests
         public void sellWishSetAnzahl()
         {
 
-            Sellwish.setAnzahlArtikel(1 ,2);
-            Sellwish.setAnzahlArtikel(2, 2);
-            Sellwish.setAnzahlArtikel(3, 2);
+            Sellwish.Class.setAnzahlArtikel(1 ,2);
+            Sellwish.Class.setAnzahlArtikel(2, 2);
+            Sellwish.Class.setAnzahlArtikel(3, 2);
 
         }
 
@@ -25,9 +25,9 @@ namespace IbSysUnitTests
         [TestMethod]      
         public void getQuantityForItem()
         {
-            Ibsys2.Static.Output.Productionlist.getQuantityForArticle(1);
-            Ibsys2.Static.Output.Productionlist.getQuantityForArticle(2);
-            Ibsys2.Static.Output.Productionlist.getQuantityForArticle(3);
+            Ibsys2.Static.Output.Productionlist.Class.getQuantityForArticle(1);
+            Ibsys2.Static.Output.Productionlist.Class.getQuantityForArticle(2);
+            Ibsys2.Static.Output.Productionlist.Class.getQuantityForArticle(3);
         }
 
         [TestMethod]
@@ -37,9 +37,9 @@ namespace IbSysUnitTests
             OrderlistItem item2 = new OrderlistItem(2, 2, 1);
             OrderlistItem item3 = new OrderlistItem(3, 2, 1);
 
-            Orderlist.AddItem(item1);
-            Orderlist.AddItem(item2);
-            Orderlist.AddItem(item3);
+            Orderlist.Class.AddItem(item1);
+            Orderlist.Class.AddItem(item2);
+            Orderlist.Class.AddItem(item3);
 
 
         }
@@ -48,9 +48,9 @@ namespace IbSysUnitTests
         [TestMethod]
         public void getOrderForItemOrderList()
         {
-            Orderlist.getOrderForArticle(1);
-            Orderlist.getOrderForArticle(2);
-            Orderlist.getOrderForArticle(3);
+            Orderlist.Class.getOrdersByArticle(1);
+            Orderlist.Class.getOrdersByArticle(2);
+            Orderlist.Class.getOrdersByArticle(3);
         }
 
 
@@ -61,18 +61,18 @@ namespace IbSysUnitTests
             WorkingtimelistItem item1 = new WorkingtimelistItem(1, 2, 3);
             WorkingtimelistItem item2 = new WorkingtimelistItem(2, 2, 3);
             WorkingtimelistItem item3 = new WorkingtimelistItem(10,1, 3);
-            Workingtimelist.AddItem(item1);
-            Workingtimelist.AddItem(item2);
-            Workingtimelist.AddItem(item3);
+            Workingtimelist.Class.AddItem(item1);
+            Workingtimelist.Class.AddItem(item2);
+            Workingtimelist.Class.AddItem(item3);
         }
 
 
         [TestMethod]
         public void sellDirectsetAnzahlArtikel()
         {
-            Selldirect.setAnzahlArtikel(1, 2, 3, 4);
-            Selldirect.setAnzahlArtikel(2, 2, 3, 4);
-            Selldirect.setAnzahlArtikel(3, 2, 3, 4);
+            Selldirect.Class.setAnzahlArtikel(1, 2, 3, 4);
+            Selldirect.Class.setAnzahlArtikel(2, 2, 3, 4);
+            Selldirect.Class.setAnzahlArtikel(3, 2, 3, 4);
         }
 
     }

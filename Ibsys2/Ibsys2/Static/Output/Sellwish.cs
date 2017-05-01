@@ -5,14 +5,34 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Ibsys2.Static.Output {
-    public static class Sellwish {
+    public class Sellwish {
         //<sellwish><item article="[1-3]"  quantity="[0-999999]"/></sellwish>
-        private static int _quantity1;
-        private static int _quantity2;
-        private static int _quantity3;
+        private int _quantity1;
+        private int _quantity2;
+        private int _quantity3;
+
+        private static Sellwish _class;
 
 
-        public static int AnzahlArtikel1 {
+
+        public static Sellwish Class {
+            get {
+                if (_class == null)
+                    new Sellwish();
+                return _class;
+            }
+        }
+
+
+
+        public Sellwish() {
+            if (_class != null)
+                throw new Exception("Class already exists!");
+            _class = this;
+        }
+
+
+        public int AnzahlArtikel1 {
             get { return _quantity1; }
             set {
                 if (value < 0)
@@ -21,7 +41,7 @@ namespace Ibsys2.Static.Output {
             }
         }
 
-        public static int AnzahlArtikel2 {
+        public int AnzahlArtikel2 {
             get { return _quantity2; }
             set {
                 if (value < 0)
@@ -30,7 +50,7 @@ namespace Ibsys2.Static.Output {
             }
         }
 
-        public static int AnzahlArtikel3 {
+        public int AnzahlArtikel3 {
             get { return _quantity3; }
             set {
                 if (value < 0)
@@ -39,7 +59,7 @@ namespace Ibsys2.Static.Output {
             }
         }
 
-        public static void setAnzahlArtikel(int artikel, int anzahl) {
+        public void setAnzahlArtikel(int artikel, int anzahl) {
             switch (artikel) {
                 case 1:
                     AnzahlArtikel1 = anzahl;
@@ -54,8 +74,19 @@ namespace Ibsys2.Static.Output {
                     throw new Exception();
             }
         }
-        public static string XMLOutput() {
-            return @"<sellwish><item article=""1"" quantity="""+ _quantity1 + @"""/><item article=""2"" quantity=""" + _quantity2 + @"""/><item article=""3"" quantity=""" + _quantity3 + @"""/></sellwish>";
+        public string XMLOutput() {
+            string Output = "<sellwish>";
+            if (_quantity1 > 0)
+                Output += @"<item article=""1"" quantity=""" + _quantity1 + @"""/>";
+            if (_quantity2 > 0)
+                Output += @"<item article=""2"" quantity=""" + _quantity2 + @"""/>";
+            if (_quantity3 > 0)
+                Output += @"<item article=""3"" quantity=""" + _quantity3 + @"""/>";
+            return Output + "</sellwish>";
+        }
+
+        public void ClearClass() {
+            _class = null;
         }
     }
 }
