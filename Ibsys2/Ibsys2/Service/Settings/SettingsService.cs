@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Ibsys2.Service
+namespace Ibsys2.Service.Settings
 {
     class SettingsService
     {
