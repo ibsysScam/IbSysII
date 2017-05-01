@@ -5,6 +5,7 @@ using Ibsys2.Static.Output;
 using Ibsys2.Pages;
 using Ibsys2.Pages.ReadXML;
 using Ibsys2.Pages.CreateXML;
+using Ibsys2.Berechnungen.Datenstrukturen;
 
 namespace IbSysUnitTests
 {
@@ -73,6 +74,13 @@ namespace IbSysUnitTests
             Selldirect.Class.setAnzahlArtikel(1, 2, 3, 4);
             Selldirect.Class.setAnzahlArtikel(2, 2, 3, 4);
             Selldirect.Class.setAnzahlArtikel(3, 2, 3, 4);
+        }
+
+        [TestMethod]
+        public void ArticleDataStruct()
+        {
+            Article article = new Article(1,1,1,2.2,2.1,2.0);
+           
         }
 
     }

@@ -55,6 +55,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Berechnungen\Datenstrukturen\Article.cs" />
+    <Compile Include="Berechnungen\Datenstrukturen\Order.cs" />
     <Compile Include="Pages\CreateXML\CreateXML.xaml.cs">
       <DependentUpon>CreateXML.xaml</DependentUpon>
     </Compile>
@@ -132,8 +134,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Berechnungen\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
