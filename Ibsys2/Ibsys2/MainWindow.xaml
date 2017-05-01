@@ -12,6 +12,28 @@
         <Button x:Name="xmlgenerate" Content="Read XML File" HorizontalAlignment="Left" Margin="145,113,0,0" VerticalAlignment="Top" Width="118" Click="xmlgenerate_Click"/>
         <Label Content="Copyright 2017" HorizontalAlignment="Left" Margin="1138,653,0,0" VerticalAlignment="Top" Width="100"/>
         <Button x:Name="clear" Content="Clear all" HorizontalAlignment="Left" Margin="356,113,0,0" VerticalAlignment="Top" Width="75" Click="clear_Click"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="145,352,0,0" TextWrapping="Wrap" Text="P3" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="145,324,0,0" TextWrapping="Wrap" Text="P2" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="145,296,0,0" TextWrapping="Wrap" Text="P1" VerticalAlignment="Top" Width="120" />
+        <Label Content="Bestellungen" HorizontalAlignment="Left" Margin="145,265,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="297,296,0,0" TextWrapping="Wrap" Text="P1" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Prognosen:" HorizontalAlignment="Left" Margin="297,265,0,0" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="453,324,0,0" TextWrapping="Wrap" Text="P2" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="453,296,0,0" TextWrapping="Wrap" Text="P1" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="297,352,0,0" TextWrapping="Wrap" Text="P3" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="453,352,0,0" TextWrapping="Wrap" Text="P3" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="297,324,0,0" TextWrapping="Wrap" Text="P2" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="603,296,0,0" TextWrapping="Wrap" Text="P1" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="603,324,0,0" TextWrapping="Wrap" Text="P2" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="603,352,0,0" TextWrapping="Wrap" Text="P3" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="756,352,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="756,324,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="756,296,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="905,296,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="905,324,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="905,352,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Sicherheitsbestand:" HorizontalAlignment="Left" Margin="756,265,0,0" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Direktbestellungen:" HorizontalAlignment="Left" Margin="905,265,0,0" VerticalAlignment="Top" Width="120"/>
 
     </Grid>
 </Window>
