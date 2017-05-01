@@ -19,11 +19,10 @@ before_install:
     - git clone https://github.com/0x0ade/travis-msbuild.git
     - chmod a+x "$TRAVIS_MSBUILD_BIN"/msbuild-prepare
     - msbuild-prepare        
-        
+    - nuget restore Ibsys2/Ibsys2.sln
 
 before_script:
     - chmod +x *.sh
 
 script:
-    
     - msbuild Ibsys2/Ibsys2.sln /p:Configuration=Release
