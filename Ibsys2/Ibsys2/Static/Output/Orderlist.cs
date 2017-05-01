@@ -32,7 +32,7 @@ namespace Ibsys2.Static.Output {
         }
 
         public List<OrderlistItem> getOrdersByArticle(int article) {
-            return _list.FindAll(x => x.article == article);
+            return _list.FindAll(x => x.Article == article);
         }
 
         public string XMLOutput() {
@@ -54,7 +54,7 @@ namespace Ibsys2.Static.Output {
         private int _quantity;
         private int _modus;
 
-        public int article {
+        public int Article {
             get { return _article; }
             set {
                 if (value < 0 || value > 100)
@@ -63,7 +63,7 @@ namespace Ibsys2.Static.Output {
             }
         }
 
-        public int quantity {
+        public int Quantity {
             get { return _quantity; }
             set {
                 if (value < 0 || value > 1000000)
@@ -72,7 +72,7 @@ namespace Ibsys2.Static.Output {
             }
         }
 
-        public int modus {
+        public int Modus {
             get { return _modus; }
             set {
                 if (value < 0 || value > 1000000)
@@ -82,9 +82,9 @@ namespace Ibsys2.Static.Output {
         }
 
         public OrderlistItem(int article, int quantity, int modus) {
-            this.article = article;
-            this.quantity = quantity;
-            this.modus = modus;
+            this.Article = article;
+            this.Quantity = quantity;
+            this.Modus = modus;
         }
 
         public string XMLOutput() {

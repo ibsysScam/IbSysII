@@ -133,6 +133,8 @@ namespace Ibsys2.Service {
                 }
             }
         }
+        public class Language {
 
+        }
     }
 }
