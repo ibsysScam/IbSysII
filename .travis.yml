@@ -28,6 +28,7 @@ before_script:
     - chmod +x *.sh
 
 script:
+    - ./replace-version.sh
     - msbuild Ibsys2/Ibsys2.sln /p:Configuration=Release /t:Ibsys2:Rebuild
     
 after_success:
