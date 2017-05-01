@@ -27,7 +27,7 @@ namespace Ibsys2
             InitializeComponent();
         }
 
-        private void choosefile_Click(object sender, RoutedEventArgs e)
+        private void Choosefile_Click(object sender, RoutedEventArgs e)
         {
             Microsoft.Win32.OpenFileDialog dialogDateipfad = new Microsoft.Win32.OpenFileDialog();
             Nullable<bool> dialogDateipfadResult = dialogDateipfad.ShowDialog();
@@ -44,8 +44,7 @@ namespace Ibsys2
 
             if ((e.AllowedEffects & DragDropEffects.Copy) == DragDropEffects.Copy)
             {
-                Array data = ((IDataObject)e.Data).GetData("FileName") as Array;
-                if (data != null)
+                if (((IDataObject)e.Data).GetData("FileName") is Array data)
                 {
                     if ((data.Length == 1) && (data.GetValue(0) is String))
                     {
@@ -61,7 +60,7 @@ namespace Ibsys2
             return ret;
         }
 
-        private void xmlgenerate_Click(object sender, RoutedEventArgs e)
+        private void Xmlgenerate_Click(object sender, RoutedEventArgs e)
         {
             ReadXML readxml = new ReadXML();
             readxml.ReadFile(pathtextbox.Text);
@@ -73,8 +72,7 @@ namespace Ibsys2
         private void Window_DragEnter(object sender, DragEventArgs e)
         {
             Console.WriteLine("OnDragEnter");
-            string filename;
-            bool validData = GetFilename(out filename, e);
+            bool validData = GetFilename(out string filename, e);
             Console.WriteLine(validData.ToString());
             if (!validData)
             {
@@ -86,7 +84,7 @@ namespace Ibsys2
         }
 
 
-        private void clear_Click(object sender, RoutedEventArgs e)
+        private void Clear_Click(object sender, RoutedEventArgs e)
         {
             pathtextbox.Text = "";
         }

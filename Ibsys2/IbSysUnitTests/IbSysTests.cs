@@ -49,9 +49,9 @@ namespace IbSysUnitTests
         [TestMethod]
         public void GetOrderForItemOrderList()
         {
-            Orderlist.Class.getOrdersByArticle(1);
-            Orderlist.Class.getOrdersByArticle(2);
-            Orderlist.Class.getOrdersByArticle(3);
+            Orderlist.Class.GetOrdersByArticle(1);
+            Orderlist.Class.GetOrdersByArticle(2);
+            Orderlist.Class.GetOrdersByArticle(3);
         }
 
 
