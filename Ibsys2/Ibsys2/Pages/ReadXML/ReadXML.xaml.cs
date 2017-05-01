@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using System.Xml;
 using Ibsys2.Static;
 using Ibsys2.Static.Input;
+using System.IO;
 
 namespace Ibsys2.Pages.ReadXML {
     /// <summary>
@@ -37,12 +38,14 @@ namespace Ibsys2.Pages.ReadXML {
 
         }
 
-        public void ParseXML(string XMLinput) {
-            if (String.IsNullOrEmpty(XMLinput))
+        public void ParseXML(string filepath) {
+            string xmlinput = File.ReadAllText(filepath);
+
+            if (String.IsNullOrEmpty(xmlinput))
                 throw new ArgumentNullException();
 
             XmlDocument doc = new XmlDocument();
-            doc.LoadXml(XMLinput);
+            doc.LoadXml(xmlinput);
             Static.Static.game = Convert.ToInt32(doc.DocumentElement.Attributes["game"].InnerText);
             Static.Static.group = Convert.ToInt32(doc.DocumentElement.Attributes["group"].InnerText);
             Static.Static.period = Convert.ToInt32(doc.DocumentElement.Attributes["period"].InnerText);
