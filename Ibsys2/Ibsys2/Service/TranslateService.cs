@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 namespace Ibsys2.Service {
     public class TranslateService {
         private static TranslateService _class;
-        private Dictionary<string, LanguageDictionary> _dictionary;
-        private string _primaryLanguage = "de";
-        private string _fallbackLanguage = "en";
+        private Dictionary<Language, LanguageDictionary> _dictionary;
+        private Language _primaryLanguage;
+        private Language _fallbackLanguage;
 
         public static TranslateService Class {
             get {
@@ -21,31 +21,31 @@ namespace Ibsys2.Service {
 
         public string PrimaryLanguage {
             get {
-                return _primaryLanguage;
+                return _primaryLanguage.LanguageShortText;
             }
 
             set {
                 if (String.IsNullOrEmpty(value))
                     throw new ArgumentNullException();
                 value = value.ToLower();
-                if (!existsLanguage(value))
+                if (!ExistsLanguage(value))
                     throw new Exception("Language does not exist!");
-                _primaryLanguage = value;
+                _primaryLanguage = FindLanguage(value);
             }
         }
 
         public string FallbackLanguage {
             get {
-                return _fallbackLanguage;
+                return _fallbackLanguage.LanguageShortText;
             }
 
             set {
                 if (String.IsNullOrEmpty(value))
                     throw new ArgumentNullException();
                 value = value.ToLower();
-                if (!existsLanguage(value))
+                if (!ExistsLanguage(value))
                     throw new Exception("Language does not exist!");
-                _fallbackLanguage = value;
+                _fallbackLanguage = FindLanguage(value);
             }
         }
 
@@ -53,7 +53,7 @@ namespace Ibsys2.Service {
             if (_class != null)
                 throw new Exception("Class already exists!");
             _class = this;
-            _dictionary = new Dictionary<string, LanguageDictionary>();
+            _dictionary = new Dictionary<Language, LanguageDictionary>();
         }
 
         public string GetTranslation(string key) {
@@ -68,28 +68,58 @@ namespace Ibsys2.Service {
             return translation;
         }
 
-        public void AddTranslation(string language, string key, string translation) {
-            if (String.IsNullOrEmpty(language) || String.IsNullOrEmpty(key) || String.IsNullOrEmpty(translation))
+        public void AddTranslation(Language language, string key, string translation) {
+            if (String.IsNullOrEmpty(key) || String.IsNullOrEmpty(translation))
                 throw new ArgumentNullException();
-            language = language.ToLower();
-            if (!existsLanguage(language))
+            if (!ExistsLanguage(language))
                 _dictionary[language] = new LanguageDictionary(language);
             _dictionary[language].AddTranslation(key, translation);
         }
 
-        public void AddTranslation(string language, Dictionary<string, string> input) {
-            if (String.IsNullOrEmpty(language) || input == null)
+        public void AddTranslation(Language language, Dictionary<string, string> input) {
+            if (language == null || input == null)
                 throw new ArgumentNullException();
-            language = language.ToLower();
-            if (!existsLanguage(language))
+            if (!ExistsLanguage(language))
                 _dictionary[language] = new LanguageDictionary(language);
             _dictionary[language].AddTranslation(input);
         }
 
-        private bool existsLanguage(string language) {
+        private bool ExistsLanguage(string language) {
             if (String.IsNullOrEmpty(language))
                 throw new ArgumentNullException();
-            return _dictionary.ContainsKey(language.ToLower());
+            var foundLang = FindLanguage(language);
+            if (foundLang == null)
+                return false;
+            return ExistsLanguage(foundLang);
+        }
+
+        private bool ExistsLanguage(Language language) {
+            if (language == null)
+                throw new ArgumentNullException();
+            return _dictionary.ContainsKey(language);
+        }
+
+        public List<Language> GetLanguages() {
+            List<Language> l = new List<Language>();
+
+            foreach (var key in _dictionary.Keys)
+                l.Add(key);
+            return l;
+        }
+
+        private Language FindLanguage(string language) {
+            if (String.IsNullOrEmpty(language))
+                throw new ArgumentNullException();
+            foreach (var key in _dictionary.Keys) {
+                if (language.ToLower() == key.LanguageShortText.ToLower())
+                    return key;
+            }
+
+            foreach (var key in _dictionary.Keys) {
+                if (language.ToLower() == key.LanguageLongText.ToLower())
+                    return key;
+            }
+            return null;
         }
 
         public void ClearClass() {
@@ -99,10 +129,10 @@ namespace Ibsys2.Service {
 
 
         protected class LanguageDictionary {
-            private string _language;
+            private Language _language;
             private Dictionary<string, string> _dictionary;
 
-            public LanguageDictionary(string _language) {
+            public LanguageDictionary(Language _language) {
                 this._language = _language;
                 this._dictionary = new Dictionary<string, string>();
             }
@@ -134,7 +164,25 @@ namespace Ibsys2.Service {
             }
         }
         public class Language {
+            private string _lang;
+            private string _langLongText;
 
+            public Language(string _lang, string _langLongText) {
+                this._lang = _lang;
+                this._langLongText = _langLongText;
+            }
+
+            public string LanguageShortText {
+                get {
+                    return _lang;
+                }
+            }
+
+            public string LanguageLongText {
+                get {
+                    return _langLongText;
+                }
+            }
         }
     }
 }
