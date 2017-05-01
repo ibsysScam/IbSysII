@@ -40,6 +40,11 @@ namespace Ibsys2.Pages.ReadXML {
 
         public void ReadFile(string filepath)
         {
+            if (String.IsNullOrEmpty(filepath))
+            {
+                MessageBox.Show("Missing Filepath", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
             string xmlinput = File.ReadAllText(filepath);
             ParseXML(xmlinput);
         }
