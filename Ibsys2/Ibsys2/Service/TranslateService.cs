@@ -11,6 +11,11 @@ namespace Ibsys2.Service {
         private Language _primaryLanguage;
         private Language _fallbackLanguage;
 
+        private void LoadTranslations() {
+            GermanTranslation.AddLanguage();
+            EnglishTranslation.AddLanguage();
+        }
+
         public static TranslateService Class {
             get {
                 if (_class == null)
@@ -54,6 +59,8 @@ namespace Ibsys2.Service {
                 throw new Exception("Class already exists!");
             _class = this;
             _dictionary = new Dictionary<Language, LanguageDictionary>();
+
+            LoadTranslations();
         }
 
         public string GetTranslation(string key) {
