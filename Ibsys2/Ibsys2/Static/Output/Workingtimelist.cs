@@ -1,11 +1,12 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Ibsys2.Static.Output {
-    public class Workingtimelist {
+    public class Workingtimelist:IEnumerable<WorkingtimelistItem> {
         //<workingtimelist><workingtime station="[1-99]" shift="[1-9]" overtime="[0-999999]"/></workingtimelist>
         private static Workingtimelist _class;
         private List<WorkingtimelistItem> _list;
@@ -46,6 +47,14 @@ namespace Ibsys2.Static.Output {
         public void ClearClass() {
             _class = null;
             _list = null;
+        }
+
+        public IEnumerator<WorkingtimelistItem> GetEnumerator() {
+            return ((IEnumerable<WorkingtimelistItem>)_list).GetEnumerator();
+        }
+
+        IEnumerator IEnumerable.GetEnumerator() {
+            return ((IEnumerable<WorkingtimelistItem>)_list).GetEnumerator();
         }
     }
 
