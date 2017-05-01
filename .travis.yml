@@ -9,8 +9,8 @@ mono: none
 env: DOTNETCORE=1
 
 install:
-    - dotnet restore src
+    - dotnet restore Ibsys2
 before_script:
-    - chmod +x ./build/*.sh
+    - chmod +x *.sh
 script:
 - ./build.sh
