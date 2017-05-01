@@ -4,13 +4,27 @@ os: linux
 git:
   depth: 3
 language: csharp
-dotnet: 1.0.1
-mono: none
-env: DOTNETCORE=1
+solution: Ibsys2/Ibsys2.sln
+env: 
+    global:
+        - "DOTNETCORE=1"
+        - "BUILD_NUMBER=$TRAVIS_BUILD_NUMBER"
+        - "BUILD_DIR=$TRAVIS_BUILD_DIR"
+        - "TRAVIS_MSBUILD_MODE=framework"
+        - "TRAVIS_MSBUILD=./travis-msbuild"
+        - "TRAVIS_MSBUILD_BIN=$TRAVIS_MSBUILD/bin"
+        - "TRAVIS_MSBUILD_FRAMEWORK=$TRAVIS_MSBUILD/lib-dotnet"
+        - "PATH=$PATH:$TRAVIS_MSBUILD_BIN"
 
-install:
-    - dotnet restore Ibsys2
+before_install:        
+    - git clone https://github.com/0x0ade/travis-msbuild.git
+    - chmod a+x "$TRAVIS_MSBUILD_BIN"/msbuild-prepare
+    - msbuild-prepare        
+    - nuget restore Ibsys2/Ibsys2.sln
+    - nuget update Ibsys2/Ibsys2.sln
+
 before_script:
     - chmod +x *.sh
+
 script:
-- ./build.sh
+    - msbuild Ibsys2/Ibsys2.sln /p:Configuration=Release
