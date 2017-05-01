@@ -25,9 +25,9 @@ namespace IbSysUnitTests
         [TestMethod]      
         public void getQuantityForItem()
         {
-            Ibsys2.Static.Output.Productionlist.Class.getQuantityForArticle(1);
-            Ibsys2.Static.Output.Productionlist.Class.getQuantityForArticle(2);
-            Ibsys2.Static.Output.Productionlist.Class.getQuantityForArticle(3);
+            Ibsys2.Static.Output.Productionlist.Class.getQuantitysForArticle(1);
+            Ibsys2.Static.Output.Productionlist.Class.getQuantitysForArticle(2);
+            Ibsys2.Static.Output.Productionlist.Class.getQuantitysForArticle(3);
         }
 
         [TestMethod]

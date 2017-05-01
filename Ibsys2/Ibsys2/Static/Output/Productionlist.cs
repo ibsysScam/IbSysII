@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Ibsys2.Static.Output {
-    public class Productionlist:IEnumerable<ProductionlistItem> {
+    public class Productionlist {
         //<productionlist><production article="[1-99]" quantity="[0-999999]"/></productionlist>
         private List<ProductionlistItem> _list = new List<ProductionlistItem>();
 
@@ -30,12 +30,11 @@ namespace Ibsys2.Static.Output {
         public void AddItem(ProductionlistItem item) {
             if (item == null)
                 throw new Exception();
-            _list.RemoveAll(x => x.article == item.article);
             _list.Add(item);
         }
 
-        public ProductionlistItem getQuantityForArticle(int article) {
-            return _list.Find(x => x.article == article);
+        public List<ProductionlistItem> getQuantitysForArticle(int article) {
+            return _list.FindAll(x => x.article == article);
         }
 
         public string XMLOutput() {
@@ -47,14 +46,6 @@ namespace Ibsys2.Static.Output {
         public void ClearClass() {
             _class = null;
             _list = null;
-        }
-
-        public IEnumerator<ProductionlistItem> GetEnumerator() {
-            return ((IEnumerable<ProductionlistItem>)_list).GetEnumerator();
-        }
-
-        IEnumerator IEnumerable.GetEnumerator() {
-            return ((IEnumerable<ProductionlistItem>)_list).GetEnumerator();
         }
     }
 

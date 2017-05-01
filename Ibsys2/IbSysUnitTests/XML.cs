@@ -22,15 +22,20 @@ namespace IbSysUnitTests {
         public void TestCreateXMLPeriode1() {
             CreateXML createXML = new CreateXML();
             XMLCreatePeriode1();
-            createXML.GenerateXMLData();
+            var XML = createXML.GenerateXMLData();
 
+            if (String.Compare(XML, _XMLTestOutputPeriode1, true) != 0)
+                throw new Exception("XML Output is not the same!");
         }
 
         [TestMethod]
         public void TestCreateXMLPeriode2() {
             CreateXML createXML = new CreateXML();
             XMLCreatePeriode2();
-            createXML.GenerateXMLData();
+            var XML = createXML.GenerateXMLData();
+
+            if (String.Compare(XML, _XMLTestOutputPeriode2, true) != 0)
+                throw new Exception("XML Output is not the same!");
         }
 
         public void XMLCreatePeriode1() {
@@ -41,6 +46,13 @@ namespace IbSysUnitTests {
 
             System.Xml.XmlDocument doc = new XmlDocument();
             doc.LoadXml(XML._XMLTestOutputPeriode1);
+
+            Sellwish.Class.ClearClass();
+            Selldirect.Class.ClearClass();
+            Orderlist.Class.ClearClass();
+            Productionlist.Class.ClearClass();
+            Workingtimelist.Class.ClearClass();
+            Qualitycontrol.Class.ClearClass();
 
             foreach (XmlNode GreatNode in doc.DocumentElement.ChildNodes) {
                 foreach (XmlNode node in GreatNode) {
@@ -71,6 +83,13 @@ namespace IbSysUnitTests {
 
             System.Xml.XmlDocument doc = new XmlDocument();
             doc.LoadXml(XML._XMLTestOutputPeriode2);
+
+            Sellwish.Class.ClearClass();
+            Selldirect.Class.ClearClass();
+            Orderlist.Class.ClearClass();
+            Productionlist.Class.ClearClass();
+            Workingtimelist.Class.ClearClass();
+            Qualitycontrol.Class.ClearClass();
 
             foreach (XmlNode GreatNode in doc.DocumentElement.ChildNodes) {
                 foreach (XmlNode node in GreatNode) {
