@@ -5,11 +5,6 @@ dist: trusty
 solution: Ibsys2/Ibsys2.sln
 
 
-install:
-  - sudo apt-get install -y gtk-sharp2
-  - nuget restore Ibsys2.sln
-  - nuget install NUnit.Runners -Version 2.6.4 -OutputDirectory testrunner
-
 script:    # the following commands are just examples, use whatever your build process requires
   - ./build.sh
   - ./test.sh
