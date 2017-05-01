@@ -27,4 +27,4 @@ before_script:
     - chmod +x *.sh
 
 script:
-    - msbuild Ibsys2/Ibsys2.sln /p:Configuration=Release
+    - msbuild Ibsys2/Ibsys2.sln /p:Configuration=Release /t:NotInSolutionfolder:Rebuild;NewFolder\InSolutionFolder:Clean  
