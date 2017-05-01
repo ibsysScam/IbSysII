@@ -37,10 +37,58 @@ namespace Ibsys2
             }
         }
 
+        protected bool GetFilename(out string filename, DragEventArgs e)
+        {
+            bool ret = false;
+            filename = String.Empty;
+
+            if ((e.AllowedEffects & DragDropEffects.Copy) == DragDropEffects.Copy)
+            {
+                Array data = ((IDataObject)e.Data).GetData("FileName") as Array;
+                if (data != null)
+                {
+                    if ((data.Length == 1) && (data.GetValue(0) is String))
+                    {
+                        filename = ((string[])data)[0];
+                        string ext = System.IO.Path.GetExtension(filename).ToLower();
+                        if ((ext == ".xml") || (ext == ".XML"))
+                        {
+                            ret = true;
+                        }
+                    }
+                }
+            }
+            return ret;
+        }
+
         private void xmlgenerate_Click(object sender, RoutedEventArgs e)
-        {    
+        {
             ReadXML readxml = new ReadXML();
             readxml.ReadFile(pathtextbox.Text);
+        }
+
+
+
+
+        private void Window_DragEnter(object sender, DragEventArgs e)
+        {
+            Console.WriteLine("OnDragEnter");
+            string filename;
+            bool validData = GetFilename(out filename, e);
+            Console.WriteLine(validData.ToString());
+            if (!validData)
+            {
+                MessageBox.Show("File is not an XML File!");
+                return;
+            }
+
+            pathtextbox.Text = filename;
+        }
+
+
+        private void clear_Click(object sender, RoutedEventArgs e)
+        {
+            pathtextbox.Text = "";
         }
     }
 }
