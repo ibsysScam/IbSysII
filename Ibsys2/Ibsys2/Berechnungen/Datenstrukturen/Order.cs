@@ -59,7 +59,7 @@ namespace Ibsys2.Berechnungen.Datenstrukturen
             }
         }
 
-        public double article
+        public double Article
         {
             get
             {

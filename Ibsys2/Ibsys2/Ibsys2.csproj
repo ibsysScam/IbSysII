@@ -63,8 +63,8 @@
     <Compile Include="Pages\ReadXML\ReadXML.xaml.cs">
       <DependentUpon>ReadXML.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Welcome\Welcome.xaml.cs">
-      <DependentUpon>Welcome.xaml</DependentUpon>
+    <Compile Include="Pages\Settings\Settings.xaml.cs">
+      <DependentUpon>Settings.xaml</DependentUpon>
     </Compile>
     <Compile Include="Service\TranslateService.cs" />
     <Compile Include="Static\Input\Completedorders.cs" />
@@ -104,7 +104,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\Welcome\Welcome.xaml">
+    <Page Include="Pages\Settings\Settings.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

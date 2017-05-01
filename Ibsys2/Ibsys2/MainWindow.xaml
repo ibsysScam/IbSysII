@@ -5,13 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Ibsys2"
         mc:Ignorable="d"
-        Title="Transmorfers" Height="720" Width="1280"  AllowDrop="True" DragEnter="Window_DragEnter" >
+        Title="Transmorfers" ResizeMode="NoResize" Height="720" Width="1280"  AllowDrop="True" DragEnter="Window_DragEnter" >
     <Grid>
         <TextBox x:Name="pathtextbox" HorizontalAlignment="Left" Height="23" Margin="145,85,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="286"/>
-        <Button x:Name="choosefile" Content="Browse File" HorizontalAlignment="Left" Margin="145,60,0,0" VerticalAlignment="Top" Width="75" Click="choosefile_Click"/>
-        <Button x:Name="xmlgenerate" Content="Read XML File" HorizontalAlignment="Left" Margin="145,113,0,0" VerticalAlignment="Top" Width="118" Click="xmlgenerate_Click"/>
+        <Button x:Name="choosefile" Content="Browse File" HorizontalAlignment="Left" Margin="145,60,0,0" VerticalAlignment="Top" Width="75" Click="Choosefile_Click"/>
+        <Button x:Name="xmlgenerate" Content="Read XML File" HorizontalAlignment="Left" Margin="145,113,0,0" VerticalAlignment="Top" Width="118" Click="Xmlgenerate_Click"/>
         <Label Content="Copyright 2017" HorizontalAlignment="Left" Margin="1138,653,0,0" VerticalAlignment="Top" Width="100"/>
-        <Button x:Name="clear" Content="Clear all" HorizontalAlignment="Left" Margin="356,113,0,0" VerticalAlignment="Top" Width="75" Click="clear_Click"/>
+        <Button x:Name="clear" Content="Clear all" HorizontalAlignment="Left" Margin="356,113,0,0" VerticalAlignment="Top" Width="75" Click="Clear_Click"/>
         <TextBox x:Name="ordersp3" HorizontalAlignment="Left" Height="23" Margin="145,352,0,0" TextWrapping="Wrap" Text="P3" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="ordersp2" HorizontalAlignment="Left" Height="23" Margin="145,324,0,0" TextWrapping="Wrap" Text="P2" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="ordersp1" HorizontalAlignment="Left" Height="23" Margin="145,296,0,0" TextWrapping="Wrap" Text="P1" VerticalAlignment="Top" Width="120" />
@@ -34,6 +34,7 @@
         <TextBox x:Name="directordersp3" HorizontalAlignment="Left" Height="23" Margin="905,352,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Label Content="Sicherheitsbestand:" HorizontalAlignment="Left" Margin="756,265,0,0" VerticalAlignment="Top" Width="120"/>
         <Label Content="Direktbestellungen:" HorizontalAlignment="Left" Margin="905,265,0,0" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="settingsbutton" Content="Settings" HorizontalAlignment="Left" Margin="1163,614,0,0" VerticalAlignment="Top" Width="75"/>
 
     </Grid>
 </Window>

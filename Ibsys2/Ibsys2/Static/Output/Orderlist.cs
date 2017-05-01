@@ -31,7 +31,7 @@ namespace Ibsys2.Static.Output {
             _list.Add(item);
         }
 
-        public List<OrderlistItem> getOrdersByArticle(int article) {
+        public List<OrderlistItem> GetOrdersByArticle(int article) {
             return _list.FindAll(x => x.Article == article);
         }
 
