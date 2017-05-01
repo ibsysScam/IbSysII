@@ -1,7 +1,9 @@
 language: csharp
-solution: Ibsys2.sln
-dotnet: 4.5.2
+mono: none
+dotnet: 1.0.1
 dist: trusty
+solution: Ibsys2/Ibsys2.sln
+
 
 install:
   - nuget restore Ibsys2.sln
