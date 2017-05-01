@@ -67,9 +67,9 @@
       <DependentUpon>Settings.xaml</DependentUpon>
     </Compile>
     <Compile Include="Service\Settings\SettingsService..cs" />
-    <Compile Include="Service\TranslateService.cs" />
-    <Compile Include="Service\Translations\English.cs" />
-    <Compile Include="Service\Translations\German.cs" />
+    <Compile Include="Service\Translate\TranslateService.cs" />
+    <Compile Include="Service\Translate\Translations\English.cs" />
+    <Compile Include="Service\Translate\Translations\German.cs" />
     <Compile Include="Static\Input\Completedorders.cs" />
     <Compile Include="Static\Input\Cycletimes.cs" />
     <Compile Include="Static\Input\Futureinwardstockmovement.cs" />

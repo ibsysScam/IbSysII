@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using Ibsys2.Pages.ReadXML;
 using System.IO;
 using Ibsys2.Pages;
+using Ibsys2.Service;
 
 namespace Ibsys2
 {
@@ -25,6 +26,8 @@ namespace Ibsys2
     {
         public MainWindow()
         {
+            TranslateService.Class.PrimaryLanguage = "de";
+            TranslateService.Class.FallbackLanguage = "en";
             InitializeComponent();
         }
 
