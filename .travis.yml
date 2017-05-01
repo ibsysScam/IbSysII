@@ -25,5 +25,5 @@ before_script:
     - chmod +x *.sh
 
 script:
-    - cd Ibsys2
-    - msbuild /p:Configuration=Release
+    
+    - msbuild Ibsys2/Ibsys2.sln /p:Configuration=Release
