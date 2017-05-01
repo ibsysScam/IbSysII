@@ -30,6 +30,6 @@ before_script:
 script:
     - msbuild Ibsys2/Ibsys2.sln /p:Configuration=Release /t:Ibsys2:Rebuild
     
-    after_success:
+after_success:
     - chmod a+x ./github-release.sh
     - ./github-release.sh "$TRAVIS_REPO_SLUG" "$TRAVIS_TAG" Ibsys2/Ibsys2/bin/Release/Ibsys2.exe
