@@ -20,6 +20,7 @@ before_install:
     - git clone https://github.com/0x0ade/travis-msbuild.git
     - chmod a+x "$TRAVIS_MSBUILD_BIN"/msbuild-prepare
     - msbuild-prepare        
+    - apt-get install libunwind8-dev
     - nuget restore Ibsys2/Ibsys2.sln
     - nuget update Ibsys2/Ibsys2.sln
 
