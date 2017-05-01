@@ -34,7 +34,7 @@ namespace Ibsys2.Pages
             var languages = TranslateService.Class.GetLanguages();
             foreach (var language in languages)
             {
-                Languageselector.Items.Add(language);
+                Languageselector.Items.Add(language.LanguageLongText);
             }
         }
 
