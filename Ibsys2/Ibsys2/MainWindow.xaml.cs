@@ -89,6 +89,11 @@ namespace Ibsys2
             pathtextbox.Text = "";
         }
 
-       
+        private void settingsbutton_Click(object sender, RoutedEventArgs e)
+        {
+            Uri uri = new Uri("Settings.xaml", UriKind.Relative);
+            this.NavigationService.Navigate(uri);
+           
+        }
     }
 }
