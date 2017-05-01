@@ -66,6 +66,7 @@
     <Compile Include="Pages\Welcome\Welcome.xaml.cs">
       <DependentUpon>Welcome.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Service\TranslateService.cs" />
     <Compile Include="Static\Input\Completedorders.cs" />
     <Compile Include="Static\Input\Cycletimes.cs" />
     <Compile Include="Static\Input\Futureinwardstockmovement.cs" />
