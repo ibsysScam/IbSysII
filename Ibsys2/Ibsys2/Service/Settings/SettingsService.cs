@@ -1,6 +1,7 @@
 ﻿using System.IO;
 using Ibsys2.Static;
 using System;
+using System.Xml;
 
 namespace Ibsys2.Service
 {
@@ -28,6 +29,21 @@ namespace Ibsys2.Service
         }
         public void ReadSettings()
         {
+            string filepath = Static.Static.settingsfile;
+
+            string xmlinput = File.ReadAllText(filepath);
+
+            if (String.IsNullOrEmpty(xmlinput))
+                throw new ArgumentNullException();
+
+            XmlDocument doc = new XmlDocument();
+            doc.LoadXml(xmlinput);
+
+
+            XmlNode language = doc.SelectSingleNode("/Settings/Language");
+            Static.Static.language = language.InnerText;
+
+
 
         }
 
@@ -40,17 +56,15 @@ namespace Ibsys2.Service
         {
             
             string file = Static.Static.settingsfile;
-            string initialsettings = @"
-    <?xml version=""1.0"" encoding=""UTF - 8""?>
-    <settings>
-        <language>deutsch</language>
-
-    </settings>";
+            string initialsettings = @"<?xml version=""1.0"" encoding=""UTF-8""?>
+<Settings>
+<Language>Deutsch</Language>
+</Settings>";
 
 
             if (!File.Exists(file))
             {
-                File.Create(file);
+               
                 StreamWriter sw = new StreamWriter(file);
                 sw.Write(initialsettings);
                 sw.Close();

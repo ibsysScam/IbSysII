@@ -27,9 +27,11 @@ namespace Ibsys2
         public MainWindow()
         {
             SettingsService.Class.InitializeXML();
+            SettingsService.Class.ReadSettings();
             TranslateService.Class.PrimaryLanguage = "de";
             TranslateService.Class.FallbackLanguage = "en";
             InitializeComponent();
+            
         }
 
         private void Choosefile_Click(object sender, RoutedEventArgs e)

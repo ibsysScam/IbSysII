@@ -40,7 +40,7 @@ namespace Ibsys2.Pages
 
         private void Languageselector_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            Static.Static.translationlanguage = "";
+            Static.Static.language = "";
         }
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
