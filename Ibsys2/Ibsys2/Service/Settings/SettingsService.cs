@@ -50,9 +50,17 @@ namespace Ibsys2.Service
         public void SaveSettings(string ElementID, string value)
         {
             XmlWriter writer = XmlWriter.Create(Static.Static.settingsfile);
-         
-            writer.WriteElementString(ElementID, value);
-            
+
+            writer.WriteStartDocument();
+            writer.WriteStartElement("Settings");
+
+            if(ElementID  == "Language")
+            {
+                writer.WriteElementString(ElementID, value);
+            }
+
+            writer.WriteEndElement();
+            writer.WriteEndDocument();
         }
 
         public void InitializeXML()

@@ -36,18 +36,20 @@ namespace Ibsys2.Pages
             {
                 Languageselector.Items.Add(language.LanguageLongText);
             }
+            Languageselector.SelectedValue = Static.Static.language;
         }
 
         private void Languageselector_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            SettingsService.Class.SaveSettings("Language", Languageselector.SelectionBoxItem.ToString());
+            //SettingsService.Class.SaveSettings("Language", Languageselector.SelectionBoxItem.ToString());
+            
         }
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
             Thread.Sleep(100);
-            MessageBox.Show(TranslateService.Class.GetTranslation("HELLO"), "Settings", MessageBoxButton.OK, MessageBoxImage.Asterisk);
-            
+            MessageBox.Show(TranslateService.Class.GetTranslation("SETTINGS_SAVED"), "Settings", MessageBoxButton.OK, MessageBoxImage.Asterisk);
+            //SettingsService.Class.SaveSettings("Language",Languageselector.SelectionBoxItem.ToString());
             return;
         }
 

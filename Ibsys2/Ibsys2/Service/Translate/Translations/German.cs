@@ -15,6 +15,7 @@ namespace Ibsys2.Service {
 
         private static void Translate() {
             _translate.Add("HELLO", "Hallo");
+            _translate.Add("SETTINGS_SAVED", "Einstellungen gespeichert!");
         }
         
     }
