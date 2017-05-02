@@ -2,6 +2,7 @@
 using Ibsys2.Static;
 using System;
 using System.Xml;
+using System.Text;
 
 namespace Ibsys2.Service
 {
@@ -43,24 +44,22 @@ namespace Ibsys2.Service
             XmlNode language = doc.SelectSingleNode("/Settings/Language");
             Static.Static.language = language.InnerText;
 
-
+            TranslateService.Class.PrimaryLanguage = Static.Static.language;
 
         }
 
         public void SaveSettings(string ElementID, string value)
         {
-            XmlWriter writer = XmlWriter.Create(Static.Static.settingsfile);
+            string filename = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), Static.Static.settingsfile);
 
-            writer.WriteStartDocument();
-            writer.WriteStartElement("Settings");
-
-            if(ElementID  == "Language")
+            XmlDocument document = new XmlDocument();
+            XmlNode Root = document.CreateElement("Settings");
+            document.AppendChild(Root);
+            Root.AppendChild(document.CreateElement("Language")).InnerText = Static.Static.language;
+            using (TextWriter sw = new StreamWriter(filename,false, Encoding.UTF8))
             {
-                writer.WriteElementString(ElementID, value);
+                document.Save(sw);
             }
-
-            writer.WriteEndElement();
-            writer.WriteEndDocument();
         }
 
         public void InitializeXML()
