@@ -47,9 +47,12 @@ namespace Ibsys2.Service
 
         }
 
-        public void SaveSettings()
+        public void SaveSettings(string ElementID, string value)
         {
-
+            XmlWriter writer = XmlWriter.Create(Static.Static.settingsfile);
+         
+            writer.WriteElementString(ElementID, value);
+            
         }
 
         public void InitializeXML()
