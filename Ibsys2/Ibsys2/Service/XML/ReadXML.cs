@@ -21,6 +21,9 @@ namespace Ibsys2.Service {
 
                 XmlDocument doc = new XmlDocument();
                 doc.LoadXml(XMLinput);
+
+                Static.Static.ClearInputClasses();
+
                 Static.Static.game = Convert.ToInt32(doc.DocumentElement.Attributes["game"].InnerText);
                 Static.Static.group = Convert.ToInt32(doc.DocumentElement.Attributes["group"].InnerText);
                 Static.Static.lastperiod = Convert.ToInt32(doc.DocumentElement.Attributes["period"].InnerText);
