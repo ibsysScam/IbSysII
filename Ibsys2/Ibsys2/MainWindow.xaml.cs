@@ -30,6 +30,7 @@ namespace Ibsys2
             SettingsService.Class.LoadSettings();
             TranslateService.Class.PrimaryLanguage = "de";
             TranslateService.Class.FallbackLanguage = "en";
+            InitializeTranslation();
             InitializeComponent();
             
         }

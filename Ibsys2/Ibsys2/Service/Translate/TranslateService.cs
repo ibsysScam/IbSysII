@@ -14,6 +14,8 @@ namespace Ibsys2.Service {
         private void LoadTranslations() {
             GermanTranslation.AddLanguage();
             EnglishTranslation.AddLanguage();
+            FallbackLanguage = "de";
+            PrimaryLanguage = "en";
         }
 
         public static TranslateService Class {
@@ -36,6 +38,18 @@ namespace Ibsys2.Service {
                 if (!ExistsLanguage(value))
                     throw new Exception("Language does not exist!");
                 _primaryLanguage = FindLanguage(value);
+            }
+        }
+
+        public Language GetPrimaryLanguage {
+            get {
+                return _primaryLanguage;
+            }
+        }
+
+        public Language GetFallbackLanguage {
+            get {
+                return _fallbackLanguage;
             }
         }
 
