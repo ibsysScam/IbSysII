@@ -6,7 +6,20 @@
       xmlns:local="clr-namespace:Ibsys2.Pages.Wiki"
       mc:Ignorable="d" 
       d:DesignHeight="300" d:DesignWidth="300"
-      Title="Wiki">
+      Title="Wiki" ResizeMode="NoResize" Height="300" Width="500">
 
-    <Grid/>
+    <Grid>
+        <Menu>
+            <Menu.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <VirtualizingStackPanel Orientation="Vertical"/>
+                    <MenuItem Header="Programm">
+                        <MenuItem x:Name="Helpmenuitem" Header="Help" Click="Helpmenuitem_Click"/>
+                        <MenuItem x:Name="Closemenuitem" Header="Close" Click="Closemenuitem_Click"/>
+                    </MenuItem>
+                </ItemsPanelTemplate>
+            </Menu.ItemsPanel>
+            
+        </Menu>
+    </Grid>
 </Window>

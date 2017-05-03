@@ -24,5 +24,7 @@ namespace Ibsys2.Pages.Wiki
         {
             InitializeComponent();
         }
+
+       
     }
 }

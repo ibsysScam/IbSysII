@@ -20,36 +20,61 @@
         <TabControl HorizontalAlignment="Left" Height="672" Margin="0,19,0,0" VerticalAlignment="Top" Width="1274">
             <TabItem Header="Main">
                 <Grid Background="#FFE5E5E5">
-                    <Button x:Name="choosefile" Content="Browse File" HorizontalAlignment="Left" Margin="10,21,0,0" VerticalAlignment="Top" Width="75" Click="Choosefile_Click"/>
+                    <Button x:Name="choosefile" Content="Browse File" HorizontalAlignment="Left" Margin="10,52,0,0" VerticalAlignment="Top" Width="75" Click="Choosefile_Click" ToolTip="Drag and Drop your XML File instead of choosing it here!"/>
                     <Button x:Name="xmlgenerate" Content="Read XML File" HorizontalAlignment="Left" Margin="10,105,0,0" VerticalAlignment="Top" Width="118" Click="Xmlgenerate_Click"/>
-                    <TextBox x:Name="pathtextbox" MaxLines="1" HorizontalAlignment="Left" Height="23" Margin="10,77,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="286"/>
-                    <Button x:Name="clear" Content="Clear all" HorizontalAlignment="Left" Margin="221,105,0,0" VerticalAlignment="Top" Width="75" Click="Clear_Click" RenderTransformOrigin="0.587,3.75"/>
-                    <Label Content="Verbindliche Aufträge:" HorizontalAlignment="Left" Margin="379,99,0,0" VerticalAlignment="Top"/>
-                    <TextBox x:Name="ordersp1" HorizontalAlignment="Left" Height="23" Margin="354,139,0,0" TextWrapping="Wrap" Text="Kinder P1" VerticalAlignment="Top" Width="120" />
-                    <Label Content="Sicherheitsbestand:" HorizontalAlignment="Left" Margin="970,99,0,0" VerticalAlignment="Top" Width="120"/>
-                    <Label Content="Direktbestellungen:" HorizontalAlignment="Left" Margin="1121,99,0,0" VerticalAlignment="Top" Width="120"/>
-                    <TextBox x:Name="forecastsy1p1" HorizontalAlignment="Left" Height="23" Margin="528,139,0,0" TextWrapping="Wrap" Text="P1" VerticalAlignment="Top" Width="120"/>
-                    <Label Content="Prognosen:" HorizontalAlignment="Left" Margin="528,99,0,0" VerticalAlignment="Top" Width="120"/>
-                    <TextBox x:Name="directordersp1" HorizontalAlignment="Left" Height="23" Margin="1121,130,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-                    <TextBox x:Name="directordersp2" HorizontalAlignment="Left" Height="23" Margin="1121,158,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-                    <TextBox x:Name="directordersp3" HorizontalAlignment="Left" Height="23" Margin="1121,186,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-                    <Button x:Name="calculatebutton" Content="Berechne" HorizontalAlignment="Left" Margin="1166,214,0,0" VerticalAlignment="Top" Width="75"/>
-                    <TextBox x:Name="reservestockp1" HorizontalAlignment="Left" Height="23" Margin="970,139,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-                    <TextBox x:Name="reservestockp2" HorizontalAlignment="Left" Height="23" Margin="970,167,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-                    <TextBox x:Name="reservestockp3" HorizontalAlignment="Left" Height="23" Margin="970,195,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-                    <TextBox x:Name="forecastsy3p1" HorizontalAlignment="Left" Height="23" Margin="792,139,0,0" TextWrapping="Wrap" Text="P1" VerticalAlignment="Top" Width="120"/>
-                    <TextBox x:Name="forecastsy3p2" HorizontalAlignment="Left" Height="23" Margin="792,167,0,0" TextWrapping="Wrap" Text="P2" VerticalAlignment="Top" Width="120"/>
-                    <TextBox x:Name="forecastsy3p3" HorizontalAlignment="Left" Height="23" Margin="792,200,0,0" TextWrapping="Wrap" Text="P3" VerticalAlignment="Top" Width="120"/>
-                    <TextBox x:Name="forecastsy2p1" HorizontalAlignment="Left" Height="23" Margin="667,139,0,0" TextWrapping="Wrap" Text="P1" VerticalAlignment="Top" Width="120"/>
-                    <TextBox x:Name="forecastsy2p2" HorizontalAlignment="Left" Height="23" Margin="667,167,0,0" TextWrapping="Wrap" Text="P2" VerticalAlignment="Top" Width="120"/>
-                    <TextBox x:Name="forecastsy2p3" HorizontalAlignment="Left" Height="23" Margin="667,200,0,0" TextWrapping="Wrap" Text="P3" VerticalAlignment="Top" Width="120"/>
-                    <TextBox x:Name="forecastsy1p2" HorizontalAlignment="Left" Height="23" Margin="528,167,0,0" TextWrapping="Wrap" Text="P2" VerticalAlignment="Top" Width="120"/>
-                    <TextBox x:Name="forecastsy1p3" HorizontalAlignment="Left" Height="23" Margin="528,200,0,0" TextWrapping="Wrap" Text="P3" VerticalAlignment="Top" Width="120"/>
-                    <TextBox x:Name="ordersp2" HorizontalAlignment="Left" Height="23" Margin="354,172,0,0" TextWrapping="Wrap" Text="Damen P2" VerticalAlignment="Top" Width="120"/>
-                    <TextBox x:Name="ordersp3" HorizontalAlignment="Left" Height="23" Margin="354,200,0,0" TextWrapping="Wrap" Text="Herren P3" VerticalAlignment="Top" Width="120"/>
+                    <TextBox x:Name="pathtextbox" MaxLines="1" HorizontalAlignment="Left" Height="23" Margin="10,77,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="286" TabIndex="0" ToolTip="Drag Dop your XML File here!"/>
+                    <Button x:Name="clear" Content="Clear all" HorizontalAlignment="Left" Margin="221,52,0,0" VerticalAlignment="Top" Width="75" Click="Clear_Click" RenderTransformOrigin="0.587,3.75"/>
+                    <Label Content="Verbindliche Aufträge:" HorizontalAlignment="Left" Margin="10,233,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="ordersp1" HorizontalAlignment="Left" Height="23" Margin="10,259,0,0" TextWrapping="Wrap" Text="Kinder P1" VerticalAlignment="Top" Width="120" TabIndex="1" />
+                    <Label Content="Sicherheitsbestand:" HorizontalAlignment="Left" Margin="606,233,0,0" VerticalAlignment="Top" Width="120"/>
+                    <Label Content="Direktbestellungen:" HorizontalAlignment="Left" Margin="779,233,0,0" VerticalAlignment="Top" Width="120"/>
+                    <TextBox x:Name="forecastsy1p1" HorizontalAlignment="Left" Height="23" Margin="191,259,0,0" TextWrapping="Wrap" Text="P1" VerticalAlignment="Top" Width="120" TabIndex="4"/>
+                    <Label Content="Prognosen:" HorizontalAlignment="Left" Margin="191,233,0,0" VerticalAlignment="Top" Width="120"/>
+                    <TextBox x:Name="directordersp1" HorizontalAlignment="Left" Height="23" Margin="779,259,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TabIndex="16"/>
+                    <TextBox x:Name="directordersp2" HorizontalAlignment="Left" Height="23" Margin="779,287,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TabIndex="17"/>
+                    <TextBox x:Name="directordersp3" HorizontalAlignment="Left" Height="23" Margin="779,315,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TabIndex="18"/>
+                    <Button x:Name="calculatebutton" Content="Berechne" HorizontalAlignment="Left" Margin="824,343,0,0" VerticalAlignment="Top" Width="75" Click="calculatebutton_Click"/>
+                    <TextBox x:Name="reservestockp1" HorizontalAlignment="Left" Height="23" Margin="606,259,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TabIndex="13"/>
+                    <TextBox x:Name="reservestockp2" HorizontalAlignment="Left" Height="23" Margin="606,287,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TabIndex="14"/>
+                    <TextBox x:Name="reservestockp3" HorizontalAlignment="Left" Height="23" Margin="606,315,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TabIndex="15"/>
+                    <TextBox x:Name="forecastsy3p1" HorizontalAlignment="Left" Height="23" Margin="451,259,0,0" TextWrapping="Wrap" Text="P1" VerticalAlignment="Top" Width="120" TabIndex="10" RenderTransformOrigin="0.5,0.5"/>
+                    <TextBox x:Name="forecastsy3p2" HorizontalAlignment="Left" Height="23" Margin="451,287,0,0" TextWrapping="Wrap" Text="P2" VerticalAlignment="Top" Width="120" TabIndex="11"/>
+                    <TextBox x:Name="forecastsy3p3" HorizontalAlignment="Left" Height="23" Margin="451,315,0,0" TextWrapping="Wrap" Text="P3" VerticalAlignment="Top" Width="120" TabIndex="12"/>
+                    <TextBox x:Name="forecastsy2p1" HorizontalAlignment="Left" Height="23" Margin="326,259,0,0" TextWrapping="Wrap" Text="P1" VerticalAlignment="Top" Width="120" TabIndex="7"/>
+                    <TextBox x:Name="forecastsy2p2" HorizontalAlignment="Left" Height="23" Margin="326,287,0,0" TextWrapping="Wrap" Text="P2" VerticalAlignment="Top" Width="120" TabIndex="8"/>
+                    <TextBox x:Name="forecastsy2p3" HorizontalAlignment="Left" Height="23" Margin="326,315,0,0" TextWrapping="Wrap" Text="P3" VerticalAlignment="Top" Width="120" TabIndex="9"/>
+                    <TextBox x:Name="forecastsy1p2" HorizontalAlignment="Left" Height="23" Margin="191,287,0,0" TextWrapping="Wrap" Text="P2" VerticalAlignment="Top" Width="120" TabIndex="5"/>
+                    <TextBox x:Name="forecastsy1p3" HorizontalAlignment="Left" Height="23" Margin="191,315,0,0" TextWrapping="Wrap" Text="P3" VerticalAlignment="Top" Width="120" TabIndex="6"/>
+                    <TextBox x:Name="ordersp2" HorizontalAlignment="Left" Height="23" Margin="10,287,0,0" TextWrapping="Wrap" Text="Damen P2" VerticalAlignment="Top" Width="120" TabIndex="2"/>
+                    <TextBox x:Name="ordersp3" HorizontalAlignment="Left" Height="23" Margin="10,315,0,0" TextWrapping="Wrap" Text="Herren P3" VerticalAlignment="Top" Width="120" TabIndex="3"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Produktionsprogramm">
+                <Grid Background="#FFE5E5E5">
+                    <Button Content="Button" HorizontalAlignment="Left" Margin="186,57,0,0" VerticalAlignment="Top" Width="75"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Kapaplanung">
+                <Grid Background="#FFE5E5E5">
+                    <Button Content="Button" HorizontalAlignment="Left" Margin="186,57,0,0" VerticalAlignment="Top" Width="75"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Einkauf">
+                <Grid Background="#FFE5E5E5">
+                    <Button Content="Button" HorizontalAlignment="Left" Margin="186,57,0,0" VerticalAlignment="Top" Width="75"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Priorisierung">
+                <Grid Background="#FFE5E5E5">
+                    <Button Content="Button" HorizontalAlignment="Left" Margin="186,57,0,0" VerticalAlignment="Top" Width="75"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="XML Output">
+                <Grid Background="#FFE5E5E5">
+                    <Button Content="Button" HorizontalAlignment="Left" Margin="186,57,0,0" VerticalAlignment="Top" Width="75"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Charts">
                 <Grid Background="#FFE5E5E5">
                     <Button Content="Button" HorizontalAlignment="Left" Margin="186,57,0,0" VerticalAlignment="Top" Width="75"/>
                 </Grid>

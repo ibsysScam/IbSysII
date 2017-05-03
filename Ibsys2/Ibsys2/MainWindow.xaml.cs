@@ -91,7 +91,7 @@ namespace Ibsys2
             Console.WriteLine(validData.ToString());
             if (!validData)
             {
-                MessageBox.Show("File is not an XML File!");
+                MessageBox.Show("File is not an XML File!","Error",MessageBoxButton.OK,MessageBoxImage.Error);
                 return;
             }
 
@@ -121,6 +121,11 @@ namespace Ibsys2
         {
             Wiki Wikipage = new Wiki();
             Wikipage.Show();
+        }
+
+        private void calculatebutton_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
