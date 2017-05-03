@@ -97,6 +97,13 @@ namespace Ibsys2
         {
             ReadXML readxml = new ReadXML();
             readxml.ReadFile(Pathtextbox.Text);
+            if (String.IsNullOrEmpty(Pathtextbox.Text))
+            {
+                MessageBox.Show("Pihaar muss hier was machen!");
+                return;
+            }
+
+            MainpageNextButton.IsEnabled = true;
         }
 
 
@@ -164,16 +171,7 @@ namespace Ibsys2
             MainTabControl.SelectedIndex = 1;
         }
 
-        private void Pathtextbox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            if (String.IsNullOrEmpty(Pathtextbox.Text))
-            {
-                MessageBox.Show("Pls select a File!");
-                return;
-            }
-
-            MainpageNextButton.IsEnabled = true;
-        }
+     
     }
 }
 
