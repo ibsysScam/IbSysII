@@ -17,6 +17,7 @@ namespace Ibsys2.Service {
             _translate.Add("HELLO", "Hello");
             _translate.Add("SETTINGS_SAVED", "Settings saved! Would u like to restart the Program? Without restart translate errors will occur!");
             _translate.Add("SETTINGS", "Settings");
+            _translate.Add("XML_ERROR", "This is not a XML File!");
         }
 
     }

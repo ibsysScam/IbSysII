@@ -39,6 +39,11 @@ namespace Ibsys2
             Nullable<bool> dialogDateipfadResult = dialogDateipfad.ShowDialog();
             if (dialogDateipfadResult == true)
             {
+                if (!dialogDateipfad.FileName.Contains(".xml"))
+                {
+                    MessageBox.Show(TranslateService.Class.GetTranslation("XML_ERROR"),"XML Input",MessageBoxButton.OK,MessageBoxImage.Error);
+                    return;
+                }
                 Pathtextbox.Text = dialogDateipfad.FileName;
             }
         }
