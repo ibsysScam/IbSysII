@@ -49,7 +49,7 @@ namespace Ibsys2.Pages
         {
             Thread.Sleep(100);
             MessageBox.Show(TranslateService.Class.GetTranslation("SETTINGS_SAVED"), "Settings", MessageBoxButton.OK, MessageBoxImage.Asterisk);
-            //SettingsService.Class.SaveSettings("Language",Languageselector.SelectionBoxItem.ToString());
+            SettingsService.Class.SaveSettings("Language",Languageselector.SelectionBoxItem.ToString());
             return;
         }
 
