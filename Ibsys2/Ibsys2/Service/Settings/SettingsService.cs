@@ -49,9 +49,9 @@ namespace Ibsys2.Service
 
 
             XmlNode language = doc.SelectSingleNode("/Settings/Language");
-            Static.Static.language = language.InnerText;
+            string fulllanguage = language.InnerText;
 
-            TranslateService.Class.PrimaryLanguage = Static.Static.language;
+            TranslateService.Class.PrimaryLanguage = fulllanguage;
 
         }
 
