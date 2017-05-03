@@ -93,22 +93,6 @@ namespace Ibsys2
             return ret;
         }
 
-        private void Xmlgenerate_Click(object sender, RoutedEventArgs e)
-        {
-            ReadXML readxml = new ReadXML();
-            readxml.ReadFile(Pathtextbox.Text);
-            if (String.IsNullOrEmpty(Pathtextbox.Text))
-            {
-                MessageBox.Show("Pihaar muss hier was machen!");
-                return;
-            }
-
-            MainpageNextButton.IsEnabled = true;
-        }
-
-
-
-
         private void Window_DragEnter(object sender, DragEventArgs e)
         {
             string filename;
@@ -168,6 +152,20 @@ namespace Ibsys2
 
         private void MainpageNextButton_Click(object sender, RoutedEventArgs e)
         {
+            
+            if (String.IsNullOrEmpty(Pathtextbox.Text))
+            {
+                MessageBox.Show("Pihaar muss hier was machen!");
+                return;
+            }
+            ReadXML readxml = new ReadXML();
+            bool wellformed = readxml.ReadFile(Pathtextbox.Text);
+            if (!wellformed)
+            {
+                MessageBox.Show("Malformed XML File! Please use another one!");
+                return;
+            }
+
             MainTabControl.SelectedIndex = 1;
         }
 
