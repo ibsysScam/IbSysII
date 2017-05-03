@@ -18,6 +18,7 @@ namespace Ibsys2.Service {
             _translate.Add("SETTINGS_SAVED", "Einstellungen gespeichert! Möchten Sie das Programm neustarten? Ohne Neustart kann es Probleme bei der Übersetzung geben!");
             _translate.Add("SETTINGS", "Einstellungen");
             _translate.Add("XML_ERROR", "Das ist keine XML File!");
+            _translate.Add("ONLY_INT_ERROR", "Bitte benutze nur Ganzzahlen!");
         }
         
     }
