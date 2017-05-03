@@ -147,7 +147,7 @@ namespace Ibsys2
 
         }
 
-        private void Nextbutton_Click(object sender, RoutedEventArgs e)
+        private void PrognosenNextbutton_Click(object sender, RoutedEventArgs e)
         {
             try {
                 Forecast.Class.AddForecast(0, new Forecast.ForecastPeriod(Convert.ToInt32(period0product1.Text), Convert.ToInt32(period0product2.Text), Convert.ToInt32(period0product3.Text)));
@@ -157,6 +157,22 @@ namespace Ibsys2
             } catch (FormatException) {
                 MessageBox.Show(TranslateService.Class.GetTranslation("ONLY_INT_ERROR"));
             }
+        }
+
+        private void MainpageNextButton_Click(object sender, RoutedEventArgs e)
+        {
+            MainTabControl.SelectedIndex = 1;
+        }
+
+        private void Pathtextbox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (String.IsNullOrEmpty(Pathtextbox.Text))
+            {
+                MessageBox.Show("Pls select a File!");
+                return;
+            }
+
+            MainpageNextButton.IsEnabled = true;
         }
     }
 }
