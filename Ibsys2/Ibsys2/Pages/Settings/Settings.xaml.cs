@@ -51,8 +51,15 @@ namespace Ibsys2.Pages
         {
             TranslateService.Class.PrimaryLanguage = Languageselector.SelectionBoxItem.ToString();
             Thread.Sleep(100);
-            MessageBox.Show(TranslateService.Class.GetTranslation("SETTINGS_SAVED"), "Settings", MessageBoxButton.OK, MessageBoxImage.Asterisk);
             SettingsService.Class.SaveSettings();
+            MessageBoxResult result = MessageBox.Show(TranslateService.Class.GetTranslation("SETTINGS_SAVED"), "Settings", MessageBoxButton.YesNo, MessageBoxImage.Asterisk);
+
+            if(result == MessageBoxResult.Yes)
+            {
+                Environment.Exit(21);
+            }
+
+
             return;
         }
 

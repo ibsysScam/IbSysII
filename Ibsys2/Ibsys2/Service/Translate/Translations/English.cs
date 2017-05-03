@@ -15,7 +15,7 @@ namespace Ibsys2.Service {
 
         private static void Translate() {
             _translate.Add("HELLO", "Hello");
-            _translate.Add("SETTINGS_SAVED", "Settings saved!");
+            _translate.Add("SETTINGS_SAVED", "Settings saved! Would u like to restart the Program? Without restart translate errors will occur!");
             _translate.Add("SETTINGS", "Settings");
         }
 
