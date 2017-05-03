@@ -144,5 +144,10 @@ namespace Ibsys2
         {
 
         }
+
+        private void Nextbutton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
