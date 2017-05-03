@@ -23,7 +23,7 @@ namespace Ibsys2.Service {
             doc.LoadXml(XMLinput);
             Static.Static.game = Convert.ToInt32(doc.DocumentElement.Attributes["game"].InnerText);
             Static.Static.group = Convert.ToInt32(doc.DocumentElement.Attributes["group"].InnerText);
-            Static.Static.period = Convert.ToInt32(doc.DocumentElement.Attributes["period"].InnerText);
+            Static.Static.lastperiod = Convert.ToInt32(doc.DocumentElement.Attributes["period"].InnerText);
 
             foreach (XmlNode Results in doc.DocumentElement.ChildNodes) {
                 foreach (XmlNode node in Results) {
