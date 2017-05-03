@@ -80,6 +80,7 @@
     <Compile Include="Service\XML\ReadXML.cs" />
     <Compile Include="Static\Input\Completedorders.cs" />
     <Compile Include="Static\Input\Cycletimes.cs" />
+    <Compile Include="Static\Input\Forecast.cs" />
     <Compile Include="Static\Input\Futureinwardstockmovement.cs" />
     <Compile Include="Static\Input\Idletimecosts.cs" />
     <Compile Include="Static\Input\Inwardstockmovement.cs" />
