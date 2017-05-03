@@ -24,15 +24,33 @@ namespace Ibsys2
     /// </summary>
     public partial class MainWindow : Window
     {
+        private static MainWindow _class;
+
+        public static MainWindow Class {
+            get {
+                if (_class == null)
+                    new MainWindow();
+                return _class;
+            }
+        }
         public MainWindow()
         {
+            if (_class != null)
+                throw new Exception("Class already exists!");
+            _class = this;
             SettingsService.Class.CreateFolder();
             SettingsService.Class.LoadSettings();
            
             InitializeComponent();
-           
+            LoadTranslations();
             
         }
+
+        public void LoadTranslations() {
+
+        }
+
+        
 
         private void Choosefile_Click(object sender, RoutedEventArgs e)
         {
