@@ -56,11 +56,14 @@ namespace Ibsys2.Pages
 
             if(result == MessageBoxResult.Yes)
             {
+                try {
+                    System.Diagnostics.Process P = new System.Diagnostics.Process();
+                    P.StartInfo.FileName = System.Reflection.Assembly.GetExecutingAssembly().Location;
+                    P.Start();
+                } catch { }
                 Environment.Exit(21);
             }
-
-
-            return;
+            this.Close();
         }
 
 
