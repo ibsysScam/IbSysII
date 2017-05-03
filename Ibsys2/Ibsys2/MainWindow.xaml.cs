@@ -28,9 +28,6 @@ namespace Ibsys2
         {
             SettingsService.Class.InitializeXML();
             SettingsService.Class.LoadSettings();
-            TranslateService.Class.PrimaryLanguage = "de";
-            TranslateService.Class.FallbackLanguage = "en";
-            InitializeTranslation();
             InitializeComponent();
             
         }
@@ -76,10 +73,6 @@ namespace Ibsys2
         }
 
 
-        private void InitializeTranslation()
-        {
-
-        }
 
 
         private void Window_DragEnter(object sender, DragEventArgs e)
