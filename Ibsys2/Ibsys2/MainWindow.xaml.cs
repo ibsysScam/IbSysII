@@ -165,7 +165,7 @@ namespace Ibsys2
                 MessageBox.Show("Malformed XML File! Please use another one!");
                 return;
             }
-
+            
             MainTabControl.SelectedIndex = 1;
         }
 

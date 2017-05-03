@@ -28,10 +28,7 @@
             </TabItem>
             <TabItem x:Name="Prognose" Header="Prognosen">
                 <Grid Background="#FFE5E5E5">
-                    <TextBox HorizontalAlignment="Left" Height="23" Margin="93,142,0,0" TextWrapping="Wrap" Text="Kinder" VerticalAlignment="Top" Width="120"/>
                     <Label Content="Periode" HorizontalAlignment="Left" Margin="93,110,0,0" VerticalAlignment="Top" Height="23" Width="120"/>
-                    <TextBox HorizontalAlignment="Left" Height="23" Margin="93,170,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-                    <TextBox HorizontalAlignment="Left" Height="23" Margin="93,198,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
                     <Label Content="Summe&#xD;&#xA;" HorizontalAlignment="Left" Margin="93,226,0,0" VerticalAlignment="Top" Height="24" Width="120"/>
                     <TextBox HorizontalAlignment="Left" Height="23" Margin="234,142,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
                     <TextBox HorizontalAlignment="Left" Height="23" Margin="234,170,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
@@ -56,10 +53,14 @@
                     <Label Content="Verbindliche Aufträge:" HorizontalAlignment="Left" Margin="93,61,0,0" VerticalAlignment="Top" Width="261"/>
                     <Label Content="Prognose" HorizontalAlignment="Left" Margin="359,61,0,0" VerticalAlignment="Top" Width="370"/>
                     <Button x:Name="PrognosenNextButton" Content="Next" HorizontalAlignment="Left" Margin="654,263,0,0" VerticalAlignment="Top" Width="75" Click="PrognosenNextbutton_Click"/>
-                    <Label Content="7" HorizontalAlignment="Left" Margin="234,110,0,0" VerticalAlignment="Top"/>
-                    <Label Content="8" HorizontalAlignment="Left" Margin="349,110,0,0" VerticalAlignment="Top"/>
-                    <Label Content="9" HorizontalAlignment="Left" Margin="484,110,0,0" VerticalAlignment="Top"/>
-                    <Label Content="10" HorizontalAlignment="Left" Margin="609,110,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="periode0" Content="7" HorizontalAlignment="Left" Margin="234,110,0,0" VerticalAlignment="Top" Width="120"/>
+                    <Label x:Name="periode1" Content="8" HorizontalAlignment="Left" Margin="359,111,0,0" VerticalAlignment="Top" Width="120"/>
+                    <Label x:Name="periode2" Content="9" HorizontalAlignment="Left" Margin="484,111,0,0" VerticalAlignment="Top" Width="120"/>
+                    <Label x:Name="periode3" Content="10" HorizontalAlignment="Left" Margin="609,110,0,0" VerticalAlignment="Top" Width="120"/>
+                    <Label HorizontalAlignment="Left" Margin="109,148,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Kinder" HorizontalAlignment="Left" Margin="93,144,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Herren" HorizontalAlignment="Left" Margin="93,198,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Damen" HorizontalAlignment="Left" Margin="93,170,0,0" VerticalAlignment="Top"/>
                 </Grid>
 
             </TabItem>
@@ -77,8 +78,8 @@
             </TabItem>
             <TabItem x:Name="XMLOutput" Header="XML Output">
                 <Grid Background="#FFE5E5E5">
-                   
-                   
+
+
                     <Label Content="Verbindliche Aufträge:" HorizontalAlignment="Left" Margin="10,233,0,0" VerticalAlignment="Top"/>
                     <TextBox x:Name="ordersp1" HorizontalAlignment="Left" Height="23" Margin="10,259,0,0" TextWrapping="Wrap" Text="Kinder P1" VerticalAlignment="Top" Width="120" TabIndex="1" />
                     <Label Content="Sicherheitsbestand:" HorizontalAlignment="Left" Margin="606,233,0,0" VerticalAlignment="Top" Width="120"/>
@@ -113,7 +114,7 @@
             <TabItem x:Name="Charts" Header="Charts">
                 <Grid Background="#FFE5E5E5"/>
             </TabItem>
-            
+
         </TabControl>
 
 
