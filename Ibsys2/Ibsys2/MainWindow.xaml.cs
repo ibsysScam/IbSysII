@@ -145,9 +145,25 @@ namespace Ibsys2
 
         }
 
-        private void Nextbutton_Click(object sender, RoutedEventArgs e)
+        private void PrognosenNextbutton_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void MainpageNextButton_Click(object sender, RoutedEventArgs e)
+        {
+            MainTabControl.SelectedIndex = 1;
+        }
+
+        private void Pathtextbox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (String.IsNullOrEmpty(Pathtextbox.Text))
+            {
+                MessageBox.Show("Pls select a File!");
+                return;
+            }
+
+            MainpageNextButton.IsEnabled = true;
         }
     }
 }
