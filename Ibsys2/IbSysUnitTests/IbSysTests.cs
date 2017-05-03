@@ -90,17 +90,8 @@ namespace IbSysUnitTests
 
         }
 
-        [TestMethod]
-        public void LoadLanguages()
-        {
-            Settings setting = new Settings();
-            setting.LoadLanguages();
-        }
+       
 
-        [TestMethod]
-        public void TestXMLInitialize()
-        {
-            SettingsService.Class.InitializeXML();
-        }
+
     }
 }

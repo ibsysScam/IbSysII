@@ -66,6 +66,9 @@
     <Compile Include="Pages\Settings\Settings.xaml.cs">
       <DependentUpon>Settings.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Wiki\Wiki.xaml.cs">
+      <DependentUpon>Wiki.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Service\Settings\SettingsService.cs" />
     <Compile Include="Service\Translate\TranslateService.cs" />
     <Compile Include="Service\Translate\Translations\English.cs" />
@@ -108,6 +111,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\Settings\Settings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Wiki\Wiki.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

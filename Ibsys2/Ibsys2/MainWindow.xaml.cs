@@ -16,6 +16,7 @@ using Ibsys2.Pages.ReadXML;
 using System.IO;
 using Ibsys2.Pages;
 using Ibsys2.Service;
+using Ibsys2.Pages.Wiki;
 
 namespace Ibsys2
 {
@@ -27,7 +28,8 @@ namespace Ibsys2
         public MainWindow()
         {
             SettingsService.Class.InitializeXML();
-            SettingsService.Class.ReadSettings();
+            SettingsService.Class.LoadSettings();
+            InitializeTranslation();
             TranslateService.Class.PrimaryLanguage = "de";
             TranslateService.Class.FallbackLanguage = "en";
             InitializeComponent();
@@ -75,6 +77,10 @@ namespace Ibsys2
         }
 
 
+        private void InitializeTranslation()
+        {
+
+        }
 
 
         private void Window_DragEnter(object sender, DragEventArgs e)
@@ -98,11 +104,23 @@ namespace Ibsys2
             pathtextbox.Text = "";
         }
 
-        private void settingsbutton_Click(object sender, RoutedEventArgs e)
+
+
+        private void Settingsmenuheader_Click(object sender, RoutedEventArgs e)
         {
             Settings Settingspage = new Settings();
             Settingspage.Show();
+        }
 
+        private void Closemenuitem_Click(object sender, RoutedEventArgs e)
+        {
+            Environment.Exit(21);
+        }
+
+        private void Helpmenuitem_Click(object sender, RoutedEventArgs e)
+        {
+            Wiki Wikipage = new Wiki();
+            Wikipage.Show();
         }
     }
 }

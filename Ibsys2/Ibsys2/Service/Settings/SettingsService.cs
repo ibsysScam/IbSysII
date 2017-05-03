@@ -28,17 +28,24 @@ namespace Ibsys2.Service
            
             
         }
-        public void ReadSettings()
+
+        public void LoadSettings()
         {
             string filepath = Static.Static.settingsfile;
-
             string xmlinput = File.ReadAllText(filepath);
 
-            if (String.IsNullOrEmpty(xmlinput))
+            ReadSettings(xmlinput);
+        }
+
+        public void ReadSettings(string XMLInput)
+        {
+          
+
+            if (String.IsNullOrEmpty(XMLInput))
                 throw new ArgumentNullException();
 
             XmlDocument doc = new XmlDocument();
-            doc.LoadXml(xmlinput);
+            doc.LoadXml(XMLInput);
 
 
             XmlNode language = doc.SelectSingleNode("/Settings/Language");
