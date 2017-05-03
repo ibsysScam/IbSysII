@@ -55,10 +55,10 @@ namespace Ibsys2.Service
 
         }
 
-        public void SaveSettings(string ElementID, string value)
+        public void SaveSettings()
         {
+            
             string filename = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), Static.Static.settingsfile);
-
             XmlDocument document = new XmlDocument();
             XmlNode Root = document.CreateElement("Settings");
             document.AppendChild(Root);

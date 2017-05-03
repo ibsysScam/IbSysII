@@ -22,10 +22,12 @@ namespace Ibsys2.Pages
     /// </summary>
     public partial class Settings : Window
     {
+        
         public Settings()
         {
             InitializeComponent();
             LoadLanguages();
+
 
         }
 
@@ -36,7 +38,7 @@ namespace Ibsys2.Pages
             {
                 Languageselector.Items.Add(language.LanguageLongText);
             }
-            Languageselector.SelectedValue = Static.Static.language;
+            Languageselector.SelectedValue = TranslateService.Class.GetPrimaryLanguage.LanguageLongText;
         }
 
         private void Languageselector_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -47,9 +49,10 @@ namespace Ibsys2.Pages
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
+            TranslateService.Class.PrimaryLanguage = Languageselector.SelectionBoxItem.ToString();
             Thread.Sleep(100);
             MessageBox.Show(TranslateService.Class.GetTranslation("SETTINGS_SAVED"), "Settings", MessageBoxButton.OK, MessageBoxImage.Asterisk);
-            SettingsService.Class.SaveSettings("Language",Languageselector.SelectionBoxItem.ToString());
+            SettingsService.Class.SaveSettings();
             return;
         }
 
