@@ -62,7 +62,7 @@ namespace Ibsys2.Service
             XmlDocument document = new XmlDocument();
             XmlNode Root = document.CreateElement("Settings");
             document.AppendChild(Root);
-            Root.AppendChild(document.CreateElement("Language")).InnerText = Static.Static.language;
+            Root.AppendChild(document.CreateElement("Language")).InnerText = TranslateService.Class.GetPrimaryLanguage.LanguageShortText;
             using (TextWriter sw = new StreamWriter(filename,false, Encoding.UTF8))
             {
                 document.Save(sw);
