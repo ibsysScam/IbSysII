@@ -16,7 +16,7 @@
             <MenuItem x:Name="Settingsmenuheader" Header="Settings" Click="Settingsmenuheader_Click"/>
             <MenuItem x:Name="Aboutmenuheader" Header="About"/>
         </Menu>
-        
+
         <TabControl HorizontalAlignment="Left" Height="672" Margin="0,19,0,0" VerticalAlignment="Top" Width="1274">
             <TabItem Header="Main">
                 <Grid Background="#FFE5E5E5">
@@ -53,6 +53,7 @@
                     <TextBox HorizontalAlignment="Left" Height="23" Margin="451,349,0,0" TextWrapping="Wrap" Text="Summe" VerticalAlignment="Top" Width="120"/>
                     <TextBox HorizontalAlignment="Left" Height="23" Margin="606,349,0,0" TextWrapping="Wrap" Text="Summe" VerticalAlignment="Top" Width="120"/>
                     <TextBox HorizontalAlignment="Left" Height="23" Margin="779,349,0,0" TextWrapping="Wrap" Text="Summe" VerticalAlignment="Top" Width="120"/>
+
                 </Grid>
             </TabItem>
             <TabItem Header="Produktionsprogramm">
@@ -69,9 +70,48 @@
             </TabItem>
             <TabItem Header="XML Output">
                 <Grid Background="#FFE5E5E5"/>
+
             </TabItem>
             <TabItem Header="Charts">
                 <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+            <TabItem Header="Prognosen">
+                <Grid Background="#FFE5E5E5">
+                    <TextBox HorizontalAlignment="Left" Height="23" Margin="93,142,0,0" TextWrapping="Wrap" Text="Kinder" VerticalAlignment="Top" Width="120"/>
+                    <Label Content="Periode" HorizontalAlignment="Left" Margin="93,110,0,0" VerticalAlignment="Top" Height="23" Width="120"/>
+                    <TextBox HorizontalAlignment="Left" Height="23" Margin="93,170,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                    <TextBox HorizontalAlignment="Left" Height="23" Margin="93,198,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                    <Label Content="Summe&#xD;&#xA;" HorizontalAlignment="Left" Margin="93,226,0,0" VerticalAlignment="Top" Height="24" Width="120"/>
+                    <TextBox x:Name="period0" HorizontalAlignment="Left" Height="23" Margin="234,114,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                    <TextBox HorizontalAlignment="Left" Height="23" Margin="234,142,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                    <TextBox HorizontalAlignment="Left" Height="23" Margin="234,170,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                    <TextBox x:Name="period0product3" HorizontalAlignment="Left" Height="23" Margin="234,198,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                    <TextBox x:Name="period0product2" HorizontalAlignment="Left" Height="23" Margin="234,170,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                    <TextBox x:Name="period0product1" HorizontalAlignment="Left" Height="23" Margin="234,142,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                    <TextBox HorizontalAlignment="Left" Height="23" Margin="359,114,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                    <TextBox HorizontalAlignment="Left" Height="23" Margin="359,114,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                    <TextBox x:Name="period1" HorizontalAlignment="Left" Height="23" Margin="359,114,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                    <TextBox x:Name="period1product1" HorizontalAlignment="Left" Height="23" Margin="359,142,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                    <TextBox x:Name="period1product2" HorizontalAlignment="Left" Height="23" Margin="359,170,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                    <TextBox x:Name="period1product3" HorizontalAlignment="Left" Height="23" Margin="359,198,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                    <TextBox HorizontalAlignment="Left" Height="23" Margin="484,170,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                    <TextBox HorizontalAlignment="Left" Height="23" Margin="484,170,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                    <TextBox x:Name="period2product2" HorizontalAlignment="Left" Height="23" Margin="484,170,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                    <TextBox x:Name="period2" HorizontalAlignment="Left" Height="23" Margin="484,116,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                    <TextBox x:Name="period2product1" HorizontalAlignment="Left" Height="23" Margin="484,142,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                    <TextBox x:Name="period2product3" HorizontalAlignment="Left" Height="23" Margin="484,198,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                    <TextBox x:Name="period3" HorizontalAlignment="Left" Height="23" Margin="609,116,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                    <TextBox x:Name="period3product1" HorizontalAlignment="Left" Height="23" Margin="609,142,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                    <TextBox x:Name="period3product3" HorizontalAlignment="Left" Height="23" Margin="609,198,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                    <TextBox x:Name="period3product2" HorizontalAlignment="Left" Height="23" Margin="609,170,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                    <TextBox x:Name="period0sum" HorizontalAlignment="Left" Height="23" Margin="234,226,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                    <TextBox x:Name="period1sum" HorizontalAlignment="Left" Height="23" Margin="359,226,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                    <TextBox x:Name="period2sum" HorizontalAlignment="Left" Height="23" Margin="484,226,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                    <TextBox x:Name="period3sum" HorizontalAlignment="Left" Height="23" Margin="609,226,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                    <Label Content="Verbindliche Aufträge:" HorizontalAlignment="Left" Margin="93,61,0,0" VerticalAlignment="Top" Width="261"/>
+                    <Label Content="Prognose" HorizontalAlignment="Left" Margin="359,61,0,0" VerticalAlignment="Top" Width="370"/>
+                </Grid>
+
             </TabItem>
         </TabControl>
 
