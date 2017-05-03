@@ -14,11 +14,6 @@ namespace IbSysUnitTests
     public class Settings
     {
 
-        [TestMethod]
-        public void TestXMLInitialize()
-        {
-            SettingsService.Class.InitializeXML();
-        }
 
 
         [TestMethod]
