@@ -30,7 +30,7 @@ namespace Ibsys2
             SettingsService.Class.LoadSettings();
            
             InitializeComponent();
-            Prognose.IsEnabled = false;
+           
             
         }
 
