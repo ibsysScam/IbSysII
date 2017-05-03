@@ -31,7 +31,7 @@ namespace Ibsys2.Service
 
         public void LoadSettings()
         {
-            string filepath = Static.Static.settingsfile;
+            string filepath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "/Ibsys2/", Static.Static.settingsfile);
             string xmlinput = File.ReadAllText(filepath);
 
             ReadSettings(xmlinput);
@@ -58,7 +58,7 @@ namespace Ibsys2.Service
         public void SaveSettings()
         {
             
-            string filename = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), Static.Static.settingsfile);
+            string filename = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),"/Ibsys2/",Static.Static.settingsfile);
             XmlDocument document = new XmlDocument();
             XmlNode Root = document.CreateElement("Settings");
             document.AppendChild(Root);
@@ -69,10 +69,25 @@ namespace Ibsys2.Service
             }
         }
 
+        public void CreateFolder()
+        {
+            if (!Directory.Exists("Ibsys2"))
+            {
+                string rootfolder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Ibsys2");
+                Directory.CreateDirectory(rootfolder);
+
+            }
+
+
+           
+
+            return;
+        }
         public void InitializeXML()
         {
             
-            string file = Static.Static.settingsfile;
+            string file = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),"/Ibsys2/" ,Static.Static.settingsfile);
+            Console.WriteLine(file);
             string initialsettings = @"<?xml version=""1.0"" encoding=""UTF-8""?>
 <Settings>
 <Language>Deutsch</Language>
