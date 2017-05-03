@@ -27,7 +27,6 @@ namespace Ibsys2
         public MainWindow()
         {
             SettingsService.Class.CreateFolder();
-            SettingsService.Class.InitializeXML();
             SettingsService.Class.LoadSettings();
            
             InitializeComponent();
