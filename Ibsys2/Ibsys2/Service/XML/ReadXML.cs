@@ -1,52 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using System.Xml;
-using Ibsys2.Static;
 using Ibsys2.Static.Input;
 using System.IO;
 
-namespace Ibsys2.Pages.ReadXML {
-    /// <summary>
-    /// Interaktionslogik für ReadXML.xaml
-    /// </summary>
-    public partial class ReadXML : Page {
-        public ReadXML() {
-            InitializeComponent();
-        }
-
-
-        public void KlickAufDateiUpload() {
-            //if File Exists
-
-        }
-
-        public void KlickAufTextUpload() {
-            //If not Null
-
-
-        }
-
-        public void ReadFile(string filepath)
-        {
-            if (String.IsNullOrEmpty(filepath))
-            {
-                MessageBox.Show("Missing Filepath", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                return;
+namespace Ibsys2.Service {
+    public class ReadXML {
+        public bool ReadFile(string filepath) {
+            if (String.IsNullOrEmpty(filepath)) {
+                
+                return false;
             }
             string xmlinput = File.ReadAllText(filepath);
             ParseXML(xmlinput);
+            return true;
         }
 
         public void ParseXML(string XMLinput) {

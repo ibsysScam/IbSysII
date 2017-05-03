@@ -3,8 +3,6 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Ibsys2.Static;
 using Ibsys2.Static.Output;
 using Ibsys2.Pages;
-using Ibsys2.Pages.ReadXML;
-using Ibsys2.Pages.CreateXML;
 using Ibsys2.Berechnungen.Datenstrukturen;
 using Ibsys2.Service;
 
