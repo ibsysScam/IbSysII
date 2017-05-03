@@ -58,7 +58,7 @@
                     <Label x:Name="periode2" Content="9" HorizontalAlignment="Left" Margin="484,111,0,0" VerticalAlignment="Top" Width="120"/>
                     <Label x:Name="periode3" Content="10" HorizontalAlignment="Left" Margin="609,110,0,0" VerticalAlignment="Top" Width="120"/>
                     <Label HorizontalAlignment="Left" Margin="109,148,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Kinder" HorizontalAlignment="Left" Margin="93,144,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Kinder" HorizontalAlignment="Left" Margin="93,142,0,0" VerticalAlignment="Top"/>
                     <Label Content="Herren" HorizontalAlignment="Left" Margin="93,198,0,0" VerticalAlignment="Top"/>
                     <Label Content="Damen" HorizontalAlignment="Left" Margin="93,170,0,0" VerticalAlignment="Top"/>
                 </Grid>
