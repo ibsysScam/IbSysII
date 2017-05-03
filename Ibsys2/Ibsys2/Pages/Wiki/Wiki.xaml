@@ -9,17 +9,6 @@
       Title="Wiki" ResizeMode="NoResize" Height="300" Width="500">
 
     <Grid>
-        <Menu>
-            <Menu.ItemsPanel>
-                <ItemsPanelTemplate>
-                    <VirtualizingStackPanel Orientation="Vertical"/>
-                    <MenuItem Header="Programm">
-                        <MenuItem x:Name="Helpmenuitem" Header="Help" Click="Helpmenuitem_Click"/>
-                        <MenuItem x:Name="Closemenuitem" Header="Close" Click="Closemenuitem_Click"/>
-                    </MenuItem>
-                </ItemsPanelTemplate>
-            </Menu.ItemsPanel>
-            
-        </Menu>
+       
     </Grid>
 </Window>

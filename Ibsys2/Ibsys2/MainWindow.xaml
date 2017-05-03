@@ -22,7 +22,7 @@
                 <Grid Background="#FFE5E5E5">
                     <Button x:Name="choosefile" Content="Browse File" HorizontalAlignment="Left" Margin="10,52,0,0" VerticalAlignment="Top" Width="75" Click="Choosefile_Click" ToolTip="Drag and Drop your XML File instead of choosing it here!"/>
                     <Button x:Name="xmlgenerate" Content="Read XML File" HorizontalAlignment="Left" Margin="10,105,0,0" VerticalAlignment="Top" Width="118" Click="Xmlgenerate_Click"/>
-                    <TextBox x:Name="pathtextbox" MaxLines="1" HorizontalAlignment="Left" Height="23" Margin="10,77,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="286" TabIndex="0" ToolTip="Drag Dop your XML File here!"/>
+                    <TextBox x:Name="Pathtextbox" MaxLines="1" HorizontalAlignment="Left" Height="23" Margin="10,77,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="286" TabIndex="0" ToolTip="Drag Dop your XML File here!"/>
                     <Button x:Name="clear" Content="Clear all" HorizontalAlignment="Left" Margin="221,52,0,0" VerticalAlignment="Top" Width="75" Click="Clear_Click" RenderTransformOrigin="0.587,3.75"/>
                     <Label Content="Verbindliche Aufträge:" HorizontalAlignment="Left" Margin="10,233,0,0" VerticalAlignment="Top"/>
                     <TextBox x:Name="ordersp1" HorizontalAlignment="Left" Height="23" Margin="10,259,0,0" TextWrapping="Wrap" Text="Kinder P1" VerticalAlignment="Top" Width="120" TabIndex="1" />
@@ -33,7 +33,7 @@
                     <TextBox x:Name="directordersp1" HorizontalAlignment="Left" Height="23" Margin="779,259,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TabIndex="16"/>
                     <TextBox x:Name="directordersp2" HorizontalAlignment="Left" Height="23" Margin="779,287,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TabIndex="17"/>
                     <TextBox x:Name="directordersp3" HorizontalAlignment="Left" Height="23" Margin="779,315,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TabIndex="18"/>
-                    <Button x:Name="calculatebutton" Content="Berechne" HorizontalAlignment="Left" Margin="824,343,0,0" VerticalAlignment="Top" Width="75" Click="calculatebutton_Click"/>
+                    <Button x:Name="calculatebutton" Content="Berechne" HorizontalAlignment="Left" Margin="824,343,0,0" VerticalAlignment="Top" Width="75" Click="Calculatebutton_Click"/>
                     <TextBox x:Name="reservestockp1" HorizontalAlignment="Left" Height="23" Margin="606,259,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TabIndex="13"/>
                     <TextBox x:Name="reservestockp2" HorizontalAlignment="Left" Height="23" Margin="606,287,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TabIndex="14"/>
                     <TextBox x:Name="reservestockp3" HorizontalAlignment="Left" Height="23" Margin="606,315,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TabIndex="15"/>
@@ -50,34 +50,22 @@
                 </Grid>
             </TabItem>
             <TabItem Header="Produktionsprogramm">
-                <Grid Background="#FFE5E5E5">
-                    <Button Content="Button" HorizontalAlignment="Left" Margin="186,57,0,0" VerticalAlignment="Top" Width="75"/>
-                </Grid>
+                <Grid Background="#FFE5E5E5"/>
             </TabItem>
             <TabItem Header="Kapaplanung">
-                <Grid Background="#FFE5E5E5">
-                    <Button Content="Button" HorizontalAlignment="Left" Margin="186,57,0,0" VerticalAlignment="Top" Width="75"/>
-                </Grid>
+                <Grid Background="#FFE5E5E5"/>
             </TabItem>
             <TabItem Header="Einkauf">
-                <Grid Background="#FFE5E5E5">
-                    <Button Content="Button" HorizontalAlignment="Left" Margin="186,57,0,0" VerticalAlignment="Top" Width="75"/>
-                </Grid>
+                <Grid Background="#FFE5E5E5"/>
             </TabItem>
             <TabItem Header="Priorisierung">
-                <Grid Background="#FFE5E5E5">
-                    <Button Content="Button" HorizontalAlignment="Left" Margin="186,57,0,0" VerticalAlignment="Top" Width="75"/>
-                </Grid>
+                <Grid Background="#FFE5E5E5"/>
             </TabItem>
             <TabItem Header="XML Output">
-                <Grid Background="#FFE5E5E5">
-                    <Button Content="Button" HorizontalAlignment="Left" Margin="186,57,0,0" VerticalAlignment="Top" Width="75"/>
-                </Grid>
+                <Grid Background="#FFE5E5E5"/>
             </TabItem>
             <TabItem Header="Charts">
-                <Grid Background="#FFE5E5E5">
-                    <Button Content="Button" HorizontalAlignment="Left" Margin="186,57,0,0" VerticalAlignment="Top" Width="75"/>
-                </Grid>
+                <Grid Background="#FFE5E5E5"/>
             </TabItem>
         </TabControl>
 

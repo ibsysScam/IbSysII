@@ -42,7 +42,7 @@ namespace Ibsys2
             Nullable<bool> dialogDateipfadResult = dialogDateipfad.ShowDialog();
             if (dialogDateipfadResult == true)
             {
-                pathtextbox.Text = dialogDateipfad.FileName;
+                Pathtextbox.Text = dialogDateipfad.FileName;
             }
         }
 
@@ -73,7 +73,7 @@ namespace Ibsys2
         private void Xmlgenerate_Click(object sender, RoutedEventArgs e)
         {
             ReadXML readxml = new ReadXML();
-            readxml.ReadFile(pathtextbox.Text);
+            readxml.ReadFile(Pathtextbox.Text);
         }
 
 
@@ -95,13 +95,13 @@ namespace Ibsys2
                 return;
             }
 
-            pathtextbox.Text = filename;
+            Pathtextbox.Text = filename;
         }
 
 
         private void Clear_Click(object sender, RoutedEventArgs e)
         {
-            pathtextbox.Text = "";
+            Pathtextbox.Text = "";
         }
 
 
@@ -123,7 +123,7 @@ namespace Ibsys2
             Wikipage.Show();
         }
 
-        private void calculatebutton_Click(object sender, RoutedEventArgs e)
+        private void Calculatebutton_Click(object sender, RoutedEventArgs e)
         {
 
         }
