@@ -16,10 +16,10 @@ env:
         - "TRAVIS_MSBUILD_FRAMEWORK=$TRAVIS_MSBUILD/lib-dotnet"
         - "PATH=$PATH:$TRAVIS_MSBUILD_BIN"
 
-before_install: 
-	- sudo apt-get install libunwind8-dev       
+before_install:     
     - git clone https://github.com/0x0ade/travis-msbuild.git
     - chmod a+x "$TRAVIS_MSBUILD_BIN"/msbuild-prepare
+	- sudo apt-get install libunwind8-dev
     - msbuild-prepare        
     - nuget restore Ibsys2/Ibsys2.sln
     - nuget update Ibsys2/Ibsys2.sln
