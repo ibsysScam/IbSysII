@@ -22,6 +22,17 @@ namespace IbSysUnitTests
             SettingsService.Class.ReadSettings(_XMLTestInput);
         }
 
+        [TestMethod]
+        public void SaveSettings()
+        {
+            SettingsService.Class.SaveSettings();
+        }
+
+        [TestMethod]
+        public void CreateFolder()
+        {
+            SettingsService.Class.CreateFolder();
+        }
 
         #region TestSettings
         private static string _XMLTestInput = @"<?xml version=""1.0"" encoding=""UTF-8""?>
