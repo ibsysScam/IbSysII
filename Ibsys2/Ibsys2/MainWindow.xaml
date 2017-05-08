@@ -18,7 +18,7 @@
         </Menu>
 
         <TabControl x:Name="MainTabControl" HorizontalAlignment="Left" Height="672" Margin="0,19,0,0" VerticalAlignment="Top" Width="1274" SelectedIndex="0">
-            <TabItem x:Name="Main" Header="Main">
+            <TabItem x:Name="Maintab" Header="Main">
                 <Grid Background="#FFE5E5E5">
                     <Button x:Name="choosefile" Content="Browse File" HorizontalAlignment="Left" Margin="10,52,0,0" VerticalAlignment="Top" Width="75" Click="Choosefile_Click" ToolTip="Drag and Drop your XML File instead of choosing it here!"/>
                     <TextBox x:Name="Pathtextbox" MaxLines="1" HorizontalAlignment="Left" Height="23" Margin="10,77,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="286" TabIndex="0" ToolTip="Drag Dop your XML File here!" />
@@ -26,7 +26,7 @@
                     <Button x:Name="MainpageNextButton" Content="Next" HorizontalAlignment="Left" Margin="221,105,0,0" VerticalAlignment="Top" Width="75" Click="MainpageNextButton_Click"/>
                 </Grid>
             </TabItem>
-            <TabItem x:Name="Prognose" Header="Prognosen">
+            <TabItem x:Name="Prognosentab" Header="Prognosen" IsEnabled="False">
                 <Grid Background="#FFE5E5E5">
                     <Label Content="Periode" HorizontalAlignment="Left" Margin="93,110,0,0" VerticalAlignment="Top" Height="23" Width="120"/>
                     <Label Content="Summe&#xD;&#xA;" HorizontalAlignment="Left" Margin="93,226,0,0" VerticalAlignment="Top" Height="24" Width="120"/>
@@ -64,19 +64,19 @@
                 </Grid>
 
             </TabItem>
-            <TabItem Header="Produktionsprogramm">
+            <TabItem x:Name="Prodprogrammtab" Header="Produktionsprogramm" IsEnabled="False">
                 <Grid Background="#FFE5E5E5"/>
             </TabItem>
-            <TabItem Header="Kapaplanung">
+            <TabItem x:Name="Kapaplanungtab" Header="Kapaplanung" IsEnabled="False">
                 <Grid Background="#FFE5E5E5"/>
             </TabItem>
-            <TabItem Header="Einkauf">
+            <TabItem x:Name="Einkauftab" Header="Einkauf" IsEnabled="False">
                 <Grid Background="#FFE5E5E5"/>
             </TabItem>
-            <TabItem Header="Priorisierung">
+            <TabItem x:Name="Priorisierungtab" Header="Priorisierung" IsEnabled="False">
                 <Grid Background="#FFE5E5E5"/>
             </TabItem>
-            <TabItem x:Name="XMLOutput" Header="XML Output">
+            <TabItem x:Name="XMLOutputtab" Header="XML Output" IsEnabled="False">
                 <Grid Background="#FFE5E5E5">
 
 
@@ -111,7 +111,7 @@
                     <TextBox HorizontalAlignment="Left" Height="23" Margin="779,349,0,0" TextWrapping="Wrap" Text="Summe" VerticalAlignment="Top" Width="120"/>
                 </Grid>
             </TabItem>
-            <TabItem x:Name="Charts" Header="Charts">
+            <TabItem x:Name="Chartstab" Header="Charts" IsEnabled="False">
                 <Grid Background="#FFE5E5E5"/>
             </TabItem>
 

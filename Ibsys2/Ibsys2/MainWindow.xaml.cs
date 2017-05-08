@@ -96,7 +96,7 @@ namespace Ibsys2 {
             bool validData = GetFilename(out filename, e);
             Console.WriteLine(validData.ToString());
             if (!validData) {
-                MessageBox.Show("File is not an XML File!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show(TranslateService.Class.GetTranslation("XML_ERROR"), "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
 
@@ -142,7 +142,7 @@ namespace Ibsys2 {
         private void MainpageNextButton_Click(object sender, RoutedEventArgs e) {
 
             if (String.IsNullOrEmpty(Pathtextbox.Text)) {
-                MessageBox.Show("Pihaar muss hier was machen!");
+                MessageBox.Show("Please insert a File!");
                 return;
             }
             ReadXML readxml = new ReadXML();
@@ -151,7 +151,7 @@ namespace Ibsys2 {
                 MessageBox.Show("Malformed XML File! Please use another one!");
                 return;
             }
-
+            Prognosentab.IsEnabled = true;
             MainTabControl.SelectedIndex = 1;
         }
 
