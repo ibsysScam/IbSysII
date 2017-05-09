@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static Ibsys2.Static.Input.Waitinglistworkstations.Workplace;
 
 namespace Ibsys2.Static.Input {
     public class Waitinglistworkstations:IEnumerable<Waitinglistworkstations.Workplace> {
@@ -34,6 +35,20 @@ namespace Ibsys2.Static.Input {
 
         public Workplace GetWorkplaceByID(int id) {
             return _list.Find(x => x.ID == id);
+        }
+
+        public int GetArticleAmountByID(int id)
+        {
+            int res = 0;
+
+            foreach(Workplace wp in _list){
+                foreach(Waitinglist wl in wp.GetAllWaitinglistItem)
+                {
+                    if (wl.Item == id) res += wl.Amount;
+                }
+            }
+
+            return res;
         }
 
         public void ClearClass() {
