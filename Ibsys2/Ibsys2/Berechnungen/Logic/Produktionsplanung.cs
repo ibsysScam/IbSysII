@@ -9,8 +9,7 @@ namespace Ibsys2.Berechnungen.Logic
 {
     static class Produktionsplanung
     {
-
-        #region VerbindlicheAufträge
+        
         //Kinderfahrrad
         public static int p1;
         public static int e26K;
@@ -52,16 +51,35 @@ namespace Ibsys2.Berechnungen.Logic
         public static int e9;
         public static int e15;
         public static int e20;
-        #endregion
 
-        #region Prognose1
-        #endregion
 
-        #region Prognose2
-        #endregion
+        //Kaufteile
+        public static int k23;
+        public static int k24;
+        public static int k25;
+        public static int k27;
+        public static int k28;
 
-        #region Prognose3
-        #endregion
+        public static int k33;
+        public static int k34;
+        public static int k35;
+        public static int k36;
+        public static int k37;
+        public static int k38;
+        public static int k39;
+        public static int k40;
+        public static int k41;
+        public static int k42;
+        public static int k43;
+        public static int k44;
+        public static int k45;
+        public static int k46;
+        public static int k47;
+        public static int k48;
+
+        public static int k59;
+
+
 
 
         public static void berechnen()
@@ -79,7 +97,7 @@ namespace Ibsys2.Berechnungen.Logic
             e26K = p1 + wlw.GetArticleAmountByID(1) + vs.sicherheitsbestandP1 + w.GetArticleByID(26).Amount / 3 + wlw.GetArticleAmountByID(26) / 3 + oiw.GetArticleAmountByID(26) / 3;
             e51 = p1 + wlw.GetArticleAmountByID(1) + vs.sicherheitsbestandP1 + w.GetArticleByID(51).Amount + wlw.GetArticleAmountByID(51) + oiw.GetArticleAmountByID(51);
 
-            e16K = e51 + wlw.GetArticleAmountByID(51) + vs.sicherheitsbestandP1 - w.GetArticleByID(16).Amount/3 + wlw.GetArticleAmountByID(16)/3 + oiw.GetArticleAmountByID(16)/3;
+            e16K = e51 + wlw.GetArticleAmountByID(51) + vs.sicherheitsbestandP1 - w.GetArticleByID(16).Amount / 3 + wlw.GetArticleAmountByID(16) / 3 + oiw.GetArticleAmountByID(16) / 3;
             e17K = e51 + wlw.GetArticleAmountByID(51) + vs.sicherheitsbestandP1 - w.GetArticleByID(17).Amount / 3 + wlw.GetArticleAmountByID(17) / 3 + oiw.GetArticleAmountByID(17) / 3;
             e50 = e51 + wlw.GetArticleAmountByID(51) + vs.sicherheitsbestandP1 - w.GetArticleByID(50).Amount + wlw.GetArticleAmountByID(50) + oiw.GetArticleAmountByID(50);
 
@@ -129,13 +147,12 @@ namespace Ibsys2.Berechnungen.Logic
 
             #endregion
 
+            #region Kaufteile
+
+            k24 = p3 + e31 + e16H + e16D + e16K + 2*e30 + 2*e29 + p1 + e51 + 2*e50 + 2*e49 + p2 + e56 + 2*e55 + 2*e54;
 
 
-
-
-
-
-
+            #endregion
 
         }
 
