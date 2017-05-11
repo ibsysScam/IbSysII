@@ -4,29 +4,74 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static Ibsys2.Static.Input.Waitinglistworkstations.Workplace;
 
 namespace Ibsys2.Berechnungen.Logic
 {
-    public sealed class ValueStore
+    class Arbeitsplatz
     {
-        private static readonly ValueStore instance = new ValueStore();
 
-        private ValueStore() { }
+        public int id;
 
-        public static ValueStore Instance
-        {
-            get
-            {
-                return instance;
+        public List<Arbeitsplatzauftrag> fertigungsListe;
+
+        public int kapazitaetsbedarf;
+        public int ruestzeit;
+        public int kapabeadarfrueckstand;
+        public int ruestzeitrueckstand;
+        public int gesamtzeitbedarf;
+        public int schichten;
+        public int ueberstundenInMin;
+
+
+        public Arbeitsplatz(int arbeitsplatzID, List<Arbeitsplatzauftrag> liste) {
+            this.fertigungsListe = liste;
+            foreach (Arbeitsplatzauftrag apa in this.fertigungsListe) {
+                this.kapazitaetsbedarf += apa.kapabedarfProTeil;
             }
+            foreach (Arbeitsplatzauftrag apa in this.fertigungsListe) {
+                this.ruestzeit += apa.ruestzeit;
+            }
+            this.ruestzeit = this.ruestzeit * 1.5;
+
+            Waitinglistworkstations wlw = Waitinglistworkstations.Class;
+            this.kapabeadarfrueckstand = wlw.GetWorkplaceByID(arbeitsplatzID).Timeneed;
+
+            //this.ruestzeitrueckstand = 
+            foreach(Waitinglist wl in  wlw.GetWorkplaceByID(arbeitsplatzID).GetAllWaitinglistItem) {
+                foreach(Arbeitsplatzauftrag apa in this.fertigungsListe) {
+                    if (wl.Item == apa.artikelID) this.ruestzeitrueckstand += apa.ruestzeit;
+                }
+            }
+            this.ruestzeitrueckstand = this.ruestzeitrueckstand * 1.5;
+
+            this.gesamtzeitbedarf = this.kapazitaetsbedarf + this.ruestzeit + this.kapabeadarfrueckstand + this.ruestzeitrueckstand;
+
+
+            //TODO
+            this.schichten = 0;
+            this.ueberstundenInMin = 0;
+
         }
 
-        public int vertriebswunschP1;
-        public int vertriebswunschP2;
-        public int vertriebswunschP3;
-
-        public int sicherheitsbestandP1;
-        public int sicherheitsbestandP2;
-        public int sicherheitsbestandP3;
     }
+
+
+
+    class Arbeitsplatzauftrag {
+
+        public int artikelID;
+        public int fertigungszeit;
+        public int ruestzeit;
+        public int kapabedarfProTeil;
+
+        public Arbeitsplatzauftrag(int artikelID, int fertigungszeit, int ruestzeit) {
+            this.artikelID = artikelID;
+            this.fertigungszeit = fertigungszeit;
+            this.ruestzeit = ruestzeit;
+            this.kapabedarfProTeil = Produktionsplanung.getBedarfByID(artikelID) * fertigungszeit;
+        }
+
+    }
+
 }
