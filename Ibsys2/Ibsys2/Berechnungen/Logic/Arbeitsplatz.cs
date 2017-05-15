@@ -50,7 +50,7 @@ namespace Ibsys2.Berechnungen.Logic
             int zeitBedarfProPeriode = this.gesamtzeitbedarf;
             if (zeitBedarfProPeriode <= 3600) {
                 this.schichten = 1;
-                zeitBedarfProPeriode >= 2400 ? this.ueberstundenInMin = zeitBedarfProPeriode -2400 : this.ueberstundenInMin = 0; 
+                zeitBedarfProPeriode >= 2400 ? this.ueberstundenInMin = zeitBedarfProPeriode - 2400 : this.ueberstundenInMin = 0; 
 			}
 			else if (zeitBedarfProPeriode <= 6000) {
 				this.schichten = 2;

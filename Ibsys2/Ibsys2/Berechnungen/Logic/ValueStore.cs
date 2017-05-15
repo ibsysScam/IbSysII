@@ -28,5 +28,8 @@ namespace Ibsys2.Berechnungen.Logic
         public int sicherheitsbestandP1;
         public int sicherheitsbestandP2;
         public int sicherheitsbestandP3;
+
+
+        public int aktuellePeriode;
     }
 }

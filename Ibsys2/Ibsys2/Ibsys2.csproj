@@ -120,6 +120,10 @@
     </Page>
     <Compile Include="Berechnungen\Logic\Kapazitaetsplanung.cs" />
     <Compile Include="Berechnungen\Logic\Arbeitsplatz.cs" />
+    <Compile Include="Berechnungen\Logic\Bestellplanung.cs" />
+    <Compile Include="Berechnungen\Logic\ProduktionsplanungPeriode2.cs" />
+    <Compile Include="Berechnungen\Logic\ProduktionsplanungPeriode1.cs" />
+    <Compile Include="Berechnungen\Logic\ProduktionsplanungPeriode3.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
