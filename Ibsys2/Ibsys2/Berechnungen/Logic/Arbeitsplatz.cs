@@ -47,10 +47,19 @@ namespace Ibsys2.Berechnungen.Logic
 
             this.gesamtzeitbedarf = this.kapazitaetsbedarf + this.ruestzeit + this.kapabeadarfrueckstand + this.ruestzeitrueckstand;
 
-
-            //TODO
-            this.schichten = 0;
-            this.ueberstundenInMin = 0;
+            int zeitBedarfProPeriode = this.gesamtzeitbedarf;
+            if (zeitBedarfProPeriode <= 3600) {
+                this.schichten = 1;
+                zeitBedarfProPeriode >= 2400 ? this.ueberstundenInMin = zeitBedarfProPeriode -2400 : this.ueberstundenInMin = 0; 
+			}
+			else if (zeitBedarfProPeriode <= 6000) {
+				this.schichten = 2;
+				zeitBedarfProPeriode >= 4800 ? this.ueberstundenInMin = zeitBedarfProPeriode - 4800 : this.ueberstundenInMin = 0;
+			}
+			else if (zeitBedarfProPeriode <= 7200) {
+				this.schichten = 3;
+                this.ueberstundenInMin = zeitBedarfProPeriode - 7200;
+			}
 
         }
 
