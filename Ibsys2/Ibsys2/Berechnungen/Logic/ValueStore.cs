@@ -13,10 +13,8 @@ namespace Ibsys2.Berechnungen.Logic
 
         private ValueStore() { }
 
-        public static ValueStore Instance
-        {
-            get
-            {
+        public static ValueStore Instance {
+            get {
                 return instance;
             }
         }
