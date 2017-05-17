@@ -10,16 +10,50 @@ using static Ibsys2.Static.Input.Waitingliststock.Missingpart;
 
 namespace Ibsys2.Berechnungen.Logic
 {
-    class Bestellplanung
+    public static class Bestellplanung
     {
-        
-       // public List<Arbeitsplatzauftrag> fertigungsListe;
 
+        public static List<BPKaufteil> kaufteile = new List<BPKaufteil>();
 
+        public static List<BPBestellung> bestellungen = new List<BPBestellung>();
 
-        public Bestellplanung() {
-            
+        public static void createBestellung(BPKaufteil k){
+			if (k.reichweiteInTagen < k.lieferzeit)
+			{
+				bestellungen.Add(new BPBestellung(k.id, k.optimaleBestellmengeEil, true));
+			}
+			else bestellungen.Add(new BPBestellung(k.id, k.optimaleBestellmengeNormal, false));
+        }
 
+        public void bestellungenBerechnen() {
+
+            foreach (BPKaufteil k in kaufteile) {
+                //NORMAL, EIL, ODER KEINE BESTELLUNG?
+                if (k.lieferzeit <= 5) {
+                    if (k.voraussichtlicherEndBestandPeriode0 <= k.meldeBestand){
+                        createBestellung(k);
+                    }
+                } else {
+                    if (k.lieferzeit <= 10) {
+                        if (k.voraussichtlicherEndBestandPeriode1 <= k.meldeBestand){
+							createBestellung(k);
+                        } 
+                    } else {
+                        if (k.lieferzeit <= 15) {
+                            if (k.voraussichtlicherEndBestandPeriode2 <= k.meldeBestand){
+								createBestellung(k);
+							}
+                        } else {
+                            if (k.lieferzeit <= 20) {
+                                if (k.voraussichtlicherEndBestandPeriode3 <= k.meldeBestand) {
+									createBestellung(k);
+								}
+                            }
+                        }
+                    }
+                }
+
+            }
         }
 
     }
@@ -30,10 +64,10 @@ namespace Ibsys2.Berechnungen.Logic
 
         public String bezeichnung;
         public int id;
-        public int diskontmenge;
-        public int lieferzeit;
-        public int lieferzeitAbweichung;
-		public int bestellkostenNormal;
+        public Double diskontmenge;
+        public Double lieferzeit;
+        public Double lieferzeitAbweichung;
+		public Double bestellkostenNormal;
 		public int teileWert;                   //XML
 		public int verbrauchPeriode0;                 //PP
 		public int verbrauchPeriode1;                 //PP
@@ -41,42 +75,127 @@ namespace Ibsys2.Berechnungen.Logic
 		public int verbrauchPeriode3;                 //PP
         public int sicherheitsBestand;
         public int meldeBestand;
-        public int optimaleBestellmenge;
+
 		public int geplanteBestellzugaengePeriode0;   //XML
 		public int geplanteBestellzugaengePeriode1;   //XML
 		public int geplanteBestellzugaengePeriode2;   //XML
 		public int geplanteBestellzugaengePeriode3;   //XML
 
-        public int verbrauchProTagP0 {
+        public Double verbrauchProTagP0 {
             get { return this.verbrauchPeriode0 / 5; } 
         }
 
-		public int verbrauchProTagP1 {
+		public Double verbrauchProTagP1 {
 			get { return this.verbrauchPeriode1 / 5; }
 		}
 
-		public int verbrauchProTagP2 {
+		public Double verbrauchProTagP2 {
 			get { return this.verbrauchPeriode2 / 5; }
 		}
 
-		public int verbrauchProTagP3 {
+		public Double verbrauchProTagP3 {
 			get { return this.verbrauchPeriode3 / 5; }
 		}
 
-        public int lieferzeitGesamt {
+        public Double lieferzeitGesamt {
             get { return this.lieferzeit + this.lieferzeitAbweichung; }
 		}
 
-		public int bestellkostenEil {
+		public Double bestellkostenEil {
             get { return this.bestellkostenNormal * 10; }
 		}
 
-        public int durchSchnittsverbrauchProTag {
-            get { return (this.verbrauchProTagPeriode0 + this.verbrauchProTagPeriode1 + this.verbrauchProTagPeriode2 + this.verbrauchProTagPeriode3) / 5; }
+        public Double durchSchnittsverbrauchProTag {
+            get { return (this.verbrauchProTagPeriode0 + this.verbrauchProTagPeriode1 + this.verbrauchProTagPeriode2 + this.verbrauchProTagPeriode3) / 4; }
         }
 
+        public Double voraussichtlicherEndBestandPeriode0{
+            get {
+                Warehousestock w = Warehousestock.Class;
+                return w.GetArticleByID(this.id).Amount + geplanteBestellzugaengePeriode0 - verbrauchPeriode0;
+            }
+        }
 
-        public BPKaufteil(String bezeichnung, int id, int diskontmenge, int lieferzeit, int lieferzeitAbweichung, int bestellkostenNormal, int sicherheitsBestand, int meldeBestend, int optimaleBestellmenge) {
+		public Double voraussichtlicherEndBestandPeriode1
+		{
+			get
+			{
+				return voraussichtlicherEndBestandPeriode0 + geplanteBestellzugaengePeriode1 - verbrauchPeriode1;
+			}
+		}
+
+		public Double voraussichtlicherEndBestandPeriode2
+		{
+			get
+			{
+				return voraussichtlicherEndBestandPeriode1 + geplanteBestellzugaengePeriode2 - verbrauchPeriode2;
+			}
+		}
+
+		public Double voraussichtlicherEndBestandPeriode3
+		{
+			get
+			{
+				return voraussichtlicherEndBestandPeriode2 + geplanteBestellzugaengePeriode3 - verbrauchPeriode3;
+			}
+		}
+
+        public Double optimaleBestellmengeNormal 
+        {
+            get {
+                if (optimaleBestellmengeNormalMitRabatt >= diskontmenge)
+                {
+                    return optimaleBestellmengeNormalMitRabatt;
+                }
+                else return optimaleBestellmengeNormalOhneRabatt;
+            }
+        }
+
+		public Double optimaleBestellmengeEil
+		{
+            get
+            {
+                if (optimaleBestellmengeEilMitRabatt >= diskontmenge)
+                {
+                    return optimaleBestellmengeEilMitRabatt;
+                }
+                else return optimaleBestellmengeEilOhneRabatt;
+
+            }
+		}
+
+
+        public Double optimaleBestellmengeNormalOhneRabatt 
+        {
+            get { return ((int)(Math.Sqrt((200 * (verbrauchPeriode0 + verbrauchPeriode1 + verbrauchPeriode2 + verbrauchPeriode3) / 4 * 50 * bestellkostenNormal) / (teilewert * 30)))/10)*10; }
+        }
+
+		public Double optimaleBestellmengeEilOhneRabatt
+		{
+            get { return ((int)(Math.Sqrt((200 * (verbrauchPeriode0 + verbrauchPeriode1 + verbrauchPeriode2 + verbrauchPeriode3) / 4 * 50 * bestellkostenEil) / (teilewert * 30))) / 10) * 10; }
+		}
+
+		public Double optimaleBestellmengeNormalMitRabatt
+		{
+			get { return ((int)(Math.Sqrt((200 * (verbrauchPeriode0 + verbrauchPeriode1 + verbrauchPeriode2 + verbrauchPeriode3) / 4 * 50 * bestellkostenNormal) / (teilewert * 30*0.9))) / 10) * 10; }
+		}
+
+		public Double optimaleBestellmengeEilMitRabatt
+		{
+			get { return ((int)(Math.Sqrt((200 * (verbrauchPeriode0 + verbrauchPeriode1 + verbrauchPeriode2 + verbrauchPeriode3) / 4 * 50 * bestellkostenEil / (teilewert * 30*0.9))) / 10) * 10; }
+		}
+
+                         public int reichweiteInTagen {
+			get
+			{
+				Warehousestock w = Warehousestock.Class;
+				return (w.GetArticleByID(k.id).Amount + k.geplanteBestellzugaengePeriode0 - k.sicherheitsBestand) / k.durchSchnittsverbrauchProTag;
+			}
+            }
+
+
+        public BPKaufteil(String bezeichnung, int id, Double diskontmenge, Double lieferzeit, Double lieferzeitAbweichung, Double bestellkostenNormal) {
+            
             Warehousestock w = Warehousestock.Class;
             this.teileWert = w.GetArticleByID(id).Stockvalue;
             this.verbrauchPeriode0 = Produktionsplanung.getBedarfByID(id);
@@ -86,24 +205,43 @@ namespace Ibsys2.Berechnungen.Logic
 
             int aktuellePeriode = ValueStore.Instance.aktuellePeriode;
             Waitingliststock wls = Warehousestock.Class;
-            foreach(Waitinglist wli in wls.GetMissingpartByID(id).GetAllWaitinglistItem) {
-                if (wli.Period == aktuellePeriode) this.geplanteBestellzugaengePeriode0 = wli.Amount; 
-                else if (wli.Period == aktuellePeriode +1) this.geplanteBestellzugaengePeriode1 = wli.Amount;
-                else if (wli.Period == aktuellePeriode +2) this.geplanteBestellzugaengePeriode2 = wli.Amount;
-                else if (wli.Period == aktuellePeriode +3) this.geplanteBestellzugaengePeriode3 = wli.Amount;
-			}
-              
+            foreach (Waitinglist wli in wls.GetMissingpartByID(id).GetAllWaitinglistItem)
+            {
+                if (wli.Period == aktuellePeriode) this.geplanteBestellzugaengePeriode0 = wli.Amount;
+                else if (wli.Period == aktuellePeriode + 1) this.geplanteBestellzugaengePeriode1 = wli.Amount;
+                else if (wli.Period == aktuellePeriode + 2) this.geplanteBestellzugaengePeriode2 = wli.Amount;
+                else if (wli.Period == aktuellePeriode + 3) this.geplanteBestellzugaengePeriode3 = wli.Amount;
+            }
+
             this.id = id;
             this.bezeichnung = bezeichnung;
             this.diskontmenge = diskontmenge;
             this.lieferzeit = lieferzeit;
             this.lieferzeitAbweichung = lieferzeitAbweichung;
             this.bestellkostenNormal = bestellkostenNormal;
-            this.sicherheitsBestand = sicherheitsBestand;
-            this.meldeBestand = meldeBestand;
-            this.optimaleBestellmenge = optimaleBestellmenge;
-        }
 
+
+            this.sicherheitsBestand = ((int)((lieferzeit + (lieferzeitAbweichung * ValueStore.Instance.sicherheitsFaktor)) * durchSchnittsverbrauchProTag / 10) * 10;
+            this.meldeBestand = ((int)((lieferzeit * durchSchnittsverbrauchProTag) + sicherheitsBestand) / 10) * 10;        // Rundung auf 10
+        }
+    }
+
+
+
+
+    public class BPBestellung
+    {
+
+        public Boolean isEilbestellung;
+        public int menge;
+        public int artikelID;
+
+        public BPBestellung(int artikelID, int menge, Boolean isEil)
+        {
+            this.isEilbestellung = isEil;
+            this.menge = menge;
+            this.artikelID = artikelID;
+        }
     }
 
 }

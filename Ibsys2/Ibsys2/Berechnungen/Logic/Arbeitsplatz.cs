@@ -24,6 +24,10 @@ namespace Ibsys2.Berechnungen.Logic
         public int ueberstundenInMin;
 
 
+        public int ueberStundenInMinProTag {
+            get { return this.ueberstundenInMin / 5; }
+        }
+
         public Arbeitsplatz(int arbeitsplatzID, List<Arbeitsplatzauftrag> liste) {
             this.fertigungsListe = liste;
             foreach (Arbeitsplatzauftrag apa in this.fertigungsListe) {
