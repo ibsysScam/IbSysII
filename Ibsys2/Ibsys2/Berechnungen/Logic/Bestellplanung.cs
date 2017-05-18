@@ -13,7 +13,41 @@ namespace Ibsys2.Berechnungen.Logic
     public static class Bestellplanung
     {
 
-        public static List<BPKaufteil> kaufteile = new List<BPKaufteil>();
+        public static List<BPKaufteil> kaufteile = new List<BPKaufteil>([
+        
+            new BPKaufteil(21, "Kette",         300,    9,      2.5,    50),
+            new BPKaufteil(22, "Kette",         300,    9,      2.5,    50),
+            new BPKaufteil(23, "Kette",         300,    6.5,    1.5,    50),
+            new BPKaufteil(24, "Mutter 3/8",    6100,   16.5,   2,      100),
+            new BPKaufteil(25, "Scheibe 3/8",   1800,   5,      1.5,    50),
+            new BPKaufteil(27, "Schraube 3/8",  1800,   5,      1.5,    75),
+            new BPKaufteil(28, "Rohr 3/4",      4500,   9,      2.5,    50),
+            new BPKaufteil(32, "Farbe",         2700,   11,     3,      50),
+            new BPKaufteil(33, "Felge cpl.",    900,    10,     3,      75),
+            new BPKaufteil(34, "Speiche",       22000,  8.5,    2,      50),
+            new BPKaufteil(35, "Konus",         3600,   11.5,   2.5,    75),
+            new BPKaufteil(36, "Freilauf",      900,    6.5,    1,      100),
+            new BPKaufteil(37, "Gabel",         900,    8,      2,      50),
+            new BPKaufteil(38, "Welle",         300,    9,      2.5,    50),
+            new BPKaufteil(39, "Blech",         1800,   8,      2,      75),
+            new BPKaufteil(40, "Lenker",        900,    9,      1.5,    50),
+            new BPKaufteil(41, "Mutter 3/4",    900,    5,      1.5,    50),
+            new BPKaufteil(42, "Griff",         1800,   6.5,    2,      50),
+            new BPKaufteil(43, "Sattel",        2700,   10.5,   3,      75),
+            new BPKaufteil(44, "Stange 1/2",    900,    5.5,    1.5,    50),
+            new BPKaufteil(45, "Mutter 1/4",    900,    9,      2,      50),
+            new BPKaufteil(46, "Schraube 1/4",  900,    5,      2,      50),
+            new BPKaufteil(47, "Zahnkranz",     900,    7.55,   1,      50),
+            new BPKaufteil(48, "Pedal",         1800,   5.5,    1.5,    75),
+            new BPKaufteil(52, "Felge cpl.",    600,    8.5,    2.5,    50),
+            new BPKaufteil(53, "Speiche",       22000,  8.5,    1.5,    50),
+            new BPKaufteil(57, "Felge cpl.",    600,    9,      2,      50),
+            new BPKaufteil(58, "Speiche",       22000,  8.5,    3,      50),
+            new BPKaufteil(59, "Schweißdraht",  1800,   4,      1.5,    50)
+        
+        
+        
+        ]);
 
         public static List<BPBestellung> bestellungen = new List<BPBestellung>();
 
@@ -194,7 +228,7 @@ namespace Ibsys2.Berechnungen.Logic
             }
 
 
-        public BPKaufteil(String bezeichnung, int id, Double diskontmenge, Double lieferzeit, Double lieferzeitAbweichung, Double bestellkostenNormal) {
+        public BPKaufteil(int id, String bezeichnung, Double diskontmenge, Double lieferzeit, Double lieferzeitAbweichung, Double bestellkostenNormal) {
             
             Warehousestock w = Warehousestock.Class;
             this.teileWert = w.GetArticleByID(id).Stockvalue;
