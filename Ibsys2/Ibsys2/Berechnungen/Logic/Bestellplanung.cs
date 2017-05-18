@@ -12,8 +12,8 @@ namespace Ibsys2.Berechnungen.Logic
     public static class Bestellplanung
     {
 
-        public static List<BPKaufteil> kaufteile = new List<BPKaufteil>([
-        
+        public static List<BPKaufteil> kaufteile = new List<BPKaufteil>() {
+
             new BPKaufteil(21, "Kette",         300,    9,      2.5,    50),
             new BPKaufteil(22, "Kette",         300,    9,      2.5,    50),
             new BPKaufteil(23, "Kette",         300,    6.5,    1.5,    50),
@@ -43,10 +43,8 @@ namespace Ibsys2.Berechnungen.Logic
             new BPKaufteil(57, "Felge cpl.",    600,    9,      2,      50),
             new BPKaufteil(58, "Speiche",       22000,  8.5,    3,      50),
             new BPKaufteil(59, "Schweißdraht",  1800,   4,      1.5,    50)
-        
-        
-        
-        ]);
+
+        };
 
 
         public static List<BPBestellung> bestellungen = new List<BPBestellung>();
