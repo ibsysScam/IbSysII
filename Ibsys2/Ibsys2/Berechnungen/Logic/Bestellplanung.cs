@@ -225,7 +225,7 @@ namespace Ibsys2.Berechnungen.Logic
         public int reichweiteInTagen {
             get {
                 Warehousestock w = Warehousestock.Class;
-                return (w.GetArticleByID(k.id).Amount + k.geplanteBestellzugaengePeriode0 - k.sicherheitsBestand) / k.durchSchnittsverbrauchProTag;
+                return (w.GetArticleByID(this.id).Amount + this.geplanteBestellzugaengePeriode0 - this.sicherheitsBestand) / k.durchSchnittsverbrauchProTag;
             }
         }
 

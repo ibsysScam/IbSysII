@@ -62,6 +62,7 @@ namespace Ibsys2.Berechnungen.Logic
         public static int k27;
         public static int k28;
 
+        public static int k32;
         public static int k33;
         public static int k34;
         public static int k35;
@@ -94,37 +95,76 @@ namespace Ibsys2.Berechnungen.Logic
 
             switch (id)
             {
-                case 1: return p1;
-                case 2: return p2;
-                case 3: return p3;
-                case 4: return e4;
-                case 5: return e5;
-                case 6: return e6;
-                case 7: return e7;
-                case 8: return e8;
-                case 9: return e9;
-                case 10: return e10;
-                case 11: return e11;
-                case 12: return e12;
-                case 13: return e13;
-                case 14: return e14;
-                case 15: return e15;
-                case 16: return e16K + e16D + e16H;
-                case 17: return e17K + e17D + e17H;
-                case 18: return e18;
-                case 19: return e19;
-                case 20: return e20;
-                case 26: return e26K + e26D + e26H;
-                case 29: return e29;
-                case 30: return e30;
-                case 31: return e31;
-                case 49: return e49;
-                case 50: return e50;
-                case 51: return e51;
-                case 54: return e54;
-                case 55: return e55;
-                case 56: return e56;
-                default: return 0;
+				case 1: return p1;
+				case 2: return p2;
+				case 3: return p3;
+				case 4: return e4;
+				case 5: return e5;
+				case 6: return e6;
+				case 7: return e7;
+				case 8: return e8;
+				case 9: return e9;
+				case 10: return e10;
+				case 11: return e11;
+				case 12: return e12;
+				case 13: return e13;
+				case 14: return e14;
+				case 15: return e15;
+				case 16: return e16K + e16D + e16H;
+				case 17: return e17K + e17D + e17H;
+				case 18: return e18;
+				case 19: return e19;
+				case 20: return e20;
+
+				case 21: return k21;
+				case 22: return k22;
+				case 23: return k23;
+				case 24: return k24;
+				case 25: return k25;
+
+				case 26: return e26K + e26D + e26H;
+
+				case 27: return k27;
+				case 28: return k28;
+
+				case 29: return e29;
+				case 30: return e30;
+				case 31: return e31;
+
+				case 32: return k32;
+				case 33: return k33;
+				case 34: return k34;
+				case 35: return k35;
+				case 36: return k36;
+				case 37: return k37;
+				case 38: return k38;
+				case 39: return k39;
+				case 40: return k40;
+				case 41: return k41;
+				case 42: return k42;
+				case 43: return k43;
+				case 44: return k44;
+				case 45: return k45;
+				case 46: return k46;
+				case 47: return k47;
+				case 48: return k48;
+
+				case 49: return e49;
+				case 50: return e50;
+				case 51: return e51;
+
+				case 52: return k52;
+				case 53: return k53;
+
+				case 54: return e54;
+				case 55: return e55;
+				case 56: return e56;
+
+				case 57: return k57;
+				case 58: return k58;
+				case 59: return k59;
+
+				default: return 0;
             }
         }
 

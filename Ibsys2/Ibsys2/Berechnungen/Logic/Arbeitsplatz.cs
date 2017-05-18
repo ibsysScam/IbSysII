@@ -30,6 +30,7 @@ namespace Ibsys2.Berechnungen.Logic
 
         public Arbeitsplatz(int arbeitsplatzID, List<Arbeitsplatzauftrag> liste)
         {
+            this.id = arbeitsplatzID;
             this.fertigungsListe = liste;
             foreach (Arbeitsplatzauftrag apa in this.fertigungsListe)
             {
