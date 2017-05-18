@@ -222,7 +222,7 @@ namespace Ibsys2.Berechnungen.Logic
             get { return ((int)(Math.Sqrt((200 * (verbrauchPeriode0 + verbrauchPeriode1 + verbrauchPeriode2 + verbrauchPeriode3) / 4 * 50 * bestellkostenEil / (teileWert * 30 * 0.9))) / 10) * 10); }
         }
 
-        public int reichweiteInTagen {
+        public double reichweiteInTagen {
             get {
                 Warehousestock w = Warehousestock.Class;
                 return (Convert.ToDouble(w.GetArticleByID(this.id).Amount) + this.geplanteBestellzugaengePeriode0 - this.sicherheitsBestand) / this.durchSchnittsverbrauchProTag;
