@@ -1,4 +1,4 @@
-﻿using Ibsys2.Static.Input;
+﻿﻿using Ibsys2.Static.Input;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -111,15 +111,25 @@ namespace Ibsys2.Berechnungen.Logic
         });
 
 
-        public static void berechnen()
+        public static Arbeitsplatz getArbeitsplatzByID(int id)
         {
-            //Warehousestock w = Warehousestock.Class;
-            //Waitinglistworkstations wlw = Waitinglistworkstations.Class;
-            //Ordersinwork oiw = Ordersinwork.Class;
-
-            //ValueStore vs = ValueStore.Instance;
-
-
+            switch (id) {
+                
+                case 1: return a1;
+                case 2: return a2;
+                case 3: return a3;
+                case 4: return a4;
+                case 6: return a6;
+                case 7: return a7;
+                case 8: return a8;
+                case 9: return a9;
+                case 10: return a10;
+                case 11: return a11;
+                case 12: return a12;
+                case 13: return a13;
+                case 14: return a14;
+                case 15: return a15;
+            }
         }
 
     }
