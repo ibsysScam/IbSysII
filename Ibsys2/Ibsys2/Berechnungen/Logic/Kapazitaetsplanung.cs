@@ -129,6 +129,7 @@ namespace Ibsys2.Berechnungen.Logic
                 case 13: return a13;
                 case 14: return a14;
                 case 15: return a15;
+                default: return 0;
             }
         }
 
