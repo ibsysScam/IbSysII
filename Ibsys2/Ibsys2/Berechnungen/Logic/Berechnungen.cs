@@ -15,7 +15,7 @@ namespace Ibsys2.Berechnungen.Logic
             Bestellplanung.bestellungenBerechnen();
 
             foreach (BPBestellung bestellung in Bestellplanung.bestellungen){
-                ol.AddItem(new OrderlistItem(bestellung.artikelID, bestellung.menge, bestellung.isEilbestellung ? 1 : 0));  //TODO 1/0 richtig so??
+                ol.AddItem(new OrderlistItem(bestellung.artikelID, bestellung.menge, bestellung.isEilbestellung ? 4 : 5)); 
             }
         }
 
@@ -49,7 +49,7 @@ namespace Ibsys2.Berechnungen.Logic
         private static void createWorkingtimelist() {
             Workingtimelist wl = Workingtimelist.Class;
             foreach(Arbeitsplatz a in Kapazitaetsplanung.arbeitsplatzListe){
-                wl.AddItem(new WorkingtimelistItem(a.id, a.schichten, a.ueberstundenInMin));    //TODO Überstunden Pro Tag oder allgemein????
+                wl.AddItem(new WorkingtimelistItem(a.id, a.schichten, a.ueberStundenInMinProTag));    
             }
         }
 
