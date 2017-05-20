@@ -110,6 +110,10 @@ namespace Ibsys2.Berechnungen.Logic
             new Arbeitsplatzauftrag(26, 3, 15)
         });
 
+        public static List<Arbeitsplatz> arbeitsplatzListe = new List<Arbeitsplatz>() {
+            a1,a2,a3,a4,a6,a7,a8,a9,a10,a11,a12,a13,a14,a15
+        };
+
 
         public static Arbeitsplatz getArbeitsplatzByID(int id)
         {

@@ -124,6 +124,7 @@
     <Compile Include="Berechnungen\Logic\ProduktionsplanungPeriode2.cs" />
     <Compile Include="Berechnungen\Logic\ProduktionsplanungPeriode1.cs" />
     <Compile Include="Berechnungen\Logic\ProduktionsplanungPeriode3.cs" />
+    <Compile Include="Berechnungen\Logic\Berechnungen.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
