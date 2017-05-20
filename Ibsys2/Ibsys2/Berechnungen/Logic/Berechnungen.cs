@@ -15,7 +15,7 @@ namespace Ibsys2.Berechnungen.Logic
             Bestellplanung.bestellungenBerechnen();
 
             foreach (BPBestellung bestellung in Bestellplanung.bestellungen){
-                ol.AddItem(new OrderlistItem(bestellung.artikelID, bestellung.menge, bestellung.isEilbestellung ? 4 : 5)); 
+                ol.AddItem(new OrderlistItem(bestellung.artikelID, Convert.ToInt32(bestellung.menge), bestellung.isEilbestellung ? 4 : 5)); 
             }
         }
 

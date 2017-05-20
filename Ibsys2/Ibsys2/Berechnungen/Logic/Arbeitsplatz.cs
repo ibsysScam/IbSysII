@@ -24,8 +24,8 @@ namespace Ibsys2.Berechnungen.Logic
         public double ueberstundenInMin;
 
 
-        public double ueberStundenInMinProTag {
-            get { return this.ueberstundenInMin / 5; }
+        public int ueberStundenInMinProTag {
+            get { return Convert.ToInt32(this.ueberstundenInMin / 5); }
         }
 
         public Arbeitsplatz(int arbeitsplatzID, List<Arbeitsplatzauftrag> liste)
