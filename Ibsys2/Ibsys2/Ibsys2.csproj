@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -8,7 +8,7 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>Ibsys2</RootNamespace>
     <AssemblyName>Ibsys2</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
@@ -24,6 +24,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -33,10 +34,17 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Controls.Input.Toolkit, Version=3.5.40128.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WPFToolkit.3.5.50211.1\lib\System.Windows.Controls.Input.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Controls.Layout.Toolkit, Version=3.5.40128.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WPFToolkit.3.5.50211.1\lib\System.Windows.Controls.Layout.Toolkit.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -49,29 +57,32 @@
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="WPFToolkit, Version=3.5.40128.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WPFToolkit.3.5.50211.1\lib\WPFToolkit.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Berechnungen\Datenstrukturen\Article.cs" />
-    <Compile Include="Berechnungen\Datenstrukturen\Order.cs" />
-    <Compile Include="Pages\CreateXML\CreateXML.xaml.cs">
-      <DependentUpon>CreateXML.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\ReadXML\ReadXML.xaml.cs">
-      <DependentUpon>ReadXML.xaml</DependentUpon>
-    </Compile>
+    <Compile Include="Berechnungen\Logic\ValueStore.cs" />
+    <Compile Include="Berechnungen\Logic\Produktionsplanung.cs" />
     <Compile Include="Pages\Settings\Settings.xaml.cs">
       <DependentUpon>Settings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Wiki\Wiki.xaml.cs">
+      <DependentUpon>Wiki.xaml</DependentUpon>
     </Compile>
     <Compile Include="Service\Settings\SettingsService.cs" />
     <Compile Include="Service\Translate\TranslateService.cs" />
     <Compile Include="Service\Translate\Translations\English.cs" />
     <Compile Include="Service\Translate\Translations\German.cs" />
+    <Compile Include="Service\XML\CreateXML.cs" />
+    <Compile Include="Service\XML\ReadXML.cs" />
     <Compile Include="Static\Input\Completedorders.cs" />
     <Compile Include="Static\Input\Cycletimes.cs" />
+    <Compile Include="Static\Input\Forecast.cs" />
     <Compile Include="Static\Input\Futureinwardstockmovement.cs" />
     <Compile Include="Static\Input\Idletimecosts.cs" />
     <Compile Include="Static\Input\Inwardstockmovement.cs" />
@@ -99,18 +110,21 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Pages\CreateXML\CreateXML.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\ReadXML\ReadXML.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Pages\Settings\Settings.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\Wiki\Wiki.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Compile Include="Berechnungen\Logic\Kapazitaetsplanung.cs" />
+    <Compile Include="Berechnungen\Logic\Arbeitsplatz.cs" />
+    <Compile Include="Berechnungen\Logic\Bestellplanung.cs" />
+    <Compile Include="Berechnungen\Logic\ProduktionsplanungPeriode2.cs" />
+    <Compile Include="Berechnungen\Logic\ProduktionsplanungPeriode1.cs" />
+    <Compile Include="Berechnungen\Logic\ProduktionsplanungPeriode3.cs" />
+    <Compile Include="Berechnungen\Logic\Berechnungen.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -130,6 +144,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

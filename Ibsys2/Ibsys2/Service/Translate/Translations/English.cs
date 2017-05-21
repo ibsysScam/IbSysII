@@ -15,6 +15,10 @@ namespace Ibsys2.Service {
 
         private static void Translate() {
             _translate.Add("HELLO", "Hello");
+            _translate.Add("SETTINGS_SAVED", "Settings saved! Would you like to restart the Program? Without a restart translate errors will occur!");
+            _translate.Add("SETTINGS", "Settings");
+            _translate.Add("XML_ERROR", "This is not a XML File!");
+            _translate.Add("ONLY_INT_ERROR", "Please use only integer values!");
         }
 
     }

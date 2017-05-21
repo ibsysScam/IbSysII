@@ -3,9 +3,6 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Ibsys2.Static;
 using Ibsys2.Static.Output;
 using Ibsys2.Pages;
-using Ibsys2.Pages.ReadXML;
-using Ibsys2.Pages.CreateXML;
-using Ibsys2.Berechnungen.Datenstrukturen;
 using Ibsys2.Service;
 
 namespace IbSysUnitTests
@@ -77,30 +74,10 @@ namespace IbSysUnitTests
             Selldirect.Class.setAnzahlArtikel(3, 2, 3, 4);
         }
 
-        [TestMethod]
-        public void ArticleDataStruct()
-        {
-            Article article = new Article(1,1,1,2.2,2.1,2.0);
-           
-        }
+ 
 
-        public void OrderDataStruct()
-        {
-            Order order = new Order(1, 1, 1, 2.2, 2.1, 2.0);
+       
 
-        }
 
-        [TestMethod]
-        public void LoadLanguages()
-        {
-            Settings setting = new Settings();
-            setting.LoadLanguages();
-        }
-
-        [TestMethod]
-        public void TestXMLInitialize()
-        {
-            SettingsService.Class.InitializeXML();
-        }
     }
 }

@@ -5,8 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
-using Ibsys2.Pages.ReadXML;
-using Ibsys2.Pages.CreateXML;
+using Ibsys2.Service;
 using Ibsys2.Static.Output;
 
 namespace IbSysUnitTests {

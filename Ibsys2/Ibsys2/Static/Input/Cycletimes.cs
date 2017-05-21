@@ -13,14 +13,31 @@ namespace Ibsys2.Static.Input {
         private static Cycletimes _class;
         private List<Order> _list;
 
+        public static Cycletimes Class {
+            get {
+                if (_class == null)
+                    new Cycletimes();
+                return _class;
+            }
+        }
+
 
         public Cycletimes(int _startedorders, int _waitingorders) {
-            if (_class != null)
+            if (_class != null && _startedorders != -1 && _waitingorders != -1)
                 throw new Exception("Class already exists!");
             _class = this;
             this._list = new List<Order>();
             this.Startedorders = _startedorders;
             this.Waitingorders = _waitingorders;
+        }
+
+        private Cycletimes () {
+            if (_class != null)
+                throw new Exception("Class already exists!");
+            _class = this;
+            this._list = new List<Order>();
+            this._startedorders = -1;
+            this._waitingorders = -1;
         }
 
         public void AddOrder(Order o) {
@@ -36,12 +53,6 @@ namespace Ibsys2.Static.Input {
 
         public List<Order> GetOrdersByPeriod(int period) {
             return _list.FindAll(x => x.Period == period);
-        }
-
-        public static Cycletimes Class {
-            get {
-                return _class;
-            }
         }
 
         public int Startedorders {

@@ -1,6 +1,8 @@
 ﻿using System.IO;
 using Ibsys2.Static;
 using System;
+using System.Xml;
+using System.Text;
 
 namespace Ibsys2.Service
 {
@@ -26,35 +28,63 @@ namespace Ibsys2.Service
            
             
         }
-        public void ReadSettings()
+
+        public void LoadSettings()
         {
+            string filepath = Static.Static.settingspath;
+            try {
+                string xmlinput = File.ReadAllText(filepath);
+                ReadSettings(xmlinput);
+            } catch {
+                SaveSettings();
+            }
+        }
+
+        public void ReadSettings(string XMLInput)
+        {
+          
+
+            if (String.IsNullOrEmpty(XMLInput))
+                throw new ArgumentNullException();
+
+            XmlDocument doc = new XmlDocument();
+            doc.LoadXml(XMLInput);
+
+
+            XmlNode language = doc.SelectSingleNode("/Settings/Language");
+            string fulllanguage = language.InnerText;
+
+            TranslateService.Class.PrimaryLanguage = fulllanguage;
 
         }
 
         public void SaveSettings()
         {
-
+            
+            string filename = Static.Static.settingspath;
+            XmlDocument document = new XmlDocument();
+            XmlNode Root = document.CreateElement("Settings");
+            document.AppendChild(Root);
+            Root.AppendChild(document.CreateElement("Language")).InnerText = TranslateService.Class.GetPrimaryLanguage.LanguageShortText;
+            using (TextWriter sw = new StreamWriter(filename,false, Encoding.UTF8))
+            {
+                document.Save(sw);
+            }
         }
 
-        public void InitializeXML()
+        public void CreateFolder()
         {
-            
-            string file = Static.Static.settingsfile;
-            string initialsettings = @"
-    <?xml version=""1.0"" encoding=""UTF - 8""?>
-    <settings>
-        <language>deutsch</language>
-
-    </settings>";
-
-
-            if (!File.Exists(file))
+            if (!Directory.Exists(Static.Static.settingsfolder))
             {
-                File.Create(file);
-                StreamWriter sw = new StreamWriter(file);
-                sw.Write(initialsettings);
-                sw.Close();
+                string rootfolder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Ibsys2");
+                Directory.CreateDirectory(rootfolder);
+
             }
+
+
+           
+
+            return;
         }
     }
 }

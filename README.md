@@ -1,5 +1,10 @@
 # Readme
 
+### Build status
+Branch master:&nbsp; [![Build Status master](https://travis-ci.org/AvariusProject/IbSys2.svg?branch=master)](https://travis-ci.org/AvariusProject/IbSys2)
+
+Branch dev:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [![Build Status dev](https://travis-ci.org/AvariusProject/IbSys2.svg?branch=dev)](https://travis-ci.org/AvariusProject/IbSys2)
+
 ## Requirements
 
 - Visual Studio 2015 /2017
