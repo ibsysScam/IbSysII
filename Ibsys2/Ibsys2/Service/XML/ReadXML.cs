@@ -56,7 +56,6 @@ namespace Ibsys2.Service {
                             foreach (XmlNode waitinglist in node)
                                 mp.Add(new Waitingliststock.Missingpart.Waitinglist(Convert.ToInt32(waitinglist.Attributes["period"].InnerText), Convert.ToInt32(waitinglist.Attributes["order"].InnerText), Convert.ToInt32(waitinglist.Attributes["firstbatch"].InnerText), Convert.ToInt32(waitinglist.Attributes["lastbatch"].InnerText), Convert.ToInt32(waitinglist.Attributes["item"].InnerText), Convert.ToInt32(waitinglist.Attributes["amount"].InnerText)));
                             wls.Add(mp);
-
                         } else if (Results.Name == "ordersinwork") {
                             Ordersinwork oiw = Ordersinwork.Class;
                             oiw.Add(new Ordersinwork.Workplace(Convert.ToInt32(node.Attributes["id"].InnerText), Convert.ToInt32(node.Attributes["period"].InnerText), Convert.ToInt32(node.Attributes["order"].InnerText), Convert.ToInt32(node.Attributes["batch"].InnerText), Convert.ToInt32(node.Attributes["item"].InnerText), Convert.ToInt32(node.Attributes["amount"].InnerText), Convert.ToInt32(node.Attributes["timeneed"].InnerText)));

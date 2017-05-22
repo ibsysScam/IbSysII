@@ -36,6 +36,18 @@ namespace Ibsys2.Static.Input {
             return _list.Find(x => x.ID == id);
         }
 
+        public int GetArticleAmountByID(int id)
+        {
+            int res = 0;
+
+            foreach(Workplace w in _list)
+            {
+                if (w.Item == id) res += w.Amount;
+            }
+
+            return res;
+        }
+
         public List<Workplace> GetWorkplaceByOrder(int order) {
             return _list.FindAll(x => x.Order == order);
         }

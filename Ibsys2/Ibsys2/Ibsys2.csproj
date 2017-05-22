@@ -70,6 +70,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Berechnungen\Logic\ValueStore.cs" />
+    <Compile Include="Berechnungen\Logic\Produktionsplanung.cs" />
     <Compile Include="Charts\Charts.cs" />
     <Compile Include="Pages\Settings\Settings.xaml.cs">
       <DependentUpon>Settings.xaml</DependentUpon>
@@ -121,6 +123,13 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Compile Include="Berechnungen\Logic\Kapazitaetsplanung.cs" />
+    <Compile Include="Berechnungen\Logic\Arbeitsplatz.cs" />
+    <Compile Include="Berechnungen\Logic\Bestellplanung.cs" />
+    <Compile Include="Berechnungen\Logic\ProduktionsplanungPeriode2.cs" />
+    <Compile Include="Berechnungen\Logic\ProduktionsplanungPeriode1.cs" />
+    <Compile Include="Berechnungen\Logic\ProduktionsplanungPeriode3.cs" />
+    <Compile Include="Berechnungen\Logic\Berechnungen.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
