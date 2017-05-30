@@ -241,7 +241,7 @@ namespace Ibsys2.Berechnungen.Logic
             this.verbrauchPeriode2 = ProduktionsplanungPeriode2.getBedarfByID(id);
             this.verbrauchPeriode3 = ProduktionsplanungPeriode3.getBedarfByID(id);
 
-            int aktuellePeriode = ValueStore.Instance.aktuellePeriode;
+            int aktuellePeriode = Static.Static.lastperiod +1;
             Waitingliststock wls = Waitingliststock.Class;
             foreach (Waitinglist wli in wls.GetMissingpartByID(id).GetAllWaitinglistItem)
             {
