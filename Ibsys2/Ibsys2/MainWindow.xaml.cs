@@ -126,7 +126,11 @@ namespace Ibsys2 {
         }
 
         private void Calculatebutton_Click(object sender, RoutedEventArgs e) {
-
+            if(Sicherheitsfaktor.Text == "")
+            {
+                MessageBox.Show("Pls Fill all needed Fields");
+                return;
+            }
         }
 
         private bool AllFilled()
