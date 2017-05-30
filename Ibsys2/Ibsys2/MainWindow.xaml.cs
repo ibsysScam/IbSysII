@@ -149,7 +149,7 @@ namespace Ibsys2 {
                     Forecast.Class.AddForecast(1, new Forecast.ForecastPeriod(Convert.ToInt32(period1product1.Text), Convert.ToInt32(period1product2.Text), Convert.ToInt32(period1product3.Text)));
                     Forecast.Class.AddForecast(2, new Forecast.ForecastPeriod(Convert.ToInt32(period2product1.Text), Convert.ToInt32(period2product2.Text), Convert.ToInt32(period2product3.Text)));
                     Forecast.Class.AddForecast(3, new Forecast.ForecastPeriod(Convert.ToInt32(period3product1.Text), Convert.ToInt32(period3product2.Text), Convert.ToInt32(period3product3.Text)));
-                    Ui.EnableNextTab(xmloutputtab,MainTabControl);
+                    Ui.EnableNextTab(sicherheitsbestandtab,MainTabControl);
 
 
                 }
@@ -157,6 +157,12 @@ namespace Ibsys2 {
                 {
                     MessageBox.Show(TranslateService.Class.GetTranslation("ONLY_INT_ERROR"));
                 }
+            }
+
+            else
+            {
+                MessageBox.Show("Please fill all Fields!");
+                return;
             }
           
         }
@@ -237,7 +243,7 @@ namespace Ibsys2 {
             e.Handled = regex.IsMatch(e.Text);
         }
 
-
+   
     }
 }
 
