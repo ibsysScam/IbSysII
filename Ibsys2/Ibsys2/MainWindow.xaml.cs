@@ -93,9 +93,8 @@ namespace Ibsys2 {
         }
 
         private void Window_DragEnter(object sender, DragEventArgs e) {
-            string filename;
             Console.WriteLine("OnDragEnter");
-            bool validData = GetFilename(out filename, e);
+            bool validData = GetFilename(out string filename, e);
             Console.WriteLine(validData.ToString());
             if (!validData) {
                 MessageBox.Show(TranslateService.Class.GetTranslation("XML_ERROR"), "Error", MessageBoxButton.OK, MessageBoxImage.Error);
@@ -243,7 +242,13 @@ namespace Ibsys2 {
             e.Handled = regex.IsMatch(e.Text);
         }
 
-   
+        private void Sicherheitsbestandtab_IsEnabledChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            //varperiod1.Content = Static.Static.lastperiod;
+            //varperiod2.Content = Static.Static.lastperiod + 1;
+            //varperiod3.Content = Static.Static.lastperiod + 2;
+            //varperiod4.Content = Static.Static.lastperiod + 3;
+        }
     }
 }
 
