@@ -6,8 +6,9 @@ namespace UIFeautures
     public class UIFeatures
     {
 
-        public void EnableNextTab(TabItem item){
+        public void EnableNextTab(TabItem item, TabControl MainTabControl){
             item.IsEnabled = true;
+            MainTabControl.SelectedIndex += 1;
         }
 
     }

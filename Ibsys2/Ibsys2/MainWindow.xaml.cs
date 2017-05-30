@@ -149,7 +149,7 @@ namespace Ibsys2 {
                     Forecast.Class.AddForecast(1, new Forecast.ForecastPeriod(Convert.ToInt32(period1product1.Text), Convert.ToInt32(period1product2.Text), Convert.ToInt32(period1product3.Text)));
                     Forecast.Class.AddForecast(2, new Forecast.ForecastPeriod(Convert.ToInt32(period2product1.Text), Convert.ToInt32(period2product2.Text), Convert.ToInt32(period2product3.Text)));
                     Forecast.Class.AddForecast(3, new Forecast.ForecastPeriod(Convert.ToInt32(period3product1.Text), Convert.ToInt32(period3product2.Text), Convert.ToInt32(period3product3.Text)));
-                    Ui.EnableNextTab(xmloutputtab);
+                    Ui.EnableNextTab(xmloutputtab,MainTabControl);
 
 
                 }
@@ -173,8 +173,8 @@ namespace Ibsys2 {
                 MessageBox.Show("Malformed XML File! Please use another one!");
                 return;
             }
-            Prognosentab.IsEnabled = true;
-            MainTabControl.SelectedIndex = 1;
+            Ui.EnableNextTab(Prognosentab, MainTabControl);
+            
         }
 
 
