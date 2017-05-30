@@ -26,7 +26,7 @@
                     <Button x:Name="MainpageNextButton" Content="Next" HorizontalAlignment="Left" Margin="221,105,0,0" VerticalAlignment="Top" Width="75" Click="MainpageNextButton_Click"/>
                 </Grid>
             </TabItem>
-            <TabItem x:Name="Prognosentab" Header="Prognosen" IsEnabled="False">
+            <TabItem x:Name="Prognosentab" Header="Prognosen" IsEnabled="False" Initialized="Prognosentab_Initialized">
                 <Grid Background="#FFE5E5E5">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="237*"/>
@@ -57,10 +57,10 @@
                     <Label Content="Verbindliche Aufträge:" HorizontalAlignment="Left" Margin="93,61,0,0" VerticalAlignment="Top" Width="261"/>
                     <Label Content="Prognose" HorizontalAlignment="Left" Margin="359,61,0,0" VerticalAlignment="Top" Width="370" Grid.ColumnSpan="2"/>
                     <Button x:Name="PrognosenNextButton" Content="Next" HorizontalAlignment="Left" Margin="180,263,0,0" VerticalAlignment="Top" Width="75" Click="PrognosenNextbutton_Click" Grid.Column="1"/>
-                    <Label x:Name="periode0" Content="7" HorizontalAlignment="Left" Margin="234,110,0,0" VerticalAlignment="Top" Width="120"/>
-                    <Label x:Name="periode1" Content="8" HorizontalAlignment="Left" Margin="359,111,0,0" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
-                    <Label x:Name="periode2" Content="9" HorizontalAlignment="Left" Margin="10,111,0,0" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
-                    <Label x:Name="periode3" Content="10" HorizontalAlignment="Left" Margin="135,110,0,0" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
+                    <Label x:Name="prognosevarperiod1" Content="7" HorizontalAlignment="Left" Margin="234,110,0,0" VerticalAlignment="Top" Width="120"/>
+                    <Label x:Name="prognosevarperiod2" Content="8" HorizontalAlignment="Left" Margin="359,111,0,0" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
+                    <Label x:Name="prognosevarperiod3" Content="9" HorizontalAlignment="Left" Margin="10,111,0,0" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
+                    <Label x:Name="prognosevarperiod4" Content="10" HorizontalAlignment="Left" Margin="135,110,0,0" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
                     <Label HorizontalAlignment="Left" Margin="109,148,0,0" VerticalAlignment="Top"/>
                     <Label Content="Kinder" HorizontalAlignment="Left" Margin="93,142,0,0" VerticalAlignment="Top"/>
                     <Label Content="Herren" HorizontalAlignment="Left" Margin="93,198,0,0" VerticalAlignment="Top"/>
@@ -73,7 +73,7 @@
 
                     <Label Content="Periode" HorizontalAlignment="Left" Margin="10,233,0,0" VerticalAlignment="Top"/>
                     <TextBox x:Name="forecastsy1p1" HorizontalAlignment="Left" Height="23" Margin="191,259,0,0" TextWrapping="Wrap" Text="P1" VerticalAlignment="Top" Width="120" TabIndex="4"/>
-                    <Label x:Name="varperiod1" Content="varperiod1" HorizontalAlignment="Left" Margin="191,233,0,0" VerticalAlignment="Top" Width="120"/>
+                    <Label x:Name="sicherheitsvarperiod1" Content="varperiod1" HorizontalAlignment="Left" Margin="191,233,0,0" VerticalAlignment="Top" Width="120"/>
                     <Button x:Name="calculatebutton" Content="Berechne" HorizontalAlignment="Left" Margin="715,349,0,0" VerticalAlignment="Top" Width="75" Click="Calculatebutton_Click"/>
                     <TextBox x:Name="forecastsy4p1" HorizontalAlignment="Left" Height="23" Margin="576,259,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TabIndex="13" Text="P1"/>
                     <TextBox x:Name="forecastsy4p2" HorizontalAlignment="Left" Height="23" Margin="576,287,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TabIndex="14" Text="P2"/>
@@ -94,9 +94,9 @@
                     <Label Content="Herren P3" HorizontalAlignment="Left" Margin="10,315,0,0" VerticalAlignment="Top"/>
                     <Label Content="Damen P2" HorizontalAlignment="Left" Margin="10,287,0,0" VerticalAlignment="Top"/>
                     <Label Content="Summe" HorizontalAlignment="Left" Margin="10,349,0,0" VerticalAlignment="Top"/>
-                    <Label x:Name="varperiod2" Content="varperiod2" HorizontalAlignment="Left" Margin="326,233,0,0" VerticalAlignment="Top"/>
-                    <Label x:Name="varperiod3" Content="varperiod3" HorizontalAlignment="Left" Margin="451,233,0,0" VerticalAlignment="Top"/>
-                    <Label x:Name="varperiod4" Content="varperiod4" HorizontalAlignment="Left" Margin="576,233,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="sicherheitsvarperiod2" Content="varperiod2" HorizontalAlignment="Left" Margin="326,233,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="sicherheitsvarperiod3" Content="varperiod3" HorizontalAlignment="Left" Margin="451,233,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="sicherheitsvarperiod4" Content="varperiod4" HorizontalAlignment="Left" Margin="576,233,0,0" VerticalAlignment="Top"/>
                 </Grid>
             </TabItem>
             <TabItem x:Name="Kapaplanungtab" Header="Kapaplanung" IsEnabled="False">

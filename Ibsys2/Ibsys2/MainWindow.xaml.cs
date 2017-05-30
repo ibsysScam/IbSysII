@@ -53,10 +53,10 @@ namespace Ibsys2 {
         }
 
         public void UpdateCalculations() {
-            periode0.Content = (Static.Static.lastperiod + 1).ToString();
-            periode1.Content = (Static.Static.lastperiod + 2).ToString();
-            periode2.Content = (Static.Static.lastperiod + 3).ToString();
-            periode3.Content = (Static.Static.lastperiod + 4).ToString();
+            prognosevarperiod1.Content = (Static.Static.lastperiod + 1).ToString();
+            prognosevarperiod2.Content = (Static.Static.lastperiod + 2).ToString();
+            prognosevarperiod3.Content = (Static.Static.lastperiod + 3).ToString();
+            prognosevarperiod4.Content = (Static.Static.lastperiod + 4).ToString();
         }
 
 
@@ -248,10 +248,10 @@ namespace Ibsys2 {
 
             try
             {
-                varperiod1.Content = Static.Static.lastperiod;
-                varperiod2.Content = Static.Static.lastperiod + 1;
-                varperiod3.Content = Static.Static.lastperiod + 2;
-                varperiod4.Content = Static.Static.lastperiod + 3;
+                sicherheitsvarperiod1.Content = Static.Static.lastperiod;
+                sicherheitsvarperiod2.Content = Static.Static.lastperiod + 1;
+                sicherheitsvarperiod3.Content = Static.Static.lastperiod + 2;
+                sicherheitsvarperiod4.Content = Static.Static.lastperiod + 3;
             }
             catch
             {
@@ -259,6 +259,22 @@ namespace Ibsys2 {
                 return;
             }
            
+        }
+
+        private void Prognosentab_Initialized(object sender, EventArgs e)
+        {
+            try
+            {
+                prognosevarperiod1.Content = Static.Static.lastperiod;
+                prognosevarperiod2.Content = Static.Static.lastperiod + 1;
+                prognosevarperiod3.Content = Static.Static.lastperiod + 2;
+                prognosevarperiod4.Content = Static.Static.lastperiod + 3;
+            }
+            catch
+            {
+                MessageBox.Show("error");
+                return;
+            }
         }
     }
 }
