@@ -128,15 +128,33 @@ namespace Ibsys2 {
 
         }
 
-        private void PrognosenNextbutton_Click(object sender, RoutedEventArgs e) {
-            try {
-                Forecast.Class.AddForecast(0, new Forecast.ForecastPeriod(Convert.ToInt32(period0product1.Text), Convert.ToInt32(period0product2.Text), Convert.ToInt32(period0product3.Text)));
-                Forecast.Class.AddForecast(1, new Forecast.ForecastPeriod(Convert.ToInt32(period1product1.Text), Convert.ToInt32(period1product2.Text), Convert.ToInt32(period1product3.Text)));
-                Forecast.Class.AddForecast(2, new Forecast.ForecastPeriod(Convert.ToInt32(period2product1.Text), Convert.ToInt32(period2product2.Text), Convert.ToInt32(period2product3.Text)));
-                Forecast.Class.AddForecast(3, new Forecast.ForecastPeriod(Convert.ToInt32(period3product1.Text), Convert.ToInt32(period3product2.Text), Convert.ToInt32(period3product3.Text)));
-            } catch (FormatException) {
-                MessageBox.Show(TranslateService.Class.GetTranslation("ONLY_INT_ERROR"));
+        private bool AllFilled()
+        {
+            if(period0product1.Text == "" || period0product2.Text == "" || period0product3.Text == "" || period1product1.Text == "" || period1product2.Text == "" || period1product3.Text == ""  || period2product1.Text == "" || period2product2.Text == "" || period2product3.Text == "")
+            {
+                return false;
             }
+            return true;
+        }
+
+        private void PrognosenNextbutton_Click(object sender, RoutedEventArgs e) {
+
+            if (AllFilled())
+            {
+                try
+                {
+                    Forecast.Class.AddForecast(0, new Forecast.ForecastPeriod(Convert.ToInt32(period0product1.Text), Convert.ToInt32(period0product2.Text), Convert.ToInt32(period0product3.Text)));
+                    Forecast.Class.AddForecast(1, new Forecast.ForecastPeriod(Convert.ToInt32(period1product1.Text), Convert.ToInt32(period1product2.Text), Convert.ToInt32(period1product3.Text)));
+                    Forecast.Class.AddForecast(2, new Forecast.ForecastPeriod(Convert.ToInt32(period2product1.Text), Convert.ToInt32(period2product2.Text), Convert.ToInt32(period2product3.Text)));
+                    Forecast.Class.AddForecast(3, new Forecast.ForecastPeriod(Convert.ToInt32(period3product1.Text), Convert.ToInt32(period3product2.Text), Convert.ToInt32(period3product3.Text)));
+                    Prodprogrammtab.IsEnabled = true;
+                }
+                catch (FormatException)
+                {
+                    MessageBox.Show(TranslateService.Class.GetTranslation("ONLY_INT_ERROR"));
+                }
+            }
+          
         }
 
         private void MainpageNextButton_Click(object sender, RoutedEventArgs e) {
