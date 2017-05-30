@@ -9,6 +9,7 @@ namespace UIFeautures
         public void EnableNextTab(TabItem item, TabControl MainTabControl){
             item.IsEnabled = true;
             MainTabControl.SelectedIndex += 1;
+
         }
 
     }

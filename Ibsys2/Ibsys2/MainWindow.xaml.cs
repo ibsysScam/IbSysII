@@ -243,37 +243,40 @@ namespace Ibsys2 {
         }
 
       
-        private void Sicherheitsbestandtab_Initialized(object sender, EventArgs e)
-        {
 
-            try
-            {
-                sicherheitsvarperiod1.Content = Static.Static.lastperiod;
-                sicherheitsvarperiod2.Content = Static.Static.lastperiod + 1;
-                sicherheitsvarperiod3.Content = Static.Static.lastperiod + 2;
-                sicherheitsvarperiod4.Content = Static.Static.lastperiod + 3;
-            }
-            catch
-            {
-                MessageBox.Show("error");
-                return;
-            }
-           
-        }
-
-        private void Prognosentab_Initialized(object sender, EventArgs e)
+        private void MainTabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            try
+            if (Prognosentab.IsSelected)
             {
-                prognosevarperiod1.Content = Static.Static.lastperiod;
-                prognosevarperiod2.Content = Static.Static.lastperiod + 1;
-                prognosevarperiod3.Content = Static.Static.lastperiod + 2;
-                prognosevarperiod4.Content = Static.Static.lastperiod + 3;
+                try
+                {
+                    prognosevarperiod1.Content = Static.Static.lastperiod + 1;
+                    prognosevarperiod2.Content = Static.Static.lastperiod + 2;
+                    prognosevarperiod3.Content = Static.Static.lastperiod + 3;
+                    prognosevarperiod4.Content = Static.Static.lastperiod + 4;
+                }
+                catch
+                {
+                    MessageBox.Show("error");
+                    return;
+                }
+              
             }
-            catch
+
+            if (sicherheitsbestandtab.IsSelected)
             {
-                MessageBox.Show("error");
-                return;
+                try
+                {
+                    sicherheitsvarperiod1.Content = Static.Static.lastperiod + 1;
+                    sicherheitsvarperiod2.Content = Static.Static.lastperiod + 2;
+                    sicherheitsvarperiod3.Content = Static.Static.lastperiod + 3;
+                    sicherheitsvarperiod4.Content = Static.Static.lastperiod + 4;
+                }
+                catch
+                {
+                    MessageBox.Show("error");
+                    return;
+                }
             }
         }
     }
