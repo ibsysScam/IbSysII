@@ -83,6 +83,7 @@
     <Compile Include="Service\Translate\TranslateService.cs" />
     <Compile Include="Service\Translate\Translations\English.cs" />
     <Compile Include="Service\Translate\Translations\German.cs" />
+    <Compile Include="Service\UI\UI.cs" />
     <Compile Include="Service\XML\CreateXML.cs" />
     <Compile Include="Service\XML\ReadXML.cs" />
     <Compile Include="Static\Input\Completedorders.cs" />
@@ -158,9 +159,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Berechnungen\Logic\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>

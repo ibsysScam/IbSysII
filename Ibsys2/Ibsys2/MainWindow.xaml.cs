@@ -19,6 +19,7 @@ using Ibsys2.Pages.Wiki;
 using Ibsys2.Static.Input;
 using Ibsys2.Static.Output;
 using System.Text.RegularExpressions;
+using UIFeautures;
 
 namespace Ibsys2 {
     /// <summary>
@@ -26,6 +27,7 @@ namespace Ibsys2 {
     /// </summary>
     public partial class MainWindow : Window {
         private static MainWindow _class;
+        UIFeatures Ui = new UIFeatures();
 
         public static MainWindow Class {
             get {
@@ -147,7 +149,9 @@ namespace Ibsys2 {
                     Forecast.Class.AddForecast(1, new Forecast.ForecastPeriod(Convert.ToInt32(period1product1.Text), Convert.ToInt32(period1product2.Text), Convert.ToInt32(period1product3.Text)));
                     Forecast.Class.AddForecast(2, new Forecast.ForecastPeriod(Convert.ToInt32(period2product1.Text), Convert.ToInt32(period2product2.Text), Convert.ToInt32(period2product3.Text)));
                     Forecast.Class.AddForecast(3, new Forecast.ForecastPeriod(Convert.ToInt32(period3product1.Text), Convert.ToInt32(period3product2.Text), Convert.ToInt32(period3product3.Text)));
-                    xmloutputtab.IsEnabled = true;
+                    Ui.EnableNextTab(xmloutputtab);
+
+
                 }
                 catch (FormatException)
                 {
