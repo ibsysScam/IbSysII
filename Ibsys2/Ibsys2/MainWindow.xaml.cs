@@ -242,12 +242,23 @@ namespace Ibsys2 {
             e.Handled = regex.IsMatch(e.Text);
         }
 
-        private void Sicherheitsbestandtab_IsEnabledChanged(object sender, DependencyPropertyChangedEventArgs e)
+      
+        private void Sicherheitsbestandtab_Initialized(object sender, EventArgs e)
         {
-            //varperiod1.Content = Static.Static.lastperiod;
-            //varperiod2.Content = Static.Static.lastperiod + 1;
-            //varperiod3.Content = Static.Static.lastperiod + 2;
-            //varperiod4.Content = Static.Static.lastperiod + 3;
+
+            try
+            {
+                varperiod1.Content = Static.Static.lastperiod;
+                varperiod2.Content = Static.Static.lastperiod + 1;
+                varperiod3.Content = Static.Static.lastperiod + 2;
+                varperiod4.Content = Static.Static.lastperiod + 3;
+            }
+            catch
+            {
+                MessageBox.Show("error");
+                return;
+            }
+           
         }
     }
 }

@@ -68,7 +68,7 @@
                 </Grid>
 
             </TabItem>
-            <TabItem x:Name="sicherheitsbestandtab" Header="Sicherheitsbestand" IsEnabled="False" IsEnabledChanged="Sicherheitsbestandtab_IsEnabledChanged">
+            <TabItem x:Name="sicherheitsbestandtab" Header="Sicherheitsbestand" IsEnabled="False" Initialized="Sicherheitsbestandtab_Initialized">
                 <Grid Background="#FFE5E5E5">
 
                     <Label Content="Periode" HorizontalAlignment="Left" Margin="10,233,0,0" VerticalAlignment="Top"/>
