@@ -54,7 +54,7 @@
                     <TextBox x:Name="period3sum" HorizontalAlignment="Left" Height="23" Margin="180,226,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" IsEnabled="False" Grid.Column="1"/>
                     <Label Content="Vertriebswunsch" HorizontalAlignment="Left" Margin="234,79,0,0" VerticalAlignment="Top" Width="146"/>
                     <Label Content="Prognose" HorizontalAlignment="Left" Margin="404,79,0,0" VerticalAlignment="Top" Width="344" Grid.ColumnSpan="2"/>
-                    <Button x:Name="PrognosenNextButton" Content="Next" HorizontalAlignment="Left" Margin="180,263,0,0" VerticalAlignment="Top" Width="75" Click="PrognosenNextbutton_Click" Grid.Column="1"/>
+                    <Button x:Name="PrognosenNextButton" Content="Next" HorizontalAlignment="Left" Margin="225,254,0,0" VerticalAlignment="Top" Width="75" Click="PrognosenNextbutton_Click" Grid.Column="1"/>
                     <Label x:Name="prognosevarperiod1" Content="7" HorizontalAlignment="Left" Margin="234,110,0,0" VerticalAlignment="Top" Width="120"/>
                     <Label x:Name="prognosevarperiod2" Content="8" HorizontalAlignment="Left" Margin="404,110,0,0" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
                     <Label x:Name="prognosevarperiod3" Content="9" HorizontalAlignment="Left" Margin="55,107,0,0" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
@@ -108,8 +108,79 @@
             <TabItem x:Name="Priorisierungtab" Header="Priorisierung" IsEnabled="False">
                 <Grid Background="#FFE5E5E5"/>
             </TabItem>
-            <TabItem x:Name="Produktionsprogrammtab" Header="Produktionsprogramm" IsEnabled="False">
+            <TabItem x:Name="Produktionsplanungtab" Header="Prodktionsplanung" IsEnabled="False">
                 <Grid Background="#FFE5E5E5">
+                    <Label Content="p1" HorizontalAlignment="Left" Margin="64,77,0,0" VerticalAlignment="Top" Height="25" Width="66"/>
+                    <Label Content="p2" HorizontalAlignment="Left" Margin="78,107,0,0" VerticalAlignment="Top"/>
+                    <Label Content="p3" HorizontalAlignment="Left" Margin="162,199,0,0" VerticalAlignment="Top"/>
+                    <Label Content="e4" HorizontalAlignment="Left" Margin="162,77,0,0" VerticalAlignment="Top"/>
+                    <Label Content="e5" HorizontalAlignment="Left" Margin="274,133,0,0" VerticalAlignment="Top"/>
+                    <Label Content="e6" HorizontalAlignment="Left" Margin="337,122,0,0" VerticalAlignment="Top"/>
+                    <Label Content="e7" HorizontalAlignment="Left" Margin="469,77,0,0" VerticalAlignment="Top"/>
+                    <Label Content="e8" HorizontalAlignment="Left" Margin="543,90,0,0" VerticalAlignment="Top"/>
+                    <Label Content="e9" HorizontalAlignment="Left" Margin="130,199,0,0" VerticalAlignment="Top"/>
+                    <Label Content="e10" HorizontalAlignment="Left" Margin="320,177,0,0" VerticalAlignment="Top"/>
+                    <Label Content="e11" HorizontalAlignment="Left" Margin="398,203,0,0" VerticalAlignment="Top"/>
+                    <Label Content="e12" HorizontalAlignment="Left" Margin="518,159,0,0" VerticalAlignment="Top"/>
+                    <Label Content="e13" HorizontalAlignment="Left" Margin="693,177,0,0" VerticalAlignment="Top"/>
+                    <Label Content="e14" HorizontalAlignment="Left" Margin="709,90,0,0" VerticalAlignment="Top"/>
+                    <Label Content="e16" HorizontalAlignment="Left" Margin="874,148,0,0" VerticalAlignment="Top"/>
+                    <Label Content="e15" HorizontalAlignment="Left" Margin="784,61,0,0" VerticalAlignment="Top"/>
+                    
+                    <Label Content="e18" HorizontalAlignment="Left" Margin="320,300,0,0" VerticalAlignment="Top"/>
+                    <Label Content="e19" HorizontalAlignment="Left" Margin="537,234,0,0" VerticalAlignment="Top"/>
+                    <Label Content="e20" HorizontalAlignment="Left" Margin="228,342,0,0" VerticalAlignment="Top"/>
+                    <Label Content="k21" HorizontalAlignment="Left" Margin="584,290,0,0" VerticalAlignment="Top"/>
+                    <Label Content="k22" HorizontalAlignment="Left" Margin="337,368,0,0" VerticalAlignment="Top"/>
+                    <Label Content="k23" HorizontalAlignment="Left" Margin="274,264,0,0" VerticalAlignment="Top"/>
+                    <Label Content="k24" HorizontalAlignment="Left" Margin="584,360,0,0" VerticalAlignment="Top"/>
+                    <Label Content="k25" HorizontalAlignment="Left" Margin="274,414,0,0" VerticalAlignment="Top"/>
+                    
+                    <Label Content="k27" HorizontalAlignment="Left" Margin="443,360,0,0" VerticalAlignment="Top"/>
+                    <Label Content="k28" HorizontalAlignment="Left" Margin="162,308,0,0" VerticalAlignment="Top"/>
+                    <Label Content="e29" HorizontalAlignment="Left" Margin="184,264,0,0" VerticalAlignment="Top"/>
+                    <Label Content="e30" HorizontalAlignment="Left" Margin="331,252,0,0" VerticalAlignment="Top"/>
+                    <Label Content="e31" HorizontalAlignment="Left" Margin="463,282,0,0" VerticalAlignment="Top"/>
+                    <Label Content="k32" HorizontalAlignment="Left" Margin="1102,145,0,0" VerticalAlignment="Top"/>
+                    <Label Content="k33" HorizontalAlignment="Left" Margin="1051,69,0,0" VerticalAlignment="Top"/>
+                    <Label Content="k34" HorizontalAlignment="Left" Margin="924,85,0,0" VerticalAlignment="Top"/>
+                    <Label Content="k35" HorizontalAlignment="Left" Margin="1007,130,0,0" VerticalAlignment="Top"/>
+                    <Label Content="k36" HorizontalAlignment="Left" Margin="997,268,0,0" VerticalAlignment="Top"/>
+                    <Label Content="k37" HorizontalAlignment="Left" Margin="997,224,0,0" VerticalAlignment="Top"/>
+                    <Label Content="k38" HorizontalAlignment="Left" Margin="936,163,0,0" VerticalAlignment="Top"/>
+                    <Label Content="k39" HorizontalAlignment="Left" Margin="874,104,0,0" VerticalAlignment="Top"/>
+                    <Label Content="k40" HorizontalAlignment="Left" Margin="96,177,0,0" VerticalAlignment="Top"/>
+                    <Label Content="k41" HorizontalAlignment="Left" Margin="101,268,0,0" VerticalAlignment="Top"/>
+                    <Label Content="k42" HorizontalAlignment="Left" Margin="114,234,0,0" VerticalAlignment="Top"/>
+                    <Label Content="k43" HorizontalAlignment="Left" Margin="156,156,0,0" VerticalAlignment="Top"/>
+                    <Label Content="k44" HorizontalAlignment="Left" Margin="228,177,0,0" VerticalAlignment="Top"/>
+                    <Label Content="k45" HorizontalAlignment="Left" Margin="888,260,0,0" VerticalAlignment="Top"/>
+                    <Label Content="k46" HorizontalAlignment="Left" Margin="784,308,0,0" VerticalAlignment="Top"/>
+                    <Label Content="k47" HorizontalAlignment="Left" Margin="803,181,0,0" VerticalAlignment="Top"/>
+                    <Label Content="k48" HorizontalAlignment="Left" Margin="768,131,0,0" VerticalAlignment="Top"/>
+                    <Label Content="e49" HorizontalAlignment="Left" Margin="443,108,0,0" VerticalAlignment="Top"/>
+                    <Label Content="e50" HorizontalAlignment="Left" Margin="398,149,0,0" VerticalAlignment="Top"/>
+                    <Label Content="e51" HorizontalAlignment="Left" Margin="461,167,0,0" VerticalAlignment="Top"/>
+                    <Label Content="e52" HorizontalAlignment="Left" Margin="709,272,0,0" VerticalAlignment="Top"/>
+                    <Label Content="e53" HorizontalAlignment="Left" Margin="383,324,0,0" VerticalAlignment="Top"/>
+                    <Label Content="e54" HorizontalAlignment="Left" Margin="709,368,0,0" VerticalAlignment="Top"/>
+                    <Label Content="e55" HorizontalAlignment="Left" Margin="652,211,0,0" VerticalAlignment="Top"/>
+                    <Label Content="e56" HorizontalAlignment="Left" Margin="518,350,0,0" VerticalAlignment="Top"/>
+                    <Label Content="k57" HorizontalAlignment="Left" Margin="255,85,0,0" VerticalAlignment="Top"/>
+                    <Label Content="k57" HorizontalAlignment="Left" Margin="337,69,0,0" VerticalAlignment="Top"/>
+                    <Label Content="k58" HorizontalAlignment="Left" Margin="398,90,0,0" VerticalAlignment="Top"/>
+                    <Label Content="k59" HorizontalAlignment="Left" Margin="611,69,0,0" VerticalAlignment="Top"/>
+
+
+                    <Label Content="e16K" HorizontalAlignment="Left" Margin="813,252,0,0" VerticalAlignment="Top"/>
+                    <Label Content="e16D" HorizontalAlignment="Left" Margin="398,260,0,0" VerticalAlignment="Top"/>
+                    <Label Content="e16H" HorizontalAlignment="Left" Margin="611,141,0,0" VerticalAlignment="Top"/>
+                    <Label Content="e17K" HorizontalAlignment="Left" Margin="843,316,0,0" VerticalAlignment="Top"/>
+                    <Label Content="e17D" HorizontalAlignment="Left" Margin="759,224,0,0" VerticalAlignment="Top"/>
+                    <Label Content="e17H" HorizontalAlignment="Left" Margin="684,316,0,0" VerticalAlignment="Top"/>
+                    <Label Content="e26K" HorizontalAlignment="Left" Margin="652,242,0,0" VerticalAlignment="Top"/>
+                    <Label Content="e26D" HorizontalAlignment="Left" Margin="575,181,0,0" VerticalAlignment="Top"/>
+                    <Label Content="e26H" HorizontalAlignment="Left" Margin="461,211,0,0" VerticalAlignment="Top"/>
 
 
                 </Grid>

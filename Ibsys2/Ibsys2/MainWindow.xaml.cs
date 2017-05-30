@@ -131,6 +131,11 @@ namespace Ibsys2 {
                 MessageBox.Show("Pls Fill all needed Fields");
                 return;
             }
+
+            Ui.EnableNextTab(Kapaplanungtab, MainTabControl);
+            Ui.EnableNextTab(Einkauftab, MainTabControl);
+            Ui.EnableNextTab(Produktionsplanungtab, MainTabControl);
+            Ui.EnableNextTab(Chartstab, MainTabControl);
         }
 
         private bool AllFilled()
