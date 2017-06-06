@@ -382,6 +382,11 @@ namespace Ibsys2 {
 
             }
         }
+
+        private void Aboutmenuheader_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
 
