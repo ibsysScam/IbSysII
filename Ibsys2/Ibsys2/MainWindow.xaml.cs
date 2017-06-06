@@ -126,10 +126,26 @@ namespace Ibsys2 {
         }
 
         private void Calculatebutton_Click(object sender, RoutedEventArgs e) {
-            if(Sicherheitsfaktor.Text == "")
+
+           
+
+            try
             {
-                MessageBox.Show("Pls Fill all needed Fields");
-                return;
+                if (Sicherheitsfaktor.Text == "")
+                {
+                    MessageBox.Show("Pls Fill all needed Fields");
+                    return;
+                }
+
+                if (Convert.ToInt32(forecastsy1p1.Text) % 10 != 0 || Convert.ToInt32(forecastsy1p2.Text) % 10 != 0 || Convert.ToInt32(forecastsy1p3.Text) % 10 != 0 || Convert.ToInt32(forecastsy2p1.Text) % 10 != 0 || Convert.ToInt32(forecastsy2p2.Text) % 10 != 0 || Convert.ToInt32(forecastsy2p3.Text) % 10 != 0 || Convert.ToInt32(forecastsy3p1.Text) % 10 != 0 || Convert.ToInt32(forecastsy3p2.Text) % 10 != 0 || Convert.ToInt32(forecastsy3p3.Text) % 10 != 0 || Convert.ToInt32(forecastsy4p1.Text) % 10 != 0 || Convert.ToInt32(forecastsy4p2.Text) % 10 != 0 || Convert.ToInt32(forecastsy4p3.Text) % 10 != 0)
+                {
+                    MessageBox.Show("Error in Inputvalues");
+                    return;
+                }
+            }
+            catch
+            {
+
             }
 
             Ui.EnableNextTab(Kapaplanungtab, MainTabControl);
@@ -147,7 +163,28 @@ namespace Ibsys2 {
             return true;
         }
 
+        
         private void PrognosenNextbutton_Click(object sender, RoutedEventArgs e) {
+
+            Int32 maxValue = 1500;
+            try
+            {
+                if (Convert.ToInt32(period0sum.Text) > maxValue || Convert.ToInt32(period1sum.Text) > maxValue || Convert.ToInt32(period2sum.Text) > maxValue || Convert.ToInt32(period3sum.Text) > maxValue)
+                {
+                    MessageBox.Show("Value greater than " + maxValue);
+                    return;
+                }
+
+                if (Convert.ToInt32(period0product1.Text) % 10 != 0 || Convert.ToInt32(period0product2.Text) % 10 != 0 || Convert.ToInt32(period0product3.Text) % 10 != 0 || Convert.ToInt32(period1product1.Text) % 10 != 0 || Convert.ToInt32(period1product2.Text) % 10 != 0 || Convert.ToInt32(period1product3.Text) % 10 != 0 || Convert.ToInt32(period2product1.Text) % 10 != 0 || Convert.ToInt32(period2product2.Text) % 10 != 0 || Convert.ToInt32(period2product3.Text) % 10 != 0 || Convert.ToInt32(period3product1.Text) % 10 != 0 || Convert.ToInt32(period3product2.Text) % 10 != 0 || Convert.ToInt32(period3product3.Text) % 10 != 0)
+                {
+                    MessageBox.Show("Incorrect Values in Productionplan!");
+                    return;
+                }
+            }
+            catch
+            {
+
+            }
 
             if (AllFilled())
             {
@@ -286,6 +323,63 @@ namespace Ibsys2 {
                     MessageBox.Show("error");
                     return;
                 }
+            }
+        }
+
+        private void Forecast_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            try
+            {
+                Int32 forecastsum1 = 0;
+                Int32 forecastsum2 = 0;
+                Int32 forecastsum3 = 0;
+                Int32 forecastsum4 = 0;
+
+                if (forecastsy1p1 != null)
+                    forecastsum1 += Convert.ToInt32(forecastsy1p1.Text);
+                if (forecastsy1p2 != null)
+                    forecastsum1 += Convert.ToInt32(forecastsy1p2.Text);
+                if (forecastsy1p3 != null)
+                    forecastsum1 += Convert.ToInt32(forecastsy1p3.Text);
+
+                if (forecastsy2p1 != null)
+                    forecastsum2 += Convert.ToInt32(forecastsy2p1.Text);
+                if (forecastsy2p2 != null)
+                    forecastsum2 += Convert.ToInt32(forecastsy2p2.Text);
+                if (forecastsy2p3 != null)
+                    forecastsum2 += Convert.ToInt32(forecastsy2p3.Text);
+
+                if (forecastsy3p1 != null)
+                    forecastsum3 += Convert.ToInt32(forecastsy3p1.Text);
+                if (forecastsy3p2 != null)
+                    forecastsum3 += Convert.ToInt32(forecastsy3p2.Text);
+                if (forecastsy3p3 != null)
+                    forecastsum3 += Convert.ToInt32(forecastsy3p3.Text);
+
+                if (forecastsy4p1 != null)
+                    forecastsum4 += Convert.ToInt32(forecastsy4p1.Text);
+                if (forecastsy4p2 != null)
+                    forecastsum4 += Convert.ToInt32(forecastsy4p2.Text);
+                if (forecastsy4p3 != null)
+                    forecastsum4 += Convert.ToInt32(forecastsy4p3.Text);
+
+
+                if (sumy1 != null)
+                    sumy1.Text = forecastsum1.ToString();
+
+                if (sumy2 != null)
+                    sumy2.Text = forecastsum2.ToString();
+
+                if (sumy3 != null)
+                    sumy3.Text = forecastsum3.ToString();
+
+                if (sumy4 != null)
+                    sumy4.Text = forecastsum4.ToString();
+
+            }
+            catch
+            {
+
             }
         }
     }
