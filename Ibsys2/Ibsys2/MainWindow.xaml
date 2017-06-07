@@ -108,7 +108,7 @@
             <TabItem x:Name="Priorisierungtab" Header="Priorisierung" IsEnabled="False">
                 <Grid Background="#FFE5E5E5"/>
             </TabItem>
-            <TabItem x:Name="Produktionsplanungtab" Header="Prodktionsplanung" IsEnabled="False">
+            <TabItem x:Name="Produktionsplanungtab" Header="Produktionsplanung" IsEnabled="False">
                 <Grid Background="#FFE5E5E5">
                     <Label Content="p1" HorizontalAlignment="Left" Margin="64,77,0,0" VerticalAlignment="Top" Height="25" Width="66"/>
                     <Label Content="p2" HorizontalAlignment="Left" Margin="78,107,0,0" VerticalAlignment="Top"/>
