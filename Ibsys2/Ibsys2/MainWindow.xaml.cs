@@ -21,22 +21,27 @@ using Ibsys2.Static.Output;
 using System.Text.RegularExpressions;
 using UIFeautures;
 
-namespace Ibsys2 {
+namespace Ibsys2
+{
     /// <summary>
     /// Interaktionslogik für MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window {
+    public partial class MainWindow : Window
+    {
         private static MainWindow _class;
         UIFeatures Ui = new UIFeatures();
 
-        public static MainWindow Class {
-            get {
+        public static MainWindow Class
+        {
+            get
+            {
                 if (_class == null)
                     new MainWindow();
                 return _class;
             }
         }
-        public MainWindow() {
+        public MainWindow()
+        {
             if (_class != null)
                 throw new Exception("Class already exists!");
             _class = this;
@@ -48,11 +53,13 @@ namespace Ibsys2 {
             UpdateSummeFromForcast(null, null);
         }
 
-        public void LoadTranslations() {
+        public void LoadTranslations()
+        {
 
         }
 
-        public void UpdateCalculations() {
+        public void UpdateCalculations()
+        {
             prognosevarperiod1.Content = (Static.Static.lastperiod + 1).ToString();
             prognosevarperiod2.Content = (Static.Static.lastperiod + 2).ToString();
             prognosevarperiod3.Content = (Static.Static.lastperiod + 3).ToString();
@@ -61,11 +68,14 @@ namespace Ibsys2 {
 
 
 
-        private void Choosefile_Click(object sender, RoutedEventArgs e) {
+        private void Choosefile_Click(object sender, RoutedEventArgs e)
+        {
             Microsoft.Win32.OpenFileDialog dialogDateipfad = new Microsoft.Win32.OpenFileDialog();
             Nullable<bool> dialogDateipfadResult = dialogDateipfad.ShowDialog();
-            if (dialogDateipfadResult == true) {
-                if (!dialogDateipfad.FileName.Contains(".xml")) {
+            if (dialogDateipfadResult == true)
+            {
+                if (!dialogDateipfad.FileName.Contains(".xml"))
+                {
                     MessageBox.Show(TranslateService.Class.GetTranslation("XML_ERROR"), "XML Input", MessageBoxButton.OK, MessageBoxImage.Error);
                     return;
                 }
@@ -73,17 +83,22 @@ namespace Ibsys2 {
             }
         }
 
-        protected bool GetFilename(out string filename, DragEventArgs e) {
+        protected bool GetFilename(out string filename, DragEventArgs e)
+        {
             bool ret = false;
             filename = String.Empty;
 
-            if ((e.AllowedEffects & DragDropEffects.Copy) == DragDropEffects.Copy) {
+            if ((e.AllowedEffects & DragDropEffects.Copy) == DragDropEffects.Copy)
+            {
                 Array data = ((IDataObject)e.Data).GetData("FileName") as Array;
-                if (data != null) {
-                    if ((data.Length == 1) && (data.GetValue(0) is String)) {
+                if (data != null)
+                {
+                    if ((data.Length == 1) && (data.GetValue(0) is String))
+                    {
                         filename = ((string[])data)[0];
                         string ext = System.IO.Path.GetExtension(filename).ToLower();
-                        if ((ext == ".xml") || (ext == ".XML")) {
+                        if ((ext == ".xml") || (ext == ".XML"))
+                        {
                             ret = true;
                         }
                     }
@@ -92,11 +107,13 @@ namespace Ibsys2 {
             return ret;
         }
 
-        private void Window_DragEnter(object sender, DragEventArgs e) {
+        private void Window_DragEnter(object sender, DragEventArgs e)
+        {
             Console.WriteLine("OnDragEnter");
             bool validData = GetFilename(out string filename, e);
             Console.WriteLine(validData.ToString());
-            if (!validData) {
+            if (!validData)
+            {
                 MessageBox.Show(TranslateService.Class.GetTranslation("XML_ERROR"), "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
@@ -105,29 +122,40 @@ namespace Ibsys2 {
         }
 
 
-        private void Clear_Click(object sender, RoutedEventArgs e) {
+        private void Clear_Click(object sender, RoutedEventArgs e)
+        {
             Pathtextbox.Text = "";
         }
 
 
 
-        private void Settingsmenuheader_Click(object sender, RoutedEventArgs e) {
+        private void Settingsmenuheader_Click(object sender, RoutedEventArgs e)
+        {
             Settings Settingspage = new Settings();
             Settingspage.Show();
         }
 
-        private void Closemenuitem_Click(object sender, RoutedEventArgs e) {
+        private void Aboutmenuheader_Click(object sender, RoutedEventArgs e)
+        {
+            Settings Settingspage = new Settings();
+            Settingspage.Show();
+        }
+
+        private void Closemenuitem_Click(object sender, RoutedEventArgs e)
+        {
             Environment.Exit(21);
         }
 
-        private void Helpmenuitem_Click(object sender, RoutedEventArgs e) {
+        private void Helpmenuitem_Click(object sender, RoutedEventArgs e)
+        {
             Wiki Wikipage = new Wiki();
             Wikipage.Show();
         }
 
-        private void Calculatebutton_Click(object sender, RoutedEventArgs e) {
+        private void Calculatebutton_Click(object sender, RoutedEventArgs e)
+        {
 
-           
+
 
             try
             {
@@ -156,15 +184,16 @@ namespace Ibsys2 {
 
         private bool AllFilled()
         {
-            if(period0product1.Text == "" || period0product2.Text == "" || period0product3.Text == "" || period1product1.Text == "" || period1product2.Text == "" || period1product3.Text == ""  || period2product1.Text == "" || period2product2.Text == "" || period2product3.Text == "")
+            if (period0product1.Text == "" || period0product2.Text == "" || period0product3.Text == "" || period1product1.Text == "" || period1product2.Text == "" || period1product3.Text == "" || period2product1.Text == "" || period2product2.Text == "" || period2product3.Text == "")
             {
                 return false;
             }
             return true;
         }
 
-        
-        private void PrognosenNextbutton_Click(object sender, RoutedEventArgs e) {
+
+        private void PrognosenNextbutton_Click(object sender, RoutedEventArgs e)
+        {
 
             Int32 maxValue = 1500;
             try
@@ -194,7 +223,7 @@ namespace Ibsys2 {
                     Forecast.Class.AddForecast(1, new Forecast.ForecastPeriod(Convert.ToInt32(period1product1.Text), Convert.ToInt32(period1product2.Text), Convert.ToInt32(period1product3.Text)));
                     Forecast.Class.AddForecast(2, new Forecast.ForecastPeriod(Convert.ToInt32(period2product1.Text), Convert.ToInt32(period2product2.Text), Convert.ToInt32(period2product3.Text)));
                     Forecast.Class.AddForecast(3, new Forecast.ForecastPeriod(Convert.ToInt32(period3product1.Text), Convert.ToInt32(period3product2.Text), Convert.ToInt32(period3product3.Text)));
-                    Ui.EnableNextTab(sicherheitsbestandtab,MainTabControl);
+                    Ui.EnableNextTab(Direktverkauftab, MainTabControl);
 
 
                 }
@@ -209,29 +238,39 @@ namespace Ibsys2 {
                 MessageBox.Show("Please fill all Fields!");
                 return;
             }
-          
+
         }
 
-        private void MainpageNextButton_Click(object sender, RoutedEventArgs e) {
+        private void DirectNextButton_Click(object sender, RoutedEventArgs e)
+        {
+            Ui.EnableNextTab(sicherheitsbestandtab, MainTabControl);
+        }
 
-            if (String.IsNullOrEmpty(Pathtextbox.Text)) {
+        private void MainpageNextButton_Click(object sender, RoutedEventArgs e)
+        {
+
+            if (String.IsNullOrEmpty(Pathtextbox.Text))
+            {
                 MessageBox.Show("Please insert a File!");
                 return;
             }
             ReadXML readxml = new ReadXML();
             bool wellformed = readxml.ReadFile(Pathtextbox.Text);
-            if (!wellformed) {
+            if (!wellformed)
+            {
                 MessageBox.Show("Malformed XML File! Please use another one!");
                 return;
             }
             Ui.EnableNextTab(Prognosentab, MainTabControl);
-            
+
         }
 
 
 
-        private void UpdateSummeFromForcast(object sender, TextChangedEventArgs e) {
-            try {
+        private void UpdateSummeFromForcast(object sender, TextChangedEventArgs e)
+        {
+            try
+            {
                 int p0sum = 0;
                 int p1sum = 0;
                 int p2sum = 0;
@@ -275,20 +314,23 @@ namespace Ibsys2 {
 
                 if (period3sum != null)
                     period3sum.Text = p3sum.ToString();
-            } catch { }
+            }
+            catch { }
         }
 
-        private void NumberDoubleValidationTextBox(object sender, TextCompositionEventArgs e) {
+        private void NumberDoubleValidationTextBox(object sender, TextCompositionEventArgs e)
+        {
             Regex regex = new Regex("[^0-9,.]+");
             e.Handled = regex.IsMatch(e.Text);
         }
 
-        private void NumberIntValidationTextBox(object sender, TextCompositionEventArgs e) {
+        private void NumberIntValidationTextBox(object sender, TextCompositionEventArgs e)
+        {
             Regex regex = new Regex("[^0-9]+");
             e.Handled = regex.IsMatch(e.Text);
         }
 
-      
+
 
         private void MainTabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -306,7 +348,7 @@ namespace Ibsys2 {
                     MessageBox.Show("error");
                     return;
                 }
-              
+
             }
 
             if (sicherheitsbestandtab.IsSelected)
@@ -317,6 +359,19 @@ namespace Ibsys2 {
                     sicherheitsvarperiod2.Content = Static.Static.lastperiod + 2;
                     sicherheitsvarperiod3.Content = Static.Static.lastperiod + 3;
                     sicherheitsvarperiod4.Content = Static.Static.lastperiod + 4;
+                }
+                catch
+                {
+                    MessageBox.Show("error");
+                    return;
+                }
+            }
+
+            if (Direktverkauftab.IsSelected)
+            {
+                try
+                {
+                    directvarperiod1.Content = Static.Static.lastperiod + 1;
                 }
                 catch
                 {
@@ -383,10 +438,6 @@ namespace Ibsys2 {
             }
         }
 
-        private void Aboutmenuheader_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
     }
 }
 

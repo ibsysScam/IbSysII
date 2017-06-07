@@ -14,12 +14,12 @@
                 <MenuItem x:Name="Closemenuitem" Header="Close" Click="Closemenuitem_Click"/>
             </MenuItem>
             <MenuItem x:Name="Settingsmenuheader" Header="Settings" Click="Settingsmenuheader_Click"/>
-            <MenuItem x:Name="Aboutmenuheader" Header="About"/>
+            <MenuItem x:Name="Aboutmenuheader" Header="About"  Click="Aboutmenuheader_Click"/>
         </Menu>
 
         <TabControl x:Name="MainTabControl" HorizontalAlignment="Left" Height="672" Margin="0,19,0,0" VerticalAlignment="Top" Width="1274" SelectedIndex="0" SelectionChanged="MainTabControl_SelectionChanged">
             <TabItem x:Name="Maintab" Header="Main">
-                <Grid Background="#FFE5E5E5">
+                <Grid Background="#FFE5E5E5" Margin="10,-12,-10,12">
                     <Button x:Name="choosefile" Content="Browse File" HorizontalAlignment="Left" Margin="10,52,0,0" VerticalAlignment="Top" Width="75" Click="Choosefile_Click" ToolTip="Drag and Drop your XML File instead of choosing it here!"/>
                     <TextBox x:Name="Pathtextbox" MaxLines="1" HorizontalAlignment="Left" Height="23" Margin="10,77,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="286" TabIndex="0" ToolTip="Drag Dop your XML File here!" />
                     <Button x:Name="clear" Content="Clear all" HorizontalAlignment="Left" Margin="221,52,0,0" VerticalAlignment="Top" Width="75" Click="Clear_Click" RenderTransformOrigin="0.587,3.75"/>
@@ -64,18 +64,52 @@
                     <Label Content="Herren" HorizontalAlignment="Left" Margin="93,198,0,0" VerticalAlignment="Top"/>
                     <Label Content="Damen" HorizontalAlignment="Left" Margin="93,170,0,0" VerticalAlignment="Top"/>
                 </Grid>
+            </TabItem>
+            <TabItem x:Name="Direktverkauftab" Header="Direktverkauf" IsEnabled="False">
+                <Grid Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="155*"/>
+                        <ColumnDefinition Width="174*"/>
+                        <ColumnDefinition Width="25*"/>
+                        <ColumnDefinition Width="227*"/>
+                        <ColumnDefinition Width="686*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label x:Name="directvarperiod1" Content="varperiod1" HorizontalAlignment="Left" Margin="87.8,88,0,0" VerticalAlignment="Top" Width="68" Grid.Column="1"/>
+                    <Label x:Name="periode" Content="Periode" HorizontalAlignment="Left" Margin="35.8,88,0,0" VerticalAlignment="Top" Width="52" Grid.Column="1"/>
+                    <Button x:Name="directnextbutton" Content="Next" HorizontalAlignment="Left" Margin="10.4,219,0,0" VerticalAlignment="Top" Width="75" Click="DirectNextButton_Click" Grid.Column="4"/>
+                    <TextBox x:Name="d13" HorizontalAlignment="Left" Height="23" Margin="86.5,119,0,0" TextWrapping="Wrap" Text="100" VerticalAlignment="Top" Width="120" TabIndex="10"  TextChanged="Forecast_TextChanged" Grid.Column="3"/>
+                    <TextBox x:Name="d23" HorizontalAlignment="Left" Height="23" Margin="86.5,149,0,0" TextWrapping="Wrap" Text="100" VerticalAlignment="Top" Width="120" TabIndex="11"  TextChanged="Forecast_TextChanged" Grid.Column="3"/>
+                    <TextBox x:Name="d33" HorizontalAlignment="Left" Height="23" Margin="85.5,180,0,0" TextWrapping="Wrap" Text="100" VerticalAlignment="Top" Width="120" TabIndex="12"  TextChanged="Forecast_TextChanged" Grid.Column="3"/>
+                    <TextBox x:Name="d12" HorizontalAlignment="Left" Height="23" Margin="160.8,119,0,0" TextWrapping="Wrap" Text="100" VerticalAlignment="Top" Width="120" TabIndex="7"  TextChanged="Forecast_TextChanged" Grid.Column="1" Grid.ColumnSpan="3"/>
+                    <TextBox x:Name="d22" HorizontalAlignment="Left" Height="23" Margin="160.8,149,0,0" TextWrapping="Wrap" Text="100" VerticalAlignment="Top" Width="120" TabIndex="8"  TextChanged="Forecast_TextChanged" Grid.Column="1" Grid.ColumnSpan="3"/>
+                    <TextBox x:Name="d32" HorizontalAlignment="Left" Height="23" Margin="160.8,180,0,0" TextWrapping="Wrap" Text="100" VerticalAlignment="Top" Width="120" TabIndex="9"  TextChanged="Forecast_TextChanged" Grid.Column="1" Grid.ColumnSpan="3"/>
+                    <TextBox x:Name="d11" HorizontalAlignment="Left" Height="23" Margin="35.8,119,0,0" TextWrapping="Wrap" Text="100" VerticalAlignment="Top" Width="120" TabIndex="4" TextChanged="Forecast_TextChanged" Grid.Column="1"/>
+                    <TextBox x:Name="d21" HorizontalAlignment="Left" Height="23" Margin="35.8,149,0,0" TextWrapping="Wrap" Text="100" VerticalAlignment="Top" Width="120" TabIndex="5"  TextChanged="Forecast_TextChanged" Grid.Column="1"/>
+                    <TextBox x:Name="d31" HorizontalAlignment="Left" Height="23" Margin="35.8,180,0,0" TextWrapping="Wrap" Text="100" VerticalAlignment="Top" Width="120" TabIndex="6"  TextChanged="Forecast_TextChanged" Grid.Column="1"/>
+                    <TextBox x:Name="s41" HorizontalAlignment="Left" Height="23" Margin="35.8,219,0,0" TextWrapping="Wrap" Text="300" VerticalAlignment="Top" Width="120" IsEnabled="False" Grid.Column="1"/>
+                    <Label Content="Kinder P1" HorizontalAlignment="Left" Margin="80,114,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.158,4.115"/>
+                    <Label Content="Herren P3" HorizontalAlignment="Left" Margin="81,176,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Damen P2" HorizontalAlignment="Left" Margin="80,145,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Summe" HorizontalAlignment="Left" Margin="80,215,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="retailprice" Content="Verkaufspreis in €" HorizontalAlignment="Left" Margin="160.8,88,0,0" VerticalAlignment="Top" Grid.Column="1" Grid.ColumnSpan="3"/>
+                    <Label x:Name="contractpenalty" Content="Vertragsstrafe in €" HorizontalAlignment="Left" Margin="85.5,88,0,0" VerticalAlignment="Top" Grid.Column="3"/>
+                </Grid>
 
             </TabItem>
             <TabItem x:Name="sicherheitsbestandtab" Header="Sicherheitsbestand" IsEnabled="False">
                 <Grid Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="583*"/>
+                        <ColumnDefinition Width="686*"/>
+                    </Grid.ColumnDefinitions>
 
                     <Label Content="Periode" HorizontalAlignment="Left" Margin="80,88,0,0" VerticalAlignment="Top" RenderTransformOrigin="2.02,-5.231"/>
                     <TextBox x:Name="forecastsy1p1" HorizontalAlignment="Left" Height="23" Margin="191,119,0,0" TextWrapping="Wrap" Text="100" VerticalAlignment="Top" Width="120" TabIndex="4" TextChanged="Forecast_TextChanged"/>
                     <Label x:Name="sicherheitsvarperiod1" Content="varperiod1" HorizontalAlignment="Left" Margin="191,88,0,0" VerticalAlignment="Top" Width="120"/>
-                    <Button x:Name="calculatebutton" Content="Berechne" HorizontalAlignment="Left" Margin="691,219,0,0" VerticalAlignment="Top" Width="75" Click="Calculatebutton_Click"/>
-                    <TextBox x:Name="forecastsy4p1" HorizontalAlignment="Left" Height="23" Margin="566,119,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TabIndex="13" Text="100"  TextChanged="Forecast_TextChanged"/>
-                    <TextBox x:Name="forecastsy4p2" HorizontalAlignment="Left" Height="23" Margin="566,149,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TabIndex="14" Text="100"  TextChanged="Forecast_TextChanged"/>
-                    <TextBox x:Name="forecastsy4p3" HorizontalAlignment="Left" Height="23" Margin="566,180,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TabIndex="15" Text="100"  TextChanged="Forecast_TextChanged"/>
+                    <Button x:Name="calculatebutton" Content="Berechne" HorizontalAlignment="Left" Margin="108.5,219,0,0" VerticalAlignment="Top" Width="75" Click="Calculatebutton_Click" Grid.Column="1"/>
+                    <TextBox x:Name="forecastsy4p1" HorizontalAlignment="Left" Height="23" Margin="566,119,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TabIndex="13" Text="100"  TextChanged="Forecast_TextChanged" Grid.ColumnSpan="2"/>
+                    <TextBox x:Name="forecastsy4p2" HorizontalAlignment="Left" Height="23" Margin="566,149,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TabIndex="14" Text="100"  TextChanged="Forecast_TextChanged" Grid.ColumnSpan="2"/>
+                    <TextBox x:Name="forecastsy4p3" HorizontalAlignment="Left" Height="23" Margin="566,180,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TabIndex="15" Text="100"  TextChanged="Forecast_TextChanged" Grid.ColumnSpan="2"/>
                     <TextBox x:Name="forecastsy3p1" HorizontalAlignment="Left" Height="23" Margin="441,119,0,0" TextWrapping="Wrap" Text="100" VerticalAlignment="Top" Width="120" TabIndex="10"  TextChanged="Forecast_TextChanged"/>
                     <TextBox x:Name="forecastsy3p2" HorizontalAlignment="Left" Height="23" Margin="441,149,0,0" TextWrapping="Wrap" Text="100" VerticalAlignment="Top" Width="120" TabIndex="11"  TextChanged="Forecast_TextChanged"/>
                     <TextBox x:Name="forecastsy3p3" HorizontalAlignment="Left" Height="23" Margin="440,180,0,0" TextWrapping="Wrap" Text="100" VerticalAlignment="Top" Width="120" TabIndex="12"  TextChanged="Forecast_TextChanged"/>
@@ -87,28 +121,19 @@
                     <TextBox x:Name="sumy1" HorizontalAlignment="Left" Height="23" Margin="191,219,0,0" TextWrapping="Wrap" Text="300" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
                     <TextBox x:Name="sumy2" HorizontalAlignment="Left" Height="23" Margin="316,219,0,0" TextWrapping="Wrap" Text="300" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
                     <TextBox x:Name="sumy3" HorizontalAlignment="Left" Height="23" Margin="441,219,0,0" TextWrapping="Wrap" Text="300" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
-                    <TextBox x:Name="sumy4" HorizontalAlignment="Left" Height="23" Margin="566,218,0,0" TextWrapping="Wrap" Text="300" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
+                    <TextBox x:Name="sumy4" HorizontalAlignment="Left" Height="23" Margin="566,218,0,0" TextWrapping="Wrap" Text="300" VerticalAlignment="Top" Width="120" IsEnabled="False" Grid.ColumnSpan="2"/>
                     <Label Content="Kinder P1" HorizontalAlignment="Left" Margin="80,114,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.158,4.115"/>
                     <Label Content="Herren P3" HorizontalAlignment="Left" Margin="81,176,0,0" VerticalAlignment="Top"/>
                     <Label Content="Damen P2" HorizontalAlignment="Left" Margin="80,145,0,0" VerticalAlignment="Top"/>
                     <Label Content="Summe" HorizontalAlignment="Left" Margin="80,215,0,0" VerticalAlignment="Top"/>
                     <Label x:Name="sicherheitsvarperiod2" Content="varperiod2" HorizontalAlignment="Left" Margin="316,88,0,0" VerticalAlignment="Top"/>
                     <Label x:Name="sicherheitsvarperiod3" Content="varperiod3" HorizontalAlignment="Left" Margin="440,88,0,0" VerticalAlignment="Top"/>
-                    <Label x:Name="sicherheitsvarperiod4" Content="varperiod4" HorizontalAlignment="Left" Margin="563,88,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="sicherheitsvarperiod4" Content="varperiod4" HorizontalAlignment="Left" Margin="563,88,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
                     <Label Content="Sicherheitsfaktor" HorizontalAlignment="Left" Margin="81,307,0,0" VerticalAlignment="Top"/>
                     <TextBox x:Name="Sicherheitsfaktor" HorizontalAlignment="Left" Height="23" Margin="191,310,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="1"/>
                 </Grid>
             </TabItem>
-            <TabItem x:Name="Kapaplanungtab" Header="Kapaplanung" IsEnabled="False">
-                <Grid Background="#FFE5E5E5"/>
-            </TabItem>
-            <TabItem x:Name="Einkauftab" Header="Einkauf" IsEnabled="False">
-                <Grid Background="#FFE5E5E5"/>
-            </TabItem>
-            <TabItem x:Name="Priorisierungtab" Header="Priorisierung" IsEnabled="False">
-                <Grid Background="#FFE5E5E5"/>
-            </TabItem>
-            <TabItem x:Name="Produktionsplanungtab" Header="Produktionsplanung" IsEnabled="False">
+            <TabItem x:Name="Produktionsplanungtab" Header="Prodktionsplanung" IsEnabled="False">
                 <Grid Background="#FFE5E5E5">
                     <Label Content="p1" HorizontalAlignment="Left" Margin="64,77,0,0" VerticalAlignment="Top" Height="25" Width="66"/>
                     <Label Content="p2" HorizontalAlignment="Left" Margin="78,107,0,0" VerticalAlignment="Top"/>
@@ -126,7 +151,7 @@
                     <Label Content="e14" HorizontalAlignment="Left" Margin="709,90,0,0" VerticalAlignment="Top"/>
                     <Label Content="e16" HorizontalAlignment="Left" Margin="874,148,0,0" VerticalAlignment="Top"/>
                     <Label Content="e15" HorizontalAlignment="Left" Margin="784,61,0,0" VerticalAlignment="Top"/>
-                    
+
                     <Label Content="e18" HorizontalAlignment="Left" Margin="320,300,0,0" VerticalAlignment="Top"/>
                     <Label Content="e19" HorizontalAlignment="Left" Margin="537,234,0,0" VerticalAlignment="Top"/>
                     <Label Content="e20" HorizontalAlignment="Left" Margin="228,342,0,0" VerticalAlignment="Top"/>
@@ -135,7 +160,7 @@
                     <Label Content="k23" HorizontalAlignment="Left" Margin="274,264,0,0" VerticalAlignment="Top"/>
                     <Label Content="k24" HorizontalAlignment="Left" Margin="584,360,0,0" VerticalAlignment="Top"/>
                     <Label Content="k25" HorizontalAlignment="Left" Margin="274,414,0,0" VerticalAlignment="Top"/>
-                    
+
                     <Label Content="k27" HorizontalAlignment="Left" Margin="443,360,0,0" VerticalAlignment="Top"/>
                     <Label Content="k28" HorizontalAlignment="Left" Margin="162,308,0,0" VerticalAlignment="Top"/>
                     <Label Content="e29" HorizontalAlignment="Left" Margin="184,264,0,0" VerticalAlignment="Top"/>
@@ -185,7 +210,19 @@
 
                 </Grid>
             </TabItem>
+            <TabItem x:Name="Kapaplanungtab" Header="Kapaplanung" IsEnabled="False">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+            <TabItem x:Name="Einkauftab" Header="Einkauf" IsEnabled="False">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+            <TabItem x:Name="Priorisierungtab" Header="Priorisierung" IsEnabled="False">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
             <TabItem x:Name="Chartstab" Header="Charts" IsEnabled="False">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+            <TabItem x:Name="Exporttab" Header="XML-Export" IsEnabled="False">
                 <Grid Background="#FFE5E5E5"/>
             </TabItem>
 
