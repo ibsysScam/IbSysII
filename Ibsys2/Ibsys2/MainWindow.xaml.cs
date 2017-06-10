@@ -20,6 +20,8 @@ using Ibsys2.Static.Input;
 using Ibsys2.Static.Output;
 using System.Text.RegularExpressions;
 using UIFeautures;
+using System.ComponentModel;
+using System.Collections.ObjectModel;
 
 namespace Ibsys2
 {
@@ -51,6 +53,209 @@ namespace Ibsys2
             InitializeComponent();
             LoadTranslations();
             UpdateSummeFromForcast(null, null);
+            dataGrid1.ItemsSource = CreateWork1();
+            dataGrid2.ItemsSource = CreateWork2();
+            dataGrid3.ItemsSource = CreateWork3();
+            dataGrid4.ItemsSource = CreateWork4();
+            dataGrid6.ItemsSource = CreateWork6();
+            dataGrid7.ItemsSource = CreateWork7();
+            dataGrid8.ItemsSource = CreateWork8();
+            dataGrid9.ItemsSource = CreateWork9();
+            dataGrid10.ItemsSource = CreateWork10();
+            dataGrid11.ItemsSource = CreateWork11();
+            dataGrid12.ItemsSource = CreateWork12();
+            dataGrid13.ItemsSource = CreateWork13();
+            dataGrid14.ItemsSource = CreateWork14();
+            dataGrid15.ItemsSource = CreateWork15();
+            dataGrid16.ItemsSource = CreateWorkPlan16();
+            dataGrid17.ItemsSource = CreateWorkPlan16();
+            dataGrid18.ItemsSource = CreateWorkPlan16();
+            dataGrid19.ItemsSource = CreateWorkPlan16();
+            dataGrid20.ItemsSource = CreateWorkPlan16();
+            dataGrid21.ItemsSource = CreateWorkPlan16();
+            dataGrid22.ItemsSource = CreateWorkPlan16();
+            dataGrid23.ItemsSource = CreateWorkPlan16();
+            dataGrid24.ItemsSource = CreateWorkPlan16();
+            dataGrid25.ItemsSource = CreateWorkPlan16();
+            dataGrid26.ItemsSource = CreateWorkPlan16();
+            dataGrid27.ItemsSource = CreateWorkPlan16();
+            dataGrid28.ItemsSource = CreateWorkPlan16();
+            dataGrid29.ItemsSource = CreateWorkPlan16();
+        }
+
+        public ObservableCollection<Liefer> CreateLiefer1()
+        {
+            ObservableCollection<Liefer> liefer = new ObservableCollection<Liefer>();
+            liefer.Add(new Liefer { Lieferfrist = "1", Abweichung = "1" });
+            liefer.Add(new Liefer { Lieferfrist = "1", Abweichung = "1" });
+            liefer.Add(new Liefer { Lieferfrist = "", Abweichung = "" });
+            return liefer;
+        }
+
+        public ObservableCollection<KapNo> CreateWorkPlan16()
+        {
+            ObservableCollection<KapNo> kapno = new ObservableCollection<KapNo>();
+            kapno.Add(new KapNo { Kapaplanwork = "Kapazitätsbedarf (neu)", Berechnungwork = "" });
+            kapno.Add(new KapNo { Kapaplanwork = "Rüstzeit (neu)", Berechnungwork = "" });
+            kapno.Add(new KapNo { Kapaplanwork = "Kap. bed. (Rückstand Vorperiode)", Berechnungwork = "" });
+            kapno.Add(new KapNo { Kapaplanwork = "Rüstzeit (Rückstand Vorperiode)", Berechnungwork = "" });
+            kapno.Add(new KapNo { Kapaplanwork = "Gesamt-Kapazitätsbedarf", Berechnungwork = "" });
+            kapno.Add(new KapNo { Kapaplanwork = "Schichten und Überstunden", Berechnungwork = "" });
+            return kapno;
+        }
+        public ObservableCollection<ItemNo> CreateWork1()
+        {
+            ObservableCollection<ItemNo> itemno = new ObservableCollection<ItemNo>();
+            itemno.Add(new ItemNo{ Bezeichnung="Vorderrad komplett (cpl)", Sachnr="E49", Fahrradtyp="K", Einzelaufwand="6", Gesamtaufwand="" });
+            itemno.Add(new ItemNo{ Bezeichnung = "Vorderrad komplett (cpl)", Sachnr = "E54", Fahrradtyp = "D", Einzelaufwand = "6", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo{ Bezeichnung = "Vorderrad komplett (cpl)", Sachnr = "E29", Fahrradtyp = "H", Einzelaufwand = "6", Gesamtaufwand = "" });
+            return itemno;
+        }
+
+        public ObservableCollection<ItemNo> CreateWork2()
+        {
+            ObservableCollection<ItemNo> itemno = new ObservableCollection<ItemNo>();
+            itemno.Add(new ItemNo { Bezeichnung = "Rahmen und Räder", Sachnr = "E50", Fahrradtyp = "K", Einzelaufwand = "5", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = "Rahmen und Räder", Sachnr = "E55", Fahrradtyp = "D", Einzelaufwand = "5", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = "Rahmen und Räder", Sachnr = "E30", Fahrradtyp = "H", Einzelaufwand = "5", Gesamtaufwand = "" });
+            return itemno;
+        }
+
+        public ObservableCollection<ItemNo> CreateWork3()
+        {
+            ObservableCollection<ItemNo> itemno = new ObservableCollection<ItemNo>();
+            itemno.Add(new ItemNo { Bezeichnung = "Fahrrad ohne Pedale", Sachnr = "E51", Fahrradtyp = "K", Einzelaufwand = "5", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = "Fahrrad ohne Pedale", Sachnr = "E56", Fahrradtyp = "D", Einzelaufwand = "6", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = "Fahrrad ohne Pedale", Sachnr = "E31", Fahrradtyp = "H", Einzelaufwand = "6", Gesamtaufwand = "" });
+            return itemno;
+        }
+
+        public ObservableCollection<ItemNo> CreateWork4()
+        {
+            ObservableCollection<ItemNo> itemno = new ObservableCollection<ItemNo>();
+            itemno.Add(new ItemNo { Bezeichnung = "Fahrrad komplett (cpl)", Sachnr = "P1", Fahrradtyp = "K", Einzelaufwand = "6", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = "Fahrrad komplett (cpl)", Sachnr = "P2", Fahrradtyp = "D", Einzelaufwand = "7", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = "Fahrrad komplett (cpl)", Sachnr = "P3", Fahrradtyp = "H", Einzelaufwand = "7", Gesamtaufwand = "" });
+            return itemno;
+        }
+
+        public ObservableCollection<ItemNo> CreateWork6()
+        {
+            ObservableCollection<ItemNo> itemno = new ObservableCollection<ItemNo>();
+            itemno.Add(new ItemNo { Bezeichnung = "Lenker", Sachnr = "E16", Fahrradtyp = "KDH", Einzelaufwand = "2", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = "Rahmen", Sachnr = "E18", Fahrradtyp = "K", Einzelaufwand = "3", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = "Rahmen", Sachnr = "E19", Fahrradtyp = "K", Einzelaufwand = "3", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = "Rahmen", Sachnr = "E20", Fahrradtyp = "K", Einzelaufwand = "3", Gesamtaufwand = "" });
+            return itemno;
+        }
+
+        public ObservableCollection<ItemNo> CreateWork7()
+        {
+            ObservableCollection<ItemNo> itemno = new ObservableCollection<ItemNo>();
+            itemno.Add(new ItemNo { Bezeichnung = "Schutzblech hinten", Sachnr = "E10", Fahrradtyp = "K", Einzelaufwand = "2", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = "Schutzblech hinten", Sachnr = "E11", Fahrradtyp = "D", Einzelaufwand = "2", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = "Schutzblech hinten", Sachnr = "E12", Fahrradtyp = "H", Einzelaufwand = "2", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = "Schutzblech vorne", Sachnr = "E13", Fahrradtyp = "K", Einzelaufwand = "2", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = "Schutzblech vorne", Sachnr = "E14", Fahrradtyp = "D", Einzelaufwand = "2", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = "Schutzblech vorne", Sachnr = "E15", Fahrradtyp = "H", Einzelaufwand = "2", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = "Rahmen", Sachnr = "E18", Fahrradtyp = "K", Einzelaufwand = "2", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = "Rahmen", Sachnr = "E19", Fahrradtyp = "D", Einzelaufwand = "2", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = "Rahmen", Sachnr = "E20", Fahrradtyp = "H", Einzelaufwand = "2", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = "Pedale", Sachnr = "E26", Fahrradtyp = "KDH", Einzelaufwand = "2", Gesamtaufwand = "" });
+            return itemno;
+        }
+
+        public ObservableCollection<ItemNo> CreateWork8()
+        {
+            ObservableCollection<ItemNo> itemno = new ObservableCollection<ItemNo>();
+            itemno.Add(new ItemNo { Bezeichnung = "Schutzblech hinten", Sachnr = "E10", Fahrradtyp = "K", Einzelaufwand = "1", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = "Schutzblech hinten", Sachnr = "E11", Fahrradtyp = "D", Einzelaufwand = "2", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = "Schutzblech hinten", Sachnr = "E12", Fahrradtyp = "H", Einzelaufwand = "2", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = "Schutzblech vorne", Sachnr = "E13", Fahrradtyp = "K", Einzelaufwand = "1", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = "Schutzblech vorne", Sachnr = "E14", Fahrradtyp = "D", Einzelaufwand = "2", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = "Schutzblech vorne", Sachnr = "E15", Fahrradtyp = "H", Einzelaufwand = "2", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = "Rahmen", Sachnr = "E18", Fahrradtyp = "K", Einzelaufwand = "2", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = "Rahmen", Sachnr = "E19", Fahrradtyp = "D", Einzelaufwand = "2", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = "Rahmen", Sachnr = "E20", Fahrradtyp = "H", Einzelaufwand = "2", Gesamtaufwand = "" });
+            return itemno;
+        }
+
+        public ObservableCollection<ItemNo> CreateWork9()
+        {
+            ObservableCollection<ItemNo> itemno = new ObservableCollection<ItemNo>();
+            itemno.Add(new ItemNo { Bezeichnung = "Schutzblech hinten", Sachnr = "E10", Fahrradtyp = "K", Einzelaufwand = "3", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = "Schutzblech hinten", Sachnr = "E11", Fahrradtyp = "D", Einzelaufwand = "3", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = "Schutzblech hinten", Sachnr = "E12", Fahrradtyp = "H", Einzelaufwand = "3", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = "Schutzblech vorne", Sachnr = "E13", Fahrradtyp = "K", Einzelaufwand = "3", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = "Schutzblech vorne", Sachnr = "E14", Fahrradtyp = "D", Einzelaufwand = "3", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = "Schutzblech vorne", Sachnr = "E15", Fahrradtyp = "H", Einzelaufwand = "3", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = "Rahmen", Sachnr = "E18", Fahrradtyp = "K", Einzelaufwand = "2", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = "Rahmen", Sachnr = "E19", Fahrradtyp = "D", Einzelaufwand = "2", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = "Rahmen", Sachnr = "E20", Fahrradtyp = "H", Einzelaufwand = "2", Gesamtaufwand = "" });
+            return itemno;
+        }
+
+        public ObservableCollection<ItemNo> CreateWork10()
+        {
+            ObservableCollection<ItemNo> itemno = new ObservableCollection<ItemNo>();
+            itemno.Add(new ItemNo { Bezeichnung = "Hinterrad", Sachnr = "E4", Fahrradtyp = "K", Einzelaufwand = "4", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = "Hinterrad", Sachnr = "E5", Fahrradtyp = "D", Einzelaufwand = "4", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = "Hinterrad", Sachnr = "E6", Fahrradtyp = "H", Einzelaufwand = "4", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = "Vorderrad", Sachnr = "E7", Fahrradtyp = "K", Einzelaufwand = "4", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = "Vorderrad", Sachnr = "E8", Fahrradtyp = "D", Einzelaufwand = "4", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = "Vorderrad", Sachnr = "E9", Fahrradtyp = "H", Einzelaufwand = "4", Gesamtaufwand = "" });
+            return itemno;
+        }
+
+        public ObservableCollection<ItemNo> CreateWork11()
+        {
+            ObservableCollection<ItemNo> itemno = new ObservableCollection<ItemNo>();
+            itemno.Add(new ItemNo { Bezeichnung = "Hinterrad", Sachnr = "E4", Fahrradtyp = "K", Einzelaufwand = "3", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = "Hinterrad", Sachnr = "E5", Fahrradtyp = "D", Einzelaufwand = "3", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = "Hinterrad", Sachnr = "E6", Fahrradtyp = "H", Einzelaufwand = "3", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = "Vorderrad", Sachnr = "E7", Fahrradtyp = "K", Einzelaufwand = "3", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = "Vorderrad", Sachnr = "E8", Fahrradtyp = "D", Einzelaufwand = "3", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = "Vorderrad", Sachnr = "E9", Fahrradtyp = "H", Einzelaufwand = "3", Gesamtaufwand = "" });
+            return itemno;
+        }
+
+        public ObservableCollection<ItemNo> CreateWork12()
+        {
+            ObservableCollection<ItemNo> itemno = new ObservableCollection<ItemNo>();
+            itemno.Add(new ItemNo { Bezeichnung = "Schutzblech hinten", Sachnr = "E10", Fahrradtyp = "K", Einzelaufwand = "3", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = "Schutzblech hinten", Sachnr = "E11", Fahrradtyp = "D", Einzelaufwand = "3", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = "Schutzblech hinten", Sachnr = "E12", Fahrradtyp = "H", Einzelaufwand = "3", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = "Schutzblech vorne", Sachnr = "E13", Fahrradtyp = "K", Einzelaufwand = "3", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = "Schutzblech vorne", Sachnr = "E14", Fahrradtyp = "D", Einzelaufwand = "3", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = "Schutzblech vorne", Sachnr = "E15", Fahrradtyp = "H", Einzelaufwand = "3", Gesamtaufwand = "" });
+            return itemno;
+        }
+
+        public ObservableCollection<ItemNo> CreateWork13()
+        {
+            ObservableCollection<ItemNo> itemno = new ObservableCollection<ItemNo>();
+            itemno.Add(new ItemNo { Bezeichnung = "Schutzblech hinten", Sachnr = "E10", Fahrradtyp = "K", Einzelaufwand = "2", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = "Schutzblech hinten", Sachnr = "E11", Fahrradtyp = "D", Einzelaufwand = "2", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = "Schutzblech hinten", Sachnr = "E12", Fahrradtyp = "H", Einzelaufwand = "2", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = "Schutzblech vorne", Sachnr = "E13", Fahrradtyp = "K", Einzelaufwand = "2", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = "Schutzblech vorne", Sachnr = "E14", Fahrradtyp = "D", Einzelaufwand = "2", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = "Schutzblech vorne", Sachnr = "E15", Fahrradtyp = "H", Einzelaufwand = "2", Gesamtaufwand = "" });
+            return itemno;
+        }
+
+        public ObservableCollection<ItemNo> CreateWork14()
+        {
+            ObservableCollection<ItemNo> itemno = new ObservableCollection<ItemNo>();
+            itemno.Add(new ItemNo { Bezeichnung = "Lenker", Sachnr = "E16", Fahrradtyp = "KDH", Einzelaufwand = "3", Gesamtaufwand = "" });
+            return itemno;
+        }
+
+        public ObservableCollection<ItemNo> CreateWork15()
+        {
+            ObservableCollection<ItemNo> itemno = new ObservableCollection<ItemNo>();
+            itemno.Add(new ItemNo { Bezeichnung = "Sattel", Sachnr = "E17", Fahrradtyp = "KDH", Einzelaufwand = "3", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = "Pedale", Sachnr = "E26", Fahrradtyp = "KDH", Einzelaufwand = "3", Gesamtaufwand = "" });
+            return itemno;
         }
 
         public void LoadTranslations()
@@ -266,8 +471,29 @@ namespace Ibsys2
         }
 
 
+private void Forecast1_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            try
+            {
+                Int32 directsum1 = 0;
 
-        private void UpdateSummeFromForcast(object sender, TextChangedEventArgs e)
+                if (d11 != null)
+                    directsum1 += Convert.ToInt32(d11.Text);
+                if (d21 != null)
+                    directsum1 += Convert.ToInt32(d21.Text);
+                if (d31 != null)
+                    directsum1 += Convert.ToInt32(d31.Text);
+
+                if (s41 != null)
+                    s41.Text = directsum1.ToString();
+            }
+            catch
+            {
+
+            }
+        }
+
+private void UpdateSummeFromForcast(object sender, TextChangedEventArgs e)
         {
             try
             {
@@ -317,6 +543,8 @@ namespace Ibsys2
             }
             catch { }
         }
+
+
 
         private void NumberDoubleValidationTextBox(object sender, TextCompositionEventArgs e)
         {
@@ -441,3 +669,131 @@ namespace Ibsys2
     }
 }
 
+public class Liefer : INotifyPropertyChanged
+{
+    public event PropertyChangedEventHandler PropertyChanged;
+
+    private string lieferfrist;
+    private string abweichung;
+
+    public string Lieferfrist
+    {
+        get { return lieferfrist; }
+        set
+        {
+            lieferfrist = value; OnPropertyChanged(new PropertyChangedEventArgs("Lieferfrist"));
+        }
+    }
+    public string Abweichung
+    {
+        get { return abweichung; }
+        set
+        {
+            abweichung = value; OnPropertyChanged(new PropertyChangedEventArgs("Abweichung"));
+        }
+    }
+    protected void OnPropertyChanged(PropertyChangedEventArgs e)
+    {
+        if (PropertyChanged != null)
+        { PropertyChanged(this, e); }
+    }
+}
+
+public class KapNo : INotifyPropertyChanged
+{
+    public event PropertyChangedEventHandler PropertyChanged;
+
+    private string kapaplanwork;
+    private string berechnungwork;
+
+    public string Kapaplanwork
+    {
+        get { return kapaplanwork; }
+        set
+        {
+            kapaplanwork = value; OnPropertyChanged(new PropertyChangedEventArgs("Kapaplanwork"));
+        }
+    }
+    public string Berechnungwork
+    {
+        get { return berechnungwork; }
+        set
+        {
+            berechnungwork = value; OnPropertyChanged(new PropertyChangedEventArgs("Berechnungwork"));
+        }
+    }
+    protected void OnPropertyChanged(PropertyChangedEventArgs e)
+    {
+        if (PropertyChanged != null)
+        { PropertyChanged(this, e); }
+    }
+}
+
+
+public class ItemNo : INotifyPropertyChanged
+{
+    // Ereignis
+    public event PropertyChangedEventHandler PropertyChanged;
+    // Eigenschaften
+
+    private string bezeichnung;
+    private string fahrradtyp;
+    private string sachnr;
+    private string menge;
+    private string einzelaufwand;
+    private string gesamtaufwand;
+
+    public string Bezeichnung
+    {
+        get { return bezeichnung; }
+        set
+        {
+            bezeichnung = value; OnPropertyChanged(new PropertyChangedEventArgs("Bezeichnung"));
+        }
+    }
+    public string Fahrradtyp
+    {
+        get { return fahrradtyp; }
+        set
+        {
+            fahrradtyp = value; OnPropertyChanged(new PropertyChangedEventArgs("Fahrradtyp"));
+        }
+    }
+    public string Sachnr
+    {
+        get { return sachnr; }
+        set
+        {
+            sachnr = value; OnPropertyChanged(new PropertyChangedEventArgs("Sach-Nr"));
+        }
+    }
+    public string Menge
+    {
+        get { return menge; }
+        set
+        {
+            menge = value; OnPropertyChanged(new PropertyChangedEventArgs("Menge"));
+        }
+    }
+    public string Einzelaufwand
+    {
+        get { return einzelaufwand; }
+        set
+        {
+            einzelaufwand = value; OnPropertyChanged(new PropertyChangedEventArgs("Einzelaufwand"));
+        }
+    }
+    public string Gesamtaufwand
+    {
+        get { return gesamtaufwand; }
+        set
+        {
+            gesamtaufwand = value; OnPropertyChanged(new PropertyChangedEventArgs("Gesamtaufwand"));
+        }
+    }
+    protected void OnPropertyChanged(PropertyChangedEventArgs e)
+{
+        if (PropertyChanged != null)
+        { PropertyChanged(this, e); }
+    }
+}
