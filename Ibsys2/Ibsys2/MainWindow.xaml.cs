@@ -82,6 +82,16 @@ namespace Ibsys2
             dataGrid28.ItemsSource = CreateWorkPlan16();
             dataGrid29.ItemsSource = CreateWorkPlan16();
         }
+
+        public ObservableCollection<Liefer> CreateLiefer1()
+        {
+            ObservableCollection<Liefer> liefer = new ObservableCollection<Liefer>();
+            liefer.Add(new Liefer { Lieferfrist = "1", Abweichung = "1" });
+            liefer.Add(new Liefer { Lieferfrist = "1", Abweichung = "1" });
+            liefer.Add(new Liefer { Lieferfrist = "", Abweichung = "" });
+            return liefer;
+        }
+
         public ObservableCollection<KapNo> CreateWorkPlan16()
         {
             ObservableCollection<KapNo> kapno = new ObservableCollection<KapNo>();
@@ -461,8 +471,29 @@ namespace Ibsys2
         }
 
 
+private void Forecast1_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            try
+            {
+                Int32 directsum1 = 0;
 
-        private void UpdateSummeFromForcast(object sender, TextChangedEventArgs e)
+                if (d11 != null)
+                    directsum1 += Convert.ToInt32(d11.Text);
+                if (d21 != null)
+                    directsum1 += Convert.ToInt32(d21.Text);
+                if (d31 != null)
+                    directsum1 += Convert.ToInt32(d31.Text);
+
+                if (s41 != null)
+                    s41.Text = directsum1.ToString();
+            }
+            catch
+            {
+
+            }
+        }
+
+private void UpdateSummeFromForcast(object sender, TextChangedEventArgs e)
         {
             try
             {
@@ -512,6 +543,8 @@ namespace Ibsys2
             }
             catch { }
         }
+
+
 
         private void NumberDoubleValidationTextBox(object sender, TextCompositionEventArgs e)
         {
@@ -633,6 +666,36 @@ namespace Ibsys2
             }
         }
 
+    }
+}
+
+public class Liefer : INotifyPropertyChanged
+{
+    public event PropertyChangedEventHandler PropertyChanged;
+
+    private string lieferfrist;
+    private string abweichung;
+
+    public string Lieferfrist
+    {
+        get { return lieferfrist; }
+        set
+        {
+            lieferfrist = value; OnPropertyChanged(new PropertyChangedEventArgs("Lieferfrist"));
+        }
+    }
+    public string Abweichung
+    {
+        get { return abweichung; }
+        set
+        {
+            abweichung = value; OnPropertyChanged(new PropertyChangedEventArgs("Abweichung"));
+        }
+    }
+    protected void OnPropertyChanged(PropertyChangedEventArgs e)
+    {
+        if (PropertyChanged != null)
+        { PropertyChanged(this, e); }
     }
 }
 
