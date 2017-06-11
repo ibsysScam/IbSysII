@@ -23,13 +23,19 @@ using UIFeautures;
 using System.ComponentModel;
 using System.Collections.ObjectModel;
 
+
 namespace Ibsys2
 {
     /// <summary>
     /// Interaktionslogik für MainWindow.xaml
     /// </summary>
+    /// 
+    
+
     public partial class MainWindow : Window
     {
+
+
         private static MainWindow _class;
         UIFeatures Ui = new UIFeatures();
 
@@ -81,14 +87,55 @@ namespace Ibsys2
             dataGrid27.ItemsSource = CreateWorkPlan16();
             dataGrid28.ItemsSource = CreateWorkPlan16();
             dataGrid29.ItemsSource = CreateWorkPlan16();
+            dataGrid30.ItemsSource = CreateLiefer1();
+            dataGrid31.ItemsSource = CreateEinkauf1();
+            prio.ItemsSource = CreatePrio1();
         }
 
+
+        public ObservableCollection<Prio> CreatePrio1()
+        {
+            ObservableCollection<Prio> prio = new ObservableCollection<Prio>();
+            return prio;
+        }
+
+        public ObservableCollection<Einkauf> CreateEinkauf1()
+        {
+            ObservableCollection<Einkauf> einkauf = new ObservableCollection<Einkauf>();
+            return einkauf;
+        }
         public ObservableCollection<Liefer> CreateLiefer1()
         {
             ObservableCollection<Liefer> liefer = new ObservableCollection<Liefer>();
-            liefer.Add(new Liefer { Lieferfrist = "1", Abweichung = "1" });
-            liefer.Add(new Liefer { Lieferfrist = "1", Abweichung = "1" });
-            liefer.Add(new Liefer { Lieferfrist = "", Abweichung = "" });
+            liefer.Add(new Liefer { Kaufteileno = "21", Kaufteil = "Kette", Verwendung="K", Teilewert="5,00", Diskontmenge="300", Bestellkosten="50", Lieferfrist = "1,8", Abweichung = "0,4" });
+            liefer.Add(new Liefer { Kaufteileno = "22", Kaufteil = "Kette", Verwendung = "D", Teilewert = "6,50", Diskontmenge = "300", Bestellkosten = "50", Lieferfrist = "1,7", Abweichung = "0,4" });
+            liefer.Add(new Liefer { Kaufteileno = "23", Kaufteil = "Kette", Verwendung = "H", Teilewert = "6,50", Diskontmenge = "300", Bestellkosten = "50", Lieferfrist = "1,2", Abweichung = "0,2" });
+            liefer.Add(new Liefer { Kaufteileno = "24", Kaufteil = "Mutter 3/8", Verwendung = "KDH", Teilewert = "0;06", Diskontmenge = "6100", Bestellkosten = "100", Lieferfrist = "3,2", Abweichung = "0,3" });
+            liefer.Add(new Liefer { Kaufteileno = "25", Kaufteil = "Scheibe 3/8", Verwendung = "KDH", Teilewert = "0;06", Diskontmenge = "3600", Bestellkosten = "50", Lieferfrist = "0,9", Abweichung = "0,2" });
+            liefer.Add(new Liefer { Kaufteileno = "27", Kaufteil = "Schraube 3/8", Verwendung = "KDH", Teilewert = "0,1", Diskontmenge = "1800", Bestellkosten = "75", Lieferfrist = "0,9", Abweichung = "0,2" });
+            liefer.Add(new Liefer { Kaufteileno = "28", Kaufteil = "Rohr 3/4", Verwendung = "KDH", Teilewert = "1,20", Diskontmenge = "4500", Bestellkosten = "50", Lieferfrist = "1,7", Abweichung = "0,4" });
+            liefer.Add(new Liefer { Kaufteileno = "32", Kaufteil = "Farbe", Verwendung = "KDH", Teilewert = "0,75", Diskontmenge = "2700", Bestellkosten = "50", Lieferfrist = "2,1", Abweichung = "0,5" });
+            liefer.Add(new Liefer { Kaufteileno = "33", Kaufteil = "Felge cpl.", Verwendung = "H", Teilewert = "22,00", Diskontmenge = "900", Bestellkosten = "75", Lieferfrist = "1,9", Abweichung = "0,5" });
+            liefer.Add(new Liefer { Kaufteileno = "34", Kaufteil = "Speiche", Verwendung = "H", Teilewert = "0,1", Diskontmenge = "22000", Bestellkosten = "50", Lieferfrist = "1,6", Abweichung = "0,3" });
+            liefer.Add(new Liefer { Kaufteileno = "35", Kaufteil = "Nabe", Verwendung = "KDH", Teilewert = "1,00", Diskontmenge = "3600", Bestellkosten = "75", Lieferfrist = "2,2", Abweichung = "0,4" });
+            liefer.Add(new Liefer { Kaufteileno = "36", Kaufteil = "Freilauf", Verwendung = "KDH", Teilewert = "8,00", Diskontmenge = "900", Bestellkosten = "100", Lieferfrist = "1,2", Abweichung = "0,1" });
+            liefer.Add(new Liefer { Kaufteileno = "37", Kaufteil = "Gabel", Verwendung = "KDH", Teilewert = "1,50", Diskontmenge = "900", Bestellkosten = "50", Lieferfrist = "1,5", Abweichung = "0,3" });
+            liefer.Add(new Liefer { Kaufteileno = "38", Kaufteil = "Welle", Verwendung = "KDH", Teilewert = "1,50", Diskontmenge = "300", Bestellkosten = "50", Lieferfrist = "1,7", Abweichung = "0,4" });
+            liefer.Add(new Liefer { Kaufteileno = "39", Kaufteil = "Blech", Verwendung = "KDH", Teilewert = "1,50", Diskontmenge = "1800", Bestellkosten = "75", Lieferfrist = "1,5", Abweichung = "0,3" });
+            liefer.Add(new Liefer { Kaufteileno = "40", Kaufteil = "Lenker", Verwendung = "KDH", Teilewert = "2,50", Diskontmenge = "900", Bestellkosten = "50", Lieferfrist = "1,7", Abweichung = "0,2" });
+            liefer.Add(new Liefer { Kaufteileno = "41", Kaufteil = "Mutter 3/4", Verwendung = "KDH", Teilewert = "0,06", Diskontmenge = "900", Bestellkosten = "50", Lieferfrist = "0,9", Abweichung = "0,2" });
+            liefer.Add(new Liefer { Kaufteileno = "42", Kaufteil = "Griff", Verwendung = "KDH", Teilewert = "0,10", Diskontmenge = "1800", Bestellkosten = "50", Lieferfrist = "1,2", Abweichung = "0,3" });
+            liefer.Add(new Liefer { Kaufteileno = "43", Kaufteil = "Sattel", Verwendung = "KDH", Teilewert = "5,00", Diskontmenge = "2700", Bestellkosten = "75", Lieferfrist = "2,0", Abweichung = "0,5" });
+            liefer.Add(new Liefer { Kaufteileno = "44", Kaufteil = "Stange 1/2", Verwendung = "KDH", Teilewert = "0,50", Diskontmenge = "900", Bestellkosten = "50", Lieferfrist = "1,2", Abweichung = "0,2" });
+            liefer.Add(new Liefer { Kaufteileno = "45", Kaufteil = "Mutter 1/4", Verwendung = "KDH", Teilewert = "0,06", Diskontmenge = "900", Bestellkosten = "50", Lieferfrist = "1,7", Abweichung = "0,3" });
+            liefer.Add(new Liefer { Kaufteileno = "46", Kaufteil = "Schraube 1/4", Verwendung = "KDH", Teilewert = "0,10", Diskontmenge = "900", Bestellkosten = "50", Lieferfrist = "0,9", Abweichung = "0,3" });
+            liefer.Add(new Liefer { Kaufteileno = "47", Kaufteil = "Zahnkranz", Verwendung = "KDH", Teilewert = "3,50", Diskontmenge = "900", Bestellkosten = "50", Lieferfrist = "1,1", Abweichung = "0,1" });
+            liefer.Add(new Liefer { Kaufteileno = "48", Kaufteil = "Pedal", Verwendung = "KDH", Teilewert = "1,50", Diskontmenge = "1800", Bestellkosten = "75", Lieferfrist = "1,0", Abweichung = "0,2" });
+            liefer.Add(new Liefer { Kaufteileno = "52", Kaufteil = "Felge cpl.", Verwendung = "K", Teilewert = "22,00", Diskontmenge = "600", Bestellkosten = "50", Lieferfrist = "1,6", Abweichung = "0,4" });
+            liefer.Add(new Liefer { Kaufteileno = "53", Kaufteil = "Speiche", Verwendung = "K", Teilewert = "0,10", Diskontmenge = "22000", Bestellkosten = "50", Lieferfrist = "1,6", Abweichung = "0,2" });
+            liefer.Add(new Liefer { Kaufteileno = "57", Kaufteil = "Felge cp.", Verwendung = "D", Teilewert = "22,00", Diskontmenge = "600", Bestellkosten = "50", Lieferfrist = "1,7", Abweichung = "0,3" });
+            liefer.Add(new Liefer { Kaufteileno = "58", Kaufteil = "Speiche", Verwendung = "D", Teilewert = "0,10", Diskontmenge = "22000", Bestellkosten = "50", Lieferfrist = "1,6", Abweichung = "0,5" });
+            liefer.Add(new Liefer { Kaufteileno = "59", Kaufteil = "Schweißdraht", Verwendung = "KDH", Teilewert = "0,15", Diskontmenge = "1800", Bestellkosten = "50", Lieferfrist = "0,7", Abweichung = "0,2" });
             return liefer;
         }
 
@@ -384,7 +431,9 @@ namespace Ibsys2
             Ui.EnableNextTab(Kapaplanungtab, MainTabControl);
             Ui.EnableNextTab(Einkauftab, MainTabControl);
             Ui.EnableNextTab(Produktionsplanungtab, MainTabControl);
+            Ui.EnableNextTab(Priorisierungtab, MainTabControl);
             Ui.EnableNextTab(Chartstab, MainTabControl);
+            Ui.EnableNextTab(Exporttab, MainTabControl);
         }
 
         private bool AllFilled()
@@ -675,6 +724,64 @@ public class Liefer : INotifyPropertyChanged
 
     private string lieferfrist;
     private string abweichung;
+    public string kaufteileno;
+    public string kaufteil;
+    public string bestellkosten;
+    public string diskontmenge;
+    public string teilewert;
+    public string verwendung;
+
+    
+    public string Kaufteileno
+    {
+        get { return kaufteileno; }
+        set
+        {
+            kaufteileno = value; OnPropertyChanged(new PropertyChangedEventArgs("KaufteileNo"));
+        }
+    }
+
+    public string Kaufteil
+    {
+        get { return kaufteil; }
+        set
+        {
+            kaufteil = value; OnPropertyChanged(new PropertyChangedEventArgs("Kaufteils"));
+        }
+    }
+    public string Verwendung
+    {
+        get { return verwendung; }
+        set
+        {
+            verwendung = value; OnPropertyChanged(new PropertyChangedEventArgs("Verwendung"));
+        }
+    }
+
+    public string Bestellkosten
+    {
+        get { return bestellkosten; }
+        set
+        {
+            bestellkosten = value; OnPropertyChanged(new PropertyChangedEventArgs("Bestellkosten"));
+        }
+    }
+    public string Diskontmenge
+    {
+        get { return diskontmenge; }
+        set
+        {
+            diskontmenge = value; OnPropertyChanged(new PropertyChangedEventArgs("Diskontmenge"));
+        }
+    }
+    public string Teilewert
+    {
+        get { return teilewert; }
+        set
+        {
+            teilewert = value; OnPropertyChanged(new PropertyChangedEventArgs("Teilewert"));
+        }
+    }
 
     public string Lieferfrist
     {
@@ -793,6 +900,75 @@ public class ItemNo : INotifyPropertyChanged
     }
     protected void OnPropertyChanged(PropertyChangedEventArgs e)
 {
+        if (PropertyChanged != null)
+        { PropertyChanged(this, e); }
+    }
+}
+public class Einkauf : INotifyPropertyChanged
+{
+    public event PropertyChangedEventHandler PropertyChanged;
+
+    private string teileno;
+    private string anzahl;
+    private string art;
+
+    public string Teileno
+    {
+        get { return teileno; }
+        set
+        {
+            teileno = value; OnPropertyChanged(new PropertyChangedEventArgs("TeileNo"));
+        }
+    }
+    public string Anzahl
+    {
+        get { return anzahl; }
+        set
+        {
+            anzahl = value; OnPropertyChanged(new PropertyChangedEventArgs("Anzahl"));
+        }
+    }
+    public string Art
+    {
+        get { return art; }
+        set
+        {
+            art = value; OnPropertyChanged(new PropertyChangedEventArgs("Art"));
+        }
+    }
+    protected void OnPropertyChanged(PropertyChangedEventArgs e)
+    {
+        if (PropertyChanged != null)
+        { PropertyChanged(this, e); }
+    }
+}
+
+public class Prio : INotifyPropertyChanged
+{
+    public event PropertyChangedEventHandler PropertyChanged;
+
+    private string teilenr;
+    private string anzahl;
+
+    public string Teilenr
+    {
+        get { return teilenr; }
+        set
+        {
+            teilenr = value; OnPropertyChanged(new PropertyChangedEventArgs("Teilenr"));
+        }
+    }
+    public string Anzahl
+    {
+        get { return anzahl; }
+        set
+        {
+            anzahl = value; OnPropertyChanged(new PropertyChangedEventArgs("Anzahl"));
+        }
+    }
+
+    protected void OnPropertyChanged(PropertyChangedEventArgs e)
+    {
         if (PropertyChanged != null)
         { PropertyChanged(this, e); }
     }
