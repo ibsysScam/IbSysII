@@ -31,6 +31,12 @@ namespace Ibsys2.Static.Input {
             if (_list.ContainsKey(period))
                 _list.Remove(period);
             _list.Add(period, data);
+            if (period == 0)
+            {
+                Output.Sellwish.Class.AnzahlArtikel1 = _list[0].Product1;
+                Output.Sellwish.Class.AnzahlArtikel2 = _list[0].Product2;
+                Output.Sellwish.Class.AnzahlArtikel3 = _list[0].Product3;
+            }
         }
 
         public ForecastPeriod GetPeriod(int period) {
