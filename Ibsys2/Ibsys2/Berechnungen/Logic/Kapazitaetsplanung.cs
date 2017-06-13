@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static Ibsys2.Static.Input.Waitinglistworkstations;
+using static Ibsys2.Static.Input.Waitinglistworkstations.Workplace;
 
 namespace Ibsys2.Berechnungen.Logic
 {
@@ -135,6 +137,48 @@ namespace Ibsys2.Berechnungen.Logic
                 case 15: return a15;
                 default: return a1;
             }
+        }
+
+        public static void kapazitaetsrueckstandAufNachfolgendeArbeitsplaetzeVerrechnen(){
+			Waitinglistworkstations wlw = Waitinglistworkstations.Class;
+            List<Workplace> workplaces = wlw.getAllWorkplaces();
+            foreach(Workplace w in workplaces){
+                foreach(Waitinglist wl in w.GetAllWaitinglistItem){
+                    if(wl.Item == 13 || wl.Item == 14 || wl.Item == 15){
+                        if (w.ID == 13){
+                            a12.kapabeadarfrueckstand += wl.Amount * 3;
+                            a8.kapabeadarfrueckstand += wl.Amount * 2;
+                            a8.ruestzeitrueckstand += 15;
+                            a7.kapabeadarfrueckstand += wl.Amount * 2;
+                            a7.ruestzeitrueckstand += 20;
+                            a9.kapabeadarfrueckstand += wl.Amount * 3;
+                            a9.ruestzeitrueckstand += 15;
+						}
+						else if (w.ID == 12)
+						{
+							a8.kapabeadarfrueckstand += wl.Amount * 2;
+							a8.ruestzeitrueckstand += 15;
+							a7.kapabeadarfrueckstand += wl.Amount * 2;
+							a7.ruestzeitrueckstand += 20;
+							a9.kapabeadarfrueckstand += wl.Amount * 3;
+							a9.ruestzeitrueckstand += 15;
+						}
+						else if (w.ID == 8)
+						{
+							a7.kapabeadarfrueckstand += wl.Amount * 2;
+							a7.ruestzeitrueckstand += 20;
+							a9.kapabeadarfrueckstand += wl.Amount * 3;
+							a9.ruestzeitrueckstand += 15;
+						}
+						else if (w.ID == 7)
+						{
+							a9.kapabeadarfrueckstand += wl.Amount * 3;
+							a9.ruestzeitrueckstand += 15;
+						}
+                    }
+                }
+            }
+			//this.kapabeadarfrueckstand = wlw.GetWorkplaceByID(arbeitsplatzID).Timeneed;
         }
 
     }

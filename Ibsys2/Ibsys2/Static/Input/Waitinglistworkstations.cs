@@ -33,6 +33,10 @@ namespace Ibsys2.Static.Input {
             _list.Add(w);
         }
 
+        public List<Workplace> getAllWorkplaces(){
+            return _list;
+        }
+
         public Workplace GetWorkplaceByID(int id) {
             return _list.Find(x => x.ID == id);
         }
