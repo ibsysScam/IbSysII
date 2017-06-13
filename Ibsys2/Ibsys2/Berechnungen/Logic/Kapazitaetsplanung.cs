@@ -144,15 +144,50 @@ namespace Ibsys2.Berechnungen.Logic
             List<Workplace> workplaces = wlw.getAllWorkplaces();
             foreach(Workplace w in workplaces){
                 foreach(Waitinglist wl in w.GetAllWaitinglistItem){
-                    if(wl.Item == 13 || wl.Item == 14 || wl.Item == 15){
+                    // E13-15
+                    if(wl.Item == 13){
                         if (w.ID == 13){
                             a12.kapabeadarfrueckstand += wl.Amount * 3;
-                            a8.kapabeadarfrueckstand += wl.Amount * 2;
+                            a8.kapabeadarfrueckstand += wl.Amount * 1;
                             a8.ruestzeitrueckstand += 15;
                             a7.kapabeadarfrueckstand += wl.Amount * 2;
                             a7.ruestzeitrueckstand += 20;
                             a9.kapabeadarfrueckstand += wl.Amount * 3;
                             a9.ruestzeitrueckstand += 15;
+						}
+						else if (w.ID == 12)
+						{
+							a8.kapabeadarfrueckstand += wl.Amount * 1;
+							a8.ruestzeitrueckstand += 15;
+							a7.kapabeadarfrueckstand += wl.Amount * 2;
+							a7.ruestzeitrueckstand += 20;
+							a9.kapabeadarfrueckstand += wl.Amount * 3;
+							a9.ruestzeitrueckstand += 15;
+						}
+						else if (w.ID == 8)
+						{
+							a7.kapabeadarfrueckstand += wl.Amount * 2;
+							a7.ruestzeitrueckstand += 20;
+							a9.kapabeadarfrueckstand += wl.Amount * 3;
+							a9.ruestzeitrueckstand += 15;
+						}
+						else if (w.ID == 7)
+						{
+							a9.kapabeadarfrueckstand += wl.Amount * 3;
+							a9.ruestzeitrueckstand += 15;
+						}
+					}
+					else if (wl.Item == 14)
+					{
+						if (w.ID == 13)
+						{
+							a12.kapabeadarfrueckstand += wl.Amount * 3;
+							a8.kapabeadarfrueckstand += wl.Amount * 2;
+							a8.ruestzeitrueckstand += 15;
+							a7.kapabeadarfrueckstand += wl.Amount * 2;
+							a7.ruestzeitrueckstand += 20;
+							a9.kapabeadarfrueckstand += wl.Amount * 3;
+							a9.ruestzeitrueckstand += 15;
 						}
 						else if (w.ID == 12)
 						{
@@ -175,8 +210,134 @@ namespace Ibsys2.Berechnungen.Logic
 							a9.kapabeadarfrueckstand += wl.Amount * 3;
 							a9.ruestzeitrueckstand += 15;
 						}
-                    }
-                }
+					}
+					else if (wl.Item == 15)
+					{
+						if (w.ID == 13)
+						{
+							a12.kapabeadarfrueckstand += wl.Amount * 3;
+							a8.kapabeadarfrueckstand += wl.Amount * 2;
+							a8.ruestzeitrueckstand += 15;
+							a7.kapabeadarfrueckstand += wl.Amount * 2;
+							a7.ruestzeitrueckstand += 20;
+							a9.kapabeadarfrueckstand += wl.Amount * 3;
+							a9.ruestzeitrueckstand += 15;
+						}
+						else if (w.ID == 12)
+						{
+							a8.kapabeadarfrueckstand += wl.Amount * 2;
+							a8.ruestzeitrueckstand += 15;
+							a7.kapabeadarfrueckstand += wl.Amount * 2;
+							a7.ruestzeitrueckstand += 20;
+							a9.kapabeadarfrueckstand += wl.Amount * 3;
+							a9.ruestzeitrueckstand += 15;
+						}
+						else if (w.ID == 8)
+						{
+							a7.kapabeadarfrueckstand += wl.Amount * 2;
+							a7.ruestzeitrueckstand += 20;
+							a9.kapabeadarfrueckstand += wl.Amount * 3;
+							a9.ruestzeitrueckstand += 15;
+						}
+						else if (w.ID == 7)
+						{
+							a9.kapabeadarfrueckstand += wl.Amount * 3;
+							a9.ruestzeitrueckstand += 15;
+						}
+					}
+
+
+
+					//E18-20
+					else if (wl.Item == 18)
+					{
+						if (w.ID == 6)
+						{
+							a8.kapabeadarfrueckstand += wl.Amount * 3;
+							a8.ruestzeitrueckstand += 20;
+							a7.kapabeadarfrueckstand += wl.Amount * 2;
+							a7.ruestzeitrueckstand += 20;
+							a9.kapabeadarfrueckstand += wl.Amount * 2;
+							a9.ruestzeitrueckstand += 15;
+						}
+						else if (w.ID == 8)
+						{
+							a7.kapabeadarfrueckstand += wl.Amount * 2;
+							a7.ruestzeitrueckstand += 20;
+							a9.kapabeadarfrueckstand += wl.Amount * 2;
+							a9.ruestzeitrueckstand += 15;
+						}
+						else if (w.ID == 7)
+						{
+							a9.kapabeadarfrueckstand += wl.Amount * 2;
+							a9.ruestzeitrueckstand += 15;
+						}
+					}
+					else if (wl.Item == 19)
+					{
+						if (w.ID == 6)
+						{
+							a8.kapabeadarfrueckstand += wl.Amount * 3;
+							a8.ruestzeitrueckstand += 25;
+							a7.kapabeadarfrueckstand += wl.Amount * 2;
+							a7.ruestzeitrueckstand += 20;
+							a9.kapabeadarfrueckstand += wl.Amount * 2;
+							a9.ruestzeitrueckstand += 20;
+						}
+						else if (w.ID == 8)
+						{
+							a7.kapabeadarfrueckstand += wl.Amount * 2;
+							a7.ruestzeitrueckstand += 20;
+							a9.kapabeadarfrueckstand += wl.Amount * 2;
+							a9.ruestzeitrueckstand += 20;
+						}
+						else if (w.ID == 7)
+						{
+							a9.kapabeadarfrueckstand += wl.Amount * 2;
+							a9.ruestzeitrueckstand += 20;
+						}
+					}
+					else if (wl.Item == 20)
+					{
+						if (w.ID == 6)
+						{
+							a8.kapabeadarfrueckstand += wl.Amount * 3;
+							a8.ruestzeitrueckstand += 20;
+							a7.kapabeadarfrueckstand += wl.Amount * 2;
+							a7.ruestzeitrueckstand += 20;
+							a9.kapabeadarfrueckstand += wl.Amount * 2;
+							a9.ruestzeitrueckstand += 15;
+						}
+						else if (w.ID == 8)
+						{
+							a7.kapabeadarfrueckstand += wl.Amount * 2;
+							a7.ruestzeitrueckstand += 20;
+							a9.kapabeadarfrueckstand += wl.Amount * 2;
+							a9.ruestzeitrueckstand += 15;
+						}
+						else if (w.ID == 7)
+						{
+							a9.kapabeadarfrueckstand += wl.Amount * 2;
+							a9.ruestzeitrueckstand += 15;
+						}
+					}
+
+
+					//E7-9
+
+
+					//E4-6
+
+
+					//E10-12
+
+
+					//E16
+
+
+					//E26
+
+				}
             }
 			//this.kapabeadarfrueckstand = wlw.GetWorkplaceByID(arbeitsplatzID).Timeneed;
         }
