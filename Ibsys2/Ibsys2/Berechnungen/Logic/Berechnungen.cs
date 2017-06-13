@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Ibsys2.Berechnungen.Logic
 {
-    static class Berechnungen
+    public class Berechnungen
     {
 
         private static void createOrderList() {
@@ -54,7 +54,7 @@ namespace Ibsys2.Berechnungen.Logic
         }
 
 
-        public static void berechnen(){
+        public void berechnen(){
             createProductionList();
             createWorkingtimelist();
             createOrderList();
