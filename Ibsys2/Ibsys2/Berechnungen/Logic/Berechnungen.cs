@@ -48,6 +48,7 @@ namespace Ibsys2.Berechnungen.Logic
 
         private static void createWorkingtimelist() {
             Workingtimelist wl = Workingtimelist.Class;
+            Kapazitaetsplanung.kapazitaetsrueckstandAufNachfolgendeArbeitsplaetzeVerrechnen();
             foreach(Arbeitsplatz a in Kapazitaetsplanung.arbeitsplatzListe){
                 wl.AddItem(new WorkingtimelistItem(a.id, a.schichten, a.ueberStundenInMinProTag));    
             }
