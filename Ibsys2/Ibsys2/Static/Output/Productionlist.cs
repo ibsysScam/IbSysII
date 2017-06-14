@@ -40,6 +40,14 @@ namespace Ibsys2.Static.Output {
             return _list.FindAll(x => x.article == article);
         }
 
+        public void moveItemToSpecialIndex(int newIndex, int oldIndex)
+        {
+            var item = _list[oldIndex];
+            _list[oldIndex] = null;
+            _list.Insert(newIndex, item);
+            _list.RemoveAll(x => x == null);
+        }
+
         public string XMLOutput() {
             string Output = "<productionlist>";
             foreach (var pil in _list)
