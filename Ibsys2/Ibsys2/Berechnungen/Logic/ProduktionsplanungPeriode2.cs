@@ -197,40 +197,40 @@ namespace Ibsys2.Berechnungen.Logic
             e18 = e49 + vs.sb_Prognose2P1 - vs.sb_Prognose1P1;
 
             // Damenfahrrad
-            p2 = vs.vertriebswunschP2 + vs.sicherheitsbestandP2 - vs.sb_Prognose1P2;
+            p2 = vs.prognose2P2 + vs.sb_Prognose2P2 - vs.sb_Prognose1P2;
 
-            e26D = p2 + wlw.GetArticleAmountByID(2) + vs.sicherheitsbestandP2 + w.GetArticleByID(26).Amount / 3 + wlw.GetArticleAmountByID(26) / 3 + oiw.GetArticleAmountByID(26) / 3;
-            e56 = p2 + wlw.GetArticleAmountByID(2) + vs.sicherheitsbestandP2 + w.GetArticleByID(56).Amount + wlw.GetArticleAmountByID(56) + oiw.GetArticleAmountByID(56);
+            e26D = p2 + vs.sb_Prognose2P2 - vs.sb_Prognose1P2;
+            e56 = p2 + vs.sb_Prognose2P2 - vs.sb_Prognose1P2;
 
-            e16D = e56 + wlw.GetArticleAmountByID(56) + vs.sicherheitsbestandP2 - w.GetArticleByID(16).Amount / 3 + wlw.GetArticleAmountByID(16) / 3 + oiw.GetArticleAmountByID(16) / 3;
-            e17D = e56 + wlw.GetArticleAmountByID(56) + vs.sicherheitsbestandP2 - w.GetArticleByID(17).Amount / 3 + wlw.GetArticleAmountByID(17) / 3 + oiw.GetArticleAmountByID(17) / 3;
-            e55 = e56 + wlw.GetArticleAmountByID(56) + vs.sicherheitsbestandP2 - w.GetArticleByID(55).Amount + wlw.GetArticleAmountByID(55) + oiw.GetArticleAmountByID(55);
+            e16D = e56 + vs.sb_Prognose2P2 - vs.sb_Prognose1P2;
+            e17D = e56 + vs.sb_Prognose2P2 - vs.sb_Prognose1P2;
+            e55 = e56 + vs.sb_Prognose2P2 - vs.sb_Prognose1P2;
 
-            e5 = e55 + wlw.GetArticleAmountByID(55) + vs.sicherheitsbestandP2 - w.GetArticleByID(5).Amount + wlw.GetArticleAmountByID(5) + oiw.GetArticleAmountByID(5);
-            e11 = e55 + wlw.GetArticleAmountByID(55) + vs.sicherheitsbestandP2 - w.GetArticleByID(11).Amount + wlw.GetArticleAmountByID(11) + oiw.GetArticleAmountByID(11);
-            e54 = e55 + wlw.GetArticleAmountByID(55) + vs.sicherheitsbestandP2 - w.GetArticleByID(54).Amount + wlw.GetArticleAmountByID(54) + oiw.GetArticleAmountByID(54);
+            e5 = e55 + vs.sb_Prognose2P2 - vs.sb_Prognose1P2;
+            e11 = e55 + vs.sb_Prognose2P2 - vs.sb_Prognose1P2;
+            e54 = e55 + vs.sb_Prognose2P2 - vs.sb_Prognose1P2;
 
-            e8 = e54 + wlw.GetArticleAmountByID(54) + vs.sicherheitsbestandP2 - w.GetArticleByID(8).Amount + wlw.GetArticleAmountByID(8) + oiw.GetArticleAmountByID(8);
-            e14 = e54 + wlw.GetArticleAmountByID(54) + vs.sicherheitsbestandP2 - w.GetArticleByID(14).Amount + wlw.GetArticleAmountByID(14) + oiw.GetArticleAmountByID(14);
-            e19 = e54 + wlw.GetArticleAmountByID(54) + vs.sicherheitsbestandP2 - w.GetArticleByID(19).Amount + wlw.GetArticleAmountByID(19) + oiw.GetArticleAmountByID(19);
+            e8 = e54 + vs.sb_Prognose2P2 - vs.sb_Prognose1P2;
+            e14 = e54 + vs.sb_Prognose2P2 - vs.sb_Prognose1P2;
+            e19 = e54 + vs.sb_Prognose2P2 - vs.sb_Prognose1P2;
 
             // Herrenfahrrad
-            p3 = vs.vertriebswunschP3 + vs.sicherheitsbestandP3 - w.GetArticleByID(3).Amount - wlw.GetArticleAmountByID(3) - oiw.GetArticleAmountByID(3);
+            p3 = vs.prognose2P3 + vs.sb_Prognose2P3 - vs.sb_Prognose1P3;
 
-            e26H = p3 + wlw.GetArticleAmountByID(3) + vs.sicherheitsbestandP3 + w.GetArticleByID(26).Amount / 3 + wlw.GetArticleAmountByID(26) / 3 + oiw.GetArticleAmountByID(26) / 3;
-            e31 = p3 + wlw.GetArticleAmountByID(3) + vs.sicherheitsbestandP3 + w.GetArticleByID(31).Amount + wlw.GetArticleAmountByID(31) + oiw.GetArticleAmountByID(31);
+            e26H = p3 + vs.sb_Prognose2P3 - vs.sb_Prognose1P3;
+            e31 = p3 + vs.sb_Prognose2P3 - vs.sb_Prognose1P3;
 
-            e16H = e31 + wlw.GetArticleAmountByID(31) + vs.sicherheitsbestandP3 - w.GetArticleByID(16).Amount / 3 + wlw.GetArticleAmountByID(16) / 3 + oiw.GetArticleAmountByID(16) / 3;
-            e17H = e31 + wlw.GetArticleAmountByID(31) + vs.sicherheitsbestandP3 - w.GetArticleByID(17).Amount / 3 + wlw.GetArticleAmountByID(17) / 3 + oiw.GetArticleAmountByID(17) / 3;
-            e30 = e31 + wlw.GetArticleAmountByID(31) + vs.sicherheitsbestandP3 - w.GetArticleByID(30).Amount + wlw.GetArticleAmountByID(30) + oiw.GetArticleAmountByID(30);
+            e16H = e31 + vs.sb_Prognose2P3 - vs.sb_Prognose1P3;
+            e17H = e31 + vs.sb_Prognose2P3 - vs.sb_Prognose1P3;
+            e30 = e31 + vs.sb_Prognose2P3 - vs.sb_Prognose1P3;
 
-            e6 = e30 + wlw.GetArticleAmountByID(30) + vs.sicherheitsbestandP3 - w.GetArticleByID(6).Amount + wlw.GetArticleAmountByID(6) + oiw.GetArticleAmountByID(6);
-            e12 = e30 + wlw.GetArticleAmountByID(30) + vs.sicherheitsbestandP3 - w.GetArticleByID(12).Amount + wlw.GetArticleAmountByID(12) + oiw.GetArticleAmountByID(12);
-            e29 = e30 + wlw.GetArticleAmountByID(30) + vs.sicherheitsbestandP3 - w.GetArticleByID(29).Amount + wlw.GetArticleAmountByID(29) + oiw.GetArticleAmountByID(29);
+            e6 = e30 + vs.sb_Prognose2P3 - vs.sb_Prognose1P3;
+            e12 = e30 + vs.sb_Prognose2P3 - vs.sb_Prognose1P3;
+            e29 = e30 + vs.sb_Prognose2P3 - vs.sb_Prognose1P3;
 
-            e9 = e29 + wlw.GetArticleAmountByID(29) + vs.sicherheitsbestandP3 - w.GetArticleByID(9).Amount + wlw.GetArticleAmountByID(9) + oiw.GetArticleAmountByID(9);
-            e15 = e29 + wlw.GetArticleAmountByID(29) + vs.sicherheitsbestandP3 - w.GetArticleByID(15).Amount + wlw.GetArticleAmountByID(15) + oiw.GetArticleAmountByID(15);
-            e20 = e29 + wlw.GetArticleAmountByID(29) + vs.sicherheitsbestandP3 - w.GetArticleByID(20).Amount + wlw.GetArticleAmountByID(20) + oiw.GetArticleAmountByID(20);
+            e9 = e29 + vs.sb_Prognose2P3 - vs.sb_Prognose1P3;
+            e15 = e29 + vs.sb_Prognose2P3 - vs.sb_Prognose1P3;
+            e20 = e29 + vs.sb_Prognose2P3 - vs.sb_Prognose1P3;
 
             #endregion
 
@@ -249,8 +249,8 @@ namespace Ibsys2.Berechnungen.Logic
             k35 = 2 * e4 + 2 * e7 + 2 * e5 + 2 * e8 + 2 * e6 + 2 * e9;
             k36 = e4 + e5 + e6;
             k37 = e7 + e8 + e9;
-            k38 = e7 + e13 + e8 + e9;
-            k39 = e10 + e11 + e14 + e12 + e15;
+            k38 = e7 + e8 + e9;
+            k39 = e10 + e13 + e11 + e14 + e12 + e15;
             k40 = e16K + e16H + e16D;
             k41 = e16K + e16H + e16D;
             k42 = 2 * e16K + 2 * e16H + 2 * e16D;

@@ -249,8 +249,8 @@ namespace Ibsys2.Berechnungen.Logic
             k35 = 2 * e4 + 2 * e7 + 2 * e5 + 2 * e8 + 2 * e6 + 2 * e9;
             k36 = e4 + e5 + e6;
             k37 = e7 + e8 + e9;
-            k38 = e7 + e13 + e8 + e9;
-            k39 = e10 + e11 + e14 + e12 + e15;
+            k38 = e7 + e8 + e9;
+            k39 = e10 + e13 + e11 + e14 + e12 + e15;
             k40 = e16K + e16H + e16D;
             k41 = e16K + e16H + e16D;
             k42 = 2 * e16K + 2 * e16H + 2 * e16D;

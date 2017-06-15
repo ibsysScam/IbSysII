@@ -534,6 +534,8 @@ namespace Ibsys2
             vs.sb_Prognose3P2 = Convert.ToInt32(forecastsy4p2.Text);
             vs.sb_Prognose3P3 = Convert.ToInt32(forecastsy4p3.Text);
 
+            vs.sicherheitsFaktor = Convert.ToInt32(Sicherheitsfaktor.Text);
+
 
             Ui.EnableNextTab(Kapaplanungtab, MainTabControl);
             Ui.EnableNextTab(Einkauftab, MainTabControl);
