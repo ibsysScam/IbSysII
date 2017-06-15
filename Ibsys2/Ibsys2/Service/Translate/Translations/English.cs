@@ -119,6 +119,8 @@ namespace Ibsys2.Service {
             _translate.Add("USED_IN_C", "Used in children's bicycle");
             _translate.Add("USED_IN_L", "Used in ladies bicycle");
             _translate.Add("USED_IN_M", "Used in men's bicycle");
+            _translate.Add("SECURITYFACTOR_EMPTY", "Security Facttor");
+            _translate.Add("INPUT_VALUE_ERROR","The Input Value is not valid");
         }
 
     }

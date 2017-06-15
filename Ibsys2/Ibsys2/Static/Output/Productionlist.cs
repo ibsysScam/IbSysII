@@ -42,7 +42,7 @@ namespace Ibsys2.Static.Output {
 
         public void moveItemToSpecialIndex(int newIndex, int oldIndex)
         {
-            var item = _list[oldIndex];
+            var item = new ProductionlistItem(_list[oldIndex].article, _list[oldIndex].quantity);
             _list[oldIndex] = null;
             _list.Insert(newIndex, item);
             _list.RemoveAll(x => x == null);
