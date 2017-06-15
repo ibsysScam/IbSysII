@@ -543,13 +543,13 @@ namespace Ibsys2
             {
                 if (Convert.ToInt32(period0sum.Text) > maxValue || Convert.ToInt32(period1sum.Text) > maxValue || Convert.ToInt32(period2sum.Text) > maxValue || Convert.ToInt32(period3sum.Text) > maxValue)
                 {
-                    MessageBox.Show("Value greater than " + maxValue);
+                    MessageBox.Show(TranslateService.Class.GetTranslation("SUM_TOO_BIG"));
                     return;
                 }
 
                 if (Convert.ToInt32(period0product1.Text) % 10 != 0 || Convert.ToInt32(period0product2.Text) % 10 != 0 || Convert.ToInt32(period0product3.Text) % 10 != 0 || Convert.ToInt32(period1product1.Text) % 10 != 0 || Convert.ToInt32(period1product2.Text) % 10 != 0 || Convert.ToInt32(period1product3.Text) % 10 != 0 || Convert.ToInt32(period2product1.Text) % 10 != 0 || Convert.ToInt32(period2product2.Text) % 10 != 0 || Convert.ToInt32(period2product3.Text) % 10 != 0 || Convert.ToInt32(period3product1.Text) % 10 != 0 || Convert.ToInt32(period3product2.Text) % 10 != 0 || Convert.ToInt32(period3product3.Text) % 10 != 0)
                 {
-                    MessageBox.Show("Incorrect Values in Productionplan!");
+                    MessageBox.Show(TranslateService.Class.GetTranslation("INPUT_NOT_COMPLETE"));
                     return;
                 }
             }
@@ -588,7 +588,7 @@ namespace Ibsys2
         {
             if (Convert.ToInt32(s41.Text) > 1050 || (Convert.ToInt32(period0sum.Text) + Convert.ToInt32(s41.Text)) > 1050)
             {
-                MessageBox.Show("Summe zu groß");
+                MessageBox.Show(TranslateService.Class.GetTranslation("SUM_TOO_BIG"));
                 return;
             }
             Ui.EnableNextTab(sicherheitsbestandtab, MainTabControl);
