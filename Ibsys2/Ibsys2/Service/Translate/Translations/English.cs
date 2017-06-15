@@ -121,6 +121,8 @@ namespace Ibsys2.Service {
             _translate.Add("USED_IN_M", "Used in men's bicycle");
             _translate.Add("SECURITYFACTOR_EMPTY", "Security Facttor");
             _translate.Add("INPUT_VALUE_ERROR","The Input Value is not valid");
+            _translate.Add("XML_MALFORMED", "XML is malformed!");
+            _translate.Add("INPUT_NOT_COMPLETE", "Please fill all needed Fields.");
         }
 
     }
