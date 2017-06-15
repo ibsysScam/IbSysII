@@ -142,12 +142,12 @@ namespace Ibsys2
         public ObservableCollection<KapNo> CreateWorkPlan16()
         {
             ObservableCollection<KapNo> kapno = new ObservableCollection<KapNo>();
-            kapno.Add(new KapNo { Kapaplanwork = "Kapazitätsbedarf (neu)", Berechnungwork = "" });
-            kapno.Add(new KapNo { Kapaplanwork = "Rüstzeit (neu)", Berechnungwork = "" });
-            kapno.Add(new KapNo { Kapaplanwork = "Kap. bed. (Rückstand Vorperiode)", Berechnungwork = "" });
-            kapno.Add(new KapNo { Kapaplanwork = "Rüstzeit (Rückstand Vorperiode)", Berechnungwork = "" });
-            kapno.Add(new KapNo { Kapaplanwork = "Gesamt-Kapazitätsbedarf", Berechnungwork = "" });
-            kapno.Add(new KapNo { Kapaplanwork = "Schichten und Überstunden", Berechnungwork = "" });
+            kapno.Add(new KapNo { Kapaplanwork = TranslateService.Class.GetTranslation("CAPACITY_REQ_NEW"), Berechnungwork = "" });
+            kapno.Add(new KapNo { Kapaplanwork = TranslateService.Class.GetTranslation("SETUP_TIME_NEW"), Berechnungwork = "" });
+            kapno.Add(new KapNo { Kapaplanwork = TranslateService.Class.GetTranslation("CAP_REQ_PREV"), Berechnungwork = "" });
+            kapno.Add(new KapNo { Kapaplanwork = TranslateService.Class.GetTranslation("SETUP_TIME_PREV"), Berechnungwork = "" });
+            kapno.Add(new KapNo { Kapaplanwork = TranslateService.Class.GetTranslation("TOTAL_CAP_REQ"), Berechnungwork = "" });
+            kapno.Add(new KapNo { Kapaplanwork = TranslateService.Class.GetTranslation("SHIFTS_OVERTIME"), Berechnungwork = "" });
             return kapno;
         }
         public ObservableCollection<ItemNo> CreateWork1()
