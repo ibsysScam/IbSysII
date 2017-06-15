@@ -578,7 +578,7 @@ namespace Ibsys2
 
             else
             {
-                MessageBox.Show("Please fill all Fields!");
+                MessageBox.Show(TranslateService.Class.GetTranslation("INPUT_NOT_COMPLETE"));
                 return;
             }
 
@@ -594,14 +594,14 @@ namespace Ibsys2
 
             if (String.IsNullOrEmpty(Pathtextbox.Text))
             {
-                MessageBox.Show("Please insert a File!");
+                MessageBox.Show(TranslateService.Class.GetTranslation("XML_ERROR"));
                 return;
             }
             ReadXML readxml = new ReadXML();
             bool wellformed = readxml.ReadFile(Pathtextbox.Text);
             if (!wellformed)
             {
-                MessageBox.Show("Malformed XML File! Please use another one!");
+                MessageBox.Show(TranslateService.Class.GetTranslation("XML_MALFORMED"));
                 return;
             }
             Ui.EnableNextTab(Prognosentab, MainTabControl);
@@ -609,7 +609,6 @@ namespace Ibsys2
 
         private void MainpageNextButton_Click(object sender, RoutedEventArgs e)
         {
-
             checkMalformedXML();
         }
 
