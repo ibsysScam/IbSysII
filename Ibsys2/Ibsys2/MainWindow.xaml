@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Ibsys2"
+        xmlns:chart="clr-namespace:De.TorstenMandelkow.MetroChart;assembly=De.TorstenMandelkow.MetroChart"
         mc:Ignorable="d"
         Title="Transmorfers" ResizeMode="NoResize" Height="720" Width="1280"  AllowDrop="True" DragEnter="Window_DragEnter" >
 
@@ -1056,8 +1057,18 @@
             
             
             
-            <TabItem x:Name="Chartstab" Header="Charts" IsEnabled="False">
-                <Grid Background="#FFE5E5E5"/>
+            <TabItem x:Name="Chartstab" Header="Charts" IsEnabled="True">
+                <Grid Background="#FFE5E5E5">
+                    <chart:PieChart ChartSubTitle="Population in millions"  
+                ChartTitle="Countries by population">
+                        <chart:PieChart.Series>
+                            <chart:ChartSeries DisplayMember="Name"
+                            ItemsSource="{Binding Path=Populations}"
+                            SeriesTitle="World largest populations"
+                            ValueMember="Count" />
+                        </chart:PieChart.Series>
+                    </chart:PieChart>
+                </Grid>
             </TabItem>
             <TabItem x:Name="Exporttab" Header="Export" IsEnabled="False">
                 <Grid Background="#FFE5E5E5"/>
