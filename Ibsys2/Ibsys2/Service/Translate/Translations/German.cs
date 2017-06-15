@@ -124,6 +124,8 @@ namespace Ibsys2.Service {
             _translate.Add("INPUT_VALUE_ERROR", "Error bei den Eingabedaten.");
             _translate.Add("INPUT_NOT_COMPLETE", "Bitte alle Felder ausfüllen");
             _translate.Add("SUM_TOO_BIG", "Die Summe ist zu groß! Die Summe sollte kleiner oder gleich 1050 sein.");
+            _translate.Add("XMLEXPORT_SUCCESS", "XML Export erfolgreich ausgeführt!");
+            _translate.Add("XMLEXPORT_NO_SUCCESS", "XML Export failed");
         }
         
     }
