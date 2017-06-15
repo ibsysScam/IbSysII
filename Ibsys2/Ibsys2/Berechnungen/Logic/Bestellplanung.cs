@@ -60,7 +60,7 @@ namespace Ibsys2.Berechnungen.Logic
 
         public void bestellungenBerechnen()
         {
-            
+
             foreach (BPKaufteil k in kaufteile)
             {
                 //NORMAL, EIL, ODER KEINE BESTELLUNG?
@@ -231,8 +231,14 @@ namespace Ibsys2.Berechnungen.Logic
 
 
 
-        public BPKaufteil(int id, String bezeichnung, Double diskontmenge, Double lieferzeit, Double lieferzeitAbweichung, Double bestellkostenNormal) {
-            
+        public BPKaufteil(int id, String bezeichnung, Double diskontmenge, Double lieferzeit, Double lieferzeitAbweichung, Double bestellkostenNormal)
+        {
+            this.id = id;
+            this.bezeichnung = bezeichnung;
+            this.diskontmenge = diskontmenge;
+            this.lieferzeit = lieferzeit;
+            this.lieferzeitAbweichung = lieferzeitAbweichung;
+            this.bestellkostenNormal = bestellkostenNormal;
 
             Warehousestock w = Warehousestock.Class;
             this.teileWert = w.GetArticleByID(id).Stockvalue;
@@ -241,27 +247,31 @@ namespace Ibsys2.Berechnungen.Logic
             this.verbrauchPeriode2 = ProduktionsplanungPeriode2.getBedarfByID(id);
             this.verbrauchPeriode3 = ProduktionsplanungPeriode3.getBedarfByID(id);
 
-            int aktuellePeriode = Static.Static.lastperiod +1;
-            Waitingliststock wls = Waitingliststock.Class;
-            var founditem = wls.GetMissingpartByID(id);
+            int aktuellePeriode = Static.Static.lastperiod + 1;
+            /*Waitingliststock wls = Waitingliststock.Class;
+            var founditem = wls.GetMissingpartByID(id);*/
+
+            Futureinwardstockmovement fism = Futureinwardstockmovement.Class;
+            var founditem = fism.GetOrdersByArticle(id);
             if (founditem != null)
             {
-                foreach (Waitinglist wli in founditem.GetAllWaitinglistItem)
+                foreach (var wli in founditem)
                 {
-                    if (wli.Period == aktuellePeriode) this.geplanteBestellzugaengePeriode0 = wli.Amount;
-                    else if (wli.Period == aktuellePeriode + 1) this.geplanteBestellzugaengePeriode1 = wli.Amount;
-                    else if (wli.Period == aktuellePeriode + 2) this.geplanteBestellzugaengePeriode2 = wli.Amount;
-                    else if (wli.Period == aktuellePeriode + 3) this.geplanteBestellzugaengePeriode3 = wli.Amount;
+                    int lieferperiode = (int)Math.Floor(wli.Orderperiod + (this.lieferzeitGesamt / 5));
+                    if (lieferperiode == aktuellePeriode)
+                        this.geplanteBestellzugaengePeriode0 += wli.Amount;
+                    else if (lieferperiode == aktuellePeriode + 1)
+                        this.geplanteBestellzugaengePeriode1 += wli.Amount;
+                    else if (lieferperiode == aktuellePeriode + 2)
+                        this.geplanteBestellzugaengePeriode2 += wli.Amount;
+                    else if (lieferperiode == aktuellePeriode + 3)
+                        this.geplanteBestellzugaengePeriode3 += wli.Amount;
+                    //if (wli.Orderperiod == aktuellePeriode) this.geplanteBestellzugaengePeriode0 += wli.Amount;
+                    //else if (wli.Orderperiod == aktuellePeriode + 1) this.geplanteBestellzugaengePeriode1 += wli.Amount;
+                    //else if (wli.Orderperiod == aktuellePeriode + 2) this.geplanteBestellzugaengePeriode2 += wli.Amount;
+                    //else if (wli.Orderperiod == aktuellePeriode + 3) this.geplanteBestellzugaengePeriode3 += wli.Amount;
                 }
             }
-
-            this.id = id;
-            this.bezeichnung = bezeichnung;
-            this.diskontmenge = diskontmenge;
-            this.lieferzeit = lieferzeit;
-            this.lieferzeitAbweichung = lieferzeitAbweichung;
-            this.bestellkostenNormal = bestellkostenNormal;
-
 
             this.sicherheitsBestand = (int)(((lieferzeit + (lieferzeitAbweichung * ValueStore.Instance.sicherheitsFaktor)) * durchSchnittsverbrauchProTag));
             //this.sicherheitsBestand = ((int)(this.sicherheitsBestand / 10)) * 10;
