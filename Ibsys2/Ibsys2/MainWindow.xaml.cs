@@ -22,6 +22,7 @@ using System.Text.RegularExpressions;
 using UIFeautures;
 using System.ComponentModel;
 using System.Collections.ObjectModel;
+using Microsoft.WindowsAPICodePack.Shell;
 
 
 namespace Ibsys2
@@ -34,7 +35,7 @@ namespace Ibsys2
 
     public partial class MainWindow : Window
     {
-
+       
 
         private static MainWindow _class;
         UIFeatures Ui = new UIFeatures();
@@ -50,6 +51,7 @@ namespace Ibsys2
         }
         public MainWindow()
         {
+           
             if (_class != null)
                 throw new Exception("Class already exists!");
             _class = this;
@@ -58,6 +60,92 @@ namespace Ibsys2
 
             InitializeComponent();
             LoadTranslations();
+
+            bool found = false;
+            if (found == false)
+            {
+                string folder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+                foreach (string xmlFilePath in Directory.GetFiles(folder, "resultServlet.xml"))
+                {
+
+                    Pathtextbox.Text = xmlFilePath;
+                    Ui.EnableNextTab(Prognosentab,MainTabControl);
+                    found = true;
+
+                    break;
+                }
+
+            }
+
+            if (found == false)
+            {
+                string folder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+                foreach (string xmlFilePath in Directory.GetFiles(folder, "resultServlet.xml"))
+                {
+
+                    Pathtextbox.Text = xmlFilePath;
+                    Ui.EnableNextTab(Prognosentab, MainTabControl);
+                    found = true;
+                    break;
+                }
+            }
+
+            if (found == false)
+            {
+                string folder = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
+                foreach (string xmlFilePath in Directory.GetFiles(folder, "resultServlet.xml"))
+                {
+
+                    Pathtextbox.Text = xmlFilePath;
+                    Ui.EnableNextTab(Prognosentab, MainTabControl);
+                    found = true;
+                    break;
+                }
+            }
+
+            if (found == false)
+            {
+                string folder = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+                foreach (string xmlFilePath in Directory.GetFiles(folder, "resultServlet.xml"))
+                {
+
+                    Pathtextbox.Text = xmlFilePath;
+                    Ui.EnableNextTab(Prognosentab, MainTabControl);
+                    found = true;
+                    break;
+                }
+            }
+
+
+            if (found == false)
+            {
+                string folder = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+                foreach (string xmlFilePath in Directory.GetFiles(folder, "resultServlet.xml"))
+                {
+
+                    Pathtextbox.Text = xmlFilePath;
+                    Ui.EnableNextTab(Prognosentab, MainTabControl);
+                    found = true;
+                    break;
+                }
+            }
+
+            if (found == false)
+            {
+                string folder = KnownFolders.Downloads.Path;
+                foreach (string xmlFilePath in Directory.GetFiles(folder, "resultServlet.xml"))
+                {
+
+                    Pathtextbox.Text = xmlFilePath;
+                    Ui.EnableNextTab(Prognosentab, MainTabControl);
+                    found = true;
+                    break;
+                }
+            }
+
+
+
+
             UpdateSummeFromForcast(null, null);
             dataGrid1.ItemsSource = CreateWork1();
             dataGrid2.ItemsSource = CreateWork2();
@@ -99,6 +187,7 @@ namespace Ibsys2
             return prio;
         }
 
+      
         public ObservableCollection<Einkauf> CreateEinkauf1()
         {
             ObservableCollection<Einkauf> einkauf = new ObservableCollection<Einkauf>();
@@ -413,13 +502,13 @@ namespace Ibsys2
             {
                 if (Sicherheitsfaktor.Text == "")
                 {
-                    MessageBox.Show("Pls Fill all needed Fields");
+                    MessageBox.Show(TranslateService.Class.GetTranslation("SECURITYFACTOR_EMPTY"));
                     return;
                 }
 
                 if (Convert.ToInt32(forecastsy1p1.Text) % 10 != 0 || Convert.ToInt32(forecastsy1p2.Text) % 10 != 0 || Convert.ToInt32(forecastsy1p3.Text) % 10 != 0 || Convert.ToInt32(forecastsy2p1.Text) % 10 != 0 || Convert.ToInt32(forecastsy2p2.Text) % 10 != 0 || Convert.ToInt32(forecastsy2p3.Text) % 10 != 0 || Convert.ToInt32(forecastsy3p1.Text) % 10 != 0 || Convert.ToInt32(forecastsy3p2.Text) % 10 != 0 || Convert.ToInt32(forecastsy3p3.Text) % 10 != 0 || Convert.ToInt32(forecastsy4p1.Text) % 10 != 0 || Convert.ToInt32(forecastsy4p2.Text) % 10 != 0 || Convert.ToInt32(forecastsy4p3.Text) % 10 != 0)
                 {
-                    MessageBox.Show("Error in Inputvalues");
+                    MessageBox.Show(TranslateService.Class.GetTranslation("INPUT_VALUE_ERROR<"));
                     return;
                 }
             }
