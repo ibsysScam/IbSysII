@@ -895,15 +895,26 @@ private void UpdateSummeFromForcast(object sender, TextChangedEventArgs e)
 
             }
         }
-
+       
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            CreateXML createXml = new CreateXML();
-            string xmlfile = createXml.GenerateXMLData();
-            StreamWriter sw = new StreamWriter("XMLoutput.xml");
-            sw.Write(xmlfile);
-            sw.Close();
 
+            try
+            {
+                CreateXML createXml = new CreateXML();
+                string xmlfile = createXml.GenerateXMLData();
+                StreamWriter sw = new StreamWriter("XMLOutput.xml");
+                sw.Write(xmlfile);
+                MessageBox.Show(TranslateService.Class.GetTranslation("XML_SUCCESS"));
+                sw.Close();
+
+            }
+
+            catch
+            {
+                MessageBox.Show(TranslateService.Class.GetTranslation("XMLEXPORT_NO_SUCCESS"));
+                return;
+            }
         }
     }
 }

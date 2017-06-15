@@ -124,6 +124,7 @@ namespace Ibsys2.Service {
             _translate.Add("XML_MALFORMED", "XML is malformed!");
             _translate.Add("INPUT_NOT_COMPLETE", "Please fill all needed Fields.");
             _translate.Add("SUM_TOO_BIG", "The sum is too big! Value should be equal or lower than 1050!");
+            _translate.Add("XML_SUCCESS", "XML Export erfolgreich ausgeführt!");
         }
 
     }

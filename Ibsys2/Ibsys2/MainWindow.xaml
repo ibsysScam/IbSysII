@@ -806,8 +806,8 @@
 
                 </Grid>
             </TabItem>
-                        
-                        
+
+
             <TabItem x:Name="Kapaplanungtab" Header="Kapazitäten" IsEnabled="False">
                 <Grid Background="#FFE5E5E5">
                     <TabControl TabStripPlacement="Left">
@@ -1054,9 +1054,9 @@
                     <Button Content="down" Height="23" HorizontalAlignment="Left" Margin="628,90,0,0" Name="down" VerticalAlignment="Top" Width="75"  />
                 </Grid>
             </TabItem>
-            
-            
-            
+
+
+
             <TabItem x:Name="Chartstab" Header="Charts" IsEnabled="True">
                 <Grid Background="#FFE5E5E5">
                     <chart:PieChart ChartSubTitle="Population in millions"  
@@ -1072,7 +1072,7 @@
             </TabItem>
             <TabItem x:Name="Exporttab" Header="Export" IsEnabled="False">
                 <Grid Background="#FFE5E5E5">
-                    <Button Content="XML Export" HorizontalAlignment="Left" Margin="595,146,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+                    <Button Content="XML Export" HorizontalAlignment="Left" Margin="33,51,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
                 </Grid>
             </TabItem>
 
