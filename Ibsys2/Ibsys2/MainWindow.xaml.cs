@@ -69,7 +69,7 @@ namespace Ibsys2
                 {
 
                     Pathtextbox.Text = xmlFilePath;
-                    Ui.EnableNextTab(Prognosentab,MainTabControl);
+                    checkMalformedXML();
                     found = true;
 
                     break;
@@ -84,7 +84,7 @@ namespace Ibsys2
                 {
 
                     Pathtextbox.Text = xmlFilePath;
-                    Ui.EnableNextTab(Prognosentab, MainTabControl);
+                    checkMalformedXML();
                     found = true;
                     break;
                 }
@@ -97,7 +97,7 @@ namespace Ibsys2
                 {
 
                     Pathtextbox.Text = xmlFilePath;
-                    Ui.EnableNextTab(Prognosentab, MainTabControl);
+                    checkMalformedXML();
                     found = true;
                     break;
                 }
@@ -110,7 +110,7 @@ namespace Ibsys2
                 {
 
                     Pathtextbox.Text = xmlFilePath;
-                    Ui.EnableNextTab(Prognosentab, MainTabControl);
+                    checkMalformedXML();
                     found = true;
                     break;
                 }
@@ -124,7 +124,7 @@ namespace Ibsys2
                 {
 
                     Pathtextbox.Text = xmlFilePath;
-                    Ui.EnableNextTab(Prognosentab, MainTabControl);
+                    checkMalformedXML();
                     found = true;
                     break;
                 }
@@ -137,7 +137,7 @@ namespace Ibsys2
                 {
 
                     Pathtextbox.Text = xmlFilePath;
-                    Ui.EnableNextTab(Prognosentab, MainTabControl);
+                    checkMalformedXML();
                     found = true;
                     break;
                 }
@@ -589,7 +589,7 @@ namespace Ibsys2
             Ui.EnableNextTab(sicherheitsbestandtab, MainTabControl);
         }
 
-        private void MainpageNextButton_Click(object sender, RoutedEventArgs e)
+        public void checkMalformedXML()
         {
 
             if (String.IsNullOrEmpty(Pathtextbox.Text))
@@ -605,7 +605,12 @@ namespace Ibsys2
                 return;
             }
             Ui.EnableNextTab(Prognosentab, MainTabControl);
+        }
 
+        private void MainpageNextButton_Click(object sender, RoutedEventArgs e)
+        {
+
+            checkMalformedXML();
         }
 
 
