@@ -4,6 +4,7 @@ using Ibsys2.Static;
 using Ibsys2.Static.Output;
 using Ibsys2.Pages;
 using Ibsys2.Service;
+using Ibsys2.Berechnungen.Logic;
 
 namespace IbSysUnitTests
 {
@@ -75,7 +76,13 @@ namespace IbSysUnitTests
         }
 
  
+        [TestMethod]
+        public void CheckALLBerechnungen()
+        {
+            Ibsys2.Berechnungen.Logic.Berechnungen logic = new Ibsys2.Berechnungen.Logic.Berechnungen();
+            logic.berechnen();
 
+        }
        
 
 

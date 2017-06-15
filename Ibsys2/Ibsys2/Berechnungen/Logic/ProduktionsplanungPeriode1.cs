@@ -182,55 +182,55 @@ namespace Ibsys2.Berechnungen.Logic
             p1 = vs.prognose1P1 + vs.sb_Prognose1P1 - vs.sicherheitsbestandP1;
 
             e26K = p1 + vs.sb_Prognose1P1 + vs.sicherheitsbestandP1;
-            e51 = p1 + wlw.GetArticleAmountByID(1) + vs.sicherheitsbestandP1 + w.GetArticleByID(51).Amount + wlw.GetArticleAmountByID(51) + oiw.GetArticleAmountByID(51);
+            e51 = p1 + vs.sb_Prognose1P1 + vs.sicherheitsbestandP1;
 
-            e16K = e51 + wlw.GetArticleAmountByID(51) + vs.sicherheitsbestandP1 - w.GetArticleByID(16).Amount / 3 + wlw.GetArticleAmountByID(16) / 3 + oiw.GetArticleAmountByID(16) / 3;
-            e17K = e51 + wlw.GetArticleAmountByID(51) + vs.sicherheitsbestandP1 - w.GetArticleByID(17).Amount / 3 + wlw.GetArticleAmountByID(17) / 3 + oiw.GetArticleAmountByID(17) / 3;
-            e50 = e51 + wlw.GetArticleAmountByID(51) + vs.sicherheitsbestandP1 - w.GetArticleByID(50).Amount + wlw.GetArticleAmountByID(50) + oiw.GetArticleAmountByID(50);
+            e16K = e51 + vs.sb_Prognose1P1 + vs.sicherheitsbestandP1;
+            e17K = e51 + vs.sb_Prognose1P1 + vs.sicherheitsbestandP1;
+            e50 = e51 + vs.sb_Prognose1P1 + vs.sicherheitsbestandP1;
 
-            e4 = e50 + wlw.GetArticleAmountByID(50) + vs.sicherheitsbestandP1 - w.GetArticleByID(4).Amount + wlw.GetArticleAmountByID(4) + oiw.GetArticleAmountByID(4);
-            e10 = e50 + wlw.GetArticleAmountByID(50) + vs.sicherheitsbestandP1 - w.GetArticleByID(10).Amount + wlw.GetArticleAmountByID(10) + oiw.GetArticleAmountByID(10);
-            e49 = e50 + wlw.GetArticleAmountByID(50) + vs.sicherheitsbestandP1 - w.GetArticleByID(49).Amount + wlw.GetArticleAmountByID(49) + oiw.GetArticleAmountByID(49);
+            e4 = e50 + vs.sb_Prognose1P1 + vs.sicherheitsbestandP1;
+            e10 = e50 + vs.sb_Prognose1P1 + vs.sicherheitsbestandP1;
+            e49 = e50 + vs.sb_Prognose1P1 + vs.sicherheitsbestandP1;
 
-            e7 = e49 + wlw.GetArticleAmountByID(49) + vs.sicherheitsbestandP1 - w.GetArticleByID(7).Amount + wlw.GetArticleAmountByID(7) + oiw.GetArticleAmountByID(7);
-            e13 = e49 + wlw.GetArticleAmountByID(49) + vs.sicherheitsbestandP1 - w.GetArticleByID(13).Amount + wlw.GetArticleAmountByID(13) + oiw.GetArticleAmountByID(13);
-            e18 = e49 + wlw.GetArticleAmountByID(49) + vs.sicherheitsbestandP1 - w.GetArticleByID(18).Amount + wlw.GetArticleAmountByID(18) + oiw.GetArticleAmountByID(18);
+            e7 = e49 + vs.sb_Prognose1P1 + vs.sicherheitsbestandP1;
+            e13 = e49 + vs.sb_Prognose1P1 + vs.sicherheitsbestandP1;
+            e18 = e49 + vs.sb_Prognose1P1 + vs.sicherheitsbestandP1;
 
             // Damenfahrrad
-            p2 = vs.prognose1P2 + vs.sb_Prognose1P2 - w.GetArticleByID(2).Amount - wlw.GetArticleAmountByID(2) - oiw.GetArticleAmountByID(2);
+            p2 = vs.prognose1P2 + vs.sb_Prognose1P2 - vs.sicherheitsbestandP2;
 
-            e26D = p2 + wlw.GetArticleAmountByID(2) + vs.sicherheitsbestandP2 + w.GetArticleByID(26).Amount / 3 + wlw.GetArticleAmountByID(26) / 3 + oiw.GetArticleAmountByID(26) / 3;
-            e56 = p2 + wlw.GetArticleAmountByID(2) + vs.sicherheitsbestandP2 + w.GetArticleByID(56).Amount + wlw.GetArticleAmountByID(56) + oiw.GetArticleAmountByID(56);
+            e26D = p2 + vs.sb_Prognose1P2 - vs.sicherheitsbestandP2;
+            e56 = p2 + vs.sb_Prognose1P2 - vs.sicherheitsbestandP2;
 
-            e16D = e56 + wlw.GetArticleAmountByID(56) + vs.sicherheitsbestandP2 - w.GetArticleByID(16).Amount / 3 + wlw.GetArticleAmountByID(16) / 3 + oiw.GetArticleAmountByID(16) / 3;
-            e17D = e56 + wlw.GetArticleAmountByID(56) + vs.sicherheitsbestandP2 - w.GetArticleByID(17).Amount / 3 + wlw.GetArticleAmountByID(17) / 3 + oiw.GetArticleAmountByID(17) / 3;
-            e55 = e56 + wlw.GetArticleAmountByID(56) + vs.sicherheitsbestandP2 - w.GetArticleByID(55).Amount + wlw.GetArticleAmountByID(55) + oiw.GetArticleAmountByID(55);
+            e16D = e56 + vs.sb_Prognose1P2 - vs.sicherheitsbestandP2;
+            e17D = e56 + vs.sb_Prognose1P2 - vs.sicherheitsbestandP2;
+            e55 = e56 + vs.sb_Prognose1P2 - vs.sicherheitsbestandP2;
 
-            e5 = e55 + wlw.GetArticleAmountByID(55) + vs.sicherheitsbestandP2 - w.GetArticleByID(5).Amount + wlw.GetArticleAmountByID(5) + oiw.GetArticleAmountByID(5);
-            e11 = e55 + wlw.GetArticleAmountByID(55) + vs.sicherheitsbestandP2 - w.GetArticleByID(11).Amount + wlw.GetArticleAmountByID(11) + oiw.GetArticleAmountByID(11);
-            e54 = e55 + wlw.GetArticleAmountByID(55) + vs.sicherheitsbestandP2 - w.GetArticleByID(54).Amount + wlw.GetArticleAmountByID(54) + oiw.GetArticleAmountByID(54);
+            e5 = e55 + vs.sb_Prognose1P2 - vs.sicherheitsbestandP2;
+            e11 = e55 + vs.sb_Prognose1P2 - vs.sicherheitsbestandP2;
+            e54 = e55 + vs.sb_Prognose1P2 - vs.sicherheitsbestandP2;
 
-            e8 = e54 + wlw.GetArticleAmountByID(54) + vs.sicherheitsbestandP2 - w.GetArticleByID(8).Amount + wlw.GetArticleAmountByID(8) + oiw.GetArticleAmountByID(8);
-            e14 = e54 + wlw.GetArticleAmountByID(54) + vs.sicherheitsbestandP2 - w.GetArticleByID(14).Amount + wlw.GetArticleAmountByID(14) + oiw.GetArticleAmountByID(14);
-            e19 = e54 + wlw.GetArticleAmountByID(54) + vs.sicherheitsbestandP2 - w.GetArticleByID(19).Amount + wlw.GetArticleAmountByID(19) + oiw.GetArticleAmountByID(19);
+            e8 = e54 + vs.sb_Prognose1P2 - vs.sicherheitsbestandP2;
+            e14 = e54 + vs.sb_Prognose1P2 - vs.sicherheitsbestandP2;
+            e19 = e54 + vs.sb_Prognose1P2 - vs.sicherheitsbestandP2;
 
             // Herrenfahrrad
-            p3 = vs.prognose1P3 + vs.sb_Prognose1P3 - w.GetArticleByID(3).Amount - wlw.GetArticleAmountByID(3) - oiw.GetArticleAmountByID(3);
+            p3 = vs.prognose1P3 + vs.sb_Prognose1P3 - vs.sicherheitsbestandP3;
 
-            e26H = p3 + wlw.GetArticleAmountByID(3) + vs.sicherheitsbestandP3 + w.GetArticleByID(26).Amount / 3 + wlw.GetArticleAmountByID(26) / 3 + oiw.GetArticleAmountByID(26) / 3;
-            e31 = p3 + wlw.GetArticleAmountByID(3) + vs.sicherheitsbestandP3 + w.GetArticleByID(31).Amount + wlw.GetArticleAmountByID(31) + oiw.GetArticleAmountByID(31);
+            e26H = p3 + vs.sb_Prognose1P3 - vs.sicherheitsbestandP3;
+            e31 = p3 + vs.sb_Prognose1P3 - vs.sicherheitsbestandP3;
 
-            e16H = e31 + wlw.GetArticleAmountByID(31) + vs.sicherheitsbestandP3 - w.GetArticleByID(16).Amount / 3 + wlw.GetArticleAmountByID(16) / 3 + oiw.GetArticleAmountByID(16) / 3;
-            e17H = e31 + wlw.GetArticleAmountByID(31) + vs.sicherheitsbestandP3 - w.GetArticleByID(17).Amount / 3 + wlw.GetArticleAmountByID(17) / 3 + oiw.GetArticleAmountByID(17) / 3;
-            e30 = e31 + wlw.GetArticleAmountByID(31) + vs.sicherheitsbestandP3 - w.GetArticleByID(30).Amount + wlw.GetArticleAmountByID(30) + oiw.GetArticleAmountByID(30);
+            e16H = e31 + vs.sb_Prognose1P3 - vs.sicherheitsbestandP3;
+            e17H = e31 + vs.sb_Prognose1P3 - vs.sicherheitsbestandP3;
+            e30 = e31 + vs.sb_Prognose1P3 - vs.sicherheitsbestandP3;
 
-            e6 = e30 + wlw.GetArticleAmountByID(30) + vs.sicherheitsbestandP3 - w.GetArticleByID(6).Amount + wlw.GetArticleAmountByID(6) + oiw.GetArticleAmountByID(6);
-            e12 = e30 + wlw.GetArticleAmountByID(30) + vs.sicherheitsbestandP3 - w.GetArticleByID(12).Amount + wlw.GetArticleAmountByID(12) + oiw.GetArticleAmountByID(12);
-            e29 = e30 + wlw.GetArticleAmountByID(30) + vs.sicherheitsbestandP3 - w.GetArticleByID(29).Amount + wlw.GetArticleAmountByID(29) + oiw.GetArticleAmountByID(29);
+            e6 = e30 + vs.sb_Prognose1P3 - vs.sicherheitsbestandP3;
+            e12 = e30 + vs.sb_Prognose1P3 - vs.sicherheitsbestandP3;
+            e29 = e30 + vs.sb_Prognose1P3 - vs.sicherheitsbestandP3;
 
-            e9 = e29 + wlw.GetArticleAmountByID(29) + vs.sicherheitsbestandP3 - w.GetArticleByID(9).Amount + wlw.GetArticleAmountByID(9) + oiw.GetArticleAmountByID(9);
-            e15 = e29 + wlw.GetArticleAmountByID(29) + vs.sicherheitsbestandP3 - w.GetArticleByID(15).Amount + wlw.GetArticleAmountByID(15) + oiw.GetArticleAmountByID(15);
-            e20 = e29 + wlw.GetArticleAmountByID(29) + vs.sicherheitsbestandP3 - w.GetArticleByID(20).Amount + wlw.GetArticleAmountByID(20) + oiw.GetArticleAmountByID(20);
+            e9 = e29 + vs.sb_Prognose1P3 - vs.sicherheitsbestandP3;
+            e15 = e29 + vs.sb_Prognose1P3 - vs.sicherheitsbestandP3;
+            e20 = e29 + vs.sb_Prognose1P3 - vs.sicherheitsbestandP3;
 
             #endregion
 

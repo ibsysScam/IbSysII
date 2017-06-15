@@ -7,7 +7,7 @@ Branch dev:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [![Build Status dev](https://tra
 
 ## Requirements
 
-- Visual Studio 2015 /2017
+- Visual Studio 2017
 - Previous Versions are not supported!
 - Nuget for Tests
 

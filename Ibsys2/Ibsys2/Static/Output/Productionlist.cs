@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Ibsys2.Static.Output {
-    public class Productionlist {
+    public class Productionlist : INotifyPropertyChanged
+    {
         //<productionlist><production article="[1-99]" quantity="[0-999999]"/></productionlist>
         private List<ProductionlistItem> _list = new List<ProductionlistItem>();
 
@@ -37,6 +40,14 @@ namespace Ibsys2.Static.Output {
             return _list.FindAll(x => x.article == article);
         }
 
+        public void moveItemToSpecialIndex(int newIndex, int oldIndex)
+        {
+            var item = new ProductionlistItem(_list[oldIndex].article, _list[oldIndex].quantity);
+            _list[oldIndex] = null;
+            _list.Insert(newIndex, item);
+            _list.RemoveAll(x => x == null);
+        }
+
         public string XMLOutput() {
             string Output = "<productionlist>";
             foreach (var pil in _list)
@@ -46,6 +57,16 @@ namespace Ibsys2.Static.Output {
         public void ClearClass() {
             _class = null;
             _list = null;
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private void NotifyPropertyChanged([CallerMemberName] String propertyName = "")
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            }
         }
     }
 

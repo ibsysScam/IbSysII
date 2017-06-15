@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Ibsys2.Static.Output {
-    public class Orderlist {
+    public class Orderlist : INotifyPropertyChanged
+    {
         //<orderlist><order article = "[1-99]" quantity="[0-999999]" modus="[0-999999]"/></orderlist>
         private List<OrderlistItem> _list = new List<OrderlistItem>();
         private static Orderlist _class;
@@ -35,6 +38,13 @@ namespace Ibsys2.Static.Output {
             return _list.FindAll(x => x.Article == article);
         }
 
+        public void RemoveItem(OrderlistItem o)
+        {
+            if (o == null)
+                throw new ArgumentNullException();
+            _list.RemoveAll(x => x == o);
+        }
+
         public string XMLOutput() {
             string Output = "<orderlist>";
             foreach (var ola in _list)
@@ -45,6 +55,16 @@ namespace Ibsys2.Static.Output {
         public void ClearClass() {
             _class = null;
             _list = null;
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private void NotifyPropertyChanged([CallerMemberName] String propertyName = "")
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            }
         }
     }
 

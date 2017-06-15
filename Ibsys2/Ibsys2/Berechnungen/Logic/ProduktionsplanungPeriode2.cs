@@ -177,27 +177,27 @@ namespace Ibsys2.Berechnungen.Logic
 
             ValueStore vs = ValueStore.Instance;
 
-            #region Verbindliche Aufträge
+            #region Prognose Periode 0+2
             // Kinderfahrrad
-            p1 = vs.vertriebswunschP1 + vs.sicherheitsbestandP1 - w.GetArticleByID(1).Amount - wlw.GetArticleAmountByID(1) - oiw.GetArticleAmountByID(1);
+            p1 = vs.prognose2P1 + vs.sb_Prognose2P1 - vs.sb_Prognose1P1; // P1 = Prognose Aufträge Periode 0+2 + Geplanter SB Periode 0+2 + SB Periode 0+1
 
-            e26K = p1 + wlw.GetArticleAmountByID(1) + vs.sicherheitsbestandP1 + w.GetArticleByID(26).Amount / 3 + wlw.GetArticleAmountByID(26) / 3 + oiw.GetArticleAmountByID(26) / 3;
-            e51 = p1 + wlw.GetArticleAmountByID(1) + vs.sicherheitsbestandP1 + w.GetArticleByID(51).Amount + wlw.GetArticleAmountByID(51) + oiw.GetArticleAmountByID(51);
+            e26K = p1 + vs.sb_Prognose2P1 - vs.sb_Prognose1P1;
+            e51 = p1 + vs.sb_Prognose2P1 - vs.sb_Prognose1P1;
 
-            e16K = e51 + wlw.GetArticleAmountByID(51) + vs.sicherheitsbestandP1 - w.GetArticleByID(16).Amount / 3 + wlw.GetArticleAmountByID(16) / 3 + oiw.GetArticleAmountByID(16) / 3;
-            e17K = e51 + wlw.GetArticleAmountByID(51) + vs.sicherheitsbestandP1 - w.GetArticleByID(17).Amount / 3 + wlw.GetArticleAmountByID(17) / 3 + oiw.GetArticleAmountByID(17) / 3;
-            e50 = e51 + wlw.GetArticleAmountByID(51) + vs.sicherheitsbestandP1 - w.GetArticleByID(50).Amount + wlw.GetArticleAmountByID(50) + oiw.GetArticleAmountByID(50);
+            e16K = e51 + vs.sb_Prognose2P1 - vs.sb_Prognose1P1;
+            e17K = e51 + vs.sb_Prognose2P1 - vs.sb_Prognose1P1;
+            e50 = e51 + vs.sb_Prognose2P1 - vs.sb_Prognose1P1;
 
-            e4 = e50 + wlw.GetArticleAmountByID(50) + vs.sicherheitsbestandP1 - w.GetArticleByID(4).Amount + wlw.GetArticleAmountByID(4) + oiw.GetArticleAmountByID(4);
-            e10 = e50 + wlw.GetArticleAmountByID(50) + vs.sicherheitsbestandP1 - w.GetArticleByID(10).Amount + wlw.GetArticleAmountByID(10) + oiw.GetArticleAmountByID(10);
-            e49 = e50 + wlw.GetArticleAmountByID(50) + vs.sicherheitsbestandP1 - w.GetArticleByID(49).Amount + wlw.GetArticleAmountByID(49) + oiw.GetArticleAmountByID(49);
+            e4 = e50 + vs.sb_Prognose2P1 - vs.sb_Prognose1P1;
+            e10 = e50 + vs.sb_Prognose2P1 - vs.sb_Prognose1P1;
+            e49 = e50 + vs.sb_Prognose2P1 - vs.sb_Prognose1P1;
 
-            e7 = e49 + wlw.GetArticleAmountByID(49) + vs.sicherheitsbestandP1 - w.GetArticleByID(7).Amount + wlw.GetArticleAmountByID(7) + oiw.GetArticleAmountByID(7);
-            e13 = e49 + wlw.GetArticleAmountByID(49) + vs.sicherheitsbestandP1 - w.GetArticleByID(13).Amount + wlw.GetArticleAmountByID(13) + oiw.GetArticleAmountByID(13);
-            e18 = e49 + wlw.GetArticleAmountByID(49) + vs.sicherheitsbestandP1 - w.GetArticleByID(18).Amount + wlw.GetArticleAmountByID(18) + oiw.GetArticleAmountByID(18);
+            e7 = e49 + vs.sb_Prognose2P1 - vs.sb_Prognose1P1;
+            e13 = e49 + vs.sb_Prognose2P1 - vs.sb_Prognose1P1;
+            e18 = e49 + vs.sb_Prognose2P1 - vs.sb_Prognose1P1;
 
             // Damenfahrrad
-            p2 = vs.vertriebswunschP2 + vs.sicherheitsbestandP2 - w.GetArticleByID(2).Amount - wlw.GetArticleAmountByID(2) - oiw.GetArticleAmountByID(2);
+            p2 = vs.vertriebswunschP2 + vs.sicherheitsbestandP2 - vs.sb_Prognose1P2;
 
             e26D = p2 + wlw.GetArticleAmountByID(2) + vs.sicherheitsbestandP2 + w.GetArticleByID(26).Amount / 3 + wlw.GetArticleAmountByID(26) / 3 + oiw.GetArticleAmountByID(26) / 3;
             e56 = p2 + wlw.GetArticleAmountByID(2) + vs.sicherheitsbestandP2 + w.GetArticleByID(56).Amount + wlw.GetArticleAmountByID(56) + oiw.GetArticleAmountByID(56);
