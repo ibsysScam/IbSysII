@@ -86,9 +86,12 @@ namespace Ibsys2.Static.Output {
         public int quantity {
             get { return _quantity; }
             set {
-                if (value < 0 || value > 1000000)
+                if (value > 1000000)
                     throw new Exception();
-                _quantity = value;
+                if (value < 0)
+                    _quantity = 0;
+                else
+                    _quantity = value;
             }
         }
 

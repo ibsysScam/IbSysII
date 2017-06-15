@@ -12,9 +12,10 @@ namespace Ibsys2.Berechnungen.Logic
 
         private static void createOrderList() {
             Orderlist ol = Orderlist.Class;
-            Bestellplanung.bestellungenBerechnen();
+            Bestellplanung bp = new Bestellplanung();
+            bp.bestellungenBerechnen();
 
-            foreach (BPBestellung bestellung in Bestellplanung.bestellungen){
+            foreach (BPBestellung bestellung in bp.bestellungen){
                 ol.AddItem(new OrderlistItem(bestellung.artikelID, Convert.ToInt32(bestellung.menge), bestellung.isEilbestellung ? 4 : 5)); 
             }
         }

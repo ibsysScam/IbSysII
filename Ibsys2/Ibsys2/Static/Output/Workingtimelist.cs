@@ -98,8 +98,8 @@ namespace Ibsys2.Static.Output {
         public int overtime {
             get { return _overtime; }
             set {
-                if (value < 0 || value > 1000000)
-                    throw new Exception();
+                /*if (value < 0 || value > 1000000)
+                    throw new Exception();*/
                 _overtime = value;
             }
         }

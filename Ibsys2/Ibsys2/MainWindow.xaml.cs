@@ -23,7 +23,7 @@ using UIFeautures;
 using System.ComponentModel;
 using System.Collections.ObjectModel;
 using Microsoft.WindowsAPICodePack.Shell;
-
+using Ibsys2.Berechnungen.Logic;
 
 namespace Ibsys2
 {
@@ -517,15 +517,79 @@ namespace Ibsys2
 
             }
 
+            ValueStore vs = ValueStore.Instance;
+            vs.sicherheitsbestandP1 = Convert.ToInt32(forecastsy1p1.Text);
+            vs.sicherheitsbestandP2 = Convert.ToInt32(forecastsy1p2.Text);
+            vs.sicherheitsbestandP3 = Convert.ToInt32(forecastsy1p3.Text);
+
+            vs.sb_Prognose1P1 = Convert.ToInt32(forecastsy2p1.Text);
+            vs.sb_Prognose1P2 = Convert.ToInt32(forecastsy2p2.Text);
+            vs.sb_Prognose1P3 = Convert.ToInt32(forecastsy2p3.Text);
+
+            vs.sb_Prognose2P1 = Convert.ToInt32(forecastsy3p1.Text);
+            vs.sb_Prognose2P2 = Convert.ToInt32(forecastsy3p2.Text);
+            vs.sb_Prognose2P3 = Convert.ToInt32(forecastsy3p3.Text);
+
+            vs.sb_Prognose3P1 = Convert.ToInt32(forecastsy4p1.Text);
+            vs.sb_Prognose3P2 = Convert.ToInt32(forecastsy4p2.Text);
+            vs.sb_Prognose3P3 = Convert.ToInt32(forecastsy4p3.Text);
+
+
             Ui.EnableNextTab(Kapaplanungtab, MainTabControl);
             Ui.EnableNextTab(Einkauftab, MainTabControl);
             Ui.EnableNextTab(Produktionsplanungtab, MainTabControl);
             Ui.EnableNextTab(Priorisierungtab, MainTabControl);
             Ui.EnableNextTab(Chartstab, MainTabControl);
             Ui.EnableNextTab(Exporttab, MainTabControl);
+
+            Ibsys2.Berechnungen.Logic.Berechnungen logic = new Ibsys2.Berechnungen.Logic.Berechnungen();
+            logic.berechnen();
+
+            UpdatePlanningFields();
         }
 
-        private bool AllFilled()
+        private void UpdatePlanningFields() {
+            kind71.Text = Produktionsplanung.p1.ToString();
+            kind72.Text = Produktionsplanung.e26K.ToString();
+            kind73.Text = Produktionsplanung.e51.ToString();
+            kind74.Text = Produktionsplanung.e16K.ToString();
+            kind75.Text = Produktionsplanung.e17K.ToString();
+            kind76.Text = Produktionsplanung.e50.ToString();
+            kind77.Text = Produktionsplanung.e4.ToString();
+            kind78.Text = Produktionsplanung.e10.ToString();
+            kind79.Text = Produktionsplanung.e49.ToString();
+            kind710.Text = Produktionsplanung.e7.ToString();
+            kind711.Text = Produktionsplanung.e13.ToString();
+            kind712.Text = Produktionsplanung.e18.ToString();
+
+            damen71.Text = Produktionsplanung.p2.ToString();
+            damen72.Text = Produktionsplanung.e26D.ToString();
+            damen73.Text = Produktionsplanung.e56.ToString();
+            damen74.Text = Produktionsplanung.e16D.ToString();
+            damen75.Text = Produktionsplanung.e17D.ToString();
+            damen76.Text = Produktionsplanung.e55.ToString();
+            damen77.Text = Produktionsplanung.e5.ToString();
+            damen78.Text = Produktionsplanung.e11.ToString();
+            damen79.Text = Produktionsplanung.e54.ToString();
+            damen710.Text = Produktionsplanung.e8.ToString();
+            damen711.Text = Produktionsplanung.e14.ToString();
+            damen712.Text = Produktionsplanung.e19.ToString();
+
+
+            herren71.Text = Produktionsplanung.p3.ToString();
+            herren72.Text = Produktionsplanung.e26H.ToString();
+            herren73.Text = Produktionsplanung.e31.ToString();
+            herren74.Text = Produktionsplanung.e16H.ToString();
+            herren75.Text = Produktionsplanung.e17H.ToString();
+            herren76.Text = Produktionsplanung.e30.ToString();
+            herren77.Text = Produktionsplanung.e6.ToString();
+            herren78.Text = Produktionsplanung.e12.ToString();
+            herren79.Text = Produktionsplanung.e29.ToString();
+            herren710.Text = Produktionsplanung.e9.ToString();
+            herren711.Text = Produktionsplanung.e15.ToString();
+            herren712.Text = Produktionsplanung.e20.ToString();
+        }
+            private bool AllFilled()
         {
             if (period0product1.Text == "" || period0product2.Text == "" || period0product3.Text == "" || period1product1.Text == "" || period1product2.Text == "" || period1product3.Text == "" || period2product1.Text == "" || period2product2.Text == "" || period2product3.Text == "")
             {
@@ -566,6 +630,25 @@ namespace Ibsys2
                     Forecast.Class.AddForecast(1, new Forecast.ForecastPeriod(Convert.ToInt32(period1product1.Text), Convert.ToInt32(period1product2.Text), Convert.ToInt32(period1product3.Text)));
                     Forecast.Class.AddForecast(2, new Forecast.ForecastPeriod(Convert.ToInt32(period2product1.Text), Convert.ToInt32(period2product2.Text), Convert.ToInt32(period2product3.Text)));
                     Forecast.Class.AddForecast(3, new Forecast.ForecastPeriod(Convert.ToInt32(period3product1.Text), Convert.ToInt32(period3product2.Text), Convert.ToInt32(period3product3.Text)));
+
+
+                    ValueStore vs = ValueStore.Instance;
+                    vs.vertriebswunschP1 = Forecast.Class.GetPeriod(0).Product1;
+                    vs.vertriebswunschP2 = Forecast.Class.GetPeriod(0).Product2;
+                    vs.vertriebswunschP3 = Forecast.Class.GetPeriod(0).Product3;
+
+                    vs.prognose1P1 = Forecast.Class.GetPeriod(1).Product1;
+                    vs.prognose1P2 = Forecast.Class.GetPeriod(1).Product2;
+                    vs.prognose1P3 = Forecast.Class.GetPeriod(1).Product3;
+
+                    vs.prognose2P1 = Forecast.Class.GetPeriod(2).Product1;
+                    vs.prognose2P2 = Forecast.Class.GetPeriod(2).Product2;
+                    vs.prognose2P3 = Forecast.Class.GetPeriod(2).Product3;
+
+                    vs.prognose3P1 = Forecast.Class.GetPeriod(3).Product1;
+                    vs.prognose3P2 = Forecast.Class.GetPeriod(3).Product2;
+                    vs.prognose3P3 = Forecast.Class.GetPeriod(3).Product3;
+
                     Ui.EnableNextTab(Direktverkauftab, MainTabControl);
 
 
@@ -1057,19 +1140,15 @@ public class Prio : INotifyPropertyChanged
     private string teilenr;
     private string anzahl;
 
-    public string Teilenr
-    {
+    public string Teilenr {
         get { return teilenr; }
-        set
-        {
+        set {
             teilenr = value; OnPropertyChanged(new PropertyChangedEventArgs("Teilenr"));
         }
     }
-    public string Anzahl
-    {
+    public string Anzahl {
         get { return anzahl; }
-        set
-        {
+        set {
             anzahl = value; OnPropertyChanged(new PropertyChangedEventArgs("Anzahl"));
         }
     }

@@ -171,66 +171,140 @@ namespace Ibsys2.Berechnungen.Logic
 
         public static void berechnen()
         {
+            ValueStore vs = ValueStore.Instance;
+            
             Warehousestock w = Warehousestock.Class;
             Waitinglistworkstations wlw = Waitinglistworkstations.Class;
             Ordersinwork oiw = Ordersinwork.Class;
 
-            ValueStore vs = ValueStore.Instance;
 
             #region Verbindliche Aufträge
             // Kinderfahrrad
             p1 = vs.vertriebswunschP1 + vs.sicherheitsbestandP1 - w.GetArticleByID(1).Amount - wlw.GetArticleAmountByID(1) - oiw.GetArticleAmountByID(1);
+            p1 = p1 + ((10 - (p1 % 10)) % 10);
+            if (p1 < 0) p1 = 0;
 
-            e26K = p1 + wlw.GetArticleAmountByID(1) + vs.sicherheitsbestandP1 + w.GetArticleByID(26).Amount / 3 + wlw.GetArticleAmountByID(26) / 3 + oiw.GetArticleAmountByID(26) / 3;
-            e51 = p1 + wlw.GetArticleAmountByID(1) + vs.sicherheitsbestandP1 + w.GetArticleByID(51).Amount + wlw.GetArticleAmountByID(51) + oiw.GetArticleAmountByID(51);
+            e26K = p1 + wlw.GetArticleAmountByID(1) + vs.sicherheitsbestandP1 - (w.GetArticleByID(26).Amount / 3 + wlw.GetArticleAmountByID(26) / 3 + oiw.GetArticleAmountByID(26) / 3);
+            e26K = e26K + ((10 - (e26K % 10)) % 10);
+            if (e26K < 0) e26K = 0;
+            e51 = p1 + wlw.GetArticleAmountByID(1) + vs.sicherheitsbestandP1 - (w.GetArticleByID(51).Amount + wlw.GetArticleAmountByID(51) + oiw.GetArticleAmountByID(51));
+            e51 = e51 + ((10 - (e51 % 10)) % 10);
+            if (e51 < 0) e51 = 0;
 
-            e16K = e51 + wlw.GetArticleAmountByID(51) + vs.sicherheitsbestandP1 - w.GetArticleByID(16).Amount / 3 + wlw.GetArticleAmountByID(16) / 3 + oiw.GetArticleAmountByID(16) / 3;
-            e17K = e51 + wlw.GetArticleAmountByID(51) + vs.sicherheitsbestandP1 - w.GetArticleByID(17).Amount / 3 + wlw.GetArticleAmountByID(17) / 3 + oiw.GetArticleAmountByID(17) / 3;
-            e50 = e51 + wlw.GetArticleAmountByID(51) + vs.sicherheitsbestandP1 - w.GetArticleByID(50).Amount + wlw.GetArticleAmountByID(50) + oiw.GetArticleAmountByID(50);
+            e16K = e51 + wlw.GetArticleAmountByID(51) + vs.sicherheitsbestandP1 - (w.GetArticleByID(16).Amount / 3 + wlw.GetArticleAmountByID(16) / 3 + oiw.GetArticleAmountByID(16) / 3);
+            e16K = e16K + ((10 - (e16K % 10)) % 10);
+            if (e16K < 0) e16K = 0;
+            e17K = e51 + wlw.GetArticleAmountByID(51) + vs.sicherheitsbestandP1 - (w.GetArticleByID(17).Amount / 3 + wlw.GetArticleAmountByID(17) / 3 + oiw.GetArticleAmountByID(17) / 3);
+            e17K = e17K + ((10 - (e17K % 10)) % 10);
+            if (e17K < 0) e17K = 0;
+            e50 = e51 + wlw.GetArticleAmountByID(51) + vs.sicherheitsbestandP1 - (w.GetArticleByID(50).Amount + wlw.GetArticleAmountByID(50) + oiw.GetArticleAmountByID(50));
+            e50 = e50 + ((10 - (e50 % 10)) % 10);
+            if (e50 < 0) e50 = 0;
 
-            e4 = e50 + wlw.GetArticleAmountByID(50) + vs.sicherheitsbestandP1 - w.GetArticleByID(4).Amount + wlw.GetArticleAmountByID(4) + oiw.GetArticleAmountByID(4);
-            e10 = e50 + wlw.GetArticleAmountByID(50) + vs.sicherheitsbestandP1 - w.GetArticleByID(10).Amount + wlw.GetArticleAmountByID(10) + oiw.GetArticleAmountByID(10);
-            e49 = e50 + wlw.GetArticleAmountByID(50) + vs.sicherheitsbestandP1 - w.GetArticleByID(49).Amount + wlw.GetArticleAmountByID(49) + oiw.GetArticleAmountByID(49);
+            e4 = e50 + wlw.GetArticleAmountByID(50) + vs.sicherheitsbestandP1 - (w.GetArticleByID(4).Amount + wlw.GetArticleAmountByID(4) + oiw.GetArticleAmountByID(4));
+            e4 = e4 + ((10 - (e4 % 10)) % 10);
+            if (e4 < 0) e4 = 0;
+            e10 = e50 + wlw.GetArticleAmountByID(50) + vs.sicherheitsbestandP1 - (w.GetArticleByID(10).Amount + wlw.GetArticleAmountByID(10) + oiw.GetArticleAmountByID(10));
+            e10 = e10 + ((10 - (e10 % 10)) % 10);
+            if (e10 < 0) e10 = 0;
+            e49 = e50 + wlw.GetArticleAmountByID(50) + vs.sicherheitsbestandP1 - (w.GetArticleByID(49).Amount + wlw.GetArticleAmountByID(49) + oiw.GetArticleAmountByID(49));
+            e49 = e49 + ((10 - (e49 % 10)) % 10);
+            if (e49 < 0) e49 = 0;
 
-            e7 = e49 + wlw.GetArticleAmountByID(49) + vs.sicherheitsbestandP1 - w.GetArticleByID(7).Amount + wlw.GetArticleAmountByID(7) + oiw.GetArticleAmountByID(7);
-            e13 = e49 + wlw.GetArticleAmountByID(49) + vs.sicherheitsbestandP1 - w.GetArticleByID(13).Amount + wlw.GetArticleAmountByID(13) + oiw.GetArticleAmountByID(13);
-            e18 = e49 + wlw.GetArticleAmountByID(49) + vs.sicherheitsbestandP1 - w.GetArticleByID(18).Amount + wlw.GetArticleAmountByID(18) + oiw.GetArticleAmountByID(18);
+            e7 = e49 + wlw.GetArticleAmountByID(49) + vs.sicherheitsbestandP1 - (w.GetArticleByID(7).Amount + wlw.GetArticleAmountByID(7) + oiw.GetArticleAmountByID(7));
+            e7 = e7 + ((10 - (e7 % 10)) % 10);
+            if (e7 < 0) e7 = 0;
+            e13 = e49 + wlw.GetArticleAmountByID(49) + vs.sicherheitsbestandP1 - (w.GetArticleByID(13).Amount + wlw.GetArticleAmountByID(13) + oiw.GetArticleAmountByID(13));
+            e13 = e13 + ((10 - (e13 % 10)) % 10);
+            if (e13 < 0) e13 = 0;
+            e18 = e49 + wlw.GetArticleAmountByID(49) + vs.sicherheitsbestandP1 - (w.GetArticleByID(18).Amount + wlw.GetArticleAmountByID(18) + oiw.GetArticleAmountByID(18));
+            e18 = e18 + ((10 - (e18 % 10)) % 10);
+            if (e18 < 0) e18 = 0;
 
             // Damenfahrrad
             p2 = vs.vertriebswunschP2 + vs.sicherheitsbestandP2 - w.GetArticleByID(2).Amount - wlw.GetArticleAmountByID(2) - oiw.GetArticleAmountByID(2);
+            p2 = p2 + ((10 - (p2 % 10)) % 10);
+            if (p2 < 0) p2 = 0;
 
-            e26D = p2 + wlw.GetArticleAmountByID(2) + vs.sicherheitsbestandP2 + w.GetArticleByID(26).Amount / 3 + wlw.GetArticleAmountByID(26) / 3 + oiw.GetArticleAmountByID(26) / 3;
-            e56 = p2 + wlw.GetArticleAmountByID(2) + vs.sicherheitsbestandP2 + w.GetArticleByID(56).Amount + wlw.GetArticleAmountByID(56) + oiw.GetArticleAmountByID(56);
+            e26D = p2 + wlw.GetArticleAmountByID(2) + vs.sicherheitsbestandP2 - (w.GetArticleByID(26).Amount / 3 + wlw.GetArticleAmountByID(26) / 3 + oiw.GetArticleAmountByID(26) / 3);
+            e26D = e26D + ((10 - (e26D % 10)) % 10);
+            if (e26D < 0) e26D = 0;
+            e56 = p2 + wlw.GetArticleAmountByID(2) + vs.sicherheitsbestandP2 - (w.GetArticleByID(56).Amount + wlw.GetArticleAmountByID(56) + oiw.GetArticleAmountByID(56));
+            e56 = e56 + ((10 - (e56 % 10)) % 10);
+            if (e56 < 0) e56 = 0;
 
-            e16D = e56 + wlw.GetArticleAmountByID(56) + vs.sicherheitsbestandP2 - w.GetArticleByID(16).Amount / 3 + wlw.GetArticleAmountByID(16) / 3 + oiw.GetArticleAmountByID(16) / 3;
-            e17D = e56 + wlw.GetArticleAmountByID(56) + vs.sicherheitsbestandP2 - w.GetArticleByID(17).Amount / 3 + wlw.GetArticleAmountByID(17) / 3 + oiw.GetArticleAmountByID(17) / 3;
-            e55 = e56 + wlw.GetArticleAmountByID(56) + vs.sicherheitsbestandP2 - w.GetArticleByID(55).Amount + wlw.GetArticleAmountByID(55) + oiw.GetArticleAmountByID(55);
+            e16D = e56 + wlw.GetArticleAmountByID(56) + vs.sicherheitsbestandP2 - (w.GetArticleByID(16).Amount / 3 + wlw.GetArticleAmountByID(16) / 3 + oiw.GetArticleAmountByID(16) / 3);
+            e16D = e16D + ((10 - (e16D % 10)) % 10);
+            if (e16D < 0) e16D = 0;
+            e17D = e56 + wlw.GetArticleAmountByID(56) + vs.sicherheitsbestandP2 - (w.GetArticleByID(17).Amount / 3 + wlw.GetArticleAmountByID(17) / 3 + oiw.GetArticleAmountByID(17) / 3);
+            e17D = e17D + ((10 - (e17D % 10)) % 10);
+            if (e17D < 0) e17D = 0;
+            e55 = e56 + wlw.GetArticleAmountByID(56) + vs.sicherheitsbestandP2 - (w.GetArticleByID(55).Amount + wlw.GetArticleAmountByID(55) + oiw.GetArticleAmountByID(55));
+            e55 = e55 + ((10 - (e55 % 10)) % 10);
+            if (e55 < 0) e55 = 0;
 
-            e5 = e55 + wlw.GetArticleAmountByID(55) + vs.sicherheitsbestandP2 - w.GetArticleByID(5).Amount + wlw.GetArticleAmountByID(5) + oiw.GetArticleAmountByID(5);
-            e11 = e55 + wlw.GetArticleAmountByID(55) + vs.sicherheitsbestandP2 - w.GetArticleByID(11).Amount + wlw.GetArticleAmountByID(11) + oiw.GetArticleAmountByID(11);
-            e54 = e55 + wlw.GetArticleAmountByID(55) + vs.sicherheitsbestandP2 - w.GetArticleByID(54).Amount + wlw.GetArticleAmountByID(54) + oiw.GetArticleAmountByID(54);
+            e5 = e55 + wlw.GetArticleAmountByID(55) + vs.sicherheitsbestandP2 - (w.GetArticleByID(5).Amount + wlw.GetArticleAmountByID(5) + oiw.GetArticleAmountByID(5));
+            e5 = e5 + ((10 - (e5 % 10)) % 10);
+            if (e5 < 0) e5 = 0;
+            e11 = e55 + wlw.GetArticleAmountByID(55) + vs.sicherheitsbestandP2 - (w.GetArticleByID(11).Amount + wlw.GetArticleAmountByID(11) + oiw.GetArticleAmountByID(11));
+            e11 = e11 + ((10 - (e11 % 10)) % 10);
+            if (e11 < 0) e11 = 0;
+            e54 = e55 + wlw.GetArticleAmountByID(55) + vs.sicherheitsbestandP2 - (w.GetArticleByID(54).Amount + wlw.GetArticleAmountByID(54) + oiw.GetArticleAmountByID(54));
+            e54 = e54 + ((10 - (e54 % 10)) % 10);
+            if (e54 < 0) e54 = 0;
 
-            e8 = e54 + wlw.GetArticleAmountByID(54) + vs.sicherheitsbestandP2 - w.GetArticleByID(8).Amount + wlw.GetArticleAmountByID(8) + oiw.GetArticleAmountByID(8);
-            e14 = e54 + wlw.GetArticleAmountByID(54) + vs.sicherheitsbestandP2 - w.GetArticleByID(14).Amount + wlw.GetArticleAmountByID(14) + oiw.GetArticleAmountByID(14);
-            e19 = e54 + wlw.GetArticleAmountByID(54) + vs.sicherheitsbestandP2 - w.GetArticleByID(19).Amount + wlw.GetArticleAmountByID(19) + oiw.GetArticleAmountByID(19);
+            e8 = e54 + wlw.GetArticleAmountByID(54) + vs.sicherheitsbestandP2 - (w.GetArticleByID(8).Amount + wlw.GetArticleAmountByID(8) + oiw.GetArticleAmountByID(8));
+            e8 = e8 + ((10 - (e8 % 10)) % 10);
+            if (e8 < 0) e8 = 0;
+            e14 = e54 + wlw.GetArticleAmountByID(54) + vs.sicherheitsbestandP2 - (w.GetArticleByID(14).Amount + wlw.GetArticleAmountByID(14) + oiw.GetArticleAmountByID(14));
+            e14 = e14 + ((10 - (e14 % 10)) % 10);
+            if (e14 < 0) e14 = 0;
+            e19 = e54 + wlw.GetArticleAmountByID(54) + vs.sicherheitsbestandP2 - (w.GetArticleByID(19).Amount + wlw.GetArticleAmountByID(19) + oiw.GetArticleAmountByID(19));
+            e19 = e19 + ((10 - (e19 % 10)) % 10);
+            if (e19 < 0) e19 = 0;
 
             // Herrenfahrrad
             p3 = vs.vertriebswunschP3 + vs.sicherheitsbestandP3 - w.GetArticleByID(3).Amount - wlw.GetArticleAmountByID(3) - oiw.GetArticleAmountByID(3);
+            p3 = p3 + ((10 - (p3 % 10)) % 10);
+            if (p3 < 0) p3 = 0;
 
-            e26H = p3 + wlw.GetArticleAmountByID(3) + vs.sicherheitsbestandP3 + w.GetArticleByID(26).Amount / 3 + wlw.GetArticleAmountByID(26) / 3 + oiw.GetArticleAmountByID(26) / 3;
-            e31 = p3 + wlw.GetArticleAmountByID(3) + vs.sicherheitsbestandP3 + w.GetArticleByID(31).Amount + wlw.GetArticleAmountByID(31) + oiw.GetArticleAmountByID(31);
+            e26H = p3 + wlw.GetArticleAmountByID(3) + vs.sicherheitsbestandP3 - (w.GetArticleByID(26).Amount / 3 + wlw.GetArticleAmountByID(26) / 3 + oiw.GetArticleAmountByID(26) / 3);
+            e26H = e26H + ((10 - (e26H % 10)) % 10);
+            if (e26H < 0) e26H = 0;
+            e31 = p3 + wlw.GetArticleAmountByID(3) + vs.sicherheitsbestandP3 - (w.GetArticleByID(31).Amount + wlw.GetArticleAmountByID(31) + oiw.GetArticleAmountByID(31));
+            e31 = e31 + ((10 - (e31 % 10)) % 10);
+            if (e31 < 0) e31 = 0;
 
-            e16H = e31 + wlw.GetArticleAmountByID(31) + vs.sicherheitsbestandP3 - w.GetArticleByID(16).Amount / 3 + wlw.GetArticleAmountByID(16) / 3 + oiw.GetArticleAmountByID(16) / 3;
-            e17H = e31 + wlw.GetArticleAmountByID(31) + vs.sicherheitsbestandP3 - w.GetArticleByID(17).Amount / 3 + wlw.GetArticleAmountByID(17) / 3 + oiw.GetArticleAmountByID(17) / 3;
-            e30 = e31 + wlw.GetArticleAmountByID(31) + vs.sicherheitsbestandP3 - w.GetArticleByID(30).Amount + wlw.GetArticleAmountByID(30) + oiw.GetArticleAmountByID(30);
+            e16H = e31 + wlw.GetArticleAmountByID(31) + vs.sicherheitsbestandP3 - (w.GetArticleByID(16).Amount / 3 + wlw.GetArticleAmountByID(16) / 3 + oiw.GetArticleAmountByID(16) / 3);
+            e16H = e16H + ((10 - (e16H % 10)) % 10);
+            if (e16H < 0) e16H = 0;
+            //System.Windows.MessageBox.Show(e31 + " + " + wlw.GetArticleAmountByID(31) + " + " + vs.sicherheitsbestandP3 + " - (" + (w.GetArticleByID(17).Amount / 3 + " + "  + wlw.GetArticleAmountByID(17) / 3 + " + " + oiw.GetArticleAmountByID(17) / 3) + ")");
+            e17H = e31 + wlw.GetArticleAmountByID(31) + vs.sicherheitsbestandP3 - (w.GetArticleByID(17).Amount / 3 + wlw.GetArticleAmountByID(17) / 3 + oiw.GetArticleAmountByID(17) / 3);
+            e17H = e17H + ((10 - (e17H % 10)) % 10);
+            if (e17H < 0) e17H = 0;
+            e30 = e31 + wlw.GetArticleAmountByID(31) + vs.sicherheitsbestandP3 - (w.GetArticleByID(30).Amount + wlw.GetArticleAmountByID(30) + oiw.GetArticleAmountByID(30));
+            e30 = e30 + ((10 - (e30 % 10)) % 10);
+            if (e30 < 0) e30 = 0;
 
-            e6 = e30 + wlw.GetArticleAmountByID(30) + vs.sicherheitsbestandP3 - w.GetArticleByID(6).Amount + wlw.GetArticleAmountByID(6) + oiw.GetArticleAmountByID(6);
-            e12 = e30 + wlw.GetArticleAmountByID(30) + vs.sicherheitsbestandP3 - w.GetArticleByID(12).Amount + wlw.GetArticleAmountByID(12) + oiw.GetArticleAmountByID(12);
-            e29 = e30 + wlw.GetArticleAmountByID(30) + vs.sicherheitsbestandP3 - w.GetArticleByID(29).Amount + wlw.GetArticleAmountByID(29) + oiw.GetArticleAmountByID(29);
+            e6 = e30 + wlw.GetArticleAmountByID(30) + vs.sicherheitsbestandP3 - (w.GetArticleByID(6).Amount + wlw.GetArticleAmountByID(6) + oiw.GetArticleAmountByID(6));
+            e6 = e6 + ((10 - (e6 % 10)) % 10);
+            if (e6 < 0) e6 = 0;
+            e12 = e30 + wlw.GetArticleAmountByID(30) + vs.sicherheitsbestandP3 - (w.GetArticleByID(12).Amount + wlw.GetArticleAmountByID(12) + oiw.GetArticleAmountByID(12));
+            e12 = e12 + ((10 - (e12 % 10)) % 10);
+            if (e12 < 0) e12 = 0;
+            e29 = e30 + wlw.GetArticleAmountByID(30) + vs.sicherheitsbestandP3 - (w.GetArticleByID(29).Amount + wlw.GetArticleAmountByID(29) + oiw.GetArticleAmountByID(29));
+            e29 = e29 + ((10 - (e29 % 10)) % 10);
+            if (e29 < 0) e29 = 0;
 
-            e9 = e29 + wlw.GetArticleAmountByID(29) + vs.sicherheitsbestandP3 - w.GetArticleByID(9).Amount + wlw.GetArticleAmountByID(9) + oiw.GetArticleAmountByID(9);
-            e15 = e29 + wlw.GetArticleAmountByID(29) + vs.sicherheitsbestandP3 - w.GetArticleByID(15).Amount + wlw.GetArticleAmountByID(15) + oiw.GetArticleAmountByID(15);
-            e20 = e29 + wlw.GetArticleAmountByID(29) + vs.sicherheitsbestandP3 - w.GetArticleByID(20).Amount + wlw.GetArticleAmountByID(20) + oiw.GetArticleAmountByID(20);
+            e9 = e29 + wlw.GetArticleAmountByID(29) + vs.sicherheitsbestandP3 - (w.GetArticleByID(9).Amount + wlw.GetArticleAmountByID(9) + oiw.GetArticleAmountByID(9));
+            e9 = e9 + ((10 - (e9 % 10)) % 10);
+            if (e9 < 0) e9 = 0;
+            e15 = e29 + wlw.GetArticleAmountByID(29) + vs.sicherheitsbestandP3 - (w.GetArticleByID(15).Amount + wlw.GetArticleAmountByID(15) + oiw.GetArticleAmountByID(15));
+            e15 = e15 + ((10 - (e15 % 10)) % 10);
+            if (e15 < 0) e15 = 0;
+            e20 = e29 + wlw.GetArticleAmountByID(29) + vs.sicherheitsbestandP3 - (w.GetArticleByID(20).Amount + wlw.GetArticleAmountByID(20) + oiw.GetArticleAmountByID(20));
+            e20 = e20 + ((10 - (e20 % 10)) % 10);
+            if (e20 < 0) e20 = 0;
 
             #endregion
 

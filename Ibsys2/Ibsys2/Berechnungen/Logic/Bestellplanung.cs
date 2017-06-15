@@ -9,10 +9,10 @@ using static Ibsys2.Static.Input.Waitingliststock.Missingpart;
 
 namespace Ibsys2.Berechnungen.Logic
 {
-    public static class Bestellplanung
+    public class Bestellplanung
     {
 
-        public static List<BPKaufteil> kaufteile = new List<BPKaufteil>() {
+        public List<BPKaufteil> kaufteile = new List<BPKaufteil>() {
 
             new BPKaufteil(21, "Kette",         300,    9,      2.5,    50),
             new BPKaufteil(22, "Kette",         300,    9,      2.5,    50),
@@ -47,9 +47,9 @@ namespace Ibsys2.Berechnungen.Logic
         };
 
 
-        public static List<BPBestellung> bestellungen = new List<BPBestellung>();
+        public List<BPBestellung> bestellungen = new List<BPBestellung>();
 
-        public static void createBestellung(BPKaufteil k)
+        public void createBestellung(BPKaufteil k)
         {
             if (k.reichweiteInTagen < k.lieferzeit)
             {
@@ -58,9 +58,9 @@ namespace Ibsys2.Berechnungen.Logic
             else bestellungen.Add(new BPBestellung(k.id, k.optimaleBestellmengeNormal, false));
         }
 
-        public static void bestellungenBerechnen()
+        public void bestellungenBerechnen()
         {
-
+            
             foreach (BPKaufteil k in kaufteile)
             {
                 //NORMAL, EIL, ODER KEINE BESTELLUNG?
@@ -243,12 +243,16 @@ namespace Ibsys2.Berechnungen.Logic
 
             int aktuellePeriode = Static.Static.lastperiod +1;
             Waitingliststock wls = Waitingliststock.Class;
-            foreach (Waitinglist wli in wls.GetMissingpartByID(id).GetAllWaitinglistItem)
+            var founditem = wls.GetMissingpartByID(id);
+            if (founditem != null)
             {
-                if (wli.Period == aktuellePeriode) this.geplanteBestellzugaengePeriode0 = wli.Amount;
-                else if (wli.Period == aktuellePeriode + 1) this.geplanteBestellzugaengePeriode1 = wli.Amount;
-                else if (wli.Period == aktuellePeriode + 2) this.geplanteBestellzugaengePeriode2 = wli.Amount;
-                else if (wli.Period == aktuellePeriode + 3) this.geplanteBestellzugaengePeriode3 = wli.Amount;
+                foreach (Waitinglist wli in founditem.GetAllWaitinglistItem)
+                {
+                    if (wli.Period == aktuellePeriode) this.geplanteBestellzugaengePeriode0 = wli.Amount;
+                    else if (wli.Period == aktuellePeriode + 1) this.geplanteBestellzugaengePeriode1 = wli.Amount;
+                    else if (wli.Period == aktuellePeriode + 2) this.geplanteBestellzugaengePeriode2 = wli.Amount;
+                    else if (wli.Period == aktuellePeriode + 3) this.geplanteBestellzugaengePeriode3 = wli.Amount;
+                }
             }
 
             this.id = id;
