@@ -38,6 +38,13 @@ namespace Ibsys2.Static.Output {
             return _list.FindAll(x => x.Article == article);
         }
 
+        public void RemoveItem(OrderlistItem o)
+        {
+            if (o == null)
+                throw new ArgumentNullException();
+            _list.RemoveAll(x => x == o);
+        }
+
         public string XMLOutput() {
             string Output = "<orderlist>";
             foreach (var ola in _list)
