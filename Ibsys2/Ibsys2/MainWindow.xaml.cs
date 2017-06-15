@@ -211,7 +211,7 @@ namespace Ibsys2
             liefer.Add(new Liefer { Kaufteileno = "37", Kaufteil = "Gabel", Verwendung = "KDH", Teilewert = "1,50", Diskontmenge = "900", Bestellkosten = "50", Lieferfrist = "1,5", Abweichung = "0,3" });
             liefer.Add(new Liefer { Kaufteileno = "38", Kaufteil = "Welle", Verwendung = "KDH", Teilewert = "1,50", Diskontmenge = "300", Bestellkosten = "50", Lieferfrist = "1,7", Abweichung = "0,4" });
             liefer.Add(new Liefer { Kaufteileno = "39", Kaufteil = "Blech", Verwendung = "KDH", Teilewert = "1,50", Diskontmenge = "1800", Bestellkosten = "75", Lieferfrist = "1,5", Abweichung = "0,3" });
-            liefer.Add(new Liefer { Kaufteileno = "40", Kaufteil = "Lenker", Verwendung = "KDH", Teilewert = "2,50", Diskontmenge = "900", Bestellkosten = "50", Lieferfrist = "1,7", Abweichung = "0,2" });
+            liefer.Add(new Liefer { Kaufteileno = "40", Kaufteil = TranslateService.Class.GetTranslation("HANDLE_BAR"), Verwendung = "KDH", Teilewert = "2,50", Diskontmenge = "900", Bestellkosten = "50", Lieferfrist = "1,7", Abweichung = "0,2" });
             liefer.Add(new Liefer { Kaufteileno = "41", Kaufteil = "Mutter 3/4", Verwendung = "KDH", Teilewert = "0,06", Diskontmenge = "900", Bestellkosten = "50", Lieferfrist = "0,9", Abweichung = "0,2" });
             liefer.Add(new Liefer { Kaufteileno = "42", Kaufteil = "Griff", Verwendung = "KDH", Teilewert = "0,10", Diskontmenge = "1800", Bestellkosten = "50", Lieferfrist = "1,2", Abweichung = "0,3" });
             liefer.Add(new Liefer { Kaufteileno = "43", Kaufteil = "Sattel", Verwendung = "KDH", Teilewert = "5,00", Diskontmenge = "2700", Bestellkosten = "75", Lieferfrist = "2,0", Abweichung = "0,5" });
@@ -219,7 +219,7 @@ namespace Ibsys2
             liefer.Add(new Liefer { Kaufteileno = "45", Kaufteil = "Mutter 1/4", Verwendung = "KDH", Teilewert = "0,06", Diskontmenge = "900", Bestellkosten = "50", Lieferfrist = "1,7", Abweichung = "0,3" });
             liefer.Add(new Liefer { Kaufteileno = "46", Kaufteil = "Schraube 1/4", Verwendung = "KDH", Teilewert = "0,10", Diskontmenge = "900", Bestellkosten = "50", Lieferfrist = "0,9", Abweichung = "0,3" });
             liefer.Add(new Liefer { Kaufteileno = "47", Kaufteil = "Zahnkranz", Verwendung = "KDH", Teilewert = "3,50", Diskontmenge = "900", Bestellkosten = "50", Lieferfrist = "1,1", Abweichung = "0,1" });
-            liefer.Add(new Liefer { Kaufteileno = "48", Kaufteil = "Pedal", Verwendung = "KDH", Teilewert = "1,50", Diskontmenge = "1800", Bestellkosten = "75", Lieferfrist = "1,0", Abweichung = "0,2" });
+            liefer.Add(new Liefer { Kaufteileno = "48", Kaufteil = TranslateService.Class.GetTranslation("PEDAL"), Verwendung = "KDH", Teilewert = "1,50", Diskontmenge = "1800", Bestellkosten = "75", Lieferfrist = "1,0", Abweichung = "0,2" });
             liefer.Add(new Liefer { Kaufteileno = "52", Kaufteil = "Felge cpl.", Verwendung = "K", Teilewert = "22,00", Diskontmenge = "600", Bestellkosten = "50", Lieferfrist = "1,6", Abweichung = "0,4" });
             liefer.Add(new Liefer { Kaufteileno = "53", Kaufteil = "Speiche", Verwendung = "K", Teilewert = "0,10", Diskontmenge = "22000", Bestellkosten = "50", Lieferfrist = "1,6", Abweichung = "0,2" });
             liefer.Add(new Liefer { Kaufteileno = "57", Kaufteil = "Felge cp.", Verwendung = "D", Teilewert = "22,00", Diskontmenge = "600", Bestellkosten = "50", Lieferfrist = "1,7", Abweichung = "0,3" });
@@ -242,155 +242,155 @@ namespace Ibsys2
         public ObservableCollection<ItemNo> CreateWork1()
         {
             ObservableCollection<ItemNo> itemno = new ObservableCollection<ItemNo>();
-            itemno.Add(new ItemNo{ Bezeichnung="Vorderrad komplett (cpl)", Sachnr="E49", Fahrradtyp="K", Einzelaufwand="6", Gesamtaufwand="" });
-            itemno.Add(new ItemNo{ Bezeichnung = "Vorderrad komplett (cpl)", Sachnr = "E54", Fahrradtyp = "D", Einzelaufwand = "6", Gesamtaufwand = "" });
-            itemno.Add(new ItemNo{ Bezeichnung = "Vorderrad komplett (cpl)", Sachnr = "E29", Fahrradtyp = "H", Einzelaufwand = "6", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = TranslateService.Class.GetTranslation("FRONT_WHEEL_COMPLETE"), Sachnr = "E49", Fahrradtyp = "K", Einzelaufwand = "6", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo{ Bezeichnung = TranslateService.Class.GetTranslation("FRONT_WHEEL_COMPLETE"), Sachnr = "E54", Fahrradtyp = "D", Einzelaufwand = "6", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo{ Bezeichnung = TranslateService.Class.GetTranslation("FRONT_WHEEL_COMPLETE"), Sachnr = "E29", Fahrradtyp = "H", Einzelaufwand = "6", Gesamtaufwand = "" });
             return itemno;
         }
 
         public ObservableCollection<ItemNo> CreateWork2()
         {
             ObservableCollection<ItemNo> itemno = new ObservableCollection<ItemNo>();
-            itemno.Add(new ItemNo { Bezeichnung = "Rahmen und Räder", Sachnr = "E50", Fahrradtyp = "K", Einzelaufwand = "5", Gesamtaufwand = "" });
-            itemno.Add(new ItemNo { Bezeichnung = "Rahmen und Räder", Sachnr = "E55", Fahrradtyp = "D", Einzelaufwand = "5", Gesamtaufwand = "" });
-            itemno.Add(new ItemNo { Bezeichnung = "Rahmen und Räder", Sachnr = "E30", Fahrradtyp = "H", Einzelaufwand = "5", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = TranslateService.Class.GetTranslation("FRAME_AND_WHEELS"), Sachnr = "E50", Fahrradtyp = "K", Einzelaufwand = "5", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = TranslateService.Class.GetTranslation("FRAME_AND_WHEELS"), Sachnr = "E55", Fahrradtyp = "D", Einzelaufwand = "5", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = TranslateService.Class.GetTranslation("FRAME_AND_WHEELS"), Sachnr = "E30", Fahrradtyp = "H", Einzelaufwand = "5", Gesamtaufwand = "" });
             return itemno;
         }
 
         public ObservableCollection<ItemNo> CreateWork3()
         {
             ObservableCollection<ItemNo> itemno = new ObservableCollection<ItemNo>();
-            itemno.Add(new ItemNo { Bezeichnung = "Fahrrad ohne Pedale", Sachnr = "E51", Fahrradtyp = "K", Einzelaufwand = "5", Gesamtaufwand = "" });
-            itemno.Add(new ItemNo { Bezeichnung = "Fahrrad ohne Pedale", Sachnr = "E56", Fahrradtyp = "D", Einzelaufwand = "6", Gesamtaufwand = "" });
-            itemno.Add(new ItemNo { Bezeichnung = "Fahrrad ohne Pedale", Sachnr = "E31", Fahrradtyp = "H", Einzelaufwand = "6", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = TranslateService.Class.GetTranslation("BICYCLE_WITHOUT_PEDAL"), Sachnr = "E51", Fahrradtyp = "K", Einzelaufwand = "5", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = TranslateService.Class.GetTranslation("BICYCLE_WITHOUT_PEDAL"), Sachnr = "E56", Fahrradtyp = "D", Einzelaufwand = "6", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = TranslateService.Class.GetTranslation("BICYCLE_WITHOUT_PEDAL"), Sachnr = "E31", Fahrradtyp = "H", Einzelaufwand = "6", Gesamtaufwand = "" });
             return itemno;
         }
 
         public ObservableCollection<ItemNo> CreateWork4()
         {
             ObservableCollection<ItemNo> itemno = new ObservableCollection<ItemNo>();
-            itemno.Add(new ItemNo { Bezeichnung = "Fahrrad komplett (cpl)", Sachnr = "P1", Fahrradtyp = "K", Einzelaufwand = "6", Gesamtaufwand = "" });
-            itemno.Add(new ItemNo { Bezeichnung = "Fahrrad komplett (cpl)", Sachnr = "P2", Fahrradtyp = "D", Einzelaufwand = "7", Gesamtaufwand = "" });
-            itemno.Add(new ItemNo { Bezeichnung = "Fahrrad komplett (cpl)", Sachnr = "P3", Fahrradtyp = "H", Einzelaufwand = "7", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = TranslateService.Class.GetTranslation("BICYCLE_COMPLETE"), Sachnr = "P1", Fahrradtyp = "K", Einzelaufwand = "6", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = TranslateService.Class.GetTranslation("BICYCLE_COMPLETE"), Sachnr = "P2", Fahrradtyp = "D", Einzelaufwand = "7", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = TranslateService.Class.GetTranslation("BICYCLE_COMPLETE"), Sachnr = "P3", Fahrradtyp = "H", Einzelaufwand = "7", Gesamtaufwand = "" });
             return itemno;
         }
 
         public ObservableCollection<ItemNo> CreateWork6()
         {
             ObservableCollection<ItemNo> itemno = new ObservableCollection<ItemNo>();
-            itemno.Add(new ItemNo { Bezeichnung = "Lenker", Sachnr = "E16", Fahrradtyp = "KDH", Einzelaufwand = "2", Gesamtaufwand = "" });
-            itemno.Add(new ItemNo { Bezeichnung = "Rahmen", Sachnr = "E18", Fahrradtyp = "K", Einzelaufwand = "3", Gesamtaufwand = "" });
-            itemno.Add(new ItemNo { Bezeichnung = "Rahmen", Sachnr = "E19", Fahrradtyp = "K", Einzelaufwand = "3", Gesamtaufwand = "" });
-            itemno.Add(new ItemNo { Bezeichnung = "Rahmen", Sachnr = "E20", Fahrradtyp = "K", Einzelaufwand = "3", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = TranslateService.Class.GetTranslation("HANDLE_BAR"), Sachnr = "E16", Fahrradtyp = "KDH", Einzelaufwand = "2", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = TranslateService.Class.GetTranslation("FRAME"), Sachnr = "E18", Fahrradtyp = "K", Einzelaufwand = "3", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = TranslateService.Class.GetTranslation("FRAME"), Sachnr = "E19", Fahrradtyp = "K", Einzelaufwand = "3", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = TranslateService.Class.GetTranslation("FRAME"), Sachnr = "E20", Fahrradtyp = "K", Einzelaufwand = "3", Gesamtaufwand = "" });
             return itemno;
         }
 
         public ObservableCollection<ItemNo> CreateWork7()
         {
             ObservableCollection<ItemNo> itemno = new ObservableCollection<ItemNo>();
-            itemno.Add(new ItemNo { Bezeichnung = "Schutzblech hinten", Sachnr = "E10", Fahrradtyp = "K", Einzelaufwand = "2", Gesamtaufwand = "" });
-            itemno.Add(new ItemNo { Bezeichnung = "Schutzblech hinten", Sachnr = "E11", Fahrradtyp = "D", Einzelaufwand = "2", Gesamtaufwand = "" });
-            itemno.Add(new ItemNo { Bezeichnung = "Schutzblech hinten", Sachnr = "E12", Fahrradtyp = "H", Einzelaufwand = "2", Gesamtaufwand = "" });
-            itemno.Add(new ItemNo { Bezeichnung = "Schutzblech vorne", Sachnr = "E13", Fahrradtyp = "K", Einzelaufwand = "2", Gesamtaufwand = "" });
-            itemno.Add(new ItemNo { Bezeichnung = "Schutzblech vorne", Sachnr = "E14", Fahrradtyp = "D", Einzelaufwand = "2", Gesamtaufwand = "" });
-            itemno.Add(new ItemNo { Bezeichnung = "Schutzblech vorne", Sachnr = "E15", Fahrradtyp = "H", Einzelaufwand = "2", Gesamtaufwand = "" });
-            itemno.Add(new ItemNo { Bezeichnung = "Rahmen", Sachnr = "E18", Fahrradtyp = "K", Einzelaufwand = "2", Gesamtaufwand = "" });
-            itemno.Add(new ItemNo { Bezeichnung = "Rahmen", Sachnr = "E19", Fahrradtyp = "D", Einzelaufwand = "2", Gesamtaufwand = "" });
-            itemno.Add(new ItemNo { Bezeichnung = "Rahmen", Sachnr = "E20", Fahrradtyp = "H", Einzelaufwand = "2", Gesamtaufwand = "" });
-            itemno.Add(new ItemNo { Bezeichnung = "Pedale", Sachnr = "E26", Fahrradtyp = "KDH", Einzelaufwand = "2", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = TranslateService.Class.GetTranslation("MUDGUARD_REAR"), Sachnr = "E10", Fahrradtyp = "K", Einzelaufwand = "2", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = TranslateService.Class.GetTranslation("MUDGUARD_REAR"), Sachnr = "E11", Fahrradtyp = "D", Einzelaufwand = "2", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = TranslateService.Class.GetTranslation("MUDGUARD_REAR"), Sachnr = "E12", Fahrradtyp = "H", Einzelaufwand = "2", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = TranslateService.Class.GetTranslation("MUDGUARD_FRONT"), Sachnr = "E13", Fahrradtyp = "K", Einzelaufwand = "2", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = TranslateService.Class.GetTranslation("MUDGUARD_FRONT"), Sachnr = "E14", Fahrradtyp = "D", Einzelaufwand = "2", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = TranslateService.Class.GetTranslation("MUDGUARD_FRONT"), Sachnr = "E15", Fahrradtyp = "H", Einzelaufwand = "2", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = TranslateService.Class.GetTranslation("FRAME"), Sachnr = "E18", Fahrradtyp = "K", Einzelaufwand = "2", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = TranslateService.Class.GetTranslation("FRAME"), Sachnr = "E19", Fahrradtyp = "D", Einzelaufwand = "2", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = TranslateService.Class.GetTranslation("FRAME"), Sachnr = "E20", Fahrradtyp = "H", Einzelaufwand = "2", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = TranslateService.Class.GetTranslation("PEDAL"), Sachnr = "E26", Fahrradtyp = "KDH", Einzelaufwand = "2", Gesamtaufwand = "" });
             return itemno;
         }
 
         public ObservableCollection<ItemNo> CreateWork8()
         {
             ObservableCollection<ItemNo> itemno = new ObservableCollection<ItemNo>();
-            itemno.Add(new ItemNo { Bezeichnung = "Schutzblech hinten", Sachnr = "E10", Fahrradtyp = "K", Einzelaufwand = "1", Gesamtaufwand = "" });
-            itemno.Add(new ItemNo { Bezeichnung = "Schutzblech hinten", Sachnr = "E11", Fahrradtyp = "D", Einzelaufwand = "2", Gesamtaufwand = "" });
-            itemno.Add(new ItemNo { Bezeichnung = "Schutzblech hinten", Sachnr = "E12", Fahrradtyp = "H", Einzelaufwand = "2", Gesamtaufwand = "" });
-            itemno.Add(new ItemNo { Bezeichnung = "Schutzblech vorne", Sachnr = "E13", Fahrradtyp = "K", Einzelaufwand = "1", Gesamtaufwand = "" });
-            itemno.Add(new ItemNo { Bezeichnung = "Schutzblech vorne", Sachnr = "E14", Fahrradtyp = "D", Einzelaufwand = "2", Gesamtaufwand = "" });
-            itemno.Add(new ItemNo { Bezeichnung = "Schutzblech vorne", Sachnr = "E15", Fahrradtyp = "H", Einzelaufwand = "2", Gesamtaufwand = "" });
-            itemno.Add(new ItemNo { Bezeichnung = "Rahmen", Sachnr = "E18", Fahrradtyp = "K", Einzelaufwand = "2", Gesamtaufwand = "" });
-            itemno.Add(new ItemNo { Bezeichnung = "Rahmen", Sachnr = "E19", Fahrradtyp = "D", Einzelaufwand = "2", Gesamtaufwand = "" });
-            itemno.Add(new ItemNo { Bezeichnung = "Rahmen", Sachnr = "E20", Fahrradtyp = "H", Einzelaufwand = "2", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = TranslateService.Class.GetTranslation("MUDGUARD_REAR"), Sachnr = "E10", Fahrradtyp = "K", Einzelaufwand = "1", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = TranslateService.Class.GetTranslation("MUDGUARD_REAR"), Sachnr = "E11", Fahrradtyp = "D", Einzelaufwand = "2", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = TranslateService.Class.GetTranslation("MUDGUARD_REAR"), Sachnr = "E12", Fahrradtyp = "H", Einzelaufwand = "2", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = TranslateService.Class.GetTranslation("MUDGUARD_FRONT"), Sachnr = "E13", Fahrradtyp = "K", Einzelaufwand = "1", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = TranslateService.Class.GetTranslation("MUDGUARD_FRONT"), Sachnr = "E14", Fahrradtyp = "D", Einzelaufwand = "2", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = TranslateService.Class.GetTranslation("MUDGUARD_FRONT"), Sachnr = "E15", Fahrradtyp = "H", Einzelaufwand = "2", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = TranslateService.Class.GetTranslation("FRAME"), Sachnr = "E18", Fahrradtyp = "K", Einzelaufwand = "2", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = TranslateService.Class.GetTranslation("FRAME"), Sachnr = "E19", Fahrradtyp = "D", Einzelaufwand = "2", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = TranslateService.Class.GetTranslation("FRAME"), Sachnr = "E20", Fahrradtyp = "H", Einzelaufwand = "2", Gesamtaufwand = "" });
             return itemno;
         }
 
         public ObservableCollection<ItemNo> CreateWork9()
         {
             ObservableCollection<ItemNo> itemno = new ObservableCollection<ItemNo>();
-            itemno.Add(new ItemNo { Bezeichnung = "Schutzblech hinten", Sachnr = "E10", Fahrradtyp = "K", Einzelaufwand = "3", Gesamtaufwand = "" });
-            itemno.Add(new ItemNo { Bezeichnung = "Schutzblech hinten", Sachnr = "E11", Fahrradtyp = "D", Einzelaufwand = "3", Gesamtaufwand = "" });
-            itemno.Add(new ItemNo { Bezeichnung = "Schutzblech hinten", Sachnr = "E12", Fahrradtyp = "H", Einzelaufwand = "3", Gesamtaufwand = "" });
-            itemno.Add(new ItemNo { Bezeichnung = "Schutzblech vorne", Sachnr = "E13", Fahrradtyp = "K", Einzelaufwand = "3", Gesamtaufwand = "" });
-            itemno.Add(new ItemNo { Bezeichnung = "Schutzblech vorne", Sachnr = "E14", Fahrradtyp = "D", Einzelaufwand = "3", Gesamtaufwand = "" });
-            itemno.Add(new ItemNo { Bezeichnung = "Schutzblech vorne", Sachnr = "E15", Fahrradtyp = "H", Einzelaufwand = "3", Gesamtaufwand = "" });
-            itemno.Add(new ItemNo { Bezeichnung = "Rahmen", Sachnr = "E18", Fahrradtyp = "K", Einzelaufwand = "2", Gesamtaufwand = "" });
-            itemno.Add(new ItemNo { Bezeichnung = "Rahmen", Sachnr = "E19", Fahrradtyp = "D", Einzelaufwand = "2", Gesamtaufwand = "" });
-            itemno.Add(new ItemNo { Bezeichnung = "Rahmen", Sachnr = "E20", Fahrradtyp = "H", Einzelaufwand = "2", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = TranslateService.Class.GetTranslation("MUDGUARD_REAR"), Sachnr = "E10", Fahrradtyp = "K", Einzelaufwand = "3", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = TranslateService.Class.GetTranslation("MUDGUARD_REAR"), Sachnr = "E11", Fahrradtyp = "D", Einzelaufwand = "3", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = TranslateService.Class.GetTranslation("MUDGUARD_REAR"), Sachnr = "E12", Fahrradtyp = "H", Einzelaufwand = "3", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = TranslateService.Class.GetTranslation("MUDGUARD_FRONT"), Sachnr = "E13", Fahrradtyp = "K", Einzelaufwand = "3", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = TranslateService.Class.GetTranslation("MUDGUARD_FRONT"), Sachnr = "E14", Fahrradtyp = "D", Einzelaufwand = "3", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = TranslateService.Class.GetTranslation("MUDGUARD_FRONT"), Sachnr = "E15", Fahrradtyp = "H", Einzelaufwand = "3", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = TranslateService.Class.GetTranslation("FRAME"), Sachnr = "E18", Fahrradtyp = "K", Einzelaufwand = "2", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = TranslateService.Class.GetTranslation("FRAME"), Sachnr = "E19", Fahrradtyp = "D", Einzelaufwand = "2", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = TranslateService.Class.GetTranslation("FRAME"), Sachnr = "E20", Fahrradtyp = "H", Einzelaufwand = "2", Gesamtaufwand = "" });
             return itemno;
         }
 
         public ObservableCollection<ItemNo> CreateWork10()
         {
             ObservableCollection<ItemNo> itemno = new ObservableCollection<ItemNo>();
-            itemno.Add(new ItemNo { Bezeichnung = "Hinterrad", Sachnr = "E4", Fahrradtyp = "K", Einzelaufwand = "4", Gesamtaufwand = "" });
-            itemno.Add(new ItemNo { Bezeichnung = "Hinterrad", Sachnr = "E5", Fahrradtyp = "D", Einzelaufwand = "4", Gesamtaufwand = "" });
-            itemno.Add(new ItemNo { Bezeichnung = "Hinterrad", Sachnr = "E6", Fahrradtyp = "H", Einzelaufwand = "4", Gesamtaufwand = "" });
-            itemno.Add(new ItemNo { Bezeichnung = "Vorderrad", Sachnr = "E7", Fahrradtyp = "K", Einzelaufwand = "4", Gesamtaufwand = "" });
-            itemno.Add(new ItemNo { Bezeichnung = "Vorderrad", Sachnr = "E8", Fahrradtyp = "D", Einzelaufwand = "4", Gesamtaufwand = "" });
-            itemno.Add(new ItemNo { Bezeichnung = "Vorderrad", Sachnr = "E9", Fahrradtyp = "H", Einzelaufwand = "4", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = TranslateService.Class.GetTranslation("REAR_WHEEL"), Sachnr = "E4", Fahrradtyp = "K", Einzelaufwand = "4", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = TranslateService.Class.GetTranslation("REAR_WHEEL"), Sachnr = "E5", Fahrradtyp = "D", Einzelaufwand = "4", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = TranslateService.Class.GetTranslation("REAR_WHEEL"), Sachnr = "E6", Fahrradtyp = "H", Einzelaufwand = "4", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = TranslateService.Class.GetTranslation("FRONT_WHEEL"), Sachnr = "E7", Fahrradtyp = "K", Einzelaufwand = "4", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = TranslateService.Class.GetTranslation("FRONT_WHEEL"), Sachnr = "E8", Fahrradtyp = "D", Einzelaufwand = "4", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = TranslateService.Class.GetTranslation("FRONT_WHEEL"), Sachnr = "E9", Fahrradtyp = "H", Einzelaufwand = "4", Gesamtaufwand = "" });
             return itemno;
         }
 
         public ObservableCollection<ItemNo> CreateWork11()
         {
             ObservableCollection<ItemNo> itemno = new ObservableCollection<ItemNo>();
-            itemno.Add(new ItemNo { Bezeichnung = "Hinterrad", Sachnr = "E4", Fahrradtyp = "K", Einzelaufwand = "3", Gesamtaufwand = "" });
-            itemno.Add(new ItemNo { Bezeichnung = "Hinterrad", Sachnr = "E5", Fahrradtyp = "D", Einzelaufwand = "3", Gesamtaufwand = "" });
-            itemno.Add(new ItemNo { Bezeichnung = "Hinterrad", Sachnr = "E6", Fahrradtyp = "H", Einzelaufwand = "3", Gesamtaufwand = "" });
-            itemno.Add(new ItemNo { Bezeichnung = "Vorderrad", Sachnr = "E7", Fahrradtyp = "K", Einzelaufwand = "3", Gesamtaufwand = "" });
-            itemno.Add(new ItemNo { Bezeichnung = "Vorderrad", Sachnr = "E8", Fahrradtyp = "D", Einzelaufwand = "3", Gesamtaufwand = "" });
-            itemno.Add(new ItemNo { Bezeichnung = "Vorderrad", Sachnr = "E9", Fahrradtyp = "H", Einzelaufwand = "3", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = TranslateService.Class.GetTranslation("REAR_WHEEL"), Sachnr = "E4", Fahrradtyp = "K", Einzelaufwand = "3", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = TranslateService.Class.GetTranslation("REAR_WHEEL"), Sachnr = "E5", Fahrradtyp = "D", Einzelaufwand = "3", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = TranslateService.Class.GetTranslation("REAR_WHEEL"), Sachnr = "E6", Fahrradtyp = "H", Einzelaufwand = "3", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = TranslateService.Class.GetTranslation("FRONT_WHEEL"), Sachnr = "E7", Fahrradtyp = "K", Einzelaufwand = "3", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = TranslateService.Class.GetTranslation("FRONT_WHEEL"), Sachnr = "E8", Fahrradtyp = "D", Einzelaufwand = "3", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = TranslateService.Class.GetTranslation("FRONT_WHEEL"), Sachnr = "E9", Fahrradtyp = "H", Einzelaufwand = "3", Gesamtaufwand = "" });
             return itemno;
         }
 
         public ObservableCollection<ItemNo> CreateWork12()
         {
             ObservableCollection<ItemNo> itemno = new ObservableCollection<ItemNo>();
-            itemno.Add(new ItemNo { Bezeichnung = "Schutzblech hinten", Sachnr = "E10", Fahrradtyp = "K", Einzelaufwand = "3", Gesamtaufwand = "" });
-            itemno.Add(new ItemNo { Bezeichnung = "Schutzblech hinten", Sachnr = "E11", Fahrradtyp = "D", Einzelaufwand = "3", Gesamtaufwand = "" });
-            itemno.Add(new ItemNo { Bezeichnung = "Schutzblech hinten", Sachnr = "E12", Fahrradtyp = "H", Einzelaufwand = "3", Gesamtaufwand = "" });
-            itemno.Add(new ItemNo { Bezeichnung = "Schutzblech vorne", Sachnr = "E13", Fahrradtyp = "K", Einzelaufwand = "3", Gesamtaufwand = "" });
-            itemno.Add(new ItemNo { Bezeichnung = "Schutzblech vorne", Sachnr = "E14", Fahrradtyp = "D", Einzelaufwand = "3", Gesamtaufwand = "" });
-            itemno.Add(new ItemNo { Bezeichnung = "Schutzblech vorne", Sachnr = "E15", Fahrradtyp = "H", Einzelaufwand = "3", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = TranslateService.Class.GetTranslation("MUDGUARD_REAR"), Sachnr = "E10", Fahrradtyp = "K", Einzelaufwand = "3", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = TranslateService.Class.GetTranslation("MUDGUARD_REAR"), Sachnr = "E11", Fahrradtyp = "D", Einzelaufwand = "3", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = TranslateService.Class.GetTranslation("MUDGUARD_REAR"), Sachnr = "E12", Fahrradtyp = "H", Einzelaufwand = "3", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = TranslateService.Class.GetTranslation("MUDGUARD_FRONT"), Sachnr = "E13", Fahrradtyp = "K", Einzelaufwand = "3", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = TranslateService.Class.GetTranslation("MUDGUARD_FRONT"), Sachnr = "E14", Fahrradtyp = "D", Einzelaufwand = "3", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = TranslateService.Class.GetTranslation("MUDGUARD_FRONT"), Sachnr = "E15", Fahrradtyp = "H", Einzelaufwand = "3", Gesamtaufwand = "" });
             return itemno;
         }
 
         public ObservableCollection<ItemNo> CreateWork13()
         {
             ObservableCollection<ItemNo> itemno = new ObservableCollection<ItemNo>();
-            itemno.Add(new ItemNo { Bezeichnung = "Schutzblech hinten", Sachnr = "E10", Fahrradtyp = "K", Einzelaufwand = "2", Gesamtaufwand = "" });
-            itemno.Add(new ItemNo { Bezeichnung = "Schutzblech hinten", Sachnr = "E11", Fahrradtyp = "D", Einzelaufwand = "2", Gesamtaufwand = "" });
-            itemno.Add(new ItemNo { Bezeichnung = "Schutzblech hinten", Sachnr = "E12", Fahrradtyp = "H", Einzelaufwand = "2", Gesamtaufwand = "" });
-            itemno.Add(new ItemNo { Bezeichnung = "Schutzblech vorne", Sachnr = "E13", Fahrradtyp = "K", Einzelaufwand = "2", Gesamtaufwand = "" });
-            itemno.Add(new ItemNo { Bezeichnung = "Schutzblech vorne", Sachnr = "E14", Fahrradtyp = "D", Einzelaufwand = "2", Gesamtaufwand = "" });
-            itemno.Add(new ItemNo { Bezeichnung = "Schutzblech vorne", Sachnr = "E15", Fahrradtyp = "H", Einzelaufwand = "2", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = TranslateService.Class.GetTranslation("MUDGUARD_REAR"), Sachnr = "E10", Fahrradtyp = "K", Einzelaufwand = "2", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = TranslateService.Class.GetTranslation("MUDGUARD_REAR"), Sachnr = "E11", Fahrradtyp = "D", Einzelaufwand = "2", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = TranslateService.Class.GetTranslation("MUDGUARD_REAR"), Sachnr = "E12", Fahrradtyp = "H", Einzelaufwand = "2", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = TranslateService.Class.GetTranslation("MUDGUARD_FRONT"), Sachnr = "E13", Fahrradtyp = "K", Einzelaufwand = "2", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = TranslateService.Class.GetTranslation("MUDGUARD_FRONT"), Sachnr = "E14", Fahrradtyp = "D", Einzelaufwand = "2", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = TranslateService.Class.GetTranslation("MUDGUARD_FRONT"), Sachnr = "E15", Fahrradtyp = "H", Einzelaufwand = "2", Gesamtaufwand = "" });
             return itemno;
         }
 
         public ObservableCollection<ItemNo> CreateWork14()
         {
             ObservableCollection<ItemNo> itemno = new ObservableCollection<ItemNo>();
-            itemno.Add(new ItemNo { Bezeichnung = "Lenker", Sachnr = "E16", Fahrradtyp = "KDH", Einzelaufwand = "3", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = TranslateService.Class.GetTranslation("HANDLE_BAR"), Sachnr = "E16", Fahrradtyp = "KDH", Einzelaufwand = "3", Gesamtaufwand = "" });
             return itemno;
         }
 
         public ObservableCollection<ItemNo> CreateWork15()
         {
             ObservableCollection<ItemNo> itemno = new ObservableCollection<ItemNo>();
-            itemno.Add(new ItemNo { Bezeichnung = "Sattel", Sachnr = "E17", Fahrradtyp = "KDH", Einzelaufwand = "3", Gesamtaufwand = "" });
-            itemno.Add(new ItemNo { Bezeichnung = "Pedale", Sachnr = "E26", Fahrradtyp = "KDH", Einzelaufwand = "3", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = TranslateService.Class.GetTranslation("SEAT"), Sachnr = "E17", Fahrradtyp = "KDH", Einzelaufwand = "3", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = TranslateService.Class.GetTranslation("Pedal"), Sachnr = "E26", Fahrradtyp = "KDH", Einzelaufwand = "3", Gesamtaufwand = "" });
             return itemno;
         }
 
