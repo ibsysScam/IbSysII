@@ -96,80 +96,82 @@ namespace Ibsys2.Service {
             _translate.Add("PAINT", "Paint");
            
             _translate.Add("RIM", "Rim complete");
-            //
+                 
             _translate.Add("SPOKE", "Spoke");
-            //
+                 
             _translate.Add("TAPER", "Taper sleeve");
-            //
+                 
             _translate.Add("FREE", "Free wheel");
-            //
+                 
             _translate.Add("FORK", "Fork");
-            //
+                 
             _translate.Add("AXLE", "Axle");
-            //
+                 
             _translate.Add("SHEET", "Sheet");
-            //
-            //
+                 
+                 
             _translate.Add("NUT_FOUR", "Nut 3/4");
-            //
+                 
             _translate.Add("HANDLE_GRIP", "Handle grip");
-            //
+                 
             _translate.Add("SADDLE", "Saddle");
-            //
+                 
             _translate.Add("BAR", "Bar 1/2");
-            //
+                 
             _translate.Add("NUT_QUARTER", "Nut 1/4");
-            //
+                 
             _translate.Add("SCREW_QUARTER", "Screw 1/4");
-            //
+                 
             _translate.Add("SPROCKET", "Sprocket");
-            //
+                 
             _translate.Add("WELDING_WIRES", "Welding Wires");
             _translate.Add("ITEM_VALUE", " Item value [€]");
             _translate.Add("STOCK_QUANTITY_PIECE", "Stock quantity [piece]");
-            //
+                 
             _translate.Add("DISCOUNT_QUANTITY_PIECE", "Discount quantity [piece]");
-            //
+                 
             _translate.Add("ORDER_COSTS", "Order costs [€]");
-            //
+                 
             _translate.Add("PROCURE", "Procure lead-time [Period]");
-            //
+                 
             _translate.Add("DEVIATION_PERIOD", "Deviation +/- [Period]");
-            //
+                 
 
             _translate.Add("REAR_WHEEL_GROUP", "Gruppe Hinterrad");
-            //
+                 
             _translate.Add("FRONT_WHEEL_GROUP", "Gruppe Vorderrad");
-            //
+                 
             _translate.Add("HANDLE_COMPLETE", "Lenker komplett");
-            //
+                 
             _translate.Add("SADDLE_COMPLETE", "Sattel komplett");
            
-            //
+                 
             _translate.Add("WHERE_USED", "Where used");
-            //
+                 
             _translate.Add("IN_HOUSE", "In-house manufactured part and component");
-            //
+                 
             _translate.Add("USED_IN_C", "Wird im Kinderfahrrad benutzt");
-            //
+                 
             _translate.Add("USED_IN_L", "Wird im Damenfahrrad benutzt");
-            //
+                 
             _translate.Add("USED_IN_M", "Wird im Männerfahrrad benutzt");
-            //
-            //
-            //
-            //
-            //
-            //
-            //
-            //
-            //
-            //
-            //
-            //
-            //
-            //
-            //
+          
+            _translate.Add("SECURITYFACTOR_EMPTY", "Sicherheitsfaktor leer! ");
+            _translate.Add("INPUT_VALUE_ERROR", "Error bei den Eingabedaten.");
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
         }
         
     }
