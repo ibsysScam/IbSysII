@@ -123,20 +123,7 @@ namespace Ibsys2.Service {
             _translate.Add("SECURITYFACTOR_EMPTY", "Sicherheitsfaktor leer! ");
             _translate.Add("INPUT_VALUE_ERROR", "Error bei den Eingabedaten.");
             _translate.Add("INPUT_NOT_COMPLETE", "Bitte alle Felder ausfüllen");
-                 
-                 
-                 
-                 
-                 
-                 
-                 
-                 
-                 
-                 
-                 
-                 
-                 
-                 
+            _translate.Add("SUM_TOO_BIG", "Die Summe ist zu groß!");
         }
         
     }
