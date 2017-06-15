@@ -538,7 +538,7 @@ namespace Ibsys2
         private void PrognosenNextbutton_Click(object sender, RoutedEventArgs e)
         {
 
-            Int32 maxValue = 1500;
+            Int32 maxValue = 1050;
             try
             {
                 if (Convert.ToInt32(period0sum.Text) > maxValue || Convert.ToInt32(period1sum.Text) > maxValue || Convert.ToInt32(period2sum.Text) > maxValue || Convert.ToInt32(period3sum.Text) > maxValue)
@@ -586,6 +586,11 @@ namespace Ibsys2
 
         private void DirectNextButton_Click(object sender, RoutedEventArgs e)
         {
+            if (Convert.ToInt32(s41.Text) > 1050 || (Convert.ToInt32(period0sum.Text) + Convert.ToInt32(s41.Text)) > 1050)
+            {
+                MessageBox.Show("Summe zu groß");
+                return;
+            }
             Ui.EnableNextTab(sicherheitsbestandtab, MainTabControl);
         }
 
