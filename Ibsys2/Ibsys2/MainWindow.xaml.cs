@@ -70,6 +70,7 @@ namespace Ibsys2
                 {
 
                     Pathtextbox.Text = xmlFilePath;
+                    exportpath = xmlFilePath;
                     checkMalformedXML();
                     found = true;
 
@@ -86,6 +87,7 @@ namespace Ibsys2
 
                     Pathtextbox.Text = xmlFilePath;
                     checkMalformedXML();
+                    exportpath = xmlFilePath;
                     found = true;
                     break;
                 }
@@ -99,6 +101,7 @@ namespace Ibsys2
 
                     Pathtextbox.Text = xmlFilePath;
                     checkMalformedXML();
+                    exportpath = xmlFilePath;
                     found = true;
                     break;
                 }
@@ -112,6 +115,7 @@ namespace Ibsys2
 
                     Pathtextbox.Text = xmlFilePath;
                     checkMalformedXML();
+                    exportpath = xmlFilePath;
                     found = true;
                     break;
                 }
@@ -126,6 +130,7 @@ namespace Ibsys2
 
                     Pathtextbox.Text = xmlFilePath;
                     checkMalformedXML();
+                    exportpath = xmlFilePath;
                     found = true;
                     break;
                 }
@@ -139,6 +144,7 @@ namespace Ibsys2
 
                     Pathtextbox.Text = xmlFilePath;
                     checkMalformedXML();
+                    exportpath = xmlFilePath;
                     found = true;
                     break;
                 }
