@@ -49,6 +49,7 @@ namespace Ibsys2
                 return _class;
             }
         }
+        string exportpath = "";
         public MainWindow()
         {
            
