@@ -557,46 +557,303 @@ namespace Ibsys2
             UpdatePlanningFields();
         }
 
-        private void UpdatePlanningFields() {
+        private void UpdatePlanningFields()
+        {
+            ValueStore vs = ValueStore.Instance;
+            Warehousestock w = Warehousestock.Class;
+            Waitinglistworkstations wlw = Waitinglistworkstations.Class;
+            Ordersinwork oiw = Ordersinwork.Class;
+
+            //Kinderfahrrad
+            kind11.Text = vs.vertriebswunschP1.ToString();
+            kind31.Text = vs.sicherheitsbestandP1.ToString();
+            kind41.Text = w.GetArticleByID(1).Amount.ToString();
+            kind51.Text = wlw.GetArticleAmountByID(1).ToString();
+            kind61.Text = oiw.GetArticleAmountByID(1).ToString();
             kind71.Text = Produktionsplanung.p1.ToString();
+
+            kind12.Text = Produktionsplanung.p1.ToString();
+            kind22.Text = wlw.GetArticleAmountByID(1).ToString();
+            kind32.Text = vs.sicherheitsbestandP1.ToString();
+            kind42.Text = (w.GetArticleByID(26).Amount / 3).ToString();
+            kind52.Text = (wlw.GetArticleAmountByID(26) / 3).ToString();
+            kind62.Text = (oiw.GetArticleAmountByID(26) / 3).ToString();
             kind72.Text = Produktionsplanung.e26K.ToString();
+
+            kind13.Text = Produktionsplanung.p1.ToString();
+            kind23.Text = wlw.GetArticleAmountByID(1).ToString();
+            kind33.Text = vs.sicherheitsbestandP1.ToString();
+            kind43.Text = w.GetArticleByID(51).Amount.ToString();
+            kind53.Text = wlw.GetArticleAmountByID(51).ToString();
+            kind63.Text = oiw.GetArticleAmountByID(51).ToString();
             kind73.Text = Produktionsplanung.e51.ToString();
+
+            kind14.Text = Produktionsplanung.e51.ToString();
+            kind24.Text = wlw.GetArticleAmountByID(51).ToString();
+            kind34.Text = vs.sicherheitsbestandP1.ToString();
+            kind44.Text = (w.GetArticleByID(16).Amount / 3).ToString();
+            kind54.Text = (wlw.GetArticleAmountByID(16) / 3).ToString();
+            kind64.Text = (oiw.GetArticleAmountByID(16) / 3).ToString();
             kind74.Text = Produktionsplanung.e16K.ToString();
+
+            kind15.Text = Produktionsplanung.e51.ToString();
+            kind25.Text = wlw.GetArticleAmountByID(51).ToString();
+            kind35.Text = vs.sicherheitsbestandP1.ToString();
+            kind45.Text = (w.GetArticleByID(17).Amount / 3).ToString();
+            kind55.Text = (wlw.GetArticleAmountByID(17) / 3).ToString();
+            kind65.Text = (oiw.GetArticleAmountByID(17) / 3).ToString();
             kind75.Text = Produktionsplanung.e17K.ToString();
+
+            kind16.Text = Produktionsplanung.e51.ToString();
+            kind26.Text = wlw.GetArticleAmountByID(51).ToString();
+            kind36.Text = vs.sicherheitsbestandP1.ToString();
+            kind46.Text = w.GetArticleByID(50).Amount.ToString();
+            kind56.Text = wlw.GetArticleAmountByID(50).ToString();
+            kind66.Text = oiw.GetArticleAmountByID(50).ToString();
             kind76.Text = Produktionsplanung.e50.ToString();
+
+            kind17.Text = Produktionsplanung.e50.ToString();
+            kind27.Text = wlw.GetArticleAmountByID(50).ToString();
+            kind37.Text = vs.sicherheitsbestandP1.ToString();
+            kind47.Text = w.GetArticleByID(4).Amount.ToString();
+            kind57.Text = wlw.GetArticleAmountByID(4).ToString();
+            kind67.Text = oiw.GetArticleAmountByID(4).ToString();
             kind77.Text = Produktionsplanung.e4.ToString();
+
+            kind18.Text = Produktionsplanung.e50.ToString();
+            kind28.Text = wlw.GetArticleAmountByID(50).ToString();
+            kind38.Text = vs.sicherheitsbestandP1.ToString();
+            kind48.Text = w.GetArticleByID(10).Amount.ToString();
+            kind58.Text = wlw.GetArticleAmountByID(10).ToString();
+            kind68.Text = oiw.GetArticleAmountByID(10).ToString();
             kind78.Text = Produktionsplanung.e10.ToString();
+
+            kind19.Text = Produktionsplanung.e50.ToString();
+            kind29.Text = wlw.GetArticleAmountByID(50).ToString();
+            kind39.Text = vs.sicherheitsbestandP1.ToString();
+            kind49.Text = w.GetArticleByID(49).Amount.ToString();
+            kind59.Text = wlw.GetArticleAmountByID(49).ToString();
+            kind69.Text = oiw.GetArticleAmountByID(49).ToString();
             kind79.Text = Produktionsplanung.e49.ToString();
+
+            kind110.Text = Produktionsplanung.e49.ToString();
+            kind210.Text = wlw.GetArticleAmountByID(49).ToString();
+            kind310.Text = vs.sicherheitsbestandP1.ToString();
+            kind410.Text = w.GetArticleByID(7).Amount.ToString();
+            kind510.Text = wlw.GetArticleAmountByID(7).ToString();
+            kind610.Text = oiw.GetArticleAmountByID(7).ToString();
             kind710.Text = Produktionsplanung.e7.ToString();
+
+            kind111.Text = Produktionsplanung.e49.ToString();
+            kind211.Text = wlw.GetArticleAmountByID(49).ToString();
+            kind311.Text = vs.sicherheitsbestandP1.ToString();
+            kind411.Text = w.GetArticleByID(13).Amount.ToString();
+            kind511.Text = wlw.GetArticleAmountByID(13).ToString();
+            kind611.Text = oiw.GetArticleAmountByID(13).ToString();
             kind711.Text = Produktionsplanung.e13.ToString();
+
+            kind112.Text = Produktionsplanung.e49.ToString();
+            kind212.Text = wlw.GetArticleAmountByID(49).ToString();
+            kind312.Text = vs.sicherheitsbestandP1.ToString();
+            kind412.Text = w.GetArticleByID(18).Amount.ToString();
+            kind512.Text = wlw.GetArticleAmountByID(18).ToString();
+            kind612.Text = oiw.GetArticleAmountByID(18).ToString();
             kind712.Text = Produktionsplanung.e18.ToString();
 
+
+            //Damenfahhrad
+            damen11.Text = vs.vertriebswunschP2.ToString();
+            damen31.Text = vs.sicherheitsbestandP2.ToString();
+            damen41.Text = w.GetArticleByID(2).Amount.ToString();
+            damen51.Text = wlw.GetArticleAmountByID(2).ToString();
+            damen61.Text = oiw.GetArticleAmountByID(2).ToString();
             damen71.Text = Produktionsplanung.p2.ToString();
+
+            damen12.Text = Produktionsplanung.p2.ToString();
+            damen22.Text = wlw.GetArticleAmountByID(2).ToString();
+            damen32.Text = vs.sicherheitsbestandP2.ToString();
+            damen42.Text = (w.GetArticleByID(26).Amount / 3).ToString();
+            damen52.Text = (wlw.GetArticleAmountByID(26) / 3).ToString();
+            damen62.Text = (oiw.GetArticleAmountByID(26) / 3).ToString();
             damen72.Text = Produktionsplanung.e26D.ToString();
+
+            damen13.Text = Produktionsplanung.p2.ToString();
+            damen23.Text = wlw.GetArticleAmountByID(2).ToString();
+            damen33.Text = vs.sicherheitsbestandP2.ToString();
+            damen43.Text = w.GetArticleByID(56).Amount.ToString();
+            damen53.Text = wlw.GetArticleAmountByID(56).ToString();
+            damen63.Text = oiw.GetArticleAmountByID(56).ToString();
             damen73.Text = Produktionsplanung.e56.ToString();
+
+            damen14.Text = Produktionsplanung.e56.ToString();
+            damen24.Text = wlw.GetArticleAmountByID(56).ToString();
+            damen34.Text = vs.sicherheitsbestandP2.ToString();
+            damen44.Text = (w.GetArticleByID(16).Amount / 3).ToString();
+            damen54.Text = (wlw.GetArticleAmountByID(16) / 3).ToString();
+            damen64.Text = (oiw.GetArticleAmountByID(16) / 3).ToString();
             damen74.Text = Produktionsplanung.e16D.ToString();
+
+            damen15.Text = Produktionsplanung.e56.ToString();
+            damen25.Text = wlw.GetArticleAmountByID(56).ToString();
+            damen35.Text = vs.sicherheitsbestandP2.ToString();
+            damen45.Text = (w.GetArticleByID(17).Amount / 3).ToString();
+            damen55.Text = (wlw.GetArticleAmountByID(17) / 3).ToString();
+            damen65.Text = (oiw.GetArticleAmountByID(17) / 3).ToString();
             damen75.Text = Produktionsplanung.e17D.ToString();
+
+            damen16.Text = Produktionsplanung.e56.ToString();
+            damen26.Text = wlw.GetArticleAmountByID(56).ToString();
+            damen36.Text = vs.sicherheitsbestandP2.ToString();
+            damen46.Text = w.GetArticleByID(55).Amount.ToString();
+            damen56.Text = wlw.GetArticleAmountByID(55).ToString();
+            damen66.Text = oiw.GetArticleAmountByID(55).ToString();
             damen76.Text = Produktionsplanung.e55.ToString();
+
+            damen17.Text = Produktionsplanung.e55.ToString();
+            damen27.Text = wlw.GetArticleAmountByID(55).ToString();
+            damen37.Text = vs.sicherheitsbestandP2.ToString();
+            damen47.Text = w.GetArticleByID(5).Amount.ToString();
+            damen57.Text = wlw.GetArticleAmountByID(5).ToString();
+            damen67.Text = oiw.GetArticleAmountByID(5).ToString();
             damen77.Text = Produktionsplanung.e5.ToString();
+
+            damen18.Text = Produktionsplanung.e55.ToString();
+            damen28.Text = wlw.GetArticleAmountByID(55).ToString();
+            damen38.Text = vs.sicherheitsbestandP2.ToString();
+            damen48.Text = w.GetArticleByID(11).Amount.ToString();
+            damen58.Text = wlw.GetArticleAmountByID(11).ToString();
+            damen68.Text = oiw.GetArticleAmountByID(11).ToString();
             damen78.Text = Produktionsplanung.e11.ToString();
+
+            damen19.Text = Produktionsplanung.e55.ToString();
+            damen29.Text = wlw.GetArticleAmountByID(55).ToString();
+            damen39.Text = vs.sicherheitsbestandP2.ToString();
+            damen49.Text = w.GetArticleByID(54).Amount.ToString();
+            damen59.Text = wlw.GetArticleAmountByID(54).ToString();
+            damen69.Text = oiw.GetArticleAmountByID(54).ToString();
             damen79.Text = Produktionsplanung.e54.ToString();
+
+            damen110.Text = Produktionsplanung.e54.ToString();
+            damen210.Text = wlw.GetArticleAmountByID(54).ToString();
+            damen310.Text = vs.sicherheitsbestandP2.ToString();
+            damen410.Text = w.GetArticleByID(8).Amount.ToString();
+            damen510.Text = wlw.GetArticleAmountByID(8).ToString();
+            damen610.Text = oiw.GetArticleAmountByID(8).ToString();
             damen710.Text = Produktionsplanung.e8.ToString();
+
+            damen111.Text = Produktionsplanung.e54.ToString();
+            damen211.Text = wlw.GetArticleAmountByID(54).ToString();
+            damen311.Text = vs.sicherheitsbestandP2.ToString();
+            damen411.Text = w.GetArticleByID(14).Amount.ToString();
+            damen511.Text = wlw.GetArticleAmountByID(14).ToString();
+            damen611.Text = oiw.GetArticleAmountByID(14).ToString();
             damen711.Text = Produktionsplanung.e14.ToString();
+
+            damen112.Text = Produktionsplanung.e54.ToString();
+            damen212.Text = wlw.GetArticleAmountByID(54).ToString();
+            damen312.Text = vs.sicherheitsbestandP2.ToString();
+            damen412.Text = w.GetArticleByID(19).Amount.ToString();
+            damen512.Text = wlw.GetArticleAmountByID(19).ToString();
+            damen612.Text = oiw.GetArticleAmountByID(19).ToString();
             damen712.Text = Produktionsplanung.e19.ToString();
 
 
+            //Herrenfahrrad
+            herren11.Text = vs.vertriebswunschP3.ToString();
+            herren31.Text = vs.sicherheitsbestandP3.ToString();
+            herren41.Text = w.GetArticleByID(3).Amount.ToString();
+            herren51.Text = wlw.GetArticleAmountByID(3).ToString();
+            herren61.Text = oiw.GetArticleAmountByID(3).ToString();
             herren71.Text = Produktionsplanung.p3.ToString();
+
+            herren12.Text = Produktionsplanung.p3.ToString();
+            herren22.Text = wlw.GetArticleAmountByID(3).ToString();
+            herren32.Text = vs.sicherheitsbestandP2.ToString();
+            herren42.Text = (w.GetArticleByID(26).Amount / 3).ToString();
+            herren52.Text = (wlw.GetArticleAmountByID(26) / 3).ToString();
+            herren62.Text = (oiw.GetArticleAmountByID(26) / 3).ToString();
             herren72.Text = Produktionsplanung.e26H.ToString();
+
+            herren13.Text = Produktionsplanung.p3.ToString();
+            herren23.Text = wlw.GetArticleAmountByID(3).ToString();
+            herren33.Text = vs.sicherheitsbestandP2.ToString();
+            herren43.Text = w.GetArticleByID(31).Amount.ToString();
+            herren53.Text = wlw.GetArticleAmountByID(31).ToString();
+            herren63.Text = oiw.GetArticleAmountByID(31).ToString();
             herren73.Text = Produktionsplanung.e31.ToString();
+
+            herren14.Text = Produktionsplanung.e31.ToString();
+            herren24.Text = wlw.GetArticleAmountByID(31).ToString();
+            herren34.Text = vs.sicherheitsbestandP2.ToString();
+            herren44.Text = (w.GetArticleByID(16).Amount / 3).ToString();
+            herren54.Text = (wlw.GetArticleAmountByID(16) / 3).ToString();
+            herren64.Text = (oiw.GetArticleAmountByID(16) / 3).ToString();
             herren74.Text = Produktionsplanung.e16H.ToString();
+
+            herren15.Text = Produktionsplanung.e31.ToString();
+            herren25.Text = wlw.GetArticleAmountByID(31).ToString();
+            herren35.Text = vs.sicherheitsbestandP2.ToString();
+            herren45.Text = (w.GetArticleByID(17).Amount / 3).ToString();
+            herren55.Text = (wlw.GetArticleAmountByID(17) / 3).ToString();
+            herren65.Text = (oiw.GetArticleAmountByID(17) / 3).ToString();
             herren75.Text = Produktionsplanung.e17H.ToString();
+
+            herren16.Text = Produktionsplanung.e31.ToString();
+            herren26.Text = wlw.GetArticleAmountByID(31).ToString();
+            herren36.Text = vs.sicherheitsbestandP2.ToString();
+            herren46.Text = w.GetArticleByID(30).Amount.ToString();
+            herren56.Text = wlw.GetArticleAmountByID(30).ToString();
+            herren66.Text = oiw.GetArticleAmountByID(30).ToString();
             herren76.Text = Produktionsplanung.e30.ToString();
+
+            herren17.Text = Produktionsplanung.e30.ToString();
+            herren27.Text = wlw.GetArticleAmountByID(30).ToString();
+            herren37.Text = vs.sicherheitsbestandP2.ToString();
+            herren47.Text = w.GetArticleByID(6).Amount.ToString();
+            herren57.Text = wlw.GetArticleAmountByID(6).ToString();
+            herren67.Text = oiw.GetArticleAmountByID(6).ToString();
             herren77.Text = Produktionsplanung.e6.ToString();
+
+            herren18.Text = Produktionsplanung.e30.ToString();
+            herren28.Text = wlw.GetArticleAmountByID(30).ToString();
+            herren38.Text = vs.sicherheitsbestandP2.ToString();
+            herren48.Text = w.GetArticleByID(12).Amount.ToString();
+            herren58.Text = wlw.GetArticleAmountByID(12).ToString();
+            herren68.Text = oiw.GetArticleAmountByID(12).ToString();
             herren78.Text = Produktionsplanung.e12.ToString();
+
+            herren19.Text = Produktionsplanung.e30.ToString();
+            herren29.Text = wlw.GetArticleAmountByID(30).ToString();
+            herren39.Text = vs.sicherheitsbestandP2.ToString();
+            herren49.Text = w.GetArticleByID(29).Amount.ToString();
+            herren59.Text = wlw.GetArticleAmountByID(29).ToString();
+            herren69.Text = oiw.GetArticleAmountByID(29).ToString();
             herren79.Text = Produktionsplanung.e29.ToString();
+
+            herren110.Text = Produktionsplanung.e29.ToString();
+            herren210.Text = wlw.GetArticleAmountByID(29).ToString();
+            herren310.Text = vs.sicherheitsbestandP2.ToString();
+            herren410.Text = w.GetArticleByID(9).Amount.ToString();
+            herren510.Text = wlw.GetArticleAmountByID(9).ToString();
+            herren610.Text = oiw.GetArticleAmountByID(9).ToString();
             herren710.Text = Produktionsplanung.e9.ToString();
+
+            herren111.Text = Produktionsplanung.e29.ToString();
+            herren211.Text = wlw.GetArticleAmountByID(29).ToString();
+            herren311.Text = vs.sicherheitsbestandP2.ToString();
+            herren411.Text = w.GetArticleByID(15).Amount.ToString();
+            herren511.Text = wlw.GetArticleAmountByID(15).ToString();
+            herren611.Text = oiw.GetArticleAmountByID(15).ToString();
             herren711.Text = Produktionsplanung.e15.ToString();
+
+            herren112.Text = Produktionsplanung.e29.ToString();
+            herren212.Text = wlw.GetArticleAmountByID(29).ToString();
+            herren312.Text = vs.sicherheitsbestandP2.ToString();
+            herren412.Text = w.GetArticleByID(20).Amount.ToString();
+            herren512.Text = wlw.GetArticleAmountByID(20).ToString();
+            herren612.Text = oiw.GetArticleAmountByID(20).ToString();
             herren712.Text = Produktionsplanung.e20.ToString();
+
         }
             private bool AllFilled()
         {
