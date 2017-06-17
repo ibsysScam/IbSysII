@@ -13,6 +13,8 @@ namespace Ibsys2.Static.Output {
         private List<OrderlistItem> _list = new List<OrderlistItem>();
         private static Orderlist _class;
 
+        public List<OrderlistItem> Liste { get { return _list; } }
+
         public static Orderlist Class {
             get {
                 if (_class == null)

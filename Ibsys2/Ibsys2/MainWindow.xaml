@@ -877,10 +877,10 @@
                                     <RowDefinition Height="147*"/>
                                 </Grid.RowDefinitions>
                                 <GroupBox x:Name="Work3Box" Grid.Column="0" Header="Arbeitsplatz 3">
-                                    <DataGrid Name="dataGrid3" Margin="2" />
+                                    <DataGrid Name="dataGrid3" Margin="2" IsReadOnly="True"/>
                                 </GroupBox>
                                 <GroupBox x:Name="Plan3Box" Grid.Row="1" Grid.Column="0" Header="Kapazitätsplanung Arbeitsplatz 3">
-                                    <DataGrid Name="dataGrid18" Margin="2" />
+                                    <DataGrid Name="dataGrid18" Margin="2" IsReadOnly="True"/>
                                 </GroupBox>
                             </Grid>
                         </TabItem>
@@ -892,10 +892,10 @@
                                     <RowDefinition Height="147*"/>
                                 </Grid.RowDefinitions>
                                 <GroupBox x:Name="Work4Box" Grid.Column="0" Header="Arbeitsplatz 4">
-                                    <DataGrid Name="dataGrid4" Margin="2" />
+                                    <DataGrid Name="dataGrid4" Margin="2" IsReadOnly="True"/>
                                 </GroupBox>
                                 <GroupBox x:Name="Plan4Box" Grid.Row="1" Grid.Column="0" Header="Kapazitätsplanung Arbeitsplatz 4">
-                                    <DataGrid Name="dataGrid19" Margin="2" />
+                                    <DataGrid Name="dataGrid19" Margin="2" IsReadOnly="True"/>
                                 </GroupBox>
                             </Grid>
                         </TabItem>
@@ -907,10 +907,10 @@
                                     <RowDefinition Height="147*"/>
                                 </Grid.RowDefinitions>
                                 <GroupBox x:Name="Work6Box" Grid.Column="0" Header="Arbeitsplatz 6">
-                                    <DataGrid Name="dataGrid6" Margin="2" />
+                                    <DataGrid Name="dataGrid6" Margin="2" IsReadOnly="True"/>
                                 </GroupBox>
                                 <GroupBox x:Name="Plan6Box" Grid.Row="1" Grid.Column="0" Header="Kapazitätsplanung Arbeitsplatz 6">
-                                    <DataGrid Name="dataGrid20" Margin="2" />
+                                    <DataGrid Name="dataGrid20" Margin="2" IsReadOnly="True"/>
                                 </GroupBox>
                             </Grid>
                         </TabItem>
@@ -922,10 +922,10 @@
                                     <RowDefinition Height="147*"/>
                                 </Grid.RowDefinitions>
                                 <GroupBox x:Name="Work7Box" Grid.Column="0" Header="Arbeitsplatz 7">
-                                    <DataGrid Name="dataGrid7" Margin="2" />
+                                    <DataGrid Name="dataGrid7" Margin="2" IsReadOnly="True"/>
                                 </GroupBox>
                                 <GroupBox x:Name="Plan7Box" Grid.Row="1" Grid.Column="0" Header="Kapazitätsplanung Arbeitsplatz 7">
-                                    <DataGrid Name="dataGrid21" Margin="2" />
+                                    <DataGrid Name="dataGrid21" Margin="2" IsReadOnly="True"/>
                                 </GroupBox>
                             </Grid>
                         </TabItem>
@@ -937,10 +937,10 @@
                                     <RowDefinition Height="147*"/>
                                 </Grid.RowDefinitions>
                                 <GroupBox x:Name="Work8Box" Grid.Column="0" Header="Arbeitsplatz 8">
-                                    <DataGrid Name="dataGrid8" Margin="2" />
+                                    <DataGrid Name="dataGrid8" Margin="2" IsReadOnly="True"/>
                                 </GroupBox>
                                 <GroupBox x:Name="Plan8Box" Grid.Row="1" Grid.Column="0" Header="Kapazitätsplanung Arbeitsplatz 8">
-                                    <DataGrid Name="dataGrid22" Margin="2" />
+                                    <DataGrid Name="dataGrid22" Margin="2" IsReadOnly="True"/>
                                 </GroupBox>
                             </Grid>
                         </TabItem>
@@ -952,10 +952,10 @@
                                     <RowDefinition Height="147*"/>
                                 </Grid.RowDefinitions>
                                 <GroupBox x:Name="Work9Box" Grid.Column="0" Header="Arbeitsplatz 9">
-                                    <DataGrid Name="dataGrid9" Margin="2" />
+                                    <DataGrid Name="dataGrid9" Margin="2" IsReadOnly="True"/>
                                 </GroupBox>
                                 <GroupBox x:Name="Plan9Box" Grid.Row="1" Grid.Column="0" Header="Kapazitätsplanung Arbeitsplatz 9">
-                                    <DataGrid Name="dataGrid23" Margin="2" />
+                                    <DataGrid Name="dataGrid23" Margin="2" IsReadOnly="True"/>
                                 </GroupBox>
                             </Grid>
                         </TabItem>
@@ -967,10 +967,10 @@
                                     <RowDefinition Height="147*"/>
                                 </Grid.RowDefinitions>
                                 <GroupBox x:Name="Work10Box" Grid.Column="0" Header="Arbeitsplatz 10">
-                                    <DataGrid Name="dataGrid10" Margin="2" />
+                                    <DataGrid Name="dataGrid10" Margin="2" IsReadOnly="True"/>
                                 </GroupBox>
                                 <GroupBox x:Name="Plan10Box" Grid.Row="1" Grid.Column="0" Header="Kapazitätsplanung Arbeitsplatz 10">
-                                    <DataGrid Name="dataGrid24" Margin="2" />
+                                    <DataGrid Name="dataGrid24" Margin="2" IsReadOnly="True"/>
                                 </GroupBox>
                             </Grid>
                         </TabItem>
@@ -982,10 +982,10 @@
                                     <RowDefinition Height="147*"/>
                                 </Grid.RowDefinitions>
                                 <GroupBox x:Name="Work11Box" Grid.Column="0" Header="Arbeitsplatz 11">
-                                    <DataGrid Name="dataGrid11" Margin="2" />
+                                    <DataGrid Name="dataGrid11" Margin="2" IsReadOnly="True"/>
                                 </GroupBox>
                                 <GroupBox x:Name="Plan11Box" Grid.Row="1" Grid.Column="0" Header="Kapazitätsplanung Arbeitsplatz 11">
-                                    <DataGrid Name="dataGrid25" Margin="2" />
+                                    <DataGrid Name="dataGrid25" Margin="2" IsReadOnly="True"/>
                                 </GroupBox>
                             </Grid>
                         </TabItem>
@@ -997,10 +997,10 @@
                                     <RowDefinition Height="147*"/>
                                 </Grid.RowDefinitions>
                                 <GroupBox x:Name="Work12Box" Grid.Column="0" Header="Arbeitsplatz 12">
-                                    <DataGrid Name="dataGrid12" Margin="2" />
+                                    <DataGrid Name="dataGrid12" Margin="2" IsReadOnly="True"/>
                                 </GroupBox>
                                 <GroupBox x:Name="Plan12Box" Grid.Row="1" Grid.Column="0" Header="Kapazitätsplanung Arbeitsplatz 12">
-                                    <DataGrid Name="dataGrid26" Margin="2" />
+                                    <DataGrid Name="dataGrid26" Margin="2" IsReadOnly="True"/>
                                 </GroupBox>
                             </Grid>
                         </TabItem>
@@ -1012,10 +1012,10 @@
                                     <RowDefinition Height="147*"/>
                                 </Grid.RowDefinitions>
                                 <GroupBox x:Name="Work13Box" Grid.Column="0" Header="Arbeitsplatz 13">
-                                    <DataGrid Name="dataGrid13" Margin="2" />
+                                    <DataGrid Name="dataGrid13" Margin="2" IsReadOnly="True"/>
                                 </GroupBox>
                                 <GroupBox x:Name="Plan13Box" Grid.Row="1" Grid.Column="0" Header="Kapazitätsplanung Arbeitsplatz 13">
-                                    <DataGrid Name="dataGrid27" Margin="2" />
+                                    <DataGrid Name="dataGrid27" Margin="2" IsReadOnly="True"/>
                                 </GroupBox>
                             </Grid>
                         </TabItem>
@@ -1027,10 +1027,10 @@
                                     <RowDefinition Height="147*"/>
                                 </Grid.RowDefinitions>
                                 <GroupBox x:Name="Work14Box" Grid.Column="0" Header="Arbeitsplatz 14">
-                                    <DataGrid Name="dataGrid14" Margin="2" />
+                                    <DataGrid Name="dataGrid14" Margin="2" IsReadOnly="True"/>
                                 </GroupBox>
                                 <GroupBox x:Name="Plan14Box" Grid.Row="1" Grid.Column="0" Header="Kapazitätsplanung Arbeitsplatz 14">
-                                    <DataGrid Name="dataGrid28" Margin="2" />
+                                    <DataGrid Name="dataGrid28" Margin="2" IsReadOnly="True"/>
                                 </GroupBox>
                             </Grid>
                         </TabItem>
@@ -1042,10 +1042,10 @@
                                     <RowDefinition Height="147*"/>
                                 </Grid.RowDefinitions>
                                 <GroupBox x:Name="Work15Box" Grid.Column="0" Header="Arbeitsplatz 15">
-                                    <DataGrid Name="dataGrid15" Margin="2" />
+                                    <DataGrid Name="dataGrid15" Margin="2" IsReadOnly="True"/>
                                 </GroupBox>
                                 <GroupBox x:Name="Plan15Box" Grid.Row="1" Grid.Column="0" Header="Kapazitätsplanung Arbeitsplatz 15">
-                                    <DataGrid Name="dataGrid29" Margin="2" />
+                                    <DataGrid Name="dataGrid29" Margin="2" IsReadOnly="True"/>
                                 </GroupBox>
                             </Grid>
                         </TabItem>
@@ -1060,13 +1060,13 @@
                     <TabControl TabStripPlacement="Left">
                         <TabItem x:Name="Bestell" Header="Bestellübersicht">
                             <Grid>
-                                <DataGrid Name="dataGrid31" Margin="2" />
+                                <DataGrid Name="dataGrid31" Margin="2" CellEditEnding="UpdateEinkaufXML"  />
                             </Grid>
                         </TabItem>
 
                         <TabItem x:Name="Stammdaten" Header="Stammdaten">
                             <Grid>
-                                <DataGrid Name="dataGrid30" Margin="2" />
+                                <DataGrid Name="dataGrid30" Margin="2" IsReadOnly="True"/>
                             </Grid>
                         </TabItem>
 

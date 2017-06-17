@@ -194,6 +194,7 @@ namespace Ibsys2.Service {
             _translate.Add("PRIO", "Priorisierung");
             _translate.Add("DOWN", "runter");
             _translate.Add("UP", "hoch");
+            _translate.Add("MODE", "Modus");
         }
         
     }

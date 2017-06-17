@@ -183,6 +183,7 @@ namespace Ibsys2.Service {
             _translate.Add("RETAILPRICE", "retail price");
             _translate.Add("PRODUCTIONPLAN", "Material Planning");
             _translate.Add("PREORDER", "Orders in the waiting queue (Pre period)");
+            _translate.Add("MODE", "Mode");
             _translate.Add("CHILD", "Child's bike");
             _translate.Add("WOMAN", "Lady's bike");
             _translate.Add("MAN", "Man's bike");
