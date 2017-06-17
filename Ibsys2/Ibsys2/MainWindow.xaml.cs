@@ -358,37 +358,8 @@ namespace Ibsys2
 
         public ObservableCollection<Lagerbestand> CreateLagerbestand()
         {
-            ObservableCollection<Lagerbestand> lagerbestand = new ObservableCollection<Lagerbestand>();
-            lagerbestand.Add(new Lagerbestand { Kaufteileno = "21", Kaufteil = TranslateService.Class.GetTranslation("CHAIN"), Verwendung = "K", Teilewert = "5,00", Diskontmenge = "300", Bestellkosten = "50", Lieferfrist = "1,8", Abweichung = "0,4" });
-            lagerbestand.Add(new Lagerbestand { Kaufteileno = "22", Kaufteil = TranslateService.Class.GetTranslation("CHAIN"), Verwendung = "D", Teilewert = "6,50", Diskontmenge = "300", Bestellkosten = "50", Lieferfrist = "1,7", Abweichung = "0,4" });
-            lagerbestand.Add(new Lagerbestand { Kaufteileno = "23", Kaufteil = TranslateService.Class.GetTranslation("CHAIN"), Verwendung = "H", Teilewert = "6,50", Diskontmenge = "300", Bestellkosten = "50", Lieferfrist = "1,2", Abweichung = "0,2" });
-            lagerbestand.Add(new Lagerbestand { Kaufteileno = "24", Kaufteil = TranslateService.Class.GetTranslation("UT_three"), Verwendung = "KDH", Teilewert = "0;06", Diskontmenge = "6100", Bestellkosten = "100", Lieferfrist = "3,2", Abweichung = "0,3" });
-            lagerbestand.Add(new Lagerbestand { Kaufteileno = "25", Kaufteil = TranslateService.Class.GetTranslation("WASHER"), Verwendung = "KDH", Teilewert = "0;06", Diskontmenge = "3600", Bestellkosten = "50", Lieferfrist = "0,9", Abweichung = "0,2" });
-            lagerbestand.Add(new Lagerbestand { Kaufteileno = "27", Kaufteil = TranslateService.Class.GetTranslation("SCREW"), Verwendung = "KDH", Teilewert = "0,1", Diskontmenge = "1800", Bestellkosten = "75", Lieferfrist = "0,9", Abweichung = "0,2" });
-            lagerbestand.Add(new Lagerbestand { Kaufteileno = "28", Kaufteil = TranslateService.Class.GetTranslation("TUBE"), Verwendung = "KDH", Teilewert = "1,20", Diskontmenge = "4500", Bestellkosten = "50", Lieferfrist = "1,7", Abweichung = "0,4" });
-            lagerbestand.Add(new Lagerbestand { Kaufteileno = "32", Kaufteil = TranslateService.Class.GetTranslation("PAINT"), Verwendung = "KDH", Teilewert = "0,75", Diskontmenge = "2700", Bestellkosten = "50", Lieferfrist = "2,1", Abweichung = "0,5" });
-            lagerbestand.Add(new Lagerbestand { Kaufteileno = "33", Kaufteil = TranslateService.Class.GetTranslation("RIM"), Verwendung = "H", Teilewert = "22,00", Diskontmenge = "900", Bestellkosten = "75", Lieferfrist = "1,9", Abweichung = "0,5" });
-            lagerbestand.Add(new Lagerbestand { Kaufteileno = "34", Kaufteil = TranslateService.Class.GetTranslation("SPOKE"), Verwendung = "H", Teilewert = "0,1", Diskontmenge = "22000", Bestellkosten = "50", Lieferfrist = "1,6", Abweichung = "0,3" });
-            lagerbestand.Add(new Lagerbestand { Kaufteileno = "35", Kaufteil = TranslateService.Class.GetTranslation("TAPER"), Verwendung = "KDH", Teilewert = "1,00", Diskontmenge = "3600", Bestellkosten = "75", Lieferfrist = "2,2", Abweichung = "0,4" });
-            lagerbestand.Add(new Lagerbestand { Kaufteileno = "36", Kaufteil = TranslateService.Class.GetTranslation("FREE"), Verwendung = "KDH", Teilewert = "8,00", Diskontmenge = "900", Bestellkosten = "100", Lieferfrist = "1,2", Abweichung = "0,1" });
-            lagerbestand.Add(new Lagerbestand { Kaufteileno = "37", Kaufteil = TranslateService.Class.GetTranslation("FORK"), Verwendung = "KDH", Teilewert = "1,50", Diskontmenge = "900", Bestellkosten = "50", Lieferfrist = "1,5", Abweichung = "0,3" });
-            lagerbestand.Add(new Lagerbestand { Kaufteileno = "38", Kaufteil = TranslateService.Class.GetTranslation("AXLE"), Verwendung = "KDH", Teilewert = "1,50", Diskontmenge = "300", Bestellkosten = "50", Lieferfrist = "1,7", Abweichung = "0,4" });
-            lagerbestand.Add(new Lagerbestand { Kaufteileno = "39", Kaufteil = TranslateService.Class.GetTranslation("SHEET"), Verwendung = "KDH", Teilewert = "1,50", Diskontmenge = "1800", Bestellkosten = "75", Lieferfrist = "1,5", Abweichung = "0,3" });
-            lagerbestand.Add(new Lagerbestand { Kaufteileno = "40", Kaufteil = TranslateService.Class.GetTranslation("HANDLE_BAR"), Verwendung = "KDH", Teilewert = "2,50", Diskontmenge = "900", Bestellkosten = "50", Lieferfrist = "1,7", Abweichung = "0,2" });
-            lagerbestand.Add(new Lagerbestand { Kaufteileno = "41", Kaufteil = TranslateService.Class.GetTranslation("NUT_FOUR"), Verwendung = "KDH", Teilewert = "0,06", Diskontmenge = "900", Bestellkosten = "50", Lieferfrist = "0,9", Abweichung = "0,2" });
-            lagerbestand.Add(new Lagerbestand { Kaufteileno = "42", Kaufteil = TranslateService.Class.GetTranslation("HANDLE_GRIP"), Verwendung = "KDH", Teilewert = "0,10", Diskontmenge = "1800", Bestellkosten = "50", Lieferfrist = "1,2", Abweichung = "0,3" });
-            lagerbestand.Add(new Lagerbestand { Kaufteileno = "43", Kaufteil = TranslateService.Class.GetTranslation("SADDLE"), Verwendung = "KDH", Teilewert = "5,00", Diskontmenge = "2700", Bestellkosten = "75", Lieferfrist = "2,0", Abweichung = "0,5" });
-            lagerbestand.Add(new Lagerbestand { Kaufteileno = "44", Kaufteil = TranslateService.Class.GetTranslation("BAR"), Verwendung = "KDH", Teilewert = "0,50", Diskontmenge = "900", Bestellkosten = "50", Lieferfrist = "1,2", Abweichung = "0,2" });
-            lagerbestand.Add(new Lagerbestand { Kaufteileno = "45", Kaufteil = TranslateService.Class.GetTranslation("NUT_QUARTER"), Verwendung = "KDH", Teilewert = "0,06", Diskontmenge = "900", Bestellkosten = "50", Lieferfrist = "1,7", Abweichung = "0,3" });
-            lagerbestand.Add(new Lagerbestand { Kaufteileno = "46", Kaufteil = TranslateService.Class.GetTranslation("SCREW_QUARTER"), Verwendung = "KDH", Teilewert = "0,10", Diskontmenge = "900", Bestellkosten = "50", Lieferfrist = "0,9", Abweichung = "0,3" });
-            lagerbestand.Add(new Lagerbestand { Kaufteileno = "47", Kaufteil = TranslateService.Class.GetTranslation("SPROCKET"), Verwendung = "KDH", Teilewert = "3,50", Diskontmenge = "900", Bestellkosten = "50", Lieferfrist = "1,1", Abweichung = "0,1" });
-            lagerbestand.Add(new Lagerbestand { Kaufteileno = "48", Kaufteil = TranslateService.Class.GetTranslation("PEDAL"), Verwendung = "KDH", Teilewert = "1,50", Diskontmenge = "1800", Bestellkosten = "75", Lieferfrist = "1,0", Abweichung = "0,2" });
-            lagerbestand.Add(new Lagerbestand { Kaufteileno = "52", Kaufteil = TranslateService.Class.GetTranslation("RIM"), Verwendung = "K", Teilewert = "22,00", Diskontmenge = "600", Bestellkosten = "50", Lieferfrist = "1,6", Abweichung = "0,4" });
-            lagerbestand.Add(new Lagerbestand { Kaufteileno = "53", Kaufteil = TranslateService.Class.GetTranslation("SPOKE"), Verwendung = "K", Teilewert = "0,10", Diskontmenge = "22000", Bestellkosten = "50", Lieferfrist = "1,6", Abweichung = "0,2" });
-            lagerbestand.Add(new Lagerbestand { Kaufteileno = "57", Kaufteil = TranslateService.Class.GetTranslation("RIM"), Verwendung = "D", Teilewert = "22,00", Diskontmenge = "600", Bestellkosten = "50", Lieferfrist = "1,7", Abweichung = "0,3" });
-            lagerbestand.Add(new Lagerbestand { Kaufteileno = "58", Kaufteil = TranslateService.Class.GetTranslation("SPOKE"), Verwendung = "D", Teilewert = "0,10", Diskontmenge = "22000", Bestellkosten = "50", Lieferfrist = "1,6", Abweichung = "0,5" });
-            lagerbestand.Add(new Lagerbestand { Kaufteileno = "59", Kaufteil = TranslateService.Class.GetTranslation("WELDING_WIRES"), Verwendung = "KDH", Teilewert = "0,15", Diskontmenge = "1800", Bestellkosten = "50", Lieferfrist = "0,7", Abweichung = "0,2" });
-            return lagerbestand;
+                    ObservableCollection<Lagerbestand> lagerbestand = new ObservableCollection<Lagerbestand>();
+                    return lagerbestand;
 
         }
 
@@ -716,6 +687,7 @@ namespace Ibsys2
             UpdateKapaFields();
             UpdateEinkauf();
             UpdatePrioFields();
+            UpdateLager();
         }
 
         private void UpdatePlanningFields()
@@ -1076,6 +1048,23 @@ namespace Ibsys2
         }
 
         private bool AllFilled()
+
+        private void UpdateLager()
+        {
+            Warehousestock w = Warehousestock.Class;
+
+            var fields = (ObservableCollection<Lagerbestand>)dataGrid32.ItemsSource;
+            fields.Clear();
+            foreach (var item in Warehousestock.Class.Liste)
+            {
+                fields.Add(new Lagerbestand(item.ID.ToString(), item.Amount.ToString(), item.Startamount.ToString(), item.Pct.ToString(), item.Price.ToString(), item.Stockvalue.ToString()));
+            }
+            /*
+            dataGrid31.Columns[0].IsReadOnly = true;
+            dataGrid31.Columns[0].Header = TranslateService.Class.GetTranslation("ITEM_NO");*/
+        }
+
+        private bool AllFilled()
         {
             if (period0product1.Text == "" || period0product2.Text == "" || period0product3.Text == "" || period1product1.Text == "" || period1product2.Text == "" || period1product3.Text == "" || period2product1.Text == "" || period2product2.Text == "" || period2product3.Text == "")
             {
@@ -1083,7 +1072,6 @@ namespace Ibsys2
             }
             return true;
         }
-
 
         private void PrognosenNextbutton_Click(object sender, RoutedEventArgs e)
         {
@@ -1618,83 +1606,75 @@ public class Lagerbestand : INotifyPropertyChanged
 {
     public event PropertyChangedEventHandler PropertyChanged;
 
-    private string lieferfrist;
-    private string abweichung;
-    public string kaufteileno;
-    public string kaufteil;
-    public string bestellkosten;
-    public string diskontmenge;
-    public string teilewert;
-    public string verwendung;
+    private string artikel;
+    private string menge;
+    public string startmenge;
+    public string menge_startmenge;
+    public string preis;
+    public string lagerwert;
 
-
-    public string Kaufteileno
+    public Lagerbestand(string artikel, string menge, string startmenge, string menge_startmenge, string preis, string lagerwert)
     {
-        get { return kaufteileno; }
-        set
-        {
-            kaufteileno = value; OnPropertyChanged(new PropertyChangedEventArgs("KaufteileNo"));
-        }
+        this.Artikel = artikel;
+        this.Menge = menge;
+        this.Startmenge = startmenge;
+        this.Menge_startmenge = menge_startmenge;
+        this.Preis = preis;
+        this.Lagerwert = lagerwert;
     }
 
-    public string Kaufteil
+
+    public string Artikel
     {
-        get { return kaufteil; }
+        get { return artikel; }
         set
         {
-            kaufteil = value; OnPropertyChanged(new PropertyChangedEventArgs("Kaufteils"));
-        }
-    }
-    public string Verwendung
-    {
-        get { return verwendung; }
-        set
-        {
-            verwendung = value; OnPropertyChanged(new PropertyChangedEventArgs("Verwendung"));
+            artikel = value; OnPropertyChanged(new PropertyChangedEventArgs("Artikel"));
         }
     }
 
-    public string Bestellkosten
+    public string Menge
     {
-        get { return bestellkosten; }
+        get { return menge; }
         set
         {
-            bestellkosten = value; OnPropertyChanged(new PropertyChangedEventArgs("Bestellkosten"));
+            menge = value; OnPropertyChanged(new PropertyChangedEventArgs("Menge"));
         }
     }
-    public string Diskontmenge
+    public string Startmenge
     {
-        get { return diskontmenge; }
+        get { return startmenge; }
         set
         {
-            diskontmenge = value; OnPropertyChanged(new PropertyChangedEventArgs("Diskontmenge"));
-        }
-    }
-    public string Teilewert
-    {
-        get { return teilewert; }
-        set
-        {
-            teilewert = value; OnPropertyChanged(new PropertyChangedEventArgs("Teilewert"));
+            startmenge = value; OnPropertyChanged(new PropertyChangedEventArgs("Startmenge"));
         }
     }
 
-    public string Lieferfrist
+    public string Menge_startmenge
     {
-        get { return lieferfrist; }
+        get { return menge_startmenge; }
         set
         {
-            lieferfrist = value; OnPropertyChanged(new PropertyChangedEventArgs("Lieferfrist"));
+            menge_startmenge = value; OnPropertyChanged(new PropertyChangedEventArgs("Menge Startmenge in Prozent"));
         }
     }
-    public string Abweichung
+    public string Preis
     {
-        get { return abweichung; }
+        get { return preis; }
         set
         {
-            abweichung = value; OnPropertyChanged(new PropertyChangedEventArgs("Abweichung"));
+            preis = value; OnPropertyChanged(new PropertyChangedEventArgs("Preis"));
         }
     }
+    public string Lagerwert
+    {
+        get { return lagerwert; }
+        set
+        {
+            lagerwert = value; OnPropertyChanged(new PropertyChangedEventArgs("Lagerwert"));
+        }
+    }
+    
     protected void OnPropertyChanged(PropertyChangedEventArgs e)
     {
         if (PropertyChanged != null)

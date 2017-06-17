@@ -1072,7 +1072,7 @@
 
                         <TabItem x:Name="Lagerbestand" Header="Lagerbestand">
                             <Grid>
-                                <DataGrid Name="dataGrid32" Margin="2" />
+                                <DataGrid Name="dataGrid32" Margin="2" IsReadOnly="True"/>
                             </Grid>
                         </TabItem>
                     </TabControl>
