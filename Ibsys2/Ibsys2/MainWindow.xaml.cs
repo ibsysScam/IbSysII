@@ -284,7 +284,8 @@ namespace Ibsys2
             kapno.Add(new KapNo { Kapaplanwork = TranslateService.Class.GetTranslation("CAP_REQ_PREV"), Berechnungwork = "" });
             kapno.Add(new KapNo { Kapaplanwork = TranslateService.Class.GetTranslation("SETUP_TIME_PREV"), Berechnungwork = "" });
             kapno.Add(new KapNo { Kapaplanwork = TranslateService.Class.GetTranslation("TOTAL_CAP_REQ"), Berechnungwork = "" });
-            kapno.Add(new KapNo { Kapaplanwork = TranslateService.Class.GetTranslation("SHIFTS_OVERTIME"), Berechnungwork = "" });
+            kapno.Add(new KapNo { Kapaplanwork = TranslateService.Class.GetTranslation("SHIFTS"), Berechnungwork = "" });
+            kapno.Add(new KapNo { Kapaplanwork = TranslateService.Class.GetTranslation("OVERTIMEPERDAY"), Berechnungwork = "" });
             return kapno;
         }
         public ObservableCollection<ItemNo> CreateWork1()
@@ -596,6 +597,7 @@ namespace Ibsys2
             logic.berechnen();
 
             UpdatePlanningFields();
+            UpdateKapaFields();
         }
 
         private void UpdatePlanningFields()
@@ -895,6 +897,37 @@ namespace Ibsys2
             herren612.Text = oiw.GetArticleAmountByID(20).ToString();
             herren712.Text = Produktionsplanung.e20.ToString();
 
+        }
+
+        private void UpdateKapaFields()
+        {
+            UpdateKapaFieldsEach(0, (ObservableCollection<ItemNo>)dataGrid1.ItemsSource, (ObservableCollection<KapNo>)dataGrid16.ItemsSource);
+            UpdateKapaFieldsEach(1, (ObservableCollection<ItemNo>)dataGrid2.ItemsSource, (ObservableCollection<KapNo>)dataGrid17.ItemsSource);
+            UpdateKapaFieldsEach(2, (ObservableCollection<ItemNo>)dataGrid3.ItemsSource, (ObservableCollection<KapNo>)dataGrid18.ItemsSource);
+            UpdateKapaFieldsEach(3, (ObservableCollection<ItemNo>)dataGrid4.ItemsSource, (ObservableCollection<KapNo>)dataGrid19.ItemsSource);
+            UpdateKapaFieldsEach(4, (ObservableCollection<ItemNo>)dataGrid6.ItemsSource, (ObservableCollection<KapNo>)dataGrid20.ItemsSource);
+            UpdateKapaFieldsEach(5, (ObservableCollection<ItemNo>)dataGrid7.ItemsSource, (ObservableCollection<KapNo>)dataGrid21.ItemsSource);
+            UpdateKapaFieldsEach(6, (ObservableCollection<ItemNo>)dataGrid8.ItemsSource, (ObservableCollection<KapNo>)dataGrid22.ItemsSource);
+            UpdateKapaFieldsEach(7, (ObservableCollection<ItemNo>)dataGrid9.ItemsSource, (ObservableCollection<KapNo>)dataGrid23.ItemsSource);
+            UpdateKapaFieldsEach(8, (ObservableCollection<ItemNo>)dataGrid10.ItemsSource, (ObservableCollection<KapNo>)dataGrid24.ItemsSource);
+            UpdateKapaFieldsEach(9, (ObservableCollection<ItemNo>)dataGrid11.ItemsSource, (ObservableCollection<KapNo>)dataGrid25.ItemsSource);
+            UpdateKapaFieldsEach(10, (ObservableCollection<ItemNo>)dataGrid12.ItemsSource, (ObservableCollection<KapNo>)dataGrid26.ItemsSource);
+            UpdateKapaFieldsEach(11, (ObservableCollection<ItemNo>)dataGrid13.ItemsSource, (ObservableCollection<KapNo>)dataGrid27.ItemsSource);
+            UpdateKapaFieldsEach(12, (ObservableCollection<ItemNo>)dataGrid14.ItemsSource, (ObservableCollection<KapNo>)dataGrid28.ItemsSource);
+            UpdateKapaFieldsEach(13, (ObservableCollection<ItemNo>)dataGrid15.ItemsSource, (ObservableCollection<KapNo>)dataGrid29.ItemsSource);
+        }
+
+        private void UpdateKapaFieldsEach(int id, ObservableCollection<ItemNo> ArbeitsPlatz, ObservableCollection<KapNo> ArbeitsPlatzOverview)
+        {
+            foreach (ItemNo platz in ArbeitsPlatz)
+            {
+                int SachNr = System.Convert.ToInt32(Regex.Replace(platz.Sachnr, "[^0-9]+", string.Empty));
+                platz.Gesamtaufwand = Kapazitaetsplanung.arbeitsplatzListe[id].fertigungsListe.Find(x => x.artikelID == SachNr).kapabedarfProTeil.ToString();
+                platz.Menge = Produktionsplanung.getBedarfByID(SachNr).ToString();
+            }
+            for (int i = 0; i< ArbeitsPlatzOverview.Count; i++) {
+                ArbeitsPlatzOverview[i].Berechnungwork = Kapazitaetsplanung.arbeitsplatzListe[id].getFieldsByID(i).ToString();
+            }
         }
             private bool AllFilled()
         {

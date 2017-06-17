@@ -23,6 +23,21 @@ namespace Ibsys2.Berechnungen.Logic
         public int schichten;
         public double ueberstundenInMin;
 
+        public int getFieldsByID(int id)
+        {
+            switch (id)
+            {
+                case 0: return this.kapazitaetsbedarf;
+                case 1: return Convert.ToInt32(this.ruestzeit);
+                case 2: return this.kapabeadarfrueckstand;
+                case 3: return Convert.ToInt32(this.ruestzeitrueckstand);
+                case 4: return Convert.ToInt32(gesamtzeitbedarf);
+                case 5: return this.schichten;
+                case 6: return this.ueberStundenInMinProTag;
+                default: return -1;
+            }
+        }
+
 
         public int ueberStundenInMinProTag {
             get { return Convert.ToInt32(this.ueberstundenInMin / 5); }
@@ -61,25 +76,26 @@ namespace Ibsys2.Berechnungen.Logic
             if (zeitBedarfProPeriode <= 3600)
             {
                 this.schichten = 1;
-                if (zeitBedarfProPeriode >= 2400)
-                    this.ueberstundenInMin = zeitBedarfProPeriode - 2400;
-                else
-                    this.ueberstundenInMin = 0;
+                this.ueberstundenInMin = zeitBedarfProPeriode - 2400;
             }
             else if (zeitBedarfProPeriode <= 6000)
             {
                 this.schichten = 2;
-                if (zeitBedarfProPeriode >= 4800)
-                    this.ueberstundenInMin = zeitBedarfProPeriode - 4800;
-                else
-                    this.ueberstundenInMin = 0;
+                this.ueberstundenInMin = zeitBedarfProPeriode - 4800;
+
             }
             else if (zeitBedarfProPeriode <= 7200)
             {
                 this.schichten = 3;
-                this.ueberstundenInMin = zeitBedarfProPeriode - 7200;
+                this.ueberstundenInMin = 0;
             }
-
+            else {
+                this.schichten = 3;
+                this.gesamtzeitbedarf = 7200;
+                this.ueberstundenInMin = 0;
+            }
+            if (ueberstundenInMin < 0)
+                this.ueberstundenInMin = 0;
         }
 
     }
