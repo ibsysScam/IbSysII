@@ -555,6 +555,7 @@ namespace Ibsys2
             logic.berechnen();
 
             UpdatePlanningFields();
+            UpdateKapaFields();
         }
 
         private void UpdatePlanningFields()
@@ -854,6 +855,15 @@ namespace Ibsys2
             herren612.Text = oiw.GetArticleAmountByID(20).ToString();
             herren712.Text = Produktionsplanung.e20.ToString();
 
+        }
+
+        private void UpdateKapaFields()
+        {
+            var ArbeitsPlatz1 = dataGrid1.ItemsSource;
+            foreach (ItemNo platz in ArbeitsPlatz1)
+            {
+                platz.Menge = "7";
+            }
         }
             private bool AllFilled()
         {
