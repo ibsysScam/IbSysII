@@ -1072,7 +1072,7 @@
 
                         <TabItem x:Name="Lagerbestand" Header="Lagerbestand">
                             <Grid>
-                                <DataGrid Name="dataGrid32" Margin="2" />
+                                <DataGrid Name="dataGrid32" Margin="2" IsReadOnly="True"/>
                             </Grid>
                         </TabItem>
                     </TabControl>
@@ -1082,10 +1082,14 @@
 
             <TabItem x:Name="Priorisierungtab" Header="Priorisierung" IsEnabled="False">
                 <Grid Background="#FFE5E5E5">
-                    <DataGrid Height="287" HorizontalAlignment="Left" Margin="93,12,0,0"  Name="prio" VerticalAlignment="Top" Width="500">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="413*"/>
+                        <ColumnDefinition Width="855*"/>
+                    </Grid.ColumnDefinitions>
+                    <DataGrid Height="287" HorizontalAlignment="Left" Margin="93,12,0,0"  Name="prio" VerticalAlignment="Top" Width="500" Grid.ColumnSpan="2">
                     </DataGrid>
-                    <Button Content="up" Height="23" HorizontalAlignment="Left" Margin="628,51,0,0" x:Name="up" VerticalAlignment="Top" Width="75" />
-                    <Button Content="down" Height="23" HorizontalAlignment="Left" Margin="628,90,0,0" x:Name="down" VerticalAlignment="Top" Width="75"  />
+                    <Button Content="up" Height="23" HorizontalAlignment="Left" Margin="215.037,51,0,0" x:Name="up" VerticalAlignment="Top" Width="75" Grid.Column="1" />
+                    <Button Content="down" Height="23" HorizontalAlignment="Left" Margin="215.037,90,0,0" x:Name="down" VerticalAlignment="Top" Width="75" Grid.Column="1"  />
                 </Grid>
             </TabItem>
 

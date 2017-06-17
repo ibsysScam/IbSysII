@@ -18,6 +18,8 @@ namespace Ibsys2.Static.Input {
             }
         }
 
+        public List<Article> Liste { get { return _list; } }
+
         public double Totalstockvalue {
             get {
                 double totalstockvalue = 0.0;
