@@ -185,6 +185,11 @@ namespace Ibsys2
             SicherDame.Content = TranslateService.Class.GetTranslation("LADY_BICYCLE");
             SicherHerren.Content = TranslateService.Class.GetTranslation("MEN_BICYCLE");
 
+            Direktverkauftab.Header = TranslateService.Class.GetTranslation("DIRECT_SALES");
+
+            kinderradtab.Header = TranslateService.Class.GetTranslation("CHILD");
+            damenerradtab.Header = TranslateService.Class.GetTranslation("WOMAN");
+            herrenerradtab.Header = TranslateService.Class.GetTranslation("MAN");
             Produktionsplanungtab.Header = TranslateService.Class.GetTranslation("PRODUCTIONPLAN");
             ProduktVertrieb.Content = TranslateService.Class.GetTranslation("SALES_ORDERS");
             ProduktSicher.Content = TranslateService.Class.GetTranslation("SAFETY_STOCK");
@@ -193,6 +198,81 @@ namespace Ibsys2
             ProduktWarte.Content = TranslateService.Class.GetTranslation("PREORDER");
             ProduktBearb.Content = TranslateService.Class.GetTranslation("WORK_IN_PROGRESS");
             ProduktProdukt.Content = TranslateService.Class.GetTranslation("PRODUCTION_ORDERS_FOR_COMMING");
+
+            ProduktVertrieb1.Content = TranslateService.Class.GetTranslation("SALES_ORDERS");
+            ProduktSicher1.Content = TranslateService.Class.GetTranslation("SAFETY_STOCK");
+            ProduktLager1.Content = TranslateService.Class.GetTranslation("END_WAREHOUSE_STOCK");
+            ProduktAuftrag1.Content = TranslateService.Class.GetTranslation("ORDERS_QUEUE");
+            ProduktWarte1.Content = TranslateService.Class.GetTranslation("PREORDER");
+            ProduktBearb1.Content = TranslateService.Class.GetTranslation("WORK_IN_PROGRESS");
+            ProduktProdukt1.Content = TranslateService.Class.GetTranslation("PRODUCTION_ORDERS_FOR_COMMING");
+
+            ProduktVertrieb2.Content = TranslateService.Class.GetTranslation("SALES_ORDERS");
+            ProduktSicher2.Content = TranslateService.Class.GetTranslation("SAFETY_STOCK");
+            ProduktLager2.Content = TranslateService.Class.GetTranslation("END_WAREHOUSE_STOCK");
+            ProduktAuftrag2.Content = TranslateService.Class.GetTranslation("ORDERS_QUEUE");
+            ProduktWarte2.Content = TranslateService.Class.GetTranslation("PREORDER");
+            ProduktBearb2.Content = TranslateService.Class.GetTranslation("WORK_IN_PROGRESS");
+            ProduktProdukt2.Content = TranslateService.Class.GetTranslation("PRODUCTION_ORDERS_FOR_COMMING");
+
+            WORK1.Header = TranslateService.Class.GetTranslation("WORK1");
+            WORK2.Header = TranslateService.Class.GetTranslation("WORK2");
+            WORK3.Header = TranslateService.Class.GetTranslation("WORK3");
+            WORK4.Header = TranslateService.Class.GetTranslation("WORK4");
+            WORK6.Header = TranslateService.Class.GetTranslation("WORK6");
+            WORK7.Header = TranslateService.Class.GetTranslation("WORK7");
+            WORK8.Header = TranslateService.Class.GetTranslation("WORK8");
+            WORK9.Header = TranslateService.Class.GetTranslation("WORK9");
+            WORK10.Header = TranslateService.Class.GetTranslation("WORK10");
+            WORK11.Header = TranslateService.Class.GetTranslation("WORK11");
+            WORK12.Header = TranslateService.Class.GetTranslation("WORK12");
+            WORK13.Header = TranslateService.Class.GetTranslation("WORK13");
+            WORK14.Header = TranslateService.Class.GetTranslation("WORK14");
+            WORK15.Header = TranslateService.Class.GetTranslation("WORK15");
+
+            Work1Box.Header = TranslateService.Class.GetTranslation("WORK1");
+            Work2Box.Header = TranslateService.Class.GetTranslation("WORK2");
+            Work3Box.Header = TranslateService.Class.GetTranslation("WORK3");
+            Work4Box.Header = TranslateService.Class.GetTranslation("WORK4");
+            Work6Box.Header = TranslateService.Class.GetTranslation("WORK6");
+            Work7Box.Header = TranslateService.Class.GetTranslation("WORK7");
+            Work8Box.Header = TranslateService.Class.GetTranslation("WORK8");
+            Work9Box.Header = TranslateService.Class.GetTranslation("WORK9");
+            Work10Box.Header = TranslateService.Class.GetTranslation("WORK10");
+            Work11Box.Header = TranslateService.Class.GetTranslation("WORK11");
+            Work12Box.Header = TranslateService.Class.GetTranslation("WORK12");
+            Work13Box.Header = TranslateService.Class.GetTranslation("WORK13");
+            Work14Box.Header = TranslateService.Class.GetTranslation("WORK14");
+            Work15Box.Header = TranslateService.Class.GetTranslation("WORK15");
+
+            Plan1Box.Header = TranslateService.Class.GetTranslation("PLAN1");
+            Plan2Box.Header = TranslateService.Class.GetTranslation("PLAN2");
+            Plan3Box.Header = TranslateService.Class.GetTranslation("PLAN3");
+            Plan4Box.Header = TranslateService.Class.GetTranslation("PLAN4");
+            Plan6Box.Header = TranslateService.Class.GetTranslation("PLAN6");
+            Plan7Box.Header = TranslateService.Class.GetTranslation("PLAN7");
+            Plan8Box.Header = TranslateService.Class.GetTranslation("PLAN8");
+            Plan9Box.Header = TranslateService.Class.GetTranslation("PLAN9");
+            Plan10Box.Header = TranslateService.Class.GetTranslation("PLAN10");
+            Plan11Box.Header = TranslateService.Class.GetTranslation("PLAN11");
+            Plan12Box.Header = TranslateService.Class.GetTranslation("PLAN12");
+            Plan13Box.Header = TranslateService.Class.GetTranslation("PLAN13");
+            Plan14Box.Header = TranslateService.Class.GetTranslation("PLAN14");
+            Plan15Box.Header = TranslateService.Class.GetTranslation("PLAN15");
+
+            Einkauftab.Header = TranslateService.Class.GetTranslation("PURCHASE");
+            Bestell.Header = TranslateService.Class.GetTranslation("ORDERS_OVERVIEW");
+            Stammdaten.Header = TranslateService.Class.GetTranslation("DATA");
+            securityfactor.Content = TranslateService.Class.GetTranslation("SECURITY_FACTOR");
+            Lagerbestand.Header = TranslateService.Class.GetTranslation("WAREHOUSE");
+
+            Priorisierungtab.Header = TranslateService.Class.GetTranslation("PRIO");
+            down.Content = TranslateService.Class.GetTranslation("DOWN");
+            up.Content = TranslateService.Class.GetTranslation("UP");
+            Kapaplanungtab.Header = TranslateService.Class.GetTranslation("CAPACITY_PLAN");
+
+            Plan1Box_Bezeichnung.Header = TranslateService.Class.GetTranslation("DESCRIPTION");
+            
 
             UpdateSummeFromForcast(null, null);
             dataGrid1.ItemsSource = CreateWork1();
@@ -225,8 +305,10 @@ namespace Ibsys2
             dataGrid29.ItemsSource = CreateWorkPlan16();
             dataGrid30.ItemsSource = CreateLiefer1();
             dataGrid31.ItemsSource = CreateEinkauf1();
+            dataGrid32.ItemsSource = CreateLagerbestand();
             prio.ItemsSource = CreatePrio1();
         }
+        
 
 
         public ObservableCollection<Prio> CreatePrio1()
@@ -274,6 +356,42 @@ namespace Ibsys2
             liefer.Add(new Liefer { Kaufteileno = "58", Kaufteil = TranslateService.Class.GetTranslation("SPOKE"), Verwendung = "D", Teilewert = "0,10", Diskontmenge = "22000", Bestellkosten = "50", Lieferfrist = "1,6", Abweichung = "0,5" });
             liefer.Add(new Liefer { Kaufteileno = "59", Kaufteil = TranslateService.Class.GetTranslation("WELDING_WIRES"), Verwendung = "KDH", Teilewert = "0,15", Diskontmenge = "1800", Bestellkosten = "50", Lieferfrist = "0,7", Abweichung = "0,2" });
             return liefer;
+        }
+
+        public ObservableCollection<Lagerbestand> CreateLagerbestand()
+        {
+                    ObservableCollection<Lagerbestand> lagerbestand = new ObservableCollection<Lagerbestand>();
+                    lagerbestand.Add(new Lagerbestand { Kaufteileno = "21", Kaufteil = TranslateService.Class.GetTranslation("CHAIN"), Verwendung = "K", Teilewert = "5,00", Diskontmenge = "300", Bestellkosten = "50", Lieferfrist = "1,8", Abweichung = "0,4" });
+                    lagerbestand.Add(new Lagerbestand { Kaufteileno = "22", Kaufteil = TranslateService.Class.GetTranslation("CHAIN"), Verwendung = "D", Teilewert = "6,50", Diskontmenge = "300", Bestellkosten = "50", Lieferfrist = "1,7", Abweichung = "0,4" });
+                    lagerbestand.Add(new Lagerbestand { Kaufteileno = "23", Kaufteil = TranslateService.Class.GetTranslation("CHAIN"), Verwendung = "H", Teilewert = "6,50", Diskontmenge = "300", Bestellkosten = "50", Lieferfrist = "1,2", Abweichung = "0,2" });
+                    lagerbestand.Add(new Lagerbestand { Kaufteileno = "24", Kaufteil = TranslateService.Class.GetTranslation("UT_three"), Verwendung = "KDH", Teilewert = "0;06", Diskontmenge = "6100", Bestellkosten = "100", Lieferfrist = "3,2", Abweichung = "0,3" });
+                    lagerbestand.Add(new Lagerbestand { Kaufteileno = "25", Kaufteil = TranslateService.Class.GetTranslation("WASHER"), Verwendung = "KDH", Teilewert = "0;06", Diskontmenge = "3600", Bestellkosten = "50", Lieferfrist = "0,9", Abweichung = "0,2" });
+                    lagerbestand.Add(new Lagerbestand { Kaufteileno = "27", Kaufteil = TranslateService.Class.GetTranslation("SCREW"), Verwendung = "KDH", Teilewert = "0,1", Diskontmenge = "1800", Bestellkosten = "75", Lieferfrist = "0,9", Abweichung = "0,2" });
+                    lagerbestand.Add(new Lagerbestand { Kaufteileno = "28", Kaufteil = TranslateService.Class.GetTranslation("TUBE"), Verwendung = "KDH", Teilewert = "1,20", Diskontmenge = "4500", Bestellkosten = "50", Lieferfrist = "1,7", Abweichung = "0,4" });
+                    lagerbestand.Add(new Lagerbestand { Kaufteileno = "32", Kaufteil = TranslateService.Class.GetTranslation("PAINT"), Verwendung = "KDH", Teilewert = "0,75", Diskontmenge = "2700", Bestellkosten = "50", Lieferfrist = "2,1", Abweichung = "0,5" });
+                    lagerbestand.Add(new Lagerbestand { Kaufteileno = "33", Kaufteil = TranslateService.Class.GetTranslation("RIM"), Verwendung = "H", Teilewert = "22,00", Diskontmenge = "900", Bestellkosten = "75", Lieferfrist = "1,9", Abweichung = "0,5" });
+                    lagerbestand.Add(new Lagerbestand { Kaufteileno = "34", Kaufteil = TranslateService.Class.GetTranslation("SPOKE"), Verwendung = "H", Teilewert = "0,1", Diskontmenge = "22000", Bestellkosten = "50", Lieferfrist = "1,6", Abweichung = "0,3" });
+                    lagerbestand.Add(new Lagerbestand { Kaufteileno = "35", Kaufteil = TranslateService.Class.GetTranslation("TAPER"), Verwendung = "KDH", Teilewert = "1,00", Diskontmenge = "3600", Bestellkosten = "75", Lieferfrist = "2,2", Abweichung = "0,4" });
+                    lagerbestand.Add(new Lagerbestand { Kaufteileno = "36", Kaufteil = TranslateService.Class.GetTranslation("FREE"), Verwendung = "KDH", Teilewert = "8,00", Diskontmenge = "900", Bestellkosten = "100", Lieferfrist = "1,2", Abweichung = "0,1" });
+                    lagerbestand.Add(new Lagerbestand { Kaufteileno = "37", Kaufteil = TranslateService.Class.GetTranslation("FORK"), Verwendung = "KDH", Teilewert = "1,50", Diskontmenge = "900", Bestellkosten = "50", Lieferfrist = "1,5", Abweichung = "0,3" });
+                    lagerbestand.Add(new Lagerbestand { Kaufteileno = "38", Kaufteil = TranslateService.Class.GetTranslation("AXLE"), Verwendung = "KDH", Teilewert = "1,50", Diskontmenge = "300", Bestellkosten = "50", Lieferfrist = "1,7", Abweichung = "0,4" });
+                    lagerbestand.Add(new Lagerbestand { Kaufteileno = "39", Kaufteil = TranslateService.Class.GetTranslation("SHEET"), Verwendung = "KDH", Teilewert = "1,50", Diskontmenge = "1800", Bestellkosten = "75", Lieferfrist = "1,5", Abweichung = "0,3" });
+                    lagerbestand.Add(new Lagerbestand { Kaufteileno = "40", Kaufteil = TranslateService.Class.GetTranslation("HANDLE_BAR"), Verwendung = "KDH", Teilewert = "2,50", Diskontmenge = "900", Bestellkosten = "50", Lieferfrist = "1,7", Abweichung = "0,2" });
+                    lagerbestand.Add(new Lagerbestand { Kaufteileno = "41", Kaufteil = TranslateService.Class.GetTranslation("NUT_FOUR"), Verwendung = "KDH", Teilewert = "0,06", Diskontmenge = "900", Bestellkosten = "50", Lieferfrist = "0,9", Abweichung = "0,2" });
+                    lagerbestand.Add(new Lagerbestand { Kaufteileno = "42", Kaufteil = TranslateService.Class.GetTranslation("HANDLE_GRIP"), Verwendung = "KDH", Teilewert = "0,10", Diskontmenge = "1800", Bestellkosten = "50", Lieferfrist = "1,2", Abweichung = "0,3" });
+                    lagerbestand.Add(new Lagerbestand { Kaufteileno = "43", Kaufteil = TranslateService.Class.GetTranslation("SADDLE"), Verwendung = "KDH", Teilewert = "5,00", Diskontmenge = "2700", Bestellkosten = "75", Lieferfrist = "2,0", Abweichung = "0,5" });
+                    lagerbestand.Add(new Lagerbestand { Kaufteileno = "44", Kaufteil = TranslateService.Class.GetTranslation("BAR"), Verwendung = "KDH", Teilewert = "0,50", Diskontmenge = "900", Bestellkosten = "50", Lieferfrist = "1,2", Abweichung = "0,2" });
+                    lagerbestand.Add(new Lagerbestand { Kaufteileno = "45", Kaufteil = TranslateService.Class.GetTranslation("NUT_QUARTER"), Verwendung = "KDH", Teilewert = "0,06", Diskontmenge = "900", Bestellkosten = "50", Lieferfrist = "1,7", Abweichung = "0,3" });
+                    lagerbestand.Add(new Lagerbestand { Kaufteileno = "46", Kaufteil = TranslateService.Class.GetTranslation("SCREW_QUARTER"), Verwendung = "KDH", Teilewert = "0,10", Diskontmenge = "900", Bestellkosten = "50", Lieferfrist = "0,9", Abweichung = "0,3" });
+                    lagerbestand.Add(new Lagerbestand { Kaufteileno = "47", Kaufteil = TranslateService.Class.GetTranslation("SPROCKET"), Verwendung = "KDH", Teilewert = "3,50", Diskontmenge = "900", Bestellkosten = "50", Lieferfrist = "1,1", Abweichung = "0,1" });
+                    lagerbestand.Add(new Lagerbestand { Kaufteileno = "48", Kaufteil = TranslateService.Class.GetTranslation("PEDAL"), Verwendung = "KDH", Teilewert = "1,50", Diskontmenge = "1800", Bestellkosten = "75", Lieferfrist = "1,0", Abweichung = "0,2" });
+                    lagerbestand.Add(new Lagerbestand { Kaufteileno = "52", Kaufteil = TranslateService.Class.GetTranslation("RIM"), Verwendung = "K", Teilewert = "22,00", Diskontmenge = "600", Bestellkosten = "50", Lieferfrist = "1,6", Abweichung = "0,4" });
+                    lagerbestand.Add(new Lagerbestand { Kaufteileno = "53", Kaufteil = TranslateService.Class.GetTranslation("SPOKE"), Verwendung = "K", Teilewert = "0,10", Diskontmenge = "22000", Bestellkosten = "50", Lieferfrist = "1,6", Abweichung = "0,2" });
+                    lagerbestand.Add(new Lagerbestand { Kaufteileno = "57", Kaufteil = TranslateService.Class.GetTranslation("RIM"), Verwendung = "D", Teilewert = "22,00", Diskontmenge = "600", Bestellkosten = "50", Lieferfrist = "1,7", Abweichung = "0,3" });
+                    lagerbestand.Add(new Lagerbestand { Kaufteileno = "58", Kaufteil = TranslateService.Class.GetTranslation("SPOKE"), Verwendung = "D", Teilewert = "0,10", Diskontmenge = "22000", Bestellkosten = "50", Lieferfrist = "1,6", Abweichung = "0,5" });
+                    lagerbestand.Add(new Lagerbestand { Kaufteileno = "59", Kaufteil = TranslateService.Class.GetTranslation("WELDING_WIRES"), Verwendung = "KDH", Teilewert = "0,15", Diskontmenge = "1800", Bestellkosten = "50", Lieferfrist = "0,7", Abweichung = "0,2" });
+                    return lagerbestand;
+
         }
 
         public ObservableCollection<KapNo> CreateWorkPlan16()
@@ -1346,6 +1464,95 @@ public class Liefer : INotifyPropertyChanged
         { PropertyChanged(this, e); }
     }
 }
+
+public class Lagerbestand : INotifyPropertyChanged
+{
+    public event PropertyChangedEventHandler PropertyChanged;
+
+    private string lieferfrist;
+    private string abweichung;
+    public string kaufteileno;
+    public string kaufteil;
+    public string bestellkosten;
+    public string diskontmenge;
+    public string teilewert;
+    public string verwendung;
+
+
+    public string Kaufteileno
+    {
+        get { return kaufteileno; }
+        set
+        {
+            kaufteileno = value; OnPropertyChanged(new PropertyChangedEventArgs("KaufteileNo"));
+        }
+    }
+
+    public string Kaufteil
+    {
+        get { return kaufteil; }
+        set
+        {
+            kaufteil = value; OnPropertyChanged(new PropertyChangedEventArgs("Kaufteils"));
+        }
+    }
+    public string Verwendung
+    {
+        get { return verwendung; }
+        set
+        {
+            verwendung = value; OnPropertyChanged(new PropertyChangedEventArgs("Verwendung"));
+        }
+    }
+
+    public string Bestellkosten
+    {
+        get { return bestellkosten; }
+        set
+        {
+            bestellkosten = value; OnPropertyChanged(new PropertyChangedEventArgs("Bestellkosten"));
+        }
+    }
+    public string Diskontmenge
+    {
+        get { return diskontmenge; }
+        set
+        {
+            diskontmenge = value; OnPropertyChanged(new PropertyChangedEventArgs("Diskontmenge"));
+        }
+    }
+    public string Teilewert
+    {
+        get { return teilewert; }
+        set
+        {
+            teilewert = value; OnPropertyChanged(new PropertyChangedEventArgs("Teilewert"));
+        }
+    }
+
+    public string Lieferfrist
+    {
+        get { return lieferfrist; }
+        set
+        {
+            lieferfrist = value; OnPropertyChanged(new PropertyChangedEventArgs("Lieferfrist"));
+        }
+    }
+    public string Abweichung
+    {
+        get { return abweichung; }
+        set
+        {
+            abweichung = value; OnPropertyChanged(new PropertyChangedEventArgs("Abweichung"));
+        }
+    }
+    protected void OnPropertyChanged(PropertyChangedEventArgs e)
+    {
+        if (PropertyChanged != null)
+        { PropertyChanged(this, e); }
+    }
+}
+
 
 public class KapNo : INotifyPropertyChanged
 {
