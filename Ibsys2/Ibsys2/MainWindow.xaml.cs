@@ -557,6 +557,7 @@ namespace Ibsys2
 
             UpdatePlanningFields();
             UpdateKapaFields();
+            UpdateEinkauf();
         }
 
         private void UpdatePlanningFields()
@@ -888,6 +889,19 @@ namespace Ibsys2
                 ArbeitsPlatzOverview[i].Berechnungwork = Kapazitaetsplanung.arbeitsplatzListe[id].getFieldsByID(i).ToString();
             }
         }
+
+        private void UpdateEinkauf()
+        {
+            var fields = (ObservableCollection<Einkauf>)dataGrid31.ItemsSource;
+            fields.Clear();
+            foreach (var item in Orderlist.Class.Liste)
+            {
+                fields.Add(new Einkauf(item.Article.ToString(), item.Quantity.ToString(), item.Modus.ToString()));
+            }
+            /*
+            dataGrid31.Columns[0].IsReadOnly = true;
+            dataGrid31.Columns[0].Header = TranslateService.Class.GetTranslation("ITEM_NO");*/
+        }
             private bool AllFilled()
         {
             if (period0product1.Text == "" || period0product2.Text == "" || period0product3.Text == "" || period1product1.Text == "" || period1product2.Text == "" || period1product3.Text == "" || period2product1.Text == "" || period2product2.Text == "" || period2product3.Text == "")
@@ -1215,6 +1229,33 @@ private void UpdateSummeFromForcast(object sender, TextChangedEventArgs e)
                 return;
             }
         }
+
+        private void UpdateEinkaufXML(object sender, DataGridCellEditEndingEventArgs e)
+        {
+            if (e.EditAction == DataGridEditAction.Commit)
+            {
+                try
+                {
+                    var field = Convert.ToInt32(((TextBox)e.EditingElement).Text);
+                    var row = (Einkauf)e.Row.Item;
+                    var colum = (string)e.Column.Header;
+                    var item = Orderlist.Class.GetOrdersByArticle(Convert.ToInt32(row.Teileno)).Find(x => x.Modus == Convert.ToInt32(row.Art) && x.Quantity == Convert.ToInt32(row.Anzahl));
+                    if (colum == TranslateService.Class.GetTranslation("MODE"))
+                        item.Modus = field;
+                    else if (colum == TranslateService.Class.GetTranslation("QUANTITY"))
+                        item.Quantity = field;
+                    else
+                    {
+                        if (colum == "Art")
+                            item.Modus = field;
+                        else if (colum == "Anzahl")
+                            item.Quantity = field;
+                        else { throw new Exception(); }
+                    }
+                }
+                catch { e.Cancel = true; }
+            }
+        }
     }
 }
 
@@ -1411,6 +1452,13 @@ public class Einkauf : INotifyPropertyChanged
     private string teileno;
     private string anzahl;
     private string art;
+
+    public Einkauf(string teileno, string anzahl, string art)
+    {
+        this.Teileno = teileno;
+        this.Anzahl = anzahl;
+        this.Art = art;
+    }
 
     public string Teileno
     {

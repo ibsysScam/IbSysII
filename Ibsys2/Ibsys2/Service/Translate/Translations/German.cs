@@ -126,6 +126,7 @@ namespace Ibsys2.Service {
             _translate.Add("SUM_TOO_BIG", "Die Summe ist zu groß! Die Summe sollte kleiner oder gleich 1050 sein.");
             _translate.Add("XMLEXPORT_SUCCESS", "Der XML Export wurde erfolgreich ausgeführt!");
             _translate.Add("XMLEXPORT_NO_SUCCESS", "Der XML Export ist fehlgeschlagen!");
+            _translate.Add("MODE", "Modus");
         }
         
     }
