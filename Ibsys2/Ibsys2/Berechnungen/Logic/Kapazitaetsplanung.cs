@@ -324,22 +324,568 @@ namespace Ibsys2.Berechnungen.Logic
 
 
 					//E7-9
+					else if (wl.Item == 7)
+					{
+						if (w.ID == 10)
+						{
+							a11.kapabeadarfrueckstand += wl.Amount * 3;
+							a11.ruestzeitrueckstand += 20;
+						}
+				
+					}
+					else if (wl.Item == 8)
+					{
+						if (w.ID == 10)
+						{
+							a11.kapabeadarfrueckstand += wl.Amount * 3;
+							a11.ruestzeitrueckstand += 20;
+						}
+						
+					}
+					else if (wl.Item == 9)
+					{
+						if (w.ID == 10)
+						{
+							a11.kapabeadarfrueckstand += wl.Amount * 3;
+							a11.ruestzeitrueckstand += 20;
+						}
+						
+					}
 
 
 					//E4-6
+					else if (wl.Item == 4)
+					{
+						if (w.ID == 10)
+						{
+							a11.kapabeadarfrueckstand += wl.Amount * 3;
+							a11.ruestzeitrueckstand += 10;
+						}
+
+					}
+					else if (wl.Item == 5)
+					{
+						if (w.ID == 10)
+						{
+							a11.kapabeadarfrueckstand += wl.Amount * 3;
+							a11.ruestzeitrueckstand += 10;
+						}
+
+					}
+					else if (wl.Item == 6)
+					{
+						if (w.ID == 10)
+						{
+							a11.kapabeadarfrueckstand += wl.Amount * 3;
+							a11.ruestzeitrueckstand += 20;
+						}
+
+					}
 
 
 					//E10-12
-
+					if (wl.Item == 10)
+					{
+						if (w.ID == 13)
+						{
+							a12.kapabeadarfrueckstand += wl.Amount * 3;
+							a8.kapabeadarfrueckstand += wl.Amount * 1;
+							a8.ruestzeitrueckstand += 15;
+							a7.kapabeadarfrueckstand += wl.Amount * 2;
+							a7.ruestzeitrueckstand += 20;
+							a9.kapabeadarfrueckstand += wl.Amount * 3;
+							a9.ruestzeitrueckstand += 15;
+						}
+						else if (w.ID == 12)
+						{
+							a8.kapabeadarfrueckstand += wl.Amount * 1;
+							a8.ruestzeitrueckstand += 15;
+							a7.kapabeadarfrueckstand += wl.Amount * 2;
+							a7.ruestzeitrueckstand += 20;
+							a9.kapabeadarfrueckstand += wl.Amount * 3;
+							a9.ruestzeitrueckstand += 15;
+						}
+						else if (w.ID == 8)
+						{
+							a7.kapabeadarfrueckstand += wl.Amount * 2;
+							a7.ruestzeitrueckstand += 20;
+							a9.kapabeadarfrueckstand += wl.Amount * 3;
+							a9.ruestzeitrueckstand += 15;
+						}
+						else if (w.ID == 7)
+						{
+							a9.kapabeadarfrueckstand += wl.Amount * 3;
+							a9.ruestzeitrueckstand += 15;
+						}
+					}
+					else if (wl.Item == 11)
+					{
+						if (w.ID == 13)
+						{
+							a12.kapabeadarfrueckstand += wl.Amount * 3;
+							a8.kapabeadarfrueckstand += wl.Amount * 2;
+							a8.ruestzeitrueckstand += 15;
+							a7.kapabeadarfrueckstand += wl.Amount * 2;
+							a7.ruestzeitrueckstand += 20;
+							a9.kapabeadarfrueckstand += wl.Amount * 3;
+							a9.ruestzeitrueckstand += 15;
+						}
+						else if (w.ID == 12)
+						{
+							a8.kapabeadarfrueckstand += wl.Amount * 2;
+							a8.ruestzeitrueckstand += 15;
+							a7.kapabeadarfrueckstand += wl.Amount * 2;
+							a7.ruestzeitrueckstand += 20;
+							a9.kapabeadarfrueckstand += wl.Amount * 3;
+							a9.ruestzeitrueckstand += 15;
+						}
+						else if (w.ID == 8)
+						{
+							a7.kapabeadarfrueckstand += wl.Amount * 2;
+							a7.ruestzeitrueckstand += 20;
+							a9.kapabeadarfrueckstand += wl.Amount * 3;
+							a9.ruestzeitrueckstand += 15;
+						}
+						else if (w.ID == 7)
+						{
+							a9.kapabeadarfrueckstand += wl.Amount * 3;
+							a9.ruestzeitrueckstand += 15;
+						}
+					}
+					else if (wl.Item == 12)
+					{
+						if (w.ID == 13)
+						{
+							a12.kapabeadarfrueckstand += wl.Amount * 3;
+							a8.kapabeadarfrueckstand += wl.Amount * 2;
+							a8.ruestzeitrueckstand += 15;
+							a7.kapabeadarfrueckstand += wl.Amount * 2;
+							a7.ruestzeitrueckstand += 20;
+							a9.kapabeadarfrueckstand += wl.Amount * 3;
+							a9.ruestzeitrueckstand += 15;
+						}
+						else if (w.ID == 12)
+						{
+							a8.kapabeadarfrueckstand += wl.Amount * 2;
+							a8.ruestzeitrueckstand += 15;
+							a7.kapabeadarfrueckstand += wl.Amount * 2;
+							a7.ruestzeitrueckstand += 20;
+							a9.kapabeadarfrueckstand += wl.Amount * 3;
+							a9.ruestzeitrueckstand += 15;
+						}
+						else if (w.ID == 8)
+						{
+							a7.kapabeadarfrueckstand += wl.Amount * 2;
+							a7.ruestzeitrueckstand += 20;
+							a9.kapabeadarfrueckstand += wl.Amount * 3;
+							a9.ruestzeitrueckstand += 15;
+						}
+						else if (w.ID == 7)
+						{
+							a9.kapabeadarfrueckstand += wl.Amount * 3;
+							a9.ruestzeitrueckstand += 15;
+						}
+					}
 
 					//E16
+					else if (wl.Item == 16)
+					{
+						if (w.ID == 6)
+						{
+							a14.kapabeadarfrueckstand += wl.Amount * 3;
+						}
+
+					}
 
 
 					//E26
+					else if (wl.Item == 26)
+					{
+						if (w.ID == 7)
+						{
+							a15.kapabeadarfrueckstand += wl.Amount * 3;
+							a15.ruestzeitrueckstand += 15;
+						}
 
+					}
 				}
             }
-			//this.kapabeadarfrueckstand = wlw.GetWorkplaceByID(arbeitsplatzID).Timeneed;
+            Ordersinwork oiw = Ordersinwork.Class;
+            List<Workplace> oWorkplaces = oiw.getAllWorkplaces();
+            foreach (Workplace w in oWorkplaces)
+			{
+				foreach (Waitinglist wl in w.GetAllWaitinglistItem)
+				{
+					// E13-15
+                    if (wl.Item == 13)
+					{
+                        if (w.ID == 13)
+						{
+							a12.kapabeadarfrueckstand += wl.Amount * 3;
+							a8.kapabeadarfrueckstand += wl.Amount * 1;
+							a8.ruestzeitrueckstand += 15;
+							a7.kapabeadarfrueckstand += wl.Amount * 2;
+							a7.ruestzeitrueckstand += 20;
+							a9.kapabeadarfrueckstand += wl.Amount * 3;
+							a9.ruestzeitrueckstand += 15;
+						}
+						else if (w.ID == 12)
+						{
+							a8.kapabeadarfrueckstand += wl.Amount * 1;
+							a8.ruestzeitrueckstand += 15;
+							a7.kapabeadarfrueckstand += wl.Amount * 2;
+							a7.ruestzeitrueckstand += 20;
+							a9.kapabeadarfrueckstand += wl.Amount * 3;
+							a9.ruestzeitrueckstand += 15;
+						}
+						else if (w.ID == 8)
+						{
+							a7.kapabeadarfrueckstand += wl.Amount * 2;
+							a7.ruestzeitrueckstand += 20;
+							a9.kapabeadarfrueckstand += wl.Amount * 3;
+							a9.ruestzeitrueckstand += 15;
+						}
+						else if (w.ID == 7)
+						{
+							a9.kapabeadarfrueckstand += wl.Amount * 3;
+							a9.ruestzeitrueckstand += 15;
+						}
+					}
+					else if (wl.Item == 14)
+					{
+						if (w.ID == 13)
+						{
+							a12.kapabeadarfrueckstand += wl.Amount * 3;
+							a8.kapabeadarfrueckstand += wl.Amount * 2;
+							a8.ruestzeitrueckstand += 15;
+							a7.kapabeadarfrueckstand += wl.Amount * 2;
+							a7.ruestzeitrueckstand += 20;
+							a9.kapabeadarfrueckstand += wl.Amount * 3;
+							a9.ruestzeitrueckstand += 15;
+						}
+						else if (w.ID == 12)
+						{
+							a8.kapabeadarfrueckstand += wl.Amount * 2;
+							a8.ruestzeitrueckstand += 15;
+							a7.kapabeadarfrueckstand += wl.Amount * 2;
+							a7.ruestzeitrueckstand += 20;
+							a9.kapabeadarfrueckstand += wl.Amount * 3;
+							a9.ruestzeitrueckstand += 15;
+						}
+						else if (w.ID == 8)
+						{
+							a7.kapabeadarfrueckstand += wl.Amount * 2;
+							a7.ruestzeitrueckstand += 20;
+							a9.kapabeadarfrueckstand += wl.Amount * 3;
+							a9.ruestzeitrueckstand += 15;
+						}
+						else if (w.ID == 7)
+						{
+							a9.kapabeadarfrueckstand += wl.Amount * 3;
+							a9.ruestzeitrueckstand += 15;
+						}
+					}
+					else if (wl.Item == 15)
+					{
+						if (w.ID == 13)
+						{
+							a12.kapabeadarfrueckstand += wl.Amount * 3;
+							a8.kapabeadarfrueckstand += wl.Amount * 2;
+							a8.ruestzeitrueckstand += 15;
+							a7.kapabeadarfrueckstand += wl.Amount * 2;
+							a7.ruestzeitrueckstand += 20;
+							a9.kapabeadarfrueckstand += wl.Amount * 3;
+							a9.ruestzeitrueckstand += 15;
+						}
+						else if (w.ID == 12)
+						{
+							a8.kapabeadarfrueckstand += wl.Amount * 2;
+							a8.ruestzeitrueckstand += 15;
+							a7.kapabeadarfrueckstand += wl.Amount * 2;
+							a7.ruestzeitrueckstand += 20;
+							a9.kapabeadarfrueckstand += wl.Amount * 3;
+							a9.ruestzeitrueckstand += 15;
+						}
+						else if (w.ID == 8)
+						{
+							a7.kapabeadarfrueckstand += wl.Amount * 2;
+							a7.ruestzeitrueckstand += 20;
+							a9.kapabeadarfrueckstand += wl.Amount * 3;
+							a9.ruestzeitrueckstand += 15;
+						}
+						else if (w.ID == 7)
+						{
+							a9.kapabeadarfrueckstand += wl.Amount * 3;
+							a9.ruestzeitrueckstand += 15;
+						}
+					}
+
+
+
+					//E18-20
+					else if (wl.Item == 18)
+					{
+						if (w.ID == 6)
+						{
+							a8.kapabeadarfrueckstand += wl.Amount * 3;
+							a8.ruestzeitrueckstand += 20;
+							a7.kapabeadarfrueckstand += wl.Amount * 2;
+							a7.ruestzeitrueckstand += 20;
+							a9.kapabeadarfrueckstand += wl.Amount * 2;
+							a9.ruestzeitrueckstand += 15;
+						}
+						else if (w.ID == 8)
+						{
+							a7.kapabeadarfrueckstand += wl.Amount * 2;
+							a7.ruestzeitrueckstand += 20;
+							a9.kapabeadarfrueckstand += wl.Amount * 2;
+							a9.ruestzeitrueckstand += 15;
+						}
+						else if (w.ID == 7)
+						{
+							a9.kapabeadarfrueckstand += wl.Amount * 2;
+							a9.ruestzeitrueckstand += 15;
+						}
+					}
+					else if (wl.Item == 19)
+					{
+						if (w.ID == 6)
+						{
+							a8.kapabeadarfrueckstand += wl.Amount * 3;
+							a8.ruestzeitrueckstand += 25;
+							a7.kapabeadarfrueckstand += wl.Amount * 2;
+							a7.ruestzeitrueckstand += 20;
+							a9.kapabeadarfrueckstand += wl.Amount * 2;
+							a9.ruestzeitrueckstand += 20;
+						}
+						else if (w.ID == 8)
+						{
+							a7.kapabeadarfrueckstand += wl.Amount * 2;
+							a7.ruestzeitrueckstand += 20;
+							a9.kapabeadarfrueckstand += wl.Amount * 2;
+							a9.ruestzeitrueckstand += 20;
+						}
+						else if (w.ID == 7)
+						{
+							a9.kapabeadarfrueckstand += wl.Amount * 2;
+							a9.ruestzeitrueckstand += 20;
+						}
+					}
+					else if (wl.Item == 20)
+					{
+						if (w.ID == 6)
+						{
+							a8.kapabeadarfrueckstand += wl.Amount * 3;
+							a8.ruestzeitrueckstand += 20;
+							a7.kapabeadarfrueckstand += wl.Amount * 2;
+							a7.ruestzeitrueckstand += 20;
+							a9.kapabeadarfrueckstand += wl.Amount * 2;
+							a9.ruestzeitrueckstand += 15;
+						}
+						else if (w.ID == 8)
+						{
+							a7.kapabeadarfrueckstand += wl.Amount * 2;
+							a7.ruestzeitrueckstand += 20;
+							a9.kapabeadarfrueckstand += wl.Amount * 2;
+							a9.ruestzeitrueckstand += 15;
+						}
+						else if (w.ID == 7)
+						{
+							a9.kapabeadarfrueckstand += wl.Amount * 2;
+							a9.ruestzeitrueckstand += 15;
+						}
+					}
+
+
+					//E7-9
+					else if (wl.Item == 7)
+					{
+						if (w.ID == 10)
+						{
+							a11.kapabeadarfrueckstand += wl.Amount * 3;
+							a11.ruestzeitrueckstand += 20;
+						}
+
+					}
+					else if (wl.Item == 8)
+					{
+						if (w.ID == 10)
+						{
+							a11.kapabeadarfrueckstand += wl.Amount * 3;
+							a11.ruestzeitrueckstand += 20;
+						}
+
+					}
+					else if (wl.Item == 9)
+					{
+						if (w.ID == 10)
+						{
+							a11.kapabeadarfrueckstand += wl.Amount * 3;
+							a11.ruestzeitrueckstand += 20;
+						}
+
+					}
+
+
+					//E4-6
+					else if (wl.Item == 4)
+					{
+						if (w.ID == 10)
+						{
+							a11.kapabeadarfrueckstand += wl.Amount * 3;
+							a11.ruestzeitrueckstand += 10;
+						}
+
+					}
+					else if (wl.Item == 5)
+					{
+						if (w.ID == 10)
+						{
+							a11.kapabeadarfrueckstand += wl.Amount * 3;
+							a11.ruestzeitrueckstand += 10;
+						}
+
+					}
+					else if (wl.Item == 6)
+					{
+						if (w.ID == 10)
+						{
+							a11.kapabeadarfrueckstand += wl.Amount * 3;
+							a11.ruestzeitrueckstand += 20;
+						}
+
+					}
+
+
+					//E10-12
+					if (wl.Item == 10)
+					{
+						if (w.ID == 13)
+						{
+							a12.kapabeadarfrueckstand += wl.Amount * 3;
+							a8.kapabeadarfrueckstand += wl.Amount * 1;
+							a8.ruestzeitrueckstand += 15;
+							a7.kapabeadarfrueckstand += wl.Amount * 2;
+							a7.ruestzeitrueckstand += 20;
+							a9.kapabeadarfrueckstand += wl.Amount * 3;
+							a9.ruestzeitrueckstand += 15;
+						}
+						else if (w.ID == 12)
+						{
+							a8.kapabeadarfrueckstand += wl.Amount * 1;
+							a8.ruestzeitrueckstand += 15;
+							a7.kapabeadarfrueckstand += wl.Amount * 2;
+							a7.ruestzeitrueckstand += 20;
+							a9.kapabeadarfrueckstand += wl.Amount * 3;
+							a9.ruestzeitrueckstand += 15;
+						}
+						else if (w.ID == 8)
+						{
+							a7.kapabeadarfrueckstand += wl.Amount * 2;
+							a7.ruestzeitrueckstand += 20;
+							a9.kapabeadarfrueckstand += wl.Amount * 3;
+							a9.ruestzeitrueckstand += 15;
+						}
+						else if (w.ID == 7)
+						{
+							a9.kapabeadarfrueckstand += wl.Amount * 3;
+							a9.ruestzeitrueckstand += 15;
+						}
+					}
+					else if (wl.Item == 11)
+					{
+						if (w.ID == 13)
+						{
+							a12.kapabeadarfrueckstand += wl.Amount * 3;
+							a8.kapabeadarfrueckstand += wl.Amount * 2;
+							a8.ruestzeitrueckstand += 15;
+							a7.kapabeadarfrueckstand += wl.Amount * 2;
+							a7.ruestzeitrueckstand += 20;
+							a9.kapabeadarfrueckstand += wl.Amount * 3;
+							a9.ruestzeitrueckstand += 15;
+						}
+						else if (w.ID == 12)
+						{
+							a8.kapabeadarfrueckstand += wl.Amount * 2;
+							a8.ruestzeitrueckstand += 15;
+							a7.kapabeadarfrueckstand += wl.Amount * 2;
+							a7.ruestzeitrueckstand += 20;
+							a9.kapabeadarfrueckstand += wl.Amount * 3;
+							a9.ruestzeitrueckstand += 15;
+						}
+						else if (w.ID == 8)
+						{
+							a7.kapabeadarfrueckstand += wl.Amount * 2;
+							a7.ruestzeitrueckstand += 20;
+							a9.kapabeadarfrueckstand += wl.Amount * 3;
+							a9.ruestzeitrueckstand += 15;
+						}
+						else if (w.ID == 7)
+						{
+							a9.kapabeadarfrueckstand += wl.Amount * 3;
+							a9.ruestzeitrueckstand += 15;
+						}
+					}
+					else if (wl.Item == 12)
+					{
+						if (w.ID == 13)
+						{
+							a12.kapabeadarfrueckstand += wl.Amount * 3;
+							a8.kapabeadarfrueckstand += wl.Amount * 2;
+							a8.ruestzeitrueckstand += 15;
+							a7.kapabeadarfrueckstand += wl.Amount * 2;
+							a7.ruestzeitrueckstand += 20;
+							a9.kapabeadarfrueckstand += wl.Amount * 3;
+							a9.ruestzeitrueckstand += 15;
+						}
+						else if (w.ID == 12)
+						{
+							a8.kapabeadarfrueckstand += wl.Amount * 2;
+							a8.ruestzeitrueckstand += 15;
+							a7.kapabeadarfrueckstand += wl.Amount * 2;
+							a7.ruestzeitrueckstand += 20;
+							a9.kapabeadarfrueckstand += wl.Amount * 3;
+							a9.ruestzeitrueckstand += 15;
+						}
+						else if (w.ID == 8)
+						{
+							a7.kapabeadarfrueckstand += wl.Amount * 2;
+							a7.ruestzeitrueckstand += 20;
+							a9.kapabeadarfrueckstand += wl.Amount * 3;
+							a9.ruestzeitrueckstand += 15;
+						}
+						else if (w.ID == 7)
+						{
+							a9.kapabeadarfrueckstand += wl.Amount * 3;
+							a9.ruestzeitrueckstand += 15;
+						}
+					}
+
+					//E16
+					else if (wl.Item == 16)
+					{
+						if (w.ID == 6)
+						{
+							a14.kapabeadarfrueckstand += wl.Amount * 3;
+						}
+
+					}
+
+
+					//E26
+					else if (wl.Item == 26)
+					{
+						if (w.ID == 7)
+						{
+							a15.kapabeadarfrueckstand += wl.Amount * 3;
+							a15.ruestzeitrueckstand += 15;
+						}
+
+					}
+				}
+			}
+            }
+
         }
 
     }
