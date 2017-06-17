@@ -9,7 +9,7 @@ using static Ibsys2.Static.Input.Waitinglistworkstations.Workplace;
 
 namespace Ibsys2.Berechnungen.Logic
 {
-    static class Kapazitaetsplanung
+     static class Kapazitaetsplanung
     {
 
         public static Arbeitsplatz a1 = new Arbeitsplatz(1, new List<Arbeitsplatzauftrag>() {
@@ -510,7 +510,7 @@ namespace Ibsys2.Berechnungen.Logic
 					}
 				}
             }
-            Ordersinwork oiw = Ordersinwork.Class;
+            var oiw = Waitinglistworkstations.Class;
             List<Workplace> oWorkplaces = oiw.getAllWorkplaces();
             foreach (Workplace w in oWorkplaces)
 			{
@@ -884,7 +884,6 @@ namespace Ibsys2.Berechnungen.Logic
 					}
 				}
 			}
-            }
 
         }
 
