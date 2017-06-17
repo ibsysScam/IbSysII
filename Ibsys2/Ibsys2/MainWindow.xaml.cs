@@ -1047,8 +1047,6 @@ namespace Ibsys2
 
         }
 
-        private bool AllFilled()
-
         private void UpdateLager()
         {
             Warehousestock w = Warehousestock.Class;
