@@ -16,7 +16,7 @@
         </Grid.ColumnDefinitions>
 
         <Menu Grid.ColumnSpan="2" Margin="0,0,-0.4,0.4">
-            <MenuItem Header="Programm">
+            <MenuItem x:Name="Programm" Header="Programm">
                 <MenuItem x:Name="Helpmenuitem" Header="Help" Click="Helpmenuitem_Click"/>
                 <MenuItem x:Name="Closemenuitem" Header="Close" Click="Closemenuitem_Click"/>
             </MenuItem>
@@ -43,8 +43,8 @@
                         <ColumnDefinition Width="237*"/>
                         <ColumnDefinition Width="397*"/>
                     </Grid.ColumnDefinitions>
-                    <Label Content="Periode" HorizontalAlignment="Left" Margin="110,110,0,0" VerticalAlignment="Top" Height="23" Width="120"/>
-                    <Label Content="Summe&#xD;&#xA;" HorizontalAlignment="Left" Margin="110,226,0,0" VerticalAlignment="Top" Height="24" Width="120"/>
+                    <Label x:Name="VertriebPeriode" Content="Periode" HorizontalAlignment="Left" Margin="110,110,0,0" VerticalAlignment="Top" Height="23" Width="120"/>
+                    <Label x:Name="VertriebSumme" Content="Summe&#xD;&#xA;" HorizontalAlignment="Left" Margin="110,226,0,0" VerticalAlignment="Top" Height="24" Width="120"/>
                     <TextBox HorizontalAlignment="Left" Height="23" Margin="234,142,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
                     <TextBox HorizontalAlignment="Left" Height="23" Margin="234,170,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
                     <TextBox x:Name="period0product1" HorizontalAlignment="Left" Height="23" Margin="234,142,0,0" TextWrapping="Wrap" Text="100" VerticalAlignment="Top" Width="120" PreviewTextInput="NumberIntValidationTextBox" TextChanged="UpdateSummeFromForcast"/>
@@ -63,17 +63,17 @@
                     <TextBox x:Name="period1sum" HorizontalAlignment="Left" Height="23" Margin="404,227,0,0" TextWrapping="Wrap" Text="300" VerticalAlignment="Top" Width="120" IsEnabled="False" Grid.ColumnSpan="2"/>
                     <TextBox x:Name="period2sum" HorizontalAlignment="Left" Height="23" Margin="55,226,0,0" TextWrapping="Wrap" Text="300" VerticalAlignment="Top" Width="120" IsEnabled="False" Grid.Column="1"/>
                     <TextBox x:Name="period3sum" HorizontalAlignment="Left" Height="23" Margin="180,226,0,0" TextWrapping="Wrap" Text="300" VerticalAlignment="Top" Width="120" IsEnabled="False" Grid.Column="1"/>
-                    <Label Content="Vertriebswunsch" HorizontalAlignment="Left" Margin="234,79,0,0" VerticalAlignment="Top" Width="146"/>
-                    <Label Content="Prognose" HorizontalAlignment="Left" Margin="404,79,0,0" VerticalAlignment="Top" Width="344" Grid.ColumnSpan="2"/>
+                    <Label x:Name="Vertriebswunsch" Content="Vertriebswunsch" HorizontalAlignment="Left" Margin="234,79,0,0" VerticalAlignment="Top" Width="146"/>
+                    <Label x:Name="VertriebPrognose" Content="Prognose" HorizontalAlignment="Left" Margin="404,79,0,0" VerticalAlignment="Top" Width="344" Grid.ColumnSpan="2"/>
                     <Button x:Name="PrognosenNextButton" Content="Next" HorizontalAlignment="Left" Margin="225,254,0,0" VerticalAlignment="Top" Width="75" Click="PrognosenNextbutton_Click" Grid.Column="1"/>
                     <Label x:Name="prognosevarperiod1" Content="varperiod1" HorizontalAlignment="Left" Margin="234,110,0,0" VerticalAlignment="Top" Width="120"/>
                     <Label x:Name="prognosevarperiod2" Content="varperiod2" HorizontalAlignment="Left" Margin="404,110,0,0" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
                     <Label x:Name="prognosevarperiod3" Content="varperiod3" HorizontalAlignment="Left" Margin="55,107,0,0" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
                     <Label x:Name="prognosevarperiod4" Content="varperiod4" HorizontalAlignment="Left" Margin="180,107,0,0" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
                     <Label HorizontalAlignment="Left" Margin="109,148,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Kinder P1" HorizontalAlignment="Left" Margin="110,142,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Damen P2" HorizontalAlignment="Left" Margin="110,170,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Herren P3" HorizontalAlignment="Left" Margin="110,198,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="VertriebKind" Content="Kinder P1" HorizontalAlignment="Left" Margin="110,142,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="VertriebDame" Content="Damen P2" HorizontalAlignment="Left" Margin="110,170,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="VertriebHerren" Content="Herren P3" HorizontalAlignment="Left" Margin="110,198,0,0" VerticalAlignment="Top"/>
 
                 </Grid>
             </TabItem>
@@ -83,11 +83,11 @@
                         <ColumnDefinition Width="237*"/>
                         <ColumnDefinition Width="397*"/>
                     </Grid.ColumnDefinitions>
-                    <Label Content="Kinder P1" HorizontalAlignment="Left" Margin="110,142,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.158,4.115"/>
-                    <Label Content="Damen P2" HorizontalAlignment="Left" Margin="110,170,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Herren P3" HorizontalAlignment="Left" Margin="110,198,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Summe" HorizontalAlignment="Left" Margin="110,226,0,0" VerticalAlignment="Top"/>
-                    <Label x:Name="periode" Content="Periode" HorizontalAlignment="Left" Margin="234,110,0,0" VerticalAlignment="Top" Width="52"/>
+                    <Label x:Name="DirektKind" Content="Kinder P1" HorizontalAlignment="Left" Margin="110,142,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.158,4.115"/>
+                    <Label x:Name="DirektDame" Content="Damen P2" HorizontalAlignment="Left" Margin="110,170,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="DirektHerren" Content="Herren P3" HorizontalAlignment="Left" Margin="110,198,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="DirektSumme" Content="Summe" HorizontalAlignment="Left" Margin="110,226,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="DirektPeriode" Content="Periode" HorizontalAlignment="Left" Margin="234,110,0,0" VerticalAlignment="Top" Width="52"/>
                     <Label x:Name="directvarperiod1" Content="varperiod1" HorizontalAlignment="Left" Margin="280,110,0,0" VerticalAlignment="Top" Width="68" />
                     <TextBox x:Name="d11" HorizontalAlignment="Left" Height="23" Margin="234,142,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120" TabIndex="4" TextChanged="Forecast1_TextChanged" />
                     <TextBox x:Name="d21" HorizontalAlignment="Left" Height="23" Margin="234,170,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120" TabIndex="5"  TextChanged="Forecast1_TextChanged" />
@@ -111,11 +111,11 @@
                         <ColumnDefinition Width="237*"/>
                         <ColumnDefinition Width="397*"/>
                     </Grid.ColumnDefinitions>
-                    <Label Content="Periode" HorizontalAlignment="Left" Margin="110,110,0,0" VerticalAlignment="Top" RenderTransformOrigin="2.02,-5.231"/>
-                    <Label Content="Kinder P1" HorizontalAlignment="Left" Margin="110,142,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.158,4.115"/>
-                    <Label Content="Damen P2" HorizontalAlignment="Left" Margin="110,170,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Herren P3" HorizontalAlignment="Left" Margin="110,198,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Summe" HorizontalAlignment="Left" Margin="110,226,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="SicherPeriode" Content="Periode" HorizontalAlignment="Left" Margin="110,110,0,0" VerticalAlignment="Top" RenderTransformOrigin="2.02,-5.231"/>
+                    <Label x:Name="SicherKind" Content="Kinder P1" HorizontalAlignment="Left" Margin="110,142,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.158,4.115"/>
+                    <Label x:Name="SicherDame" Content="Damen P2" HorizontalAlignment="Left" Margin="110,170,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="SicherHerren" Content="Herren P3" HorizontalAlignment="Left" Margin="110,198,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="SicherSumme" Content="Summe" HorizontalAlignment="Left" Margin="110,226,0,0" VerticalAlignment="Top"/>
                     <Label x:Name="sicherheitsvarperiod1" Content="varperiod1" HorizontalAlignment="Left" Margin="234,110,0,0" VerticalAlignment="Top" Width="120"/>
                     <TextBox x:Name="forecastsy1p1" HorizontalAlignment="Left" Height="23" Margin="234,142,0,0" TextWrapping="Wrap" Text="100" VerticalAlignment="Top" Width="120" TabIndex="4" TextChanged="Forecast_TextChanged"/>
                     <TextBox x:Name="forecastsy1p2" HorizontalAlignment="Left" Height="23" Margin="234,170,0,0" TextWrapping="Wrap" Text="100" VerticalAlignment="Top" Width="120" TabIndex="5"  TextChanged="Forecast_TextChanged"/>
@@ -182,13 +182,13 @@
                                     <ColumnDefinition Width="30"/>
                                 </Grid.ColumnDefinitions>
 
-                                <Label Content="Vertriebs-&#xD;&#xA;wunsch" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Height="45" Width="60" Grid.Column="2"/>
-                                <Label Content="Sicherheits- &#xD;&#xA;bestand" HorizontalAlignment="Center"  Margin="0,10,0,0" VerticalAlignment="Top" Height="45" Width="72" Grid.Column="6"/>
-                                <Label Content="Lagerbestand &#xD;&#xA;Vorperiode" HorizontalAlignment="Center"  Margin="0,10,0,0" VerticalAlignment="Top" Height="45" Width="84" Grid.Column="8"/>
-                                <Label Content="Aufträge in &#xD;&#xA;Warteschlange" HorizontalAlignment="Center"  Margin="0,10,0,0" VerticalAlignment="Top" Height="45" Width="98" Grid.Column="10"/>
-                                <Label Content="Aufträge in &#xA;Warteschlange&#xD;&#xA;Vorerzeugnis" HorizontalAlignment="Center"  Margin="0,10,0,0" VerticalAlignment="Top" Height="59" Width="98" Grid.Column="4"/>
-                                <Label Content="Aufträge in &#xA;Bearbeitung" HorizontalAlignment="Center"  Margin="0,10,0,0" VerticalAlignment="Top" Height="45" Width="98" Grid.Column="12"/>
-                                <Label Content="Produktionsaufträge&#xD;&#xA;kommende Periode" HorizontalAlignment="Center"  Margin="0,10,0,0" VerticalAlignment="Top" Height="45" Width="128" Grid.Column="14"/>
+                                <Label x:Name="ProduktVertrieb" Content="Vertriebs-&#xD;&#xA;wunsch" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Height="45" Width="60" Grid.Column="2"/>
+                                <Label x:Name="ProduktSicher" Content="Sicherheits- &#xD;&#xA;bestand" HorizontalAlignment="Center"  Margin="0,10,0,0" VerticalAlignment="Top" Height="45" Width="72" Grid.Column="6"/>
+                                <Label x:Name="ProduktLager" Content="Lagerbestand &#xD;&#xA;Vorperiode" HorizontalAlignment="Center"  Margin="0,10,0,0" VerticalAlignment="Top" Height="45" Width="84" Grid.Column="8"/>
+                                <Label x:Name="ProduktAuftrag" Content="Aufträge in &#xD;&#xA;Warteschlange" HorizontalAlignment="Center"  Margin="0,10,0,0" VerticalAlignment="Top" Height="45" Width="98" Grid.Column="10"/>
+                                <Label x:Name="ProduktWarte" Content="Aufträge in &#xA;Warteschlange&#xD;&#xA;Vorerzeugnis" HorizontalAlignment="Center"  Margin="0,10,0,0" VerticalAlignment="Top" Height="59" Width="98" Grid.Column="4"/>
+                                <Label x:Name="ProduktBearb" Content="Aufträge in &#xA;Bearbeitung" HorizontalAlignment="Center"  Margin="0,10,0,0" VerticalAlignment="Top" Height="45" Width="98" Grid.Column="12"/>
+                                <Label x:Name="ProduktProdukt" Content="Produktionsaufträge&#xD;&#xA;kommende Periode" HorizontalAlignment="Center"  Margin="0,10,0,0" VerticalAlignment="Top" Height="45" Width="128" Grid.Column="14"/>
 
                                 <Label Content="P1" HorizontalAlignment="Left" Margin="20,60,0,0" VerticalAlignment="Top" Grid.Column="1"/>
                                 <Label Content="E 26*" HorizontalAlignment="Left" Margin="20,90,0,0" VerticalAlignment="Top" Grid.Column="1"/>
