@@ -21,9 +21,9 @@ namespace Ibsys2.Service {
             _translate.Add("ONLY_INT_ERROR", "Please use only integer values!");
             _translate.Add("SALES_ORDERS", "Sales orders");
             _translate.Add("FORECASTS", "Forecasts");
-            _translate.Add("CHILDREN_BICYCLE", "Children's bicycle");
-            _translate.Add("LADY_BICYCLE", "Lady's bicycle");
-            _translate.Add("MEN_BICYCLE", "Men's bycicle");
+            _translate.Add("CHILDREN_BICYCLE", "Children's bicycle P1");
+            _translate.Add("LADY_BICYCLE", "Lady's bicycle P2");
+            _translate.Add("MEN_BICYCLE", "Men's bycicle P3");
             _translate.Add("TOTAL", "Total");
             _translate.Add("PRIMARY_REQ", "Primary requirements");
             _translate.Add("MAT_PLAN", "Material planning");
@@ -126,7 +126,22 @@ namespace Ibsys2.Service {
             _translate.Add("SUM_TOO_BIG", "The sum is too big! Value should be equal or lower than 1050!");;
             _translate.Add("XMLEXPORT_SUCCESS", "The XML Export finished successfully!");
             _translate.Add("XMLEXPORT_NO_SUCCESS", "The XML Export has failed!");
-            _translate.Add("MODE", "mode");
+            _translate.Add("NEXT", "Next");
+            _translate.Add("CLEAR", "Clear all");
+            _translate.Add("CHOOSEFILE", "Browse file");
+            _translate.Add("COUNT", "calculate");
+            _translate.Add("PROGRAM", "Program");
+            _translate.Add("HELP", "Help");
+            _translate.Add("CLOSE", "Close");
+            _translate.Add("ABOUT", "About");
+            _translate.Add("OVERTIMEPERDAY", "Overtime per day");
+            _translate.Add("IMPORT", "Import");
+            _translate.Add("DISTRIBUTION", "Distribution");
+            _translate.Add("PERIODE", "Period");
+            _translate.Add("CONTRACTPENALTY", "contract penalty");
+            _translate.Add("RETAILPRICE", "retail price");
+            _translate.Add("PRODUCTIONPLAN", "Material Planning");
+            _translate.Add("PREORDER", "Orders in the waiting queue (Pre period)");
         }
 
     }

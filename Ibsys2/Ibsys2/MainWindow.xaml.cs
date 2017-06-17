@@ -151,7 +151,48 @@ namespace Ibsys2
             }
 
 
+            MainpageNextButton.Content = TranslateService.Class.GetTranslation("NEXT");
+            clear.Content = TranslateService.Class.GetTranslation("CLEAR");
+            choosefile.Content = TranslateService.Class.GetTranslation("CHOOSEFILE");
+            calculatebutton.Content = TranslateService.Class.GetTranslation("COUNT");
+            Programm.Header = TranslateService.Class.GetTranslation("PROGRAM");
+            Helpmenuitem.Header = TranslateService.Class.GetTranslation("HELP");
+            Closemenuitem.Header = TranslateService.Class.GetTranslation("CLOSE");
+            Settingsmenuheader.Header = TranslateService.Class.GetTranslation("SETTINGS");
+            Aboutmenuheader.Header = TranslateService.Class.GetTranslation("ABOUT");
+            Maintab.Header = TranslateService.Class.GetTranslation("IMPORT");
+            Prognosentab.Header = TranslateService.Class.GetTranslation("DISTRIBUTION");
+            VertriebPeriode.Content = TranslateService.Class.GetTranslation("PERIODE");
+            VertriebSumme.Content = TranslateService.Class.GetTranslation("TOTAL");
+            VertriebKind.Content = TranslateService.Class.GetTranslation("CHILDREN_BICYCLE");
+            VertriebDame.Content = TranslateService.Class.GetTranslation("LADY_BICYCLE");
+            VertriebHerren.Content = TranslateService.Class.GetTranslation("MEN_BICYCLE");
+            VertriebPrognose.Content = TranslateService.Class.GetTranslation("FORECASTS");
+            PrognosenNextButton.Content = TranslateService.Class.GetTranslation("NEXT");
+            Vertriebswunsch.Content = TranslateService.Class.GetTranslation("SALES_ORDERS");
+            DirektPeriode.Content = TranslateService.Class.GetTranslation("PERIODE");
+            DirektSumme.Content = TranslateService.Class.GetTranslation("TOTAL");
+            DirektKind.Content = TranslateService.Class.GetTranslation("CHILDREN_BICYCLE");
+            DirektDame.Content = TranslateService.Class.GetTranslation("LADY_BICYCLE");
+            DirektHerren.Content = TranslateService.Class.GetTranslation("MEN_BICYCLE");
+            directnextbutton.Content = TranslateService.Class.GetTranslation("NEXT");
+            contractpenalty.Content = TranslateService.Class.GetTranslation("CONTRACTPENALTY");
+            retailprice.Content = TranslateService.Class.GetTranslation("RETAILPRICE");
+            sicherheitsbestandtab.Header = TranslateService.Class.GetTranslation("SAFETY_STOCK");
+            SicherPeriode.Content = TranslateService.Class.GetTranslation("PERIODE");
+            SicherSumme.Content = TranslateService.Class.GetTranslation("TOTAL");
+            SicherKind.Content = TranslateService.Class.GetTranslation("CHILDREN_BICYCLE");
+            SicherDame.Content = TranslateService.Class.GetTranslation("LADY_BICYCLE");
+            SicherHerren.Content = TranslateService.Class.GetTranslation("MEN_BICYCLE");
 
+            Produktionsplanungtab.Header = TranslateService.Class.GetTranslation("PRODUCTIONPLAN");
+            ProduktVertrieb.Content = TranslateService.Class.GetTranslation("SALES_ORDERS");
+            ProduktSicher.Content = TranslateService.Class.GetTranslation("SAFETY_STOCK");
+            ProduktLager.Content = TranslateService.Class.GetTranslation("END_WAREHOUSE_STOCK");
+            ProduktAuftrag.Content = TranslateService.Class.GetTranslation("ORDERS_QUEUE");
+            ProduktWarte.Content = TranslateService.Class.GetTranslation("PREORDER");
+            ProduktBearb.Content = TranslateService.Class.GetTranslation("WORK_IN_PROGRESS");
+            ProduktProdukt.Content = TranslateService.Class.GetTranslation("PRODUCTION_ORDERS_FOR_COMMING");
 
             UpdateSummeFromForcast(null, null);
             dataGrid1.ItemsSource = CreateWork1();
@@ -203,35 +244,35 @@ namespace Ibsys2
         public ObservableCollection<Liefer> CreateLiefer1()
         {
             ObservableCollection<Liefer> liefer = new ObservableCollection<Liefer>();
-            liefer.Add(new Liefer { Kaufteileno = "21", Kaufteil = "Kette", Verwendung="K", Teilewert="5,00", Diskontmenge="300", Bestellkosten="50", Lieferfrist = "1,8", Abweichung = "0,4" });
-            liefer.Add(new Liefer { Kaufteileno = "22", Kaufteil = "Kette", Verwendung = "D", Teilewert = "6,50", Diskontmenge = "300", Bestellkosten = "50", Lieferfrist = "1,7", Abweichung = "0,4" });
-            liefer.Add(new Liefer { Kaufteileno = "23", Kaufteil = "Kette", Verwendung = "H", Teilewert = "6,50", Diskontmenge = "300", Bestellkosten = "50", Lieferfrist = "1,2", Abweichung = "0,2" });
-            liefer.Add(new Liefer { Kaufteileno = "24", Kaufteil = "Mutter 3/8", Verwendung = "KDH", Teilewert = "0;06", Diskontmenge = "6100", Bestellkosten = "100", Lieferfrist = "3,2", Abweichung = "0,3" });
-            liefer.Add(new Liefer { Kaufteileno = "25", Kaufteil = "Scheibe 3/8", Verwendung = "KDH", Teilewert = "0;06", Diskontmenge = "3600", Bestellkosten = "50", Lieferfrist = "0,9", Abweichung = "0,2" });
-            liefer.Add(new Liefer { Kaufteileno = "27", Kaufteil = "Schraube 3/8", Verwendung = "KDH", Teilewert = "0,1", Diskontmenge = "1800", Bestellkosten = "75", Lieferfrist = "0,9", Abweichung = "0,2" });
-            liefer.Add(new Liefer { Kaufteileno = "28", Kaufteil = "Rohr 3/4", Verwendung = "KDH", Teilewert = "1,20", Diskontmenge = "4500", Bestellkosten = "50", Lieferfrist = "1,7", Abweichung = "0,4" });
-            liefer.Add(new Liefer { Kaufteileno = "32", Kaufteil = "Farbe", Verwendung = "KDH", Teilewert = "0,75", Diskontmenge = "2700", Bestellkosten = "50", Lieferfrist = "2,1", Abweichung = "0,5" });
-            liefer.Add(new Liefer { Kaufteileno = "33", Kaufteil = "Felge cpl.", Verwendung = "H", Teilewert = "22,00", Diskontmenge = "900", Bestellkosten = "75", Lieferfrist = "1,9", Abweichung = "0,5" });
-            liefer.Add(new Liefer { Kaufteileno = "34", Kaufteil = "Speiche", Verwendung = "H", Teilewert = "0,1", Diskontmenge = "22000", Bestellkosten = "50", Lieferfrist = "1,6", Abweichung = "0,3" });
-            liefer.Add(new Liefer { Kaufteileno = "35", Kaufteil = "Nabe", Verwendung = "KDH", Teilewert = "1,00", Diskontmenge = "3600", Bestellkosten = "75", Lieferfrist = "2,2", Abweichung = "0,4" });
-            liefer.Add(new Liefer { Kaufteileno = "36", Kaufteil = "Freilauf", Verwendung = "KDH", Teilewert = "8,00", Diskontmenge = "900", Bestellkosten = "100", Lieferfrist = "1,2", Abweichung = "0,1" });
-            liefer.Add(new Liefer { Kaufteileno = "37", Kaufteil = "Gabel", Verwendung = "KDH", Teilewert = "1,50", Diskontmenge = "900", Bestellkosten = "50", Lieferfrist = "1,5", Abweichung = "0,3" });
-            liefer.Add(new Liefer { Kaufteileno = "38", Kaufteil = "Welle", Verwendung = "KDH", Teilewert = "1,50", Diskontmenge = "300", Bestellkosten = "50", Lieferfrist = "1,7", Abweichung = "0,4" });
-            liefer.Add(new Liefer { Kaufteileno = "39", Kaufteil = "Blech", Verwendung = "KDH", Teilewert = "1,50", Diskontmenge = "1800", Bestellkosten = "75", Lieferfrist = "1,5", Abweichung = "0,3" });
+            liefer.Add(new Liefer { Kaufteileno = "21", Kaufteil = TranslateService.Class.GetTranslation("CHAIN"), Verwendung="K", Teilewert="5,00", Diskontmenge="300", Bestellkosten="50", Lieferfrist = "1,8", Abweichung = "0,4" });
+            liefer.Add(new Liefer { Kaufteileno = "22", Kaufteil = TranslateService.Class.GetTranslation("CHAIN"), Verwendung = "D", Teilewert = "6,50", Diskontmenge = "300", Bestellkosten = "50", Lieferfrist = "1,7", Abweichung = "0,4" });
+            liefer.Add(new Liefer { Kaufteileno = "23", Kaufteil = TranslateService.Class.GetTranslation("CHAIN"), Verwendung = "H", Teilewert = "6,50", Diskontmenge = "300", Bestellkosten = "50", Lieferfrist = "1,2", Abweichung = "0,2" });
+            liefer.Add(new Liefer { Kaufteileno = "24", Kaufteil = TranslateService.Class.GetTranslation("UT_three"), Verwendung = "KDH", Teilewert = "0;06", Diskontmenge = "6100", Bestellkosten = "100", Lieferfrist = "3,2", Abweichung = "0,3" });
+            liefer.Add(new Liefer { Kaufteileno = "25", Kaufteil = TranslateService.Class.GetTranslation("WASHER"), Verwendung = "KDH", Teilewert = "0;06", Diskontmenge = "3600", Bestellkosten = "50", Lieferfrist = "0,9", Abweichung = "0,2" });
+            liefer.Add(new Liefer { Kaufteileno = "27", Kaufteil = TranslateService.Class.GetTranslation("SCREW"), Verwendung = "KDH", Teilewert = "0,1", Diskontmenge = "1800", Bestellkosten = "75", Lieferfrist = "0,9", Abweichung = "0,2" });
+            liefer.Add(new Liefer { Kaufteileno = "28", Kaufteil = TranslateService.Class.GetTranslation("TUBE"), Verwendung = "KDH", Teilewert = "1,20", Diskontmenge = "4500", Bestellkosten = "50", Lieferfrist = "1,7", Abweichung = "0,4" });
+            liefer.Add(new Liefer { Kaufteileno = "32", Kaufteil = TranslateService.Class.GetTranslation("PAINT"), Verwendung = "KDH", Teilewert = "0,75", Diskontmenge = "2700", Bestellkosten = "50", Lieferfrist = "2,1", Abweichung = "0,5" });
+            liefer.Add(new Liefer { Kaufteileno = "33", Kaufteil = TranslateService.Class.GetTranslation("RIM"), Verwendung = "H", Teilewert = "22,00", Diskontmenge = "900", Bestellkosten = "75", Lieferfrist = "1,9", Abweichung = "0,5" });
+            liefer.Add(new Liefer { Kaufteileno = "34", Kaufteil = TranslateService.Class.GetTranslation("SPOKE"), Verwendung = "H", Teilewert = "0,1", Diskontmenge = "22000", Bestellkosten = "50", Lieferfrist = "1,6", Abweichung = "0,3" });
+            liefer.Add(new Liefer { Kaufteileno = "35", Kaufteil = TranslateService.Class.GetTranslation("TAPER"), Verwendung = "KDH", Teilewert = "1,00", Diskontmenge = "3600", Bestellkosten = "75", Lieferfrist = "2,2", Abweichung = "0,4" });
+            liefer.Add(new Liefer { Kaufteileno = "36", Kaufteil = TranslateService.Class.GetTranslation("FREE"), Verwendung = "KDH", Teilewert = "8,00", Diskontmenge = "900", Bestellkosten = "100", Lieferfrist = "1,2", Abweichung = "0,1" });
+            liefer.Add(new Liefer { Kaufteileno = "37", Kaufteil = TranslateService.Class.GetTranslation("FORK"), Verwendung = "KDH", Teilewert = "1,50", Diskontmenge = "900", Bestellkosten = "50", Lieferfrist = "1,5", Abweichung = "0,3" });
+            liefer.Add(new Liefer { Kaufteileno = "38", Kaufteil = TranslateService.Class.GetTranslation("AXLE"), Verwendung = "KDH", Teilewert = "1,50", Diskontmenge = "300", Bestellkosten = "50", Lieferfrist = "1,7", Abweichung = "0,4" });
+            liefer.Add(new Liefer { Kaufteileno = "39", Kaufteil = TranslateService.Class.GetTranslation("SHEET"), Verwendung = "KDH", Teilewert = "1,50", Diskontmenge = "1800", Bestellkosten = "75", Lieferfrist = "1,5", Abweichung = "0,3" });
             liefer.Add(new Liefer { Kaufteileno = "40", Kaufteil = TranslateService.Class.GetTranslation("HANDLE_BAR"), Verwendung = "KDH", Teilewert = "2,50", Diskontmenge = "900", Bestellkosten = "50", Lieferfrist = "1,7", Abweichung = "0,2" });
-            liefer.Add(new Liefer { Kaufteileno = "41", Kaufteil = "Mutter 3/4", Verwendung = "KDH", Teilewert = "0,06", Diskontmenge = "900", Bestellkosten = "50", Lieferfrist = "0,9", Abweichung = "0,2" });
-            liefer.Add(new Liefer { Kaufteileno = "42", Kaufteil = "Griff", Verwendung = "KDH", Teilewert = "0,10", Diskontmenge = "1800", Bestellkosten = "50", Lieferfrist = "1,2", Abweichung = "0,3" });
-            liefer.Add(new Liefer { Kaufteileno = "43", Kaufteil = "Sattel", Verwendung = "KDH", Teilewert = "5,00", Diskontmenge = "2700", Bestellkosten = "75", Lieferfrist = "2,0", Abweichung = "0,5" });
-            liefer.Add(new Liefer { Kaufteileno = "44", Kaufteil = "Stange 1/2", Verwendung = "KDH", Teilewert = "0,50", Diskontmenge = "900", Bestellkosten = "50", Lieferfrist = "1,2", Abweichung = "0,2" });
-            liefer.Add(new Liefer { Kaufteileno = "45", Kaufteil = "Mutter 1/4", Verwendung = "KDH", Teilewert = "0,06", Diskontmenge = "900", Bestellkosten = "50", Lieferfrist = "1,7", Abweichung = "0,3" });
-            liefer.Add(new Liefer { Kaufteileno = "46", Kaufteil = "Schraube 1/4", Verwendung = "KDH", Teilewert = "0,10", Diskontmenge = "900", Bestellkosten = "50", Lieferfrist = "0,9", Abweichung = "0,3" });
-            liefer.Add(new Liefer { Kaufteileno = "47", Kaufteil = "Zahnkranz", Verwendung = "KDH", Teilewert = "3,50", Diskontmenge = "900", Bestellkosten = "50", Lieferfrist = "1,1", Abweichung = "0,1" });
+            liefer.Add(new Liefer { Kaufteileno = "41", Kaufteil = TranslateService.Class.GetTranslation("NUT_FOUR"), Verwendung = "KDH", Teilewert = "0,06", Diskontmenge = "900", Bestellkosten = "50", Lieferfrist = "0,9", Abweichung = "0,2" });
+            liefer.Add(new Liefer { Kaufteileno = "42", Kaufteil = TranslateService.Class.GetTranslation("HANDLE_GRIP"), Verwendung = "KDH", Teilewert = "0,10", Diskontmenge = "1800", Bestellkosten = "50", Lieferfrist = "1,2", Abweichung = "0,3" });
+            liefer.Add(new Liefer { Kaufteileno = "43", Kaufteil = TranslateService.Class.GetTranslation("SADDLE"), Verwendung = "KDH", Teilewert = "5,00", Diskontmenge = "2700", Bestellkosten = "75", Lieferfrist = "2,0", Abweichung = "0,5" });
+            liefer.Add(new Liefer { Kaufteileno = "44", Kaufteil = TranslateService.Class.GetTranslation("BAR"), Verwendung = "KDH", Teilewert = "0,50", Diskontmenge = "900", Bestellkosten = "50", Lieferfrist = "1,2", Abweichung = "0,2" });
+            liefer.Add(new Liefer { Kaufteileno = "45", Kaufteil = TranslateService.Class.GetTranslation("NUT_QUARTER"), Verwendung = "KDH", Teilewert = "0,06", Diskontmenge = "900", Bestellkosten = "50", Lieferfrist = "1,7", Abweichung = "0,3" });
+            liefer.Add(new Liefer { Kaufteileno = "46", Kaufteil = TranslateService.Class.GetTranslation("SCREW_QUARTER"), Verwendung = "KDH", Teilewert = "0,10", Diskontmenge = "900", Bestellkosten = "50", Lieferfrist = "0,9", Abweichung = "0,3" });
+            liefer.Add(new Liefer { Kaufteileno = "47", Kaufteil = TranslateService.Class.GetTranslation("SPROCKET"), Verwendung = "KDH", Teilewert = "3,50", Diskontmenge = "900", Bestellkosten = "50", Lieferfrist = "1,1", Abweichung = "0,1" });
             liefer.Add(new Liefer { Kaufteileno = "48", Kaufteil = TranslateService.Class.GetTranslation("PEDAL"), Verwendung = "KDH", Teilewert = "1,50", Diskontmenge = "1800", Bestellkosten = "75", Lieferfrist = "1,0", Abweichung = "0,2" });
-            liefer.Add(new Liefer { Kaufteileno = "52", Kaufteil = "Felge cpl.", Verwendung = "K", Teilewert = "22,00", Diskontmenge = "600", Bestellkosten = "50", Lieferfrist = "1,6", Abweichung = "0,4" });
-            liefer.Add(new Liefer { Kaufteileno = "53", Kaufteil = "Speiche", Verwendung = "K", Teilewert = "0,10", Diskontmenge = "22000", Bestellkosten = "50", Lieferfrist = "1,6", Abweichung = "0,2" });
-            liefer.Add(new Liefer { Kaufteileno = "57", Kaufteil = "Felge cp.", Verwendung = "D", Teilewert = "22,00", Diskontmenge = "600", Bestellkosten = "50", Lieferfrist = "1,7", Abweichung = "0,3" });
-            liefer.Add(new Liefer { Kaufteileno = "58", Kaufteil = "Speiche", Verwendung = "D", Teilewert = "0,10", Diskontmenge = "22000", Bestellkosten = "50", Lieferfrist = "1,6", Abweichung = "0,5" });
-            liefer.Add(new Liefer { Kaufteileno = "59", Kaufteil = "Schweißdraht", Verwendung = "KDH", Teilewert = "0,15", Diskontmenge = "1800", Bestellkosten = "50", Lieferfrist = "0,7", Abweichung = "0,2" });
+            liefer.Add(new Liefer { Kaufteileno = "52", Kaufteil = TranslateService.Class.GetTranslation("RIM"), Verwendung = "K", Teilewert = "22,00", Diskontmenge = "600", Bestellkosten = "50", Lieferfrist = "1,6", Abweichung = "0,4" });
+            liefer.Add(new Liefer { Kaufteileno = "53", Kaufteil = TranslateService.Class.GetTranslation("SPOKE"), Verwendung = "K", Teilewert = "0,10", Diskontmenge = "22000", Bestellkosten = "50", Lieferfrist = "1,6", Abweichung = "0,2" });
+            liefer.Add(new Liefer { Kaufteileno = "57", Kaufteil = TranslateService.Class.GetTranslation("RIM"), Verwendung = "D", Teilewert = "22,00", Diskontmenge = "600", Bestellkosten = "50", Lieferfrist = "1,7", Abweichung = "0,3" });
+            liefer.Add(new Liefer { Kaufteileno = "58", Kaufteil = TranslateService.Class.GetTranslation("SPOKE"), Verwendung = "D", Teilewert = "0,10", Diskontmenge = "22000", Bestellkosten = "50", Lieferfrist = "1,6", Abweichung = "0,5" });
+            liefer.Add(new Liefer { Kaufteileno = "59", Kaufteil = TranslateService.Class.GetTranslation("WELDING_WIRES"), Verwendung = "KDH", Teilewert = "0,15", Diskontmenge = "1800", Bestellkosten = "50", Lieferfrist = "0,7", Abweichung = "0,2" });
             return liefer;
         }
 
