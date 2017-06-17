@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Ibsys2.Static.Output {
-    public class Workingtimelist:IEnumerable<WorkingtimelistItem> {
+    public class Workingtimelist:IEnumerable<WorkingtimelistItem>,INotifyPropertyChanged
+    {
         //<workingtimelist><workingtime station="[1-99]" shift="[1-9]" overtime="[0-999999]"/></workingtimelist>
         private static Workingtimelist _class;
         private List<WorkingtimelistItem> _list;
@@ -56,6 +59,17 @@ namespace Ibsys2.Static.Output {
         IEnumerator IEnumerable.GetEnumerator() {
             return ((IEnumerable<WorkingtimelistItem>)_list).GetEnumerator();
         }
+
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private void NotifyPropertyChanged([CallerMemberName] String propertyName = "")
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            }
+        }
     }
 
     public class WorkingtimelistItem {
@@ -84,9 +98,12 @@ namespace Ibsys2.Static.Output {
         public int overtime {
             get { return _overtime; }
             set {
-                if (value < 0 || value > 1000000)
+                if (value > 1000000)
                     throw new Exception();
-                _overtime = value;
+                if (value < 0)
+                    _overtime = 0;
+                else
+                    _overtime = value;
             }
         }
 

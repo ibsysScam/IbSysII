@@ -4,115 +4,1076 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Ibsys2"
+        xmlns:chart="clr-namespace:De.TorstenMandelkow.MetroChart;assembly=De.TorstenMandelkow.MetroChart"
         mc:Ignorable="d"
         Title="Transmorfers" ResizeMode="NoResize" Height="720" Width="1280"  AllowDrop="True" DragEnter="Window_DragEnter" >
-    <Grid>
 
-        <Menu DockPanel.Dock="Top">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="932*"/>
+            <ColumnDefinition Width="341*"/>
+        </Grid.ColumnDefinitions>
+
+        <Menu Grid.ColumnSpan="2" Margin="0,0,-0.4,0.4">
             <MenuItem Header="Programm">
                 <MenuItem x:Name="Helpmenuitem" Header="Help" Click="Helpmenuitem_Click"/>
                 <MenuItem x:Name="Closemenuitem" Header="Close" Click="Closemenuitem_Click"/>
             </MenuItem>
             <MenuItem x:Name="Settingsmenuheader" Header="Settings" Click="Settingsmenuheader_Click"/>
-            <MenuItem x:Name="Aboutmenuheader" Header="About"/>
+            <MenuItem x:Name="Aboutmenuheader" Header="About"  Click="Aboutmenuheader_Click"/>
         </Menu>
 
-        <TabControl x:Name="MainTabControl" HorizontalAlignment="Left" Height="672" Margin="0,19,0,0" VerticalAlignment="Top" Width="1274" SelectedIndex="0">
-            <TabItem x:Name="Maintab" Header="Main">
-                <Grid Background="#FFE5E5E5">
+        <TabControl x:Name="MainTabControl" HorizontalAlignment="Left" Height="672" Margin="0,19,-0.4,-0.6" VerticalAlignment="Top" Width="1274" SelectedIndex="0" SelectionChanged="MainTabControl_SelectionChanged" Grid.ColumnSpan="2">
+            <TabItem x:Name="Maintab" Header="Import">
+                <Grid Background="#FFE5E5E5" Margin="0,0,0,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="995*"/>
+                        <ColumnDefinition Width="273*"/>
+                    </Grid.ColumnDefinitions>
                     <Button x:Name="choosefile" Content="Browse File" HorizontalAlignment="Left" Margin="10,52,0,0" VerticalAlignment="Top" Width="75" Click="Choosefile_Click" ToolTip="Drag and Drop your XML File instead of choosing it here!"/>
                     <TextBox x:Name="Pathtextbox" MaxLines="1" HorizontalAlignment="Left" Height="23" Margin="10,77,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="286" TabIndex="0" ToolTip="Drag Dop your XML File here!" />
                     <Button x:Name="clear" Content="Clear all" HorizontalAlignment="Left" Margin="221,52,0,0" VerticalAlignment="Top" Width="75" Click="Clear_Click" RenderTransformOrigin="0.587,3.75"/>
                     <Button x:Name="MainpageNextButton" Content="Next" HorizontalAlignment="Left" Margin="221,105,0,0" VerticalAlignment="Top" Width="75" Click="MainpageNextButton_Click"/>
                 </Grid>
             </TabItem>
-            <TabItem x:Name="Prognosentab" Header="Prognosen" IsEnabled="False">
+            <TabItem x:Name="Prognosentab" Header="Vertrieb" IsEnabled="False">
                 <Grid Background="#FFE5E5E5">
-                    <Label Content="Periode" HorizontalAlignment="Left" Margin="93,110,0,0" VerticalAlignment="Top" Height="23" Width="120"/>
-                    <Label Content="Summe&#xD;&#xA;" HorizontalAlignment="Left" Margin="93,226,0,0" VerticalAlignment="Top" Height="24" Width="120"/>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="237*"/>
+                        <ColumnDefinition Width="397*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="Periode" HorizontalAlignment="Left" Margin="110,110,0,0" VerticalAlignment="Top" Height="23" Width="120"/>
+                    <Label Content="Summe&#xD;&#xA;" HorizontalAlignment="Left" Margin="110,226,0,0" VerticalAlignment="Top" Height="24" Width="120"/>
                     <TextBox HorizontalAlignment="Left" Height="23" Margin="234,142,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
                     <TextBox HorizontalAlignment="Left" Height="23" Margin="234,170,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-                    <TextBox x:Name="period0product3" HorizontalAlignment="Left" Height="23" Margin="234,198,0,0" TextWrapping="Wrap" Text="100" VerticalAlignment="Top" Width="120" PreviewTextInput="NumberIntValidationTextBox" TextChanged="UpdateSummeFromForcast"/>
-                    <TextBox x:Name="period0product2" HorizontalAlignment="Left" Height="23" Margin="234,170,0,0" TextWrapping="Wrap" Text="100" VerticalAlignment="Top" Width="120" PreviewTextInput="NumberIntValidationTextBox" TextChanged="UpdateSummeFromForcast"/>
                     <TextBox x:Name="period0product1" HorizontalAlignment="Left" Height="23" Margin="234,142,0,0" TextWrapping="Wrap" Text="100" VerticalAlignment="Top" Width="120" PreviewTextInput="NumberIntValidationTextBox" TextChanged="UpdateSummeFromForcast"/>
-                    <TextBox x:Name="period1product1" HorizontalAlignment="Left" Height="23" Margin="359,142,0,0" TextWrapping="Wrap" Text="100" VerticalAlignment="Top" Width="120" PreviewTextInput="NumberIntValidationTextBox" TextChanged="UpdateSummeFromForcast"/>
-                    <TextBox x:Name="period1product2" HorizontalAlignment="Left" Height="23" Margin="359,170,0,0" TextWrapping="Wrap" Text="100" VerticalAlignment="Top" Width="120" PreviewTextInput="NumberIntValidationTextBox" TextChanged="UpdateSummeFromForcast"/>
-                    <TextBox x:Name="period1product3" HorizontalAlignment="Left" Height="23" Margin="359,198,0,0" TextWrapping="Wrap" Text="100" VerticalAlignment="Top" Width="120" PreviewTextInput="NumberIntValidationTextBox" TextChanged="UpdateSummeFromForcast"/>
-                    <TextBox HorizontalAlignment="Left" Height="23" Margin="484,170,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-                    <TextBox HorizontalAlignment="Left" Height="23" Margin="484,170,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-                    <TextBox x:Name="period2product2" HorizontalAlignment="Left" Height="23" Margin="484,170,0,0" TextWrapping="Wrap" Text="100" VerticalAlignment="Top" Width="120" PreviewTextInput="NumberIntValidationTextBox" TextChanged="UpdateSummeFromForcast"/>
-                    <TextBox x:Name="period2product1" HorizontalAlignment="Left" Height="23" Margin="484,142,0,0" TextWrapping="Wrap" Text="100" VerticalAlignment="Top" Width="120" PreviewTextInput="NumberIntValidationTextBox" TextChanged="UpdateSummeFromForcast"/>
-                    <TextBox x:Name="period2product3" HorizontalAlignment="Left" Height="23" Margin="484,198,0,0" TextWrapping="Wrap" Text="100" VerticalAlignment="Top" Width="120" PreviewTextInput="NumberIntValidationTextBox" TextChanged="UpdateSummeFromForcast"/>
-                    <TextBox x:Name="period3product1" HorizontalAlignment="Left" Height="23" Margin="609,142,0,0" TextWrapping="Wrap" Text="100" VerticalAlignment="Top" Width="120" PreviewTextInput="NumberIntValidationTextBox" TextChanged="UpdateSummeFromForcast"/>
-                    <TextBox x:Name="period3product3" HorizontalAlignment="Left" Height="23" Margin="609,198,0,0" TextWrapping="Wrap" Text="100" VerticalAlignment="Top" Width="120" PreviewTextInput="NumberIntValidationTextBox" TextChanged="UpdateSummeFromForcast"/>
-                    <TextBox x:Name="period3product2" HorizontalAlignment="Left" Height="23" Margin="609,170,0,0" TextWrapping="Wrap" Text="100" VerticalAlignment="Top" Width="120" PreviewTextInput="NumberIntValidationTextBox" TextChanged="UpdateSummeFromForcast"/>
-                    <TextBox x:Name="period0sum" HorizontalAlignment="Left" Height="23" Margin="234,226,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
-                    <TextBox x:Name="period1sum" HorizontalAlignment="Left" Height="23" Margin="359,226,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
-                    <TextBox x:Name="period2sum" HorizontalAlignment="Left" Height="23" Margin="484,226,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
-                    <TextBox x:Name="period3sum" HorizontalAlignment="Left" Height="23" Margin="609,226,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
-                    <Label Content="Verbindliche Aufträge:" HorizontalAlignment="Left" Margin="93,61,0,0" VerticalAlignment="Top" Width="261"/>
-                    <Label Content="Prognose" HorizontalAlignment="Left" Margin="359,61,0,0" VerticalAlignment="Top" Width="370"/>
-                    <Button x:Name="PrognosenNextButton" Content="Next" HorizontalAlignment="Left" Margin="654,263,0,0" VerticalAlignment="Top" Width="75" Click="PrognosenNextbutton_Click"/>
-                    <Label x:Name="periode0" Content="7" HorizontalAlignment="Left" Margin="234,110,0,0" VerticalAlignment="Top" Width="120"/>
-                    <Label x:Name="periode1" Content="8" HorizontalAlignment="Left" Margin="359,111,0,0" VerticalAlignment="Top" Width="120"/>
-                    <Label x:Name="periode2" Content="9" HorizontalAlignment="Left" Margin="484,111,0,0" VerticalAlignment="Top" Width="120"/>
-                    <Label x:Name="periode3" Content="10" HorizontalAlignment="Left" Margin="609,110,0,0" VerticalAlignment="Top" Width="120"/>
+                    <TextBox x:Name="period0product2" HorizontalAlignment="Left" Height="23" Margin="234,170,0,0" TextWrapping="Wrap" Text="100" VerticalAlignment="Top" Width="120" PreviewTextInput="NumberIntValidationTextBox" TextChanged="UpdateSummeFromForcast"/>
+                    <TextBox x:Name="period0product3" HorizontalAlignment="Left" Height="23" Margin="234,198,0,0" TextWrapping="Wrap" Text="150" VerticalAlignment="Top" Width="120" PreviewTextInput="NumberIntValidationTextBox" TextChanged="UpdateSummeFromForcast"/>
+                    <TextBox x:Name="period1product1" HorizontalAlignment="Left" Height="23" Margin="404,142,0,0" TextWrapping="Wrap" Text="150" VerticalAlignment="Top" Width="120" PreviewTextInput="NumberIntValidationTextBox" TextChanged="UpdateSummeFromForcast" Grid.ColumnSpan="2"/>
+                    <TextBox x:Name="period1product2" HorizontalAlignment="Left" Height="23" Margin="404,170,0,0" TextWrapping="Wrap" Text="100" VerticalAlignment="Top" Width="120" PreviewTextInput="NumberIntValidationTextBox" TextChanged="UpdateSummeFromForcast" Grid.ColumnSpan="2"/>
+                    <TextBox x:Name="period1product3" HorizontalAlignment="Left" Height="23" Margin="404,198,0,0" TextWrapping="Wrap" Text="100" VerticalAlignment="Top" Width="120" PreviewTextInput="NumberIntValidationTextBox" TextChanged="UpdateSummeFromForcast" Grid.ColumnSpan="2"/>
+                    <TextBox x:Name="period2product1" HorizontalAlignment="Left" Height="23" Margin="55,142,0,0" TextWrapping="Wrap" Text="150" VerticalAlignment="Top" Width="120" PreviewTextInput="NumberIntValidationTextBox" TextChanged="UpdateSummeFromForcast" Grid.Column="1"/>
+                    <TextBox x:Name="period2product2" HorizontalAlignment="Left" Height="23" Margin="55,170,0,0" TextWrapping="Wrap" Text="100" VerticalAlignment="Top" Width="120" PreviewTextInput="NumberIntValidationTextBox" TextChanged="UpdateSummeFromForcast" Grid.Column="1"/>
+                    <TextBox x:Name="period2product3" HorizontalAlignment="Left" Height="23" Margin="55,198,0,0" TextWrapping="Wrap" Text="100" VerticalAlignment="Top" Width="120" PreviewTextInput="NumberIntValidationTextBox" TextChanged="UpdateSummeFromForcast" Grid.Column="1"/>
+                    <TextBox x:Name="period3product1" HorizontalAlignment="Left" Height="23" Margin="180,142,0,0" TextWrapping="Wrap" Text="200" VerticalAlignment="Top" Width="120" PreviewTextInput="NumberIntValidationTextBox" TextChanged="UpdateSummeFromForcast" Grid.Column="1"/>
+                    <TextBox x:Name="period3product2" HorizontalAlignment="Left" Height="23" Margin="180,170,0,0" TextWrapping="Wrap" Text="100" VerticalAlignment="Top" Width="120" PreviewTextInput="NumberIntValidationTextBox" TextChanged="UpdateSummeFromForcast" Grid.Column="1"/>
+                    <TextBox x:Name="period3product3" HorizontalAlignment="Left" Height="23" Margin="180,198,0,0" TextWrapping="Wrap" Text="100" VerticalAlignment="Top" Width="120" PreviewTextInput="NumberIntValidationTextBox" TextChanged="UpdateSummeFromForcast" Grid.Column="1"/>
+                    <TextBox x:Name="period0sum" HorizontalAlignment="Left" Height="23" Margin="234,226,0,0" TextWrapping="Wrap" Text="300" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
+                    <TextBox x:Name="period1sum" HorizontalAlignment="Left" Height="23" Margin="404,227,0,0" TextWrapping="Wrap" Text="300" VerticalAlignment="Top" Width="120" IsEnabled="False" Grid.ColumnSpan="2"/>
+                    <TextBox x:Name="period2sum" HorizontalAlignment="Left" Height="23" Margin="55,226,0,0" TextWrapping="Wrap" Text="300" VerticalAlignment="Top" Width="120" IsEnabled="False" Grid.Column="1"/>
+                    <TextBox x:Name="period3sum" HorizontalAlignment="Left" Height="23" Margin="180,226,0,0" TextWrapping="Wrap" Text="300" VerticalAlignment="Top" Width="120" IsEnabled="False" Grid.Column="1"/>
+                    <Label Content="Vertriebswunsch" HorizontalAlignment="Left" Margin="234,79,0,0" VerticalAlignment="Top" Width="146"/>
+                    <Label Content="Prognose" HorizontalAlignment="Left" Margin="404,79,0,0" VerticalAlignment="Top" Width="344" Grid.ColumnSpan="2"/>
+                    <Button x:Name="PrognosenNextButton" Content="Next" HorizontalAlignment="Left" Margin="225,254,0,0" VerticalAlignment="Top" Width="75" Click="PrognosenNextbutton_Click" Grid.Column="1"/>
+                    <Label x:Name="prognosevarperiod1" Content="varperiod1" HorizontalAlignment="Left" Margin="234,110,0,0" VerticalAlignment="Top" Width="120"/>
+                    <Label x:Name="prognosevarperiod2" Content="varperiod2" HorizontalAlignment="Left" Margin="404,110,0,0" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
+                    <Label x:Name="prognosevarperiod3" Content="varperiod3" HorizontalAlignment="Left" Margin="55,107,0,0" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
+                    <Label x:Name="prognosevarperiod4" Content="varperiod4" HorizontalAlignment="Left" Margin="180,107,0,0" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
                     <Label HorizontalAlignment="Left" Margin="109,148,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Kinder" HorizontalAlignment="Left" Margin="93,142,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Herren" HorizontalAlignment="Left" Margin="93,198,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Damen" HorizontalAlignment="Left" Margin="93,170,0,0" VerticalAlignment="Top"/>
-                </Grid>
+                    <Label Content="Kinder P1" HorizontalAlignment="Left" Margin="110,142,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Damen P2" HorizontalAlignment="Left" Margin="110,170,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Herren P3" HorizontalAlignment="Left" Margin="110,198,0,0" VerticalAlignment="Top"/>
 
+                </Grid>
             </TabItem>
-            <TabItem x:Name="Prodprogrammtab" Header="Produktionsprogramm" IsEnabled="False">
-                <Grid Background="#FFE5E5E5"/>
-            </TabItem>
-            <TabItem x:Name="Kapaplanungtab" Header="Kapaplanung" IsEnabled="False">
-                <Grid Background="#FFE5E5E5"/>
-            </TabItem>
-            <TabItem x:Name="Einkauftab" Header="Einkauf" IsEnabled="False">
-                <Grid Background="#FFE5E5E5"/>
-            </TabItem>
-            <TabItem x:Name="Priorisierungtab" Header="Priorisierung" IsEnabled="False">
-                <Grid Background="#FFE5E5E5"/>
-            </TabItem>
-            <TabItem x:Name="XMLOutputtab" Header="XML Output" IsEnabled="False">
+            <TabItem x:Name="Direktverkauftab" Header="Direktverkauf" IsEnabled="False">
                 <Grid Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="237*"/>
+                        <ColumnDefinition Width="397*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="Kinder P1" HorizontalAlignment="Left" Margin="110,142,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.158,4.115"/>
+                    <Label Content="Damen P2" HorizontalAlignment="Left" Margin="110,170,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Herren P3" HorizontalAlignment="Left" Margin="110,198,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Summe" HorizontalAlignment="Left" Margin="110,226,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="periode" Content="Periode" HorizontalAlignment="Left" Margin="234,110,0,0" VerticalAlignment="Top" Width="52"/>
+                    <Label x:Name="directvarperiod1" Content="varperiod1" HorizontalAlignment="Left" Margin="280,110,0,0" VerticalAlignment="Top" Width="68" />
+                    <TextBox x:Name="d11" HorizontalAlignment="Left" Height="23" Margin="234,142,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120" TabIndex="4" TextChanged="Forecast1_TextChanged" />
+                    <TextBox x:Name="d21" HorizontalAlignment="Left" Height="23" Margin="234,170,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120" TabIndex="5"  TextChanged="Forecast1_TextChanged" />
+                    <TextBox x:Name="d31" HorizontalAlignment="Left" Height="23" Margin="234,198,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120" TabIndex="6"  TextChanged="Forecast1_TextChanged" />
+                    <TextBox x:Name="s41" HorizontalAlignment="Left" Height="23" Margin="234,226,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
+                    <Label x:Name="retailprice" Content="Verkaufspreis" HorizontalAlignment="Left" Margin="404,110,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+                    <TextBox x:Name="d12" HorizontalAlignment="Left" Height="23" Margin="404,142,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120" TabIndex="7" Grid.ColumnSpan="2"/>
+                    <TextBox x:Name="d22" HorizontalAlignment="Left" Height="23" Margin="404,170,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120" TabIndex="8" Grid.ColumnSpan="2"/>
+                    <TextBox x:Name="d32" HorizontalAlignment="Left" Height="23" Margin="404,198,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120" TabIndex="9" Grid.ColumnSpan="2"/>
+                    <Label x:Name="contractpenalty" Content="Vertragsstrafe" HorizontalAlignment="Left" Margin="55,110,0,0" VerticalAlignment="Top" Grid.Column="2"/>
+                    <TextBox x:Name="d13" HorizontalAlignment="Left" Height="23" Margin="55,142,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120" TabIndex="10" Grid.Column="2"/>
+                    <TextBox x:Name="d23" HorizontalAlignment="Left" Height="23" Margin="55,170,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120" TabIndex="11" Grid.Column="2"/>
+                    <TextBox x:Name="d33" HorizontalAlignment="Left" Height="23" Margin="55,198,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120" TabIndex="12" Grid.Column="2"/>
+                    <Button x:Name="directnextbutton" Content="Next" HorizontalAlignment="Left" Margin="99.6,230,0,0" VerticalAlignment="Top" Width="75" Click="DirectNextButton_Click" Grid.Column="1"/>
+                </Grid>
 
+            </TabItem>
+            <TabItem x:Name="sicherheitsbestandtab" Header="Sicherheitsbestand" IsEnabled="False">
+                <Grid Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="237*"/>
+                        <ColumnDefinition Width="397*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="Periode" HorizontalAlignment="Left" Margin="110,110,0,0" VerticalAlignment="Top" RenderTransformOrigin="2.02,-5.231"/>
+                    <Label Content="Kinder P1" HorizontalAlignment="Left" Margin="110,142,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.158,4.115"/>
+                    <Label Content="Damen P2" HorizontalAlignment="Left" Margin="110,170,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Herren P3" HorizontalAlignment="Left" Margin="110,198,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Summe" HorizontalAlignment="Left" Margin="110,226,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="sicherheitsvarperiod1" Content="varperiod1" HorizontalAlignment="Left" Margin="234,110,0,0" VerticalAlignment="Top" Width="120"/>
+                    <TextBox x:Name="forecastsy1p1" HorizontalAlignment="Left" Height="23" Margin="234,142,0,0" TextWrapping="Wrap" Text="100" VerticalAlignment="Top" Width="120" TabIndex="4" TextChanged="Forecast_TextChanged"/>
+                    <TextBox x:Name="forecastsy1p2" HorizontalAlignment="Left" Height="23" Margin="234,170,0,0" TextWrapping="Wrap" Text="100" VerticalAlignment="Top" Width="120" TabIndex="5"  TextChanged="Forecast_TextChanged"/>
+                    <TextBox x:Name="forecastsy1p3" HorizontalAlignment="Left" Height="23" Margin="234,198,0,0" TextWrapping="Wrap" Text="100" VerticalAlignment="Top" Width="120" TabIndex="6"  TextChanged="Forecast_TextChanged"/>
+                    <TextBox x:Name="sumy1" HorizontalAlignment="Left" Height="23" Margin="234,226,0,0" TextWrapping="Wrap" Text="300" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
 
-                    <Label Content="Verbindliche Aufträge:" HorizontalAlignment="Left" Margin="10,233,0,0" VerticalAlignment="Top"/>
-                    <TextBox x:Name="ordersp1" HorizontalAlignment="Left" Height="23" Margin="10,259,0,0" TextWrapping="Wrap" Text="Kinder P1" VerticalAlignment="Top" Width="120" TabIndex="1" />
-                    <Label Content="Sicherheitsbestand:" HorizontalAlignment="Left" Margin="606,233,0,0" VerticalAlignment="Top" Width="120"/>
-                    <Label Content="Direktbestellungen:" HorizontalAlignment="Left" Margin="779,233,0,0" VerticalAlignment="Top" Width="120"/>
-                    <TextBox x:Name="forecastsy1p1" HorizontalAlignment="Left" Height="23" Margin="191,259,0,0" TextWrapping="Wrap" Text="P1" VerticalAlignment="Top" Width="120" TabIndex="4"/>
-                    <Label Content="Prognosen:" HorizontalAlignment="Left" Margin="191,233,0,0" VerticalAlignment="Top" Width="120"/>
-                    <TextBox x:Name="directordersp1" HorizontalAlignment="Left" Height="23" Margin="779,259,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TabIndex="16"/>
-                    <TextBox x:Name="directordersp2" HorizontalAlignment="Left" Height="23" Margin="779,287,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TabIndex="17"/>
-                    <TextBox x:Name="directordersp3" HorizontalAlignment="Left" Height="23" Margin="779,315,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TabIndex="18"/>
-                    <Button x:Name="calculatebutton" Content="Berechne" HorizontalAlignment="Left" Margin="936,314,0,0" VerticalAlignment="Top" Width="75" Click="Calculatebutton_Click"/>
-                    <TextBox x:Name="reservestockp1" HorizontalAlignment="Left" Height="23" Margin="606,259,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TabIndex="13"/>
-                    <TextBox x:Name="reservestockp2" HorizontalAlignment="Left" Height="23" Margin="606,287,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TabIndex="14"/>
-                    <TextBox x:Name="reservestockp3" HorizontalAlignment="Left" Height="23" Margin="606,315,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TabIndex="15"/>
-                    <TextBox x:Name="forecastsy3p1" HorizontalAlignment="Left" Height="23" Margin="451,259,0,0" TextWrapping="Wrap" Text="P1" VerticalAlignment="Top" Width="120" TabIndex="10" RenderTransformOrigin="0.5,0.5"/>
-                    <TextBox x:Name="forecastsy3p2" HorizontalAlignment="Left" Height="23" Margin="451,287,0,0" TextWrapping="Wrap" Text="P2" VerticalAlignment="Top" Width="120" TabIndex="11"/>
-                    <TextBox x:Name="forecastsy3p3" HorizontalAlignment="Left" Height="23" Margin="451,315,0,0" TextWrapping="Wrap" Text="P3" VerticalAlignment="Top" Width="120" TabIndex="12"/>
-                    <TextBox x:Name="forecastsy2p1" HorizontalAlignment="Left" Height="23" Margin="326,259,0,0" TextWrapping="Wrap" Text="P1" VerticalAlignment="Top" Width="120" TabIndex="7"/>
-                    <TextBox x:Name="forecastsy2p2" HorizontalAlignment="Left" Height="23" Margin="326,287,0,0" TextWrapping="Wrap" Text="P2" VerticalAlignment="Top" Width="120" TabIndex="8"/>
-                    <TextBox x:Name="forecastsy2p3" HorizontalAlignment="Left" Height="23" Margin="326,315,0,0" TextWrapping="Wrap" Text="P3" VerticalAlignment="Top" Width="120" TabIndex="9"/>
-                    <TextBox x:Name="forecastsy1p2" HorizontalAlignment="Left" Height="23" Margin="191,287,0,0" TextWrapping="Wrap" Text="P2" VerticalAlignment="Top" Width="120" TabIndex="5"/>
-                    <TextBox x:Name="forecastsy1p3" HorizontalAlignment="Left" Height="23" Margin="191,315,0,0" TextWrapping="Wrap" Text="P3" VerticalAlignment="Top" Width="120" TabIndex="6"/>
-                    <TextBox x:Name="ordersp2" HorizontalAlignment="Left" Height="23" Margin="10,287,0,0" TextWrapping="Wrap" Text="Damen P2" VerticalAlignment="Top" Width="120" TabIndex="2"/>
-                    <TextBox x:Name="ordersp3" HorizontalAlignment="Left" Height="23" Margin="10,315,0,0" TextWrapping="Wrap" Text="Herren P3" VerticalAlignment="Top" Width="120" TabIndex="3"/>
-                    <TextBox x:Name="Summe" HorizontalAlignment="Left" Height="23" Margin="10,349,0,0" TextWrapping="Wrap" Text="Summe" VerticalAlignment="Top" Width="120"/>
-                    <TextBox HorizontalAlignment="Left" Height="23" Margin="191,349,0,0" TextWrapping="Wrap" Text="Summe" VerticalAlignment="Top" Width="120"/>
-                    <TextBox HorizontalAlignment="Left" Height="23" Margin="326,349,0,0" TextWrapping="Wrap" Text="Summe" VerticalAlignment="Top" Width="120"/>
-                    <TextBox HorizontalAlignment="Left" Height="23" Margin="451,349,0,0" TextWrapping="Wrap" Text="Summe" VerticalAlignment="Top" Width="120"/>
-                    <TextBox HorizontalAlignment="Left" Height="23" Margin="606,349,0,0" TextWrapping="Wrap" Text="Summe" VerticalAlignment="Top" Width="120"/>
-                    <TextBox HorizontalAlignment="Left" Height="23" Margin="779,349,0,0" TextWrapping="Wrap" Text="Summe" VerticalAlignment="Top" Width="120"/>
+                    <Label x:Name="sicherheitsvarperiod2" Content="varperiod2" HorizontalAlignment="Left" Margin="404,110,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="forecastsy2p1" HorizontalAlignment="Left" Height="23" Margin="404,142,0,0" TextWrapping="Wrap" Text="100" VerticalAlignment="Top" Width="120" TabIndex="7"  TextChanged="Forecast_TextChanged" Grid.ColumnSpan="2"/>
+                    <TextBox x:Name="forecastsy2p2" HorizontalAlignment="Left" Height="23" Margin="404,170,0,0" TextWrapping="Wrap" Text="100" VerticalAlignment="Top" Width="120" TabIndex="8"  TextChanged="Forecast_TextChanged" Grid.ColumnSpan="2"/>
+                    <TextBox x:Name="forecastsy2p3" HorizontalAlignment="Left" Height="23" Margin="404,198,0,0" TextWrapping="Wrap" Text="100" VerticalAlignment="Top" Width="120" TabIndex="9"  TextChanged="Forecast_TextChanged" Grid.ColumnSpan="2"/>
+                    <TextBox x:Name="sumy2" HorizontalAlignment="Left" Height="23" Margin="404,226,0,0" TextWrapping="Wrap" Text="300" VerticalAlignment="Top" Width="120" IsEnabled="False" Grid.ColumnSpan="2"/>
+                    <Label x:Name="sicherheitsvarperiod3" Content="varperiod3" HorizontalAlignment="Left" Margin="55,110,0,0" VerticalAlignment="Top" Grid.Column="2"/>
+                    <TextBox x:Name="forecastsy3p1" HorizontalAlignment="Left" Height="23" Margin="55,142,0,0" TextWrapping="Wrap" Text="100" VerticalAlignment="Top" Width="120" TabIndex="10"  TextChanged="Forecast_TextChanged" Grid.Column="2"/>
+                    <TextBox x:Name="forecastsy3p2" HorizontalAlignment="Left" Height="23" Margin="55,170,0,0" TextWrapping="Wrap" Text="100" VerticalAlignment="Top" Width="120" TabIndex="11"  TextChanged="Forecast_TextChanged" Grid.Column="2"/>
+                    <TextBox x:Name="forecastsy3p3" HorizontalAlignment="Left" Height="23" Margin="55,198,0,0" TextWrapping="Wrap" Text="100" VerticalAlignment="Top" Width="120" TabIndex="12"  TextChanged="Forecast_TextChanged" Grid.Column="2"/>
+                    <TextBox x:Name="sumy3" HorizontalAlignment="Left" Height="23" Margin="55,226,0,0" TextWrapping="Wrap" Text="300" VerticalAlignment="Top" Width="120" IsEnabled="False" Grid.Column="2"/>
+                    <Label x:Name="sicherheitsvarperiod4" Content="varperiod4" HorizontalAlignment="Left" Margin="180,110,0,0" VerticalAlignment="Top" Grid.Column="2"/>
+                    <TextBox x:Name="forecastsy4p1" HorizontalAlignment="Left" Height="23" Margin="180,142,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TabIndex="13" Text="100"  TextChanged="Forecast_TextChanged" Grid.Column="2"/>
+                    <TextBox x:Name="forecastsy4p2" HorizontalAlignment="Left" Height="23" Margin="180,170,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TabIndex="14" Text="100"  TextChanged="Forecast_TextChanged" Grid.Column="2"/>
+                    <TextBox x:Name="forecastsy4p3" HorizontalAlignment="Left" Height="23" Margin="180,198,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TabIndex="15" Text="100"  TextChanged="Forecast_TextChanged" Grid.Column="2"/>
+                    <TextBox x:Name="sumy4" HorizontalAlignment="Left" Height="23" Margin="180,226,0,0" TextWrapping="Wrap" Text="300" VerticalAlignment="Top" Width="120" IsEnabled="False" Grid.Column="2"/>
+                    <Label Content="Sicherheitsfaktor" HorizontalAlignment="Left" Margin="110,310,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="Sicherheitsfaktor" HorizontalAlignment="Left" Height="23" Margin="234,310,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="1"/>
+                    <Button x:Name="calculatebutton" Content="Berechne" HorizontalAlignment="Left" Margin="224.6,254,0,0" VerticalAlignment="Top" Width="75" Click="Calculatebutton_Click" Grid.Column="1"/>
                 </Grid>
             </TabItem>
-            <TabItem x:Name="Chartstab" Header="Charts" IsEnabled="False">
-                <Grid Background="#FFE5E5E5"/>
+            <TabItem x:Name="Produktionsplanungtab" Header="Produktionsplan" IsEnabled="False">
+                <Grid  Background="#FFE5E5E5">
+                    <TabControl TabStripPlacement="Left">
+                        <TabControl.Resources>
+                            <Style TargetType="{x:Type TabItem}">
+                                <Setter Property="HeaderTemplate">
+                                    <Setter.Value>
+                                        <DataTemplate>
+                                            <ContentPresenter Content="{TemplateBinding Content}">
+                                                <!--    <ContentPresenter.LayoutTransform>
+                                                    <RotateTransform Angle="270" />
+                                                </ContentPresenter.LayoutTransform>-->
+                                            </ContentPresenter>
+                                        </DataTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                                <Setter Property="Padding" Value="3" />
+                            </Style>
+                        </TabControl.Resources>
+                        <TabItem x:Name="kinderradtab" Header="Kinderrad" IsEnabled="True">
+                            <Grid Background="#FFE5E5E5">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="30"/>
+                                    <ColumnDefinition Width="60"/>
+                                    <ColumnDefinition Width="100"/>
+                                    <ColumnDefinition Width="30"/>
+                                    <ColumnDefinition Width="110"/>
+                                    <ColumnDefinition Width="30"/>
+                                    <ColumnDefinition Width="100"/>
+                                    <ColumnDefinition Width="30"/>
+                                    <ColumnDefinition Width="100"/>
+                                    <ColumnDefinition Width="30"/>
+                                    <ColumnDefinition Width="110"/>
+                                    <ColumnDefinition Width="30"/>
+                                    <ColumnDefinition Width="110"/>
+                                    <ColumnDefinition Width="30"/>
+                                    <ColumnDefinition Width="140"/>
+                                    <ColumnDefinition Width="30"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Label Content="Vertriebs-&#xD;&#xA;wunsch" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Height="45" Width="60" Grid.Column="2"/>
+                                <Label Content="Sicherheits- &#xD;&#xA;bestand" HorizontalAlignment="Center"  Margin="0,10,0,0" VerticalAlignment="Top" Height="45" Width="72" Grid.Column="6"/>
+                                <Label Content="Lagerbestand &#xD;&#xA;Vorperiode" HorizontalAlignment="Center"  Margin="0,10,0,0" VerticalAlignment="Top" Height="45" Width="84" Grid.Column="8"/>
+                                <Label Content="Aufträge in &#xD;&#xA;Warteschlange" HorizontalAlignment="Center"  Margin="0,10,0,0" VerticalAlignment="Top" Height="45" Width="98" Grid.Column="10"/>
+                                <Label Content="Aufträge in &#xA;Warteschlange&#xD;&#xA;Vorerzeugnis" HorizontalAlignment="Center"  Margin="0,10,0,0" VerticalAlignment="Top" Height="59" Width="98" Grid.Column="4"/>
+                                <Label Content="Aufträge in &#xA;Bearbeitung" HorizontalAlignment="Center"  Margin="0,10,0,0" VerticalAlignment="Top" Height="45" Width="98" Grid.Column="12"/>
+                                <Label Content="Produktionsaufträge&#xD;&#xA;kommende Periode" HorizontalAlignment="Center"  Margin="0,10,0,0" VerticalAlignment="Top" Height="45" Width="128" Grid.Column="14"/>
+
+                                <Label Content="P1" HorizontalAlignment="Left" Margin="20,60,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+                                <Label Content="E 26*" HorizontalAlignment="Left" Margin="20,90,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+                                <Label Content="E 51" HorizontalAlignment="Left" Margin="20,120,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+                                <Label Content="E 16*" HorizontalAlignment="Left" Margin="20,150,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+                                <Label Content="E 17*" HorizontalAlignment="Left" Margin="20,180,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+                                <Label Content="E 50" HorizontalAlignment="Left" Margin="20,210,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+                                <Label Content="E 4" HorizontalAlignment="Left" Margin="20,240,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+                                <Label Content="E 10" HorizontalAlignment="Left" Margin="20,270,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+                                <Label Content="E 49" HorizontalAlignment="Left" Margin="20,300,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+                                <Label Content="E 7" HorizontalAlignment="Left" Margin="20,330,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+                                <Label Content="E 13" HorizontalAlignment="Left" Margin="20,360,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+                                <Label Content="E 18" HorizontalAlignment="Left" Margin="20,390,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+
+                                <Label Content="+ " HorizontalAlignment="Left" Margin="7,60,0,0" VerticalAlignment="Top" Grid.Column="3" FontWeight="Bold"/>
+                                <Label Content="+" HorizontalAlignment="Left" Margin="7,90,0,0" VerticalAlignment="Top" Grid.Column="3" FontWeight="Bold"/>
+                                <Label Content="+" HorizontalAlignment="Left" Margin="7,120,0,0" VerticalAlignment="Top" Grid.Column="3" FontWeight="Bold"/>
+                                <Label Content="+" HorizontalAlignment="Left" Margin="7,150,0,0" VerticalAlignment="Top" Grid.Column="3" FontWeight="Bold"/>
+                                <Label Content="+" HorizontalAlignment="Left" Margin="7,180,0,0" VerticalAlignment="Top" Grid.Column="3" FontWeight="Bold"/>
+                                <Label Content="+" HorizontalAlignment="Left" Margin="7,210,0,0" VerticalAlignment="Top" Grid.Column="3" FontWeight="Bold"/>
+                                <Label Content="+" HorizontalAlignment="Left" Margin="7,240,0,0" VerticalAlignment="Top" Grid.Column="3" FontWeight="Bold"/>
+                                <Label Content="+" HorizontalAlignment="Left" Margin="7,270,0,0" VerticalAlignment="Top" Grid.Column="3" FontWeight="Bold"/>
+                                <Label Content="+" HorizontalAlignment="Left" Margin="7,300,0,0" VerticalAlignment="Top" Grid.Column="3" FontWeight="Bold"/>
+                                <Label Content="+" HorizontalAlignment="Left" Margin="7,330,0,0" VerticalAlignment="Top" Grid.Column="3" FontWeight="Bold"/>
+                                <Label Content="+" HorizontalAlignment="Left" Margin="7,360,0,0" VerticalAlignment="Top" Grid.Column="3" FontWeight="Bold"/>
+                                <Label Content="+" HorizontalAlignment="Left" Margin="7,390,0,0" VerticalAlignment="Top" Grid.Column="3" FontWeight="Bold"/>
+
+                                <TextBox x:Name="kind11" HorizontalAlignment="Left" Height="23" Margin="20,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="2"/>
+                                <TextBox x:Name="kind12" HorizontalAlignment="Left" Height="23" Margin="20,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="2"/>
+                                <TextBox x:Name="kind13" HorizontalAlignment="Left" Height="23" Margin="20,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="2"/>
+                                <TextBox x:Name="kind14" HorizontalAlignment="Left" Height="23" Margin="20,150,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="2"/>
+                                <TextBox x:Name="kind15" HorizontalAlignment="Left" Height="23" Margin="20,180,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="2"/>
+                                <TextBox x:Name="kind16" HorizontalAlignment="Left" Height="23" Margin="20,210,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="2"/>
+                                <TextBox x:Name="kind17" HorizontalAlignment="Left" Height="23" Margin="20,240,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="2"/>
+                                <TextBox x:Name="kind18" HorizontalAlignment="Left" Height="23" Margin="20,270,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="2"/>
+                                <TextBox x:Name="kind19" HorizontalAlignment="Left" Height="23" Margin="20,300,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="2"/>
+                                <TextBox x:Name="kind110" HorizontalAlignment="Left" Height="23" Margin="20,330,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="2"/>
+                                <TextBox x:Name="kind111" HorizontalAlignment="Left" Height="23" Margin="20,360,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="2"/>
+                                <TextBox x:Name="kind112" HorizontalAlignment="Left" Height="23" Margin="20,390,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="2"/>
+
+                                <Label Content="+ " HorizontalAlignment="Left" Margin="7,60,0,0" VerticalAlignment="Top" Grid.Column="5" FontWeight="Bold"/>
+                                <Label Content="+" HorizontalAlignment="Left" Margin="7,90,0,0" VerticalAlignment="Top" Grid.Column="5" FontWeight="Bold"/>
+                                <Label Content="+" HorizontalAlignment="Left" Margin="7,120,0,0" VerticalAlignment="Top" Grid.Column="5" FontWeight="Bold"/>
+                                <Label Content="+" HorizontalAlignment="Left" Margin="7,150,0,0" VerticalAlignment="Top" Grid.Column="5" FontWeight="Bold"/>
+                                <Label Content="+" HorizontalAlignment="Left" Margin="7,180,0,0" VerticalAlignment="Top" Grid.Column="5" FontWeight="Bold"/>
+                                <Label Content="+" HorizontalAlignment="Left" Margin="7,210,0,0" VerticalAlignment="Top" Grid.Column="5" FontWeight="Bold"/>
+                                <Label Content="+" HorizontalAlignment="Left" Margin="7,240,0,0" VerticalAlignment="Top" Grid.Column="5" FontWeight="Bold"/>
+                                <Label Content="+" HorizontalAlignment="Left" Margin="7,270,0,0" VerticalAlignment="Top" Grid.Column="5" FontWeight="Bold"/>
+                                <Label Content="+" HorizontalAlignment="Left" Margin="7,300,0,0" VerticalAlignment="Top" Grid.Column="5" FontWeight="Bold"/>
+                                <Label Content="+" HorizontalAlignment="Left" Margin="7,330,0,0" VerticalAlignment="Top" Grid.Column="5" FontWeight="Bold"/>
+                                <Label Content="+" HorizontalAlignment="Left" Margin="7,360,0,0" VerticalAlignment="Top" Grid.Column="5" FontWeight="Bold"/>
+                                <Label Content="+" HorizontalAlignment="Left" Margin="7,390,0,0" VerticalAlignment="Top" Grid.Column="5" FontWeight="Bold"/>
+                                <TextBox x:Name="kind22" HorizontalAlignment="Left" Height="23" Margin="20,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="4"/>
+                                <TextBox x:Name="kind23" HorizontalAlignment="Left" Height="23" Margin="20,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="4"/>
+                                <TextBox x:Name="kind24" HorizontalAlignment="Left" Height="23" Margin="20,150,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="4"/>
+                                <TextBox x:Name="kind25" HorizontalAlignment="Left" Height="23" Margin="20,180,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="4"/>
+                                <TextBox x:Name="kind26" HorizontalAlignment="Left" Height="23" Margin="20,210,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="4"/>
+                                <TextBox x:Name="kind27" HorizontalAlignment="Left" Height="23" Margin="20,240,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="4"/>
+                                <TextBox x:Name="kind28" HorizontalAlignment="Left" Height="23" Margin="20,270,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="4"/>
+                                <TextBox x:Name="kind29" HorizontalAlignment="Left" Height="23" Margin="20,300,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="4"/>
+                                <TextBox x:Name="kind210" HorizontalAlignment="Left" Height="23" Margin="20,330,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="4"/>
+                                <TextBox x:Name="kind211" HorizontalAlignment="Left" Height="23" Margin="20,360,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="4"/>
+                                <TextBox x:Name="kind212" HorizontalAlignment="Left" Height="23" Margin="20,390,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="4"/>
+
+                                <TextBox x:Name="kind31" HorizontalAlignment="Left" Height="23" Margin="20,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="6"/>
+                                <TextBox x:Name="kind32" HorizontalAlignment="Left" Height="23" Margin="20,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="6"/>
+                                <TextBox x:Name="kind33" HorizontalAlignment="Left" Height="23" Margin="20,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="6"/>
+                                <TextBox x:Name="kind34" HorizontalAlignment="Left" Height="23" Margin="20,150,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="6"/>
+                                <TextBox x:Name="kind35" HorizontalAlignment="Left" Height="23" Margin="20,180,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="6"/>
+                                <TextBox x:Name="kind36" HorizontalAlignment="Left" Height="23" Margin="20,210,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="6"/>
+                                <TextBox x:Name="kind37" HorizontalAlignment="Left" Height="23" Margin="20,240,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="6"/>
+                                <TextBox x:Name="kind38" HorizontalAlignment="Left" Height="23" Margin="20,270,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="6"/>
+                                <TextBox x:Name="kind39" HorizontalAlignment="Left" Height="23" Margin="20,300,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="6"/>
+                                <TextBox x:Name="kind310" HorizontalAlignment="Left" Height="23" Margin="20,330,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="6"/>
+                                <TextBox x:Name="kind311" HorizontalAlignment="Left" Height="23" Margin="20,360,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="6"/>
+                                <TextBox x:Name="kind312" HorizontalAlignment="Left" Height="23" Margin="20,390,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="6"/>
+
+                                <Label Content="- " HorizontalAlignment="Left" Margin="7,60,0,0" VerticalAlignment="Top" Grid.Column="7" FontWeight="Bold"/>
+                                <Label Content="-" HorizontalAlignment="Left" Margin="7,90,0,0" VerticalAlignment="Top" Grid.Column="7" FontWeight="Bold"/>
+                                <Label Content="-" HorizontalAlignment="Left" Margin="7,120,0,0" VerticalAlignment="Top" Grid.Column="7" FontWeight="Bold"/>
+                                <Label Content="-" HorizontalAlignment="Left" Margin="7,150,0,0" VerticalAlignment="Top" Grid.Column="7" FontWeight="Bold"/>
+                                <Label Content="-" HorizontalAlignment="Left" Margin="7,180,0,0" VerticalAlignment="Top" Grid.Column="7" FontWeight="Bold"/>
+                                <Label Content="-" HorizontalAlignment="Left" Margin="7,210,0,0" VerticalAlignment="Top" Grid.Column="7" FontWeight="Bold"/>
+                                <Label Content="-" HorizontalAlignment="Left" Margin="7,240,0,0" VerticalAlignment="Top" Grid.Column="7" FontWeight="Bold"/>
+                                <Label Content="-" HorizontalAlignment="Left" Margin="7,270,0,0" VerticalAlignment="Top" Grid.Column="7" FontWeight="Bold"/>
+                                <Label Content="-" HorizontalAlignment="Left" Margin="7,300,0,0" VerticalAlignment="Top" Grid.Column="7" FontWeight="Bold"/>
+                                <Label Content="-" HorizontalAlignment="Left" Margin="7,330,0,0" VerticalAlignment="Top" Grid.Column="7" FontWeight="Bold"/>
+                                <Label Content="-" HorizontalAlignment="Left" Margin="7,360,0,0" VerticalAlignment="Top" Grid.Column="7" FontWeight="Bold"/>
+                                <Label Content="-" HorizontalAlignment="Left" Margin="7,390,0,0" VerticalAlignment="Top" Grid.Column="7" FontWeight="Bold"/>
+
+
+                                <TextBox x:Name="kind41" HorizontalAlignment="Left" Height="23" Margin="20,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="8"/>
+                                <TextBox x:Name="kind42" HorizontalAlignment="Left" Height="23" Margin="20,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="8"/>
+                                <TextBox x:Name="kind43" HorizontalAlignment="Left" Height="23" Margin="20,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="8"/>
+                                <TextBox x:Name="kind44" HorizontalAlignment="Left" Height="23" Margin="20,150,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="8"/>
+                                <TextBox x:Name="kind45" HorizontalAlignment="Left" Height="23" Margin="20,180,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="8"/>
+                                <TextBox x:Name="kind46" HorizontalAlignment="Left" Height="23" Margin="20,210,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="8"/>
+                                <TextBox x:Name="kind47" HorizontalAlignment="Left" Height="23" Margin="20,240,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="8"/>
+                                <TextBox x:Name="kind48" HorizontalAlignment="Left" Height="23" Margin="20,270,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="8"/>
+                                <TextBox x:Name="kind49" HorizontalAlignment="Left" Height="23" Margin="20,300,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="8"/>
+                                <TextBox x:Name="kind410" HorizontalAlignment="Left" Height="23" Margin="20,330,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="8"/>
+                                <TextBox x:Name="kind411" HorizontalAlignment="Left" Height="23" Margin="20,360,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="8"/>
+                                <TextBox x:Name="kind412" HorizontalAlignment="Left" Height="23" Margin="20,390,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="8"/>
+
+                                <Label Content="- " HorizontalAlignment="Left" Margin="7,60,0,0" VerticalAlignment="Top" Grid.Column="9" FontWeight="Bold"/>
+                                <Label Content="-" HorizontalAlignment="Left" Margin="7,90,0,0" VerticalAlignment="Top" Grid.Column="9" FontWeight="Bold"/>
+                                <Label Content="-" HorizontalAlignment="Left" Margin="7,120,0,0" VerticalAlignment="Top" Grid.Column="9" FontWeight="Bold"/>
+                                <Label Content="-" HorizontalAlignment="Left" Margin="7,150,0,0" VerticalAlignment="Top" Grid.Column="9" FontWeight="Bold"/>
+                                <Label Content="-" HorizontalAlignment="Left" Margin="7,180,0,0" VerticalAlignment="Top" Grid.Column="9" FontWeight="Bold"/>
+                                <Label Content="-" HorizontalAlignment="Left" Margin="7,210,0,0" VerticalAlignment="Top" Grid.Column="9" FontWeight="Bold"/>
+                                <Label Content="-" HorizontalAlignment="Left" Margin="7,240,0,0" VerticalAlignment="Top" Grid.Column="9" FontWeight="Bold"/>
+                                <Label Content="-" HorizontalAlignment="Left" Margin="7,270,0,0" VerticalAlignment="Top" Grid.Column="9" FontWeight="Bold"/>
+                                <Label Content="-" HorizontalAlignment="Left" Margin="7,300,0,0" VerticalAlignment="Top" Grid.Column="9" FontWeight="Bold"/>
+                                <Label Content="-" HorizontalAlignment="Left" Margin="7,330,0,0" VerticalAlignment="Top" Grid.Column="9" FontWeight="Bold"/>
+                                <Label Content="-" HorizontalAlignment="Left" Margin="7,360,0,0" VerticalAlignment="Top" Grid.Column="9" FontWeight="Bold"/>
+                                <Label Content="-" HorizontalAlignment="Left" Margin="7,390,0,0" VerticalAlignment="Top" Grid.Column="9" FontWeight="Bold"/>
+
+                                <TextBox x:Name="kind51" HorizontalAlignment="Left" Height="23" Margin="20,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="10"/>
+                                <TextBox x:Name="kind52" HorizontalAlignment="Left" Height="23" Margin="20,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="10"/>
+                                <TextBox x:Name="kind53" HorizontalAlignment="Left" Height="23" Margin="20,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="10"/>
+                                <TextBox x:Name="kind54" HorizontalAlignment="Left" Height="23" Margin="20,150,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="10"/>
+                                <TextBox x:Name="kind55" HorizontalAlignment="Left" Height="23" Margin="20,180,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="10"/>
+                                <TextBox x:Name="kind56" HorizontalAlignment="Left" Height="23" Margin="20,210,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="10"/>
+                                <TextBox x:Name="kind57" HorizontalAlignment="Left" Height="23" Margin="20,240,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="10"/>
+                                <TextBox x:Name="kind58" HorizontalAlignment="Left" Height="23" Margin="20,270,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="10"/>
+                                <TextBox x:Name="kind59" HorizontalAlignment="Left" Height="23" Margin="20,300,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="10"/>
+                                <TextBox x:Name="kind510" HorizontalAlignment="Left" Height="23" Margin="20,330,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="10"/>
+                                <TextBox x:Name="kind511" HorizontalAlignment="Left" Height="23" Margin="20,360,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="10"/>
+                                <TextBox x:Name="kind512" HorizontalAlignment="Left" Height="23" Margin="20,390,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="10"/>
+
+                                <Label Content="- " HorizontalAlignment="Left" Margin="7,60,0,0" VerticalAlignment="Top" Grid.Column="11" FontWeight="Bold"/>
+                                <Label Content="-" HorizontalAlignment="Left" Margin="7,90,0,0" VerticalAlignment="Top" Grid.Column="11" FontWeight="Bold"/>
+                                <Label Content="-" HorizontalAlignment="Left" Margin="7,120,0,0" VerticalAlignment="Top" Grid.Column="11" FontWeight="Bold"/>
+                                <Label Content="-" HorizontalAlignment="Left" Margin="7,150,0,0" VerticalAlignment="Top" Grid.Column="11" FontWeight="Bold"/>
+                                <Label Content="-" HorizontalAlignment="Left" Margin="7,180,0,0" VerticalAlignment="Top" Grid.Column="11" FontWeight="Bold"/>
+                                <Label Content="-" HorizontalAlignment="Left" Margin="7,210,0,0" VerticalAlignment="Top" Grid.Column="11" FontWeight="Bold"/>
+                                <Label Content="-" HorizontalAlignment="Left" Margin="7,240,0,0" VerticalAlignment="Top" Grid.Column="11" FontWeight="Bold"/>
+                                <Label Content="-" HorizontalAlignment="Left" Margin="7,270,0,0" VerticalAlignment="Top" Grid.Column="11" FontWeight="Bold"/>
+                                <Label Content="-" HorizontalAlignment="Left" Margin="7,300,0,0" VerticalAlignment="Top" Grid.Column="11" FontWeight="Bold"/>
+                                <Label Content="-" HorizontalAlignment="Left" Margin="7,330,0,0" VerticalAlignment="Top" Grid.Column="11" FontWeight="Bold"/>
+                                <Label Content="-" HorizontalAlignment="Left" Margin="7,360,0,0" VerticalAlignment="Top" Grid.Column="11" FontWeight="Bold"/>
+                                <Label Content="-" HorizontalAlignment="Left" Margin="7,390,0,0" VerticalAlignment="Top" Grid.Column="11" FontWeight="Bold"/>
+
+
+                                <TextBox x:Name="kind61" HorizontalAlignment="Left" Height="23" Margin="20,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="12"/>
+                                <TextBox x:Name="kind62" HorizontalAlignment="Left" Height="23" Margin="20,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="12"/>
+                                <TextBox x:Name="kind63" HorizontalAlignment="Left" Height="23" Margin="20,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="12"/>
+                                <TextBox x:Name="kind64" HorizontalAlignment="Left" Height="23" Margin="20,150,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="12"/>
+                                <TextBox x:Name="kind65" HorizontalAlignment="Left" Height="23" Margin="20,180,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="12"/>
+                                <TextBox x:Name="kind66" HorizontalAlignment="Left" Height="23" Margin="20,210,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="12"/>
+                                <TextBox x:Name="kind67" HorizontalAlignment="Left" Height="23" Margin="20,240,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="12"/>
+                                <TextBox x:Name="kind68" HorizontalAlignment="Left" Height="23" Margin="20,270,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="12"/>
+                                <TextBox x:Name="kind69" HorizontalAlignment="Left" Height="23" Margin="20,300,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="12"/>
+                                <TextBox x:Name="kind610" HorizontalAlignment="Left" Height="23" Margin="20,330,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="12"/>
+                                <TextBox x:Name="kind611" HorizontalAlignment="Left" Height="23" Margin="20,360,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="12"/>
+                                <TextBox x:Name="kind612" HorizontalAlignment="Left" Height="23" Margin="20,390,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="12"/>
+
+                                <Label Content="=" HorizontalAlignment="Left" Margin="15,60,0,0" VerticalAlignment="Top" Grid.Column="13" FontWeight="Bold"/>
+                                <Label Content="=" HorizontalAlignment="Left" Margin="15,90,0,0" VerticalAlignment="Top" Grid.Column="13" FontWeight="Bold"/>
+                                <Label Content="=" HorizontalAlignment="Left" Margin="15,120,0,0" VerticalAlignment="Top" Grid.Column="13" FontWeight="Bold"/>
+                                <Label Content="=" HorizontalAlignment="Left" Margin="15,150,0,0" VerticalAlignment="Top" Grid.Column="13" FontWeight="Bold"/>
+                                <Label Content="=" HorizontalAlignment="Left" Margin="15,180,0,0" VerticalAlignment="Top" Grid.Column="13" FontWeight="Bold"/>
+                                <Label Content="=" HorizontalAlignment="Left" Margin="15,210,0,0" VerticalAlignment="Top" Grid.Column="13" FontWeight="Bold"/>
+                                <Label Content="=" HorizontalAlignment="Left" Margin="15,240,0,0" VerticalAlignment="Top" Grid.Column="13" FontWeight="Bold"/>
+                                <Label Content="=" HorizontalAlignment="Left" Margin="15,270,0,0" VerticalAlignment="Top" Grid.Column="13" FontWeight="Bold"/>
+                                <Label Content="=" HorizontalAlignment="Left" Margin="15,300,0,0" VerticalAlignment="Top" Grid.Column="13" FontWeight="Bold"/>
+                                <Label Content="=" HorizontalAlignment="Left" Margin="15,330,0,0" VerticalAlignment="Top" Grid.Column="13" FontWeight="Bold"/>
+                                <Label Content="=" HorizontalAlignment="Left" Margin="15,360,0,0" VerticalAlignment="Top" Grid.Column="13" FontWeight="Bold"/>
+                                <Label Content="=" HorizontalAlignment="Left" Margin="15,390,0,0" VerticalAlignment="Top" Grid.Column="13" FontWeight="Bold"/>
+
+                                <TextBox x:Name="kind71" HorizontalAlignment="Left" Height="23" Margin="20,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="14"/>
+                                <TextBox x:Name="kind72" HorizontalAlignment="Left" Height="23" Margin="20,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="14"/>
+                                <TextBox x:Name="kind73" HorizontalAlignment="Left" Height="23" Margin="20,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="14"/>
+                                <TextBox x:Name="kind74" HorizontalAlignment="Left" Height="23" Margin="20,150,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="14"/>
+                                <TextBox x:Name="kind75" HorizontalAlignment="Left" Height="23" Margin="20,180,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="14"/>
+                                <TextBox x:Name="kind76" HorizontalAlignment="Left" Height="23" Margin="20,210,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="14"/>
+                                <TextBox x:Name="kind77" HorizontalAlignment="Left" Height="23" Margin="20,240,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="14"/>
+                                <TextBox x:Name="kind78" HorizontalAlignment="Left" Height="23" Margin="20,270,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="14"/>
+                                <TextBox x:Name="kind79" HorizontalAlignment="Left" Height="23" Margin="20,300,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="14"/>
+                                <TextBox x:Name="kind710" HorizontalAlignment="Left" Height="23" Margin="20,330,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="14"/>
+                                <TextBox x:Name="kind711" HorizontalAlignment="Left" Height="23" Margin="20,360,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="14"/>
+                                <TextBox x:Name="kind712" HorizontalAlignment="Left" Height="23" Margin="20,390,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="14"/>
+                            </Grid>
+                        </TabItem>
+                        <TabItem x:Name="damenerradtab" Header="Damenerrad" IsEnabled="True">
+                            <Grid Background="#FFE5E5E5">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="30"/>
+                                    <ColumnDefinition Width="60"/>
+                                    <ColumnDefinition Width="100"/>
+                                    <ColumnDefinition Width="30"/>
+                                    <ColumnDefinition Width="110"/>
+                                    <ColumnDefinition Width="30"/>
+                                    <ColumnDefinition Width="100"/>
+                                    <ColumnDefinition Width="30"/>
+                                    <ColumnDefinition Width="100"/>
+                                    <ColumnDefinition Width="30"/>
+                                    <ColumnDefinition Width="110"/>
+                                    <ColumnDefinition Width="30"/>
+                                    <ColumnDefinition Width="110"/>
+                                    <ColumnDefinition Width="30"/>
+                                    <ColumnDefinition Width="140"/>
+                                    <ColumnDefinition Width="30"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Label Content="Vertriebs-&#xD;&#xA;wunsch" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Height="45" Width="60" Grid.Column="2"/>
+                                <Label Content="Sicherheits- &#xD;&#xA;bestand" HorizontalAlignment="Center"  Margin="0,10,0,0" VerticalAlignment="Top" Height="45" Width="72" Grid.Column="6"/>
+                                <Label Content="Lagerbestand &#xD;&#xA;Vorperiode" HorizontalAlignment="Center"  Margin="0,10,0,0" VerticalAlignment="Top" Height="45" Width="84" Grid.Column="8"/>
+                                <Label Content="Aufträge in &#xD;&#xA;Warteschlange" HorizontalAlignment="Center"  Margin="0,10,0,0" VerticalAlignment="Top" Height="45" Width="98" Grid.Column="10"/>
+                                <Label Content="Aufträge in &#xA;Warteschlange&#xD;&#xA;Vorerzeugnis" HorizontalAlignment="Center"  Margin="0,10,0,0" VerticalAlignment="Top" Height="59" Width="98" Grid.Column="4"/>
+                                <Label Content="Aufträge in &#xA;Bearbeitung" HorizontalAlignment="Center"  Margin="0,10,0,0" VerticalAlignment="Top" Height="45" Width="98" Grid.Column="12"/>
+                                <Label Content="Produktionsaufträge&#xD;&#xA;kommende Periode" HorizontalAlignment="Center"  Margin="0,10,0,0" VerticalAlignment="Top" Height="45" Width="128" Grid.Column="14"/>
+
+
+                                <Label Content="P2" HorizontalAlignment="Left" Margin="20,60,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+                                <Label Content="E 26*" HorizontalAlignment="Left" Margin="20,90,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+                                <Label Content="E 56" HorizontalAlignment="Left" Margin="20,120,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+                                <Label Content="E 16*" HorizontalAlignment="Left" Margin="20,150,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+                                <Label Content="E 17*" HorizontalAlignment="Left" Margin="20,180,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+                                <Label Content="E 55" HorizontalAlignment="Left" Margin="20,210,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+                                <Label Content="E 5" HorizontalAlignment="Left" Margin="20,240,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+                                <Label Content="E 11" HorizontalAlignment="Left" Margin="20,270,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+                                <Label Content="E 54" HorizontalAlignment="Left" Margin="20,300,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+                                <Label Content="E 8" HorizontalAlignment="Left" Margin="20,330,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+                                <Label Content="E 14" HorizontalAlignment="Left" Margin="20,360,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+                                <Label Content="E 19" HorizontalAlignment="Left" Margin="20,390,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+
+                                <Label Content="+ " HorizontalAlignment="Left" Margin="7,60,0,0" VerticalAlignment="Top" Grid.Column="3" FontWeight="Bold"/>
+                                <Label Content="+" HorizontalAlignment="Left" Margin="7,90,0,0" VerticalAlignment="Top" Grid.Column="3" FontWeight="Bold"/>
+                                <Label Content="+" HorizontalAlignment="Left" Margin="7,120,0,0" VerticalAlignment="Top" Grid.Column="3" FontWeight="Bold"/>
+                                <Label Content="+" HorizontalAlignment="Left" Margin="7,150,0,0" VerticalAlignment="Top" Grid.Column="3" FontWeight="Bold"/>
+                                <Label Content="+" HorizontalAlignment="Left" Margin="7,180,0,0" VerticalAlignment="Top" Grid.Column="3" FontWeight="Bold"/>
+                                <Label Content="+" HorizontalAlignment="Left" Margin="7,210,0,0" VerticalAlignment="Top" Grid.Column="3" FontWeight="Bold"/>
+                                <Label Content="+" HorizontalAlignment="Left" Margin="7,240,0,0" VerticalAlignment="Top" Grid.Column="3" FontWeight="Bold"/>
+                                <Label Content="+" HorizontalAlignment="Left" Margin="7,270,0,0" VerticalAlignment="Top" Grid.Column="3" FontWeight="Bold"/>
+                                <Label Content="+" HorizontalAlignment="Left" Margin="7,300,0,0" VerticalAlignment="Top" Grid.Column="3" FontWeight="Bold"/>
+                                <Label Content="+" HorizontalAlignment="Left" Margin="7,330,0,0" VerticalAlignment="Top" Grid.Column="3" FontWeight="Bold"/>
+                                <Label Content="+" HorizontalAlignment="Left" Margin="7,360,0,0" VerticalAlignment="Top" Grid.Column="3" FontWeight="Bold"/>
+                                <Label Content="+" HorizontalAlignment="Left" Margin="7,390,0,0" VerticalAlignment="Top" Grid.Column="3" FontWeight="Bold"/>
+
+                                <TextBox x:Name="damen11" HorizontalAlignment="Left" Height="23" Margin="20,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="2"/>
+                                <TextBox x:Name="damen12" HorizontalAlignment="Left" Height="23" Margin="20,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="2"/>
+                                <TextBox x:Name="damen13" HorizontalAlignment="Left" Height="23" Margin="20,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="2"/>
+                                <TextBox x:Name="damen14" HorizontalAlignment="Left" Height="23" Margin="20,150,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="2"/>
+                                <TextBox x:Name="damen15" HorizontalAlignment="Left" Height="23" Margin="20,180,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="2"/>
+                                <TextBox x:Name="damen16" HorizontalAlignment="Left" Height="23" Margin="20,210,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="2"/>
+                                <TextBox x:Name="damen17" HorizontalAlignment="Left" Height="23" Margin="20,240,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="2"/>
+                                <TextBox x:Name="damen18" HorizontalAlignment="Left" Height="23" Margin="20,270,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="2"/>
+                                <TextBox x:Name="damen19" HorizontalAlignment="Left" Height="23" Margin="20,300,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="2"/>
+                                <TextBox x:Name="damen110" HorizontalAlignment="Left" Height="23" Margin="20,330,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="2"/>
+                                <TextBox x:Name="damen111" HorizontalAlignment="Left" Height="23" Margin="20,360,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="2"/>
+                                <TextBox x:Name="damen112" HorizontalAlignment="Left" Height="23" Margin="20,390,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="2"/>
+
+                                <Label Content="+ " HorizontalAlignment="Left" Margin="7,60,0,0" VerticalAlignment="Top" Grid.Column="5" FontWeight="Bold"/>
+                                <Label Content="+" HorizontalAlignment="Left" Margin="7,90,0,0" VerticalAlignment="Top" Grid.Column="5" FontWeight="Bold"/>
+                                <Label Content="+" HorizontalAlignment="Left" Margin="7,120,0,0" VerticalAlignment="Top" Grid.Column="5" FontWeight="Bold"/>
+                                <Label Content="+" HorizontalAlignment="Left" Margin="7,150,0,0" VerticalAlignment="Top" Grid.Column="5" FontWeight="Bold"/>
+                                <Label Content="+" HorizontalAlignment="Left" Margin="7,180,0,0" VerticalAlignment="Top" Grid.Column="5" FontWeight="Bold"/>
+                                <Label Content="+" HorizontalAlignment="Left" Margin="7,210,0,0" VerticalAlignment="Top" Grid.Column="5" FontWeight="Bold"/>
+                                <Label Content="+" HorizontalAlignment="Left" Margin="7,240,0,0" VerticalAlignment="Top" Grid.Column="5" FontWeight="Bold"/>
+                                <Label Content="+" HorizontalAlignment="Left" Margin="7,270,0,0" VerticalAlignment="Top" Grid.Column="5" FontWeight="Bold"/>
+                                <Label Content="+" HorizontalAlignment="Left" Margin="7,300,0,0" VerticalAlignment="Top" Grid.Column="5" FontWeight="Bold"/>
+                                <Label Content="+" HorizontalAlignment="Left" Margin="7,330,0,0" VerticalAlignment="Top" Grid.Column="5" FontWeight="Bold"/>
+                                <Label Content="+" HorizontalAlignment="Left" Margin="7,360,0,0" VerticalAlignment="Top" Grid.Column="5" FontWeight="Bold"/>
+                                <Label Content="+" HorizontalAlignment="Left" Margin="7,390,0,0" VerticalAlignment="Top" Grid.Column="5" FontWeight="Bold"/>
+                                <TextBox x:Name="damen22" HorizontalAlignment="Left" Height="23" Margin="20,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="4"/>
+                                <TextBox x:Name="damen23" HorizontalAlignment="Left" Height="23" Margin="20,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="4"/>
+                                <TextBox x:Name="damen24" HorizontalAlignment="Left" Height="23" Margin="20,150,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="4"/>
+                                <TextBox x:Name="damen25" HorizontalAlignment="Left" Height="23" Margin="20,180,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="4"/>
+                                <TextBox x:Name="damen26" HorizontalAlignment="Left" Height="23" Margin="20,210,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="4"/>
+                                <TextBox x:Name="damen27" HorizontalAlignment="Left" Height="23" Margin="20,240,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="4"/>
+                                <TextBox x:Name="damen28" HorizontalAlignment="Left" Height="23" Margin="20,270,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="4"/>
+                                <TextBox x:Name="damen29" HorizontalAlignment="Left" Height="23" Margin="20,300,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="4"/>
+                                <TextBox x:Name="damen210" HorizontalAlignment="Left" Height="23" Margin="20,330,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="4"/>
+                                <TextBox x:Name="damen211" HorizontalAlignment="Left" Height="23" Margin="20,360,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="4"/>
+                                <TextBox x:Name="damen212" HorizontalAlignment="Left" Height="23" Margin="20,390,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="4"/>
+
+                                <TextBox x:Name="damen31" HorizontalAlignment="Left" Height="23" Margin="20,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="6"/>
+                                <TextBox x:Name="damen32" HorizontalAlignment="Left" Height="23" Margin="20,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="6"/>
+                                <TextBox x:Name="damen33" HorizontalAlignment="Left" Height="23" Margin="20,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="6"/>
+                                <TextBox x:Name="damen34" HorizontalAlignment="Left" Height="23" Margin="20,150,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="6"/>
+                                <TextBox x:Name="damen35" HorizontalAlignment="Left" Height="23" Margin="20,180,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="6"/>
+                                <TextBox x:Name="damen36" HorizontalAlignment="Left" Height="23" Margin="20,210,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="6"/>
+                                <TextBox x:Name="damen37" HorizontalAlignment="Left" Height="23" Margin="20,240,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="6"/>
+                                <TextBox x:Name="damen38" HorizontalAlignment="Left" Height="23" Margin="20,270,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="6"/>
+                                <TextBox x:Name="damen39" HorizontalAlignment="Left" Height="23" Margin="20,300,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="6"/>
+                                <TextBox x:Name="damen310" HorizontalAlignment="Left" Height="23" Margin="20,330,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="6"/>
+                                <TextBox x:Name="damen311" HorizontalAlignment="Left" Height="23" Margin="20,360,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="6"/>
+                                <TextBox x:Name="damen312" HorizontalAlignment="Left" Height="23" Margin="20,390,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="6"/>
+
+                                <Label Content="- " HorizontalAlignment="Left" Margin="7,60,0,0" VerticalAlignment="Top" Grid.Column="7" FontWeight="Bold"/>
+                                <Label Content="-" HorizontalAlignment="Left" Margin="7,90,0,0" VerticalAlignment="Top" Grid.Column="7" FontWeight="Bold"/>
+                                <Label Content="-" HorizontalAlignment="Left" Margin="7,120,0,0" VerticalAlignment="Top" Grid.Column="7" FontWeight="Bold"/>
+                                <Label Content="-" HorizontalAlignment="Left" Margin="7,150,0,0" VerticalAlignment="Top" Grid.Column="7" FontWeight="Bold"/>
+                                <Label Content="-" HorizontalAlignment="Left" Margin="7,180,0,0" VerticalAlignment="Top" Grid.Column="7" FontWeight="Bold"/>
+                                <Label Content="-" HorizontalAlignment="Left" Margin="7,210,0,0" VerticalAlignment="Top" Grid.Column="7" FontWeight="Bold"/>
+                                <Label Content="-" HorizontalAlignment="Left" Margin="7,240,0,0" VerticalAlignment="Top" Grid.Column="7" FontWeight="Bold"/>
+                                <Label Content="-" HorizontalAlignment="Left" Margin="7,270,0,0" VerticalAlignment="Top" Grid.Column="7" FontWeight="Bold"/>
+                                <Label Content="-" HorizontalAlignment="Left" Margin="7,300,0,0" VerticalAlignment="Top" Grid.Column="7" FontWeight="Bold"/>
+                                <Label Content="-" HorizontalAlignment="Left" Margin="7,330,0,0" VerticalAlignment="Top" Grid.Column="7" FontWeight="Bold"/>
+                                <Label Content="-" HorizontalAlignment="Left" Margin="7,360,0,0" VerticalAlignment="Top" Grid.Column="7" FontWeight="Bold"/>
+                                <Label Content="-" HorizontalAlignment="Left" Margin="7,390,0,0" VerticalAlignment="Top" Grid.Column="7" FontWeight="Bold"/>
+
+
+                                <TextBox x:Name="damen41" HorizontalAlignment="Left" Height="23" Margin="20,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="8"/>
+                                <TextBox x:Name="damen42" HorizontalAlignment="Left" Height="23" Margin="20,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="8"/>
+                                <TextBox x:Name="damen43" HorizontalAlignment="Left" Height="23" Margin="20,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="8"/>
+                                <TextBox x:Name="damen44" HorizontalAlignment="Left" Height="23" Margin="20,150,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="8"/>
+                                <TextBox x:Name="damen45" HorizontalAlignment="Left" Height="23" Margin="20,180,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="8"/>
+                                <TextBox x:Name="damen46" HorizontalAlignment="Left" Height="23" Margin="20,210,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="8"/>
+                                <TextBox x:Name="damen47" HorizontalAlignment="Left" Height="23" Margin="20,240,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="8"/>
+                                <TextBox x:Name="damen48" HorizontalAlignment="Left" Height="23" Margin="20,270,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="8"/>
+                                <TextBox x:Name="damen49" HorizontalAlignment="Left" Height="23" Margin="20,300,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="8"/>
+                                <TextBox x:Name="damen410" HorizontalAlignment="Left" Height="23" Margin="20,330,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="8"/>
+                                <TextBox x:Name="damen411" HorizontalAlignment="Left" Height="23" Margin="20,360,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="8"/>
+                                <TextBox x:Name="damen412" HorizontalAlignment="Left" Height="23" Margin="20,390,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="8"/>
+
+                                <Label Content="- " HorizontalAlignment="Left" Margin="7,60,0,0" VerticalAlignment="Top" Grid.Column="9" FontWeight="Bold"/>
+                                <Label Content="-" HorizontalAlignment="Left" Margin="7,90,0,0" VerticalAlignment="Top" Grid.Column="9" FontWeight="Bold"/>
+                                <Label Content="-" HorizontalAlignment="Left" Margin="7,120,0,0" VerticalAlignment="Top" Grid.Column="9" FontWeight="Bold"/>
+                                <Label Content="-" HorizontalAlignment="Left" Margin="7,150,0,0" VerticalAlignment="Top" Grid.Column="9" FontWeight="Bold"/>
+                                <Label Content="-" HorizontalAlignment="Left" Margin="7,180,0,0" VerticalAlignment="Top" Grid.Column="9" FontWeight="Bold"/>
+                                <Label Content="-" HorizontalAlignment="Left" Margin="7,210,0,0" VerticalAlignment="Top" Grid.Column="9" FontWeight="Bold"/>
+                                <Label Content="-" HorizontalAlignment="Left" Margin="7,240,0,0" VerticalAlignment="Top" Grid.Column="9" FontWeight="Bold"/>
+                                <Label Content="-" HorizontalAlignment="Left" Margin="7,270,0,0" VerticalAlignment="Top" Grid.Column="9" FontWeight="Bold"/>
+                                <Label Content="-" HorizontalAlignment="Left" Margin="7,300,0,0" VerticalAlignment="Top" Grid.Column="9" FontWeight="Bold"/>
+                                <Label Content="-" HorizontalAlignment="Left" Margin="7,330,0,0" VerticalAlignment="Top" Grid.Column="9" FontWeight="Bold"/>
+                                <Label Content="-" HorizontalAlignment="Left" Margin="7,360,0,0" VerticalAlignment="Top" Grid.Column="9" FontWeight="Bold"/>
+                                <Label Content="-" HorizontalAlignment="Left" Margin="7,390,0,0" VerticalAlignment="Top" Grid.Column="9" FontWeight="Bold"/>
+
+                                <TextBox x:Name="damen51" HorizontalAlignment="Left" Height="23" Margin="20,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="10"/>
+                                <TextBox x:Name="damen52" HorizontalAlignment="Left" Height="23" Margin="20,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="10"/>
+                                <TextBox x:Name="damen53" HorizontalAlignment="Left" Height="23" Margin="20,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="10"/>
+                                <TextBox x:Name="damen54" HorizontalAlignment="Left" Height="23" Margin="20,150,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="10"/>
+                                <TextBox x:Name="damen55" HorizontalAlignment="Left" Height="23" Margin="20,180,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="10"/>
+                                <TextBox x:Name="damen56" HorizontalAlignment="Left" Height="23" Margin="20,210,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="10"/>
+                                <TextBox x:Name="damen57" HorizontalAlignment="Left" Height="23" Margin="20,240,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="10"/>
+                                <TextBox x:Name="damen58" HorizontalAlignment="Left" Height="23" Margin="20,270,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="10"/>
+                                <TextBox x:Name="damen59" HorizontalAlignment="Left" Height="23" Margin="20,300,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="10"/>
+                                <TextBox x:Name="damen510" HorizontalAlignment="Left" Height="23" Margin="20,330,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="10"/>
+                                <TextBox x:Name="damen511" HorizontalAlignment="Left" Height="23" Margin="20,360,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="10"/>
+                                <TextBox x:Name="damen512" HorizontalAlignment="Left" Height="23" Margin="20,390,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="10"/>
+
+                                <Label Content="- " HorizontalAlignment="Left" Margin="7,60,0,0" VerticalAlignment="Top" Grid.Column="11" FontWeight="Bold"/>
+                                <Label Content="-" HorizontalAlignment="Left" Margin="7,90,0,0" VerticalAlignment="Top" Grid.Column="11" FontWeight="Bold"/>
+                                <Label Content="-" HorizontalAlignment="Left" Margin="7,120,0,0" VerticalAlignment="Top" Grid.Column="11" FontWeight="Bold"/>
+                                <Label Content="-" HorizontalAlignment="Left" Margin="7,150,0,0" VerticalAlignment="Top" Grid.Column="11" FontWeight="Bold"/>
+                                <Label Content="-" HorizontalAlignment="Left" Margin="7,180,0,0" VerticalAlignment="Top" Grid.Column="11" FontWeight="Bold"/>
+                                <Label Content="-" HorizontalAlignment="Left" Margin="7,210,0,0" VerticalAlignment="Top" Grid.Column="11" FontWeight="Bold"/>
+                                <Label Content="-" HorizontalAlignment="Left" Margin="7,240,0,0" VerticalAlignment="Top" Grid.Column="11" FontWeight="Bold"/>
+                                <Label Content="-" HorizontalAlignment="Left" Margin="7,270,0,0" VerticalAlignment="Top" Grid.Column="11" FontWeight="Bold"/>
+                                <Label Content="-" HorizontalAlignment="Left" Margin="7,300,0,0" VerticalAlignment="Top" Grid.Column="11" FontWeight="Bold"/>
+                                <Label Content="-" HorizontalAlignment="Left" Margin="7,330,0,0" VerticalAlignment="Top" Grid.Column="11" FontWeight="Bold"/>
+                                <Label Content="-" HorizontalAlignment="Left" Margin="7,360,0,0" VerticalAlignment="Top" Grid.Column="11" FontWeight="Bold"/>
+                                <Label Content="-" HorizontalAlignment="Left" Margin="7,390,0,0" VerticalAlignment="Top" Grid.Column="11" FontWeight="Bold"/>
+
+
+                                <TextBox x:Name="damen61" HorizontalAlignment="Left" Height="23" Margin="20,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="12"/>
+                                <TextBox x:Name="damen62" HorizontalAlignment="Left" Height="23" Margin="20,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="12"/>
+                                <TextBox x:Name="damen63" HorizontalAlignment="Left" Height="23" Margin="20,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="12"/>
+                                <TextBox x:Name="damen64" HorizontalAlignment="Left" Height="23" Margin="20,150,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="12"/>
+                                <TextBox x:Name="damen65" HorizontalAlignment="Left" Height="23" Margin="20,180,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="12"/>
+                                <TextBox x:Name="damen66" HorizontalAlignment="Left" Height="23" Margin="20,210,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="12"/>
+                                <TextBox x:Name="damen67" HorizontalAlignment="Left" Height="23" Margin="20,240,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="12"/>
+                                <TextBox x:Name="damen68" HorizontalAlignment="Left" Height="23" Margin="20,270,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="12"/>
+                                <TextBox x:Name="damen69" HorizontalAlignment="Left" Height="23" Margin="20,300,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="12"/>
+                                <TextBox x:Name="damen610" HorizontalAlignment="Left" Height="23" Margin="20,330,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="12"/>
+                                <TextBox x:Name="damen611" HorizontalAlignment="Left" Height="23" Margin="20,360,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="12"/>
+                                <TextBox x:Name="damen612" HorizontalAlignment="Left" Height="23" Margin="20,390,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="12"/>
+
+                                <Label Content="=" HorizontalAlignment="Left" Margin="15,60,0,0" VerticalAlignment="Top" Grid.Column="13" FontWeight="Bold"/>
+                                <Label Content="=" HorizontalAlignment="Left" Margin="15,90,0,0" VerticalAlignment="Top" Grid.Column="13" FontWeight="Bold"/>
+                                <Label Content="=" HorizontalAlignment="Left" Margin="15,120,0,0" VerticalAlignment="Top" Grid.Column="13" FontWeight="Bold"/>
+                                <Label Content="=" HorizontalAlignment="Left" Margin="15,150,0,0" VerticalAlignment="Top" Grid.Column="13" FontWeight="Bold"/>
+                                <Label Content="=" HorizontalAlignment="Left" Margin="15,180,0,0" VerticalAlignment="Top" Grid.Column="13" FontWeight="Bold"/>
+                                <Label Content="=" HorizontalAlignment="Left" Margin="15,210,0,0" VerticalAlignment="Top" Grid.Column="13" FontWeight="Bold"/>
+                                <Label Content="=" HorizontalAlignment="Left" Margin="15,240,0,0" VerticalAlignment="Top" Grid.Column="13" FontWeight="Bold"/>
+                                <Label Content="=" HorizontalAlignment="Left" Margin="15,270,0,0" VerticalAlignment="Top" Grid.Column="13" FontWeight="Bold"/>
+                                <Label Content="=" HorizontalAlignment="Left" Margin="15,300,0,0" VerticalAlignment="Top" Grid.Column="13" FontWeight="Bold"/>
+                                <Label Content="=" HorizontalAlignment="Left" Margin="15,330,0,0" VerticalAlignment="Top" Grid.Column="13" FontWeight="Bold"/>
+                                <Label Content="=" HorizontalAlignment="Left" Margin="15,360,0,0" VerticalAlignment="Top" Grid.Column="13" FontWeight="Bold"/>
+                                <Label Content="=" HorizontalAlignment="Left" Margin="15,390,0,0" VerticalAlignment="Top" Grid.Column="13" FontWeight="Bold"/>
+
+                                <TextBox x:Name="damen71" HorizontalAlignment="Left" Height="23" Margin="20,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="14"/>
+                                <TextBox x:Name="damen72" HorizontalAlignment="Left" Height="23" Margin="20,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="14"/>
+                                <TextBox x:Name="damen73" HorizontalAlignment="Left" Height="23" Margin="20,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="14"/>
+                                <TextBox x:Name="damen74" HorizontalAlignment="Left" Height="23" Margin="20,150,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="14"/>
+                                <TextBox x:Name="damen75" HorizontalAlignment="Left" Height="23" Margin="20,180,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="14"/>
+                                <TextBox x:Name="damen76" HorizontalAlignment="Left" Height="23" Margin="20,210,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="14"/>
+                                <TextBox x:Name="damen77" HorizontalAlignment="Left" Height="23" Margin="20,240,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="14"/>
+                                <TextBox x:Name="damen78" HorizontalAlignment="Left" Height="23" Margin="20,270,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="14"/>
+                                <TextBox x:Name="damen79" HorizontalAlignment="Left" Height="23" Margin="20,300,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="14"/>
+                                <TextBox x:Name="damen710" HorizontalAlignment="Left" Height="23" Margin="20,330,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="14"/>
+                                <TextBox x:Name="damen711" HorizontalAlignment="Left" Height="23" Margin="20,360,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="14"/>
+                                <TextBox x:Name="damen712" HorizontalAlignment="Left" Height="23" Margin="20,390,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="14"/>
+                            </Grid>
+                        </TabItem>
+
+                        <TabItem x:Name="herrenerradtab" Header="Herrenerrad" IsEnabled="True">
+                            <Grid Background="#FFE5E5E5">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="30"/>
+                                    <ColumnDefinition Width="60"/>
+                                    <ColumnDefinition Width="100"/>
+                                    <ColumnDefinition Width="30"/>
+                                    <ColumnDefinition Width="110"/>
+                                    <ColumnDefinition Width="30"/>
+                                    <ColumnDefinition Width="100"/>
+                                    <ColumnDefinition Width="30"/>
+                                    <ColumnDefinition Width="100"/>
+                                    <ColumnDefinition Width="30"/>
+                                    <ColumnDefinition Width="110"/>
+                                    <ColumnDefinition Width="30"/>
+                                    <ColumnDefinition Width="110"/>
+                                    <ColumnDefinition Width="30"/>
+                                    <ColumnDefinition Width="140"/>
+                                    <ColumnDefinition Width="30"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Content="Vertriebs-&#xD;&#xA;wunsch" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Height="45" Width="60" Grid.Column="2"/>
+                                <Label Content="Sicherheits- &#xD;&#xA;bestand" HorizontalAlignment="Center"  Margin="0,10,0,0" VerticalAlignment="Top" Height="45" Width="72" Grid.Column="6"/>
+                                <Label Content="Lagerbestand &#xD;&#xA;Vorperiode" HorizontalAlignment="Center"  Margin="0,10,0,0" VerticalAlignment="Top" Height="45" Width="84" Grid.Column="8"/>
+                                <Label Content="Aufträge in &#xD;&#xA;Warteschlange" HorizontalAlignment="Center"  Margin="0,10,0,0" VerticalAlignment="Top" Height="45" Width="98" Grid.Column="10"/>
+                                <Label Content="Aufträge in &#xA;Warteschlange&#xD;&#xA;Vorerzeugnis" HorizontalAlignment="Center"  Margin="0,10,0,0" VerticalAlignment="Top" Height="59" Width="98" Grid.Column="4"/>
+                                <Label Content="Aufträge in &#xA;Bearbeitung" HorizontalAlignment="Center"  Margin="0,10,0,0" VerticalAlignment="Top" Height="45" Width="98" Grid.Column="12"/>
+                                <Label Content="Produktionsaufträge&#xD;&#xA;kommende Periode" HorizontalAlignment="Center"  Margin="0,10,0,0" VerticalAlignment="Top" Height="45" Width="128" Grid.Column="14"/>
+
+
+                                <Label Content="P3" HorizontalAlignment="Left" Margin="20,60,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+                                <Label Content="E 26*" HorizontalAlignment="Left" Margin="20,90,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+                                <Label Content="E 31" HorizontalAlignment="Left" Margin="20,120,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+                                <Label Content="E 16*" HorizontalAlignment="Left" Margin="20,150,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+                                <Label Content="E 17*" HorizontalAlignment="Left" Margin="20,180,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+                                <Label Content="E 30" HorizontalAlignment="Left" Margin="20,210,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+                                <Label Content="E 6" HorizontalAlignment="Left" Margin="20,240,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+                                <Label Content="E 12" HorizontalAlignment="Left" Margin="20,270,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+                                <Label Content="E 29" HorizontalAlignment="Left" Margin="20,300,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+                                <Label Content="E 9" HorizontalAlignment="Left" Margin="20,330,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+                                <Label Content="E 15" HorizontalAlignment="Left" Margin="20,360,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+                                <Label Content="E 20" HorizontalAlignment="Left" Margin="20,390,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+
+
+
+                                <Label Content="+ " HorizontalAlignment="Left" Margin="7,60,0,0" VerticalAlignment="Top" Grid.Column="3" FontWeight="Bold"/>
+                                <Label Content="+" HorizontalAlignment="Left" Margin="7,90,0,0" VerticalAlignment="Top" Grid.Column="3" FontWeight="Bold"/>
+                                <Label Content="+" HorizontalAlignment="Left" Margin="7,120,0,0" VerticalAlignment="Top" Grid.Column="3" FontWeight="Bold"/>
+                                <Label Content="+" HorizontalAlignment="Left" Margin="7,150,0,0" VerticalAlignment="Top" Grid.Column="3" FontWeight="Bold"/>
+                                <Label Content="+" HorizontalAlignment="Left" Margin="7,180,0,0" VerticalAlignment="Top" Grid.Column="3" FontWeight="Bold"/>
+                                <Label Content="+" HorizontalAlignment="Left" Margin="7,210,0,0" VerticalAlignment="Top" Grid.Column="3" FontWeight="Bold"/>
+                                <Label Content="+" HorizontalAlignment="Left" Margin="7,240,0,0" VerticalAlignment="Top" Grid.Column="3" FontWeight="Bold"/>
+                                <Label Content="+" HorizontalAlignment="Left" Margin="7,270,0,0" VerticalAlignment="Top" Grid.Column="3" FontWeight="Bold"/>
+                                <Label Content="+" HorizontalAlignment="Left" Margin="7,300,0,0" VerticalAlignment="Top" Grid.Column="3" FontWeight="Bold"/>
+                                <Label Content="+" HorizontalAlignment="Left" Margin="7,330,0,0" VerticalAlignment="Top" Grid.Column="3" FontWeight="Bold"/>
+                                <Label Content="+" HorizontalAlignment="Left" Margin="7,360,0,0" VerticalAlignment="Top" Grid.Column="3" FontWeight="Bold"/>
+                                <Label Content="+" HorizontalAlignment="Left" Margin="7,390,0,0" VerticalAlignment="Top" Grid.Column="3" FontWeight="Bold"/>
+
+                                <TextBox x:Name="herren11" HorizontalAlignment="Left" Height="23" Margin="20,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="2"/>
+                                <TextBox x:Name="herren12" HorizontalAlignment="Left" Height="23" Margin="20,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="2"/>
+                                <TextBox x:Name="herren13" HorizontalAlignment="Left" Height="23" Margin="20,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="2"/>
+                                <TextBox x:Name="herren14" HorizontalAlignment="Left" Height="23" Margin="20,150,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="2"/>
+                                <TextBox x:Name="herren15" HorizontalAlignment="Left" Height="23" Margin="20,180,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="2"/>
+                                <TextBox x:Name="herren16" HorizontalAlignment="Left" Height="23" Margin="20,210,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="2"/>
+                                <TextBox x:Name="herren17" HorizontalAlignment="Left" Height="23" Margin="20,240,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="2"/>
+                                <TextBox x:Name="herren18" HorizontalAlignment="Left" Height="23" Margin="20,270,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="2"/>
+                                <TextBox x:Name="herren19" HorizontalAlignment="Left" Height="23" Margin="20,300,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="2"/>
+                                <TextBox x:Name="herren110" HorizontalAlignment="Left" Height="23" Margin="20,330,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="2"/>
+                                <TextBox x:Name="herren111" HorizontalAlignment="Left" Height="23" Margin="20,360,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="2"/>
+                                <TextBox x:Name="herren112" HorizontalAlignment="Left" Height="23" Margin="20,390,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="2"/>
+
+                                <Label Content="+ " HorizontalAlignment="Left" Margin="7,60,0,0" VerticalAlignment="Top" Grid.Column="5" FontWeight="Bold"/>
+                                <Label Content="+" HorizontalAlignment="Left" Margin="7,90,0,0" VerticalAlignment="Top" Grid.Column="5" FontWeight="Bold"/>
+                                <Label Content="+" HorizontalAlignment="Left" Margin="7,120,0,0" VerticalAlignment="Top" Grid.Column="5" FontWeight="Bold"/>
+                                <Label Content="+" HorizontalAlignment="Left" Margin="7,150,0,0" VerticalAlignment="Top" Grid.Column="5" FontWeight="Bold"/>
+                                <Label Content="+" HorizontalAlignment="Left" Margin="7,180,0,0" VerticalAlignment="Top" Grid.Column="5" FontWeight="Bold"/>
+                                <Label Content="+" HorizontalAlignment="Left" Margin="7,210,0,0" VerticalAlignment="Top" Grid.Column="5" FontWeight="Bold"/>
+                                <Label Content="+" HorizontalAlignment="Left" Margin="7,240,0,0" VerticalAlignment="Top" Grid.Column="5" FontWeight="Bold"/>
+                                <Label Content="+" HorizontalAlignment="Left" Margin="7,270,0,0" VerticalAlignment="Top" Grid.Column="5" FontWeight="Bold"/>
+                                <Label Content="+" HorizontalAlignment="Left" Margin="7,300,0,0" VerticalAlignment="Top" Grid.Column="5" FontWeight="Bold"/>
+                                <Label Content="+" HorizontalAlignment="Left" Margin="7,330,0,0" VerticalAlignment="Top" Grid.Column="5" FontWeight="Bold"/>
+                                <Label Content="+" HorizontalAlignment="Left" Margin="7,360,0,0" VerticalAlignment="Top" Grid.Column="5" FontWeight="Bold"/>
+                                <Label Content="+" HorizontalAlignment="Left" Margin="7,390,0,0" VerticalAlignment="Top" Grid.Column="5" FontWeight="Bold"/>
+                                <TextBox x:Name="herren22" HorizontalAlignment="Left" Height="23" Margin="20,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="4"/>
+                                <TextBox x:Name="herren23" HorizontalAlignment="Left" Height="23" Margin="20,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="4"/>
+                                <TextBox x:Name="herren24" HorizontalAlignment="Left" Height="23" Margin="20,150,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="4"/>
+                                <TextBox x:Name="herren25" HorizontalAlignment="Left" Height="23" Margin="20,180,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="4"/>
+                                <TextBox x:Name="herren26" HorizontalAlignment="Left" Height="23" Margin="20,210,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="4"/>
+                                <TextBox x:Name="herren27" HorizontalAlignment="Left" Height="23" Margin="20,240,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="4"/>
+                                <TextBox x:Name="herren28" HorizontalAlignment="Left" Height="23" Margin="20,270,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="4"/>
+                                <TextBox x:Name="herren29" HorizontalAlignment="Left" Height="23" Margin="20,300,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="4"/>
+                                <TextBox x:Name="herren210" HorizontalAlignment="Left" Height="23" Margin="20,330,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="4"/>
+                                <TextBox x:Name="herren211" HorizontalAlignment="Left" Height="23" Margin="20,360,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="4"/>
+                                <TextBox x:Name="herren212" HorizontalAlignment="Left" Height="23" Margin="20,390,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="4"/>
+
+                                <TextBox x:Name="herren31" HorizontalAlignment="Left" Height="23" Margin="20,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="6"/>
+                                <TextBox x:Name="herren32" HorizontalAlignment="Left" Height="23" Margin="20,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="6"/>
+                                <TextBox x:Name="herren33" HorizontalAlignment="Left" Height="23" Margin="20,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="6"/>
+                                <TextBox x:Name="herren34" HorizontalAlignment="Left" Height="23" Margin="20,150,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="6"/>
+                                <TextBox x:Name="herren35" HorizontalAlignment="Left" Height="23" Margin="20,180,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="6"/>
+                                <TextBox x:Name="herren36" HorizontalAlignment="Left" Height="23" Margin="20,210,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="6"/>
+                                <TextBox x:Name="herren37" HorizontalAlignment="Left" Height="23" Margin="20,240,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="6"/>
+                                <TextBox x:Name="herren38" HorizontalAlignment="Left" Height="23" Margin="20,270,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="6"/>
+                                <TextBox x:Name="herren39" HorizontalAlignment="Left" Height="23" Margin="20,300,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="6"/>
+                                <TextBox x:Name="herren310" HorizontalAlignment="Left" Height="23" Margin="20,330,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="6"/>
+                                <TextBox x:Name="herren311" HorizontalAlignment="Left" Height="23" Margin="20,360,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="6"/>
+                                <TextBox x:Name="herren312" HorizontalAlignment="Left" Height="23" Margin="20,390,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="6"/>
+
+                                <Label Content="- " HorizontalAlignment="Left" Margin="7,60,0,0" VerticalAlignment="Top" Grid.Column="7" FontWeight="Bold"/>
+                                <Label Content="-" HorizontalAlignment="Left" Margin="7,90,0,0" VerticalAlignment="Top" Grid.Column="7" FontWeight="Bold"/>
+                                <Label Content="-" HorizontalAlignment="Left" Margin="7,120,0,0" VerticalAlignment="Top" Grid.Column="7" FontWeight="Bold"/>
+                                <Label Content="-" HorizontalAlignment="Left" Margin="7,150,0,0" VerticalAlignment="Top" Grid.Column="7" FontWeight="Bold"/>
+                                <Label Content="-" HorizontalAlignment="Left" Margin="7,180,0,0" VerticalAlignment="Top" Grid.Column="7" FontWeight="Bold"/>
+                                <Label Content="-" HorizontalAlignment="Left" Margin="7,210,0,0" VerticalAlignment="Top" Grid.Column="7" FontWeight="Bold"/>
+                                <Label Content="-" HorizontalAlignment="Left" Margin="7,240,0,0" VerticalAlignment="Top" Grid.Column="7" FontWeight="Bold"/>
+                                <Label Content="-" HorizontalAlignment="Left" Margin="7,270,0,0" VerticalAlignment="Top" Grid.Column="7" FontWeight="Bold"/>
+                                <Label Content="-" HorizontalAlignment="Left" Margin="7,300,0,0" VerticalAlignment="Top" Grid.Column="7" FontWeight="Bold"/>
+                                <Label Content="-" HorizontalAlignment="Left" Margin="7,330,0,0" VerticalAlignment="Top" Grid.Column="7" FontWeight="Bold"/>
+                                <Label Content="-" HorizontalAlignment="Left" Margin="7,360,0,0" VerticalAlignment="Top" Grid.Column="7" FontWeight="Bold"/>
+                                <Label Content="-" HorizontalAlignment="Left" Margin="7,390,0,0" VerticalAlignment="Top" Grid.Column="7" FontWeight="Bold"/>
+
+
+                                <TextBox x:Name="herren41" HorizontalAlignment="Left" Height="23" Margin="20,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="8"/>
+                                <TextBox x:Name="herren42" HorizontalAlignment="Left" Height="23" Margin="20,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="8"/>
+                                <TextBox x:Name="herren43" HorizontalAlignment="Left" Height="23" Margin="20,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="8"/>
+                                <TextBox x:Name="herren44" HorizontalAlignment="Left" Height="23" Margin="20,150,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="8"/>
+                                <TextBox x:Name="herren45" HorizontalAlignment="Left" Height="23" Margin="20,180,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="8"/>
+                                <TextBox x:Name="herren46" HorizontalAlignment="Left" Height="23" Margin="20,210,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="8"/>
+                                <TextBox x:Name="herren47" HorizontalAlignment="Left" Height="23" Margin="20,240,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="8"/>
+                                <TextBox x:Name="herren48" HorizontalAlignment="Left" Height="23" Margin="20,270,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="8"/>
+                                <TextBox x:Name="herren49" HorizontalAlignment="Left" Height="23" Margin="20,300,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="8"/>
+                                <TextBox x:Name="herren410" HorizontalAlignment="Left" Height="23" Margin="20,330,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="8"/>
+                                <TextBox x:Name="herren411" HorizontalAlignment="Left" Height="23" Margin="20,360,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="8"/>
+                                <TextBox x:Name="herren412" HorizontalAlignment="Left" Height="23" Margin="20,390,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="8"/>
+
+                                <Label Content="- " HorizontalAlignment="Left" Margin="7,60,0,0" VerticalAlignment="Top" Grid.Column="9" FontWeight="Bold"/>
+                                <Label Content="-" HorizontalAlignment="Left" Margin="7,90,0,0" VerticalAlignment="Top" Grid.Column="9" FontWeight="Bold"/>
+                                <Label Content="-" HorizontalAlignment="Left" Margin="7,120,0,0" VerticalAlignment="Top" Grid.Column="9" FontWeight="Bold"/>
+                                <Label Content="-" HorizontalAlignment="Left" Margin="7,150,0,0" VerticalAlignment="Top" Grid.Column="9" FontWeight="Bold"/>
+                                <Label Content="-" HorizontalAlignment="Left" Margin="7,180,0,0" VerticalAlignment="Top" Grid.Column="9" FontWeight="Bold"/>
+                                <Label Content="-" HorizontalAlignment="Left" Margin="7,210,0,0" VerticalAlignment="Top" Grid.Column="9" FontWeight="Bold"/>
+                                <Label Content="-" HorizontalAlignment="Left" Margin="7,240,0,0" VerticalAlignment="Top" Grid.Column="9" FontWeight="Bold"/>
+                                <Label Content="-" HorizontalAlignment="Left" Margin="7,270,0,0" VerticalAlignment="Top" Grid.Column="9" FontWeight="Bold"/>
+                                <Label Content="-" HorizontalAlignment="Left" Margin="7,300,0,0" VerticalAlignment="Top" Grid.Column="9" FontWeight="Bold"/>
+                                <Label Content="-" HorizontalAlignment="Left" Margin="7,330,0,0" VerticalAlignment="Top" Grid.Column="9" FontWeight="Bold"/>
+                                <Label Content="-" HorizontalAlignment="Left" Margin="7,360,0,0" VerticalAlignment="Top" Grid.Column="9" FontWeight="Bold"/>
+                                <Label Content="-" HorizontalAlignment="Left" Margin="7,390,0,0" VerticalAlignment="Top" Grid.Column="9" FontWeight="Bold"/>
+
+                                <TextBox x:Name="herren51" HorizontalAlignment="Left" Height="23" Margin="20,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="10"/>
+                                <TextBox x:Name="herren52" HorizontalAlignment="Left" Height="23" Margin="20,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="10"/>
+                                <TextBox x:Name="herren53" HorizontalAlignment="Left" Height="23" Margin="20,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="10"/>
+                                <TextBox x:Name="herren54" HorizontalAlignment="Left" Height="23" Margin="20,150,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="10"/>
+                                <TextBox x:Name="herren55" HorizontalAlignment="Left" Height="23" Margin="20,180,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="10"/>
+                                <TextBox x:Name="herren56" HorizontalAlignment="Left" Height="23" Margin="20,210,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="10"/>
+                                <TextBox x:Name="herren57" HorizontalAlignment="Left" Height="23" Margin="20,240,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="10"/>
+                                <TextBox x:Name="herren58" HorizontalAlignment="Left" Height="23" Margin="20,270,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="10"/>
+                                <TextBox x:Name="herren59" HorizontalAlignment="Left" Height="23" Margin="20,300,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="10"/>
+                                <TextBox x:Name="herren510" HorizontalAlignment="Left" Height="23" Margin="20,330,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="10"/>
+                                <TextBox x:Name="herren511" HorizontalAlignment="Left" Height="23" Margin="20,360,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="10"/>
+                                <TextBox x:Name="herren512" HorizontalAlignment="Left" Height="23" Margin="20,390,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="10"/>
+
+                                <Label Content="- " HorizontalAlignment="Left" Margin="7,60,0,0" VerticalAlignment="Top" Grid.Column="11" FontWeight="Bold"/>
+                                <Label Content="-" HorizontalAlignment="Left" Margin="7,90,0,0" VerticalAlignment="Top" Grid.Column="11" FontWeight="Bold"/>
+                                <Label Content="-" HorizontalAlignment="Left" Margin="7,120,0,0" VerticalAlignment="Top" Grid.Column="11" FontWeight="Bold"/>
+                                <Label Content="-" HorizontalAlignment="Left" Margin="7,150,0,0" VerticalAlignment="Top" Grid.Column="11" FontWeight="Bold"/>
+                                <Label Content="-" HorizontalAlignment="Left" Margin="7,180,0,0" VerticalAlignment="Top" Grid.Column="11" FontWeight="Bold"/>
+                                <Label Content="-" HorizontalAlignment="Left" Margin="7,210,0,0" VerticalAlignment="Top" Grid.Column="11" FontWeight="Bold"/>
+                                <Label Content="-" HorizontalAlignment="Left" Margin="7,240,0,0" VerticalAlignment="Top" Grid.Column="11" FontWeight="Bold"/>
+                                <Label Content="-" HorizontalAlignment="Left" Margin="7,270,0,0" VerticalAlignment="Top" Grid.Column="11" FontWeight="Bold"/>
+                                <Label Content="-" HorizontalAlignment="Left" Margin="7,300,0,0" VerticalAlignment="Top" Grid.Column="11" FontWeight="Bold"/>
+                                <Label Content="-" HorizontalAlignment="Left" Margin="7,330,0,0" VerticalAlignment="Top" Grid.Column="11" FontWeight="Bold"/>
+                                <Label Content="-" HorizontalAlignment="Left" Margin="7,360,0,0" VerticalAlignment="Top" Grid.Column="11" FontWeight="Bold"/>
+                                <Label Content="-" HorizontalAlignment="Left" Margin="7,390,0,0" VerticalAlignment="Top" Grid.Column="11" FontWeight="Bold"/>
+
+
+                                <TextBox x:Name="herren61" HorizontalAlignment="Left" Height="23" Margin="20,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="12"/>
+                                <TextBox x:Name="herren62" HorizontalAlignment="Left" Height="23" Margin="20,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="12"/>
+                                <TextBox x:Name="herren63" HorizontalAlignment="Left" Height="23" Margin="20,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="12"/>
+                                <TextBox x:Name="herren64" HorizontalAlignment="Left" Height="23" Margin="20,150,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="12"/>
+                                <TextBox x:Name="herren65" HorizontalAlignment="Left" Height="23" Margin="20,180,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="12"/>
+                                <TextBox x:Name="herren66" HorizontalAlignment="Left" Height="23" Margin="20,210,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="12"/>
+                                <TextBox x:Name="herren67" HorizontalAlignment="Left" Height="23" Margin="20,240,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="12"/>
+                                <TextBox x:Name="herren68" HorizontalAlignment="Left" Height="23" Margin="20,270,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="12"/>
+                                <TextBox x:Name="herren69" HorizontalAlignment="Left" Height="23" Margin="20,300,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="12"/>
+                                <TextBox x:Name="herren610" HorizontalAlignment="Left" Height="23" Margin="20,330,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="12"/>
+                                <TextBox x:Name="herren611" HorizontalAlignment="Left" Height="23" Margin="20,360,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="12"/>
+                                <TextBox x:Name="herren612" HorizontalAlignment="Left" Height="23" Margin="20,390,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="12"/>
+
+                                <Label Content="=" HorizontalAlignment="Left" Margin="15,60,0,0" VerticalAlignment="Top" Grid.Column="13" FontWeight="Bold"/>
+                                <Label Content="=" HorizontalAlignment="Left" Margin="15,90,0,0" VerticalAlignment="Top" Grid.Column="13" FontWeight="Bold"/>
+                                <Label Content="=" HorizontalAlignment="Left" Margin="15,120,0,0" VerticalAlignment="Top" Grid.Column="13" FontWeight="Bold"/>
+                                <Label Content="=" HorizontalAlignment="Left" Margin="15,150,0,0" VerticalAlignment="Top" Grid.Column="13" FontWeight="Bold"/>
+                                <Label Content="=" HorizontalAlignment="Left" Margin="15,180,0,0" VerticalAlignment="Top" Grid.Column="13" FontWeight="Bold"/>
+                                <Label Content="=" HorizontalAlignment="Left" Margin="15,210,0,0" VerticalAlignment="Top" Grid.Column="13" FontWeight="Bold"/>
+                                <Label Content="=" HorizontalAlignment="Left" Margin="15,240,0,0" VerticalAlignment="Top" Grid.Column="13" FontWeight="Bold"/>
+                                <Label Content="=" HorizontalAlignment="Left" Margin="15,270,0,0" VerticalAlignment="Top" Grid.Column="13" FontWeight="Bold"/>
+                                <Label Content="=" HorizontalAlignment="Left" Margin="15,300,0,0" VerticalAlignment="Top" Grid.Column="13" FontWeight="Bold"/>
+                                <Label Content="=" HorizontalAlignment="Left" Margin="15,330,0,0" VerticalAlignment="Top" Grid.Column="13" FontWeight="Bold"/>
+                                <Label Content="=" HorizontalAlignment="Left" Margin="15,360,0,0" VerticalAlignment="Top" Grid.Column="13" FontWeight="Bold"/>
+                                <Label Content="=" HorizontalAlignment="Left" Margin="15,390,0,0" VerticalAlignment="Top" Grid.Column="13" FontWeight="Bold"/>
+
+                                <TextBox x:Name="herren71" HorizontalAlignment="Left" Height="23" Margin="20,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="14"/>
+                                <TextBox x:Name="herren72" HorizontalAlignment="Left" Height="23" Margin="20,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="14"/>
+                                <TextBox x:Name="herren73" HorizontalAlignment="Left" Height="23" Margin="20,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="14"/>
+                                <TextBox x:Name="herren74" HorizontalAlignment="Left" Height="23" Margin="20,150,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="14"/>
+                                <TextBox x:Name="herren75" HorizontalAlignment="Left" Height="23" Margin="20,180,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="14"/>
+                                <TextBox x:Name="herren76" HorizontalAlignment="Left" Height="23" Margin="20,210,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="14"/>
+                                <TextBox x:Name="herren77" HorizontalAlignment="Left" Height="23" Margin="20,240,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="14"/>
+                                <TextBox x:Name="herren78" HorizontalAlignment="Left" Height="23" Margin="20,270,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="14"/>
+                                <TextBox x:Name="herren79" HorizontalAlignment="Left" Height="23" Margin="20,300,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="14"/>
+                                <TextBox x:Name="herren710" HorizontalAlignment="Left" Height="23" Margin="20,330,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="14"/>
+                                <TextBox x:Name="herren711" HorizontalAlignment="Left" Height="23" Margin="20,360,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="14"/>
+                                <TextBox x:Name="herren712" HorizontalAlignment="Left" Height="23" Margin="20,390,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False" Grid.Column="14"/>
+                            </Grid>
+                        </TabItem>
+
+                    </TabControl>
+
+                </Grid>
+            </TabItem>
+
+
+            <TabItem x:Name="Kapaplanungtab" Header="Kapazitäten" IsEnabled="False">
+                <Grid Background="#FFE5E5E5">
+                    <TabControl TabStripPlacement="Left">
+                        <TabItem Header="Arbeitsplatz 1">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="146*"/>
+                                    <RowDefinition Height="147*"/>
+                                </Grid.RowDefinitions>
+                                <GroupBox x:Name="Work1Box" Grid.Column="0" Header="Arbeitsplatz 1">
+                                    <DataGrid Name="dataGrid1" Margin="2" />
+                                </GroupBox>
+                                <GroupBox x:Name="Plan1Box" Grid.Row="1" Grid.Column="0" Header="Kapazitätsplanung Arbeitsplatz 1">
+                                    <DataGrid Name="dataGrid16" Margin="2" />
+                                </GroupBox>
+                            </Grid>
+                        </TabItem>
+
+                        <TabItem Header="Arbeitsplatz 2">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="146*"/>
+                                    <RowDefinition Height="147*"/>
+                                </Grid.RowDefinitions>
+                                <GroupBox x:Name="Work2Box" Grid.Column="0" Header="Arbeitsplatz 2">
+                                    <DataGrid Name="dataGrid2" Margin="2" />
+                                </GroupBox>
+                                <GroupBox x:Name="Plan2Box" Grid.Row="1" Grid.Column="0" Header="Kapazitätsplanung Arbeitsplatz 2">
+                                    <DataGrid Name="dataGrid17" Margin="2" />
+                                </GroupBox>
+                            </Grid>
+                        </TabItem>
+
+
+                        <TabItem Header="Arbeitsplatz 3">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="146*"/>
+                                    <RowDefinition Height="147*"/>
+                                </Grid.RowDefinitions>
+                                <GroupBox x:Name="Work3Box" Grid.Column="0" Header="Arbeitsplatz 3">
+                                    <DataGrid Name="dataGrid3" Margin="2" />
+                                </GroupBox>
+                                <GroupBox x:Name="Plan3Box" Grid.Row="1" Grid.Column="0" Header="Kapazitätsplanung Arbeitsplatz 3">
+                                    <DataGrid Name="dataGrid18" Margin="2" />
+                                </GroupBox>
+                            </Grid>
+                        </TabItem>
+
+                        <TabItem Header="Arbeitsplatz 4">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="146*"/>
+                                    <RowDefinition Height="147*"/>
+                                </Grid.RowDefinitions>
+                                <GroupBox x:Name="Work4Box" Grid.Column="0" Header="Arbeitsplatz 4">
+                                    <DataGrid Name="dataGrid4" Margin="2" />
+                                </GroupBox>
+                                <GroupBox x:Name="Plan4Box" Grid.Row="1" Grid.Column="0" Header="Kapazitätsplanung Arbeitsplatz 4">
+                                    <DataGrid Name="dataGrid19" Margin="2" />
+                                </GroupBox>
+                            </Grid>
+                        </TabItem>
+
+                        <TabItem Header="Arbeitsplatz 6">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="146*"/>
+                                    <RowDefinition Height="147*"/>
+                                </Grid.RowDefinitions>
+                                <GroupBox x:Name="Work6Box" Grid.Column="0" Header="Arbeitsplatz 6">
+                                    <DataGrid Name="dataGrid6" Margin="2" />
+                                </GroupBox>
+                                <GroupBox x:Name="Plan6Box" Grid.Row="1" Grid.Column="0" Header="Kapazitätsplanung Arbeitsplatz 6">
+                                    <DataGrid Name="dataGrid20" Margin="2" />
+                                </GroupBox>
+                            </Grid>
+                        </TabItem>
+
+                        <TabItem Header="Arbeitsplatz 7">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="146*"/>
+                                    <RowDefinition Height="147*"/>
+                                </Grid.RowDefinitions>
+                                <GroupBox x:Name="Work7Box" Grid.Column="0" Header="Arbeitsplatz 7">
+                                    <DataGrid Name="dataGrid7" Margin="2" />
+                                </GroupBox>
+                                <GroupBox x:Name="Plan7Box" Grid.Row="1" Grid.Column="0" Header="Kapazitätsplanung Arbeitsplatz 7">
+                                    <DataGrid Name="dataGrid21" Margin="2" />
+                                </GroupBox>
+                            </Grid>
+                        </TabItem>
+
+                        <TabItem Header="Arbeitsplatz 8">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="146*"/>
+                                    <RowDefinition Height="147*"/>
+                                </Grid.RowDefinitions>
+                                <GroupBox x:Name="Work8Box" Grid.Column="0" Header="Arbeitsplatz 8">
+                                    <DataGrid Name="dataGrid8" Margin="2" />
+                                </GroupBox>
+                                <GroupBox x:Name="Plan8Box" Grid.Row="1" Grid.Column="0" Header="Kapazitätsplanung Arbeitsplatz 8">
+                                    <DataGrid Name="dataGrid22" Margin="2" />
+                                </GroupBox>
+                            </Grid>
+                        </TabItem>
+
+                        <TabItem Header="Arbeitsplatz 9">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="146*"/>
+                                    <RowDefinition Height="147*"/>
+                                </Grid.RowDefinitions>
+                                <GroupBox x:Name="Work9Box" Grid.Column="0" Header="Arbeitsplatz 9">
+                                    <DataGrid Name="dataGrid9" Margin="2" />
+                                </GroupBox>
+                                <GroupBox x:Name="Plan9Box" Grid.Row="1" Grid.Column="0" Header="Kapazitätsplanung Arbeitsplatz 9">
+                                    <DataGrid Name="dataGrid23" Margin="2" />
+                                </GroupBox>
+                            </Grid>
+                        </TabItem>
+
+                        <TabItem Header="Arbeitsplatz 10">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="146*"/>
+                                    <RowDefinition Height="147*"/>
+                                </Grid.RowDefinitions>
+                                <GroupBox x:Name="Work10Box" Grid.Column="0" Header="Arbeitsplatz 10">
+                                    <DataGrid Name="dataGrid10" Margin="2" />
+                                </GroupBox>
+                                <GroupBox x:Name="Plan10Box" Grid.Row="1" Grid.Column="0" Header="Kapazitätsplanung Arbeitsplatz 10">
+                                    <DataGrid Name="dataGrid24" Margin="2" />
+                                </GroupBox>
+                            </Grid>
+                        </TabItem>
+
+                        <TabItem Header="Arbeitsplatz 11">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="146*"/>
+                                    <RowDefinition Height="147*"/>
+                                </Grid.RowDefinitions>
+                                <GroupBox x:Name="Work11Box" Grid.Column="0" Header="Arbeitsplatz 11">
+                                    <DataGrid Name="dataGrid11" Margin="2" />
+                                </GroupBox>
+                                <GroupBox x:Name="Plan11Box" Grid.Row="1" Grid.Column="0" Header="Kapazitätsplanung Arbeitsplatz 11">
+                                    <DataGrid Name="dataGrid25" Margin="2" />
+                                </GroupBox>
+                            </Grid>
+                        </TabItem>
+
+                        <TabItem Header="Arbeitsplatz 12">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="146*"/>
+                                    <RowDefinition Height="147*"/>
+                                </Grid.RowDefinitions>
+                                <GroupBox x:Name="Work12Box" Grid.Column="0" Header="Arbeitsplatz 12">
+                                    <DataGrid Name="dataGrid12" Margin="2" />
+                                </GroupBox>
+                                <GroupBox x:Name="Plan12Box" Grid.Row="1" Grid.Column="0" Header="Kapazitätsplanung Arbeitsplatz 12">
+                                    <DataGrid Name="dataGrid26" Margin="2" />
+                                </GroupBox>
+                            </Grid>
+                        </TabItem>
+
+                        <TabItem Header="Arbeitsplatz 13">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="146*"/>
+                                    <RowDefinition Height="147*"/>
+                                </Grid.RowDefinitions>
+                                <GroupBox x:Name="Work13Box" Grid.Column="0" Header="Arbeitsplatz 13">
+                                    <DataGrid Name="dataGrid13" Margin="2" />
+                                </GroupBox>
+                                <GroupBox x:Name="Plan13Box" Grid.Row="1" Grid.Column="0" Header="Kapazitätsplanung Arbeitsplatz 13">
+                                    <DataGrid Name="dataGrid27" Margin="2" />
+                                </GroupBox>
+                            </Grid>
+                        </TabItem>
+
+                        <TabItem Header="Arbeitsplatz 14">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="146*"/>
+                                    <RowDefinition Height="147*"/>
+                                </Grid.RowDefinitions>
+                                <GroupBox x:Name="Work14Box" Grid.Column="0" Header="Arbeitsplatz 14">
+                                    <DataGrid Name="dataGrid14" Margin="2" />
+                                </GroupBox>
+                                <GroupBox x:Name="Plan14Box" Grid.Row="1" Grid.Column="0" Header="Kapazitätsplanung Arbeitsplatz 14">
+                                    <DataGrid Name="dataGrid28" Margin="2" />
+                                </GroupBox>
+                            </Grid>
+                        </TabItem>
+
+                        <TabItem Header="Arbeitsplatz 15" Height="24" Margin="-2,-2,0.2,-2" VerticalAlignment="Bottom">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="146*"/>
+                                    <RowDefinition Height="147*"/>
+                                </Grid.RowDefinitions>
+                                <GroupBox x:Name="Work15Box" Grid.Column="0" Header="Arbeitsplatz 15">
+                                    <DataGrid Name="dataGrid15" Margin="2" />
+                                </GroupBox>
+                                <GroupBox x:Name="Plan15Box" Grid.Row="1" Grid.Column="0" Header="Kapazitätsplanung Arbeitsplatz 15">
+                                    <DataGrid Name="dataGrid29" Margin="2" />
+                                </GroupBox>
+                            </Grid>
+                        </TabItem>
+
+                    </TabControl>
+                </Grid>
+            </TabItem>
+
+
+            <TabItem x:Name="Einkauftab" Header="Einkauf" IsEnabled="False">
+                <Grid Background="#FFE5E5E5">
+                    <TabControl TabStripPlacement="Left">
+                        <TabItem Header="Bestellübersicht">
+                            <Grid>
+                                <DataGrid Name="dataGrid31" Margin="2" />
+                            </Grid>
+                        </TabItem>
+
+                        <TabItem Header="Lieferfristen">
+                            <Grid>
+                                <DataGrid Name="dataGrid30" Margin="2" />
+                            </Grid>
+                        </TabItem>
+                    </TabControl>
+                </Grid>
+
+            </TabItem>
+
+            <TabItem x:Name="Priorisierungtab" Header="Priorisierung" IsEnabled="False">
+                <Grid Background="#FFE5E5E5">
+                    <DataGrid Height="287" HorizontalAlignment="Left" Margin="93,12,0,0"  Name="prio" VerticalAlignment="Top" Width="500">
+                    </DataGrid>
+                    <Button Content="up" Height="23" HorizontalAlignment="Left" Margin="628,51,0,0" Name="up" VerticalAlignment="Top" Width="75" />
+                    <Button Content="down" Height="23" HorizontalAlignment="Left" Margin="628,90,0,0" Name="down" VerticalAlignment="Top" Width="75"  />
+                </Grid>
+            </TabItem>
+
+
+
+            <TabItem x:Name="Chartstab" Header="Charts" IsEnabled="True">
+                <Grid Background="#FFE5E5E5">
+                    <chart:PieChart ChartSubTitle="Population in millions"  
+                ChartTitle="Countries by population">
+                        <chart:PieChart.Series>
+                            <chart:ChartSeries DisplayMember="Name"
+                            ItemsSource="{Binding Path=Populations}"
+                            SeriesTitle="World largest populations"
+                            ValueMember="Count" />
+                        </chart:PieChart.Series>
+                    </chart:PieChart>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="Exporttab" Header="Export" IsEnabled="False">
+                <Grid Background="#FFE5E5E5">
+                    <Button Content="XML Export" HorizontalAlignment="Left" Margin="33,51,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+                </Grid>
             </TabItem>
 
         </TabControl>

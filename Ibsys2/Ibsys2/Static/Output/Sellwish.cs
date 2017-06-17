@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Ibsys2.Static.Output {
-    public class Sellwish {
+    public class Sellwish: INotifyPropertyChanged
+    {
         //<sellwish><item article="[1-3]"  quantity="[0-999999]"/></sellwish>
         private int _quantity1;
         private int _quantity2;
@@ -87,6 +90,17 @@ namespace Ibsys2.Static.Output {
 
         public void ClearClass() {
             _class = null;
+        }
+
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private void NotifyPropertyChanged([CallerMemberName] String propertyName = "")
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            }
         }
     }
 }

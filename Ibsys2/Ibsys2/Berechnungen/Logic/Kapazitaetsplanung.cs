@@ -62,15 +62,15 @@ namespace Ibsys2.Berechnungen.Logic
             new Arbeitsplatzauftrag(20, 3, 20)
         });
         public static Arbeitsplatz a9 = new Arbeitsplatz(9, new List<Arbeitsplatzauftrag>() {
-            new Arbeitsplatzauftrag(10, 3, 20),
-            new Arbeitsplatzauftrag(11, 3, 20),
-            new Arbeitsplatzauftrag(12, 3, 20),
-            new Arbeitsplatzauftrag(13, 3, 20),
-            new Arbeitsplatzauftrag(14, 3, 20),
-            new Arbeitsplatzauftrag(15, 3, 20),
-            new Arbeitsplatzauftrag(18, 2, 20),
-            new Arbeitsplatzauftrag(19, 2, 20),
-            new Arbeitsplatzauftrag(20, 2, 20)
+            new Arbeitsplatzauftrag(10, 3, 15),
+            new Arbeitsplatzauftrag(11, 3, 15),
+            new Arbeitsplatzauftrag(12, 3, 15),
+            new Arbeitsplatzauftrag(13, 3, 15),
+            new Arbeitsplatzauftrag(14, 3, 15),
+            new Arbeitsplatzauftrag(15, 3, 15),
+            new Arbeitsplatzauftrag(18, 2, 15),
+            new Arbeitsplatzauftrag(19, 2, 15),
+            new Arbeitsplatzauftrag(20, 2, 15)
         });
         public static Arbeitsplatz a10 = new Arbeitsplatz(10, new List<Arbeitsplatzauftrag>() {
             new Arbeitsplatzauftrag(4, 4, 20),
@@ -84,8 +84,8 @@ namespace Ibsys2.Berechnungen.Logic
             new Arbeitsplatzauftrag(4, 3, 10),
             new Arbeitsplatzauftrag(5, 3, 10),
             new Arbeitsplatzauftrag(6, 3, 20),
-            new Arbeitsplatzauftrag(7, 3, 10),
-            new Arbeitsplatzauftrag(8, 3, 10),
+            new Arbeitsplatzauftrag(7, 3, 20),
+            new Arbeitsplatzauftrag(8, 3, 20),
             new Arbeitsplatzauftrag(9, 3, 20)
         });
         public static Arbeitsplatz a12 = new Arbeitsplatz(12, new List<Arbeitsplatzauftrag>() {

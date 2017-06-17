@@ -9,47 +9,47 @@ using static Ibsys2.Static.Input.Waitingliststock.Missingpart;
 
 namespace Ibsys2.Berechnungen.Logic
 {
-    public static class Bestellplanung
+    public class Bestellplanung
     {
 
-        public static List<BPKaufteil> kaufteile = new List<BPKaufteil>() {
+        public List<BPKaufteil> kaufteile = new List<BPKaufteil>() {
 
-            new BPKaufteil(21, "Kette",         300,    9,      2.5,    50),
-            new BPKaufteil(22, "Kette",         300,    9,      2.5,    50),
-            new BPKaufteil(23, "Kette",         300,    6.5,    1.5,    50),
-            new BPKaufteil(24, "Mutter 3/8",    6100,   16.5,   2,      100),
-            new BPKaufteil(25, "Scheibe 3/8",   1800,   5,      1.5,    50),
-            new BPKaufteil(27, "Schraube 3/8",  1800,   5,      1.5,    75),
-            new BPKaufteil(28, "Rohr 3/4",      4500,   9,      2.5,    50),
-            new BPKaufteil(32, "Farbe",         2700,   11,     3,      50),
-            new BPKaufteil(33, "Felge cpl.",    900,    10,     3,      75),
-            new BPKaufteil(34, "Speiche",       22000,  8.5,    2,      50),
-            new BPKaufteil(35, "Konus",         3600,   11.5,   2.5,    75),
-            new BPKaufteil(36, "Freilauf",      900,    6.5,    1,      100),
-            new BPKaufteil(37, "Gabel",         900,    8,      2,      50),
-            new BPKaufteil(38, "Welle",         300,    9,      2.5,    50),
-            new BPKaufteil(39, "Blech",         1800,   8,      2,      75),
-            new BPKaufteil(40, "Lenker",        900,    9,      1.5,    50),
-            new BPKaufteil(41, "Mutter 3/4",    900,    5,      1.5,    50),
-            new BPKaufteil(42, "Griff",         1800,   6.5,    2,      50),
-            new BPKaufteil(43, "Sattel",        2700,   10.5,   3,      75),
-            new BPKaufteil(44, "Stange 1/2",    900,    5.5,    1.5,    50),
-            new BPKaufteil(45, "Mutter 1/4",    900,    9,      2,      50),
-            new BPKaufteil(46, "Schraube 1/4",  900,    5,      2,      50),
-            new BPKaufteil(47, "Zahnkranz",     900,    7.55,   1,      50),
-            new BPKaufteil(48, "Pedal",         1800,   5.5,    1.5,    75),
-            new BPKaufteil(52, "Felge cpl.",    600,    8.5,    2.5,    50),
-            new BPKaufteil(53, "Speiche",       22000,  8.5,    1.5,    50),
-            new BPKaufteil(57, "Felge cpl.",    600,    9,      2,      50),
-            new BPKaufteil(58, "Speiche",       22000,  8.5,    3,      50),
-            new BPKaufteil(59, "Schweißdraht",  1800,   4,      1.5,    50)
+            new BPKaufteil(21, "Kette",         300,    9,    2,      50),
+            new BPKaufteil(22, "Kette",         300,    9,    2,      50),
+            new BPKaufteil(23, "Kette",         300,    6,    1,      50),
+            new BPKaufteil(24, "Mutter 3/8",    6100,   16,   2,      100),
+            new BPKaufteil(25, "Scheibe 3/8",   3600,   5,    1,      50),
+            new BPKaufteil(27, "Schraube 3/8",  1800,   5,    1,      75),
+            new BPKaufteil(28, "Rohr 3/4",      4500,   9,    2,      50),
+            new BPKaufteil(32, "Farbe",         2700,   11,   3,      50),
+            new BPKaufteil(33, "Felge cpl.",    900,    10,   3,      75),
+            new BPKaufteil(34, "Speiche",       22000,  8,    2,      50),
+            new BPKaufteil(35, "Konus",         3600,   11,   2,      75),
+            new BPKaufteil(36, "Freilauf",      900,    6,    1,      100),
+            new BPKaufteil(37, "Gabel",         900,    8,    2,      50),
+            new BPKaufteil(38, "Welle",         300,    9,    2,      50),
+            new BPKaufteil(39, "Blech",         1800,   8,    2,      75),
+            new BPKaufteil(40, "Lenker",        900,    9,    1,      50),
+            new BPKaufteil(41, "Mutter 3/4",    900,    5,    1,      50),
+            new BPKaufteil(42, "Griff",         1800,   6,    2,      50),
+            new BPKaufteil(43, "Sattel",        2700,   10,   3,      75),
+            new BPKaufteil(44, "Stange 1/2",    900,    5,    1,      50),
+            new BPKaufteil(45, "Mutter 1/4",    900,    9,    2,      50),
+            new BPKaufteil(46, "Schraube 1/4",  900,    5,    2,      50),
+            new BPKaufteil(47, "Zahnkranz",     900,    8,    1,      50),
+            new BPKaufteil(48, "Pedal",         1800,   5,    1,      75),
+            new BPKaufteil(52, "Felge cpl.",    600,    8,    2,      50),
+            new BPKaufteil(53, "Speiche",       22000,  8,    1,      50),
+            new BPKaufteil(57, "Felge cpl.",    600,    9,    2,      50),
+            new BPKaufteil(58, "Speiche",       22000,  8,    3,      50),
+            new BPKaufteil(59, "Schweißdraht",  1800,   4,    1,      50)
 
         };
 
 
-        public static List<BPBestellung> bestellungen = new List<BPBestellung>();
+        public List<BPBestellung> bestellungen = new List<BPBestellung>();
 
-        public static void createBestellung(BPKaufteil k)
+        public void createBestellung(BPKaufteil k)
         {
             if (k.reichweiteInTagen < k.lieferzeit)
             {
@@ -58,7 +58,7 @@ namespace Ibsys2.Berechnungen.Logic
             else bestellungen.Add(new BPBestellung(k.id, k.optimaleBestellmengeNormal, false));
         }
 
-        public static void bestellungenBerechnen()
+        public void bestellungenBerechnen()
         {
 
             foreach (BPKaufteil k in kaufteile)
@@ -156,7 +156,7 @@ namespace Ibsys2.Berechnungen.Logic
         }
 
         public Double durchSchnittsverbrauchProTag {
-            get { return (this.verbrauchProTagP0 + this.verbrauchProTagP1 + this.verbrauchProTagP2 + this.verbrauchProTagP3) / 4; }
+            get { return Math.Ceiling((this.verbrauchProTagP0 + this.verbrauchProTagP1 + this.verbrauchProTagP2 + this.verbrauchProTagP3) / 4); }
         }
 
         public Double voraussichtlicherEndBestandPeriode0 {
@@ -231,8 +231,14 @@ namespace Ibsys2.Berechnungen.Logic
 
 
 
-        public BPKaufteil(int id, String bezeichnung, Double diskontmenge, Double lieferzeit, Double lieferzeitAbweichung, Double bestellkostenNormal) {
-            
+        public BPKaufteil(int id, String bezeichnung, Double diskontmenge, Double lieferzeit, Double lieferzeitAbweichung, Double bestellkostenNormal)
+        {
+            this.id = id;
+            this.bezeichnung = bezeichnung;
+            this.diskontmenge = diskontmenge;
+            this.lieferzeit = lieferzeit;
+            this.lieferzeitAbweichung = lieferzeitAbweichung;
+            this.bestellkostenNormal = bestellkostenNormal;
 
             Warehousestock w = Warehousestock.Class;
             this.teileWert = w.GetArticleByID(id).Stockvalue;
@@ -241,26 +247,37 @@ namespace Ibsys2.Berechnungen.Logic
             this.verbrauchPeriode2 = ProduktionsplanungPeriode2.getBedarfByID(id);
             this.verbrauchPeriode3 = ProduktionsplanungPeriode3.getBedarfByID(id);
 
-            int aktuellePeriode = Static.Static.lastperiod +1;
-            Waitingliststock wls = Waitingliststock.Class;
-            foreach (Waitinglist wli in wls.GetMissingpartByID(id).GetAllWaitinglistItem)
+            int aktuellePeriode = Static.Static.lastperiod + 1;
+            /*Waitingliststock wls = Waitingliststock.Class;
+            var founditem = wls.GetMissingpartByID(id);*/
+
+            Futureinwardstockmovement fism = Futureinwardstockmovement.Class;
+            var founditem = fism.GetOrdersByArticle(id);
+            if (founditem != null)
             {
-                if (wli.Period == aktuellePeriode) this.geplanteBestellzugaengePeriode0 = wli.Amount;
-                else if (wli.Period == aktuellePeriode + 1) this.geplanteBestellzugaengePeriode1 = wli.Amount;
-                else if (wli.Period == aktuellePeriode + 2) this.geplanteBestellzugaengePeriode2 = wli.Amount;
-                else if (wli.Period == aktuellePeriode + 3) this.geplanteBestellzugaengePeriode3 = wli.Amount;
+                foreach (var wli in founditem)
+                {
+                    int lieferperiode = (int)Math.Floor(wli.Orderperiod + (this.lieferzeitGesamt / 5));
+                    if (lieferperiode == aktuellePeriode)
+                        this.geplanteBestellzugaengePeriode0 += wli.Amount;
+                    else if (lieferperiode == aktuellePeriode + 1)
+                        this.geplanteBestellzugaengePeriode1 += wli.Amount;
+                    else if (lieferperiode == aktuellePeriode + 2)
+                        this.geplanteBestellzugaengePeriode2 += wli.Amount;
+                    else if (lieferperiode == aktuellePeriode + 3)
+                        this.geplanteBestellzugaengePeriode3 += wli.Amount;
+                    //if (wli.Orderperiod == aktuellePeriode) this.geplanteBestellzugaengePeriode0 += wli.Amount;
+                    //else if (wli.Orderperiod == aktuellePeriode + 1) this.geplanteBestellzugaengePeriode1 += wli.Amount;
+                    //else if (wli.Orderperiod == aktuellePeriode + 2) this.geplanteBestellzugaengePeriode2 += wli.Amount;
+                    //else if (wli.Orderperiod == aktuellePeriode + 3) this.geplanteBestellzugaengePeriode3 += wli.Amount;
+                }
             }
 
-            this.id = id;
-            this.bezeichnung = bezeichnung;
-            this.diskontmenge = diskontmenge;
-            this.lieferzeit = lieferzeit;
-            this.lieferzeitAbweichung = lieferzeitAbweichung;
-            this.bestellkostenNormal = bestellkostenNormal;
-
-
-            this.sicherheitsBestand = ((int)((lieferzeit + (lieferzeitAbweichung * ValueStore.Instance.sicherheitsFaktor)) * durchSchnittsverbrauchProTag / 10) * 10);
-            this.meldeBestand = ((int)((lieferzeit * durchSchnittsverbrauchProTag) + sicherheitsBestand) / 10) * 10;        // Rundung auf 10
+            this.sicherheitsBestand = (int)(((lieferzeit + (lieferzeitAbweichung * ValueStore.Instance.sicherheitsFaktor)) * durchSchnittsverbrauchProTag));
+            //this.sicherheitsBestand = ((int)(this.sicherheitsBestand / 10)) * 10;
+            this.sicherheitsBestand = this.sicherheitsBestand + ((10 - (this.sicherheitsBestand % 10)) % 10);
+            this.meldeBestand = ((int)((lieferzeit * durchSchnittsverbrauchProTag) + sicherheitsBestand));
+            this.meldeBestand = this.meldeBestand + ((10 - (this.meldeBestand % 10)) % 10);
         }
     }
 
