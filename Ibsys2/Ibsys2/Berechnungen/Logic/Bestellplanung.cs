@@ -207,19 +207,19 @@ namespace Ibsys2.Berechnungen.Logic
 
 
         public Double optimaleBestellmengeNormalOhneRabatt {
-            get { return ((int)(Math.Sqrt((200 * (verbrauchPeriode0 + verbrauchPeriode1 + verbrauchPeriode2 + verbrauchPeriode3) / 4 * 50 * bestellkostenNormal) / (teileWert * 30))) / 10) * 10; }
+            get { return ((int) Math.Ceiling((Math.Sqrt((200 * (verbrauchPeriode0 + verbrauchPeriode1 + verbrauchPeriode2 + verbrauchPeriode3) / 4 * 50 * bestellkostenNormal) / (teileWert * 0.6 * 50))) / 10) * 10); }
         }
 
         public Double optimaleBestellmengeEilOhneRabatt {
-            get { return ((int)(Math.Sqrt((200 * (verbrauchPeriode0 + verbrauchPeriode1 + verbrauchPeriode2 + verbrauchPeriode3) / 4 * 50 * bestellkostenEil) / (teileWert * 30))) / 10) * 10; }
+            get { return ((int) Math.Ceiling((Math.Sqrt((200 * (verbrauchPeriode0 + verbrauchPeriode1 + verbrauchPeriode2 + verbrauchPeriode3) / 4 * 50 * bestellkostenEil) / (teileWert * 0.6 * 50))) / 10) * 10); }
         }
 
         public Double optimaleBestellmengeNormalMitRabatt {
-            get { return ((int)(Math.Sqrt((200 * (verbrauchPeriode0 + verbrauchPeriode1 + verbrauchPeriode2 + verbrauchPeriode3) / 4 * 50 * bestellkostenNormal) / (teileWert * 30 * 0.9))) / 10) * 10; }
+            get { return ((int) Math.Ceiling((Math.Sqrt((200 * (verbrauchPeriode0 + verbrauchPeriode1 + verbrauchPeriode2 + verbrauchPeriode3) / 4 * 50 * bestellkostenNormal) / (teileWert * 0.9 * 0.6 * 50))) / 10) * 10); }
         }
 
         public Double optimaleBestellmengeEilMitRabatt {
-            get { return ((int)(Math.Sqrt((200 * (verbrauchPeriode0 + verbrauchPeriode1 + verbrauchPeriode2 + verbrauchPeriode3) / 4 * 50 * bestellkostenEil / (teileWert * 30 * 0.9))) / 10) * 10); }
+            get { return ((int) Math.Ceiling((Math.Sqrt((200 * (verbrauchPeriode0 + verbrauchPeriode1 + verbrauchPeriode2 + verbrauchPeriode3) / 4 * 50 * bestellkostenEil) / (teileWert * 0.9 * 0.6 * 50))) / 10) * 10); }
         }
 
         public double reichweiteInTagen {
@@ -241,7 +241,7 @@ namespace Ibsys2.Berechnungen.Logic
             this.bestellkostenNormal = bestellkostenNormal;
 
             Warehousestock w = Warehousestock.Class;
-            this.teileWert = w.GetArticleByID(id).Stockvalue;
+            this.teileWert = w.GetArticleByID(id).Price;
             this.verbrauchPeriode0 = Produktionsplanung.getBedarfByID(id);
             this.verbrauchPeriode1 = ProduktionsplanungPeriode1.getBedarfByID(id);
             this.verbrauchPeriode2 = ProduktionsplanungPeriode2.getBedarfByID(id);
