@@ -48,6 +48,11 @@ namespace Ibsys2.Static.Input {
             return res;
         }
 
+		public List<Workplace> getAllWorkplaces()
+		{
+            return _list;
+		}
+
         public List<Workplace> GetWorkplaceByOrder(int order) {
             return _list.FindAll(x => x.Order == order);
         }
