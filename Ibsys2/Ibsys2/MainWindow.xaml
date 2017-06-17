@@ -137,7 +137,7 @@
                     <TextBox x:Name="forecastsy4p2" HorizontalAlignment="Left" Height="23" Margin="180,170,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TabIndex="14" Text="100"  TextChanged="Forecast_TextChanged" Grid.Column="2"/>
                     <TextBox x:Name="forecastsy4p3" HorizontalAlignment="Left" Height="23" Margin="180,198,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TabIndex="15" Text="100"  TextChanged="Forecast_TextChanged" Grid.Column="2"/>
                     <TextBox x:Name="sumy4" HorizontalAlignment="Left" Height="23" Margin="180,226,0,0" TextWrapping="Wrap" Text="300" VerticalAlignment="Top" Width="120" IsEnabled="False" Grid.Column="2"/>
-                    <Label Content="Sicherheitsfaktor" HorizontalAlignment="Left" Margin="110,310,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="securityfactor" Content="Sicherheitsfaktor" HorizontalAlignment="Left" Margin="110,310,0,0" VerticalAlignment="Top"/>
                     <TextBox x:Name="Sicherheitsfaktor" HorizontalAlignment="Left" Height="23" Margin="234,310,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="1"/>
                     <Button x:Name="calculatebutton" Content="Berechne" HorizontalAlignment="Left" Margin="224.6,254,0,0" VerticalAlignment="Top" Width="75" Click="Calculatebutton_Click" Grid.Column="1"/>
                 </Grid>
@@ -394,13 +394,13 @@
                                     <ColumnDefinition Width="30"/>
                                 </Grid.ColumnDefinitions>
 
-                                <Label Content="Vertriebs-&#xD;&#xA;wunsch" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Height="45" Width="60" Grid.Column="2"/>
-                                <Label Content="Sicherheits- &#xD;&#xA;bestand" HorizontalAlignment="Center"  Margin="0,10,0,0" VerticalAlignment="Top" Height="45" Width="72" Grid.Column="6"/>
-                                <Label Content="Lagerbestand &#xD;&#xA;Vorperiode" HorizontalAlignment="Center"  Margin="0,10,0,0" VerticalAlignment="Top" Height="45" Width="84" Grid.Column="8"/>
-                                <Label Content="Aufträge in &#xD;&#xA;Warteschlange" HorizontalAlignment="Center"  Margin="0,10,0,0" VerticalAlignment="Top" Height="45" Width="98" Grid.Column="10"/>
-                                <Label Content="Aufträge in &#xA;Warteschlange&#xD;&#xA;Vorerzeugnis" HorizontalAlignment="Center"  Margin="0,10,0,0" VerticalAlignment="Top" Height="59" Width="98" Grid.Column="4"/>
-                                <Label Content="Aufträge in &#xA;Bearbeitung" HorizontalAlignment="Center"  Margin="0,10,0,0" VerticalAlignment="Top" Height="45" Width="98" Grid.Column="12"/>
-                                <Label Content="Produktionsaufträge&#xD;&#xA;kommende Periode" HorizontalAlignment="Center"  Margin="0,10,0,0" VerticalAlignment="Top" Height="45" Width="128" Grid.Column="14"/>
+                                <Label x:Name="ProduktVertrieb1" Content="Vertriebs-&#xD;&#xA;wunsch" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Height="45" Width="60" Grid.Column="2"/>
+                                <Label x:Name="ProduktSicher1" Content="Sicherheits- &#xD;&#xA;bestand" HorizontalAlignment="Center"  Margin="0,10,0,0" VerticalAlignment="Top" Height="45" Width="72" Grid.Column="6"/>
+                                <Label x:Name="ProduktLager1" Content="Lagerbestand &#xD;&#xA;Vorperiode" HorizontalAlignment="Center"  Margin="0,10,0,0" VerticalAlignment="Top" Height="45" Width="84" Grid.Column="8"/>
+                                <Label x:Name="ProduktAuftrag1" Content="Aufträge in &#xD;&#xA;Warteschlange" HorizontalAlignment="Center"  Margin="0,10,0,0" VerticalAlignment="Top" Height="45" Width="98" Grid.Column="10"/>
+                                <Label x:Name="ProduktWarte1" Content="Aufträge in &#xA;Warteschlange&#xD;&#xA;Vorerzeugnis" HorizontalAlignment="Center"  Margin="0,10,0,0" VerticalAlignment="Top" Height="59" Width="98" Grid.Column="4"/>
+                                <Label x:Name="ProduktBearb1" Content="Aufträge in &#xA;Bearbeitung" HorizontalAlignment="Center"  Margin="0,10,0,0" VerticalAlignment="Top" Height="45" Width="98" Grid.Column="12"/>
+                                <Label x:Name="ProduktProdukt1" Content="Produktionsaufträge&#xD;&#xA;kommende Periode" HorizontalAlignment="Center"  Margin="0,10,0,0" VerticalAlignment="Top" Height="45" Width="128" Grid.Column="14"/>
 
 
                                 <Label Content="P2" HorizontalAlignment="Left" Margin="20,60,0,0" VerticalAlignment="Top" Grid.Column="1"/>
@@ -587,7 +587,7 @@
                             </Grid>
                         </TabItem>
 
-                        <TabItem x:Name="herrenerradtab" Header="Herrenerrad" IsEnabled="True">
+                        <TabItem x:Name="herrenerradtab" Header="Herrenrad" IsEnabled="True">
                             <Grid Background="#FFE5E5E5">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="30"/>
@@ -607,13 +607,13 @@
                                     <ColumnDefinition Width="140"/>
                                     <ColumnDefinition Width="30"/>
                                 </Grid.ColumnDefinitions>
-                                <Label Content="Vertriebs-&#xD;&#xA;wunsch" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Height="45" Width="60" Grid.Column="2"/>
-                                <Label Content="Sicherheits- &#xD;&#xA;bestand" HorizontalAlignment="Center"  Margin="0,10,0,0" VerticalAlignment="Top" Height="45" Width="72" Grid.Column="6"/>
-                                <Label Content="Lagerbestand &#xD;&#xA;Vorperiode" HorizontalAlignment="Center"  Margin="0,10,0,0" VerticalAlignment="Top" Height="45" Width="84" Grid.Column="8"/>
-                                <Label Content="Aufträge in &#xD;&#xA;Warteschlange" HorizontalAlignment="Center"  Margin="0,10,0,0" VerticalAlignment="Top" Height="45" Width="98" Grid.Column="10"/>
-                                <Label Content="Aufträge in &#xA;Warteschlange&#xD;&#xA;Vorerzeugnis" HorizontalAlignment="Center"  Margin="0,10,0,0" VerticalAlignment="Top" Height="59" Width="98" Grid.Column="4"/>
-                                <Label Content="Aufträge in &#xA;Bearbeitung" HorizontalAlignment="Center"  Margin="0,10,0,0" VerticalAlignment="Top" Height="45" Width="98" Grid.Column="12"/>
-                                <Label Content="Produktionsaufträge&#xD;&#xA;kommende Periode" HorizontalAlignment="Center"  Margin="0,10,0,0" VerticalAlignment="Top" Height="45" Width="128" Grid.Column="14"/>
+                                <Label x:Name="ProduktVertrieb2" Content="Vertriebs-&#xD;&#xA;wunsch" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Height="45" Width="60" Grid.Column="2"/>
+                                <Label x:Name="ProduktSicher2" Content="Sicherheits- &#xD;&#xA;bestand" HorizontalAlignment="Center"  Margin="0,10,0,0" VerticalAlignment="Top" Height="45" Width="72" Grid.Column="6"/>
+                                <Label x:Name="ProduktLager2" Content="Lagerbestand &#xD;&#xA;Vorperiode" HorizontalAlignment="Center"  Margin="0,10,0,0" VerticalAlignment="Top" Height="45" Width="84" Grid.Column="8"/>
+                                <Label x:Name="ProduktAuftrag2" Content="Aufträge in &#xD;&#xA;Warteschlange" HorizontalAlignment="Center"  Margin="0,10,0,0" VerticalAlignment="Top" Height="45" Width="98" Grid.Column="10"/>
+                                <Label x:Name="ProduktWarte2" Content="Aufträge in &#xA;Warteschlange&#xD;&#xA;Vorerzeugnis" HorizontalAlignment="Center"  Margin="0,10,0,0" VerticalAlignment="Top" Height="59" Width="98" Grid.Column="4"/>
+                                <Label x:Name="ProduktBearb2" Content="Aufträge in &#xA;Bearbeitung" HorizontalAlignment="Center"  Margin="0,10,0,0" VerticalAlignment="Top" Height="45" Width="98" Grid.Column="12"/>
+                                <Label x:Name="ProduktProdukt2" Content="Produktionsaufträge&#xD;&#xA;kommende Periode" HorizontalAlignment="Center"  Margin="0,10,0,0" VerticalAlignment="Top" Height="45" Width="128" Grid.Column="14"/>
 
 
                                 <Label Content="P3" HorizontalAlignment="Left" Margin="20,60,0,0" VerticalAlignment="Top" Grid.Column="1"/>
@@ -811,38 +811,66 @@
             <TabItem x:Name="Kapaplanungtab" Header="Kapazitäten" IsEnabled="False">
                 <Grid Background="#FFE5E5E5">
                     <TabControl TabStripPlacement="Left">
-                        <TabItem Header="Arbeitsplatz 1">
+                        <TabItem x:Name="WORK1" Header="Arbeitsplatz 1">
                             <Grid>
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="146*"/>
                                     <RowDefinition Height="147*"/>
                                 </Grid.RowDefinitions>
                                 <GroupBox x:Name="Work1Box" Grid.Column="0" Header="Arbeitsplatz 1">
-                                    <DataGrid Name="dataGrid1" Margin="2" IsReadOnly="True"/>
+                                    <DataGrid Name="dataGrid1" Margin="2" AutoGenerateColumns="False">
+                                        <DataGrid.Columns >
+                                            <DataGridTextColumn x:Name="Plan1Box_Bezeichnung" Header="Dummy" Binding="{Binding Bezeichnung}"></DataGridTextColumn>
+                                            <DataGridTextColumn x:Name="Plan1Box_Fahrradtyp" Header="Last Name" Binding="{Binding Fahrradtyp}"></DataGridTextColumn>
+                                            <DataGridTextColumn x:Name="Plan1Box_Sachnr" Header="Last Name" Binding="{Binding Sachnr}"></DataGridTextColumn>
+                                            <DataGridTextColumn x:Name="Plan1Box_Menge" Header="Last Name" Binding="{Binding Menge}"></DataGridTextColumn>
+                                            <DataGridTextColumn x:Name="Plan1Box_Einzelaufwand" Header="Last Name" Binding="{Binding Einzelaufwand}"></DataGridTextColumn>
+                                            <DataGridTextColumn x:Name="Plan1Box_Gesamtaufwand" Header="Last Name" Binding="{Binding Gesamtaufwand}"></DataGridTextColumn>
+                                        </DataGrid.Columns>
+                                    </DataGrid>
                                 </GroupBox>
                                 <GroupBox x:Name="Plan1Box" Grid.Row="1" Grid.Column="0" Header="Kapazitätsplanung Arbeitsplatz 1">
-                                    <DataGrid Name="dataGrid16" Margin="2" IsReadOnly="True"/>
+                                    <DataGrid Name="dataGrid16" Margin="2" AutoGenerateColumns="False">
+                                        <DataGrid.Columns >
+                                            <DataGridTextColumn x:Name="Plan1Box_Kapaplanwork" Header="Dummy" Binding="{Binding Kapaplanwork}"></DataGridTextColumn>
+                                            <DataGridTextColumn x:Name="Plan1Box_Berechnungwork" Header="Last Name" Binding="{Binding Berechnungwork}"></DataGridTextColumn>
+                                        </DataGrid.Columns>
+                                    </DataGrid>
                                 </GroupBox>
                             </Grid>
                         </TabItem>
 
-                        <TabItem Header="Arbeitsplatz 2">
+                        <TabItem x:Name="WORK2" Header="Arbeitsplatz 2">
                             <Grid>
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="146*"/>
                                     <RowDefinition Height="147*"/>
                                 </Grid.RowDefinitions>
                                 <GroupBox x:Name="Work2Box" Grid.Column="0" Header="Arbeitsplatz 2">
-                                    <DataGrid Name="dataGrid2" Margin="2" IsReadOnly="True"/>
+                                    <DataGrid Name="dataGrid2" Margin="2" AutoGenerateColumns="False">
+                                        <DataGrid.Columns >
+                                            <DataGridTextColumn x:Name="Plan2Box_Bezeichnung" Header="Dummy" Binding="{Binding Bezeichnung}"></DataGridTextColumn>
+                                            <DataGridTextColumn x:Name="Plan2Box_Fahrradtyp" Header="Last Name" Binding="{Binding Fahrradtyp}"></DataGridTextColumn>
+                                            <DataGridTextColumn x:Name="Plan2Box_Sachnr" Header="Last Name" Binding="{Binding Sachnr}"></DataGridTextColumn>
+                                            <DataGridTextColumn x:Name="Plan2Box_Menge" Header="Last Name" Binding="{Binding Menge}"></DataGridTextColumn>
+                                            <DataGridTextColumn x:Name="Plan2Box_Einzelaufwand" Header="Last Name" Binding="{Binding Einzelaufwand}"></DataGridTextColumn>
+                                            <DataGridTextColumn x:Name="Plan2Box_Gesamtaufwand" Header="Last Name" Binding="{Binding Gesamtaufwand}"></DataGridTextColumn>
+                                        </DataGrid.Columns>
+                                    </DataGrid>
                                 </GroupBox>
                                 <GroupBox x:Name="Plan2Box" Grid.Row="1" Grid.Column="0" Header="Kapazitätsplanung Arbeitsplatz 2">
-                                    <DataGrid Name="dataGrid17" Margin="2" IsReadOnly="True"/>
+                                    <DataGrid Name="dataGrid17" Margin="2" AutoGenerateColumns="False">
+                                        <DataGrid.Columns >
+                                            <DataGridTextColumn x:Name="Plan2Box_Kapaplanwork" Header="Dummy" Binding="{Binding Kapaplanwork}"></DataGridTextColumn>
+                                            <DataGridTextColumn x:Name="Plan2Box_Berechnungwork" Header="Last Name" Binding="{Binding Berechnungwork}"></DataGridTextColumn>
+                                        </DataGrid.Columns>
+                                    </DataGrid>
                                 </GroupBox>
                             </Grid>
                         </TabItem>
 
 
-                        <TabItem Header="Arbeitsplatz 3">
+                        <TabItem x:Name="WORK3" Header="Arbeitsplatz 3">
                             <Grid>
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="146*"/>
@@ -857,7 +885,7 @@
                             </Grid>
                         </TabItem>
 
-                        <TabItem Header="Arbeitsplatz 4">
+                        <TabItem x:Name="WORK4" Header="Arbeitsplatz 4">
                             <Grid>
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="146*"/>
@@ -872,7 +900,7 @@
                             </Grid>
                         </TabItem>
 
-                        <TabItem Header="Arbeitsplatz 6">
+                        <TabItem x:Name="WORK6" Header="Arbeitsplatz 6">
                             <Grid>
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="146*"/>
@@ -887,7 +915,7 @@
                             </Grid>
                         </TabItem>
 
-                        <TabItem Header="Arbeitsplatz 7">
+                        <TabItem x:Name="WORK7" Header="Arbeitsplatz 7">
                             <Grid>
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="146*"/>
@@ -902,7 +930,7 @@
                             </Grid>
                         </TabItem>
 
-                        <TabItem Header="Arbeitsplatz 8">
+                        <TabItem x:Name="WORK8" Header="Arbeitsplatz 8">
                             <Grid>
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="146*"/>
@@ -917,7 +945,7 @@
                             </Grid>
                         </TabItem>
 
-                        <TabItem Header="Arbeitsplatz 9">
+                        <TabItem x:Name="WORK9" Header="Arbeitsplatz 9">
                             <Grid>
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="146*"/>
@@ -932,7 +960,7 @@
                             </Grid>
                         </TabItem>
 
-                        <TabItem Header="Arbeitsplatz 10">
+                        <TabItem x:Name="WORK10" Header="Arbeitsplatz 10">
                             <Grid>
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="146*"/>
@@ -947,7 +975,7 @@
                             </Grid>
                         </TabItem>
 
-                        <TabItem Header="Arbeitsplatz 11">
+                        <TabItem x:Name="WORK11" Header="Arbeitsplatz 11">
                             <Grid>
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="146*"/>
@@ -962,7 +990,7 @@
                             </Grid>
                         </TabItem>
 
-                        <TabItem Header="Arbeitsplatz 12">
+                        <TabItem x:Name="WORK12" Header="Arbeitsplatz 12">
                             <Grid>
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="146*"/>
@@ -977,7 +1005,7 @@
                             </Grid>
                         </TabItem>
 
-                        <TabItem Header="Arbeitsplatz 13">
+                        <TabItem x:Name="WORK13" Header="Arbeitsplatz 13">
                             <Grid>
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="146*"/>
@@ -992,7 +1020,7 @@
                             </Grid>
                         </TabItem>
 
-                        <TabItem Header="Arbeitsplatz 14">
+                        <TabItem x:Name="WORK14" Header="Arbeitsplatz 14">
                             <Grid>
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="146*"/>
@@ -1007,7 +1035,7 @@
                             </Grid>
                         </TabItem>
 
-                        <TabItem Header="Arbeitsplatz 15">
+                        <TabItem x:Name="WORK15" Header="Arbeitsplatz 15">
                             <Grid>
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="146*"/>
@@ -1030,15 +1058,21 @@
             <TabItem x:Name="Einkauftab" Header="Einkauf" IsEnabled="False">
                 <Grid Background="#FFE5E5E5">
                     <TabControl TabStripPlacement="Left">
-                        <TabItem Header="Bestellübersicht">
+                        <TabItem x:Name="Bestell" Header="Bestellübersicht">
                             <Grid>
                                 <DataGrid Name="dataGrid31" Margin="2" CellEditEnding="UpdateEinkaufXML"  />
                             </Grid>
                         </TabItem>
 
-                        <TabItem Header="Lieferfristen">
+                        <TabItem x:Name="Stammdaten" Header="Stammdaten">
                             <Grid>
                                 <DataGrid Name="dataGrid30" Margin="2" IsReadOnly="True"/>
+                            </Grid>
+                        </TabItem>
+
+                        <TabItem x:Name="Lagerbestand" Header="Lagerbestand">
+                            <Grid>
+                                <DataGrid Name="dataGrid32" Margin="2" />
                             </Grid>
                         </TabItem>
                     </TabControl>
@@ -1050,8 +1084,8 @@
                 <Grid Background="#FFE5E5E5">
                     <DataGrid Height="287" HorizontalAlignment="Left" Margin="93,12,0,0"  Name="prio" VerticalAlignment="Top" Width="500">
                     </DataGrid>
-                    <Button Content="up" Height="23" HorizontalAlignment="Left" Margin="628,51,0,0" Name="up" VerticalAlignment="Top" Width="75" />
-                    <Button Content="down" Height="23" HorizontalAlignment="Left" Margin="628,90,0,0" Name="down" VerticalAlignment="Top" Width="75"  />
+                    <Button Content="up" Height="23" HorizontalAlignment="Left" Margin="628,51,0,0" x:Name="up" VerticalAlignment="Top" Width="75" />
+                    <Button Content="down" Height="23" HorizontalAlignment="Left" Margin="628,90,0,0" x:Name="down" VerticalAlignment="Top" Width="75"  />
                 </Grid>
             </TabItem>
 
@@ -1059,8 +1093,12 @@
 
             <TabItem x:Name="Chartstab" Header="Charts" IsEnabled="True">
                 <Grid Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="277*"/>
+                        <ColumnDefinition Width="357*"/>
+                    </Grid.ColumnDefinitions>
                     <chart:PieChart ChartSubTitle="Population in millions"  
-                ChartTitle="Countries by population">
+                ChartTitle="Countries by population" Grid.ColumnSpan="2">
                         <chart:PieChart.Series>
                             <chart:ChartSeries DisplayMember="Name"
                             ItemsSource="{Binding Path=Populations}"
