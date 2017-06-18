@@ -1635,8 +1635,10 @@ namespace Ibsys2
                 menge = System.Convert.ToInt32(prioAddAmount.Text);
 
                 if (artikel < 1 || artikel > 59 || menge < 10 || menge % 10 != 0)
+                {
                     throw new ArgumentException();
-            } catch { return; }
+                }
+            } catch { MessageBox.Show(TranslateService.Class.GetTranslation("INTANDMOD10"), "Error", MessageBoxButton.OK, MessageBoxImage.Error); return; }
             Productionlist.Class.AddItem(new ProductionlistItem(artikel, menge));
 
             var grid = (ObservableCollection<Prio>)prio.ItemsSource;

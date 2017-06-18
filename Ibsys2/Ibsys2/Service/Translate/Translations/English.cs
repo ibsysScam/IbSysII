@@ -198,6 +198,7 @@ namespace Ibsys2.Service {
             _translate.Add("BIKETYPE", "Type of bike");
             _translate.Add("INDIVIDUAL_EFFORT", "Individual effort");
             _translate.Add("KAPA", "Capacity planning");
+            _translate.Add("INTANDMOD10", "Please use only Integers and a valid item number. The amount must be specified in steps of 10!");
         }
 
     }

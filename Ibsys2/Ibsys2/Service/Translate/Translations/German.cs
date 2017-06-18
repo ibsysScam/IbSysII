@@ -198,6 +198,7 @@ namespace Ibsys2.Service {
             _translate.Add("BIKETYPE", "Fahrradtyp");
             _translate.Add("INDIVIDUAL_EFFORT", "Einzelaufwand");
             _translate.Add("KAPA", "Kapazitätsplan");
+            _translate.Add("INTANDMOD10", "Bitte nur Ganzzahlen benutzen, eine gültige Artikelnummer verwenden und die Anzahl nur in 10er Schritten angeben!");
         }
         
     }
