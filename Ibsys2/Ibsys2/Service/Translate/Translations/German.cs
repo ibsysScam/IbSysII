@@ -195,6 +195,9 @@ namespace Ibsys2.Service {
             _translate.Add("DOWN", "runter");
             _translate.Add("UP", "hoch");
             _translate.Add("MODE", "Modus");
+            _translate.Add("BIKETYPE", "Fahrradtyp");
+            _translate.Add("INDIVIDUAL_EFFORT", "Einzelaufwand");
+            _translate.Add("KAPA", "Kapazitätsplan");
         }
         
     }

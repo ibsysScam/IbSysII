@@ -272,7 +272,140 @@ namespace Ibsys2
             Kapaplanungtab.Header = TranslateService.Class.GetTranslation("CAPACITY_PLAN");
 
             Plan1Box_Bezeichnung.Header = TranslateService.Class.GetTranslation("DESCRIPTION");
-            
+            Plan1Box_Fahrradtyp.Header = TranslateService.Class.GetTranslation("BIKETYPE");
+            Plan1Box_Sachnr.Header = TranslateService.Class.GetTranslation("ITEM_NO");
+            Plan1Box_Menge.Header = TranslateService.Class.GetTranslation("QUANTITY");
+            Plan1Box_Einzelaufwand.Header = TranslateService.Class.GetTranslation("INDIVIDUAL_EFFORT");
+            Plan1Box_Gesamtaufwand.Header = TranslateService.Class.GetTranslation("TOTAL");
+            Plan1Box_Kapaplanwork.Header = TranslateService.Class.GetTranslation("KAPA");
+            Plan1Box_Berechnungwork.Header = TranslateService.Class.GetTranslation("TOTAL");
+
+            Plan2Box_Bezeichnung.Header = TranslateService.Class.GetTranslation("DESCRIPTION");
+            Plan2Box_Fahrradtyp.Header = TranslateService.Class.GetTranslation("BIKETYPE");
+            Plan2Box_Sachnr.Header = TranslateService.Class.GetTranslation("ITEM_NO");
+            Plan2Box_Menge.Header = TranslateService.Class.GetTranslation("QUANTITY");
+            Plan2Box_Einzelaufwand.Header = TranslateService.Class.GetTranslation("INDIVIDUAL_EFFORT");
+            Plan2Box_Gesamtaufwand.Header = TranslateService.Class.GetTranslation("TOTAL");
+            Plan2Box_Kapaplanwork.Header = TranslateService.Class.GetTranslation("KAPA");
+            Plan2Box_Berechnungwork.Header = TranslateService.Class.GetTranslation("TOTAL");
+
+            Plan3Box_Bezeichnung.Header = TranslateService.Class.GetTranslation("DESCRIPTION");
+            Plan3Box_Fahrradtyp.Header = TranslateService.Class.GetTranslation("BIKETYPE");
+            Plan3Box_Sachnr.Header = TranslateService.Class.GetTranslation("ITEM_NO");
+            Plan3Box_Menge.Header = TranslateService.Class.GetTranslation("QUANTITY");
+            Plan3Box_Einzelaufwand.Header = TranslateService.Class.GetTranslation("INDIVIDUAL_EFFORT");
+            Plan3Box_Gesamtaufwand.Header = TranslateService.Class.GetTranslation("TOTAL");
+            Plan3Box_Kapaplanwork.Header = TranslateService.Class.GetTranslation("KAPA");
+            Plan3Box_Berechnungwork.Header = TranslateService.Class.GetTranslation("TOTAL");
+
+            Plan4Box_Bezeichnung.Header = TranslateService.Class.GetTranslation("DESCRIPTION");
+            Plan4Box_Fahrradtyp.Header = TranslateService.Class.GetTranslation("BIKETYPE");
+            Plan4Box_Sachnr.Header = TranslateService.Class.GetTranslation("ITEM_NO");
+            Plan4Box_Menge.Header = TranslateService.Class.GetTranslation("QUANTITY");
+            Plan4Box_Einzelaufwand.Header = TranslateService.Class.GetTranslation("INDIVIDUAL_EFFORT");
+            Plan4Box_Gesamtaufwand.Header = TranslateService.Class.GetTranslation("TOTAL");
+            Plan4Box_Kapaplanwork.Header = TranslateService.Class.GetTranslation("KAPA");
+            Plan4Box_Berechnungwork.Header = TranslateService.Class.GetTranslation("TOTAL");
+
+            Plan6Box_Bezeichnung.Header = TranslateService.Class.GetTranslation("DESCRIPTION");
+            Plan6Box_Fahrradtyp.Header = TranslateService.Class.GetTranslation("BIKETYPE");
+            Plan6Box_Sachnr.Header = TranslateService.Class.GetTranslation("ITEM_NO");
+            Plan6Box_Menge.Header = TranslateService.Class.GetTranslation("QUANTITY");
+            Plan6Box_Einzelaufwand.Header = TranslateService.Class.GetTranslation("INDIVIDUAL_EFFORT");
+            Plan6Box_Gesamtaufwand.Header = TranslateService.Class.GetTranslation("TOTAL");
+            Plan6Box_Kapaplanwork.Header = TranslateService.Class.GetTranslation("KAPA");
+            Plan6Box_Berechnungwork.Header = TranslateService.Class.GetTranslation("TOTAL");
+
+            Plan7Box_Bezeichnung.Header = TranslateService.Class.GetTranslation("DESCRIPTION");
+            Plan7Box_Fahrradtyp.Header = TranslateService.Class.GetTranslation("BIKETYPE");
+            Plan7Box_Sachnr.Header = TranslateService.Class.GetTranslation("ITEM_NO");
+            Plan7Box_Menge.Header = TranslateService.Class.GetTranslation("QUANTITY");
+            Plan7Box_Einzelaufwand.Header = TranslateService.Class.GetTranslation("INDIVIDUAL_EFFORT");
+            Plan7Box_Gesamtaufwand.Header = TranslateService.Class.GetTranslation("TOTAL");
+            Plan7Box_Kapaplanwork.Header = TranslateService.Class.GetTranslation("KAPA");
+            Plan7Box_Berechnungwork.Header = TranslateService.Class.GetTranslation("TOTAL");
+
+            Plan8Box_Bezeichnung.Header = TranslateService.Class.GetTranslation("DESCRIPTION");
+            Plan8Box_Fahrradtyp.Header = TranslateService.Class.GetTranslation("BIKETYPE");
+            Plan8Box_Sachnr.Header = TranslateService.Class.GetTranslation("ITEM_NO");
+            Plan8Box_Menge.Header = TranslateService.Class.GetTranslation("QUANTITY");
+            Plan8Box_Einzelaufwand.Header = TranslateService.Class.GetTranslation("INDIVIDUAL_EFFORT");
+            Plan8Box_Gesamtaufwand.Header = TranslateService.Class.GetTranslation("TOTAL");
+            Plan8Box_Kapaplanwork.Header = TranslateService.Class.GetTranslation("KAPA");
+            Plan8Box_Berechnungwork.Header = TranslateService.Class.GetTranslation("TOTAL");
+
+            Plan9Box_Bezeichnung.Header = TranslateService.Class.GetTranslation("DESCRIPTION");
+            Plan9Box_Fahrradtyp.Header = TranslateService.Class.GetTranslation("BIKETYPE");
+            Plan9Box_Sachnr.Header = TranslateService.Class.GetTranslation("ITEM_NO");
+            Plan9Box_Menge.Header = TranslateService.Class.GetTranslation("QUANTITY");
+            Plan9Box_Einzelaufwand.Header = TranslateService.Class.GetTranslation("INDIVIDUAL_EFFORT");
+            Plan9Box_Gesamtaufwand.Header = TranslateService.Class.GetTranslation("TOTAL");
+            Plan9Box_Kapaplanwork.Header = TranslateService.Class.GetTranslation("KAPA");
+            Plan9Box_Berechnungwork.Header = TranslateService.Class.GetTranslation("TOTAL");
+
+            Plan10Box_Bezeichnung.Header = TranslateService.Class.GetTranslation("DESCRIPTION");
+            Plan10Box_Fahrradtyp.Header = TranslateService.Class.GetTranslation("BIKETYPE");
+            Plan10Box_Sachnr.Header = TranslateService.Class.GetTranslation("ITEM_NO");
+            Plan10Box_Menge.Header = TranslateService.Class.GetTranslation("QUANTITY");
+            Plan10Box_Einzelaufwand.Header = TranslateService.Class.GetTranslation("INDIVIDUAL_EFFORT");
+            Plan10Box_Gesamtaufwand.Header = TranslateService.Class.GetTranslation("TOTAL");
+            Plan10Box_Kapaplanwork.Header = TranslateService.Class.GetTranslation("KAPA");
+            Plan10Box_Berechnungwork.Header = TranslateService.Class.GetTranslation("TOTAL");
+
+            Plan11Box_Bezeichnung.Header = TranslateService.Class.GetTranslation("DESCRIPTION");
+            Plan11Box_Fahrradtyp.Header = TranslateService.Class.GetTranslation("BIKETYPE");
+            Plan11Box_Sachnr.Header = TranslateService.Class.GetTranslation("ITEM_NO");
+            Plan11Box_Menge.Header = TranslateService.Class.GetTranslation("QUANTITY");
+            Plan11Box_Einzelaufwand.Header = TranslateService.Class.GetTranslation("INDIVIDUAL_EFFORT");
+            Plan11Box_Gesamtaufwand.Header = TranslateService.Class.GetTranslation("TOTAL");
+            Plan11Box_Kapaplanwork.Header = TranslateService.Class.GetTranslation("KAPA");
+            Plan11Box_Berechnungwork.Header = TranslateService.Class.GetTranslation("TOTAL");
+
+            Plan12Box_Bezeichnung.Header = TranslateService.Class.GetTranslation("DESCRIPTION");
+            Plan12Box_Fahrradtyp.Header = TranslateService.Class.GetTranslation("BIKETYPE");
+            Plan12Box_Sachnr.Header = TranslateService.Class.GetTranslation("ITEM_NO");
+            Plan12Box_Menge.Header = TranslateService.Class.GetTranslation("QUANTITY");
+            Plan12Box_Einzelaufwand.Header = TranslateService.Class.GetTranslation("INDIVIDUAL_EFFORT");
+            Plan12Box_Gesamtaufwand.Header = TranslateService.Class.GetTranslation("TOTAL");
+            Plan12Box_Kapaplanwork.Header = TranslateService.Class.GetTranslation("KAPA");
+            Plan12Box_Berechnungwork.Header = TranslateService.Class.GetTranslation("TOTAL");
+
+            Plan13Box_Bezeichnung.Header = TranslateService.Class.GetTranslation("DESCRIPTION");
+            Plan13Box_Fahrradtyp.Header = TranslateService.Class.GetTranslation("BIKETYPE");
+            Plan13Box_Sachnr.Header = TranslateService.Class.GetTranslation("ITEM_NO");
+            Plan13Box_Menge.Header = TranslateService.Class.GetTranslation("QUANTITY");
+            Plan13Box_Einzelaufwand.Header = TranslateService.Class.GetTranslation("INDIVIDUAL_EFFORT");
+            Plan13Box_Gesamtaufwand.Header = TranslateService.Class.GetTranslation("TOTAL");
+            Plan13Box_Kapaplanwork.Header = TranslateService.Class.GetTranslation("KAPA");
+            Plan13Box_Berechnungwork.Header = TranslateService.Class.GetTranslation("TOTAL");
+
+            Plan14Box_Bezeichnung.Header = TranslateService.Class.GetTranslation("DESCRIPTION");
+            Plan14Box_Fahrradtyp.Header = TranslateService.Class.GetTranslation("BIKETYPE");
+            Plan14Box_Sachnr.Header = TranslateService.Class.GetTranslation("ITEM_NO");
+            Plan14Box_Menge.Header = TranslateService.Class.GetTranslation("QUANTITY");
+            Plan14Box_Einzelaufwand.Header = TranslateService.Class.GetTranslation("INDIVIDUAL_EFFORT");
+            Plan14Box_Gesamtaufwand.Header = TranslateService.Class.GetTranslation("TOTAL");
+            Plan14Box_Kapaplanwork.Header = TranslateService.Class.GetTranslation("KAPA");
+            Plan14Box_Berechnungwork.Header = TranslateService.Class.GetTranslation("TOTAL");
+
+            Plan15Box_Bezeichnung.Header = TranslateService.Class.GetTranslation("DESCRIPTION");
+            Plan15Box_Fahrradtyp.Header = TranslateService.Class.GetTranslation("BIKETYPE");
+            Plan15Box_Sachnr.Header = TranslateService.Class.GetTranslation("ITEM_NO");
+            Plan15Box_Menge.Header = TranslateService.Class.GetTranslation("QUANTITY");
+            Plan15Box_Einzelaufwand.Header = TranslateService.Class.GetTranslation("INDIVIDUAL_EFFORT");
+            Plan15Box_Gesamtaufwand.Header = TranslateService.Class.GetTranslation("TOTAL");
+            Plan15Box_Kapaplanwork.Header = TranslateService.Class.GetTranslation("KAPA");
+            Plan15Box_Berechnungwork.Header = TranslateService.Class.GetTranslation("TOTAL");
+
+            Plan1Box_Bezeichnung.Header = TranslateService.Class.GetTranslation("DESCRIPTION");
+            Plan1Box_Fahrradtyp.Header = TranslateService.Class.GetTranslation("BIKETYPE");
+            Plan1Box_Sachnr.Header = TranslateService.Class.GetTranslation("ITEM_NO");
+            Plan1Box_Menge.Header = TranslateService.Class.GetTranslation("QUANTITY");
+            Plan1Box_Einzelaufwand.Header = TranslateService.Class.GetTranslation("INDIVIDUAL_EFFORT");
+            Plan1Box_Gesamtaufwand.Header = TranslateService.Class.GetTranslation("TOTAL");
+            Plan1Box_Kapaplanwork.Header = TranslateService.Class.GetTranslation("KAPA");
+            Plan1Box_Berechnungwork.Header = TranslateService.Class.GetTranslation("TOTAL");
+
 
             UpdateSummeFromForcast(null, null);
             dataGrid1.ItemsSource = CreateWork1();

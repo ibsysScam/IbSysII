@@ -195,6 +195,9 @@ namespace Ibsys2.Service {
             _translate.Add("PRIO", "Priorization");
             _translate.Add("DOWN", "down");
             _translate.Add("UP", "up");
+            _translate.Add("BIKETYPE", "Type of bike");
+            _translate.Add("INDIVIDUAL_EFFORT", "Individual effort");
+            _translate.Add("KAPA", "Capacity planning");
         }
 
     }
