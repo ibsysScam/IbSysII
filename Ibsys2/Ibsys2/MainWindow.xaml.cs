@@ -31,19 +31,17 @@ namespace Ibsys2
     /// Interaktionslogik für MainWindow.xaml
     /// </summary>
     /// 
-    
+
 
     public partial class MainWindow : Window
     {
-       
+
 
         private static MainWindow _class;
         UIFeatures Ui = new UIFeatures();
 
-        public static MainWindow Class
-        {
-            get
-            {
+        public static MainWindow Class {
+            get {
                 if (_class == null)
                     new MainWindow();
                 return _class;
@@ -52,7 +50,7 @@ namespace Ibsys2
         string exportpath = "";
         public MainWindow()
         {
-           
+
             if (_class != null)
                 throw new Exception("Class already exists!");
             _class = this;
@@ -272,139 +270,6 @@ namespace Ibsys2
             Kapaplanungtab.Header = TranslateService.Class.GetTranslation("CAPACITY_PLAN");
 
             Plan1Box_Bezeichnung.Header = TranslateService.Class.GetTranslation("DESCRIPTION");
-            Plan1Box_Fahrradtyp.Header = TranslateService.Class.GetTranslation("BIKETYPE");
-            Plan1Box_Sachnr.Header = TranslateService.Class.GetTranslation("ITEM_NO");
-            Plan1Box_Menge.Header = TranslateService.Class.GetTranslation("QUANTITY");
-            Plan1Box_Einzelaufwand.Header = TranslateService.Class.GetTranslation("INDIVIDUAL_EFFORT");
-            Plan1Box_Gesamtaufwand.Header = TranslateService.Class.GetTranslation("TOTAL");
-            Plan1Box_Kapaplanwork.Header = TranslateService.Class.GetTranslation("KAPA");
-            Plan1Box_Berechnungwork.Header = TranslateService.Class.GetTranslation("TOTAL");
-
-            Plan2Box_Bezeichnung.Header = TranslateService.Class.GetTranslation("DESCRIPTION");
-            Plan2Box_Fahrradtyp.Header = TranslateService.Class.GetTranslation("BIKETYPE");
-            Plan2Box_Sachnr.Header = TranslateService.Class.GetTranslation("ITEM_NO");
-            Plan2Box_Menge.Header = TranslateService.Class.GetTranslation("QUANTITY");
-            Plan2Box_Einzelaufwand.Header = TranslateService.Class.GetTranslation("INDIVIDUAL_EFFORT");
-            Plan2Box_Gesamtaufwand.Header = TranslateService.Class.GetTranslation("TOTAL");
-            Plan2Box_Kapaplanwork.Header = TranslateService.Class.GetTranslation("KAPA");
-            Plan2Box_Berechnungwork.Header = TranslateService.Class.GetTranslation("TOTAL");
-
-            Plan3Box_Bezeichnung.Header = TranslateService.Class.GetTranslation("DESCRIPTION");
-            Plan3Box_Fahrradtyp.Header = TranslateService.Class.GetTranslation("BIKETYPE");
-            Plan3Box_Sachnr.Header = TranslateService.Class.GetTranslation("ITEM_NO");
-            Plan3Box_Menge.Header = TranslateService.Class.GetTranslation("QUANTITY");
-            Plan3Box_Einzelaufwand.Header = TranslateService.Class.GetTranslation("INDIVIDUAL_EFFORT");
-            Plan3Box_Gesamtaufwand.Header = TranslateService.Class.GetTranslation("TOTAL");
-            Plan3Box_Kapaplanwork.Header = TranslateService.Class.GetTranslation("KAPA");
-            Plan3Box_Berechnungwork.Header = TranslateService.Class.GetTranslation("TOTAL");
-
-            Plan4Box_Bezeichnung.Header = TranslateService.Class.GetTranslation("DESCRIPTION");
-            Plan4Box_Fahrradtyp.Header = TranslateService.Class.GetTranslation("BIKETYPE");
-            Plan4Box_Sachnr.Header = TranslateService.Class.GetTranslation("ITEM_NO");
-            Plan4Box_Menge.Header = TranslateService.Class.GetTranslation("QUANTITY");
-            Plan4Box_Einzelaufwand.Header = TranslateService.Class.GetTranslation("INDIVIDUAL_EFFORT");
-            Plan4Box_Gesamtaufwand.Header = TranslateService.Class.GetTranslation("TOTAL");
-            Plan4Box_Kapaplanwork.Header = TranslateService.Class.GetTranslation("KAPA");
-            Plan4Box_Berechnungwork.Header = TranslateService.Class.GetTranslation("TOTAL");
-
-            Plan6Box_Bezeichnung.Header = TranslateService.Class.GetTranslation("DESCRIPTION");
-            Plan6Box_Fahrradtyp.Header = TranslateService.Class.GetTranslation("BIKETYPE");
-            Plan6Box_Sachnr.Header = TranslateService.Class.GetTranslation("ITEM_NO");
-            Plan6Box_Menge.Header = TranslateService.Class.GetTranslation("QUANTITY");
-            Plan6Box_Einzelaufwand.Header = TranslateService.Class.GetTranslation("INDIVIDUAL_EFFORT");
-            Plan6Box_Gesamtaufwand.Header = TranslateService.Class.GetTranslation("TOTAL");
-            Plan6Box_Kapaplanwork.Header = TranslateService.Class.GetTranslation("KAPA");
-            Plan6Box_Berechnungwork.Header = TranslateService.Class.GetTranslation("TOTAL");
-
-            Plan7Box_Bezeichnung.Header = TranslateService.Class.GetTranslation("DESCRIPTION");
-            Plan7Box_Fahrradtyp.Header = TranslateService.Class.GetTranslation("BIKETYPE");
-            Plan7Box_Sachnr.Header = TranslateService.Class.GetTranslation("ITEM_NO");
-            Plan7Box_Menge.Header = TranslateService.Class.GetTranslation("QUANTITY");
-            Plan7Box_Einzelaufwand.Header = TranslateService.Class.GetTranslation("INDIVIDUAL_EFFORT");
-            Plan7Box_Gesamtaufwand.Header = TranslateService.Class.GetTranslation("TOTAL");
-            Plan7Box_Kapaplanwork.Header = TranslateService.Class.GetTranslation("KAPA");
-            Plan7Box_Berechnungwork.Header = TranslateService.Class.GetTranslation("TOTAL");
-
-            Plan8Box_Bezeichnung.Header = TranslateService.Class.GetTranslation("DESCRIPTION");
-            Plan8Box_Fahrradtyp.Header = TranslateService.Class.GetTranslation("BIKETYPE");
-            Plan8Box_Sachnr.Header = TranslateService.Class.GetTranslation("ITEM_NO");
-            Plan8Box_Menge.Header = TranslateService.Class.GetTranslation("QUANTITY");
-            Plan8Box_Einzelaufwand.Header = TranslateService.Class.GetTranslation("INDIVIDUAL_EFFORT");
-            Plan8Box_Gesamtaufwand.Header = TranslateService.Class.GetTranslation("TOTAL");
-            Plan8Box_Kapaplanwork.Header = TranslateService.Class.GetTranslation("KAPA");
-            Plan8Box_Berechnungwork.Header = TranslateService.Class.GetTranslation("TOTAL");
-
-            Plan9Box_Bezeichnung.Header = TranslateService.Class.GetTranslation("DESCRIPTION");
-            Plan9Box_Fahrradtyp.Header = TranslateService.Class.GetTranslation("BIKETYPE");
-            Plan9Box_Sachnr.Header = TranslateService.Class.GetTranslation("ITEM_NO");
-            Plan9Box_Menge.Header = TranslateService.Class.GetTranslation("QUANTITY");
-            Plan9Box_Einzelaufwand.Header = TranslateService.Class.GetTranslation("INDIVIDUAL_EFFORT");
-            Plan9Box_Gesamtaufwand.Header = TranslateService.Class.GetTranslation("TOTAL");
-            Plan9Box_Kapaplanwork.Header = TranslateService.Class.GetTranslation("KAPA");
-            Plan9Box_Berechnungwork.Header = TranslateService.Class.GetTranslation("TOTAL");
-
-            Plan10Box_Bezeichnung.Header = TranslateService.Class.GetTranslation("DESCRIPTION");
-            Plan10Box_Fahrradtyp.Header = TranslateService.Class.GetTranslation("BIKETYPE");
-            Plan10Box_Sachnr.Header = TranslateService.Class.GetTranslation("ITEM_NO");
-            Plan10Box_Menge.Header = TranslateService.Class.GetTranslation("QUANTITY");
-            Plan10Box_Einzelaufwand.Header = TranslateService.Class.GetTranslation("INDIVIDUAL_EFFORT");
-            Plan10Box_Gesamtaufwand.Header = TranslateService.Class.GetTranslation("TOTAL");
-            Plan10Box_Kapaplanwork.Header = TranslateService.Class.GetTranslation("KAPA");
-            Plan10Box_Berechnungwork.Header = TranslateService.Class.GetTranslation("TOTAL");
-
-            Plan11Box_Bezeichnung.Header = TranslateService.Class.GetTranslation("DESCRIPTION");
-            Plan11Box_Fahrradtyp.Header = TranslateService.Class.GetTranslation("BIKETYPE");
-            Plan11Box_Sachnr.Header = TranslateService.Class.GetTranslation("ITEM_NO");
-            Plan11Box_Menge.Header = TranslateService.Class.GetTranslation("QUANTITY");
-            Plan11Box_Einzelaufwand.Header = TranslateService.Class.GetTranslation("INDIVIDUAL_EFFORT");
-            Plan11Box_Gesamtaufwand.Header = TranslateService.Class.GetTranslation("TOTAL");
-            Plan11Box_Kapaplanwork.Header = TranslateService.Class.GetTranslation("KAPA");
-            Plan11Box_Berechnungwork.Header = TranslateService.Class.GetTranslation("TOTAL");
-
-            Plan12Box_Bezeichnung.Header = TranslateService.Class.GetTranslation("DESCRIPTION");
-            Plan12Box_Fahrradtyp.Header = TranslateService.Class.GetTranslation("BIKETYPE");
-            Plan12Box_Sachnr.Header = TranslateService.Class.GetTranslation("ITEM_NO");
-            Plan12Box_Menge.Header = TranslateService.Class.GetTranslation("QUANTITY");
-            Plan12Box_Einzelaufwand.Header = TranslateService.Class.GetTranslation("INDIVIDUAL_EFFORT");
-            Plan12Box_Gesamtaufwand.Header = TranslateService.Class.GetTranslation("TOTAL");
-            Plan12Box_Kapaplanwork.Header = TranslateService.Class.GetTranslation("KAPA");
-            Plan12Box_Berechnungwork.Header = TranslateService.Class.GetTranslation("TOTAL");
-
-            Plan13Box_Bezeichnung.Header = TranslateService.Class.GetTranslation("DESCRIPTION");
-            Plan13Box_Fahrradtyp.Header = TranslateService.Class.GetTranslation("BIKETYPE");
-            Plan13Box_Sachnr.Header = TranslateService.Class.GetTranslation("ITEM_NO");
-            Plan13Box_Menge.Header = TranslateService.Class.GetTranslation("QUANTITY");
-            Plan13Box_Einzelaufwand.Header = TranslateService.Class.GetTranslation("INDIVIDUAL_EFFORT");
-            Plan13Box_Gesamtaufwand.Header = TranslateService.Class.GetTranslation("TOTAL");
-            Plan13Box_Kapaplanwork.Header = TranslateService.Class.GetTranslation("KAPA");
-            Plan13Box_Berechnungwork.Header = TranslateService.Class.GetTranslation("TOTAL");
-
-            Plan14Box_Bezeichnung.Header = TranslateService.Class.GetTranslation("DESCRIPTION");
-            Plan14Box_Fahrradtyp.Header = TranslateService.Class.GetTranslation("BIKETYPE");
-            Plan14Box_Sachnr.Header = TranslateService.Class.GetTranslation("ITEM_NO");
-            Plan14Box_Menge.Header = TranslateService.Class.GetTranslation("QUANTITY");
-            Plan14Box_Einzelaufwand.Header = TranslateService.Class.GetTranslation("INDIVIDUAL_EFFORT");
-            Plan14Box_Gesamtaufwand.Header = TranslateService.Class.GetTranslation("TOTAL");
-            Plan14Box_Kapaplanwork.Header = TranslateService.Class.GetTranslation("KAPA");
-            Plan14Box_Berechnungwork.Header = TranslateService.Class.GetTranslation("TOTAL");
-
-            Plan15Box_Bezeichnung.Header = TranslateService.Class.GetTranslation("DESCRIPTION");
-            Plan15Box_Fahrradtyp.Header = TranslateService.Class.GetTranslation("BIKETYPE");
-            Plan15Box_Sachnr.Header = TranslateService.Class.GetTranslation("ITEM_NO");
-            Plan15Box_Menge.Header = TranslateService.Class.GetTranslation("QUANTITY");
-            Plan15Box_Einzelaufwand.Header = TranslateService.Class.GetTranslation("INDIVIDUAL_EFFORT");
-            Plan15Box_Gesamtaufwand.Header = TranslateService.Class.GetTranslation("TOTAL");
-            Plan15Box_Kapaplanwork.Header = TranslateService.Class.GetTranslation("KAPA");
-            Plan15Box_Berechnungwork.Header = TranslateService.Class.GetTranslation("TOTAL");
-
-            Plan1Box_Bezeichnung.Header = TranslateService.Class.GetTranslation("DESCRIPTION");
-            Plan1Box_Fahrradtyp.Header = TranslateService.Class.GetTranslation("BIKETYPE");
-            Plan1Box_Sachnr.Header = TranslateService.Class.GetTranslation("ITEM_NO");
-            Plan1Box_Menge.Header = TranslateService.Class.GetTranslation("QUANTITY");
-            Plan1Box_Einzelaufwand.Header = TranslateService.Class.GetTranslation("INDIVIDUAL_EFFORT");
-            Plan1Box_Gesamtaufwand.Header = TranslateService.Class.GetTranslation("TOTAL");
-            Plan1Box_Kapaplanwork.Header = TranslateService.Class.GetTranslation("KAPA");
-            Plan1Box_Berechnungwork.Header = TranslateService.Class.GetTranslation("TOTAL");
 
 
             UpdateSummeFromForcast(null, null);
@@ -441,7 +306,7 @@ namespace Ibsys2
             dataGrid32.ItemsSource = CreateLagerbestand();
             prio.ItemsSource = CreatePrio1();
         }
-        
+
 
 
         public ObservableCollection<Prio> CreatePrio1()
@@ -450,7 +315,7 @@ namespace Ibsys2
             return prio;
         }
 
-      
+
         public ObservableCollection<Einkauf> CreateEinkauf1()
         {
             ObservableCollection<Einkauf> einkauf = new ObservableCollection<Einkauf>();
@@ -459,7 +324,7 @@ namespace Ibsys2
         public ObservableCollection<Liefer> CreateLiefer1()
         {
             ObservableCollection<Liefer> liefer = new ObservableCollection<Liefer>();
-            liefer.Add(new Liefer { Kaufteileno = "21", Kaufteil = TranslateService.Class.GetTranslation("CHAIN"), Verwendung="K", Teilewert="5,00", Diskontmenge="300", Bestellkosten="50", Lieferfrist = "1,8", Abweichung = "0,4" });
+            liefer.Add(new Liefer { Kaufteileno = "21", Kaufteil = TranslateService.Class.GetTranslation("CHAIN"), Verwendung = "K", Teilewert = "5,00", Diskontmenge = "300", Bestellkosten = "50", Lieferfrist = "1,8", Abweichung = "0,4" });
             liefer.Add(new Liefer { Kaufteileno = "22", Kaufteil = TranslateService.Class.GetTranslation("CHAIN"), Verwendung = "D", Teilewert = "6,50", Diskontmenge = "300", Bestellkosten = "50", Lieferfrist = "1,7", Abweichung = "0,4" });
             liefer.Add(new Liefer { Kaufteileno = "23", Kaufteil = TranslateService.Class.GetTranslation("CHAIN"), Verwendung = "H", Teilewert = "6,50", Diskontmenge = "300", Bestellkosten = "50", Lieferfrist = "1,2", Abweichung = "0,2" });
             liefer.Add(new Liefer { Kaufteileno = "24", Kaufteil = TranslateService.Class.GetTranslation("UT_three"), Verwendung = "KDH", Teilewert = "0;06", Diskontmenge = "6100", Bestellkosten = "100", Lieferfrist = "3,2", Abweichung = "0,3" });
@@ -494,35 +359,6 @@ namespace Ibsys2
         public ObservableCollection<Lagerbestand> CreateLagerbestand()
         {
                     ObservableCollection<Lagerbestand> lagerbestand = new ObservableCollection<Lagerbestand>();
-                    lagerbestand.Add(new Lagerbestand { Kaufteileno = "21", Kaufteil = TranslateService.Class.GetTranslation("CHAIN"), Verwendung = "K", Teilewert = "5,00", Diskontmenge = "300", Bestellkosten = "50", Lieferfrist = "1,8", Abweichung = "0,4" });
-                    lagerbestand.Add(new Lagerbestand { Kaufteileno = "22", Kaufteil = TranslateService.Class.GetTranslation("CHAIN"), Verwendung = "D", Teilewert = "6,50", Diskontmenge = "300", Bestellkosten = "50", Lieferfrist = "1,7", Abweichung = "0,4" });
-                    lagerbestand.Add(new Lagerbestand { Kaufteileno = "23", Kaufteil = TranslateService.Class.GetTranslation("CHAIN"), Verwendung = "H", Teilewert = "6,50", Diskontmenge = "300", Bestellkosten = "50", Lieferfrist = "1,2", Abweichung = "0,2" });
-                    lagerbestand.Add(new Lagerbestand { Kaufteileno = "24", Kaufteil = TranslateService.Class.GetTranslation("UT_three"), Verwendung = "KDH", Teilewert = "0;06", Diskontmenge = "6100", Bestellkosten = "100", Lieferfrist = "3,2", Abweichung = "0,3" });
-                    lagerbestand.Add(new Lagerbestand { Kaufteileno = "25", Kaufteil = TranslateService.Class.GetTranslation("WASHER"), Verwendung = "KDH", Teilewert = "0;06", Diskontmenge = "3600", Bestellkosten = "50", Lieferfrist = "0,9", Abweichung = "0,2" });
-                    lagerbestand.Add(new Lagerbestand { Kaufteileno = "27", Kaufteil = TranslateService.Class.GetTranslation("SCREW"), Verwendung = "KDH", Teilewert = "0,1", Diskontmenge = "1800", Bestellkosten = "75", Lieferfrist = "0,9", Abweichung = "0,2" });
-                    lagerbestand.Add(new Lagerbestand { Kaufteileno = "28", Kaufteil = TranslateService.Class.GetTranslation("TUBE"), Verwendung = "KDH", Teilewert = "1,20", Diskontmenge = "4500", Bestellkosten = "50", Lieferfrist = "1,7", Abweichung = "0,4" });
-                    lagerbestand.Add(new Lagerbestand { Kaufteileno = "32", Kaufteil = TranslateService.Class.GetTranslation("PAINT"), Verwendung = "KDH", Teilewert = "0,75", Diskontmenge = "2700", Bestellkosten = "50", Lieferfrist = "2,1", Abweichung = "0,5" });
-                    lagerbestand.Add(new Lagerbestand { Kaufteileno = "33", Kaufteil = TranslateService.Class.GetTranslation("RIM"), Verwendung = "H", Teilewert = "22,00", Diskontmenge = "900", Bestellkosten = "75", Lieferfrist = "1,9", Abweichung = "0,5" });
-                    lagerbestand.Add(new Lagerbestand { Kaufteileno = "34", Kaufteil = TranslateService.Class.GetTranslation("SPOKE"), Verwendung = "H", Teilewert = "0,1", Diskontmenge = "22000", Bestellkosten = "50", Lieferfrist = "1,6", Abweichung = "0,3" });
-                    lagerbestand.Add(new Lagerbestand { Kaufteileno = "35", Kaufteil = TranslateService.Class.GetTranslation("TAPER"), Verwendung = "KDH", Teilewert = "1,00", Diskontmenge = "3600", Bestellkosten = "75", Lieferfrist = "2,2", Abweichung = "0,4" });
-                    lagerbestand.Add(new Lagerbestand { Kaufteileno = "36", Kaufteil = TranslateService.Class.GetTranslation("FREE"), Verwendung = "KDH", Teilewert = "8,00", Diskontmenge = "900", Bestellkosten = "100", Lieferfrist = "1,2", Abweichung = "0,1" });
-                    lagerbestand.Add(new Lagerbestand { Kaufteileno = "37", Kaufteil = TranslateService.Class.GetTranslation("FORK"), Verwendung = "KDH", Teilewert = "1,50", Diskontmenge = "900", Bestellkosten = "50", Lieferfrist = "1,5", Abweichung = "0,3" });
-                    lagerbestand.Add(new Lagerbestand { Kaufteileno = "38", Kaufteil = TranslateService.Class.GetTranslation("AXLE"), Verwendung = "KDH", Teilewert = "1,50", Diskontmenge = "300", Bestellkosten = "50", Lieferfrist = "1,7", Abweichung = "0,4" });
-                    lagerbestand.Add(new Lagerbestand { Kaufteileno = "39", Kaufteil = TranslateService.Class.GetTranslation("SHEET"), Verwendung = "KDH", Teilewert = "1,50", Diskontmenge = "1800", Bestellkosten = "75", Lieferfrist = "1,5", Abweichung = "0,3" });
-                    lagerbestand.Add(new Lagerbestand { Kaufteileno = "40", Kaufteil = TranslateService.Class.GetTranslation("HANDLE_BAR"), Verwendung = "KDH", Teilewert = "2,50", Diskontmenge = "900", Bestellkosten = "50", Lieferfrist = "1,7", Abweichung = "0,2" });
-                    lagerbestand.Add(new Lagerbestand { Kaufteileno = "41", Kaufteil = TranslateService.Class.GetTranslation("NUT_FOUR"), Verwendung = "KDH", Teilewert = "0,06", Diskontmenge = "900", Bestellkosten = "50", Lieferfrist = "0,9", Abweichung = "0,2" });
-                    lagerbestand.Add(new Lagerbestand { Kaufteileno = "42", Kaufteil = TranslateService.Class.GetTranslation("HANDLE_GRIP"), Verwendung = "KDH", Teilewert = "0,10", Diskontmenge = "1800", Bestellkosten = "50", Lieferfrist = "1,2", Abweichung = "0,3" });
-                    lagerbestand.Add(new Lagerbestand { Kaufteileno = "43", Kaufteil = TranslateService.Class.GetTranslation("SADDLE"), Verwendung = "KDH", Teilewert = "5,00", Diskontmenge = "2700", Bestellkosten = "75", Lieferfrist = "2,0", Abweichung = "0,5" });
-                    lagerbestand.Add(new Lagerbestand { Kaufteileno = "44", Kaufteil = TranslateService.Class.GetTranslation("BAR"), Verwendung = "KDH", Teilewert = "0,50", Diskontmenge = "900", Bestellkosten = "50", Lieferfrist = "1,2", Abweichung = "0,2" });
-                    lagerbestand.Add(new Lagerbestand { Kaufteileno = "45", Kaufteil = TranslateService.Class.GetTranslation("NUT_QUARTER"), Verwendung = "KDH", Teilewert = "0,06", Diskontmenge = "900", Bestellkosten = "50", Lieferfrist = "1,7", Abweichung = "0,3" });
-                    lagerbestand.Add(new Lagerbestand { Kaufteileno = "46", Kaufteil = TranslateService.Class.GetTranslation("SCREW_QUARTER"), Verwendung = "KDH", Teilewert = "0,10", Diskontmenge = "900", Bestellkosten = "50", Lieferfrist = "0,9", Abweichung = "0,3" });
-                    lagerbestand.Add(new Lagerbestand { Kaufteileno = "47", Kaufteil = TranslateService.Class.GetTranslation("SPROCKET"), Verwendung = "KDH", Teilewert = "3,50", Diskontmenge = "900", Bestellkosten = "50", Lieferfrist = "1,1", Abweichung = "0,1" });
-                    lagerbestand.Add(new Lagerbestand { Kaufteileno = "48", Kaufteil = TranslateService.Class.GetTranslation("PEDAL"), Verwendung = "KDH", Teilewert = "1,50", Diskontmenge = "1800", Bestellkosten = "75", Lieferfrist = "1,0", Abweichung = "0,2" });
-                    lagerbestand.Add(new Lagerbestand { Kaufteileno = "52", Kaufteil = TranslateService.Class.GetTranslation("RIM"), Verwendung = "K", Teilewert = "22,00", Diskontmenge = "600", Bestellkosten = "50", Lieferfrist = "1,6", Abweichung = "0,4" });
-                    lagerbestand.Add(new Lagerbestand { Kaufteileno = "53", Kaufteil = TranslateService.Class.GetTranslation("SPOKE"), Verwendung = "K", Teilewert = "0,10", Diskontmenge = "22000", Bestellkosten = "50", Lieferfrist = "1,6", Abweichung = "0,2" });
-                    lagerbestand.Add(new Lagerbestand { Kaufteileno = "57", Kaufteil = TranslateService.Class.GetTranslation("RIM"), Verwendung = "D", Teilewert = "22,00", Diskontmenge = "600", Bestellkosten = "50", Lieferfrist = "1,7", Abweichung = "0,3" });
-                    lagerbestand.Add(new Lagerbestand { Kaufteileno = "58", Kaufteil = TranslateService.Class.GetTranslation("SPOKE"), Verwendung = "D", Teilewert = "0,10", Diskontmenge = "22000", Bestellkosten = "50", Lieferfrist = "1,6", Abweichung = "0,5" });
-                    lagerbestand.Add(new Lagerbestand { Kaufteileno = "59", Kaufteil = TranslateService.Class.GetTranslation("WELDING_WIRES"), Verwendung = "KDH", Teilewert = "0,15", Diskontmenge = "1800", Bestellkosten = "50", Lieferfrist = "0,7", Abweichung = "0,2" });
                     return lagerbestand;
 
         }
@@ -543,8 +379,8 @@ namespace Ibsys2
         {
             ObservableCollection<ItemNo> itemno = new ObservableCollection<ItemNo>();
             itemno.Add(new ItemNo { Bezeichnung = TranslateService.Class.GetTranslation("FRONT_WHEEL_COMPLETE"), Sachnr = "E49", Fahrradtyp = "K", Einzelaufwand = "6", Gesamtaufwand = "" });
-            itemno.Add(new ItemNo{ Bezeichnung = TranslateService.Class.GetTranslation("FRONT_WHEEL_COMPLETE"), Sachnr = "E54", Fahrradtyp = "D", Einzelaufwand = "6", Gesamtaufwand = "" });
-            itemno.Add(new ItemNo{ Bezeichnung = TranslateService.Class.GetTranslation("FRONT_WHEEL_COMPLETE"), Sachnr = "E29", Fahrradtyp = "H", Einzelaufwand = "6", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = TranslateService.Class.GetTranslation("FRONT_WHEEL_COMPLETE"), Sachnr = "E54", Fahrradtyp = "D", Einzelaufwand = "6", Gesamtaufwand = "" });
+            itemno.Add(new ItemNo { Bezeichnung = TranslateService.Class.GetTranslation("FRONT_WHEEL_COMPLETE"), Sachnr = "E29", Fahrradtyp = "H", Einzelaufwand = "6", Gesamtaufwand = "" });
             return itemno;
         }
 
@@ -850,6 +686,8 @@ namespace Ibsys2
             UpdatePlanningFields();
             UpdateKapaFields();
             UpdateEinkauf();
+            UpdatePrioFields();
+            UpdateLager();
         }
 
         private void UpdatePlanningFields()
@@ -1177,7 +1015,8 @@ namespace Ibsys2
                 platz.Gesamtaufwand = Kapazitaetsplanung.arbeitsplatzListe[id].fertigungsListe.Find(x => x.artikelID == SachNr).kapabedarfProTeil.ToString();
                 platz.Menge = Produktionsplanung.getBedarfByID(SachNr).ToString();
             }
-            for (int i = 0; i< ArbeitsPlatzOverview.Count; i++) {
+            for (int i = 0; i < ArbeitsPlatzOverview.Count; i++)
+            {
                 ArbeitsPlatzOverview[i].Berechnungwork = Kapazitaetsplanung.arbeitsplatzListe[id].getFieldsByID(i).ToString();
             }
         }
@@ -1194,7 +1033,36 @@ namespace Ibsys2
             dataGrid31.Columns[0].IsReadOnly = true;
             dataGrid31.Columns[0].Header = TranslateService.Class.GetTranslation("ITEM_NO");*/
         }
-            private bool AllFilled()
+
+        private void UpdatePrioFields()
+        {
+            var fields = (ObservableCollection<Prio>)prio.ItemsSource;
+            fields.Clear();
+            int i = 0;
+            foreach (var product in Productionlist.Class.List)
+            {
+                fields.Add(new Prio(i.ToString(), product.article.ToString(), product.quantity.ToString()));
+                i++;
+            }
+
+        }
+
+        private void UpdateLager()
+        {
+            Warehousestock w = Warehousestock.Class;
+
+            var fields = (ObservableCollection<Lagerbestand>)dataGrid32.ItemsSource;
+            fields.Clear();
+            foreach (var item in Warehousestock.Class.Liste)
+            {
+                fields.Add(new Lagerbestand(item.ID.ToString(), item.Amount.ToString(), item.Startamount.ToString(), item.Pct.ToString(), item.Price.ToString(), item.Stockvalue.ToString()));
+            }
+            /*
+            dataGrid31.Columns[0].IsReadOnly = true;
+            dataGrid31.Columns[0].Header = TranslateService.Class.GetTranslation("ITEM_NO");*/
+        }
+
+        private bool AllFilled()
         {
             if (period0product1.Text == "" || period0product2.Text == "" || period0product3.Text == "" || period1product1.Text == "" || period1product2.Text == "" || period1product3.Text == "" || period2product1.Text == "" || period2product2.Text == "" || period2product3.Text == "")
             {
@@ -1202,7 +1070,6 @@ namespace Ibsys2
             }
             return true;
         }
-
 
         private void PrognosenNextbutton_Click(object sender, RoutedEventArgs e)
         {
@@ -1306,7 +1173,7 @@ namespace Ibsys2
         }
 
 
-private void Forecast1_TextChanged(object sender, TextChangedEventArgs e)
+        private void Forecast1_TextChanged(object sender, TextChangedEventArgs e)
         {
             try
             {
@@ -1328,7 +1195,7 @@ private void Forecast1_TextChanged(object sender, TextChangedEventArgs e)
             }
         }
 
-private void UpdateSummeFromForcast(object sender, TextChangedEventArgs e)
+        private void UpdateSummeFromForcast(object sender, TextChangedEventArgs e)
         {
             try
             {
@@ -1500,7 +1367,7 @@ private void UpdateSummeFromForcast(object sender, TextChangedEventArgs e)
 
             }
         }
-       
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 
@@ -1547,6 +1414,100 @@ private void UpdateSummeFromForcast(object sender, TextChangedEventArgs e)
                 }
                 catch { e.Cancel = true; }
             }
+        }
+
+        private void up_Click(object sender, RoutedEventArgs e)
+        {
+            var grid = (ObservableCollection<Prio>)prio.ItemsSource;
+            var a = (Prio)prio.SelectedItem;
+            if (a != null)
+            {
+                var position = Convert.ToInt32(a.Position);
+                if (position > 0)
+                {
+                    Productionlist.Class.moveItemToSpecialIndex(position - 1, position);
+                    grid.Clear();
+                    UpdatePrioFields();
+                }
+            }
+        }
+
+        private void down_Click(object sender, RoutedEventArgs e)
+        {
+            var grid = (ObservableCollection<Prio>)prio.ItemsSource;
+            var a = (Prio)prio.SelectedItem;
+            if (a != null)
+            {
+                var position = Convert.ToInt32(a.Position);
+                if (position + 1 < Productionlist.Class.List.Count)
+                {
+                    Productionlist.Class.moveItemToSpecialIndex(position + 2, position);
+                    grid.Clear();
+                    UpdatePrioFields();
+                }
+            }
+        }
+
+        private void delete_Click(object sender, RoutedEventArgs e)
+        {
+            var grid = (ObservableCollection<Prio>)prio.ItemsSource;
+            var a = (Prio)prio.SelectedItem;
+            if (a != null)
+            {
+                var position = Convert.ToInt32(a.Position);
+                Productionlist.Class.List.RemoveAt(position);
+                grid.Clear();
+                UpdatePrioFields();
+            }
+        }
+
+        private void split_Click(object sender, RoutedEventArgs e)
+        {
+            var grid = (ObservableCollection<Prio>)prio.ItemsSource;
+            var a = (Prio)prio.SelectedItem;
+            if (a != null)
+            {
+                var position = Convert.ToInt32(a.Position);
+                int quantity1 = Productionlist.Class.List[position].quantity / 2;
+                int quantity2 = 0;
+                if ((quantity1) % 10 == 0)
+                {
+                    quantity2 = quantity1;
+                }
+                else
+                {
+
+                    quantity1 = (int)Math.Ceiling((double)Productionlist.Class.List[position].quantity / 20) * 10;
+                    quantity2 = (int)Math.Floor((double)Productionlist.Class.List[position].quantity / 20) * 10;
+
+                    if (quantity2 == 0)
+                        return;
+                }
+                Productionlist.Class.List[position].quantity = quantity1;
+                Productionlist.Class.AddItem(new ProductionlistItem(Productionlist.Class.List[position].article, quantity2));
+                Productionlist.Class.moveItemToSpecialIndex(position + 1, Productionlist.Class.List.Count - 1);
+                grid.Clear();
+                UpdatePrioFields();
+            }
+        }
+
+        private void add_Click(object sender, RoutedEventArgs e)
+        {
+            int artikel = 0;
+            int menge = 0;
+            try
+            {
+                artikel = System.Convert.ToInt32(prioAddItem.Text);
+                menge = System.Convert.ToInt32(prioAddAmount.Text);
+
+                if (artikel < 1 || artikel > 59 || menge < 10 || menge % 10 != 0)
+                    throw new ArgumentException();
+            } catch { return; }
+            Productionlist.Class.AddItem(new ProductionlistItem(artikel, menge));
+
+            var grid = (ObservableCollection<Prio>)prio.ItemsSource;
+            grid.Clear();
+            UpdatePrioFields();
         }
     }
 }
@@ -1643,83 +1604,75 @@ public class Lagerbestand : INotifyPropertyChanged
 {
     public event PropertyChangedEventHandler PropertyChanged;
 
-    private string lieferfrist;
-    private string abweichung;
-    public string kaufteileno;
-    public string kaufteil;
-    public string bestellkosten;
-    public string diskontmenge;
-    public string teilewert;
-    public string verwendung;
+    private string artikel;
+    private string menge;
+    public string startmenge;
+    public string menge_startmenge;
+    public string preis;
+    public string lagerwert;
 
-
-    public string Kaufteileno
+    public Lagerbestand(string artikel, string menge, string startmenge, string menge_startmenge, string preis, string lagerwert)
     {
-        get { return kaufteileno; }
-        set
-        {
-            kaufteileno = value; OnPropertyChanged(new PropertyChangedEventArgs("KaufteileNo"));
-        }
+        this.Artikel = artikel;
+        this.Menge = menge;
+        this.Startmenge = startmenge;
+        this.Menge_startmenge = menge_startmenge;
+        this.Preis = preis;
+        this.Lagerwert = lagerwert;
     }
 
-    public string Kaufteil
+
+    public string Artikel
     {
-        get { return kaufteil; }
+        get { return artikel; }
         set
         {
-            kaufteil = value; OnPropertyChanged(new PropertyChangedEventArgs("Kaufteils"));
-        }
-    }
-    public string Verwendung
-    {
-        get { return verwendung; }
-        set
-        {
-            verwendung = value; OnPropertyChanged(new PropertyChangedEventArgs("Verwendung"));
+            artikel = value; OnPropertyChanged(new PropertyChangedEventArgs("Artikel"));
         }
     }
 
-    public string Bestellkosten
+    public string Menge
     {
-        get { return bestellkosten; }
+        get { return menge; }
         set
         {
-            bestellkosten = value; OnPropertyChanged(new PropertyChangedEventArgs("Bestellkosten"));
+            menge = value; OnPropertyChanged(new PropertyChangedEventArgs("Menge"));
         }
     }
-    public string Diskontmenge
+    public string Startmenge
     {
-        get { return diskontmenge; }
+        get { return startmenge; }
         set
         {
-            diskontmenge = value; OnPropertyChanged(new PropertyChangedEventArgs("Diskontmenge"));
-        }
-    }
-    public string Teilewert
-    {
-        get { return teilewert; }
-        set
-        {
-            teilewert = value; OnPropertyChanged(new PropertyChangedEventArgs("Teilewert"));
+            startmenge = value; OnPropertyChanged(new PropertyChangedEventArgs("Startmenge"));
         }
     }
 
-    public string Lieferfrist
+    public string Menge_startmenge
     {
-        get { return lieferfrist; }
+        get { return menge_startmenge; }
         set
         {
-            lieferfrist = value; OnPropertyChanged(new PropertyChangedEventArgs("Lieferfrist"));
+            menge_startmenge = value; OnPropertyChanged(new PropertyChangedEventArgs("Menge Startmenge in Prozent"));
         }
     }
-    public string Abweichung
+    public string Preis
     {
-        get { return abweichung; }
+        get { return preis; }
         set
         {
-            abweichung = value; OnPropertyChanged(new PropertyChangedEventArgs("Abweichung"));
+            preis = value; OnPropertyChanged(new PropertyChangedEventArgs("Preis"));
         }
     }
+    public string Lagerwert
+    {
+        get { return lagerwert; }
+        set
+        {
+            lagerwert = value; OnPropertyChanged(new PropertyChangedEventArgs("Lagerwert"));
+        }
+    }
+    
     protected void OnPropertyChanged(PropertyChangedEventArgs e)
     {
         if (PropertyChanged != null)
@@ -1876,8 +1829,25 @@ public class Prio : INotifyPropertyChanged
 {
     public event PropertyChangedEventHandler PropertyChanged;
 
+    private string position;
     private string teilenr;
     private string anzahl;
+
+
+    public Prio (string id, string teilenr, string anzahl)
+    {
+        this.Position = id;
+        this.Teilenr = teilenr;
+        this.Anzahl = anzahl;
+    }
+
+    public string Position {
+        get { return position; }
+        set {
+            position = value;
+            OnPropertyChanged(new PropertyChangedEventArgs("ID"));
+        }
+    }
 
     public string Teilenr {
         get { return teilenr; }

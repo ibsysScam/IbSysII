@@ -1240,7 +1240,7 @@
 
                         <TabItem x:Name="Lagerbestand" Header="Lagerbestand">
                             <Grid>
-                                <DataGrid Name="dataGrid32" Margin="2" />
+                                <DataGrid Name="dataGrid32" Margin="2" IsReadOnly="True"/>
                             </Grid>
                         </TabItem>
                     </TabControl>
@@ -1250,10 +1250,17 @@
 
             <TabItem x:Name="Priorisierungtab" Header="Priorisierung" IsEnabled="False">
                 <Grid Background="#FFE5E5E5">
-                    <DataGrid Height="287" HorizontalAlignment="Left" Margin="93,12,0,0"  Name="prio" VerticalAlignment="Top" Width="500">
+                    <DataGrid Height="287" HorizontalAlignment="Left" Margin="93,12,0,0"  Name="prio" VerticalAlignment="Top" Width="500" IsReadOnly="True">
                     </DataGrid>
-                    <Button Content="up" Height="23" HorizontalAlignment="Left" Margin="628,51,0,0" x:Name="up" VerticalAlignment="Top" Width="75" />
-                    <Button Content="down" Height="23" HorizontalAlignment="Left" Margin="628,90,0,0" x:Name="down" VerticalAlignment="Top" Width="75"  />
+                    <Button Content="up" Height="23" HorizontalAlignment="Left" Margin="628,51,0,0" x:Name="up" VerticalAlignment="Top" Width="75" Click="up_Click" />
+                    <Button Content="down" Height="23" HorizontalAlignment="Left" Margin="628,90,0,0" x:Name="down" VerticalAlignment="Top" Width="75" Click="down_Click"  />
+                    <Button Content="delete" Height="23" HorizontalAlignment="Left" Margin="628,246,0,0" x:Name="delete" VerticalAlignment="Top" Width="75" Click="delete_Click"  />
+                    <Button Content="add" Height="23" HorizontalAlignment="Left" Margin="628,340,0,0" x:Name="add" VerticalAlignment="Top" Width="75" Click="add_Click"  />
+                    <Button Content="split" Height="23" HorizontalAlignment="Left" Margin="628,165,0,0" x:Name="split" VerticalAlignment="Top" Width="75" Click="split_Click"  />
+                    <TextBox x:Name="prioAddItem" HorizontalAlignment="Left" Height="23" Margin="93,340,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TabIndex="4" TextChanged="Forecast1_TextChanged" />
+                    <TextBox x:Name="prioAddAmount" HorizontalAlignment="Left" Height="23" Margin="274,340,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TabIndex="4" TextChanged="Forecast1_TextChanged" />
+                    <Label x:Name="prioAddItemDescription" Content="Item:" HorizontalAlignment="Left" Margin="93,309,0,0" VerticalAlignment="Top" RenderTransformOrigin="2.02,-5.231"/>
+                    <Label x:Name="prioAddAmountDescription" Content="Anzahl:" HorizontalAlignment="Left" Margin="274,309,0,0" VerticalAlignment="Top" RenderTransformOrigin="2.02,-5.231"/>
                 </Grid>
             </TabItem>
 
@@ -1283,7 +1290,5 @@
             </TabItem>
 
         </TabControl>
-
-
     </Grid>
 </Window>
