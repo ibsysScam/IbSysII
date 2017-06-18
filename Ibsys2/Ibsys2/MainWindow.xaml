@@ -31,7 +31,7 @@
                         <ColumnDefinition Width="995*"/>
                         <ColumnDefinition Width="273*"/>
                     </Grid.ColumnDefinitions>
-                    <Button x:Name="choosefile" Content="Browse File" HorizontalAlignment="Left" Margin="10,52,0,0" VerticalAlignment="Top" Width="75" Click="Choosefile_Click" ToolTip="Drag and Drop your XML File instead of choosing it here!"/>
+                    <Button x:Name="choosefile" Content="Browse" HorizontalAlignment="Left" Margin="10,52,0,0" VerticalAlignment="Top" Width="75" Click="Choosefile_Click" ToolTip="Drag and Drop your XML File instead of choosing it here!"/>
                     <TextBox x:Name="Pathtextbox" MaxLines="1" HorizontalAlignment="Left" Height="23" Margin="10,77,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="286" TabIndex="0" ToolTip="Drag Dop your XML File here!" />
                     <Button x:Name="clear" Content="Clear all" HorizontalAlignment="Left" Margin="221,52,0,0" VerticalAlignment="Top" Width="75" Click="Clear_Click" RenderTransformOrigin="0.587,3.75"/>
                     <Button x:Name="MainpageNextButton" Content="Next" HorizontalAlignment="Left" Margin="221,105,0,0" VerticalAlignment="Top" Width="75" Click="MainpageNextButton_Click"/>
@@ -1240,13 +1240,33 @@
 
                         <TabItem x:Name="Stammdaten" Header="Stammdaten">
                             <Grid>
-                                <DataGrid Name="dataGrid30" Margin="2" IsReadOnly="True"/>
+                                <DataGrid Name="dataGrid30" Margin="2" IsReadOnly="True" AutoGenerateColumns="False">
+                                    <DataGrid.Columns >
+                                        <DataGridTextColumn x:Name="Liefer1_Lieferfrist" Header="Last Name" Binding="{Binding Lieferfrist}"></DataGridTextColumn>
+                                        <DataGridTextColumn x:Name="Liefer1_Abweichung" Header="Last Name" Binding="{Binding Abweichung}"></DataGridTextColumn>
+                                        <DataGridTextColumn x:Name="Liefer1_Kaufteileno" Header="Last Name" Binding="{Binding Kaufteileno}"></DataGridTextColumn>
+                                        <DataGridTextColumn x:Name="Liefer1_Kaufteil" Header="Last Name" Binding="{Binding Kaufteil}"></DataGridTextColumn>
+                                        <DataGridTextColumn x:Name="Liefer1_Bestellkosten" Header="Last Name" Binding="{Binding Bestellkosten}"></DataGridTextColumn>
+                                        <DataGridTextColumn x:Name="Liefer1_Diskontmenge" Header="Last Name" Binding="{Binding Diskontmenge}"></DataGridTextColumn>
+                                        <DataGridTextColumn x:Name="Liefer1_Teilewert" Header="Last Name" Binding="{Binding Teilewert}"></DataGridTextColumn>
+                                        <DataGridTextColumn x:Name="Liefer1_Verwendung" Header="Last Name" Binding="{Binding Verwendung}"></DataGridTextColumn>
+                                    </DataGrid.Columns>
+                                </DataGrid>
                             </Grid>
                         </TabItem>
 
                         <TabItem x:Name="Lagerbestand" Header="Lagerbestand">
                             <Grid>
-                                <DataGrid Name="dataGrid32" Margin="2" IsReadOnly="True"/>
+                                <DataGrid Name="dataGrid32" Margin="2" IsReadOnly="True" AutoGenerateColumns="False">
+                                <DataGrid.Columns >
+                                    <DataGridTextColumn x:Name="Lager1_Artikel" Header="Last Name" Binding="{Binding Artikel}"></DataGridTextColumn>
+                                    <DataGridTextColumn x:Name="Lager1_Menge" Header="Last Name" Binding="{Binding Menge}"></DataGridTextColumn>
+                                    <DataGridTextColumn x:Name="Lager1_Startmenge" Header="Last Name" Binding="{Binding Startmenge}"></DataGridTextColumn>
+                                    <DataGridTextColumn x:Name="Lager1_menge_startmenge" Header="Last Name" Binding="{Binding Menge_Startmenge}"></DataGridTextColumn>
+                                    <DataGridTextColumn x:Name="Lager1_Preis" Header="Last Name" Binding="{Binding Preis}"></DataGridTextColumn>
+                                    <DataGridTextColumn x:Name="Lager1_Lagerwert" Header="Last Name" Binding="{Binding Lagerwert}"></DataGridTextColumn>
+                                </DataGrid.Columns>
+                                </DataGrid>
                             </Grid>
                         </TabItem>
                     </TabControl>

@@ -417,6 +417,22 @@ namespace Ibsys2
             Prio1_Teilenr.Header = TranslateService.Class.GetTranslation("ITEM1");
             Prio1_Anzahl.Header = TranslateService.Class.GetTranslation("QUANTITY");
 
+            Lager1_Artikel.Header = TranslateService.Class.GetTranslation("LAARTIKEL");
+            Lager1_Menge.Header = TranslateService.Class.GetTranslation("LAMENGE");
+            Lager1_Startmenge.Header = TranslateService.Class.GetTranslation("LASTARTMENGE");
+            Lager1_menge_startmenge.Header = TranslateService.Class.GetTranslation("LAMENGE");
+            Lager1_Preis.Header = TranslateService.Class.GetTranslation("LAPREIS");
+            Lager1_Lagerwert.Header = TranslateService.Class.GetTranslation("LALAGERWERT");
+
+            Liefer1_Lieferfrist.Header = TranslateService.Class.GetTranslation("LLIEFFERFRIST");
+            Liefer1_Abweichung.Header = TranslateService.Class.GetTranslation("LABWEICHUNG");
+            Liefer1_Kaufteileno.Header = TranslateService.Class.GetTranslation("LKAUFTEILENO");
+            Liefer1_Kaufteil.Header = TranslateService.Class.GetTranslation("LKAUFTEIL");
+            Liefer1_Bestellkosten.Header = TranslateService.Class.GetTranslation("LBESTELLKOSTEN");
+            Liefer1_Diskontmenge.Header = TranslateService.Class.GetTranslation("LDISKONT");
+            Liefer1_Teilewert.Header = TranslateService.Class.GetTranslation("LTEILEWERT");
+            Liefer1_Verwendung.Header = TranslateService.Class.GetTranslation("LVERWENDUNG");
+
             UpdateSummeFromForcast(null, null);
             dataGrid1.ItemsSource = CreateWork1();
             dataGrid2.ItemsSource = CreateWork2();

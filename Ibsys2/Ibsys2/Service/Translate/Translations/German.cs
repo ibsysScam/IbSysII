@@ -214,6 +214,19 @@ namespace Ibsys2.Service {
             _translate.Add("POSITION", "Position");
             _translate.Add("INTANDMOD10", "Bitte nur Ganzzahlen benutzen, eine gültige Artikelnummer verwenden und die Anzahl nur in 10er Schritten angeben!");
             _translate.Add("LANGUAGE", "Sprache");
+            _translate.Add("LLIEFFERFRIST", "Lieferfrist");
+            _translate.Add("LABWEICHUNG", "Abweichung");
+            _translate.Add("LKAUFTEILENO", "KaufteileNr.");
+            _translate.Add("LKAUFTEIL", "Kaufteil");
+            _translate.Add("LBESTELLKOSTEN", "Bestellkosten");
+            _translate.Add("LDISKONT", "Diskontmenge");
+            _translate.Add("LTEILEWERT", "Teilewert");
+            _translate.Add("LVERWENDUNG", "Verwendung");
+            _translate.Add("LAARTIKEL", "Artikel");
+            _translate.Add("LAMENGE", "Menge");
+            _translate.Add("LASTARTMENGE", "Startmenge");
+            _translate.Add("LAPREIS", "Preis");
+            _translate.Add("LALAGERWERT", "Lagerwert");
         }
         
     }
