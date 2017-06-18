@@ -205,6 +205,7 @@ namespace Ibsys2.Service {
             _translate.Add("ITEM", "Item");
             _translate.Add("ITEM1", "TeileNo.");
             _translate.Add("POSITION", "Position");
+            _translate.Add("INTANDMOD10", "Please use only Integers and a valid item number. The amount must be specified in steps of 10!");
         }
 
     }
