@@ -23,6 +23,8 @@ namespace Ibsys2.Static.Output {
             }
         }
 
+        public List<ProductionlistItem> List { get { return _list; } }
+
         public Productionlist() {
             if (_class != null)
                 throw new Exception("Class already exists!");
