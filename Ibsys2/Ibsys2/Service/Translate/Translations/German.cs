@@ -213,6 +213,7 @@ namespace Ibsys2.Service {
             _translate.Add("ITEM1", "Teilenummer");
             _translate.Add("POSITION", "Position");
             _translate.Add("INTANDMOD10", "Bitte nur Ganzzahlen benutzen, eine gültige Artikelnummer verwenden und die Anzahl nur in 10er Schritten angeben!");
+            _translate.Add("LANGUAGE", "Sprache");
         }
         
     }

@@ -27,7 +27,8 @@ namespace Ibsys2.Pages
         {
             InitializeComponent();
             LoadLanguages();
-
+            LanguageLabel.Content = TranslateService.Class.GetTranslation("LANGUAGE") + ":";
+            SettingsPage.Title = TranslateService.Class.GetTranslation("LANGUAGE");
 
         }
 
