@@ -404,7 +404,18 @@ namespace Ibsys2
             Plan1Box_Kapaplanwork.Header = TranslateService.Class.GetTranslation("KAPA");
             Plan1Box_Berechnungwork.Header = TranslateService.Class.GetTranslation("TOTAL");
 
+            Bestell1_Teileno.Header = TranslateService.Class.GetTranslation("ITEM_NO");
+            Bestell1_Anzahl.Header = TranslateService.Class.GetTranslation("QUANTITY");
+            Bestell1_Art.Header = TranslateService.Class.GetTranslation("TYPE");
+            add.Content = TranslateService.Class.GetTranslation("ADD");
+            delete.Content = TranslateService.Class.GetTranslation("DEL");
+            split.Content = TranslateService.Class.GetTranslation("SPLIT");
+            prioAddItemDescription.Content = TranslateService.Class.GetTranslation("ITEM");
+            prioAddAmountDescription.Content = TranslateService.Class.GetTranslation("QUANTITY");
 
+            Prio1_Position.Header = TranslateService.Class.GetTranslation("POSITION");
+            Prio1_Teilenr.Header = TranslateService.Class.GetTranslation("ITEM1");
+            Prio1_Anzahl.Header = TranslateService.Class.GetTranslation("QUANTITY");
 
             UpdateSummeFromForcast(null, null);
             dataGrid1.ItemsSource = CreateWork1();
@@ -442,7 +453,7 @@ namespace Ibsys2
         }
 
 
-
+        
         public ObservableCollection<Prio> CreatePrio1()
         {
             ObservableCollection<Prio> prio = new ObservableCollection<Prio>();

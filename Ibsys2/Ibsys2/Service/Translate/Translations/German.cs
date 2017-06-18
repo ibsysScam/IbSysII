@@ -181,7 +181,7 @@ namespace Ibsys2.Service {
             _translate.Add("PERIODE", "Periode");
             _translate.Add("CONTRACTPENALTY", "Vertragsstrafe");
             _translate.Add("RETAILPRICE", "Verkaufspreis");
-            _translate.Add("PRODUCTIONPLAN", "Produktionsplanung");
+            _translate.Add("PRODUCTIONPLAN", "Eigenfertigung");
             _translate.Add("PREORDER", "Aufträge in Warteschlange Vorerzeugnis");
             _translate.Add("CHILD", "Kinderrad");
             _translate.Add("WOMAN", "Damenrad");
@@ -198,6 +198,13 @@ namespace Ibsys2.Service {
             _translate.Add("BIKETYPE", "Fahrradtyp");
             _translate.Add("INDIVIDUAL_EFFORT", "Einzelaufwand");
             _translate.Add("KAPA", "Kapazitätsplan");
+            _translate.Add("TYPE", "Typ");
+            _translate.Add("DEL", "löschen");
+            _translate.Add("ADD", "hinzufügen");
+            _translate.Add("SPLIT", "teilen");
+            _translate.Add("ITEM", "Kaufteilenummer");
+            _translate.Add("ITEM1", "Teilenummer");
+            _translate.Add("POSITION", "Position");
         }
         
     }

@@ -142,7 +142,7 @@
                     <Button x:Name="calculatebutton" Content="Berechne" HorizontalAlignment="Left" Margin="224.6,254,0,0" VerticalAlignment="Top" Width="75" Click="Calculatebutton_Click" Grid.Column="1"/>
                 </Grid>
             </TabItem>
-            <TabItem x:Name="Produktionsplanungtab" Header="Produktionsplan" IsEnabled="False">
+            <TabItem x:Name="Produktionsplanungtab" Header="Eigenfertigung" IsEnabled="False">
                 <Grid  Background="#FFE5E5E5">
                     <TabControl TabStripPlacement="Left">
                         <TabControl.Resources>
@@ -161,7 +161,7 @@
                                 <Setter Property="Padding" Value="3" />
                             </Style>
                         </TabControl.Resources>
-                        <TabItem x:Name="kinderradtab" Header="Kinderrad" IsEnabled="True">
+                        <TabItem x:Name="kinderradtab" Header="Kinderrad" IsEnabled="True" >
                             <Grid Background="#FFE5E5E5">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="30"/>
@@ -1228,7 +1228,13 @@
                     <TabControl TabStripPlacement="Left">
                         <TabItem x:Name="Bestell" Header="Bestellübersicht">
                             <Grid>
-                                <DataGrid Name="dataGrid31" Margin="2" CellEditEnding="UpdateEinkaufXML"  />
+                                <DataGrid Name="dataGrid31" Margin="2" CellEditEnding="UpdateEinkaufXML"  AutoGenerateColumns="False" >
+                                    <DataGrid.Columns >
+                                        <DataGridTextColumn x:Name="Bestell1_Teileno" Header="Dummy" Binding="{Binding Teileno}"></DataGridTextColumn>
+                                        <DataGridTextColumn x:Name="Bestell1_Anzahl" Header="Last Name" Binding="{Binding Anzahl}"></DataGridTextColumn>
+                                        <DataGridTextColumn x:Name="Bestell1_Art" Header="Last Name" Binding="{Binding Art}"></DataGridTextColumn>
+                                    </DataGrid.Columns>
+                                </DataGrid>
                             </Grid>
                         </TabItem>
 
@@ -1250,13 +1256,18 @@
 
             <TabItem x:Name="Priorisierungtab" Header="Priorisierung" IsEnabled="False">
                 <Grid Background="#FFE5E5E5">
-                    <DataGrid Height="287" HorizontalAlignment="Left" Margin="93,12,0,0"  Name="prio" VerticalAlignment="Top" Width="500" IsReadOnly="True">
+                    <DataGrid Height="287" HorizontalAlignment="Left" Margin="93,12,0,0"  Name="prio" VerticalAlignment="Top" Width="500" IsReadOnly="True" AutoGenerateColumns="False">
+                        <DataGrid.Columns >
+                            <DataGridTextColumn x:Name="Prio1_Position" Header="Last Name" Binding="{Binding Position}"></DataGridTextColumn>
+                            <DataGridTextColumn x:Name="Prio1_Teilenr" Header="Last Name" Binding="{Binding Teilenr}"></DataGridTextColumn>
+                            <DataGridTextColumn x:Name="Prio1_Anzahl" Header="Last Name" Binding="{Binding Anzahl}"></DataGridTextColumn>
+                        </DataGrid.Columns>
                     </DataGrid>
-                    <Button Content="up" Height="23" HorizontalAlignment="Left" Margin="628,51,0,0" x:Name="up" VerticalAlignment="Top" Width="75" Click="up_Click" />
+                    <Button Content="up" Height="23" HorizontalAlignment="Left" Margin="628,50,0,0" x:Name="up" VerticalAlignment="Top" Width="75" Click="up_Click" />
                     <Button Content="down" Height="23" HorizontalAlignment="Left" Margin="628,90,0,0" x:Name="down" VerticalAlignment="Top" Width="75" Click="down_Click"  />
-                    <Button Content="delete" Height="23" HorizontalAlignment="Left" Margin="628,246,0,0" x:Name="delete" VerticalAlignment="Top" Width="75" Click="delete_Click"  />
+                    <Button Content="delete" Height="23" HorizontalAlignment="Left" Margin="628,170,0,0" x:Name="delete" VerticalAlignment="Top" Width="75" Click="delete_Click"  />
                     <Button Content="add" Height="23" HorizontalAlignment="Left" Margin="628,340,0,0" x:Name="add" VerticalAlignment="Top" Width="75" Click="add_Click"  />
-                    <Button Content="split" Height="23" HorizontalAlignment="Left" Margin="628,165,0,0" x:Name="split" VerticalAlignment="Top" Width="75" Click="split_Click"  />
+                    <Button Content="split" Height="23" HorizontalAlignment="Left" Margin="628,130,0,0" x:Name="split" VerticalAlignment="Top" Width="75" Click="split_Click"  />
                     <TextBox x:Name="prioAddItem" HorizontalAlignment="Left" Height="23" Margin="93,340,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TabIndex="4" TextChanged="Forecast1_TextChanged" />
                     <TextBox x:Name="prioAddAmount" HorizontalAlignment="Left" Height="23" Margin="274,340,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TabIndex="4" TextChanged="Forecast1_TextChanged" />
                     <Label x:Name="prioAddItemDescription" Content="Item:" HorizontalAlignment="Left" Margin="93,309,0,0" VerticalAlignment="Top" RenderTransformOrigin="2.02,-5.231"/>
