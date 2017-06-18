@@ -41,6 +41,13 @@ namespace Ibsys2.Service {
             _translate.Add("ORDERS_QUEUE", "Orders in the waiting queue");
             _translate.Add("WORK_IN_PROGRESS", "Work in progress");
             _translate.Add("PRODUCTION_ORDERS_FOR_COMMING", "Production orders for the following period");
+            _translate.Add("SALES_ORDERS1", "Sales \r\n orders");
+            _translate.Add("SAFETY_STOCK1", "Safety \r\n stock");
+            _translate.Add("END_WAREHOUSE_STOCK1", "Warehouse stock \r\n at the end of the \r\n passed period");
+            _translate.Add("ORDERS_QUEUE1", "Orders in the \r\n waiting queue");
+            _translate.Add("PREORDER1", "Aufträge in \r\n Warteschlange \r\n Vorerzeugnis");
+            _translate.Add("WORK_IN_PROGRESS1", "Work in \r\n progress");
+            _translate.Add("PRODUCTION_ORDERS_FOR_COMMING1", "Production orders \r\n for the following period");
             _translate.Add("DESCRIPTION", "Description");
             _translate.Add("REAR_WHEEL", "Rear wheel");
             _translate.Add("FRONT_WHEEL", "Front wheel");
