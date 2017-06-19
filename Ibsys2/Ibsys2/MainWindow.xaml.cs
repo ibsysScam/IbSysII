@@ -423,7 +423,7 @@ namespace Ibsys2
             Lager1_Artikel.Header = TranslateService.Class.GetTranslation("LAARTIKEL");
             Lager1_Menge.Header = TranslateService.Class.GetTranslation("LAMENGE");
             Lager1_Startmenge.Header = TranslateService.Class.GetTranslation("LASTARTMENGE");
-            Lager1_menge_startmenge.Header = TranslateService.Class.GetTranslation("LAMENGE");
+            Lager1_menge_startmenge.Header = TranslateService.Class.GetTranslation("LAMENGE1");
             Lager1_Preis.Header = TranslateService.Class.GetTranslation("LAPREIS");
             Lager1_Lagerwert.Header = TranslateService.Class.GetTranslation("LALAGERWERT");
 
@@ -435,6 +435,8 @@ namespace Ibsys2
             Liefer1_Diskontmenge.Header = TranslateService.Class.GetTranslation("LDISKONT");
             Liefer1_Teilewert.Header = TranslateService.Class.GetTranslation("LTEILEWERT");
             Liefer1_Verwendung.Header = TranslateService.Class.GetTranslation("LVERWENDUNG");
+
+            Exportlabel.Content = TranslateService.Class.GetTranslation("EXPORTLABEL");
 
             UpdateSummeFromForcast(null, null);
             dataGrid1.ItemsSource = CreateWork1();
@@ -808,7 +810,7 @@ namespace Ibsys2
 
                 if (Convert.ToInt32(forecastsy1p1.Text) % 10 != 0 || Convert.ToInt32(forecastsy1p2.Text) % 10 != 0 || Convert.ToInt32(forecastsy1p3.Text) % 10 != 0 || Convert.ToInt32(forecastsy2p1.Text) % 10 != 0 || Convert.ToInt32(forecastsy2p2.Text) % 10 != 0 || Convert.ToInt32(forecastsy2p3.Text) % 10 != 0 || Convert.ToInt32(forecastsy3p1.Text) % 10 != 0 || Convert.ToInt32(forecastsy3p2.Text) % 10 != 0 || Convert.ToInt32(forecastsy3p3.Text) % 10 != 0 || Convert.ToInt32(forecastsy4p1.Text) % 10 != 0 || Convert.ToInt32(forecastsy4p2.Text) % 10 != 0 || Convert.ToInt32(forecastsy4p3.Text) % 10 != 0)
                 {
-                    MessageBox.Show(TranslateService.Class.GetTranslation("INPUT_VALUE_ERROR<"));
+                    MessageBox.Show(TranslateService.Class.GetTranslation("INPUT_VALUE_ERROR"));
                     return;
                 }
             }

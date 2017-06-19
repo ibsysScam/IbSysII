@@ -1262,7 +1262,7 @@
                                     <DataGridTextColumn x:Name="Lager1_Artikel" Header="Last Name" Binding="{Binding Artikel}"></DataGridTextColumn>
                                     <DataGridTextColumn x:Name="Lager1_Menge" Header="Last Name" Binding="{Binding Menge}"></DataGridTextColumn>
                                     <DataGridTextColumn x:Name="Lager1_Startmenge" Header="Last Name" Binding="{Binding Startmenge}"></DataGridTextColumn>
-                                    <DataGridTextColumn x:Name="Lager1_menge_startmenge" Header="Last Name" Binding="{Binding Menge_Startmenge}"></DataGridTextColumn>
+                                    <DataGridTextColumn x:Name="Lager1_menge_startmenge" Header="Last Name" Binding="{Binding Menge_startmenge}"></DataGridTextColumn>
                                     <DataGridTextColumn x:Name="Lager1_Preis" Header="Last Name" Binding="{Binding Preis}"></DataGridTextColumn>
                                     <DataGridTextColumn x:Name="Lager1_Lagerwert" Header="Last Name" Binding="{Binding Lagerwert}"></DataGridTextColumn>
                                 </DataGrid.Columns>
@@ -1298,7 +1298,7 @@
                 <Grid Background="#FFE5E5E5">
                     <Button x:Name="xmlexportbutton" Content="XML Export" HorizontalAlignment="Left" Margin="131,132,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click" IsEnabled="False"/>
                     <TextBox x:Name="customexportpathtextbox" HorizontalAlignment="Left" Height="23" Margin="86,104,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False" TextChanged="customexportpathtextbox_TextChanged"/>
-                    <Label Content="Exportpath:" HorizontalAlignment="Left" Margin="10,101,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.178,-0.403"/>
+                    <Label x:Name="Exportlabel" Content="Exportpath:" HorizontalAlignment="Left" Margin="10,101,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.178,-0.403"/>
                 </Grid>
             </TabItem>
 
