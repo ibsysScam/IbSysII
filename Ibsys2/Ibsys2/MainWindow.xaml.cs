@@ -1724,6 +1724,8 @@ namespace Ibsys2
             var grid = (ObservableCollection<Prio>)prio.ItemsSource;
             grid.Clear();
             UpdatePrioFields();
+            prioAddAmount.Text = "";
+            prioAddItem.Text = "";
         }
 
         private void openFinderButton_Click(object sender, RoutedEventArgs e)

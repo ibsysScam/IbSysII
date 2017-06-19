@@ -138,7 +138,7 @@
                     <TextBox x:Name="forecastsy4p3" HorizontalAlignment="Left" Height="23" Margin="180,198,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TabIndex="15" Text="100"  TextChanged="Forecast_TextChanged" Grid.Column="2" PreviewTextInput="NumberIntValidationTextBox"/>
                     <TextBox x:Name="sumy4" HorizontalAlignment="Left" Height="23" Margin="180,226,0,0" TextWrapping="Wrap" Text="300" VerticalAlignment="Top" Width="120" IsEnabled="False" Grid.Column="2"/>
                     <Label x:Name="securityfactor" Content="Sicherheitsfaktor" HorizontalAlignment="Left" Margin="110,310,0,0" VerticalAlignment="Top"/>
-                    <TextBox x:Name="Sicherheitsfaktor" HorizontalAlignment="Left" Height="23" Margin="234,310,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="1"/>
+                    <TextBox x:Name="Sicherheitsfaktor" HorizontalAlignment="Left" Height="23" Margin="234,310,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="1" PreviewTextInput="NumberIntValidationTextBox"/>
                     <Button x:Name="calculatebutton" Content="Berechne" HorizontalAlignment="Left" Margin="224.6,254,0,0" VerticalAlignment="Top" Width="75" Click="Calculatebutton_Click" Grid.Column="1"/>
                 </Grid>
             </TabItem>
@@ -1288,8 +1288,8 @@
                     <Button Content="delete" Height="23" HorizontalAlignment="Left" Margin="628,170,0,0" x:Name="delete" VerticalAlignment="Top" Width="75" Click="delete_Click"  />
                     <Button Content="add" Height="23" HorizontalAlignment="Left" Margin="628,340,0,0" x:Name="add" VerticalAlignment="Top" Width="75" Click="add_Click"  />
                     <Button Content="split" Height="23" HorizontalAlignment="Left" Margin="628,130,0,0" x:Name="split" VerticalAlignment="Top" Width="75" Click="split_Click"  />
-                    <TextBox x:Name="prioAddItem" HorizontalAlignment="Left" Height="23" Margin="93,340,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TabIndex="4" TextChanged="Forecast1_TextChanged" />
-                    <TextBox x:Name="prioAddAmount" HorizontalAlignment="Left" Height="23" Margin="274,340,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TabIndex="4" TextChanged="Forecast1_TextChanged" />
+                    <TextBox x:Name="prioAddItem" HorizontalAlignment="Left" Height="23" Margin="93,340,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TabIndex="4" TextChanged="Forecast1_TextChanged" PreviewTextInput="NumberIntValidationTextBox" />
+                    <TextBox x:Name="prioAddAmount" HorizontalAlignment="Left" Height="23" Margin="274,340,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TabIndex="4" TextChanged="Forecast1_TextChanged" PreviewTextInput="NumberIntValidationTextBox" />
                     <Label x:Name="prioAddItemDescription" Content="Item:" HorizontalAlignment="Left" Margin="93,309,0,0" VerticalAlignment="Top" RenderTransformOrigin="2.02,-5.231"/>
                     <Label x:Name="prioAddAmountDescription" Content="Anzahl:" HorizontalAlignment="Left" Margin="274,309,0,0" VerticalAlignment="Top" RenderTransformOrigin="2.02,-5.231"/>
                 </Grid>
