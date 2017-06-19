@@ -228,6 +228,7 @@ namespace Ibsys2.Service {
             _translate.Add("LASTARTMENGE", "Startmenge");
             _translate.Add("LAPREIS", "Preis");
             _translate.Add("LALAGERWERT", "Lagerwert");
+            _translate.Add("XML_SUCCESS", "XML Export war erfolgreich!");
             _translate.Add("ERROR", "Es ist ein Fehler aufgetreten!");
             _translate.Add("INPUTMOD10", "Der Eingabewert muss in 10er Schritten angegeben werden!");
             _translate.Add("EXPORTLABEL", "Exportpfad");
