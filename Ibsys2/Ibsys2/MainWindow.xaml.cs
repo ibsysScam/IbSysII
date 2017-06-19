@@ -1195,12 +1195,12 @@ namespace Ibsys2
             foreach (ItemNo platz in ArbeitsPlatz)
             {
                 int SachNr = System.Convert.ToInt32(Regex.Replace(platz.Sachnr, "[^0-9]+", string.Empty));
-                platz.Gesamtaufwand = Kapazitaetsplanung.arbeitsplatzListe[id].fertigungsListe.Find(x => x.artikelID == SachNr).kapabedarfProTeil.ToString();
+                platz.Gesamtaufwand = Kapazitaetsplanung.Class.arbeitsplatzListe[id].fertigungsListe.Find(x => x.artikelID == SachNr).kapabedarfProTeil.ToString();
                 platz.Menge = Produktionsplanung.getBedarfByID(SachNr).ToString();
             }
             for (int i = 0; i < ArbeitsPlatzOverview.Count; i++)
             {
-                ArbeitsPlatzOverview[i].Berechnungwork = Kapazitaetsplanung.arbeitsplatzListe[id].getFieldsByID(i).ToString();
+                ArbeitsPlatzOverview[i].Berechnungwork = Kapazitaetsplanung.Class.arbeitsplatzListe[id].getFieldsByID(i).ToString();
             }
         }
 

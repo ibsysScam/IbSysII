@@ -8,7 +8,7 @@ using static Ibsys2.Static.Input.Waitinglistworkstations.Workplace;
 
 namespace Ibsys2.Berechnungen.Logic
 {
-    class Arbeitsplatz
+    public class Arbeitsplatz
     {
 
         public int id;
@@ -58,16 +58,22 @@ namespace Ibsys2.Berechnungen.Logic
             this.ruestzeit = this.ruestzeit * 1.5;
 
             Waitinglistworkstations wlw = Waitinglistworkstations.Class;
-            this.kapabeadarfrueckstand = wlw.GetWorkplaceByID(arbeitsplatzID).Timeneed;
+             var item = wlw.GetWorkplaceByID(arbeitsplatzID);
+            if (item == null)
+                this.kapabeadarfrueckstand = 0;
+            else
+                this.kapabeadarfrueckstand = item.Timeneed;
 
             //this.ruestzeitrueckstand = 
-            foreach (Waitinglist wl in wlw.GetWorkplaceByID(arbeitsplatzID).GetAllWaitinglistItem)
-            {
-                foreach (Arbeitsplatzauftrag apa in this.fertigungsListe)
+            var WorkplaceWithID = wlw.GetWorkplaceByID(arbeitsplatzID);
+            if (WorkplaceWithID != null && WorkplaceWithID.GetAllWaitinglistItem != null)
+                foreach (Waitinglist wl in wlw.GetWorkplaceByID(arbeitsplatzID).GetAllWaitinglistItem)
                 {
-                    if (wl.Item == apa.artikelID) this.ruestzeitrueckstand += apa.ruestzeit;
+                    foreach (Arbeitsplatzauftrag apa in this.fertigungsListe)
+                    {
+                        if (wl.Item == apa.artikelID) this.ruestzeitrueckstand += apa.ruestzeit;
+                    }
                 }
-            }
             if(arbeitsplatzID == 7 || arbeitsplatzID == 8 || arbeitsplatzID == 9 || arbeitsplatzID == 15)
             {
                 this.ruestzeitrueckstand = this.ruestzeitrueckstand * 3.0;
@@ -107,7 +113,7 @@ namespace Ibsys2.Berechnungen.Logic
 
 
 
-    class Arbeitsplatzauftrag
+    public class Arbeitsplatzauftrag
     {
 
         public int artikelID;

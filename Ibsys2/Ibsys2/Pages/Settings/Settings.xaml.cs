@@ -52,6 +52,8 @@ namespace Ibsys2.Pages
         {
             TranslateService.Class.PrimaryLanguage = Languageselector.SelectionBoxItem.ToString();
             Thread.Sleep(100);
+            LanguageLabel.Content = TranslateService.Class.GetTranslation("LANGUAGE") + ":";
+            SettingsPage.Title = TranslateService.Class.GetTranslation("LANGUAGE");
             SettingsService.Class.SaveSettings();
             MessageBoxResult result = MessageBox.Show(TranslateService.Class.GetTranslation("SETTINGS_SAVED"), "Settings", MessageBoxButton.YesNo, MessageBoxImage.Asterisk);
 
