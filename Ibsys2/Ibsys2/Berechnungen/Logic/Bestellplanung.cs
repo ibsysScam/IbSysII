@@ -332,7 +332,7 @@ namespace Ibsys2.Berechnungen.Logic
                 }
             }
 
-            this.sicherheitsBestand = (int)(((lieferzeit + (lieferzeitAbweichung * ValueStore.Instance.sicherheitsFaktor)) * durchSchnittsverbrauchProTag));
+            this.sicherheitsBestand = (int)(((lieferzeitAbweichung * ValueStore.Instance.sicherheitsFaktor) * durchSchnittsverbrauchProTag));
             //this.sicherheitsBestand = ((int)(this.sicherheitsBestand / 10)) * 10;
             this.sicherheitsBestand = this.sicherheitsBestand + ((10 - (this.sicherheitsBestand % 10)) % 10);
             this.meldeBestand = ((int)((lieferzeit * durchSchnittsverbrauchProTag) + sicherheitsBestand));
