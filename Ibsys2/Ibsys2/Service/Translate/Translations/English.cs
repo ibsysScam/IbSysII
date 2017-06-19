@@ -227,6 +227,7 @@ namespace Ibsys2.Service {
             _translate.Add("LASTARTMENGE", "Quantity at beginnig");
             _translate.Add("LAPREIS", "Price");
             _translate.Add("LALAGERWERT", "Inventory value");
+            _translate.Add("XML_SUCCESS", "XML Export succesfull!");
         }
 
     }

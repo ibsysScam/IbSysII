@@ -24,6 +24,7 @@ using System.ComponentModel;
 using System.Collections.ObjectModel;
 using Microsoft.WindowsAPICodePack.Shell;
 using Ibsys2.Berechnungen.Logic;
+using System.Diagnostics;
 
 namespace Ibsys2
 {
@@ -1542,6 +1543,16 @@ namespace Ibsys2
             }
         }
 
+        private void customexportpathtextbox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            xmlexportbutton.IsEnabled = true;
+            if(customexportpathtextbox.Text == "")
+            {
+                xmlexportbutton.IsEnabled = false;
+            }
+        }
+
+       
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 
@@ -1556,14 +1567,13 @@ namespace Ibsys2
                     sw.Write(xmlfile);
                     MessageBox.Show(TranslateService.Class.GetTranslation("XML_SUCCESS"));
                     sw.Close();
+                    Process.Start(exportpath);
 
                 }
                
-                if(exportpath == "" && customexportpathtextbox.Text == "")
+                if(found == false && customexportpathtextbox.Text == "")
                 {
-                    StreamWriter sw = new StreamWriter("XMLOutput.xml");
-                    sw.Write(xmlfile);
-                    MessageBox.Show(TranslateService.Class.GetTranslation("XML_SUCCESS"));
+                    MessageBox.Show("Pls specify a Exportpath");
                     return;
                 }
 
@@ -1574,6 +1584,7 @@ namespace Ibsys2
                     sw.Write(xmlfile);
                     MessageBox.Show(TranslateService.Class.GetTranslation("XML_SUCCESS"));
                     sw.Close();
+                    Process.Start(exportpath);
                 }
                 
                
@@ -1710,9 +1721,9 @@ namespace Ibsys2
             UpdatePrioFields();
         }
 
-        private void customexportpathtextbox_TextChanged(object sender, TextChangedEventArgs e)
+        private void openFinderButton_Click(object sender, RoutedEventArgs e)
         {
-            xmlexportbutton.IsEnabled = true;
+
         }
     }
 }
