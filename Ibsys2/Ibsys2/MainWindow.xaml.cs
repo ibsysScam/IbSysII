@@ -793,8 +793,13 @@ namespace Ibsys2
 
         private void Helpmenuitem_Click(object sender, RoutedEventArgs e)
         {
-            Wiki Wikipage = new Wiki();
-            Wikipage.Show();
+            /*Wiki Wikipage = new Wiki();
+            Wikipage.Show();*/
+            try
+            {
+                Process.Start(@".\Help\Help_" + TranslateService.Class.PrimaryLanguage + ".pdf");
+            }
+            catch { }
         }
 
         private void Calculatebutton_Click(object sender, RoutedEventArgs e)
