@@ -68,6 +68,10 @@ namespace Ibsys2.Berechnungen.Logic
                     if (wl.Item == apa.artikelID) this.ruestzeitrueckstand += apa.ruestzeit;
                 }
             }
+            if(arbeitsplatzID == 7 || arbeitsplatzID == 8 || arbeitsplatzID == 9 || arbeitsplatzID == 15)
+            {
+                this.ruestzeitrueckstand = this.ruestzeitrueckstand * 3.0;
+            }
             this.ruestzeitrueckstand = this.ruestzeitrueckstand * 1.5;
 
             this.gesamtzeitbedarf = this.kapazitaetsbedarf + this.ruestzeit + this.kapabeadarfrueckstand + this.ruestzeitrueckstand;
