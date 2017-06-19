@@ -35,6 +35,8 @@ namespace Ibsys2.Static.Output {
         public void AddItem(ProductionlistItem item) {
             if (item == null)
                 throw new Exception();
+            if (item.quantity <= 0)
+                return;
             _list.Add(item);
         }
 

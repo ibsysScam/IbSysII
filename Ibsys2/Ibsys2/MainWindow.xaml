@@ -89,18 +89,18 @@
                     <Label x:Name="DirektSumme" Content="Summe" HorizontalAlignment="Left" Margin="110,226,0,0" VerticalAlignment="Top"/>
                     <Label x:Name="DirektPeriode" Content="Periode" HorizontalAlignment="Left" Margin="234,110,0,0" VerticalAlignment="Top" Width="52"/>
                     <Label x:Name="directvarperiod1" Content="varperiod1" HorizontalAlignment="Left" Margin="280,110,0,0" VerticalAlignment="Top" Width="68" />
-                    <TextBox x:Name="d11" HorizontalAlignment="Left" Height="23" Margin="234,142,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120" TabIndex="4" TextChanged="Forecast1_TextChanged" />
-                    <TextBox x:Name="d21" HorizontalAlignment="Left" Height="23" Margin="234,170,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120" TabIndex="5"  TextChanged="Forecast1_TextChanged" />
-                    <TextBox x:Name="d31" HorizontalAlignment="Left" Height="23" Margin="234,198,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120" TabIndex="6"  TextChanged="Forecast1_TextChanged" />
+                    <TextBox x:Name="d11" HorizontalAlignment="Left" Height="23" Margin="234,142,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120" TabIndex="4" TextChanged="Forecast1_TextChanged" PreviewTextInput="NumberIntValidationTextBox" />
+                    <TextBox x:Name="d21" HorizontalAlignment="Left" Height="23" Margin="234,170,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120" TabIndex="5"  TextChanged="Forecast1_TextChanged" PreviewTextInput="NumberIntValidationTextBox" />
+                    <TextBox x:Name="d31" HorizontalAlignment="Left" Height="23" Margin="234,198,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120" TabIndex="6"  TextChanged="Forecast1_TextChanged" PreviewTextInput="NumberIntValidationTextBox" />
                     <TextBox x:Name="s41" HorizontalAlignment="Left" Height="23" Margin="234,226,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
                     <Label x:Name="retailprice" Content="Verkaufspreis" HorizontalAlignment="Left" Margin="404,110,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
-                    <TextBox x:Name="d12" HorizontalAlignment="Left" Height="23" Margin="404,142,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120" TabIndex="7" Grid.ColumnSpan="2"/>
-                    <TextBox x:Name="d22" HorizontalAlignment="Left" Height="23" Margin="404,170,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120" TabIndex="8" Grid.ColumnSpan="2"/>
-                    <TextBox x:Name="d32" HorizontalAlignment="Left" Height="23" Margin="404,198,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120" TabIndex="9" Grid.ColumnSpan="2"/>
+                    <TextBox x:Name="d12" HorizontalAlignment="Left" Height="23" Margin="404,142,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120" TabIndex="7" Grid.ColumnSpan="2" PreviewTextInput="NumberIntValidationTextBox" />
+                    <TextBox x:Name="d22" HorizontalAlignment="Left" Height="23" Margin="404,170,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120" TabIndex="8" Grid.ColumnSpan="2" PreviewTextInput="NumberIntValidationTextBox"/>
+                    <TextBox x:Name="d32" HorizontalAlignment="Left" Height="23" Margin="404,198,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120" TabIndex="9" Grid.ColumnSpan="2" PreviewTextInput="NumberIntValidationTextBox"/>
                     <Label x:Name="contractpenalty" Content="Vertragsstrafe" HorizontalAlignment="Left" Margin="55,110,0,0" VerticalAlignment="Top" Grid.Column="2"/>
-                    <TextBox x:Name="d13" HorizontalAlignment="Left" Height="23" Margin="55,142,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120" TabIndex="10" Grid.Column="2"/>
-                    <TextBox x:Name="d23" HorizontalAlignment="Left" Height="23" Margin="55,170,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120" TabIndex="11" Grid.Column="2"/>
-                    <TextBox x:Name="d33" HorizontalAlignment="Left" Height="23" Margin="55,198,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120" TabIndex="12" Grid.Column="2"/>
+                    <TextBox x:Name="d13" HorizontalAlignment="Left" Height="23" Margin="55,142,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120" TabIndex="10" Grid.Column="2" PreviewTextInput="NumberIntValidationTextBox"/>
+                    <TextBox x:Name="d23" HorizontalAlignment="Left" Height="23" Margin="55,170,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120" TabIndex="11" Grid.Column="2" PreviewTextInput="NumberIntValidationTextBox"/>
+                    <TextBox x:Name="d33" HorizontalAlignment="Left" Height="23" Margin="55,198,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120" TabIndex="12" Grid.Column="2" PreviewTextInput="NumberIntValidationTextBox"/>
                     <Button x:Name="directnextbutton" Content="Next" HorizontalAlignment="Left" Margin="99.6,230,0,0" VerticalAlignment="Top" Width="75" Click="DirectNextButton_Click" Grid.Column="1"/>
                 </Grid>
 
@@ -117,25 +117,25 @@
                     <Label x:Name="SicherHerren" Content="Herren P3" HorizontalAlignment="Left" Margin="110,198,0,0" VerticalAlignment="Top"/>
                     <Label x:Name="SicherSumme" Content="Summe" HorizontalAlignment="Left" Margin="110,226,0,0" VerticalAlignment="Top"/>
                     <Label x:Name="sicherheitsvarperiod1" Content="varperiod1" HorizontalAlignment="Left" Margin="234,110,0,0" VerticalAlignment="Top" Width="120"/>
-                    <TextBox x:Name="forecastsy1p1" HorizontalAlignment="Left" Height="23" Margin="234,142,0,0" TextWrapping="Wrap" Text="100" VerticalAlignment="Top" Width="120" TabIndex="4" TextChanged="Forecast_TextChanged"/>
-                    <TextBox x:Name="forecastsy1p2" HorizontalAlignment="Left" Height="23" Margin="234,170,0,0" TextWrapping="Wrap" Text="100" VerticalAlignment="Top" Width="120" TabIndex="5"  TextChanged="Forecast_TextChanged"/>
-                    <TextBox x:Name="forecastsy1p3" HorizontalAlignment="Left" Height="23" Margin="234,198,0,0" TextWrapping="Wrap" Text="100" VerticalAlignment="Top" Width="120" TabIndex="6"  TextChanged="Forecast_TextChanged"/>
+                    <TextBox x:Name="forecastsy1p1" HorizontalAlignment="Left" Height="23" Margin="234,142,0,0" TextWrapping="Wrap" Text="100" VerticalAlignment="Top" Width="120" TabIndex="4" TextChanged="Forecast_TextChanged" PreviewTextInput="NumberIntValidationTextBox"/>
+                    <TextBox x:Name="forecastsy1p2" HorizontalAlignment="Left" Height="23" Margin="234,170,0,0" TextWrapping="Wrap" Text="100" VerticalAlignment="Top" Width="120" TabIndex="5"  TextChanged="Forecast_TextChanged" PreviewTextInput="NumberIntValidationTextBox"/>
+                    <TextBox x:Name="forecastsy1p3" HorizontalAlignment="Left" Height="23" Margin="234,198,0,0" TextWrapping="Wrap" Text="100" VerticalAlignment="Top" Width="120" TabIndex="6"  TextChanged="Forecast_TextChanged" PreviewTextInput="NumberIntValidationTextBox"/>
                     <TextBox x:Name="sumy1" HorizontalAlignment="Left" Height="23" Margin="234,226,0,0" TextWrapping="Wrap" Text="300" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
 
                     <Label x:Name="sicherheitsvarperiod2" Content="varperiod2" HorizontalAlignment="Left" Margin="404,110,0,0" VerticalAlignment="Top"/>
-                    <TextBox x:Name="forecastsy2p1" HorizontalAlignment="Left" Height="23" Margin="404,142,0,0" TextWrapping="Wrap" Text="100" VerticalAlignment="Top" Width="120" TabIndex="7"  TextChanged="Forecast_TextChanged" Grid.ColumnSpan="2"/>
-                    <TextBox x:Name="forecastsy2p2" HorizontalAlignment="Left" Height="23" Margin="404,170,0,0" TextWrapping="Wrap" Text="100" VerticalAlignment="Top" Width="120" TabIndex="8"  TextChanged="Forecast_TextChanged" Grid.ColumnSpan="2"/>
-                    <TextBox x:Name="forecastsy2p3" HorizontalAlignment="Left" Height="23" Margin="404,198,0,0" TextWrapping="Wrap" Text="100" VerticalAlignment="Top" Width="120" TabIndex="9"  TextChanged="Forecast_TextChanged" Grid.ColumnSpan="2"/>
+                    <TextBox x:Name="forecastsy2p1" HorizontalAlignment="Left" Height="23" Margin="404,142,0,0" TextWrapping="Wrap" Text="100" VerticalAlignment="Top" Width="120" TabIndex="7"  TextChanged="Forecast_TextChanged" Grid.ColumnSpan="2" PreviewTextInput="NumberIntValidationTextBox"/>
+                    <TextBox x:Name="forecastsy2p2" HorizontalAlignment="Left" Height="23" Margin="404,170,0,0" TextWrapping="Wrap" Text="100" VerticalAlignment="Top" Width="120" TabIndex="8"  TextChanged="Forecast_TextChanged" Grid.ColumnSpan="2" PreviewTextInput="NumberIntValidationTextBox"/>
+                    <TextBox x:Name="forecastsy2p3" HorizontalAlignment="Left" Height="23" Margin="404,198,0,0" TextWrapping="Wrap" Text="100" VerticalAlignment="Top" Width="120" TabIndex="9"  TextChanged="Forecast_TextChanged" Grid.ColumnSpan="2" PreviewTextInput="NumberIntValidationTextBox"/>
                     <TextBox x:Name="sumy2" HorizontalAlignment="Left" Height="23" Margin="404,226,0,0" TextWrapping="Wrap" Text="300" VerticalAlignment="Top" Width="120" IsEnabled="False" Grid.ColumnSpan="2"/>
                     <Label x:Name="sicherheitsvarperiod3" Content="varperiod3" HorizontalAlignment="Left" Margin="55,110,0,0" VerticalAlignment="Top" Grid.Column="2"/>
-                    <TextBox x:Name="forecastsy3p1" HorizontalAlignment="Left" Height="23" Margin="55,142,0,0" TextWrapping="Wrap" Text="100" VerticalAlignment="Top" Width="120" TabIndex="10"  TextChanged="Forecast_TextChanged" Grid.Column="2"/>
-                    <TextBox x:Name="forecastsy3p2" HorizontalAlignment="Left" Height="23" Margin="55,170,0,0" TextWrapping="Wrap" Text="100" VerticalAlignment="Top" Width="120" TabIndex="11"  TextChanged="Forecast_TextChanged" Grid.Column="2"/>
-                    <TextBox x:Name="forecastsy3p3" HorizontalAlignment="Left" Height="23" Margin="55,198,0,0" TextWrapping="Wrap" Text="100" VerticalAlignment="Top" Width="120" TabIndex="12"  TextChanged="Forecast_TextChanged" Grid.Column="2"/>
+                    <TextBox x:Name="forecastsy3p1" HorizontalAlignment="Left" Height="23" Margin="55,142,0,0" TextWrapping="Wrap" Text="100" VerticalAlignment="Top" Width="120" TabIndex="10"  TextChanged="Forecast_TextChanged" Grid.Column="2" PreviewTextInput="NumberIntValidationTextBox"/>
+                    <TextBox x:Name="forecastsy3p2" HorizontalAlignment="Left" Height="23" Margin="55,170,0,0" TextWrapping="Wrap" Text="100" VerticalAlignment="Top" Width="120" TabIndex="11"  TextChanged="Forecast_TextChanged" Grid.Column="2" PreviewTextInput="NumberIntValidationTextBox"/>
+                    <TextBox x:Name="forecastsy3p3" HorizontalAlignment="Left" Height="23" Margin="55,198,0,0" TextWrapping="Wrap" Text="100" VerticalAlignment="Top" Width="120" TabIndex="12"  TextChanged="Forecast_TextChanged" Grid.Column="2" PreviewTextInput="NumberIntValidationTextBox"/>
                     <TextBox x:Name="sumy3" HorizontalAlignment="Left" Height="23" Margin="55,226,0,0" TextWrapping="Wrap" Text="300" VerticalAlignment="Top" Width="120" IsEnabled="False" Grid.Column="2"/>
                     <Label x:Name="sicherheitsvarperiod4" Content="varperiod4" HorizontalAlignment="Left" Margin="180,110,0,0" VerticalAlignment="Top" Grid.Column="2"/>
-                    <TextBox x:Name="forecastsy4p1" HorizontalAlignment="Left" Height="23" Margin="180,142,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TabIndex="13" Text="100"  TextChanged="Forecast_TextChanged" Grid.Column="2"/>
-                    <TextBox x:Name="forecastsy4p2" HorizontalAlignment="Left" Height="23" Margin="180,170,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TabIndex="14" Text="100"  TextChanged="Forecast_TextChanged" Grid.Column="2"/>
-                    <TextBox x:Name="forecastsy4p3" HorizontalAlignment="Left" Height="23" Margin="180,198,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TabIndex="15" Text="100"  TextChanged="Forecast_TextChanged" Grid.Column="2"/>
+                    <TextBox x:Name="forecastsy4p1" HorizontalAlignment="Left" Height="23" Margin="180,142,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TabIndex="13" Text="100"  TextChanged="Forecast_TextChanged" Grid.Column="2" PreviewTextInput="NumberIntValidationTextBox"/>
+                    <TextBox x:Name="forecastsy4p2" HorizontalAlignment="Left" Height="23" Margin="180,170,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TabIndex="14" Text="100"  TextChanged="Forecast_TextChanged" Grid.Column="2" PreviewTextInput="NumberIntValidationTextBox"/>
+                    <TextBox x:Name="forecastsy4p3" HorizontalAlignment="Left" Height="23" Margin="180,198,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TabIndex="15" Text="100"  TextChanged="Forecast_TextChanged" Grid.Column="2" PreviewTextInput="NumberIntValidationTextBox"/>
                     <TextBox x:Name="sumy4" HorizontalAlignment="Left" Height="23" Margin="180,226,0,0" TextWrapping="Wrap" Text="300" VerticalAlignment="Top" Width="120" IsEnabled="False" Grid.Column="2"/>
                     <Label x:Name="securityfactor" Content="Sicherheitsfaktor" HorizontalAlignment="Left" Margin="110,310,0,0" VerticalAlignment="Top"/>
                     <TextBox x:Name="Sicherheitsfaktor" HorizontalAlignment="Left" Height="23" Margin="234,310,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="1"/>
@@ -1292,26 +1292,6 @@
                     <TextBox x:Name="prioAddAmount" HorizontalAlignment="Left" Height="23" Margin="274,340,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TabIndex="4" TextChanged="Forecast1_TextChanged" />
                     <Label x:Name="prioAddItemDescription" Content="Item:" HorizontalAlignment="Left" Margin="93,309,0,0" VerticalAlignment="Top" RenderTransformOrigin="2.02,-5.231"/>
                     <Label x:Name="prioAddAmountDescription" Content="Anzahl:" HorizontalAlignment="Left" Margin="274,309,0,0" VerticalAlignment="Top" RenderTransformOrigin="2.02,-5.231"/>
-                </Grid>
-            </TabItem>
-
-
-
-            <TabItem x:Name="Chartstab" Header="Charts" IsEnabled="True">
-                <Grid Background="#FFE5E5E5">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="277*"/>
-                        <ColumnDefinition Width="357*"/>
-                    </Grid.ColumnDefinitions>
-                    <chart:PieChart ChartSubTitle="Population in millions"  
-                ChartTitle="Countries by population" Grid.ColumnSpan="2">
-                        <chart:PieChart.Series>
-                            <chart:ChartSeries DisplayMember="Name"
-                            ItemsSource="{Binding Path=Populations}"
-                            SeriesTitle="World largest populations"
-                            ValueMember="Count" />
-                        </chart:PieChart.Series>
-                    </chart:PieChart>
                 </Grid>
             </TabItem>
             <TabItem x:Name="Exporttab" Header="Export" IsEnabled="False">

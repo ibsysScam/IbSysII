@@ -24,6 +24,7 @@ using System.ComponentModel;
 using System.Collections.ObjectModel;
 using Microsoft.WindowsAPICodePack.Shell;
 using Ibsys2.Berechnungen.Logic;
+using Ibsys2.Pages.About;
 
 namespace Ibsys2
 {
@@ -777,8 +778,8 @@ namespace Ibsys2
 
         private void Aboutmenuheader_Click(object sender, RoutedEventArgs e)
         {
-            Settings Settingspage = new Settings();
-            Settingspage.Show();
+            About AboutPage = new About();
+            AboutPage.Show();
         }
 
         private void Closemenuitem_Click(object sender, RoutedEventArgs e)
@@ -840,7 +841,7 @@ namespace Ibsys2
             Ui.EnableNextTab(Einkauftab, MainTabControl);
             Ui.EnableNextTab(Produktionsplanungtab, MainTabControl);
             Ui.EnableNextTab(Priorisierungtab, MainTabControl);
-            Ui.EnableNextTab(Chartstab, MainTabControl);
+            //Ui.EnableNextTab(Chartstab, MainTabControl);
             Ui.EnableNextTab(Exporttab, MainTabControl);
             //Check atuotmatic Import
             if (found == false)
