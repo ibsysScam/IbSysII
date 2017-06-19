@@ -39,6 +39,7 @@ namespace Ibsys2
 
         private static MainWindow _class;
         UIFeatures Ui = new UIFeatures();
+        
 
         public static MainWindow Class {
             get {
@@ -48,6 +49,7 @@ namespace Ibsys2
             }
         }
         string exportpath = "";
+        bool found = false;
         public MainWindow()
         {
 
@@ -60,7 +62,7 @@ namespace Ibsys2
             InitializeComponent();
             LoadTranslations();
 
-            bool found = false;
+            
             if (found == false)
             {
                 string folder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
@@ -85,7 +87,7 @@ namespace Ibsys2
 
                     Pathtextbox.Text = xmlFilePath;
                     checkMalformedXML();
-                    exportpath = xmlFilePath;
+                    exportpath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
                     found = true;
                     break;
                 }
@@ -99,7 +101,7 @@ namespace Ibsys2
 
                     Pathtextbox.Text = xmlFilePath;
                     checkMalformedXML();
-                    exportpath = xmlFilePath;
+                    exportpath = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
                     found = true;
                     break;
                 }
@@ -113,7 +115,7 @@ namespace Ibsys2
 
                     Pathtextbox.Text = xmlFilePath;
                     checkMalformedXML();
-                    exportpath = xmlFilePath;
+                    exportpath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
                     found = true;
                     break;
                 }
@@ -128,7 +130,7 @@ namespace Ibsys2
 
                     Pathtextbox.Text = xmlFilePath;
                     checkMalformedXML();
-                    exportpath = xmlFilePath;
+                    exportpath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
                     found = true;
                     break;
                 }
@@ -142,7 +144,7 @@ namespace Ibsys2
 
                     Pathtextbox.Text = xmlFilePath;
                     checkMalformedXML();
-                    exportpath = xmlFilePath;
+                    exportpath = KnownFolders.Downloads.Path;
                     found = true;
                     break;
                 }
@@ -840,6 +842,16 @@ namespace Ibsys2
             Ui.EnableNextTab(Priorisierungtab, MainTabControl);
             Ui.EnableNextTab(Chartstab, MainTabControl);
             Ui.EnableNextTab(Exporttab, MainTabControl);
+            //Check atuotmatic Import
+            if (found == false)
+            {
+                customexportpathtextbox.IsEnabled = true;
+            }
+            if(found == true)
+            {
+                xmlexportbutton.IsEnabled = true;
+            }
+
 
             Ibsys2.Berechnungen.Logic.Berechnungen logic = new Ibsys2.Berechnungen.Logic.Berechnungen();
             logic.berechnen();
@@ -1331,6 +1343,7 @@ namespace Ibsys2
         private void MainpageNextButton_Click(object sender, RoutedEventArgs e)
         {
             checkMalformedXML();
+            exportpath = Pathtextbox.Text;
         }
 
 
@@ -1536,10 +1549,34 @@ namespace Ibsys2
             {
                 CreateXML createXml = new CreateXML();
                 string xmlfile = createXml.GenerateXMLData();
-                StreamWriter sw = new StreamWriter("XMLOutput.xml");
-                sw.Write(xmlfile);
-                MessageBox.Show(TranslateService.Class.GetTranslation("XML_SUCCESS"));
-                sw.Close();
+                
+                if(found == true)
+                {
+                    StreamWriter sw = new StreamWriter(exportpath + "\\XMLOutput.xml");
+                    sw.Write(xmlfile);
+                    MessageBox.Show(TranslateService.Class.GetTranslation("XML_SUCCESS"));
+                    sw.Close();
+
+                }
+               
+                if(exportpath == "" && customexportpathtextbox.Text == "")
+                {
+                    StreamWriter sw = new StreamWriter("XMLOutput.xml");
+                    sw.Write(xmlfile);
+                    MessageBox.Show(TranslateService.Class.GetTranslation("XML_SUCCESS"));
+                    return;
+                }
+
+                if(found == false)
+                {
+                    exportpath = customexportpathtextbox.Text;
+                    StreamWriter sw = new StreamWriter(exportpath + "\\XMLOutput.xml");
+                    sw.Write(xmlfile);
+                    MessageBox.Show(TranslateService.Class.GetTranslation("XML_SUCCESS"));
+                    sw.Close();
+                }
+                
+               
 
             }
 
@@ -1671,6 +1708,11 @@ namespace Ibsys2
             var grid = (ObservableCollection<Prio>)prio.ItemsSource;
             grid.Clear();
             UpdatePrioFields();
+        }
+
+        private void customexportpathtextbox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            xmlexportbutton.IsEnabled = true;
         }
     }
 }
