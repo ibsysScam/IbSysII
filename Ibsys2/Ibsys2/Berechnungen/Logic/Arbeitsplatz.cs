@@ -76,12 +76,12 @@ namespace Ibsys2.Berechnungen.Logic
             if (zeitBedarfProPeriode <= 3600)
             {
                 this.schichten = 1;
-                this.ueberstundenInMin = zeitBedarfProPeriode - 2400;
+                this.ueberstundenInMin = Math.Ceiling(((zeitBedarfProPeriode - 2400)/10)*10);
             }
             else if (zeitBedarfProPeriode <= 6000)
             {
                 this.schichten = 2;
-                this.ueberstundenInMin = zeitBedarfProPeriode - 4800;
+                this.ueberstundenInMin = Math.Ceiling(((zeitBedarfProPeriode - 4800)/10)*10);
 
             }
             else if (zeitBedarfProPeriode <= 7200)

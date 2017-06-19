@@ -48,14 +48,26 @@ namespace Ibsys2.Berechnungen.Logic
 
 
         public List<BPBestellung> bestellungen = new List<BPBestellung>();
+        Warehousestock w = Warehousestock.Class;
 
         public void createBestellung(BPKaufteil k)
         {
-            if (k.reichweiteInTagen < k.lieferzeit)
+            if (k.reichweiteInTagen < k.lieferzeit && Warehousestock.Class.Totalstockvalue < 250000)
             {
                 bestellungen.Add(new BPBestellung(k.id, k.optimaleBestellmengeEil, true));
             }
-            else bestellungen.Add(new BPBestellung(k.id, k.optimaleBestellmengeNormal, false));
+            else if (k.reichweiteInTagen >= k.lieferzeit && Warehousestock.Class.Totalstockvalue < 250000)
+            {
+                bestellungen.Add(new BPBestellung(k.id, k.optimaleBestellmengeNormal, false));
+            }
+            else if (k.reichweiteInTagen < k.lieferzeit && Warehousestock.Class.Totalstockvalue >= 250000)
+            {
+                bestellungen.Add(new BPBestellung(k.id, k.optimaleBestellmengeEilLB, true));
+            }
+            else
+            {
+                bestellungen.Add(new BPBestellung(k.id, k.optimaleBestellmengeNormalLB, false));
+            }
         }
 
         public void bestellungenBerechnen()
@@ -205,6 +217,31 @@ namespace Ibsys2.Berechnungen.Logic
             }
         }
 
+        public Double optimaleBestellmengeNormalLB
+        {
+            get
+            {
+                if (optimaleBestellmengeNormalMitRabattLB >= diskontmenge)
+                {
+                    return optimaleBestellmengeNormalMitRabattLB;
+                }
+                else return optimaleBestellmengeNormalOhneRabattLB;
+            }
+        }
+
+        public Double optimaleBestellmengeEilLB
+        {
+            get
+            {
+                if (optimaleBestellmengeEilMitRabattLB >= diskontmenge)
+                {
+                    return optimaleBestellmengeEilMitRabattLB;
+                }
+                else return optimaleBestellmengeEilOhneRabattLB;
+
+            }
+        }
+
 
         public Double optimaleBestellmengeNormalOhneRabatt {
             get { return ((int) Math.Ceiling((Math.Sqrt((200 * (verbrauchPeriode0 + verbrauchPeriode1 + verbrauchPeriode2 + verbrauchPeriode3) / 4 * 50 * bestellkostenNormal) / (teileWert * 0.6 * 50))) / 10) * 10); }
@@ -219,8 +256,30 @@ namespace Ibsys2.Berechnungen.Logic
         }
 
         public Double optimaleBestellmengeEilMitRabatt {
-            get { return ((int) Math.Ceiling((Math.Sqrt((200 * (verbrauchPeriode0 + verbrauchPeriode1 + verbrauchPeriode2 + verbrauchPeriode3) / 4 * 50 * bestellkostenEil) / (teileWert * 0.9 * 0.6 * 50))) / 10) * 10); }
+            get { return ((int) Math.Ceiling((Math.Sqrt((200 * (verbrauchPeriode0 + verbrauchPeriode1 + verbrauchPeriode2 + verbrauchPeriode3) / 4 * 50 * bestellkostenEil) / (teileWert * 0.9 * 2.6 * 50))) / 10) * 10); }
         }
+
+        public Double optimaleBestellmengeNormalOhneRabattLB
+        {
+            get { return ((int)Math.Ceiling((Math.Sqrt((200 * (verbrauchPeriode0 + verbrauchPeriode1 + verbrauchPeriode2 + verbrauchPeriode3) / 4 * 50 * bestellkostenNormal) / (teileWert * 2.6 * 50))) / 10) * 10); }
+        }
+
+        public Double optimaleBestellmengeEilOhneRabattLB
+        {
+            get { return ((int)Math.Ceiling((Math.Sqrt((200 * (verbrauchPeriode0 + verbrauchPeriode1 + verbrauchPeriode2 + verbrauchPeriode3) / 4 * 50 * bestellkostenEil) / (teileWert * 2.6 * 50))) / 10) * 10); }
+        }
+
+        public Double optimaleBestellmengeNormalMitRabattLB
+        {
+            get { return ((int)Math.Ceiling((Math.Sqrt((200 * (verbrauchPeriode0 + verbrauchPeriode1 + verbrauchPeriode2 + verbrauchPeriode3) / 4 * 50 * bestellkostenNormal) / (teileWert * 0.9 * 2.6 * 50))) / 10) * 10); }
+        }
+
+        public Double optimaleBestellmengeEilMitRabattLB
+        {
+            get { return ((int)Math.Ceiling((Math.Sqrt((200 * (verbrauchPeriode0 + verbrauchPeriode1 + verbrauchPeriode2 + verbrauchPeriode3) / 4 * 50 * bestellkostenEil) / (teileWert * 0.9 * 0.6 * 50))) / 10) * 10); }
+        }
+
+
 
         public double reichweiteInTagen {
             get {
