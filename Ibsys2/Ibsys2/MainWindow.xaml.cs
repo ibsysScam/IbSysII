@@ -842,11 +842,11 @@ namespace Ibsys2
 
 
             Ui.EnableNextTab(Kapaplanungtab, MainTabControl);
-            Ui.EnableNextTab(Einkauftab, MainTabControl);
-            Ui.EnableNextTab(Produktionsplanungtab, MainTabControl);
-            Ui.EnableNextTab(Priorisierungtab, MainTabControl);
-            //Ui.EnableNextTab(Chartstab, MainTabControl);
-            Ui.EnableNextTab(Exporttab, MainTabControl);
+            Ui.EnableNextTab(Einkauftab, MainTabControl, false);
+            Ui.EnableNextTab(Produktionsplanungtab, MainTabControl, false);
+            Ui.EnableNextTab(Priorisierungtab, MainTabControl, false);
+            //Ui.EnableNextTab(Chartstab, MainTabControl, false);
+            Ui.EnableNextTab(Exporttab, MainTabControl, false);
             //Check atuotmatic Import
             if (found == false)
             {
@@ -1609,10 +1609,10 @@ namespace Ibsys2
             {
                 try
                 {
-                    var field = Convert.ToInt32(((TextBox)e.EditingElement).Text);
+                    var field = Convert.ToInt32(Regex.Replace(((TextBox)e.EditingElement).Text, "[^0-9]+", string.Empty));
                     var row = (Einkauf)e.Row.Item;
                     var colum = (string)e.Column.Header;
-                    var item = Orderlist.Class.GetOrdersByArticle(Convert.ToInt32(row.Teileno)).Find(x => x.Modus == Convert.ToInt32(row.Art) && x.Quantity == Convert.ToInt32(row.Anzahl));
+                    var item = Orderlist.Class.GetOrdersByArticle(Convert.ToInt32(Regex.Replace(row.Teileno, "[^0-9]+", string.Empty))).Find(x => x.Modus == Convert.ToInt32(Regex.Replace(row.Art, "[^0-9]+", string.Empty)) && x.Quantity == Convert.ToInt32(Regex.Replace(row.Anzahl, "[^0-9]+", string.Empty)));
                     if (colum == TranslateService.Class.GetTranslation("MODE"))
                         item.Modus = field;
                     else if (colum == TranslateService.Class.GetTranslation("QUANTITY"))
@@ -1621,10 +1621,11 @@ namespace Ibsys2
                     {
                         if (colum == "Art")
                             item.Modus = field;
-                        else if (colum == "Anzahl")
+                        else if (colum == "Anzahl") 
                             item.Quantity = field;
                         else { throw new Exception(); }
                     }
+
                 }
                 catch { e.Cancel = true; }
             }
@@ -2038,7 +2039,11 @@ public class Einkauf : INotifyPropertyChanged
         get { return art; }
         set
         {
-            art = value; OnPropertyChanged(new PropertyChangedEventArgs("Art"));
+            if (Convert.ToInt32(value) == 5)
+                art = TranslateService.Class.GetTranslation("NORMAL") + " (" + value + ")";
+            else if (Convert.ToInt32(value) == 4)
+                art = TranslateService.Class.GetTranslation("EIL") + " (" + value + ")";
+            OnPropertyChanged(new PropertyChangedEventArgs("Art"));
         }
     }
     protected void OnPropertyChanged(PropertyChangedEventArgs e)
