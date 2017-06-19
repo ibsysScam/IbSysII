@@ -1259,7 +1259,7 @@ namespace Ibsys2
 
                 if (Convert.ToInt32(period0product1.Text) % 10 != 0 || Convert.ToInt32(period0product2.Text) % 10 != 0 || Convert.ToInt32(period0product3.Text) % 10 != 0 || Convert.ToInt32(period1product1.Text) % 10 != 0 || Convert.ToInt32(period1product2.Text) % 10 != 0 || Convert.ToInt32(period1product3.Text) % 10 != 0 || Convert.ToInt32(period2product1.Text) % 10 != 0 || Convert.ToInt32(period2product2.Text) % 10 != 0 || Convert.ToInt32(period2product3.Text) % 10 != 0 || Convert.ToInt32(period3product1.Text) % 10 != 0 || Convert.ToInt32(period3product2.Text) % 10 != 0 || Convert.ToInt32(period3product3.Text) % 10 != 0)
                 {
-                    MessageBox.Show(TranslateService.Class.GetTranslation("INPUT_NOT_COMPLETE"));
+                    MessageBox.Show(TranslateService.Class.GetTranslation("INPUTMOD10"));
                     return;
                 }
             }
@@ -1450,7 +1450,7 @@ namespace Ibsys2
                 }
                 catch
                 {
-                    MessageBox.Show("error");
+                    MessageBox.Show(TranslateService.Class.GetTranslation("ERROR"));
                     return;
                 }
 
@@ -1467,7 +1467,7 @@ namespace Ibsys2
                 }
                 catch
                 {
-                    MessageBox.Show("error");
+                    MessageBox.Show(TranslateService.Class.GetTranslation("ERROR"));
                     return;
                 }
             }
@@ -1480,7 +1480,7 @@ namespace Ibsys2
                 }
                 catch
                 {
-                    MessageBox.Show("error");
+                    MessageBox.Show(TranslateService.Class.GetTranslation("ERROR"));
                     return;
                 }
             }
@@ -1555,7 +1555,7 @@ namespace Ibsys2
                 {
                     StreamWriter sw = new StreamWriter(exportpath + "\\XMLOutput.xml");
                     sw.Write(xmlfile);
-                    MessageBox.Show(TranslateService.Class.GetTranslation("XML_SUCCESS"));
+                    MessageBox.Show(TranslateService.Class.GetTranslation("XMLEXPORT_SUCCESS"));
                     sw.Close();
 
                 }
@@ -1564,7 +1564,7 @@ namespace Ibsys2
                 {
                     StreamWriter sw = new StreamWriter("XMLOutput.xml");
                     sw.Write(xmlfile);
-                    MessageBox.Show(TranslateService.Class.GetTranslation("XML_SUCCESS"));
+                    MessageBox.Show(TranslateService.Class.GetTranslation("XMLEXPORT_SUCCESS"));
                     return;
                 }
 
@@ -1573,7 +1573,7 @@ namespace Ibsys2
                     exportpath = customexportpathtextbox.Text;
                     StreamWriter sw = new StreamWriter(exportpath + "\\XMLOutput.xml");
                     sw.Write(xmlfile);
-                    MessageBox.Show(TranslateService.Class.GetTranslation("XML_SUCCESS"));
+                    MessageBox.Show(TranslateService.Class.GetTranslation("XMLEXPORT_SUCCESS"));
                     sw.Close();
                 }
                 
@@ -1812,10 +1812,10 @@ public class Lagerbestand : INotifyPropertyChanged
 
     private string artikel;
     private string menge;
-    public string startmenge;
-    public string menge_startmenge;
-    public string preis;
-    public string lagerwert;
+    private string startmenge;
+    private string menge_startmenge;
+    private string preis;
+    private string lagerwert;
 
     public Lagerbestand(string artikel, string menge, string startmenge, string menge_startmenge, string preis, string lagerwert)
     {
