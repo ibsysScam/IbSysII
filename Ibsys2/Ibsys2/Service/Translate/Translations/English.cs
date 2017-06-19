@@ -228,6 +228,8 @@ namespace Ibsys2.Service {
             _translate.Add("LAPREIS", "Price");
             _translate.Add("LALAGERWERT", "Inventory value");
             _translate.Add("XML_SUCCESS", "XML Export succesfull!");
+            _translate.Add("ERROR", "As Error has occured!");
+            _translate.Add("INPUTMOD10", "The input must be specified in steps of 10!");
         }
 
     }

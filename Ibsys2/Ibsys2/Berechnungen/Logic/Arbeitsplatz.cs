@@ -40,7 +40,7 @@ namespace Ibsys2.Berechnungen.Logic
 
 
         public int ueberStundenInMinProTag {
-            get { return Convert.ToInt32(this.ueberstundenInMin / 5); }
+            get { return Convert.ToInt32(Math.Ceiling(this.ueberstundenInMin / 50)*10); }
         }
 
         public Arbeitsplatz(int arbeitsplatzID, List<Arbeitsplatzauftrag> liste)
@@ -76,12 +76,12 @@ namespace Ibsys2.Berechnungen.Logic
             if (zeitBedarfProPeriode <= 3600)
             {
                 this.schichten = 1;
-                this.ueberstundenInMin = zeitBedarfProPeriode - 2400;
+                this.ueberstundenInMin = Math.Ceiling((zeitBedarfProPeriode - 2400) / 10) * 10;
             }
             else if (zeitBedarfProPeriode <= 6000)
             {
                 this.schichten = 2;
-                this.ueberstundenInMin = zeitBedarfProPeriode - 4800;
+                this.ueberstundenInMin = Math.Ceiling((zeitBedarfProPeriode - 4800) / 10) * 10;
 
             }
             else if (zeitBedarfProPeriode <= 7200)
@@ -89,7 +89,8 @@ namespace Ibsys2.Berechnungen.Logic
                 this.schichten = 3;
                 this.ueberstundenInMin = 0;
             }
-            else {
+            else
+            {
                 this.schichten = 3;
                 this.gesamtzeitbedarf = 7200;
                 this.ueberstundenInMin = 0;

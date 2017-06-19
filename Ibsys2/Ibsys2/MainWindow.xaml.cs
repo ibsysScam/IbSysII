@@ -25,6 +25,8 @@ using System.Collections.ObjectModel;
 using Microsoft.WindowsAPICodePack.Shell;
 using Ibsys2.Berechnungen.Logic;
 using System.Diagnostics;
+using Ibsys2.Pages.About;
+
 
 namespace Ibsys2
 {
@@ -778,8 +780,8 @@ namespace Ibsys2
 
         private void Aboutmenuheader_Click(object sender, RoutedEventArgs e)
         {
-            Settings Settingspage = new Settings();
-            Settingspage.Show();
+            About AboutPage = new About();
+            AboutPage.Show();
         }
 
         private void Closemenuitem_Click(object sender, RoutedEventArgs e)
@@ -841,7 +843,7 @@ namespace Ibsys2
             Ui.EnableNextTab(Einkauftab, MainTabControl);
             Ui.EnableNextTab(Produktionsplanungtab, MainTabControl);
             Ui.EnableNextTab(Priorisierungtab, MainTabControl);
-            Ui.EnableNextTab(Chartstab, MainTabControl);
+            //Ui.EnableNextTab(Chartstab, MainTabControl);
             Ui.EnableNextTab(Exporttab, MainTabControl);
             //Check atuotmatic Import
             if (found == false)
@@ -1259,7 +1261,7 @@ namespace Ibsys2
 
                 if (Convert.ToInt32(period0product1.Text) % 10 != 0 || Convert.ToInt32(period0product2.Text) % 10 != 0 || Convert.ToInt32(period0product3.Text) % 10 != 0 || Convert.ToInt32(period1product1.Text) % 10 != 0 || Convert.ToInt32(period1product2.Text) % 10 != 0 || Convert.ToInt32(period1product3.Text) % 10 != 0 || Convert.ToInt32(period2product1.Text) % 10 != 0 || Convert.ToInt32(period2product2.Text) % 10 != 0 || Convert.ToInt32(period2product3.Text) % 10 != 0 || Convert.ToInt32(period3product1.Text) % 10 != 0 || Convert.ToInt32(period3product2.Text) % 10 != 0 || Convert.ToInt32(period3product3.Text) % 10 != 0)
                 {
-                    MessageBox.Show(TranslateService.Class.GetTranslation("INPUT_NOT_COMPLETE"));
+                    MessageBox.Show(TranslateService.Class.GetTranslation("INPUTMOD10"));
                     return;
                 }
             }
@@ -1450,7 +1452,7 @@ namespace Ibsys2
                 }
                 catch
                 {
-                    MessageBox.Show("error");
+                    MessageBox.Show(TranslateService.Class.GetTranslation("ERROR"));
                     return;
                 }
 
@@ -1467,7 +1469,7 @@ namespace Ibsys2
                 }
                 catch
                 {
-                    MessageBox.Show("error");
+                    MessageBox.Show(TranslateService.Class.GetTranslation("ERROR"));
                     return;
                 }
             }
@@ -1480,7 +1482,7 @@ namespace Ibsys2
                 }
                 catch
                 {
-                    MessageBox.Show("error");
+                    MessageBox.Show(TranslateService.Class.GetTranslation("ERROR"));
                     return;
                 }
             }
@@ -1565,7 +1567,7 @@ namespace Ibsys2
                 {
                     StreamWriter sw = new StreamWriter(exportpath + "\\XMLOutput.xml");
                     sw.Write(xmlfile);
-                    MessageBox.Show(TranslateService.Class.GetTranslation("XML_SUCCESS"));
+                    MessageBox.Show(TranslateService.Class.GetTranslation("XMLEXPORT_SUCCESS"));
                     sw.Close();
                     Process.Start(exportpath);
 
@@ -1573,6 +1575,7 @@ namespace Ibsys2
                
                 if(found == false && customexportpathtextbox.Text == "")
                 {
+
                     MessageBox.Show("Pls specify a Exportpath");
                     return;
                 }
@@ -1582,7 +1585,7 @@ namespace Ibsys2
                     exportpath = customexportpathtextbox.Text;
                     StreamWriter sw = new StreamWriter(exportpath + "\\XMLOutput.xml");
                     sw.Write(xmlfile);
-                    MessageBox.Show(TranslateService.Class.GetTranslation("XML_SUCCESS"));
+                    MessageBox.Show(TranslateService.Class.GetTranslation("XMLEXPORT_SUCCESS"));
                     sw.Close();
                     Process.Start(exportpath);
                 }
@@ -1822,10 +1825,10 @@ public class Lagerbestand : INotifyPropertyChanged
 
     private string artikel;
     private string menge;
-    public string startmenge;
-    public string menge_startmenge;
-    public string preis;
-    public string lagerwert;
+    private string startmenge;
+    private string menge_startmenge;
+    private string preis;
+    private string lagerwert;
 
     public Lagerbestand(string artikel, string menge, string startmenge, string menge_startmenge, string preis, string lagerwert)
     {
