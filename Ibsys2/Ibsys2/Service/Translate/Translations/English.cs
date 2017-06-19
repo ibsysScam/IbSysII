@@ -232,6 +232,7 @@ namespace Ibsys2.Service {
             _translate.Add("ERROR", "As Error has occured!");
             _translate.Add("INPUTMOD10", "The input must be specified in steps of 10!");
             _translate.Add("EXPORTLABEL", "Export path");
+            _translate.Add("EMPTY_EXPORT_PATH", "Please fill export paths with value.");
         }
 
     }

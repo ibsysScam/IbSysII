@@ -1578,7 +1578,7 @@ namespace Ibsys2
                 if(found == false && customexportpathtextbox.Text == "")
                 {
 
-                    MessageBox.Show("Pls specify a Exportpath");
+                    MessageBox.Show(TranslateService.Class.GetTranslation("EMPTY_EXPORT_PATH"));
                     return;
                 }
 
