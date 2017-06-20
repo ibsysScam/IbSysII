@@ -40,14 +40,14 @@ namespace Ibsys2.Service {
             _translate.Add("END_WAREHOUSE_STOCK", "Warehouse stock at the end of the passed period");
             _translate.Add("ORDERS_QUEUE", "Orders in the waiting queue");
             _translate.Add("WORK_IN_PROGRESS", "Work in progress");
-            _translate.Add("PRODUCTION_ORDERS_FOR_COMMING", "Production orders \r\n for following period");
-            _translate.Add("SALES_ORDERS1", "Sales \r\n orders");
-            _translate.Add("SAFETY_STOCK1", "Safety \r\n stock");
-            _translate.Add("END_WAREHOUSE_STOCK1", "Warehouse stock \r\n end of \r\n passed period");
-            _translate.Add("ORDERS_QUEUE1", "Orders in \r\n waiting queue");
-            _translate.Add("PREORDER1", "Orders in \r\n waiting queue \r\n (Pre period)");
-            _translate.Add("WORK_IN_PROGRESS1", "Work in \r\n progress");
-            _translate.Add("PRODUCTION_ORDERS_FOR_COMMING1", "Production orders \r\n following period");
+            _translate.Add("PRODUCTION_ORDERS_FOR_COMMING", "Production orders\r\nfor following period");
+            _translate.Add("SALES_ORDERS1", "Sales\r\norders");
+            _translate.Add("SAFETY_STOCK1", "Safety\r\nstock");
+            _translate.Add("END_WAREHOUSE_STOCK1", "Warehouse stock\r\nend of\r\npassed period");
+            _translate.Add("ORDERS_QUEUE1", "Orders in\r\nwaiting queue");
+            _translate.Add("PREORDER1", "Orders in\r\nwaiting queue\r\n(Pre period)");
+            _translate.Add("WORK_IN_PROGRESS1", "Work in\r\nprogress");
+            _translate.Add("PRODUCTION_ORDERS_FOR_COMMING1", "Production orders\r\nfollowing period");
             _translate.Add("DESCRIPTION", "Description");
             _translate.Add("REAR_WHEEL", "Rear wheel");
             _translate.Add("FRONT_WHEEL", "Front wheel");
@@ -233,6 +233,8 @@ namespace Ibsys2.Service {
             _translate.Add("INPUTMOD10", "The input must be specified in steps of 10!");
             _translate.Add("EXPORTLABEL", "Export path");
             _translate.Add("EMPTY_EXPORT_PATH", "Please fill export paths with value.");
+            _translate.Add("EIL", "Fast");
+            _translate.Add("NORMAL", "Normal");
         }
 
     }

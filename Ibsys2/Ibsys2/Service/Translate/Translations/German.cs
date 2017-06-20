@@ -41,13 +41,13 @@ namespace Ibsys2.Service {
             _translate.Add("ORDERS_QUEUE", "Aufträge in Warteschlange");
             _translate.Add("WORK_IN_PROGRESS", "Aufträge in Bearbeitung");
             _translate.Add("PRODUCTION_ORDERS_FOR_COMMING", "Produktionsaufträge kommende Periode");
-            _translate.Add("SALES_ORDERS1", "Vertriebs- \r\n wunsch");
-            _translate.Add("SAFETY_STOCK1", "Sicherheits- \r\n bestand");
-            _translate.Add("END_WAREHOUSE_STOCK1", "Lagerbestand \r\n Vorperiode");
-            _translate.Add("ORDERS_QUEUE1", "Aufträge in \r\n Warteschlange");
-            _translate.Add("PREORDER1", "Aufträge in \r\n Warteschlange \r\n Vorerzeugnis");
-            _translate.Add("WORK_IN_PROGRESS1", "Aufträge in \r\n Bearbeitung");
-            _translate.Add("PRODUCTION_ORDERS_FOR_COMMING1", "Produktionsaufträge \r\n kommende Periode");
+            _translate.Add("SALES_ORDERS1", "Vertriebs-\r\nwunsch");
+            _translate.Add("SAFETY_STOCK1", "Sicherheits-\r\nbestand");
+            _translate.Add("END_WAREHOUSE_STOCK1", "Lagerbestand\r\nVorperiode");
+            _translate.Add("ORDERS_QUEUE1", "Aufträge in\r\nWarteschlange");
+            _translate.Add("PREORDER1", "Aufträge in\r\nWarteschlange\r\nVorerzeugnis");
+            _translate.Add("WORK_IN_PROGRESS1", "Aufträge in\r\nBearbeitung");
+            _translate.Add("PRODUCTION_ORDERS_FOR_COMMING1", "Produktionsaufträge\r\nkommende Periode");
             _translate.Add("DESCRIPTION", "Bezeichnung");
             _translate.Add("REAR_WHEEL", "Hinterrad");
             _translate.Add("FRONT_WHEEL", "Vorderrad");
@@ -233,6 +233,8 @@ namespace Ibsys2.Service {
             _translate.Add("INPUTMOD10", "Der Eingabewert muss in 10er Schritten angegeben werden!");
             _translate.Add("EXPORTLABEL", "Exportpfad");
             _translate.Add("EMPTY_EXPORT_PATH", "Bitte den Exportpfad ausfüllen.");
+            _translate.Add("EIL", "Eil");
+            _translate.Add("NORMAL", "Normal");
         }
         
     }

@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Ibsys2"
         xmlns:chart="clr-namespace:De.TorstenMandelkow.MetroChart;assembly=De.TorstenMandelkow.MetroChart"
         mc:Ignorable="d"
-        Title="Transmorfers" ResizeMode="NoResize" Height="720" Width="1280"  AllowDrop="True" DragEnter="Window_DragEnter" >
+        Title="Transmorphers" ResizeMode="NoResize" Height="720" Width="1280"  AllowDrop="True" DragEnter="Window_DragEnter" >
 
 
     <Grid>
@@ -184,8 +184,8 @@
 
                                 <Label x:Name="ProduktVertrieb" Content="Vertriebs-&#xD;&#xA;wunsch" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Height="45" Width="60" Grid.Column="2"/>
                                 <Label x:Name="ProduktSicher" Content="Sicherheits- &#xD;&#xA;bestand" HorizontalAlignment="Center"  Margin="0,10,0,0" VerticalAlignment="Top" Height="45" Width="72" Grid.Column="6"/>
-                                <Label x:Name="ProduktLager" Content="Lagerbestand &#xD;&#xA;Vorperiode" HorizontalAlignment="Center"  Margin="0,10,0,0" VerticalAlignment="Top" Height="45" Width="84" Grid.Column="8"/>
-                                <Label x:Name="ProduktAuftrag" Content="Aufträge in &#xD;&#xA;Warteschlange" HorizontalAlignment="Center"  Margin="0,10,0,0" VerticalAlignment="Top" Height="45" Width="98" Grid.Column="10"/>
+                                <Label x:Name="ProduktLager" Content="Lagerbestand &#xD;&#xA;Vorperiode" HorizontalAlignment="Center"  Margin="0,10,0,0" VerticalAlignment="Top" Height="45" Width="100" Grid.Column="8"/>
+                                <Label x:Name="ProduktAuftrag" Content="Aufträge in &#xD;&#xA;Warteschlange" HorizontalAlignment="Center"  Margin="0,10,0,0" VerticalAlignment="Top" Height="45" Width="110" Grid.Column="10"/>
                                 <Label x:Name="ProduktWarte" Content="Aufträge in &#xA;Warteschlange&#xD;&#xA;Vorerzeugnis" HorizontalAlignment="Center"  Margin="0,10,0,0" VerticalAlignment="Top" Height="59" Width="98" Grid.Column="4"/>
                                 <Label x:Name="ProduktBearb" Content="Aufträge in &#xA;Bearbeitung" HorizontalAlignment="Center"  Margin="0,10,0,0" VerticalAlignment="Top" Height="45" Width="98" Grid.Column="12"/>
                                 <Label x:Name="ProduktProdukt" Content="Produktionsaufträge&#xD;&#xA;kommende Periode" HorizontalAlignment="Center"  Margin="0,10,0,0" VerticalAlignment="Top" Height="45" Width="128" Grid.Column="14"/>
@@ -396,8 +396,8 @@
 
                                 <Label x:Name="ProduktVertrieb1" Content="Vertriebs-&#xD;&#xA;wunsch" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Height="45" Width="60" Grid.Column="2"/>
                                 <Label x:Name="ProduktSicher1" Content="Sicherheits- &#xD;&#xA;bestand" HorizontalAlignment="Center"  Margin="0,10,0,0" VerticalAlignment="Top" Height="45" Width="72" Grid.Column="6"/>
-                                <Label x:Name="ProduktLager1" Content="Lagerbestand &#xD;&#xA;Vorperiode" HorizontalAlignment="Center"  Margin="0,10,0,0" VerticalAlignment="Top" Height="45" Width="84" Grid.Column="8"/>
-                                <Label x:Name="ProduktAuftrag1" Content="Aufträge in &#xD;&#xA;Warteschlange" HorizontalAlignment="Center"  Margin="0,10,0,0" VerticalAlignment="Top" Height="45" Width="98" Grid.Column="10"/>
+                                <Label x:Name="ProduktLager1" Content="Lagerbestand &#xD;&#xA;Vorperiode" HorizontalAlignment="Center"  Margin="0,10,0,0" VerticalAlignment="Top" Height="45" Width="100" Grid.Column="8"/>
+                                <Label x:Name="ProduktAuftrag1" Content="Aufträge in &#xD;&#xA;Warteschlange" HorizontalAlignment="Center"  Margin="0,10,0,0" VerticalAlignment="Top" Height="45" Width="110" Grid.Column="10"/>
                                 <Label x:Name="ProduktWarte1" Content="Aufträge in &#xA;Warteschlange&#xD;&#xA;Vorerzeugnis" HorizontalAlignment="Center"  Margin="0,10,0,0" VerticalAlignment="Top" Height="59" Width="98" Grid.Column="4"/>
                                 <Label x:Name="ProduktBearb1" Content="Aufträge in &#xA;Bearbeitung" HorizontalAlignment="Center"  Margin="0,10,0,0" VerticalAlignment="Top" Height="45" Width="98" Grid.Column="12"/>
                                 <Label x:Name="ProduktProdukt1" Content="Produktionsaufträge&#xD;&#xA;kommende Periode" HorizontalAlignment="Center"  Margin="0,10,0,0" VerticalAlignment="Top" Height="45" Width="128" Grid.Column="14"/>
@@ -609,8 +609,8 @@
                                 </Grid.ColumnDefinitions>
                                 <Label x:Name="ProduktVertrieb2" Content="Vertriebs-&#xD;&#xA;wunsch" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Height="45" Width="60" Grid.Column="2"/>
                                 <Label x:Name="ProduktSicher2" Content="Sicherheits- &#xD;&#xA;bestand" HorizontalAlignment="Center"  Margin="0,10,0,0" VerticalAlignment="Top" Height="45" Width="72" Grid.Column="6"/>
-                                <Label x:Name="ProduktLager2" Content="Lagerbestand &#xD;&#xA;Vorperiode" HorizontalAlignment="Center"  Margin="0,10,0,0" VerticalAlignment="Top" Height="45" Width="84" Grid.Column="8"/>
-                                <Label x:Name="ProduktAuftrag2" Content="Aufträge in &#xD;&#xA;Warteschlange" HorizontalAlignment="Center"  Margin="0,10,0,0" VerticalAlignment="Top" Height="45" Width="98" Grid.Column="10"/>
+                                <Label x:Name="ProduktLager2" Content="Lagerbestand &#xD;&#xA;Vorperiode" HorizontalAlignment="Center"  Margin="0,10,0,0" VerticalAlignment="Top" Height="45" Width="100" Grid.Column="8"/>
+                                <Label x:Name="ProduktAuftrag2" Content="Aufträge in &#xD;&#xA;Warteschlange" HorizontalAlignment="Center"  Margin="0,10,0,0" VerticalAlignment="Top" Height="45" Width="110" Grid.Column="10"/>
                                 <Label x:Name="ProduktWarte2" Content="Aufträge in &#xA;Warteschlange&#xD;&#xA;Vorerzeugnis" HorizontalAlignment="Center"  Margin="0,10,0,0" VerticalAlignment="Top" Height="59" Width="98" Grid.Column="4"/>
                                 <Label x:Name="ProduktBearb2" Content="Aufträge in &#xA;Bearbeitung" HorizontalAlignment="Center"  Margin="0,10,0,0" VerticalAlignment="Top" Height="45" Width="98" Grid.Column="12"/>
                                 <Label x:Name="ProduktProdukt2" Content="Produktionsaufträge&#xD;&#xA;kommende Periode" HorizontalAlignment="Center"  Margin="0,10,0,0" VerticalAlignment="Top" Height="45" Width="128" Grid.Column="14"/>
