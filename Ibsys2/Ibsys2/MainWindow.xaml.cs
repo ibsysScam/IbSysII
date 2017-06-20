@@ -1353,7 +1353,7 @@ namespace Ibsys2
         private void MainpageNextButton_Click(object sender, RoutedEventArgs e)
         {
             checkMalformedXML();
-            exportpath = Pathtextbox.Text;
+            exportpath = Pathtextbox.Text.Substring(0, Pathtextbox.Text.LastIndexOf(@"\"));
         }
 
 
@@ -1601,7 +1601,7 @@ namespace Ibsys2
 
             }
 
-            catch
+            catch (Exception ex)
             {
                 MessageBox.Show(TranslateService.Class.GetTranslation("XMLEXPORT_NO_SUCCESS"));
                 return;
