@@ -780,12 +780,6 @@ namespace Ibsys2
             Settingspage.Show();
         }
 
-        private void Aboutmenuheader_Click(object sender, RoutedEventArgs e)
-        {
-            About AboutPage = new About();
-            AboutPage.Show();
-        }
-
         private void Closemenuitem_Click(object sender, RoutedEventArgs e)
         {
             Environment.Exit(21);
