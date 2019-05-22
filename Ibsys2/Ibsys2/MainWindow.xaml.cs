@@ -157,11 +157,6 @@ namespace Ibsys2
             clear.Content = TranslateService.Class.GetTranslation("CLEAR");
             choosefile.Content = TranslateService.Class.GetTranslation("CHOOSEFILE");
             calculatebutton.Content = TranslateService.Class.GetTranslation("COUNT");
-            Programm.Header = TranslateService.Class.GetTranslation("PROGRAM");
-            Helpmenuitem.Header = TranslateService.Class.GetTranslation("HELP");
-            Closemenuitem.Header = TranslateService.Class.GetTranslation("CLOSE");
-            Settingsmenuheader.Header = TranslateService.Class.GetTranslation("SETTINGS");
-            Maintab.Header = TranslateService.Class.GetTranslation("IMPORT");
             Prognosentab.Header = TranslateService.Class.GetTranslation("DISTRIBUTION");
             VertriebPeriode.Content = TranslateService.Class.GetTranslation("PERIODE");
             VertriebSumme.Content = TranslateService.Class.GetTranslation("TOTAL");
@@ -1563,7 +1558,7 @@ namespace Ibsys2
                 {
                     StreamWriter sw = new StreamWriter(xmlexportpath);
                     sw.Write(xmlfile);
-                    MessageBox.Show(TranslateService.Class.GetTranslation("Output-XML wurde erfolgreich erstellt. Es befindet sich an folgendem Ort: " + xmlexportpath));
+                    MessageBox.Show("Output-XML wurde erfolgreich erstellt. Es befindet sich an folgendem Ort: " + xmlexportpath);
                     sw.Close();
                     Process.Start(xmlexportpath);
                 }
@@ -1574,7 +1569,7 @@ namespace Ibsys2
 
             catch (Exception ex)
             {
-                MessageBox.Show(TranslateService.Class.GetTranslation("XMLEXPORT_NO_SUCCESS"));
+                MessageBox.Show("XML-Export war nicht erflogreich: " + ex.Message);
                 return;
             }
         }

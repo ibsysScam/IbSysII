@@ -32,17 +32,9 @@
             <ColumnDefinition Width="34*"/>
         </Grid.ColumnDefinitions>
 
-        <Menu Grid.ColumnSpan="2" Margin="0,0,-0.4,0.4" >
-            <MenuItem x:Name="Programm" Header="Programm">
-                <MenuItem x:Name="Helpmenuitem" Header="Help" Click="Helpmenuitem_Click"/>
-                <MenuItem x:Name="Closemenuitem" Header="Close" Click="Closemenuitem_Click"/>
-            </MenuItem>
-            <MenuItem x:Name="Settingsmenuheader" Header="Settings" Click="Settingsmenuheader_Click"/>
-        </Menu>
-
-        <TabControl x:Name="MainTabControl" HorizontalAlignment="Left" Height="672" Margin="0,19,-0.4,-0.6" VerticalAlignment="Top" Width="1274" SelectedIndex="0" SelectionChanged="MainTabControl_SelectionChanged" Grid.ColumnSpan="2">
+        <TabControl x:Name="MainTabControl" HorizontalAlignment="Left" Height="672" VerticalAlignment="Top" Width="1274" SelectedIndex="0" SelectionChanged="MainTabControl_SelectionChanged" Grid.ColumnSpan="2">
             <TabItem x:Name="Maintab" Header="Import" TabIndex="0" >
-                <Grid Background="#a2c523" Margin="0,0,0,0">
+                <Grid Background="#a2c523">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="995*"/>
                         <ColumnDefinition Width="273*"/>
@@ -1312,7 +1304,8 @@
             </TabItem>
             <TabItem x:Name="Exporttab" Header="Export" IsEnabled="False" TabIndex="8">
                 <Grid Background="#a2c523">
-                    <Button x:Name="xmlexportbutton" Content="XML Export" HorizontalAlignment="Left" Margin="131,132,0,0" VerticalAlignment="Top" Width="75" Click="xmlexportbutton_Click" />
+                    <Button 
+                        x:Name="xmlexportbutton" Content="XML Export" HorizontalAlignment="Left" Margin="131,132,0,0" VerticalAlignment="Top" Width="75" Click="xmlexportbutton_Click" />
                 </Grid>
             </TabItem>
 
