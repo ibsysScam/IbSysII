@@ -42,7 +42,7 @@ namespace Ibsys2
 
         private static MainWindow _class;
         UIFeatures Ui = new UIFeatures();
-        
+        string xmlexportpath = "";
 
         public static MainWindow Class {
             get {
@@ -51,7 +51,6 @@ namespace Ibsys2
                 return _class;
             }
         }
-        string exportpath = "";
         bool found = false;
         public MainWindow()
         {
@@ -73,7 +72,7 @@ namespace Ibsys2
                 {
 
                     Pathtextbox.Text = xmlFilePath;
-                    exportpath = xmlFilePath;
+                    xmlexportpath = xmlFilePath;
                     checkMalformedXML();
                     found = true;
 
@@ -90,7 +89,7 @@ namespace Ibsys2
 
                     Pathtextbox.Text = xmlFilePath;
                     checkMalformedXML();
-                    exportpath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+                    xmlexportpath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
                     found = true;
                     break;
                 }
@@ -104,7 +103,7 @@ namespace Ibsys2
 
                     Pathtextbox.Text = xmlFilePath;
                     checkMalformedXML();
-                    exportpath = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
+                    xmlexportpath = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
                     found = true;
                     break;
                 }
@@ -118,7 +117,7 @@ namespace Ibsys2
 
                     Pathtextbox.Text = xmlFilePath;
                     checkMalformedXML();
-                    exportpath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+                    xmlexportpath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
                     found = true;
                     break;
                 }
@@ -133,7 +132,7 @@ namespace Ibsys2
 
                     Pathtextbox.Text = xmlFilePath;
                     checkMalformedXML();
-                    exportpath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+                    xmlexportpath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
                     found = true;
                     break;
                 }
@@ -147,7 +146,7 @@ namespace Ibsys2
 
                     Pathtextbox.Text = xmlFilePath;
                     checkMalformedXML();
-                    exportpath = KnownFolders.Downloads.Path;
+                    xmlexportpath = KnownFolders.Downloads.Path;
                     found = true;
                     break;
                 }
@@ -162,7 +161,6 @@ namespace Ibsys2
             Helpmenuitem.Header = TranslateService.Class.GetTranslation("HELP");
             Closemenuitem.Header = TranslateService.Class.GetTranslation("CLOSE");
             Settingsmenuheader.Header = TranslateService.Class.GetTranslation("SETTINGS");
-            Aboutmenuheader.Header = TranslateService.Class.GetTranslation("ABOUT");
             Maintab.Header = TranslateService.Class.GetTranslation("IMPORT");
             Prognosentab.Header = TranslateService.Class.GetTranslation("DISTRIBUTION");
             VertriebPeriode.Content = TranslateService.Class.GetTranslation("PERIODE");
@@ -438,7 +436,7 @@ namespace Ibsys2
             Liefer1_Teilewert.Header = TranslateService.Class.GetTranslation("LTEILEWERT");
             Liefer1_Verwendung.Header = TranslateService.Class.GetTranslation("LVERWENDUNG");
 
-            Exportlabel.Content = TranslateService.Class.GetTranslation("EXPORTLABEL");
+            //Exportlabel.Content = TranslateService.Class.GetTranslation("EXPORTLABEL");
 
             UpdateSummeFromForcast(null, null);
             dataGrid1.ItemsSource = CreateWork1();
@@ -752,19 +750,19 @@ namespace Ibsys2
             return ret;
         }
 
-        private void Window_DragEnter(object sender, DragEventArgs e)
-        {
-            Console.WriteLine("OnDragEnter");
-            bool validData = GetFilename(out string filename, e);
-            Console.WriteLine(validData.ToString());
-            if (!validData)
-            {
-                MessageBox.Show(TranslateService.Class.GetTranslation("XML_ERROR"), "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                return;
-            }
+        //private void Window_DragEnter(object sender, DragEventArgs e)
+        //{
+        //    Console.WriteLine("OnDragEnter");
+        //    bool validData = GetFilename(out string filename, e);
+        //    Console.WriteLine(validData.ToString());
+        //    if (!validData)
+        //    {
+        //        MessageBox.Show(TranslateService.Class.GetTranslation("XML_ERROR"), "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+        //        return;
+        //    }
 
-            Pathtextbox.Text = filename;
-        }
+        //    Pathtextbox.Text = filename;
+        //}
 
 
         private void Clear_Click(object sender, RoutedEventArgs e)
@@ -847,10 +845,6 @@ namespace Ibsys2
             //Ui.EnableNextTab(Chartstab, MainTabControl, false);
             Ui.EnableNextTab(Exporttab, MainTabControl, false);
             //Check atuotmatic Import
-            if (found == false)
-            {
-                customexportpathtextbox.IsEnabled = true;
-            }
             if(found == true)
             {
                 xmlexportbutton.IsEnabled = true;
@@ -1347,7 +1341,7 @@ namespace Ibsys2
         private void MainpageNextButton_Click(object sender, RoutedEventArgs e)
         {
             checkMalformedXML();
-            exportpath = Pathtextbox.Text.Substring(0, Pathtextbox.Text.LastIndexOf(@"\"));
+            xmlexportpath = Pathtextbox.Text.Substring(0, Pathtextbox.Text.LastIndexOf(@"\"));
         }
 
 
@@ -1546,49 +1540,32 @@ namespace Ibsys2
             }
         }
 
-        private void customexportpathtextbox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            xmlexportbutton.IsEnabled = true;
-            if(customexportpathtextbox.Text == "")
-            {
-                xmlexportbutton.IsEnabled = false;
-            }
-        }
-
        
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void xmlexportbutton_Click(object sender, RoutedEventArgs e)
         {
 
             try
             {
                 CreateXML createXml = new CreateXML();
                 string xmlfile = createXml.GenerateXMLData();
-                
-                if(found == true)
+                xmlexportpath = "XMLOutput.xml";
+                if (found == true)
                 {
-                    StreamWriter sw = new StreamWriter(exportpath + "\\XMLOutput.xml");
+                    StreamWriter sw = new StreamWriter(xmlexportpath);
                     sw.Write(xmlfile);
                     MessageBox.Show(TranslateService.Class.GetTranslation("XMLEXPORT_SUCCESS"));
                     sw.Close();
-                    Process.Start(exportpath);
+                    Process.Start(xmlexportpath);
 
-                }
-               
-                if(found == false && customexportpathtextbox.Text == "")
-                {
-
-                    MessageBox.Show(TranslateService.Class.GetTranslation("EMPTY_EXPORT_PATH"));
-                    return;
                 }
 
                 if(found == false)
                 {
-                    exportpath = customexportpathtextbox.Text;
-                    StreamWriter sw = new StreamWriter(exportpath + "\\XMLOutput.xml");
+                    StreamWriter sw = new StreamWriter(xmlexportpath);
                     sw.Write(xmlfile);
                     MessageBox.Show(TranslateService.Class.GetTranslation("XMLEXPORT_SUCCESS"));
                     sw.Close();
-                    Process.Start(exportpath);
+                    Process.Start(xmlexportpath);
                 }
                 
                
