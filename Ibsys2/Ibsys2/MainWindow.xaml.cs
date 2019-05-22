@@ -1553,7 +1553,7 @@ namespace Ibsys2
                 {
                     StreamWriter sw = new StreamWriter(xmlexportpath);
                     sw.Write(xmlfile);
-                    MessageBox.Show(TranslateService.Class.GetTranslation("XMLEXPORT_SUCCESS"));
+                    MessageBox.Show("Output-XML wurde erfolgreich erstellt. Es befindet sich an folgendem Ort: " + xmlexportpath);
                     sw.Close();
                     Process.Start(xmlexportpath);
 
@@ -1563,7 +1563,7 @@ namespace Ibsys2
                 {
                     StreamWriter sw = new StreamWriter(xmlexportpath);
                     sw.Write(xmlfile);
-                    MessageBox.Show(TranslateService.Class.GetTranslation("XMLEXPORT_SUCCESS"));
+                    MessageBox.Show(TranslateService.Class.GetTranslation("Output-XML wurde erfolgreich erstellt. Es befindet sich an folgendem Ort: " + xmlexportpath));
                     sw.Close();
                     Process.Start(xmlexportpath);
                 }
