@@ -152,8 +152,7 @@ namespace Ibsys2
                 }
             }
 
-
-            MainpageNextButton.Content = TranslateService.Class.GetTranslation("NEXT");
+            
             clear.Content = TranslateService.Class.GetTranslation("CLEAR");
             choosefile.Content = TranslateService.Class.GetTranslation("CHOOSEFILE");
             calculatebutton.Content = TranslateService.Class.GetTranslation("COUNT");
