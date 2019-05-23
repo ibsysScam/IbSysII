@@ -158,7 +158,6 @@ namespace Ibsys2
             choosefile.Content = TranslateService.Class.GetTranslation("CHOOSEFILE");
             calculatebutton.Content = TranslateService.Class.GetTranslation("COUNT");
             Prognosentab.Header = TranslateService.Class.GetTranslation("DISTRIBUTION");
-            VertriebPeriode.Content = TranslateService.Class.GetTranslation("PERIODE");
             VertriebSumme.Content = TranslateService.Class.GetTranslation("TOTAL");
             VertriebKind.Content = TranslateService.Class.GetTranslation("CHILDREN_BICYCLE");
             VertriebDame.Content = TranslateService.Class.GetTranslation("LADY_BICYCLE");
@@ -1230,7 +1229,18 @@ namespace Ibsys2
 
         private void PrognosenNextbutton_Click(object sender, RoutedEventArgs e)
         {
-
+            if (String.IsNullOrEmpty(Pathtextbox.Text))
+            {
+                MessageBox.Show(TranslateService.Class.GetTranslation("XML_ERROR"));
+                return;
+            }
+            ReadXML readxml = new ReadXML();
+            bool wellformed = readxml.ReadFile(Pathtextbox.Text);
+            if (!wellformed)
+            {
+                MessageBox.Show(TranslateService.Class.GetTranslation("XML_MALFORMED"));
+                return;
+            }
             Int32 maxValue = 1050;
             try
             {
@@ -1322,12 +1332,6 @@ namespace Ibsys2
                 return;
             }
             Ui.EnableNextTab(Prognosentab, MainTabControl);
-        }
-
-        private void MainpageNextButton_Click(object sender, RoutedEventArgs e)
-        {
-            checkMalformedXML();
-            xmlexportpath = Pathtextbox.Text.Substring(0, Pathtextbox.Text.LastIndexOf(@"\"));
         }
 
 
