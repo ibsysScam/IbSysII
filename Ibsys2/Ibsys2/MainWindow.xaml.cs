@@ -791,9 +791,6 @@ namespace Ibsys2
 
         private void Calculatebutton_Click(object sender, RoutedEventArgs e)
         {
-
-
-
             try
             {
                 if (Sicherheitsfaktor.Text == "")
@@ -817,22 +814,16 @@ namespace Ibsys2
             vs.sicherheitsbestandP1 = Convert.ToInt32(forecastsy1p1.Text);
             vs.sicherheitsbestandP2 = Convert.ToInt32(forecastsy1p2.Text);
             vs.sicherheitsbestandP3 = Convert.ToInt32(forecastsy1p3.Text);
-
             vs.sb_Prognose1P1 = Convert.ToInt32(forecastsy2p1.Text);
             vs.sb_Prognose1P2 = Convert.ToInt32(forecastsy2p2.Text);
             vs.sb_Prognose1P3 = Convert.ToInt32(forecastsy2p3.Text);
-
             vs.sb_Prognose2P1 = Convert.ToInt32(forecastsy3p1.Text);
             vs.sb_Prognose2P2 = Convert.ToInt32(forecastsy3p2.Text);
             vs.sb_Prognose2P3 = Convert.ToInt32(forecastsy3p3.Text);
-
             vs.sb_Prognose3P1 = Convert.ToInt32(forecastsy4p1.Text);
             vs.sb_Prognose3P2 = Convert.ToInt32(forecastsy4p2.Text);
             vs.sb_Prognose3P3 = Convert.ToInt32(forecastsy4p3.Text);
-
             vs.sicherheitsFaktor = Convert.ToInt32(Sicherheitsfaktor.Text);
-
-
             Ui.EnableNextTab(Kapaplanungtab, MainTabControl);
             Ui.EnableNextTab(Einkauftab, MainTabControl, false);
             Ui.EnableNextTab(Produktionsplanungtab, MainTabControl, false);

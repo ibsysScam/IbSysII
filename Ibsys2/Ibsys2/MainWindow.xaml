@@ -8,7 +8,7 @@
         mc:Ignorable="d"
         Title="IBSYS Tool Gruppe 1" 
         ResizeMode="NoResize" 
-        Height="720" Width="1280"  
+        Height="720" 
         AllowDrop="True" 
          >
 
@@ -18,39 +18,41 @@
             <Setter Property="Foreground" Value="White"/>
             <Setter Property="FontWeight" Value="Bold"/>
         </Style>
-        <Style TargetType="TabItem">
+        <!--<Style TargetType="TabItem">
             <Setter Property="Background" Value="#486b00"/>
-        </Style>
+        </Style>-->
         <Style TargetType="Label">
             <Setter Property="Foreground" Value="White"/>
             <Setter Property="FontWeight" Value="Bold"/>
         </Style>
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="#2e4600"/>
+            <Setter Property="Foreground" Value="#a2c523"/>
+            <Setter Property="BorderBrush" Value="White"/>
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="Width" Value="90"/>
+        </Style>
     </Window.Resources>
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="93*"/>
-            <ColumnDefinition Width="34*"/>
-        </Grid.ColumnDefinitions>
 
-        <TabControl x:Name="MainTabControl" HorizontalAlignment="Left" Height="672" VerticalAlignment="Top" Width="1274" SelectedIndex="0" SelectionChanged="MainTabControl_SelectionChanged" Grid.ColumnSpan="2">
-            <TabItem x:Name="Maintab" Header="Import" TabIndex="0" >
-                <Grid Background="#a2c523">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="995*"/>
-                        <ColumnDefinition Width="273*"/>
-                    </Grid.ColumnDefinitions>
-                    <Button x:Name="choosefile" Content="Browse" HorizontalAlignment="Left" Margin="10,52,0,0" VerticalAlignment="Top" Width="75" Click="Choosefile_Click" ToolTip="Drag and Drop your XML File instead of choosing it here!"/>
-                    <TextBox x:Name="Pathtextbox" MaxLines="1" HorizontalAlignment="Left" Height="23" Margin="10,77,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="286" TabIndex="0" ToolTip="Drag Dop your XML File here!" />
-                    <Button x:Name="clear" Content="Clear all" HorizontalAlignment="Left" Margin="221,52,0,0" VerticalAlignment="Top" Width="75" Click="Clear_Click" RenderTransformOrigin="0.587,3.75"/>
-                    <Button x:Name="MainpageNextButton" Content="Next" HorizontalAlignment="Left" Margin="221,105,0,0" VerticalAlignment="Top" Width="75" Click="MainpageNextButton_Click"/>
-                </Grid>
-            </TabItem>
+        <TabControl x:Name="MainTabControl" HorizontalAlignment="Left" Height="672" VerticalAlignment="Top" SelectedIndex="0" SelectionChanged="MainTabControl_SelectionChanged" >
             <TabItem x:Name="Prognosentab" Header="Vertrieb" IsEnabled="False" TabIndex="1">
                 <Grid Background="#a2c523">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="237*"/>
-                        <ColumnDefinition Width="397*"/>
+                        <ColumnDefinition Width="3*"/>
+                        <ColumnDefinition Width="3*"/>
                     </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="3*"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0" Grid.ColumnSpan="2" HorizontalAlignment="Center">
+                        <Button x:Name="choosefile" Content="Browse" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top"  Click="Choosefile_Click" ToolTip="Drag and Drop your XML File instead of choosing it here!"/>
+                        <TextBox x:Name="Pathtextbox" MaxLines="1" HorizontalAlignment="Left" Height="23" Margin="0,50,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="286" TabIndex="0" ToolTip="Drag Dop your XML File here!" />
+                        <Button x:Name="clear" Content="Clear all" HorizontalAlignment="Left" Margin="200,10,0,0" VerticalAlignment="Top" Click="Clear_Click" RenderTransformOrigin="0.587,3.75"/>
+                        <Button x:Name="MainpageNextButton" Content="Next" HorizontalAlignment="Left" Margin="0,80,0,0" VerticalAlignment="Top" Click="MainpageNextButton_Click"/>
+                    </Grid>
+                    <Grid Grid.Row="1">
                     <Label x:Name="VertriebPeriode" Content="Periode" HorizontalAlignment="Left" Margin="110,110,0,0" VerticalAlignment="Top" Height="23" Width="120"/>
                     <Label x:Name="VertriebSumme" Content="Summe&#xD;&#xA;" HorizontalAlignment="Left" Margin="110,226,0,0" VerticalAlignment="Top" Height="24" Width="120"/>
                     <TextBox HorizontalAlignment="Left" Height="23" Margin="234,142,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
@@ -82,7 +84,7 @@
                     <Label x:Name="VertriebKind" Content="Kinder P1" HorizontalAlignment="Left" Margin="110,142,0,0" VerticalAlignment="Top"/>
                     <Label x:Name="VertriebDame" Content="Damen P2" HorizontalAlignment="Left" Margin="110,170,0,0" VerticalAlignment="Top"/>
                     <Label x:Name="VertriebHerren" Content="Herren P3" HorizontalAlignment="Left" Margin="110,198,0,0" VerticalAlignment="Top"/>
-
+                    </Grid>
                 </Grid>
             </TabItem>
             <TabItem x:Name="Direktverkauftab" Header="Direktverkauf" IsEnabled="False" TabIndex="2">
