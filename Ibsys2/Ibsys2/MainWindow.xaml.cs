@@ -152,18 +152,11 @@ namespace Ibsys2
                 }
             }
 
-
-            MainpageNextButton.Content = TranslateService.Class.GetTranslation("NEXT");
+            
             clear.Content = TranslateService.Class.GetTranslation("CLEAR");
             choosefile.Content = TranslateService.Class.GetTranslation("CHOOSEFILE");
             calculatebutton.Content = TranslateService.Class.GetTranslation("COUNT");
-            Programm.Header = TranslateService.Class.GetTranslation("PROGRAM");
-            Helpmenuitem.Header = TranslateService.Class.GetTranslation("HELP");
-            Closemenuitem.Header = TranslateService.Class.GetTranslation("CLOSE");
-            Settingsmenuheader.Header = TranslateService.Class.GetTranslation("SETTINGS");
-            Maintab.Header = TranslateService.Class.GetTranslation("IMPORT");
             Prognosentab.Header = TranslateService.Class.GetTranslation("DISTRIBUTION");
-            VertriebPeriode.Content = TranslateService.Class.GetTranslation("PERIODE");
             VertriebSumme.Content = TranslateService.Class.GetTranslation("TOTAL");
             VertriebKind.Content = TranslateService.Class.GetTranslation("CHILDREN_BICYCLE");
             VertriebDame.Content = TranslateService.Class.GetTranslation("LADY_BICYCLE");
@@ -796,9 +789,6 @@ namespace Ibsys2
 
         private void Calculatebutton_Click(object sender, RoutedEventArgs e)
         {
-
-
-
             try
             {
                 if (Sicherheitsfaktor.Text == "")
@@ -822,22 +812,16 @@ namespace Ibsys2
             vs.sicherheitsbestandP1 = Convert.ToInt32(forecastsy1p1.Text);
             vs.sicherheitsbestandP2 = Convert.ToInt32(forecastsy1p2.Text);
             vs.sicherheitsbestandP3 = Convert.ToInt32(forecastsy1p3.Text);
-
             vs.sb_Prognose1P1 = Convert.ToInt32(forecastsy2p1.Text);
             vs.sb_Prognose1P2 = Convert.ToInt32(forecastsy2p2.Text);
             vs.sb_Prognose1P3 = Convert.ToInt32(forecastsy2p3.Text);
-
             vs.sb_Prognose2P1 = Convert.ToInt32(forecastsy3p1.Text);
             vs.sb_Prognose2P2 = Convert.ToInt32(forecastsy3p2.Text);
             vs.sb_Prognose2P3 = Convert.ToInt32(forecastsy3p3.Text);
-
             vs.sb_Prognose3P1 = Convert.ToInt32(forecastsy4p1.Text);
             vs.sb_Prognose3P2 = Convert.ToInt32(forecastsy4p2.Text);
             vs.sb_Prognose3P3 = Convert.ToInt32(forecastsy4p3.Text);
-
             vs.sicherheitsFaktor = Convert.ToInt32(Sicherheitsfaktor.Text);
-
-
             Ui.EnableNextTab(Kapaplanungtab, MainTabControl);
             Ui.EnableNextTab(Einkauftab, MainTabControl, false);
             Ui.EnableNextTab(Produktionsplanungtab, MainTabControl, false);
@@ -1244,7 +1228,18 @@ namespace Ibsys2
 
         private void PrognosenNextbutton_Click(object sender, RoutedEventArgs e)
         {
-
+            if (String.IsNullOrEmpty(Pathtextbox.Text))
+            {
+                MessageBox.Show(TranslateService.Class.GetTranslation("XML_ERROR"));
+                return;
+            }
+            ReadXML readxml = new ReadXML();
+            bool wellformed = readxml.ReadFile(Pathtextbox.Text);
+            if (!wellformed)
+            {
+                MessageBox.Show(TranslateService.Class.GetTranslation("XML_MALFORMED"));
+                return;
+            }
             Int32 maxValue = 1050;
             try
             {
@@ -1336,12 +1331,6 @@ namespace Ibsys2
                 return;
             }
             Ui.EnableNextTab(Prognosentab, MainTabControl);
-        }
-
-        private void MainpageNextButton_Click(object sender, RoutedEventArgs e)
-        {
-            checkMalformedXML();
-            xmlexportpath = Pathtextbox.Text.Substring(0, Pathtextbox.Text.LastIndexOf(@"\"));
         }
 
 
@@ -1563,7 +1552,7 @@ namespace Ibsys2
                 {
                     StreamWriter sw = new StreamWriter(xmlexportpath);
                     sw.Write(xmlfile);
-                    MessageBox.Show(TranslateService.Class.GetTranslation("Output-XML wurde erfolgreich erstellt. Es befindet sich an folgendem Ort: " + xmlexportpath));
+                    MessageBox.Show("Output-XML wurde erfolgreich erstellt. Es befindet sich an folgendem Ort: " + xmlexportpath);
                     sw.Close();
                     Process.Start(xmlexportpath);
                 }
@@ -1574,7 +1563,7 @@ namespace Ibsys2
 
             catch (Exception ex)
             {
-                MessageBox.Show(TranslateService.Class.GetTranslation("XMLEXPORT_NO_SUCCESS"));
+                MessageBox.Show("XML-Export war nicht erflogreich: " + ex.Message);
                 return;
             }
         }
