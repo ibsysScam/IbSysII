@@ -40,7 +40,7 @@
     <Grid>
 
         <TabControl x:Name="MainTabControl" SelectedIndex="0" SelectionChanged="MainTabControl_SelectionChanged" >
-            <TabItem x:Name="Prognosentab" Header="Vertrieb" IsEnabled="False" TabIndex="1">
+            <TabItem x:Name="Prognosentab" Header="Vertrieb" TabIndex="0">
                 <Grid Background="#a2c523">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="1*"/>

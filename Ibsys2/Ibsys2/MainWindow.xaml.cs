@@ -452,6 +452,8 @@ namespace Ibsys2
             dataGrid31.ItemsSource = CreateEinkauf1();
             dataGrid32.ItemsSource = CreateLagerbestand();
             prio.ItemsSource = CreatePrio1();
+
+            MainTabControl.TabIndex = 0;
         }
 
 
