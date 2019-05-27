@@ -1351,5 +1351,26 @@
             </TabItem>
 
         </TabControl>
+        <StackPanel
+            HorizontalAlignment="Right"
+            VerticalAlignment="Top"
+            Orientation="Horizontal">
+        <Button
+            x:Name="btnGermanLanguage"
+            Content="DE"
+            Background="Transparent"
+            BorderBrush="Transparent"
+            Height="20"
+            Margin="3"
+            Width="25" Click="btnGermanLanguage_Click"/>
+            <Button
+            x:Name="btnEnglishLanguage"
+            Content="EN"
+            Background="Transparent"
+            BorderBrush="Transparent"
+            Height="20"
+            Margin="3"
+            Width="25" RenderTransformOrigin="0.5,0.51" Click="btnEnglishLanguage_Click"/>
+        </StackPanel>
     </Grid>
 </Window>

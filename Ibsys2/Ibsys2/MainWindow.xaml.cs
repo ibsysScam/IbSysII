@@ -1,21 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using System.IO;
 using Ibsys2.Pages;
 using Ibsys2.Service;
-using Ibsys2.Pages.Wiki;
 using Ibsys2.Static.Input;
 using Ibsys2.Static.Output;
 using System.Text.RegularExpressions;
@@ -25,8 +14,7 @@ using System.Collections.ObjectModel;
 using Microsoft.WindowsAPICodePack.Shell;
 using Ibsys2.Berechnungen.Logic;
 using System.Diagnostics;
-using Ibsys2.Pages.About;
-
+using System.Threading;
 
 namespace Ibsys2
 {
@@ -742,20 +730,6 @@ namespace Ibsys2
             }
             return ret;
         }
-
-        //private void Window_DragEnter(object sender, DragEventArgs e)
-        //{
-        //    Console.WriteLine("OnDragEnter");
-        //    bool validData = GetFilename(out string filename, e);
-        //    Console.WriteLine(validData.ToString());
-        //    if (!validData)
-        //    {
-        //        MessageBox.Show(TranslateService.Class.GetTranslation("XML_ERROR"), "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-        //        return;
-        //    }
-
-        //    Pathtextbox.Text = filename;
-        //}
 
 
         private void Clear_Click(object sender, RoutedEventArgs e)
@@ -1694,9 +1668,35 @@ namespace Ibsys2
             prioAddItem.Text = "";
         }
 
-        private void openFinderButton_Click(object sender, RoutedEventArgs e)
+        private void btnGermanLanguage_Click(object sender, RoutedEventArgs e)
         {
+            changeLanguage("Deutsch");
+        }
 
+        private void btnEnglishLanguage_Click(object sender, RoutedEventArgs e)
+        {
+            changeLanguage("English");
+        }
+
+        private void changeLanguage(string lang)
+        {
+            TranslateService.Class.PrimaryLanguage = lang;
+            Thread.Sleep(100);
+            SettingsService.Class.SaveSettings();
+            MessageBoxResult result = MessageBox.Show(TranslateService.Class.GetTranslation("SETTINGS_SAVED"), "Settings", MessageBoxButton.YesNo, MessageBoxImage.Asterisk);
+
+            if (result == MessageBoxResult.Yes)
+            {
+                try
+                {
+                    System.Diagnostics.Process P = new System.Diagnostics.Process();
+                    P.StartInfo.FileName = System.Reflection.Assembly.GetExecutingAssembly().Location;
+                    P.Start();
+                }
+                catch { }
+                Environment.Exit(21);
+            }
+            this.Close();
         }
     }
 }
