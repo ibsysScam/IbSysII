@@ -1304,13 +1304,7 @@
                     <Label x:Name="prioAddAmountDescription" Content="Anzahl:" HorizontalAlignment="Left" Margin="274,309,0,0" VerticalAlignment="Top" RenderTransformOrigin="2.02,-5.231"/>
                 </Grid>
             </TabItem>
-            <TabItem x:Name="Exporttab" Header="Export" IsEnabled="False" TabIndex="8">
-                <Grid Background="#a2c523">
-                    <Button 
-                        x:Name="xmlexportbutton" Content="XML Export" HorizontalAlignment="Left" Margin="131,132,0,0" VerticalAlignment="Top" Width="75" Click="xmlexportbutton_Click" />
-                </Grid>
-            </TabItem>
-            
+
             <TabItem x:Name="Direktverkauftab" Visibility ="Hidden" Header="Direktverkauf" IsEnabled="False" TabIndex="2" RenderTransformOrigin="5.706,0.495" HorizontalAlignment="Left" Width="87" >
                 <Grid Background="#a2c523" Margin="10,0,10,0">
                     <Grid.ColumnDefinitions>
@@ -1351,6 +1345,7 @@
             </TabItem>
 
         </TabControl>
+        <Button x:Name="xmlexportbutton" Content="XML Export" HorizontalAlignment="Right" BorderBrush="Transparent" Margin="0,0,170,0" VerticalAlignment="Top" Background="Transparent" Click="xmlexportbutton_Click" />
         <StackPanel
             HorizontalAlignment="Right"
             VerticalAlignment="Top"
