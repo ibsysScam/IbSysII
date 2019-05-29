@@ -15,7 +15,7 @@ namespace Ibsys2.Service {
 
         private static void Translate() {
             _translate.Add("HELLO", "Hallo");
-            _translate.Add("SETTINGS_SAVED", "Einstellungen gespeichert! Möchten Sie das Programm neustarten? Ohne Neustart kann es zu Problemen bei der Übersetzung kommen!");
+            _translate.Add("SETTINGS_SAVED", "Die Sprache wurde erfolgreich geändert! Möchten Sie das Programm neu starten?");
             _translate.Add("SETTINGS", "Einstellungen");
             _translate.Add("XML_ERROR", "Das ist keine XML Datei!");
             _translate.Add("ONLY_INT_ERROR", "Bitte benutze nur Ganzzahlen!");

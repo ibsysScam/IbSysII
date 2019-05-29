@@ -132,28 +132,27 @@
                         <RowDefinition Height="1*"/>
                         <RowDefinition Height="1*"/>
                     </Grid.RowDefinitions>
-                    <Label x:Name="SicherPeriode" Content="Periode" Grid.Row="0" Grid.Column="0"/>
-                    <Label x:Name="SicherKind" Content="Kinder P1" Grid.Row="1" Grid.Column="0"/>
-                    <Label x:Name="SicherDame" Content="Damen P2" Grid.Row="2" Grid.Column="0"/>
-                    <Label x:Name="SicherHerren" Content="Herren P3" Grid.Row="3" Grid.Column="0"/>
-                    <Label x:Name="SicherSumme" Content="Summe" Grid.Row="4" Grid.Column="0"/>
-                    <Label x:Name="sicherheitsvarperiod1" Content="varperiod1" Grid.Row="0" Grid.Column="1"/>
+                    <Label x:Name="SicherKind" Content="Kinder P1" VerticalAlignment="Center" HorizontalAlignment="Right" Grid.Row="1" Grid.Column="0"/>
+                    <Label x:Name="SicherDame" Content="Damen P2" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Right" Grid.Column="0"/>
+                    <Label x:Name="SicherHerren" Content="Herren P3" VerticalAlignment="Center" HorizontalAlignment="Right" Grid.Row="3" Grid.Column="0"/>
+                    <Label x:Name="SicherSumme" Content="Summe" VerticalAlignment="Center" HorizontalAlignment="Right" Grid.Row="4" Grid.Column="0"/>
+                    <Label x:Name="sicherheitsvarperiod1" Content="varperiod1" HorizontalAlignment="Center" VerticalAlignment="Bottom" Grid.Row="0" Grid.Column="1"/>
                     <TextBox x:Name="forecastsy1p1" Grid.Row="1" Grid.Column="1" TextWrapping="Wrap" Text="100" TabIndex="4" TextChanged="Forecast_TextChanged" PreviewTextInput="NumberIntValidationTextBox"/>
                     <TextBox x:Name="forecastsy1p2" Grid.Row="2" Grid.Column="1" TextWrapping="Wrap" Text="100" TabIndex="5"  TextChanged="Forecast_TextChanged" PreviewTextInput="NumberIntValidationTextBox"/>
                     <TextBox x:Name="forecastsy1p3" Grid.Row="3" Grid.Column="1" TextWrapping="Wrap" Text="100" TabIndex="6"  TextChanged="Forecast_TextChanged" PreviewTextInput="NumberIntValidationTextBox"/>
                     <TextBox x:Name="sumy1" Grid.Row="4" Grid.Column="1" TextWrapping="Wrap" Text="300" IsEnabled="False"/>
 
-                    <Label x:Name="sicherheitsvarperiod2" Content="varperiod2" Grid.Row="0" Grid.Column="2"/>
+                    <Label x:Name="sicherheitsvarperiod2" Content="varperiod2" HorizontalAlignment="Center" VerticalAlignment="Bottom" Grid.Row="0" Grid.Column="2"/>
                     <TextBox x:Name="forecastsy2p1" Grid.Row="1" Grid.Column="2" TextWrapping="Wrap" Text="100" TabIndex="7"  TextChanged="Forecast_TextChanged" PreviewTextInput="NumberIntValidationTextBox"/>
                     <TextBox x:Name="forecastsy2p2" Grid.Row="2" Grid.Column="2" TextWrapping="Wrap" Text="100" TabIndex="8"  TextChanged="Forecast_TextChanged" PreviewTextInput="NumberIntValidationTextBox"/>
                     <TextBox x:Name="forecastsy2p3" Grid.Row="3" Grid.Column="2" TextWrapping="Wrap" Text="100" TabIndex="9"  TextChanged="Forecast_TextChanged"  PreviewTextInput="NumberIntValidationTextBox"/>
-                    <TextBox x:Name="sumy2" Grid.Row="4" Grid.Column="2" TextWrapping="Wrap" Text="300" IsEnabled="False"/>
-                    <Label x:Name="sicherheitsvarperiod3" Content="varperiod3" Grid.Row="0" Grid.Column="3"/>
+                    <TextBox x:Name="sumy2" Grid.Row="4" Grid.Column="2" TextWrapping="Wrap"  Text="300" IsEnabled="False"/>
+                    <Label x:Name="sicherheitsvarperiod3" Content="varperiod3" VerticalAlignment="Bottom" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="3"/>
                     <TextBox x:Name="forecastsy3p1" Grid.Row="1" Grid.Column="3" TextWrapping="Wrap" Text="100" TabIndex="10"  TextChanged="Forecast_TextChanged" PreviewTextInput="NumberIntValidationTextBox"/>
                     <TextBox x:Name="forecastsy3p2" Grid.Row="2" Grid.Column="3" TextWrapping="Wrap" Text="100" TabIndex="11"  TextChanged="Forecast_TextChanged" PreviewTextInput="NumberIntValidationTextBox"/>
                     <TextBox x:Name="forecastsy3p3" Grid.Row="3" Grid.Column="3" TextWrapping="Wrap" Text="100" TabIndex="12"  TextChanged="Forecast_TextChanged" PreviewTextInput="NumberIntValidationTextBox"/>
                     <TextBox x:Name="sumy3" Grid.Row="4" Grid.Column="3" TextWrapping="Wrap" Text="300" IsEnabled="False" />
-                    <Label x:Name="sicherheitsvarperiod4" Content="varperiod4" Grid.Row="0" Grid.Column="4" />
+                    <Label x:Name="sicherheitsvarperiod4" Content="varperiod4" VerticalAlignment="Bottom" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="4" />
                     <TextBox x:Name="forecastsy4p1" Grid.Row="1" Grid.Column="4" TextWrapping="Wrap" TabIndex="13" Text="100"  TextChanged="Forecast_TextChanged" PreviewTextInput="NumberIntValidationTextBox"/>
                     <TextBox x:Name="forecastsy4p2" Grid.Row="2" Grid.Column="4" TextWrapping="Wrap" TabIndex="14" Text="100"  TextChanged="Forecast_TextChanged" PreviewTextInput="NumberIntValidationTextBox"/>
                     <TextBox x:Name="forecastsy4p3" Grid.Row="3" Grid.Column="4" TextWrapping="Wrap" TabIndex="15" Text="100"  TextChanged="Forecast_TextChanged" PreviewTextInput="NumberIntValidationTextBox"/>
@@ -1301,8 +1300,7 @@
                         </DataGrid>
                         <Button Content="up" Height="23" HorizontalAlignment="Left" Margin="628,50,0,0" x:Name="up" VerticalAlignment="Top" Width="75" Click="up_Click" />
                         <Button Content="down" Height="23" HorizontalAlignment="Left" Margin="628,90,0,0" x:Name="down" VerticalAlignment="Top" Width="75" Click="down_Click"  />
-                        <Button Content="delete" Height="23" HorizontalAlignment="Left" Margin="628,170,0,0" x:Name="delete" VerticalAlignment="Top" Width="75" Click="delete_Click"  />
-                        <Button Content="add" Height="23" HorizontalAlignment="Left" Margin="628,340,0,0" x:Name="add" VerticalAlignment="Top" Width="75" Click="add_Click"  />
+                    <Button Content="delete" Height="23" HorizontalAlignment="Left" Margin="628,170,0,0" x:Name="delete" VerticalAlignment="Top" Width="75" Click="delete_Click"  />
                     <Button Content="split" Height="23" HorizontalAlignment="Left" x:Name="split" Margin="628,130,0,0" VerticalAlignment="Top" Width="75" Click="split_Click"  />
                     <StackPanel
                         Visibility="Hidden" VerticalAlignment="Bottom" HorizontalAlignment="Left">
@@ -1310,6 +1308,7 @@
                         <TextBox x:Name="prioAddItem" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TabIndex="4" TextChanged="Forecast1_TextChanged" PreviewTextInput="NumberIntValidationTextBox" />
                         <Label x:Name="prioAddAmountDescription" Content="Anzahl:" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="2.02,-5.231"/>
                         <TextBox x:Name="prioAddAmount" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TabIndex="4" TextChanged="Forecast1_TextChanged" PreviewTextInput="NumberIntValidationTextBox" />
+                        <Button Content="add" Height="23" HorizontalAlignment="Left" Margin="628,340,0,0" x:Name="add" VerticalAlignment="Top" Width="75" Click="add_Click"  />
                     </StackPanel>
                 </Grid>
                 </TabItem>

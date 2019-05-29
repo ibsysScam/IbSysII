@@ -161,7 +161,6 @@ namespace Ibsys2
             contractpenalty.Content = TranslateService.Class.GetTranslation("CONTRACTPENALTY");
             retailprice.Content = TranslateService.Class.GetTranslation("RETAILPRICE");
             sicherheitsbestandtab.Header = TranslateService.Class.GetTranslation("SAFETY_STOCK");
-            SicherPeriode.Content = TranslateService.Class.GetTranslation("PERIODE");
             SicherSumme.Content = TranslateService.Class.GetTranslation("TOTAL");
             SicherKind.Content = TranslateService.Class.GetTranslation("CHILDREN_BICYCLE");
             SicherDame.Content = TranslateService.Class.GetTranslation("LADY_BICYCLE");
