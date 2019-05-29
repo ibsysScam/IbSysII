@@ -30,6 +30,12 @@
             <Setter Property="HorizontalContentAlignment" Value="Center"/>
             <Setter Property="VerticalContentAlignment" Value="Center"/>
         </Style>
+        <Style TargetType="DataGrid">
+            <Setter Property="Background" Value="#486b00"/>
+        </Style>
+        <Style TargetType="{x:Type TabItem}">
+            <Setter Property="Background" Value="#486b00"/>
+        </Style>
         <Style TargetType="Button">
             <Setter Property="Background" Value="#2e4600"/>
             <Setter Property="Foreground" Value="#a2c523"/>
@@ -1297,12 +1303,15 @@
                         <Button Content="down" Height="23" HorizontalAlignment="Left" Margin="628,90,0,0" x:Name="down" VerticalAlignment="Top" Width="75" Click="down_Click"  />
                         <Button Content="delete" Height="23" HorizontalAlignment="Left" Margin="628,170,0,0" x:Name="delete" VerticalAlignment="Top" Width="75" Click="delete_Click"  />
                         <Button Content="add" Height="23" HorizontalAlignment="Left" Margin="628,340,0,0" x:Name="add" VerticalAlignment="Top" Width="75" Click="add_Click"  />
-                        <Button Content="split" Height="23" HorizontalAlignment="Left" Margin="628,130,0,0" x:Name="split" VerticalAlignment="Top" Width="75" Click="split_Click"  />
-                        <TextBox x:Name="prioAddItem" HorizontalAlignment="Left" Height="23" Margin="93,340,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TabIndex="4" TextChanged="Forecast1_TextChanged" PreviewTextInput="NumberIntValidationTextBox" />
-                        <TextBox x:Name="prioAddAmount" HorizontalAlignment="Left" Height="23" Margin="274,340,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TabIndex="4" TextChanged="Forecast1_TextChanged" PreviewTextInput="NumberIntValidationTextBox" />
-                        <Label x:Name="prioAddItemDescription" Content="Item:" HorizontalAlignment="Left" Margin="93,309,0,0" VerticalAlignment="Top" RenderTransformOrigin="2.02,-5.231"/>
-                        <Label x:Name="prioAddAmountDescription" Content="Anzahl:" HorizontalAlignment="Left" Margin="274,309,0,0" VerticalAlignment="Top" RenderTransformOrigin="2.02,-5.231"/>
-                    </Grid>
+                    <Button Content="split" Height="23" HorizontalAlignment="Left" x:Name="split" Margin="628,130,0,0" VerticalAlignment="Top" Width="75" Click="split_Click"  />
+                    <StackPanel
+                        Visibility="Hidden" VerticalAlignment="Bottom" HorizontalAlignment="Left">
+                        <Label x:Name="prioAddItemDescription" Content="Item:" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="2.02,-5.231"/>
+                        <TextBox x:Name="prioAddItem" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TabIndex="4" TextChanged="Forecast1_TextChanged" PreviewTextInput="NumberIntValidationTextBox" />
+                        <Label x:Name="prioAddAmountDescription" Content="Anzahl:" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="2.02,-5.231"/>
+                        <TextBox x:Name="prioAddAmount" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TabIndex="4" TextChanged="Forecast1_TextChanged" PreviewTextInput="NumberIntValidationTextBox" />
+                    </StackPanel>
+                </Grid>
                 </TabItem>
                 <TabItem x:Name="Direktverkauftab" Visibility ="Hidden" Header="Direktverkauf" IsEnabled="False" TabIndex="2" RenderTransformOrigin="5.706,0.495" HorizontalAlignment="Left" Width="87" >
                     <Grid Background="#a2c523" Margin="10,0,10,0">
