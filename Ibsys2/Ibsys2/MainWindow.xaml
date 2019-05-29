@@ -9,6 +9,7 @@
         Title="Supply Chain Simulator - Tool Gruppe 1" 
         ResizeMode="NoResize" 
         AllowDrop="True" 
+        Width="1200"
          >
 
     <Window.Resources>
