@@ -59,7 +59,7 @@ namespace Ibsys2
                 foreach (string xmlFilePath in Directory.GetFiles(folder, "resultServlet.xml"))
                 {
 
-                    Pathtextbox.Text = xmlFilePath;
+                    Pathtextbox.Content = xmlFilePath;
                     xmlexportpath = xmlFilePath;
                     checkMalformedXML();
                     found = true;
@@ -75,7 +75,7 @@ namespace Ibsys2
                 foreach (string xmlFilePath in Directory.GetFiles(folder, "resultServlet.xml"))
                 {
 
-                    Pathtextbox.Text = xmlFilePath;
+                    Pathtextbox.Content = xmlFilePath;
                     checkMalformedXML();
                     xmlexportpath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
                     found = true;
@@ -89,7 +89,7 @@ namespace Ibsys2
                 foreach (string xmlFilePath in Directory.GetFiles(folder, "resultServlet.xml"))
                 {
 
-                    Pathtextbox.Text = xmlFilePath;
+                    Pathtextbox.Content = xmlFilePath;
                     checkMalformedXML();
                     xmlexportpath = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
                     found = true;
@@ -103,7 +103,7 @@ namespace Ibsys2
                 foreach (string xmlFilePath in Directory.GetFiles(folder, "resultServlet.xml"))
                 {
 
-                    Pathtextbox.Text = xmlFilePath;
+                    Pathtextbox.Content = xmlFilePath;
                     checkMalformedXML();
                     xmlexportpath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
                     found = true;
@@ -118,7 +118,7 @@ namespace Ibsys2
                 foreach (string xmlFilePath in Directory.GetFiles(folder, "resultServlet.xml"))
                 {
 
-                    Pathtextbox.Text = xmlFilePath;
+                    Pathtextbox.Content = xmlFilePath;
                     checkMalformedXML();
                     xmlexportpath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
                     found = true;
@@ -132,7 +132,7 @@ namespace Ibsys2
                 foreach (string xmlFilePath in Directory.GetFiles(folder, "resultServlet.xml"))
                 {
 
-                    Pathtextbox.Text = xmlFilePath;
+                    Pathtextbox.Content = xmlFilePath;
                     checkMalformedXML();
                     xmlexportpath = KnownFolders.Downloads.Path;
                     found = true;
@@ -452,7 +452,7 @@ namespace Ibsys2
             dataGrid32.ItemsSource = CreateLagerbestand();
             prio.ItemsSource = CreatePrio1();
 
-            MainTabControl.TabIndex = 0;
+            MainTabControl.SelectedIndex = 0;
         }
 
 
@@ -716,7 +716,7 @@ namespace Ibsys2
                     }
                     return;
                 }
-                Pathtextbox.Text = dialogDateipfad.FileName;
+                Pathtextbox.Content = dialogDateipfad.FileName;
             }
         }
 
@@ -747,7 +747,7 @@ namespace Ibsys2
 
         private void Clear_Click(object sender, RoutedEventArgs e)
         {
-            Pathtextbox.Text = "";
+            Pathtextbox.Content = "";
         }
 
 
@@ -1215,13 +1215,13 @@ namespace Ibsys2
 
         private void PrognosenNextbutton_Click(object sender, RoutedEventArgs e)
         {
-            if (String.IsNullOrEmpty(Pathtextbox.Text))
+            if (String.IsNullOrEmpty(Pathtextbox.Content.ToString()))
             {
                 MessageBox.Show(TranslateService.Class.GetTranslation("XML_ERROR"));
                 return;
             }
             ReadXML readxml = new ReadXML();
-            bool wellformed = readxml.ReadFile(Pathtextbox.Text);
+            bool wellformed = readxml.ReadFile(Pathtextbox.Content.ToString());
             if (!wellformed)
             {
                 MessageBox.Show(TranslateService.Class.GetTranslation("XML_MALFORMED"));
@@ -1305,13 +1305,13 @@ namespace Ibsys2
         public void checkMalformedXML()
         {
 
-            if (String.IsNullOrEmpty(Pathtextbox.Text))
+            if (String.IsNullOrEmpty(Pathtextbox.Content.ToString()))
             {
                 MessageBox.Show(TranslateService.Class.GetTranslation("XML_ERROR"));
                 return;
             }
             ReadXML readxml = new ReadXML();
-            bool wellformed = readxml.ReadFile(Pathtextbox.Text);
+            bool wellformed = readxml.ReadFile(Pathtextbox.Content.ToString());
             if (!wellformed)
             {
                 MessageBox.Show(TranslateService.Class.GetTranslation("XML_MALFORMED"));
