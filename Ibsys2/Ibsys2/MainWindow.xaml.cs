@@ -25,7 +25,7 @@ using System.Collections.ObjectModel;
 using Microsoft.WindowsAPICodePack.Shell;
 using Ibsys2.Berechnungen.Logic;
 using System.Diagnostics;
-using Ibsys2.Pages.About;
+
 
 
 namespace Ibsys2

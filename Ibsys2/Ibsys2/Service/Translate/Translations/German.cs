@@ -181,7 +181,6 @@ namespace Ibsys2.Service {
             _translate.Add("PROGRAM","Programm");
             _translate.Add("HELP", "Hilfe");
             _translate.Add("CLOSE", "Schließen");
-            _translate.Add("ABOUT", "Über");
             _translate.Add("OVERTIMEPERDAY", "Überstunden pro Tag");
             _translate.Add("IMPORT", "Import");
             _translate.Add("DISTRIBUTION", "Vertrieb");
