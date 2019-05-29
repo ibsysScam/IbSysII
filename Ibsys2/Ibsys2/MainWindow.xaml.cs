@@ -703,6 +703,18 @@ namespace Ibsys2
                 if (!dialogDateipfad.FileName.Contains(".xml"))
                 {
                     MessageBox.Show(TranslateService.Class.GetTranslation("XML_ERROR"), "XML Input", MessageBoxButton.OK, MessageBoxImage.Error);
+                    try
+                    {
+                        prognosevarperiod1.Content = Static.Static.lastperiod + 1;
+                        prognosevarperiod2.Content = Static.Static.lastperiod + 2;
+                        prognosevarperiod3.Content = Static.Static.lastperiod + 3;
+                        prognosevarperiod4.Content = Static.Static.lastperiod + 4;
+                    }
+                    catch
+                    {
+                        MessageBox.Show(TranslateService.Class.GetTranslation("ERROR"));
+                        return;
+                    }
                     return;
                 }
                 Pathtextbox.Text = dialogDateipfad.FileName;
@@ -803,7 +815,7 @@ namespace Ibsys2
             Ui.EnableNextTab(Produktionsplanungtab, MainTabControl, false);
             Ui.EnableNextTab(Priorisierungtab, MainTabControl, false);
             //Ui.EnableNextTab(Chartstab, MainTabControl, false);
-            Ui.EnableNextTab(Exporttab, MainTabControl, false);
+            //Ui.EnableNextTab(Exporttab, MainTabControl, false);
             //Check atuotmatic Import
             if(found == true)
             {

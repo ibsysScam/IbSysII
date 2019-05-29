@@ -38,7 +38,6 @@
         </Style>
     </Window.Resources>
     <Grid>
-
         <TabControl x:Name="MainTabControl" SelectedIndex="0" SelectionChanged="MainTabControl_SelectionChanged" >
             <TabItem x:Name="Prognosentab" Header="Vertrieb" TabIndex="0">
                 <Grid Background="#a2c523">
@@ -126,11 +125,11 @@
                         <RowDefinition Height="1*"/>
                         <RowDefinition Height="1*"/>
                     </Grid.RowDefinitions>
-                    <Label x:Name="SicherPeriode" Content="Periode" Grid.Row="1" Grid.Column="0"/>
-                    <Label x:Name="SicherKind" Content="Kinder P1" Grid.Row="2" Grid.Column="0"/>
-                    <Label x:Name="SicherDame" Content="Damen P2" Grid.Row="3" Grid.Column="0"/>
-                    <Label x:Name="SicherHerren" Content="Herren P3" Grid.Row="4" Grid.Column="0"/>
-                    <Label x:Name="SicherSumme" Content="Summe" Grid.Row="5" Grid.Column="0"/>
+                    <Label x:Name="SicherPeriode" Content="Periode" Grid.Row="0" Grid.Column="0"/>
+                    <Label x:Name="SicherKind" Content="Kinder P1" Grid.Row="1" Grid.Column="0"/>
+                    <Label x:Name="SicherDame" Content="Damen P2" Grid.Row="2" Grid.Column="0"/>
+                    <Label x:Name="SicherHerren" Content="Herren P3" Grid.Row="3" Grid.Column="0"/>
+                    <Label x:Name="SicherSumme" Content="Summe" Grid.Row="4" Grid.Column="0"/>
                     <Label x:Name="sicherheitsvarperiod1" Content="varperiod1" Grid.Row="0" Grid.Column="1"/>
                     <TextBox x:Name="forecastsy1p1" Grid.Row="1" Grid.Column="1" TextWrapping="Wrap" Text="100" TabIndex="4" TextChanged="Forecast_TextChanged" PreviewTextInput="NumberIntValidationTextBox"/>
                     <TextBox x:Name="forecastsy1p2" Grid.Row="2" Grid.Column="1" TextWrapping="Wrap" Text="100" TabIndex="5"  TextChanged="Forecast_TextChanged" PreviewTextInput="NumberIntValidationTextBox"/>
@@ -1234,7 +1233,7 @@
                     </TabControl>
                 </Grid>
             </TabItem>
-            <TabItem x:Name="Einkauftab" Header="Einkauf" IsEnabled="False" TabIndex="6">
+            <TabItem x:Name="Einkauftab" Header="Einkauf" IsEnabled="False" TabIndex="6" HorizontalAlignment="Left" Margin="-1.6,-2,-2,0" Width="54">
                 <Grid Background="#a2c523">
                     <TabControl TabStripPlacement="Left">
                         <TabItem x:Name="Bestell" Header="Bestellübersicht">
@@ -1284,67 +1283,65 @@
                 </Grid>
 
             </TabItem>
-            <TabItem x:Name="Priorisierungtab" Header="Reihenfolgenplanung" IsEnabled="False" TabIndex="7">
-                <Grid Background="#a2c523">
-                    <DataGrid Height="287" HorizontalAlignment="Left" Margin="93,12,0,0"  Name="prio" VerticalAlignment="Top" Width="500" IsReadOnly="True" AutoGenerateColumns="False">
-                        <DataGrid.Columns >
-                            <DataGridTextColumn x:Name="Prio1_Position" Header="Last Name" Binding="{Binding Position}"></DataGridTextColumn>
-                            <DataGridTextColumn x:Name="Prio1_Teilenr" Header="Last Name" Binding="{Binding Teilenr}"></DataGridTextColumn>
-                            <DataGridTextColumn x:Name="Prio1_Anzahl" Header="Last Name" Binding="{Binding Anzahl}"></DataGridTextColumn>
-                        </DataGrid.Columns>
-                    </DataGrid>
-                    <Button Content="up" Height="23" HorizontalAlignment="Left" Margin="628,50,0,0" x:Name="up" VerticalAlignment="Top" Width="75" Click="up_Click" />
-                    <Button Content="down" Height="23" HorizontalAlignment="Left" Margin="628,90,0,0" x:Name="down" VerticalAlignment="Top" Width="75" Click="down_Click"  />
-                    <Button Content="delete" Height="23" HorizontalAlignment="Left" Margin="628,170,0,0" x:Name="delete" VerticalAlignment="Top" Width="75" Click="delete_Click"  />
-                    <Button Content="add" Height="23" HorizontalAlignment="Left" Margin="628,340,0,0" x:Name="add" VerticalAlignment="Top" Width="75" Click="add_Click"  />
-                    <Button Content="split" Height="23" HorizontalAlignment="Left" Margin="628,130,0,0" x:Name="split" VerticalAlignment="Top" Width="75" Click="split_Click"  />
-                    <TextBox x:Name="prioAddItem" HorizontalAlignment="Left" Height="23" Margin="93,340,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TabIndex="4" TextChanged="Forecast1_TextChanged" PreviewTextInput="NumberIntValidationTextBox" />
-                    <TextBox x:Name="prioAddAmount" HorizontalAlignment="Left" Height="23" Margin="274,340,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TabIndex="4" TextChanged="Forecast1_TextChanged" PreviewTextInput="NumberIntValidationTextBox" />
-                    <Label x:Name="prioAddItemDescription" Content="Item:" HorizontalAlignment="Left" Margin="93,309,0,0" VerticalAlignment="Top" RenderTransformOrigin="2.02,-5.231"/>
-                    <Label x:Name="prioAddAmountDescription" Content="Anzahl:" HorizontalAlignment="Left" Margin="274,309,0,0" VerticalAlignment="Top" RenderTransformOrigin="2.02,-5.231"/>
-                </Grid>
-            </TabItem>
-
-            <TabItem x:Name="Direktverkauftab" Visibility ="Hidden" Header="Direktverkauf" IsEnabled="False" TabIndex="2" RenderTransformOrigin="5.706,0.495" HorizontalAlignment="Left" Width="87" >
-                <Grid Background="#a2c523" Margin="10,0,10,0">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="1*"/>
-                        <ColumnDefinition Width="1*"/>
-                        <ColumnDefinition Width="1*"/>
-                        <ColumnDefinition Width="1*"/>
-                        <ColumnDefinition Width="1*"/>
-                    </Grid.ColumnDefinitions>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="1*"/>
-                        <RowDefinition Height="1*"/>
-                        <RowDefinition Height="1*"/>
-                        <RowDefinition Height="1*"/>
-                        <RowDefinition Height="1*"/>
-                        <RowDefinition Height="1*"/>
-                    </Grid.RowDefinitions>
-                    <Label x:Name="DirektKind" Content="Kinder P1" Grid.Column="0" Grid.Row="1"/>
-                    <Label x:Name="DirektDame" Content="Damen P2" Grid.Column="0" Grid.Row="2"/>
-                    <Label x:Name="DirektHerren" Content="Herren P3" Grid.Column="0" Grid.Row="3"/>
-                    <Label x:Name="DirektSumme" Content="Summe" Grid.Column="0" Grid.Row="4"/>
-                    <Label x:Name="DirektPeriode" Content="Periode" HorizontalAlignment="Left" Margin="234,110,0,0" VerticalAlignment="Top" Width="52"/>
-                    <Label x:Name="directvarperiod1" Content="varperiod1" Grid.Row="0" Grid.Column="1" />
-                    <TextBox x:Name="d11" Grid.Row="1" Grid.Column="1" TextWrapping="Wrap" Text="0" TabIndex="4" TextChanged="Forecast1_TextChanged" PreviewTextInput="NumberIntValidationTextBox" />
-                    <TextBox x:Name="d21" Grid.Row="2" Grid.Column="1" TextWrapping="Wrap" Text="0" TabIndex="5"  TextChanged="Forecast1_TextChanged" PreviewTextInput="NumberIntValidationTextBox" />
-                    <TextBox x:Name="d31" Grid.Row="3" Grid.Column="1" TextWrapping="Wrap" Text="0" TabIndex="6"  TextChanged="Forecast1_TextChanged" PreviewTextInput="NumberIntValidationTextBox" />
-                    <TextBox x:Name="s41" Grid.Row="4" Grid.Column="1" TextWrapping="Wrap" Text="0" IsEnabled="False"/>
-                    <Label x:Name="retailprice" Content="Verkaufspreis" Grid.Column="2"/>
-                    <TextBox x:Name="d12" Grid.Row="1" Grid.Column="2" TextWrapping="Wrap" Text="0" TabIndex="7" PreviewTextInput="NumberIntValidationTextBox" />
-                    <TextBox x:Name="d22" Grid.Row="2" Grid.Column="2" TextWrapping="Wrap" Text="0" TabIndex="8" PreviewTextInput="NumberIntValidationTextBox"/>
-                    <TextBox x:Name="d32" Grid.Row="3" Grid.Column="2" TextWrapping="Wrap" Text="0" TabIndex="9" PreviewTextInput="NumberIntValidationTextBox"/>
-                    <Label x:Name="contractpenalty" Content="Vertragsstrafe" Grid.Column="3"/>
-                    <TextBox x:Name="d13" Grid.Row="1" Grid.Column="3" TextWrapping="Wrap" Text="0" TabIndex="10" PreviewTextInput="NumberIntValidationTextBox"/>
-                    <TextBox x:Name="d23" Grid.Row="2" Grid.Column="3" TextWrapping="Wrap" Text="0" TabIndex="11" PreviewTextInput="NumberIntValidationTextBox"/>
-                    <TextBox x:Name="d33" Grid.Row="3" Grid.Column="3" TextWrapping="Wrap" Text="0" TabIndex="12" PreviewTextInput="NumberIntValidationTextBox"/>
-                    <Button x:Name="directnextbutton" Content="Next" Grid.Row="4" Grid.Column="3" Width="75" Click="DirectNextButton_Click"/>
-                </Grid>
-            </TabItem>
-
-        </TabControl>
+                <TabItem x:Name="Priorisierungtab" Header="Reihenfolgenplanung" IsEnabled="False" TabIndex="7">
+                    <Grid Background="#a2c523">
+                        <DataGrid Height="287" HorizontalAlignment="Left" Margin="93,12,0,0"  Name="prio" VerticalAlignment="Top" Width="500" IsReadOnly="True" AutoGenerateColumns="False">
+                            <DataGrid.Columns >
+                                <DataGridTextColumn x:Name="Prio1_Position" Header="Last Name" Binding="{Binding Position}"></DataGridTextColumn>
+                                <DataGridTextColumn x:Name="Prio1_Teilenr" Header="Last Name" Binding="{Binding Teilenr}"></DataGridTextColumn>
+                                <DataGridTextColumn x:Name="Prio1_Anzahl" Header="Last Name" Binding="{Binding Anzahl}"></DataGridTextColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                        <Button Content="up" Height="23" HorizontalAlignment="Left" Margin="628,50,0,0" x:Name="up" VerticalAlignment="Top" Width="75" Click="up_Click" />
+                        <Button Content="down" Height="23" HorizontalAlignment="Left" Margin="628,90,0,0" x:Name="down" VerticalAlignment="Top" Width="75" Click="down_Click"  />
+                        <Button Content="delete" Height="23" HorizontalAlignment="Left" Margin="628,170,0,0" x:Name="delete" VerticalAlignment="Top" Width="75" Click="delete_Click"  />
+                        <Button Content="add" Height="23" HorizontalAlignment="Left" Margin="628,340,0,0" x:Name="add" VerticalAlignment="Top" Width="75" Click="add_Click"  />
+                        <Button Content="split" Height="23" HorizontalAlignment="Left" Margin="628,130,0,0" x:Name="split" VerticalAlignment="Top" Width="75" Click="split_Click"  />
+                        <TextBox x:Name="prioAddItem" HorizontalAlignment="Left" Height="23" Margin="93,340,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TabIndex="4" TextChanged="Forecast1_TextChanged" PreviewTextInput="NumberIntValidationTextBox" />
+                        <TextBox x:Name="prioAddAmount" HorizontalAlignment="Left" Height="23" Margin="274,340,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TabIndex="4" TextChanged="Forecast1_TextChanged" PreviewTextInput="NumberIntValidationTextBox" />
+                        <Label x:Name="prioAddItemDescription" Content="Item:" HorizontalAlignment="Left" Margin="93,309,0,0" VerticalAlignment="Top" RenderTransformOrigin="2.02,-5.231"/>
+                        <Label x:Name="prioAddAmountDescription" Content="Anzahl:" HorizontalAlignment="Left" Margin="274,309,0,0" VerticalAlignment="Top" RenderTransformOrigin="2.02,-5.231"/>
+                    </Grid>
+                </TabItem>
+                <TabItem x:Name="Direktverkauftab" Visibility ="Hidden" Header="Direktverkauf" IsEnabled="False" TabIndex="2" RenderTransformOrigin="5.706,0.495" HorizontalAlignment="Left" Width="87" >
+                    <Grid Background="#a2c523" Margin="10,0,10,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                        </Grid.RowDefinitions>
+                        <Label x:Name="DirektKind" Content="Kinder P1" Grid.Column="0" Grid.Row="1"/>
+                        <Label x:Name="DirektDame" Content="Damen P2" Grid.Column="0" Grid.Row="2"/>
+                        <Label x:Name="DirektHerren" Content="Herren P3" Grid.Column="0" Grid.Row="3"/>
+                        <Label x:Name="DirektSumme" Content="Summe" Grid.Column="0" Grid.Row="4"/>
+                        <Label x:Name="DirektPeriode" Content="Periode" HorizontalAlignment="Left" Margin="234,110,0,0" VerticalAlignment="Top" Width="52"/>
+                        <Label x:Name="directvarperiod1" Content="varperiod1" Grid.Row="0" Grid.Column="1" />
+                        <TextBox x:Name="d11" Grid.Row="1" Grid.Column="1" TextWrapping="Wrap" Text="0" TabIndex="4" TextChanged="Forecast1_TextChanged" PreviewTextInput="NumberIntValidationTextBox" />
+                        <TextBox x:Name="d21" Grid.Row="2" Grid.Column="1" TextWrapping="Wrap" Text="0" TabIndex="5"  TextChanged="Forecast1_TextChanged" PreviewTextInput="NumberIntValidationTextBox" />
+                        <TextBox x:Name="d31" Grid.Row="3" Grid.Column="1" TextWrapping="Wrap" Text="0" TabIndex="6"  TextChanged="Forecast1_TextChanged" PreviewTextInput="NumberIntValidationTextBox" />
+                        <TextBox x:Name="s41" Grid.Row="4" Grid.Column="1" TextWrapping="Wrap" Text="0" IsEnabled="False"/>
+                        <Label x:Name="retailprice" Content="Verkaufspreis" Grid.Column="2"/>
+                        <TextBox x:Name="d12" Grid.Row="1" Grid.Column="2" TextWrapping="Wrap" Text="0" TabIndex="7" PreviewTextInput="NumberIntValidationTextBox" />
+                        <TextBox x:Name="d22" Grid.Row="2" Grid.Column="2" TextWrapping="Wrap" Text="0" TabIndex="8" PreviewTextInput="NumberIntValidationTextBox"/>
+                        <TextBox x:Name="d32" Grid.Row="3" Grid.Column="2" TextWrapping="Wrap" Text="0" TabIndex="9" PreviewTextInput="NumberIntValidationTextBox"/>
+                        <Label x:Name="contractpenalty" Content="Vertragsstrafe" Grid.Column="3"/>
+                        <TextBox x:Name="d13" Grid.Row="1" Grid.Column="3" TextWrapping="Wrap" Text="0" TabIndex="10" PreviewTextInput="NumberIntValidationTextBox"/>
+                        <TextBox x:Name="d23" Grid.Row="2" Grid.Column="3" TextWrapping="Wrap" Text="0" TabIndex="11" PreviewTextInput="NumberIntValidationTextBox"/>
+                        <TextBox x:Name="d33" Grid.Row="3" Grid.Column="3" TextWrapping="Wrap" Text="0" TabIndex="12" PreviewTextInput="NumberIntValidationTextBox"/>
+                        <Button x:Name="directnextbutton" Content="Next" Grid.Row="4" Grid.Column="3" Width="75" Click="DirectNextButton_Click"/>
+                    </Grid>
+                </TabItem>
+            </TabControl>
         <Button x:Name="xmlexportbutton" Content="XML Export" HorizontalAlignment="Right" BorderBrush="Transparent" Margin="0,0,170,0" VerticalAlignment="Top" Background="Transparent" Click="xmlexportbutton_Click" />
         <StackPanel
             HorizontalAlignment="Right"
