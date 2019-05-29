@@ -177,7 +177,7 @@
                             </Style>
                         </TabControl.Resources>
                         <TabItem x:Name="kinderradtab" Header="Kinderrad" IsEnabled="True" >
-                            <Grid Background="#a2c523">
+                            <Grid Background="#a2c523" Margin="-49,-1,49,1.2">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="30"/>
                                     <ColumnDefinition Width="60"/>
@@ -1343,7 +1343,8 @@
                     </Grid>
                 </TabItem>
             </TabControl>
-        <Button x:Name="xmlexportbutton" Content="XML Export" HorizontalAlignment="Right" BorderBrush="Transparent" Margin="0,0,170,0" VerticalAlignment="Top" Background="Transparent" Click="xmlexportbutton_Click" />
+        <Button x:Name="xmlexportbutton" Content="XML Export" HorizontalAlignment="Center" BorderBrush="Transparent" Margin="0,0,0,0" VerticalAlignment="Top" Background="Transparent" Click="xmlexportbutton_Click" />
+
         <StackPanel
             HorizontalAlignment="Right"
             VerticalAlignment="Top"

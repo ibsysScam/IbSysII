@@ -1525,7 +1525,7 @@ namespace Ibsys2
             {
                 CreateXML createXml = new CreateXML();
                 string xmlfile = createXml.GenerateXMLData();
-                xmlexportpath = "XMLOutput.xml";
+                xmlexportpath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\exort.xml";
                 if (found == true)
                 {
                     StreamWriter sw = new StreamWriter(xmlexportpath);
