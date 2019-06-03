@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Ibsys2"
         xmlns:chart="clr-namespace:De.TorstenMandelkow.MetroChart;assembly=De.TorstenMandelkow.MetroChart"
         mc:Ignorable="d"
-        Title="Supply Chain Simulator - Tool Gruppe 1" 
+        Title="Supply Chain Simulator - Bike Master - Gruppe 1" 
         ResizeMode="NoResize" 
         AllowDrop="True" 
         Width="1200"
