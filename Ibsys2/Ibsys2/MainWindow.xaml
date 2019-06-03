@@ -115,7 +115,7 @@
                 </Grid>
             </TabItem>
             
-            <TabItem x:Name="sicherheitsbestandtab" Header="Sicherheitsbestand" IsEnabled="False" TabIndex="3">
+            <TabItem x:Name="sicherheitsbestandtab" Header="Sicherheitsbestand"  TabIndex="3">
                 <Grid Background="#a2c523" Margin="10,10,10,10">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="1*"/>
@@ -182,7 +182,7 @@
                             </Style>
                         </TabControl.Resources>
                         <TabItem x:Name="kinderradtab" Header="Kinderrad" IsEnabled="True" >
-                            <Grid Background="#a2c523" Margin="-49,-1,49,1.2">
+                            <Grid Background="#a2c523" >
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="30"/>
                                     <ColumnDefinition Width="60"/>
@@ -1291,17 +1291,28 @@
             </TabItem>
                 <TabItem x:Name="Priorisierungtab" Header="Reihenfolgenplanung" IsEnabled="False" TabIndex="7">
                     <Grid Background="#a2c523">
-                        <DataGrid Height="287" HorizontalAlignment="Left" Margin="93,12,0,0"  Name="prio" VerticalAlignment="Top" Width="500" IsReadOnly="True" AutoGenerateColumns="False">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="4*"/>
+                        <RowDefinition Height="2*"/>
+                    </Grid.RowDefinitions>
+                        <DataGrid Height="287" HorizontalAlignment="Center" Margin="0,12,0,0"  Name="prio" VerticalAlignment="Top" Width="500" IsReadOnly="True" AutoGenerateColumns="False">
                             <DataGrid.Columns >
                                 <DataGridTextColumn x:Name="Prio1_Position" Header="Last Name" Binding="{Binding Position}"></DataGridTextColumn>
                                 <DataGridTextColumn x:Name="Prio1_Teilenr" Header="Last Name" Binding="{Binding Teilenr}"></DataGridTextColumn>
                                 <DataGridTextColumn x:Name="Prio1_Anzahl" Header="Last Name" Binding="{Binding Anzahl}"></DataGridTextColumn>
                             </DataGrid.Columns>
                         </DataGrid>
-                        <Button Content="up" Height="23" HorizontalAlignment="Left" Margin="628,50,0,0" x:Name="up" VerticalAlignment="Top" Width="75" Click="up_Click" />
-                        <Button Content="down" Height="23" HorizontalAlignment="Left" Margin="628,90,0,0" x:Name="down" VerticalAlignment="Top" Width="75" Click="down_Click"  />
-                    <Button Content="delete" Height="23" HorizontalAlignment="Left" Margin="628,170,0,0" x:Name="delete" VerticalAlignment="Top" Width="75" Click="delete_Click"  />
-                    <Button Content="split" Height="23" HorizontalAlignment="Left" x:Name="split" Margin="628,130,0,0" VerticalAlignment="Top" Width="75" Click="split_Click"  />
+                    <StackPanel
+                        Orientation="Horizontal"
+                        Grid.Row="2"
+                        HorizontalAlignment="Center">
+                        
+                    
+                        <Button Content="up" Height="23"  x:Name="up" VerticalAlignment="Top" Width="75" Click="up_Click" />
+                        <Button Content="down" Height="23" x:Name="down" VerticalAlignment="Top" Width="75" Click="down_Click"  />
+                    <Button Content="delete" Height="23"  x:Name="delete" VerticalAlignment="Top" Width="75" Click="delete_Click"  />
+                    <Button Content="split" Height="23"  x:Name="split" VerticalAlignment="Top" Width="75" Click="split_Click"  />
+                    </StackPanel>
                     <StackPanel
                         Visibility="Hidden" VerticalAlignment="Bottom" HorizontalAlignment="Left">
                         <Label x:Name="prioAddItemDescription" Content="Item:" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="2.02,-5.231"/>
